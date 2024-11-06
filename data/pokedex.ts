@@ -1,8 +1,8 @@
 export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
-	bulbasaur: {
+	bulbapedia: {
 		num: 1,
 		name: "Bulbasaur",
-		types: ["Grass", "Poison"],
+		types: ["Grass", "Dragon"],
 		genderRatio: {M: 0.875, F: 0.125},
 		baseStats: {hp: 45, atk: 49, def: 49, spa: 65, spd: 65, spe: 45},
 		abilities: {0: "Overgrow", H: "Chlorophyll"},
@@ -30,7 +30,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 	venusaur: {
 		num: 3,
 		name: "Venusaur",
-		types: ["Grass", "Poison"],
+		types: ["Grass", "Dragon"],
 		genderRatio: {M: 0.875, F: 0.125},
 		baseStats: {hp: 80, atk: 82, def: 83, spa: 100, spd: 100, spe: 80},
 		abilities: {0: "Overgrow", H: "Chlorophyll"},
