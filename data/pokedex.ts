@@ -13116,7 +13116,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		num: 738,
 		name: "Vikavolt",
 		types: ["Bug", "Electric"],
-		baseStats: {hp: 77, atk: 70, def: 90, spa: 145, spd: 75, spe: 43},
+		baseStats: {hp: 77, atk: 70, def: 50, spa: 145, spd: 75, spe: 143},
 		abilities: {0: "Levitate"},
 		heightm: 1.5,
 		weightkg: 45,
