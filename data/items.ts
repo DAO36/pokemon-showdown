@@ -32,19 +32,19 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		num: 674,
 		gen: 6,
 	},
-	charmeleonite: {
-		name: "Charmeleonite",
-		spritenum: 607,
-		megaStone: "Charmeleon-Mega",
-		megaEvolves: "Charmeleon",
-		itemUser: ["Charmeleon"],
-		onTakeItem(item, source) {
-			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
-			return true;
-		},
-		num: 669,
-		gen: 6,
-	},
+    furretite: {
+        name: "Furretite",
+        spritenum: 607,
+        megaStone: "Furret-Mega",
+        megaEvolves: "Furret",
+        itemUser: ["Furret"],
+        onTakeItem(item, source) {
+            if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
+            return true;
+        },
+        num: 669,
+        gen: 6,
+    },
 	absolite: {
 		name: "Absolite",
 		spritenum: 576,
