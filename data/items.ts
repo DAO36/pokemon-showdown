@@ -58,6 +58,71 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
         num: 669,
         gen: 6,
 	},
+    mikonite: {
+        name: "Mikonite",
+        spritenum: 607,
+        megaStone: "Floragato-Mega",
+        megaEvolves: "Floragato",
+        itemUser: ["Floragato"],
+        onTakeItem(item, source) {
+            if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
+            return true;
+        },
+        num: 669,
+        gen: 6,	
+	},
+    suisite: {
+        name: "Suisite",
+        spritenum: 607,
+        megaStone: "Carbink-Mega",
+        megaEvolves: "Carbink",
+        itemUser: ["Carbink"],
+        onTakeItem(item, source) {
+            if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
+            return true;
+        },
+        num: 669,
+        gen: 6,	
+	},
+    robocite: {
+        name: "Robocite",
+        spritenum: 607,
+        megaStone: "Metang-Mega",
+        megaEvolves: "Metang",
+        itemUser: ["Metang"],
+        onTakeItem(item, source) {
+            if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
+            return true;
+        },
+        num: 669,
+        gen: 6,	
+	},
+    azkinite: {
+        name: "AZKinite",
+        spritenum: 607,
+        megaStone: "Jigglypuff-Mega",
+        megaEvolves: "Jigglypuff",
+        itemUser: ["Jigglypuff"],
+        onTakeItem(item, source) {
+            if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
+            return true;
+        },
+        num: 669,
+        gen: 6,	
+	},
+    fubukite: {
+        name: "Fubukite",
+        spritenum: 607,
+        megaStone: "Vulpix-Alola-Mega",
+        megaEvolves: "Vulpix-Alola",
+        itemUser: ["Vulpix-Alola"],
+        onTakeItem(item, source) {
+            if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
+            return true;
+        },
+        num: 669,
+        gen: 6,	
+	},
     charmeleonite: {
         name: "Charmeleonite",
         spritenum: 607,

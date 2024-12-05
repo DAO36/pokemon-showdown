@@ -331,6 +331,11 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 	vulpixalola: {
 		tier: "NFE",
 	},
+	vulpixalolamega: {
+        tier: "OU",
+        doublesTier: "(DUU)",
+        natDexTier: "OU",
+	},
 	ninetales: {
 		tier: "ZU",
 		doublesTier: "DUU",
@@ -346,6 +351,11 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 	},
 	jigglypuff: {
 		tier: "NFE",
+	},
+	jigglypuffmega: {
+        tier: "OU",
+        doublesTier: "(DUU)",
+        natDexTier: "OU",
 	},
 	wigglytuff: {
 		tier: "ZU",
@@ -2368,6 +2378,11 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 	metang: {
 		tier: "NFE",
 	},
+	metangmega: {
+        tier: "OU",
+        doublesTier: "(DUU)",
+        natDexTier: "OU",
+	},
 	metagross: {
 		tier: "UU",
 		doublesTier: "DUU",
@@ -3939,6 +3954,11 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		doublesTier: "(DUU)",
 		natDexTier: "RU",
 	},
+	carbinkmega: {
+        tier: "OU",
+        doublesTier: "(DUU)",
+        natDexTier: "OU",
+	},
 	goomy: {
 		tier: "LC",
 	},
@@ -5137,6 +5157,11 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 	},
 	floragato: {
 		tier: "NFE",
+	},
+	floragatoamega: {
+        tier: "OU",
+        doublesTier: "(DUU)",
+        natDexTier: "OU",
 	},
 	meowscarada: {
 		tier: "OU",
