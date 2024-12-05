@@ -113,9 +113,9 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
     fubukite: {
         name: "Fubukite",
         spritenum: 607,
-        megaStone: "Vulpix-Alola-Mega",
-        megaEvolves: "Vulpix-Alola",
-        itemUser: ["Vulpix-Alola"],
+        megaStone: "Vulpix-Mega",
+        megaEvolves: "Vulpix",
+        itemUser: ["Vulpix"],
         onTakeItem(item, source) {
             if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
             return true;
