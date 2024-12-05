@@ -18773,7 +18773,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		requiredItem: "Akirosite",
 	},
 	aqua: {
-		num: 876,
+		num: 781,
 		name: "Aqua",
 		types: ["Water", "Fairy"],
 		gender: "F",
@@ -18787,7 +18787,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		formeOrder: ["Aqua", "Aqua-Mega"],
 	},
 	aquamega: {
-		num: 876,
+		num: 781,
 		name: "Aqua-Mega",
 		baseSpecies: "Aqua",
 		forme: "Mega",
