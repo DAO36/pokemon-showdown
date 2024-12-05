@@ -98,7 +98,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
         gen: 6,	
 	},
     azkinite: {
-        name: "AZKinite",
+        name: "Azkinite",
         spritenum: 607,
         megaStone: "Jigglypuff-Mega",
         megaEvolves: "Jigglypuff",

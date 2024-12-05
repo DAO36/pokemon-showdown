@@ -1123,7 +1123,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		weightkg: 62.5,
 		color: "Pink",
 		eggGroups: ["Human-Like"],
-		requiredItem: "AZKinite",		
+		requiredItem: "Azkinite",		
 	},
 	wigglytuff: {
 		num: 40,
