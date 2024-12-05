@@ -25,6 +25,11 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 	charmeleon: {
 		tier: "NFE",
 	},
+	charmeleonmega: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "OU",
+	},
 	charizard: {
 		tier: "ZU",
 		doublesTier: "(DUU)",
