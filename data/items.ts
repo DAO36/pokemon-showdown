@@ -45,6 +45,19 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
         num: 669,
         gen: 6,
 	},
+    sorite: {
+        name: "Sorite",
+        spritenum: 607,
+        megaStone: "Teddiursa-Mega",
+        megaEvolves: "Teddiursa",
+        itemUser: ["Teddiursa"],
+        onTakeItem(item, source) {
+            if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
+            return true;
+        },
+        num: 669,
+        gen: 6,
+	},
     charmeleonite: {
         name: "Charmeleonite",
         spritenum: 607,

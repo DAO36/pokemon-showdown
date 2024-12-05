@@ -1527,6 +1527,11 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 	teddiursa: {
 		tier: "LC",
 	},
+	teddiursamega: {
+        tier: "OU",
+        doublesTier: "(DUU)",
+        natDexTier: "OU",
+	},
 	ursaring: {
 		tier: "NFE",
 	},
