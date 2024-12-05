@@ -1028,7 +1028,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		color: "Brown",
 		evos: ["Ninetales"],
 		eggGroups: ["Field"],
-		otherFormes: ["Vulpix-Alola"],
+		otherFormes: ["Vulpix-Mega", "Vulpix-Alola"],
 		formeOrder: ["Vulpix", "Vulpix-Mega", "Vulpix-Alola"],
 	},
 	vulpixmega: {
