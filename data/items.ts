@@ -97,6 +97,84 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		num: 674,
 		gen: 6,
 	},
+	fubukite: {
+		name: "Fubukite",
+		spritenum: 575,
+		megaStone: "Fubuki-Mega",
+		megaEvolves: "Fubuki",
+		itemUser: ["Fubuki"],
+		onTakeItem(item, source) {
+			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
+			return true;
+		},
+		num: 674,
+		gen: 6,
+	},
+	matsurite: {
+		name: "Matsurite",
+		spritenum: 575,
+		megaStone: "Matsuri-Mega",
+		megaEvolves: "Matsuri",
+		itemUser: ["Matsuri"],
+		onTakeItem(item, source) {
+			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
+			return true;
+		},
+		num: 674,
+		gen: 6,
+	},
+	haachamite: {
+		name: "Haachamite",
+		spritenum: 575,
+		megaStone: "Haachama-Mega",
+		megaEvolves: "Haachama",
+		itemUser: ["Haachama"],
+		onTakeItem(item, source) {
+			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
+			return true;
+		},
+		num: 674,
+		gen: 6,
+	},
+	melitite: {
+		name: "Melitite",
+		spritenum: 575,
+		megaStone: "Mel-Mega",
+		megaEvolves: "Mel",
+		itemUser: ["Mel"],
+		onTakeItem(item, source) {
+			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
+			return true;
+		},
+		num: 674,
+		gen: 6,
+	},
+	akirosite: {
+		name: "Akirosite",
+		spritenum: 575,
+		megaStone: "Akirose-Mega",
+		megaEvolves: "Akirose",
+		itemUser: ["Akirose"],
+		onTakeItem(item, source) {
+			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
+			return true;
+		},
+		num: 674,
+		gen: 6,
+	},
+	aquanite: {
+		name: "Aquanite",
+		spritenum: 575,
+		megaStone: "Aqua-Mega",
+		megaEvolves: "Aqua",
+		itemUser: ["Aqua"],
+		onTakeItem(item, source) {
+			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
+			return true;
+		},
+		num: 674,
+		gen: 6,
+	},
     furretite: {
         name: "Furretite",
         spritenum: 607,
