@@ -31,7 +31,6 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		},
 		num: 674,
 		gen: 6,
-		isNonstandard: "Past",
 	},
     furretite: {
         name: "Furretite",
@@ -45,7 +44,11 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
         },
         num: 669,
         gen: 6,
+<<<<<<< HEAD
 	},
+=======
+    },
+>>>>>>> 0fd89b290a6a525017459fddddb0b3ef15730942
 	absolite: {
 		name: "Absolite",
 		spritenum: 576,

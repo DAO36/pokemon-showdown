@@ -1252,6 +1252,11 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		doublesTier: "(DUU)",
 		natDexTier: "RU",
 	},
+	furretmega: {
+        tier: "ZU",
+        doublesTier: "(DUU)",
+        natDexTier: "RU",
+    },
 	hoothoot: {
 		tier: "LC",
 	},
