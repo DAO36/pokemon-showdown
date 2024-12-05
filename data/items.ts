@@ -266,31 +266,70 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		num: 674,
 		gen: 6,	
 	},
-    furretite: {
-        name: "Furretite",
-        spritenum: 607,
-        megaStone: "Furret-Mega",
-        megaEvolves: "Furret",
-        itemUser: ["Furret"],
-        onTakeItem(item, source) {
-            if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
-            return true;
-        },
-        num: 669,
-        gen: 6,
+	pekorite: {
+		name: "Pekorite",
+		spritenum: 575,
+		megaStone: "Pekora-Mega",
+		megaEvolves: "Pekora",
+		itemUser: ["Pekora"],
+		onTakeItem(item, source) {
+			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
+			return true;
+		},
+		num: 674,
+		gen: 6,	
 	},
-    charmeleonite: {
-        name: "Charmeleonite",
-        spritenum: 607,
-        megaStone: "Charmeleon-Mega",
-        megaEvolves: "Charmeleon",
-        itemUser: ["Charmeleon"],
-        onTakeItem(item, source) {
-            if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
-            return true;
-        },
-        num: 669,
-        gen: 6,
+	noelite: {
+		name: "Noelite",
+		spritenum: 575,
+		megaStone: "Noel-Mega",
+		megaEvolves: "Noel",
+		itemUser: ["Noel"],
+		onTakeItem(item, source) {
+			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
+			return true;
+		},
+		num: 674,
+		gen: 6,	
+	},
+	rushianite: {
+		name: "Rushianite",
+		spritenum: 575,
+		megaStone: "Rushia-Mega",
+		megaEvolves: "Rushia",
+		itemUser: ["Rushia"],
+		onTakeItem(item, source) {
+			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
+			return true;
+		},
+		num: 674,
+		gen: 6,	
+	},
+	flarite: {
+		name: "Flarite",
+		spritenum: 575,
+		megaStone: "Flare-Mega",
+		megaEvolves: "Flare",
+		itemUser: ["Flare"],
+		onTakeItem(item, source) {
+			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
+			return true;
+		},
+		num: 674,
+		gen: 6,	
+	},
+	marinite: {
+		name: "Marinite",
+		spritenum: 575,
+		megaStone: "Marine-Mega",
+		megaEvolves: "Marine",
+		itemUser: ["Marine"],
+		onTakeItem(item, source) {
+			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
+			return true;
+		},
+		num: 674,
+		gen: 6,
 	},
 	absolite: {
 		name: "Absolite",
