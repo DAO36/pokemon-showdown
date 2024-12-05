@@ -108,20 +108,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
             return true;
         },
         num: 669,
-        gen: 6,	
-	},
-    fubukite: {
-        name: "Fubukite",
-        spritenum: 607,
-        megaStone: "Vulpix-Mega",
-        megaEvolves: "Vulpix",
-        itemUser: ["Vulpix"],
-        onTakeItem(item, source) {
-            if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
-            return true;
-        },
-        num: 669,
-        gen: 6,	
+        gen: 6,
 	},
     charmeleonite: {
         name: "Charmeleonite",

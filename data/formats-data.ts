@@ -328,11 +328,6 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		doublesTier: "(DUU)",
 		natDexTier: "OU",
 	},
-	vulpixmega: {
-        tier: "OU",
-        doublesTier: "(DUU)",
-        natDexTier: "OU",
-	},
 	vulpixalola: {
 		tier: "NFE",
 	},
