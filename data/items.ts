@@ -175,6 +175,58 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		num: 674,
 		gen: 6,
 	},
+	ayamenite: {
+		name: "Ayamenite",
+		spritenum: 575,
+		megaStone: "Ayame-Mega",
+		megaEvolves: "Ayame",
+		itemUser: ["Ayame"],
+		onTakeItem(item, source) {
+			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
+			return true;
+		},
+		num: 674,
+		gen: 6,	
+	},
+	chocolite: {
+		name: "Chocolite",
+		spritenum: 575,
+		megaStone: "Choco-Mega",
+		megaEvolves: "Choco",
+		itemUser: ["Choco"],
+		onTakeItem(item, source) {
+			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
+			return true;
+		},
+		num: 674,
+		gen: 6,	
+	},
+	shionite: {
+		name: "Shionite",
+		spritenum: 575,
+		megaStone: "Shion-Mega",
+		megaEvolves: "Shion",
+		itemUser: ["Shion"],
+		onTakeItem(item, source) {
+			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
+			return true;
+		},
+		num: 674,
+		gen: 6,	
+	},
+	subarite: {
+		name: "Subarite",
+		spritenum: 575,
+		megaStone: "Subaru-Mega",
+		megaEvolves: "Subaru",
+		itemUser: ["Subaru"],
+		onTakeItem(item, source) {
+			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
+			return true;
+		},
+		num: 674,
+		gen: 6,	
+	},
     furretite: {
         name: "Furretite",
         spritenum: 607,
