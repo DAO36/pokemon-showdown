@@ -396,6 +396,71 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		num: 674,
 		gen: 6,
 	},
+	polkanite: {
+		name: "Polkanite",
+		spritenum: 575,
+		megaStone: "Polka-Mega",
+		megaEvolves: "Polka",
+		itemUser: ["Polka"],
+		onTakeItem(item, source) {
+			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
+			return true;
+		},
+		num: 674,
+		gen: 6,
+	},
+	botanite: {
+		name: "Botanite",
+		spritenum: 575,
+		megaStone: "Botan-Mega",
+		megaEvolves: "Botan",
+		itemUser: ["Botan"],
+		onTakeItem(item, source) {
+			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
+			return true;
+		},
+		num: 674,
+		gen: 6,
+	},
+	lamilite: {
+		name: "Lamilite",
+		spritenum: 575,
+		megaStone: "Lamy-Mega",
+		megaEvolves: "Lamy",
+		itemUser: ["Lamy"],
+		onTakeItem(item, source) {
+			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
+			return true;
+		},
+		num: 674,
+		gen: 6,
+	},
+	nenenite: {
+		name: "Nenenite",
+		spritenum: 575,
+		megaStone: "Nene-Mega",
+		megaEvolves: "Nene",
+		itemUser: ["Nene"],
+		onTakeItem(item, source) {
+			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
+			return true;
+		},
+		num: 674,
+		gen: 6,
+	},
+	aloenite: {
+		name: "Aloenite",
+		spritenum: 575,
+		megaStone: "Aloe-Mega",
+		megaEvolves: "Aloe",
+		itemUser: ["Aloe"],
+		onTakeItem(item, source) {
+			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
+			return true;
+		},
+		num: 674,
+		gen: 6,
+	},
 	absolite: {
 		name: "Absolite",
 		spritenum: 576,

@@ -5932,6 +5932,56 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
         doublesTier: "(DUU)",
         natDexTier: "OU",	
 	},
+	polka: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "OU",
+	},
+	polkamega: {
+        tier: "OU",
+        doublesTier: "(DUU)",
+        natDexTier: "OU",	
+	},
+	botan: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "OU",
+	},
+	botanmega: {
+        tier: "OU",
+        doublesTier: "(DUU)",
+        natDexTier: "OU",	
+	},
+	lamy: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "OU",
+	},
+	lamymega: {
+        tier: "OU",
+        doublesTier: "(DUU)",
+        natDexTier: "OU",	
+	},
+	nene: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "OU",
+	},
+	nenemega: {
+        tier: "OU",
+        doublesTier: "(DUU)",
+        natDexTier: "OU",	
+	},
+	aloe: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "OU",
+	},
+	aloemega: {
+        tier: "OU",
+        doublesTier: "(DUU)",
+        natDexTier: "OU",	
+	},
 	missingno: {
 		isNonstandard: "Custom",
 		tier: "Illegal",
