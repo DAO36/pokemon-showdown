@@ -6172,6 +6172,66 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
         doublesTier: "(DUU)",
         natDexTier: "OU",	
 	},
+	irys: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "OU",
+	},
+	irysmega: {
+        tier: "OU",
+        doublesTier: "(DUU)",
+        natDexTier: "OU",	
+	},
+	sana: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "OU",
+	},
+	sanamega: {
+        tier: "OU",
+        doublesTier: "(DUU)",
+        natDexTier: "OU",	
+	},
+	fauna: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "OU",
+	},
+	faunamega: {
+        tier: "OU",
+        doublesTier: "(DUU)",
+        natDexTier: "OU",	
+	},
+	kronii: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "OU",
+	},
+	kroniimega: {
+        tier: "OU",
+        doublesTier: "(DUU)",
+        natDexTier: "OU",	
+	},
+	mumei: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "OU",
+	},
+	mumeimega: {
+        tier: "OU",
+        doublesTier: "(DUU)",
+        natDexTier: "OU",	
+	},
+	bae: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "OU",
+	},
+	baemega: {
+        tier: "OU",
+        doublesTier: "(DUU)",
+        natDexTier: "OU",	
+	},
 	missingno: {
 		isNonstandard: "Custom",
 		tier: "Illegal",

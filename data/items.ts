@@ -708,6 +708,84 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		num: 674,
 		gen: 6,
 	},
+	irysite: {
+		name: "IRySite",
+		spritenum: 575,
+		megaStone: "IRyS-Mega",
+		megaEvolves: "IRyS",
+		itemUser: ["IRyS"],
+		onTakeItem(item, source) {
+			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
+			return true;
+		},
+		num: 674,
+		gen: 6,
+	},
+	sanalite: {
+		name: "Sanalite",
+		spritenum: 575,
+		megaStone: "Sana-Mega",
+		megaEvolves: "Sana",
+		itemUser: ["Sana"],
+		onTakeItem(item, source) {
+			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
+			return true;
+		},
+		num: 674,
+		gen: 6,
+	},
+	faunite: {
+		name: "Faunite",
+		spritenum: 575,
+		megaStone: "Fauna-Mega",
+		megaEvolves: "Fauna",
+		itemUser: ["Fauna"],
+		onTakeItem(item, source) {
+			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
+			return true;
+		},
+		num: 674,
+		gen: 6,
+	},
+	kroniite: {
+		name: "Kroniite",
+		spritenum: 575,
+		megaStone: "Kronii-Mega",
+		megaEvolves: "Kronii",
+		itemUser: ["Kronii"],
+		onTakeItem(item, source) {
+			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
+			return true;
+		},
+		num: 674,
+		gen: 6,
+	},
+	mumeinite: {
+		name: "Mumeinite",
+		spritenum: 575,
+		megaStone: "Mumei-Mega",
+		megaEvolves: "Mumei",
+		itemUser: ["Mumei"],
+		onTakeItem(item, source) {
+			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
+			return true;
+		},
+		num: 674,
+		gen: 6,
+	},
+	baelite: {
+		name: "Baelite",
+		spritenum: 575,
+		megaStone: "Bae-Mega",
+		megaEvolves: "Bae",
+		itemUser: ["Bae"],
+		onTakeItem(item, source) {
+			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
+			return true;
+		},
+		num: 674,
+		gen: 6,
+	},
 	absolite: {
 		name: "Absolite",
 		spritenum: 576,
