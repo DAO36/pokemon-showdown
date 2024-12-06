@@ -331,6 +331,71 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		num: 674,
 		gen: 6,
 	},
+	coconite: {
+		name: "Coconite",
+		spritenum: 575,
+		megaStone: "Coco-Mega",
+		megaEvolves: "Coco",
+		itemUser: ["Coco"],
+		onTakeItem(item, source) {
+			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
+			return true;
+		},
+		num: 674,
+		gen: 6,
+	},
+	kanatite: {
+		name: "Kanatite",
+		spritenum: 575,
+		megaStone: "Kanata-Mega",
+		megaEvolves: "Kanata",
+		itemUser: ["Kanata"],
+		onTakeItem(item, source) {
+			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
+			return true;
+		},
+		num: 674,
+		gen: 6,
+	},
+	watamite: {
+		name: "Watamite",
+		spritenum: 575,
+		megaStone: "Watame-Mega",
+		megaEvolves: "Watame",
+		itemUser: ["Watame"],
+		onTakeItem(item, source) {
+			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
+			return true;
+		},
+		num: 674,
+		gen: 6,
+	},
+	lunarite: {
+		name: "Lunarite",
+		spritenum: 575,
+		megaStone: "Luna-Mega",
+		megaEvolves: "Luna",
+		itemUser: ["Luna"],
+		onTakeItem(item, source) {
+			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
+			return true;
+		},
+		num: 674,
+		gen: 6,
+	},
+	towanite: {
+		name: "Towanite",
+		spritenum: 575,
+		megaStone: "Towa-Mega",
+		megaEvolves: "Towa",
+		itemUser: ["Towa"],
+		onTakeItem(item, source) {
+			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
+			return true;
+		},
+		num: 674,
+		gen: 6,
+	},
 	absolite: {
 		name: "Absolite",
 		spritenum: 576,
