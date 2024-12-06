@@ -20016,7 +20016,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 	},
 	sana: {
 		num: 926,
-		name: "Name",
+		name: "Sana",
 		types: ["Psychic"],
 		gender: "F",
 		baseStats: {hp: 140, atk: 90, def: 110, spa: 120, spd: 100, spe: 40},
