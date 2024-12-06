@@ -643,6 +643,71 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		num: 674,
 		gen: 6,
 	},
+	gurite: {
+		name: "Gurite",
+		spritenum: 575,
+		megaStone: "Gura-Mega",
+		megaEvolves: "Gura",
+		itemUser: ["Gura"],
+		onTakeItem(item, source) {
+			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
+			return true;
+		},
+		num: 674,
+		gen: 6,
+	},
+	amelite: {
+		name: "Amelite",
+		spritenum: 575,
+		megaStone: "Amelia-Mega",
+		megaEvolves: "Amelia",
+		itemUser: ["Amelia"],
+		onTakeItem(item, source) {
+			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
+			return true;
+		},
+		num: 674,
+		gen: 6,
+	},
+	callite: {
+		name: "Callite",
+		spritenum: 575,
+		megaStone: "Calliope-Mega",
+		megaEvolves: "Calliope",
+		itemUser: ["Calliope"],
+		onTakeItem(item, source) {
+			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
+			return true;
+		},
+		num: 674,
+		gen: 6,
+	},
+	inanite: {
+		name: "Inanite",
+		spritenum: 575,
+		megaStone: "Ina-Mega",
+		megaEvolves: "Ina",
+		itemUser: ["Ina"],
+		onTakeItem(item, source) {
+			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
+			return true;
+		},
+		num: 674,
+		gen: 6,
+	},
+	kiarite: {
+		name: "Kiarite",
+		spritenum: 575,
+		megaStone: "Kiara-Mega",
+		megaEvolves: "Kiara",
+		itemUser: ["Kiara"],
+		onTakeItem(item, source) {
+			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
+			return true;
+		},
+		num: 674,
+		gen: 6,
+	},
 	absolite: {
 		name: "Absolite",
 		spritenum: 576,
