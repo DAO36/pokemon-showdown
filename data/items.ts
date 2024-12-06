@@ -604,6 +604,45 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		num: 674,
 		gen: 6,
 	},
+	zetanite: {
+		name: "Zetanite",
+		spritenum: 575,
+		megaStone: "Zeta-Mega",
+		megaEvolves: "Zeta",
+		itemUser: ["Zeta"],
+		onTakeItem(item, source) {
+			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
+			return true;
+		},
+		num: 674,
+		gen: 6,
+	},
+	kaelite: {
+		name: "Kaelite",
+		spritenum: 575,
+		megaStone: "Kaela-Mega",
+		megaEvolves: "Kaela",
+		itemUser: ["Kaela"],
+		onTakeItem(item, source) {
+			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
+			return true;
+		},
+		num: 674,
+		gen: 6,
+	},
+	kobonite: {
+		name: "Kobonite",
+		spritenum: 575,
+		megaStone: "Kobo-Mega",
+		megaEvolves: "Kobo",
+		itemUser: ["Kobo"],
+		onTakeItem(item, source) {
+			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
+			return true;
+		},
+		num: 674,
+		gen: 6,
+	},
 	absolite: {
 		name: "Absolite",
 		spritenum: 576,
