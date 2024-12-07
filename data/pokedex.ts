@@ -20062,7 +20062,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		types: ["Psychic", "Steel"],
 		gender: "F",
 		baseStats: {hp: 105, atk: 125, def: 105, spa: 115, spd: 110, spe: 40},
-		abilities: {0: "Moxie", 1: "Oppurtunist", H: "Levitate"},
+		abilities: {0: "Moxie", 1: "Opportunist", H: "Levitate"},
 		heightm: 1.68,
 		weightkg: 55.5,
 		color: "Blue",

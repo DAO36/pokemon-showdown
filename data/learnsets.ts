@@ -95366,7 +95366,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			extrasensory: ["9M"],
 			esperwing: ["9M"],
 			zenheadbutt: ["9M"],
-			triatatck: ["9M"],
+			triattack: ["9M"],
 			mysticalfire: ["9M"],
 			firepunch: ["9M"],
 			icywind: ["9M"],
