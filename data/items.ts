@@ -175,8 +175,8 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		num: 674,
 		gen: 6,
 	},
-	ayamenite: {
-		name: "Ayamenite",
+	ayamite: {
+		name: "Ayamite",
 		spritenum: 575,
 		megaStone: "Ayame-Mega",
 		megaEvolves: "Ayame",
@@ -383,8 +383,8 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		num: 674,
 		gen: 6,
 	},
-	towanite: {
-		name: "Towanite",
+	towasite: {
+		name: "Towasite",
 		spritenum: 575,
 		megaStone: "Towa-Mega",
 		megaEvolves: "Towa",
@@ -448,8 +448,8 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		num: 674,
 		gen: 6,
 	},
-	aloenite: {
-		name: "Aloenite",
+	aloelite: {
+		name: "Aloelite",
 		spritenum: 575,
 		megaStone: "Aloe-Mega",
 		megaEvolves: "Aloe",
@@ -526,8 +526,8 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		num: 674,
 		gen: 6,
 	},
-	moonanite: {
-		name: "Moonanite",
+	moonite: {
+		name: "Moonite",
 		spritenum: 575,
 		megaStone: "Moona-Mega",
 		megaEvolves: "Moona",
