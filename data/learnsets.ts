@@ -8619,6 +8619,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			thief: ["9M", "8M", "7M", "6M", "5M", "4M", "3M"],
 			thrash: ["9E", "8E", "7E", "7V", "6E", "5E", "4E", "3E"],
 			thunderfang: ["9M"],
+			growl: ["9M"],
 			toxic: ["8V", "7M", "7V", "6M", "5M", "4M", "3M"],
 			wildcharge: ["9M", "8M", "7M", "6M", "5M"],
 			willowisp: ["9M", "8M", "8V", "7M", "6M", "5M", "4M"],
@@ -88762,6 +88763,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 	bellibolt: {
 		learnset: {
 			acidspray: ["9M"],
+			bellydrum: ["9M"],
 			charge: ["9M", "9L17"],
 			chargebeam: ["9M"],
 			chillingwater: ["9M"],
