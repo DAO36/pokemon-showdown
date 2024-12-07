@@ -19627,7 +19627,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		types: ["Grass", "Normal"],
 		gender: "F",
 		baseStats: {hp: 75, atk: 120, def: 75, spa: 110, spd: 95, spe: 125},
-		abilities: {0: "Hustle", 1: "Skill Link", H: "Cheek Pouch"},
+		abilities: {0: "Hustle", 1: "Technician", H: "Cheek Pouch"},
 		heightm: 1.53,
 		weightkg: 55.5,
 		color: "Brown",
