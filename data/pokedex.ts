@@ -18451,7 +18451,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 	},
 	sora: {
 		num: 216,
-		name: "Sora",
+		name: "Tokino Sora",
 		types: ["Fairy"],
 		gender: "F",
 		baseStats: {hp: 80, atk: 75, def: 75, spa: 125, spd: 150, spe: 95},
@@ -18461,12 +18461,12 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		color: "Brown",
 		eggGroups: ["Human-Like"],
 		otherFormes: ["Sora-Mega"],
-		formeOrder: ["Sora", "Sora-Mega"],
+		formeOrder: ["Tokino Sora", "Sora-Mega"],
 	},
 	soramega: {
 		num: 216,
 		name: "Sora-Mega",
-		baseSpecies: "Sora",
+		baseSpecies: "Tokino Sora",
 		forme: "Mega",
 		types: ["Fairy"],
 		gender: "F",

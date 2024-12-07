@@ -36,8 +36,8 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		name: "Sorite",
 		spritenum: 575,
 		megaStone: "Sora-Mega",
-		megaEvolves: "Sora",
-		itemUser: ["Sora"],
+		megaEvolves: "Tokino Sora",
+		itemUser: ["Tokino Sora"],
 		onTakeItem(item, source) {
 			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
 			return true;
