@@ -5717,6 +5717,11 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
         doublesTier: "(DUU)",
         natDexTier: "OU",
 	},
+	fubukifubuzilla: {
+        tier: "OU",
+        doublesTier: "(DUU)",
+        natDexTier: "OU",
+	},
 	matsuri: {
 		tier: "OU",
 		doublesTier: "(DUU)",
