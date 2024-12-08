@@ -94875,6 +94875,8 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			extrasensory: ["9M"],
 			eeriespell: ["9M"],
 			zenheadbutt: ["9M"],
+			drainpunch: ["9M"],
+			poweruppunch: ["9M"],
 			ancientpower: ["9M"],
 			silverwind: ["9M"],
 			ominouswind: ["9M"],
