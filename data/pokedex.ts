@@ -18489,8 +18489,8 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		weightkg: 55.5,
 		color: "Pink",
 		eggGroups: ["Human-Like"],
-		otherFormes: ["Miko-Mega", "Miko-Alola"],
-		formeOrder: ["Miko", "Miko-Mega", "Miko-Alola"],
+		otherFormes: ["Miko-Mega", "Miko-Elite"],
+		formeOrder: ["Miko", "Miko-Mega", "Miko-Elite"],
 	},
 	mikomega: {
 		num: 907,
@@ -18507,9 +18507,9 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		eggGroups: ["Human-Like"],
 		requiredItem: "Mikorite",
 	},
-	mikoalola: {
+	mikoelite: {
 		num: 907,
-		name: "Miko-Alola",
+		name: "Miko-Elite",
 		types: ["Fairy", "Fire"],
 		gender: "F",
 		baseStats: {hp: 80, atk: 120, def: 80, spa: 115, spd: 100, spe: 105},

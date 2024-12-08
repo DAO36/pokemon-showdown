@@ -93638,7 +93638,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			nastyplot: ["9M"],
         },
 	},
-	mikoalola: {
+	mikoelite: {
 		learnset: {
 			alluringvoice: ["9M"],
 			flareblitz: ["9M"],

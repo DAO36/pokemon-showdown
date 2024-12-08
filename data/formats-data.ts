@@ -5672,7 +5672,7 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
         doublesTier: "(DUU)",
         natDexTier: "OU",
 	},
-	mikoalola: {
+	mikoelite: {
 		tier: "OU",
 		doublesTier: "(DUU)",
 		natDexTier: "OU",
