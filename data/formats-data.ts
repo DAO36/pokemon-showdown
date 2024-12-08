@@ -713,12 +713,7 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		doublesTier: "(DUU)",
 		natDexTier: "RUBL",
 	},
-	gengarmegax: {
-        tier: "OU",
-        doublesTier: "(DUU)",
-        natDexTier: "OU",
-	},
-	gengarmegay: {
+	gengarmega: {
         tier: "OU",
         doublesTier: "(DUU)",
         natDexTier: "OU",

@@ -3108,24 +3108,10 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		gen: 6,
 		isNonstandard: "Past",
 	},
-	gengaritex: {
-		name: "Gengarite X",
+	gengarite: {
+		name: "Gengarite",
 		spritenum: 588,
-		megaStone: "Gengar-Mega-X",
-		megaEvolves: "Gengar",
-		itemUser: ["Gengar"],
-		onTakeItem(item, source) {
-			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
-			return true;
-		},
-		num: 656,
-		gen: 6,
-		isNonstandard: "Past",
-	},
-	gengaritey: {
-		name: "Gengarite Y",
-		spritenum: 588,
-		megaStone: "Gengar-Mega-Y",
+		megaStone: "Gengar-Mega",
 		megaEvolves: "Gengar",
 		itemUser: ["Gengar"],
 		onTakeItem(item, source) {
