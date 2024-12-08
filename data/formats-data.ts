@@ -6067,6 +6067,11 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
         doublesTier: "(DUU)",
         natDexTier: "OU",	
 	},
+	moonahoshinova: {
+        tier: "OU",
+        doublesTier: "(DUU)",
+        natDexTier: "OU",	
+	},
 	iofi: {
 		tier: "OU",
 		doublesTier: "(DUU)",
@@ -6083,6 +6088,11 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		natDexTier: "OU",
 	},
 	risumega: {
+        tier: "OU",
+        doublesTier: "(DUU)",
+        natDexTier: "OU",	
+	},
+	risusaurus: {
         tier: "OU",
         doublesTier: "(DUU)",
         natDexTier: "OU",	
