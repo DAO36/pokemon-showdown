@@ -6107,6 +6107,11 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
         doublesTier: "(DUU)",
         natDexTier: "OU",	
 	},
+	ollieolivia: {
+        tier: "OU",
+        doublesTier: "(DUU)",
+        natDexTier: "OU",	
+	},
 	reine: {
 		tier: "OU",
 		doublesTier: "(DUU)",
@@ -6166,6 +6171,16 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
         tier: "OU",
         doublesTier: "(DUU)",
         natDexTier: "OU",	
+	},
+	guragawr: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "OU",
+	},
+	gurazilla: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "OU",
 	},
 	amelia: {
 		tier: "OU",
