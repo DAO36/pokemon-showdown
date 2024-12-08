@@ -6192,6 +6192,21 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
         doublesTier: "(DUU)",
         natDexTier: "OU",	
 	},
+	amesmol: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "OU",
+	},
+	amebuff: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "OU",
+	},
+	amebee: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "OU",
+	},
 	calliope: {
 		tier: "OU",
 		doublesTier: "(DUU)",
@@ -6262,6 +6277,11 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
         doublesTier: "(DUU)",
         natDexTier: "OU",	
 	},
+	kroniiboros: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "OU",
+	},
 	mumei: {
 		tier: "OU",
 		doublesTier: "(DUU)",
@@ -6271,6 +6291,11 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
         tier: "OU",
         doublesTier: "(DUU)",
         natDexTier: "OU",	
+	},
+	mumeievil: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "OU",
 	},
 	bae: {
 		tier: "OU",
