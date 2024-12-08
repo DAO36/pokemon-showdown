@@ -529,14 +529,14 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		natDexTier: "NFE",
 	},
 	machamp: {
-		isNonstandard: "Past",
-		tier: "Illegal",
-		natDexTier: "RU",
+        tier: "RU",
+        doublesTier: "(DUU)",
+        natDexTier: "RU",
 	},
 	machampmega: {
-		isNonstandard: "Past",
-		tier: "Illegal",
-		natDexTier: "RU",
+        tier: "OU",
+        doublesTier: "(DUU)",
+        natDexTier: "OU",
 	},
 	machampgmax: {
 		isNonstandard: "Past",
