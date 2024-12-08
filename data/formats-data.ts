@@ -5832,6 +5832,11 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
         doublesTier: "(DUU)",
         natDexTier: "OU",
 	},
+	miohatotaurus: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "OU",
+	},
 	okayu: {
 		tier: "OU",
 		doublesTier: "(DUU)",
