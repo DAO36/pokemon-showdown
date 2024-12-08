@@ -19657,7 +19657,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		name: "Moona-Hoshinova",
 		types: ["Dark", "Psychic"],
 		gender: "F",
-		baseStats: {hp: 95, atk: 140, def: 125, spa: 110, spd: 90, spe: 50},
+		baseStats: {hp: 100, atk: 150, def: 110, spa: 130, spd: 140, spe: 50},
 		abilities: {0: "Pressure", 1: "Intimidate", H: "Sheer Force"},
 		heightm: 1.65,
 		weightkg: 55.5,
