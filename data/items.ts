@@ -1407,24 +1407,10 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		num: 281,
 		gen: 4,
 	},
-	blastoisinitex: {
-		name: "Blastoisinite X",
+	blastoisinite: {
+		name: "Blastoisinite",
 		spritenum: 583,
-		megaStone: "Blastoise-Mega-X",
-		megaEvolves: "Blastoise",
-		itemUser: ["Blastoise"],
-		onTakeItem(item, source) {
-			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
-			return true;
-		},
-		num: 661,
-		gen: 6,
-		isNonstandard: "Past",
-	},
-	blastoisinitey: {
-		name: "Blastoisinite Y",
-		spritenum: 583,
-		megaStone: "Blastoise-Mega-Y",
+		megaStone: "Blastoise-Mega",
 		megaEvolves: "Blastoise",
 		itemUser: ["Blastoise"],
 		onTakeItem(item, source) {

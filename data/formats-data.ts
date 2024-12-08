@@ -60,12 +60,7 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		doublesTier: "(DUU)",
 		natDexTier: "RU",
 	},
-	blastoisemegax: {
-        tier: "OU",
-        doublesTier: "(DUU)",
-        natDexTier: "OU",
-	},
-	blastoisemegay: {
+	blastoisemega: {
         tier: "OU",
         doublesTier: "(DUU)",
         natDexTier: "OU",
