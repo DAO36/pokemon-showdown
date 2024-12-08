@@ -5857,6 +5857,11 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
         doublesTier: "(DUU)",
         natDexTier: "OU",
 	},
+	pekorawarcriminal: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "OU",
+	},
 	noel: {
 		tier: "OU",
 		doublesTier: "(DUU)",
