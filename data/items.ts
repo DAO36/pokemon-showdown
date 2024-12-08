@@ -1407,10 +1407,24 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		num: 281,
 		gen: 4,
 	},
-	blastoisinite: {
-		name: "Blastoisinite",
+	blastoisinitex: {
+		name: "Blastoisinite X",
 		spritenum: 583,
-		megaStone: "Blastoise-Mega",
+		megaStone: "Blastoise-Mega-X",
+		megaEvolves: "Blastoise",
+		itemUser: ["Blastoise"],
+		onTakeItem(item, source) {
+			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
+			return true;
+		},
+		num: 661,
+		gen: 6,
+		isNonstandard: "Past",
+	},
+	blastoisinitey: {
+		name: "Blastoisinite Y",
+		spritenum: 583,
+		megaStone: "Blastoise-Mega-Y",
 		megaEvolves: "Blastoise",
 		itemUser: ["Blastoise"],
 		onTakeItem(item, source) {
@@ -1427,6 +1441,20 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		megaStone: "Blaziken-Mega",
 		megaEvolves: "Blaziken",
 		itemUser: ["Blaziken"],
+		onTakeItem(item, source) {
+			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
+			return true;
+		},
+		num: 664,
+		gen: 6,
+		isNonstandard: "Past",
+	},
+	machampite: {
+		name: "Machampite",
+		spritenum: 584,
+		megaStone: "Machamp-Mega",
+		megaEvolves: "Machamp",
+		itemUser: ["Machamp"],
 		onTakeItem(item, source) {
 			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
 			return true;
@@ -3080,10 +3108,24 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		gen: 6,
 		isNonstandard: "Past",
 	},
-	gengarite: {
-		name: "Gengarite",
+	gengaritex: {
+		name: "Gengarite X",
 		spritenum: 588,
-		megaStone: "Gengar-Mega",
+		megaStone: "Gengar-Mega-X",
+		megaEvolves: "Gengar",
+		itemUser: ["Gengar"],
+		onTakeItem(item, source) {
+			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
+			return true;
+		},
+		num: 656,
+		gen: 6,
+		isNonstandard: "Past",
+	},
+	gengaritey: {
+		name: "Gengarite Y",
+		spritenum: 588,
+		megaStone: "Gengar-Mega-Y",
 		megaEvolves: "Gengar",
 		itemUser: ["Gengar"],
 		onTakeItem(item, source) {
@@ -3330,10 +3372,24 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		gen: 7,
 		isNonstandard: "Past",
 	},
-	gyaradosite: {
-		name: "Gyaradosite",
+	gyaradositex: {
+		name: "Gyaradosite X",
 		spritenum: 589,
-		megaStone: "Gyarados-Mega",
+		megaStone: "Gyarados-Mega-X",
+		megaEvolves: "Gyarados",
+		itemUser: ["Gyarados"],
+		onTakeItem(item, source) {
+			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
+			return true;
+		},
+		num: 676,
+		gen: 6,
+		isNonstandard: "Past",
+	},
+	gyaradositey: {
+		name: "Gyaradosite Y",
+		spritenum: 589,
+		megaStone: "Gyarados-Mega-Y",
 		megaEvolves: "Gyarados",
 		itemUser: ["Gyarados"],
 		onTakeItem(item, source) {

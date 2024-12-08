@@ -60,7 +60,12 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		doublesTier: "(DUU)",
 		natDexTier: "RU",
 	},
-	blastoisemega: {
+	blastoisemegax: {
+        tier: "OU",
+        doublesTier: "(DUU)",
+        natDexTier: "OU",
+	},
+	blastoisemegay: {
         tier: "OU",
         doublesTier: "(DUU)",
         natDexTier: "OU",
@@ -528,6 +533,11 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		tier: "Illegal",
 		natDexTier: "RU",
 	},
+	machampmega: {
+		isNonstandard: "Past",
+		tier: "Illegal",
+		natDexTier: "RU",
+	},
 	machampgmax: {
 		isNonstandard: "Past",
 		tier: "Illegal",
@@ -703,7 +713,12 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		doublesTier: "(DUU)",
 		natDexTier: "RUBL",
 	},
-	gengarmega: {
+	gengarmegax: {
+        tier: "OU",
+        doublesTier: "(DUU)",
+        natDexTier: "OU",
+	},
+	gengarmegay: {
         tier: "OU",
         doublesTier: "(DUU)",
         natDexTier: "OU",
@@ -1025,7 +1040,12 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		doublesTier: "DUU",
 		natDexTier: "UUBL",
 	},
-	gyaradosmega: {
+	gyaradosmegax: {
+        tier: "OU",
+        doublesTier: "(DUU)",
+        natDexTier: "OU",
+	},
+	gyaradosmegay: {
         tier: "OU",
         doublesTier: "(DUU)",
         natDexTier: "OU",
