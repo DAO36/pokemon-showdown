@@ -6182,12 +6182,12 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		doublesTier: "(DUU)",
 		natDexTier: "OU",
 	},
-	amelia: {
+	ame: {
 		tier: "OU",
 		doublesTier: "(DUU)",
 		natDexTier: "OU",
 	},
-	ameliamega: {
+	amemega: {
         tier: "OU",
         doublesTier: "(DUU)",
         natDexTier: "OU",	
