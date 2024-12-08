@@ -40,6 +40,11 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
         doublesTier: "(DUU)",
         natDexTier: "OU",
 	},
+	charizardmegaz: {
+        tier: "OU",
+        doublesTier: "(DUU)",
+        natDexTier: "OU",
+	},
 	charizardgmax: {
 		isNonstandard: "Past",
 		tier: "Illegal",
