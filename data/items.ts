@@ -3344,24 +3344,10 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		gen: 7,
 		isNonstandard: "Past",
 	},
-	gyaradositex: {
-		name: "Gyaradosite X",
+	gyaradosite: {
+		name: "Gyaradosite",
 		spritenum: 589,
-		megaStone: "Gyarados-Mega-X",
-		megaEvolves: "Gyarados",
-		itemUser: ["Gyarados"],
-		onTakeItem(item, source) {
-			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
-			return true;
-		},
-		num: 676,
-		gen: 6,
-		isNonstandard: "Past",
-	},
-	gyaradositey: {
-		name: "Gyaradosite Y",
-		spritenum: 589,
-		megaStone: "Gyarados-Mega-Y",
+		megaStone: "Gyarados-Mega",
 		megaEvolves: "Gyarados",
 		itemUser: ["Gyarados"],
 		onTakeItem(item, source) {

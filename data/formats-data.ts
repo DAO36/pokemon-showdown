@@ -1030,12 +1030,7 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		doublesTier: "DUU",
 		natDexTier: "UUBL",
 	},
-	gyaradosmegax: {
-        tier: "OU",
-        doublesTier: "(DUU)",
-        natDexTier: "OU",
-	},
-	gyaradosmegay: {
+	gyaradosmega: {
         tier: "OU",
         doublesTier: "(DUU)",
         natDexTier: "OU",
