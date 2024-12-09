@@ -19603,7 +19603,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		types: ["Flying", "Psychic"],
 		gender: "F",
 		baseStats: {hp: 110, atk: 125, def: 100, spa: 115, spd: 80, spe: 70},
-		abilities: {0: "Big Pecks", 1: "Technician", H: "Tinted Lens"},
+		abilities: {0: "Big Pecks", 1: "Rattled", H: "Tinted Lens"},
 		heightm: 1.61,
 		weightkg: 55.5,
 		color: "Red",
