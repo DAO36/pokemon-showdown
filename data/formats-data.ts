@@ -5727,7 +5727,7 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
         doublesTier: "(DUU)",
         natDexTier: "OU",
 	},
-	fubukifubuzilla: {
+	fubuzilla: {
         tier: "OU",
         doublesTier: "(DUU)",
         natDexTier: "OU",
@@ -5842,7 +5842,7 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
         doublesTier: "(DUU)",
         natDexTier: "OU",
 	},
-	miohatotaurus: {
+	hatotaurus: {
 		tier: "OU",
 		doublesTier: "(DUU)",
 		natDexTier: "OU",
@@ -6117,7 +6117,7 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
         doublesTier: "(DUU)",
         natDexTier: "OU",	
 	},
-	ollieolivia: {
+	olivia: {
         tier: "OU",
         doublesTier: "(DUU)",
         natDexTier: "OU",	

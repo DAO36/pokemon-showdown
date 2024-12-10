@@ -93864,7 +93864,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			honeclaws: ["9M"],
         },
 	},
-	fubukifubuzilla: {
+	fubuzilla: {
 		learnset: {
 			auroraveil: ["9M"],
 			tailslap: ["9M"],
@@ -94432,7 +94432,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			honeclaws: ["9M"],
         },
 	},
-	miohatotaurus: {
+	hatotaurus: {
 		learnset: {
 			zenheadbutt: ["9M"],
 			futuresight: ["9M"],
@@ -95850,7 +95850,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			sweetkiss: ["9M"],
         },
 	},	
-	ollieolivia: {
+	olivia: {
 		learnset: {
 			poltergeist: ["9M"],
 			shadowsneak: ["9M"],
