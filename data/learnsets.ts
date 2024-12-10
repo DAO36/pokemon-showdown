@@ -96739,6 +96739,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			playrough: ["9M"],
 			weatherball: ["9M"],
 			terrainpulse: ["9M"],
+			waterfall: ["9M"],
 			furyattack: ["9M"],
 			heatwave: ["9M"],
 			surf: ["9M"],
@@ -96897,6 +96898,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			irontail: ["9M"],
 			aquatail: ["9M"],
 			poisontail: ["9M"],
+			crunch: ["9M"],
         },
 	},	
 	mumei: {
