@@ -96846,11 +96846,13 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			nastyplot: ["9M"],
 			taunt: ["9M"],
 			torment: ["9M"],
+			storedpower: ["9M"],
         },
 	},	
 	kroniiboros: {
 		learnset: {
 			coil: ["9M"],
+			storedpower: ["9M"],
 			psychicfangs: ["9M"],
 			psychic: ["9M"],
 			dragonenergy: ["9M"],
