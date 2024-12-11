@@ -903,6 +903,32 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		num: 674,
 		gen: 6,
 	},
+	wobbuffetite: {
+		name: "Wobbuffetite",
+		spritenum: 575,
+		megaStone: "Wobbuffet-Mega",
+		megaEvolves: "Wobbuffet",
+		itemUser: ["Wobbuffet"],
+		onTakeItem(item, source) {
+			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
+			return true;
+		},
+		num: 674,
+		gen: 6,
+	},
+	exploudite: {
+		name: "Exploudite",
+		spritenum: 575,
+		megaStone: "Exploud-Mega",
+		megaEvolves: "Exploud",
+		itemUser: ["Exploud"],
+		onTakeItem(item, source) {
+			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
+			return true;
+		},
+		num: 674,
+		gen: 6,
+	},
 	absolite: {
 		name: "Absolite",
 		spritenum: 576,

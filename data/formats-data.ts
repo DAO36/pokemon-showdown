@@ -1425,14 +1425,19 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		natDexTier: "RU",
 	},
 	wynaut: {
-		isNonstandard: "Past",
-		tier: "Illegal",
+		tier: "LC",
+		doublesTier: "(DUU)",
 		natDexTier: "LC",
 	},
 	wobbuffet: {
-		isNonstandard: "Past",
-		tier: "Illegal",
-		natDexTier: "RU",
+		tier: "PU",
+		doublesTier: "(DUU)",
+		natDexTier: "ZU",
+	},
+	wobbuffetmega: {
+		tier: "Uber",
+		doublesTier: "(DUU)",
+		natDexTier: "Uber",
 	},
 	girafarig: {
 		tier: "NFE",
@@ -1914,9 +1919,14 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		natDexTier: "NFE",
 	},
 	exploud: {
-		isNonstandard: "Past",
-		tier: "Illegal",
-		natDexTier: "RU",
+		tier: "RU",
+		doublesTier: "(DUU)",
+		natDexTier: "PUBL",
+	},
+	exploudmega: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "OU",
 	},
 	makuhita: {
 		tier: "LC",
