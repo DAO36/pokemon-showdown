@@ -5569,7 +5569,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		formeOrder: ["Exploud", "Exploud-Mega"],
 	},
 	exploudmega: {
-		num: 302,
+		num: 295,
 		name: "Exploud-Mega",
 		baseSpecies: "Exploud",
 		forme: "Mega",
