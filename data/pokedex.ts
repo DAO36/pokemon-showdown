@@ -4104,7 +4104,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		name: "Wobbuffet",
 		types: ["Psychic"],
 		baseStats: {hp: 190, atk: 33, def: 58, spa: 33, spd: 58, spe: 33},
-		abilities: {0: "Shadow Tag", 1: "Thick Fat", H: "Filter"},
+		abilities: {0: "Shadow Tag", 1: "Sturdy", H: "Filter"},
 		heightm: 1.3,
 		weightkg: 28.5,
 		color: "Blue",
