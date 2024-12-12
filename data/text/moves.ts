@@ -2321,7 +2321,7 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	cleanup: {
 		name: "Clean Up",
-		desc: "If this move is successful and the user has not fainted, the effects of Leech Seed and binding moves end for the user, and all hazards are removed from the user's side of the field. If this move is successful and the user has not fainted, user switches out after damaging the target.",
+		desc: "If this move is successful and the user has not fainted, the effects of Leech Seed and binding moves end for the user, and all hazards are removed from the user's side of the field. The user then switches out even if it is trapped and is replaced immediately by a selected party member.",
 		shortDesc: "Free user from hazards/bind/Leech Seed. User switches out after damaging the target.",
 	},
 	flipturn: {
