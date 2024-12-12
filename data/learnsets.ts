@@ -94421,8 +94421,11 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			agility: ["9M"],
 			calmmind: ["9M"],
 			honeclaws: ["9M"],
+			megapunch: ["9M"],
 			nastyplot: ["9M"],
 			torment: ["9M"],
+			boxingdoggo: ["9M"],
+			yubiyubi: ["9M"],
         },
 	},	
 	mio: {
@@ -94476,6 +94479,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			grasswhistle: ["9M"],
 			grassyterrain: ["9M"],
 			honeclaws: ["9M"],
+			tarotattack: ["9M"],
         },
 	},
 	hatotaurus: {
@@ -94566,6 +94570,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			agility: ["9M"],
 			calmmind: ["9M"],
 			honeclaws: ["9M"],
+			mogumogu: ["9M"],
         },
 	},	
 	pekora: {
@@ -94620,6 +94625,8 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			spite: ["9M"],
 			curse: ["9M"],
 			charm: ["9M"],
+			carrotstrike: ["9M"],
+			warcriminal: ["9M"],
         },
 	},		
 	pekorawarcriminal: {
@@ -94672,7 +94679,8 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			spikes: ["9M"],
 			spite: ["9M"],
 			curse: ["9M"],
-			charm: ["9M"],
+			carrotstrike: ["9M"],
+			warcriminal: ["9M"],
         },
 	},		
 	noel: {
@@ -94722,6 +94730,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			swordsdance: ["9M"],
 			calmmind: ["9M"],
 			wideguard: ["9M"],
+			clubsmash: ["9M"],
         },
 	},		
 	rushia: {
@@ -94778,6 +94787,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			protect: ["9M"],
 			rest: ["9M"],
 			destinybond: ["9M"],
+			yandere: ["9M"],
         },
 	},
 	flare: {
@@ -94819,6 +94829,9 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			playnice: ["9M"],
 			sunnyday: ["9M"],
 			calmmind: ["9M"],
+			arrowassault: ["9M"],
+			elfarrows: ["9M"],
+			bowdance: ["9M"],
         },
 	},
 	marine: {
@@ -94869,6 +94882,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			mist: ["9M"],
 			sweetkiss: ["9M"],
 			charm: ["9M"],
+			ahoy: ["9M"],
         },
 	},		
 	coco: {

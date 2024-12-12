@@ -180,6 +180,10 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		name: "Aqua Tail",
 		shortDesc: "No additional effect.",
 	},
+	clubsmash: {
+		name: "Club Smash",
+		shortDesc: "No additional effect.",
+	},
 	elfdance: {
 		name: "Elf Dance",
 		shortDesc: "No additional effect.",
@@ -801,6 +805,26 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		desc: "Hits two to five times. Has a 35% chance to hit two or three times and a 15% chance to hit four or five times. If one of the hits breaks the target's substitute, it will take damage for the remaining hits. If the user has the Skill Link Ability, this move will always hit five times. If the user is holding Loaded Dice, this move will hit 4-5 times.",
 		shortDesc: "Hits 2-5 times in one turn.",
 	},
+	arrowassault: {
+		name: "Arrow Assault",
+		desc: "Hits two to five times. Has a 35% chance to hit two or three times and a 15% chance to hit four or five times. If one of the hits breaks the target's substitute, it will take damage for the remaining hits. If the user has the Skill Link Ability, this move will always hit five times. If the user is holding Loaded Dice, this move will hit 4-5 times.",
+		shortDesc: "Hits 2-5 times in one turn.",
+	},
+	elfarrows: {
+		name: "Elf Arrows",
+		desc: "Hits two to five times. Has a 35% chance to hit two or three times and a 15% chance to hit four or five times. If one of the hits breaks the target's substitute, it will take damage for the remaining hits. If the user has the Skill Link Ability, this move will always hit five times. If the user is holding Loaded Dice, this move will hit 4-5 times. Has a 10% chance to lower the target's Special Atk by 1.",
+		shortDesc: "Hits 2-5 times in one turn. 10% chance to lower the target's Sp. Atk by 1.",
+	},
+	yubiyubi: {
+		name: "Yubi Yubi",
+		desc: "Hits two to five times. Has a 35% chance to hit two or three times and a 15% chance to hit four or five times. If one of the hits breaks the target's substitute, it will take damage for the remaining hits. If the user has the Skill Link Ability, this move will always hit five times. If the user is holding Loaded Dice, this move will hit 4-5 times.",
+		shortDesc: "Hits 2-5 times in one turn.",
+	},
+	tarotattack: {
+		name: "Tarot Attack",
+		desc: "Hits two to five times. Has a 35% chance to hit two or three times and a 15% chance to hit four or five times. If one of the hits breaks the target's substitute, it will take damage for the remaining hits. If the user has the Skill Link Ability, this move will always hit five times. If the user is holding Loaded Dice, this move will hit 4-5 times.",
+		shortDesc: "Hits 2-5 times in one turn.",
+	},
 	burningbulwark: {
 		name: "Burning Bulwark",
 		desc: "The user is protected from most attacks made by other Pokemon during this turn, and Pokemon trying to make contact with the user become burned. Non-damaging moves go through this protection. This move has a 1/X chance of being successful, where X starts at 1 and triples each time this move is successfully used. X resets to 1 if this move fails, if the user's last move used is not Baneful Bunker, Burning Bulwark, Detect, Endure, King's Shield, Max Guard, Obstruct, Protect, Quick Guard, Silk Trap, Spiky Shield, or Wide Guard, or if it was one of those moves and the user's protection was broken. Fails if the user moves last this turn.",
@@ -1005,6 +1029,11 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	closecombat: {
 		name: "Close Combat",
+		desc: "Lowers the user's Defense and Special Defense by 1 stage.",
+		shortDesc: "Lowers the user's Defense and Sp. Def by 1.",
+	},
+	warcriminal: {
+		name: "War Criminal",
 		desc: "Lowers the user's Defense and Special Defense by 1 stage.",
 		shortDesc: "Lowers the user's Defense and Sp. Def by 1.",
 	},
@@ -1703,6 +1732,11 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	dualwingbeat: {
 		name: "Dual Wingbeat",
+		desc: "Hits twice. If the first hit breaks the target's substitute, it will take damage for the second hit.",
+		shortDesc: "Hits 2 times in one turn.",
+	},
+	carrotstrike: {
+		name: "Carrot Strike",
 		desc: "Hits twice. If the first hit breaks the target's substitute, it will take damage for the second hit.",
 		shortDesc: "Hits 2 times in one turn.",
 	},
@@ -3201,6 +3235,11 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		desc: "The user recovers 1/2 the HP lost by the target, rounded half up. If Big Root is held by the user, the HP recovered is 1.3x normal, rounded half down.",
 		shortDesc: "User recovers 50% of the damage dealt.",
 	},
+	mogumogu: {
+		name: "Mogu Mogu",
+		desc: "The user recovers 1/2 the HP lost by the target, rounded half up. If Big Root is held by the user, the HP recovered is 1.3x normal, rounded half down.",
+		shortDesc: "User recovers 50% of the damage dealt.",
+	},
 	howl: {
 		name: "Howl",
 		desc: "Raises the Attack of the user and all allies 1 stage.",
@@ -3492,6 +3531,11 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		name: "Iron Head",
 		desc: "Has a 30% chance to make the target flinch.",
 		shortDesc: "30% chance to make the target flinch.",
+	},
+	yandere: {
+		name: "Yandere",
+		desc: "Has a 20% chance to make the target flinch.",
+		shortDesc: "20% chance to make the target flinch.",
 	},
 	irontail: {
 		name: "Iron Tail",
@@ -4164,6 +4208,11 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		name: "Meteor Mash",
 		desc: "Has a 20% chance to raise the user's Attack by 1 stage.",
 		shortDesc: "20% chance to raise the user's Attack by 1.",
+	},
+	boxingdoggo: {
+		name: "Boxing Doggo",
+		desc: "Has a 10% chance to raise the user's Defense by 1 stage.",
+		shortDesc: "10% chance to raise the user's Defense by 1.",
 	},
 	ankimoattack: {
 		name: "Ankimo Attack",
@@ -6523,6 +6572,11 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		desc: "Has a 20% chance to confuse the target.",
 		shortDesc: "20% chance to confuse the target.",
 	},
+	ahoy: {
+		name: "Ahoy",
+		desc: "Has a 10% chance to confuse the target.",
+		shortDesc: "10% chance to confuse the target.",
+	},
 	strength: {
 		name: "Strength",
 		shortDesc: "No additional effect.",
@@ -6765,6 +6819,11 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	swordsdance: {
 		name: "Swords Dance",
+		desc: "Raises the user's Attack by 2 stages.",
+		shortDesc: "Raises the user's Attack by 2.",
+	},
+	bowdance: {
+		name: "Bow Dance",
 		desc: "Raises the user's Attack by 2 stages.",
 		shortDesc: "Raises the user's Attack by 2.",
 	},
