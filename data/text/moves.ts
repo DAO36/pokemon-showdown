@@ -153,6 +153,11 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		desc: "Has a higher chance for a critical hit.",
 		shortDesc: "High critical hit ratio.",
 	},
+	underworldslash: {
+		name: "Underworld Slash",
+		desc: "Has a higher chance for a critical hit.",
+		shortDesc: "High critical hit ratio.",
+	},
 	aquajet: {
 		name: "Aqua Jet",
 		desc: "No additional effect.",
@@ -173,6 +178,10 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	aquatail: {
 		name: "Aqua Tail",
+		shortDesc: "No additional effect.",
+	},
+	elfdance: {
+		name: "Elf Dance",
 		shortDesc: "No additional effect.",
 	},
 	highspecs: {
@@ -329,6 +338,13 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		name: "Axe Kick",
 		desc: "Has a 30% chance to confuse the target. If this attack is not successful, the user loses half of its maximum HP, rounded down, as crash damage. Pokemon with the Magic Guard Ability are unaffected by crash damage.",
 		shortDesc: "30% confusion. User loses 50% max HP if miss.",
+
+		damage: "#crash",
+	},
+	snowdash: {
+		name: "Snow Dash",
+		desc: "If this attack is not successful, the user loses half of its maximum HP, rounded down, as crash damage. Pokemon with the Magic Guard Ability are unaffected by crash damage.",
+		shortDesc: "User loses 50% max HP if miss.",
 
 		damage: "#crash",
 	},
@@ -780,6 +796,11 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 			desc: "Hits two to five times. Has a 3/8 chance to hit two or three times, and a 1/8 chance to hit four or five times. If one of the hits breaks the target's substitute, it will take damage for the remaining hits.",
 		},
 	},
+	apexmaid: {
+		name: "Apex Maid",
+		desc: "Hits two to five times. Has a 35% chance to hit two or three times and a 15% chance to hit four or five times. If one of the hits breaks the target's substitute, it will take damage for the remaining hits. If the user has the Skill Link Ability, this move will always hit five times. If the user is holding Loaded Dice, this move will hit 4-5 times.",
+		shortDesc: "Hits 2-5 times in one turn.",
+	},
 	burningbulwark: {
 		name: "Burning Bulwark",
 		desc: "The user is protected from most attacks made by other Pokemon during this turn, and Pokemon trying to make contact with the user become burned. Non-damaging moves go through this protection. This move has a 1/X chance of being successful, where X starts at 1 and triples each time this move is successfully used. X resets to 1 if this move fails, if the user's last move used is not Baneful Bunker, Burning Bulwark, Detect, Endure, King's Shield, Max Guard, Obstruct, Protect, Quick Guard, Silk Trap, Spiky Shield, or Wide Guard, or if it was one of those moves and the user's protection was broken. Fails if the user moves last this turn.",
@@ -809,6 +830,11 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		name: "Calm Mind",
 		desc: "Raises the user's Special Attack and Special Defense by 1 stage.",
 		shortDesc: "Raises the user's Sp. Atk and Sp. Def by 1.",
+	},
+	iamgod: {
+		name: "I am God",
+		desc: "Raises the user's Attack, Special Attack, Speed, and Accuracy all by 1 stage.",
+		shortDesc: "Raises the user's Atk, SpAtk, Speed, and Acc by 1.",
 	},
 	upgradepc: {
 		name: "Upgrade PC",
@@ -1257,6 +1283,11 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		desc: "Has a 20% chance to make the target flinch.",
 		shortDesc: "20% chance to make the target flinch.",
 	},
+	spidercooking: {
+		name: "Spider Cooking",
+		desc: "Has a 20% chance to make the target flinch.",
+		shortDesc: "20% chance to make the target flinch.",
+	},
 	darkvoid: {
 		name: "Dark Void",
 		desc: "Causes the target to fall asleep. This move cannot be used successfully unless the user's current form, while considering Transform, is Darkrai.",
@@ -1609,6 +1640,11 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		desc: "The user recovers 3/4 the HP lost by the target, rounded half up. If Big Root is held by the user, the HP recovered is 1.3x normal, rounded half down.",
 		shortDesc: "User recovers 75% of the damage dealt.",
 	},
+	kapu: {
+		name: "Kapu",
+		desc: "The user recovers 1/2 the HP lost by the target, rounded half up.",
+		shortDesc: "User recovers 50% of the damage dealt.",
+	},
 	drainpunch: {
 		name: "Drain Punch",
 		desc: "The user recovers 1/2 the HP lost by the target, rounded half up. If Big Root is held by the user, the HP recovered is 1.3x normal, rounded half down.",
@@ -1652,6 +1688,21 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	dualwingbeat: {
 		name: "Dual Wingbeat",
+		desc: "Hits twice. If the first hit breaks the target's substitute, it will take damage for the second hit.",
+		shortDesc: "Hits 2 times in one turn.",
+	},
+	dualblades: {
+		name: "Dual Blades",
+		desc: "Hits twice. If the first hit breaks the target's substitute, it will take damage for the second hit.",
+		shortDesc: "Hits 2 times in one turn.",
+	},
+	twintails: {
+		name: "Twin Tails",
+		desc: "Hits twice. If the first hit breaks the target's substitute, it will take damage for the second hit.",
+		shortDesc: "Hits 2 times in one turn.",
+	},
+	splitpersonality: {
+		name: "Split Personality",
 		desc: "Hits twice. If the first hit breaks the target's substitute, it will take damage for the second hit.",
 		shortDesc: "Hits 2 times in one turn.",
 	},
@@ -2898,6 +2949,11 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		gen4: {
 			desc: "If the target lost HP, the user takes recoil damage equal to 1/2 the HP lost by the target, rounded down, but not less than 1 HP.",
 		},
+	},
+	godlyattack: {
+		name: "Godly Attack",
+		desc: "If the target lost HP, the user takes recoil damage equal to 1/2 the HP lost by the target, rounded half up, but not less than 1 HP.",
+		shortDesc: "Has 1/2 recoil.",
 	},
 	healbell: {
 		name: "Heal Bell",
@@ -5080,6 +5136,11 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		desc: "Raises the user's Special Attack, Special Defense, and Speed by 1 stage.",
 		shortDesc: "Raises the user's Sp. Atk, Sp. Def, Speed by 1.",
 	},
+	fbking: {
+		name: "FBKing",
+		desc: "Raises the user's Attack, Special Attack, and Speed by 1 stage.",
+		shortDesc: "Raises the user's Atk, SpAtk, Speed by 1.",
+	},
 	rage: {
 		name: "Rage",
 		desc: "Once this move is successfully used, the user's Attack is raised by 1 stage every time it is hit by another Pokemon's attack as long as this move is chosen for use.",
@@ -6680,6 +6741,16 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	swordsdance: {
 		name: "Swords Dance",
+		desc: "Raises the user's Attack by 2 stages.",
+		shortDesc: "Raises the user's Attack by 2.",
+	},
+	gamermaod: {
+		name: "Gamer Maid",
+		desc: "Raises the user's Attack by 2 stages.",
+		shortDesc: "Raises the user's Attack by 2.",
+	},
+	banpire: {
+		name: "Banpire",
 		desc: "Raises the user's Attack by 2 stages.",
 		shortDesc: "Raises the user's Attack by 2.",
 	},

@@ -93886,6 +93886,8 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			protect: ["9M"],
 			rest: ["9M"],
 			honeclaws: ["9M"],
+			fbking: ["9M"],
+			snowdash: ["9M"],
         },
 	},
 	fubuzilla: {
@@ -93897,6 +93899,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			icefang: ["9M"],
 			iceshard: ["9M"],
 			roar: ["9M"],
+			fbking: ["9M"],
 			blizzard: ["9M"],
 			icebeam: ["9M"],
 			freezedry: ["9M"],
@@ -93973,6 +93976,8 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			nastyplot: ["9M"],
 			charm: ["9M"],
 			sweetkiss: ["9M"],
+			godlyattack: ["9M"],
+			iamgod: ["9M"],
         },
 	},
 	haachama: {
@@ -94024,6 +94029,8 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			nightmare: ["9M"],
 			confuseray: ["9M"],
 			lovelykiss: ["9M"],
+			splitpersonality: ["9M"],
+			spidercooking: ["9M"],
         },
 	},	
 	mel: {
@@ -94064,6 +94071,8 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			calmmind: ["9M"],
 			charm: ["9M"],
 			sweetkiss: ["9M"],
+			kapu: ["9M"],
+			banpire: ["9M"],
         },
 	},	
 	akirose: {
@@ -94105,6 +94114,8 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			sing: ["9M"],
 			nastyplot: ["9M"],
 			dragondance: ["9M"],
+			elfdance: ["9M"],
+			twintails: ["9M"],
         },
 	},	
 	aqua: {
@@ -94151,6 +94162,8 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			trick: ["9M"],
 			mist: ["9M"],
 			haze: ["9M"],
+			apexmaid: ["9M"],
+			gamermaid: ["9M"],
         },
 	},
 	ayame: {
@@ -94159,12 +94172,10 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			darkpulse: ["9M"],
 			throatchop: ["9M"],
 			closecombat: ["9M"],
-			sacredsword: ["9M"],
 			secretsword: ["9M"],
 			focusblast: ["9M"],
 			doubleedge: ["9M"],
 			furyattack: ["9M"],
-			bitterblade: ["9M"],
 			inferno: ["9M"],
 			fierydance: ["9M"],
 			hornleech: ["9M"],
@@ -94192,6 +94203,8 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			swordsdance: ["9M"],
 			calmmind: ["9M"],
 			willowisp: ["9M"],
+			dualblades: ["9M"],
+			underworldslash: ["9M"],
         },
 	},
 	choco: {
@@ -94243,6 +94256,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			calmmind: ["9M"],
 			healingwish: ["9M"],
 			healpulse: ["9M"],
+			nursing: ["9M"],
         },
 	},
 	shion: {
