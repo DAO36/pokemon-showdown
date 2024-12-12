@@ -810,8 +810,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		desc: "Raises the user's Special Attack and Special Defense by 1 stage.",
 		shortDesc: "Raises the user's Sp. Atk and Sp. Def by 1.",
 	},
-	upgrade: {
-		name: "Upgrade",
+	upgradepc: {
+		name: "Upgrade PC",
 		desc: "Raises the user's Special Attack and Defense by 1 stage.",
 		shortDesc: "Raises the user's Sp. Atk and Def by 1.",
 	},

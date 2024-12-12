@@ -93801,7 +93801,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			reflect: ["9M"],
 			highspecs: ["9M"],
 			laserbeam: ["9M"],
-			upgrade: ["9M"],
+			upgradepc: ["9M"],
         },
 	},
 		azki: {

@@ -2220,12 +2220,12 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		zMove: {effect: 'clearnegativeboost'},
 		contestType: "Clever",
 	},
-	upgrade: {
+	upgradepc: {
 		num: 347,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
-		name: "Upgrade",
+		name: "Upgrade PC",
 		pp: 15,
 		priority: 0,
 		flags: {snatch: 1, metronome: 1},
