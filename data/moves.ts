@@ -22191,7 +22191,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		},
 		selfSwitch: true,
 		secondary: null,
-		target: "normal",
+		target: "self",
 		type: "Fairy",
 		contestType: "Cute",
 	},
