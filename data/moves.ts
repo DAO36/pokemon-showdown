@@ -4595,7 +4595,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		accuracy: 95,
 		basePower: 50,
 		category: "Physical",
-		name: "Twon Tails",
+		name: "Twin Tails",
 		pp: 10,
 		priority: 0,
 		flags: {protect: 1, mirror: 1, metronome: 1},
