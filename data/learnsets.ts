@@ -93606,6 +93606,9 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			healpulse: ["9M"],
 			lightscreen: ["9M"],
 			reflect: ["9M"],
+			idolsong: ["9M"],
+			ankimoattack: ["9M"],
+			seiso: ["9M"],
         },
 	},
 	miko: {

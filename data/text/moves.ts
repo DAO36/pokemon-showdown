@@ -3198,6 +3198,11 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		desc: "No additional effect.",
 		shortDesc: "No additional effect. Hits adjacent foes.",
 	},
+	idolsong: {
+		name: "Idol Song",
+		desc: "Hits adjacent foes. No additional effect.",
+		shortDesc: "No additional effect. Hits adjacent foes.",
+	},
 	hypnosis: {
 		name: "Hypnosis",
 		shortDesc: "Causes the target to fall asleep.",
@@ -4049,6 +4054,11 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	meteormash: {
 		name: "Meteor Mash",
+		desc: "Has a 20% chance to raise the user's Attack by 1 stage.",
+		shortDesc: "20% chance to raise the user's Attack by 1.",
+	},
+	ankimoattack: {
+		name: "Ankimo Attack",
 		desc: "Has a 20% chance to raise the user's Attack by 1 stage.",
 		shortDesc: "20% chance to raise the user's Attack by 1.",
 	},
@@ -6736,6 +6746,11 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		name: "Take Heart",
 		desc: "The user cures its non-volatile status condition. Raises the user's Special Attack and Special Defense by 1 stage.",
 		shortDesc: "Cures user's status, raises Sp. Atk, Sp. Def by 1.",
+	},
+	seiso: {
+		name: "Seiso",
+		desc: "The user cures its non-volatile status condition. Raises the user's Special Attack by 2 stages.",
+		shortDesc: "Cures user's status, raises Sp. Atk by 2.",
 	},
 	tarshot: {
 		name: "Tar Shot",

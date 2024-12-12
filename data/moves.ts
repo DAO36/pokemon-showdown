@@ -9530,6 +9530,20 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Normal",
 		contestType: "Cool",
 	},
+	idolsong: {
+		num: 304,
+		accuracy: 90,
+		basePower: 110,
+		category: "Special",
+		name: "Idol Song",
+		pp: 10,
+		priority: 0,
+		flags: {protect: 1, mirror: 1, sound: 1, bypasssub: 1, metronome: 1},
+		secondary: null,
+		target: "allAdjacentFoes",
+		type: "Fairy",
+		contestType: "Cool",
+	},
 	hypnosis: {
 		num: 95,
 		accuracy: 60,
@@ -12176,6 +12190,27 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		},
 		target: "normal",
 		type: "Steel",
+		contestType: "Cool",
+	},
+	ankimoattack: {
+		num: 309,
+		accuracy: 100,
+		basePower: 100,
+		category: "Physical",
+		name: "Ankimo Attack",
+		pp: 10,
+		priority: 0,
+		flags: {protect: 1, mirror: 1, punch: 1, metronome: 1},
+		secondary: {
+			chance: 20,
+			self: {
+				boosts: {
+					atk: 1,
+				},
+			},
+		},
+		target: "normal",
+		type: "Fairy",
 		contestType: "Cool",
 	},
 	metronome: {
@@ -19661,6 +19696,23 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		secondary: null,
 		target: "self",
 		type: "Psychic",
+	},
+	seiso: {
+		num: 850,
+		accuracy: true,
+		basePower: 0,
+		category: "Status",
+		name: "Seiso",
+		pp: 10,
+		priority: 0,
+		flags: {snatch: 1, metronome: 1},
+		onHit(pokemon) {
+			const success = !!this.boost({spa: 2});
+			return pokemon.cureStatus() || success;
+		},
+		secondary: null,
+		target: "self",
+		type: "Fairy",
 	},
 	tarshot: {
 		num: 749,
