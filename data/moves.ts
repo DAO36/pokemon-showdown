@@ -10145,8 +10145,8 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	},
 	succubussong: {
 		num: 304,
-		accuracy: 110,
-		basePower: 100,
+		accuracy: 100,
+		basePower: 110,
 		category: "Special",
 		name: "Succubus Song",
 		pp: 5,
