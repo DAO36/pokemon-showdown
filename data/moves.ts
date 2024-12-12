@@ -22160,10 +22160,10 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	nursing: {
 		num: 273,
 		accuracy: true,
-		basePower: 70,
-		category: "Special",
+		basePower: 0,
+		category: "Status",
 		name: "Nursing",
-		pp: 10,
+		pp: 5,
 		priority: 0,
 		flags: {snatch: 1, heal: 1, metronome: 1},
 		slotCondition: 'Wish',
