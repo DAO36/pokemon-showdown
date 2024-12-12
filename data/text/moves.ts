@@ -6744,7 +6744,7 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		desc: "Raises the user's Attack by 2 stages.",
 		shortDesc: "Raises the user's Attack by 2.",
 	},
-	gamermaod: {
+	gamermaid: {
 		name: "Gamer Maid",
 		desc: "Raises the user's Attack by 2 stages.",
 		shortDesc: "Raises the user's Attack by 2.",
@@ -7590,6 +7590,14 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		},
 
 		heal: "  [NICKNAME]'s wish came true!",
+	},
+	nursing: {
+		name: "Nursing",
+		desc: "User switches out after damaging the target. At the end of the next turn, the Pokemon at the user's position has 1/2 of its maximum HP restored to it, rounded down. Fails if this move is already in effect for the user's position.",
+		shortDesc: "User switches out, then in next turn, the Pokemon on the field is healed",
+
+		heal: "  [NICKNAME]'s was nursed back to health!",
+		switchOut: "#uturn",
 	},
 	withdraw: {
 		name: "Withdraw",
