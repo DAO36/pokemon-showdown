@@ -93652,6 +93652,9 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			roleplay: ["9M"],
 			curse: ["9M"],
 			nastyplot: ["9M"],
+			sakuraiattack: ["9M"],
+			lavabucket: ["9M"],
+			elite: ["9M"],
         },
 	},
 	mikoelite: {
@@ -93697,6 +93700,9 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			facade: ["9M"],
 			protect: ["9M"],
 			darkestlariat: ["9M"],
+			sakuraiattack: ["9M"],
+			lavabucket: ["9M"],
+			elite: ["9M"],			
 			rest: ["9M"],			
         },
 	},
@@ -93706,7 +93712,6 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			iciclespear: ["9M"],
 			tripleaxel: ["9M"],
 			icebeam: ["9M"],
-			stoneaxe: ["9M"],
 			diamondstorm: ["9M"],
 			meteorbeam: ["9M"],
 			powergem: ["9M"],
@@ -93748,6 +93753,8 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			cosmicpower: ["9M"],
 			gravity: ["9M"],
 			glare: ["9M"],
+			suicopath: ["9M"],
+			cometslam: ["9M"],
         },
 	},
 	roboco: {
@@ -93792,6 +93799,9 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			calmmind: ["9M"],
 			lightscreen: ["9M"],
 			reflect: ["9M"],
+			highspecs: ["9M"],
+			laserbeam: ["9M"],
+			upgrade: ["9M"],
         },
 	},
 		azki: {
@@ -93830,6 +93840,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			trickroom: ["9M"],
 			charm: ["9M"],
 			mistyterrain: ["9M"],
+			divasong: ["9M"]
         },
 	},
 	fubuki: {

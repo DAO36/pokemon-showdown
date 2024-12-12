@@ -175,6 +175,10 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		name: "Aqua Tail",
 		shortDesc: "No additional effect.",
 	},
+	highspecs: {
+		name: "High Specs",
+		shortDesc: "No additional effect.",
+	},
 	armorcannon: {
 		name: "Armor Cannon",
 		desc: "Lowers the user's Defense and Special Defense by 1 stage.",
@@ -806,6 +810,11 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		desc: "Raises the user's Special Attack and Special Defense by 1 stage.",
 		shortDesc: "Raises the user's Sp. Atk and Sp. Def by 1.",
 	},
+	upgrade: {
+		name: "Upgrade",
+		desc: "Raises the user's Special Attack and Defense by 1 stage.",
+		shortDesc: "Raises the user's Sp. Atk and Def by 1.",
+	},
 	camouflage: {
 		name: "Camouflage",
 		desc: "The user's type changes based on the battle terrain. Normal type on the regular Wi-Fi terrain, Electric type during Electric Terrain, Fairy type during Misty Terrain, Grass type during Grassy Terrain, and Psychic type during Psychic Terrain. Fails if the user's type cannot be changed or if the user is already purely that type.",
@@ -960,6 +969,11 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	closecombat: {
 		name: "Close Combat",
+		desc: "Lowers the user's Defense and Special Defense by 1 stage.",
+		shortDesc: "Lowers the user's Defense and Sp. Def by 1.",
+	},
+	suicopath: {
+		name: "Suicopath",
 		desc: "Lowers the user's Defense and Special Defense by 1 stage.",
 		shortDesc: "Lowers the user's Defense and Sp. Def by 1.",
 	},
@@ -3203,6 +3217,11 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		desc: "Hits adjacent foes. No additional effect.",
 		shortDesc: "No additional effect. Hits adjacent foes.",
 	},
+	divasong: {
+		name: "Diva Song",
+		desc: "No additional effect.",
+		shortDesc: "No additional effect.",
+	},
 	hypnosis: {
 		name: "Hypnosis",
 		shortDesc: "Causes the target to fall asleep.",
@@ -3220,6 +3239,11 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	icebeam: {
 		name: "Ice Beam",
+		desc: "Has a 10% chance to freeze the target.",
+		shortDesc: "10% chance to freeze the target.",
+	},
+	cometslam: {
+		name: "Comet Slam",
 		desc: "Has a 10% chance to freeze the target.",
 		shortDesc: "10% chance to freeze the target.",
 	},
@@ -3529,6 +3553,10 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	leafage: {
 		name: "Leafage",
+		shortDesc: "No additional effect.",
+	},
+	sakuraiattack: {
+		name: "Sakurai Attack",
 		shortDesc: "No additional effect.",
 	},
 	leafblade: {
@@ -5443,6 +5471,11 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		desc: "Has a 50% chance to burn the target.",
 		shortDesc: "50% chance to burn the target. Thaws user.",
 	},
+	lavabucket: {
+		name: "Lava Bucket",
+		desc: "Has a 25% chance to burn the target.",
+		shortDesc: "25% chance to burn the target.",
+	},
 	sacredsword: {
 		name: "Sacred Sword",
 		desc: "Ignores the target's stat stage changes, including evasiveness.",
@@ -6945,6 +6978,11 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		desc: "Has a 10% chance to paralyze the target.",
 		shortDesc: "10% chance to paralyze the target.",
 	},
+	laserbeam: {
+		name: "Laser Beam",
+		desc: "Has a 10% chance to paralyze the target.",
+		shortDesc: "10% chance to paralyze the target.",
+	},
 	thundercage: {
 		name: "Thunder Cage",
 		desc: "Prevents the target from switching for four or five turns (seven turns if the user is holding Grip Claw). Causes damage to the target equal to 1/8 of its maximum HP (1/6 if the user is holding Binding Band), rounded down, at the end of each turn during effect. The target can still switch out if it is holding Shed Shell or uses Baton Pass, Flip Turn, Parting Shot, Shed Tail, Teleport, U-turn, or Volt Switch. The effect ends if either the user or the target leaves the field, or if the target uses Mortal Spin, Rapid Spin, or Substitute successfully. This effect is not stackable or reset by using this or another binding move.",
@@ -7505,6 +7543,11 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		name: "Work Up",
 		desc: "Raises the user's Attack and Special Attack by 1 stage.",
 		shortDesc: "Raises the user's Attack and Sp. Atk by 1.",
+	},
+	elite: {
+		name: "Elite",
+		desc: "Raises the user's Attack and Special Attack by 2 stages.",
+		shortDesc: "Raises the user's Attack and Sp. Atk by 2.",
 	},
 	worryseed: {
 		name: "Worry Seed",

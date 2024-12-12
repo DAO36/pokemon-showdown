@@ -18646,7 +18646,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		types: ["Normal", "Fairy"],
 		gender: "F",
 		baseStats: {hp: 90, atk: 80, def: 80, spa: 125, spd: 140, spe: 85},
-		abilities: {0: "Punk Rock", 1: "Costar", H: "Pixilate"},
+		abilities: {0: "Soundproof", 1: "Costar", H: "Punk Rock"},
 		heightm: 1.58,
 		weightkg: 55.5,
 		color: "Red",
