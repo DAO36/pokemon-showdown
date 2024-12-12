@@ -94302,6 +94302,8 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			curse: ["9M"],
 			spite: ["9M"],
 			grudge: ["9M"],
+			witchattack: ["9M"],
+			magiconion: ["9M"],
         },
 	},
 	subaru: {
@@ -94361,6 +94363,9 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			calmmind: ["9M"],
 			imprison: ["9M"],
 			nastyplot: ["9M"],
+			duckasmr: ["9M"],
+			duckdance: ["9M"],
+			oozorapolice: ["9M"],
         },
 	},		
 	korone: {

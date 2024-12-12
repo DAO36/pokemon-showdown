@@ -831,8 +831,13 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		desc: "Raises the user's Special Attack and Special Defense by 1 stage.",
 		shortDesc: "Raises the user's Sp. Atk and Sp. Def by 1.",
 	},
+	magiconion: {
+		name: "Magic Onion",
+		desc: "Raises the user's Special Attack by 1 stage and Special Defense by 2 stages.",
+		shortDesc: "Raises the user's Sp. Atk by 1 and Sp. Def by 2.",
+	},
 	iamgod: {
-		name: "I am God",
+		name: "I Am God",
 		desc: "Raises the user's Attack, Special Attack, Speed, and Accuracy all by 1 stage.",
 		shortDesc: "Raises the user's Atk, SpAtk, Speed, and Acc by 1.",
 	},
@@ -943,6 +948,11 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	circlethrow: {
 		name: "Circle Throw",
+		desc: "If both the user and the target have not fainted, the target is forced to switch out and be replaced with a random unfainted ally. This effect fails if the target is under the effect of Ingrain, has the Suction Cups Ability, or this move hit a substitute.",
+		shortDesc: "Forces the target to switch to a random ally.",
+	},
+	oozorapolice: {
+		name: "Oozora Police",
 		desc: "If both the user and the target have not fainted, the target is forced to switch out and be replaced with a random unfainted ally. This effect fails if the target is under the effect of Ingrain, has the Suction Cups Ability, or this move hit a substitute.",
 		shortDesc: "Forces the target to switch to a random ally.",
 	},
@@ -1597,6 +1607,11 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	dragondance: {
 		name: "Dragon Dance",
+		desc: "Raises the user's Attack and Speed by 1 stage.",
+		shortDesc: "Raises the user's Attack and Speed by 1.",
+	},
+	duckdance: {
+		name: "Duck Dance",
 		desc: "Raises the user's Attack and Speed by 1 stage.",
 		shortDesc: "Raises the user's Attack and Speed by 1.",
 	},
@@ -2279,8 +2294,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	focusblast: {
 		name: "Focus Blast",
-		desc: "Has a 10% chance to lower the target's Special Defense by 1 stage.",
-		shortDesc: "10% chance to lower the target's Sp. Def by 1.",
+		desc: "Focus Miss has a 10% chance to lower the target's Special Defense by 1 stage. Also misses a lot",
+		shortDesc: "Focus Miss has 10% chance to lower the target's Sp. Def by 1. But odds are, this move will miss",
 	},
 	focusenergy: {
 		name: "Focus Energy",
@@ -3215,6 +3230,10 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		name: "Hydro Pump",
 		shortDesc: "No additional effect.",
 	},
+	witchattack: {
+		name: "Witch Attack",
+		shortDesc: "No additional effect.",
+	},
 	hydrosteam: {
 		name: "Hydro Steam",
 		desc: "If the current weather is Sunny Day and the user is not holding Utility Umbrella, this move's damage is multiplied by 1.5 instead of halved for being Water type.",
@@ -3265,6 +3284,11 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	hypervoice: {
 		name: "Hyper Voice",
+		desc: "No additional effect.",
+		shortDesc: "No additional effect. Hits adjacent foes.",
+	},
+	duckasmr: {
+		name: "Duck ASMR",
 		desc: "No additional effect.",
 		shortDesc: "No additional effect. Hits adjacent foes.",
 	},
@@ -7593,7 +7617,7 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	nursing: {
 		name: "Nursing",
-		desc: "User switches out after damaging the target. At the end of the next turn, the Pokemon at the user's position has 1/2 of its maximum HP restored to it, rounded down. Fails if this move is already in effect for the user's position.",
+		desc: "User switches out. At the end of the next turn, the Pokemon at the user's position has 1/2 of its maximum HP restored to it, rounded down. Fails if this move is already in effect for the user's position.",
 		shortDesc: "User switches out, then in next turn, the Pokemon on the field is healed",
 
 		heal: "  [NICKNAME]'s was nursed back to health!",
