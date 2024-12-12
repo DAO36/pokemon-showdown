@@ -94949,6 +94949,8 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			nastyplot: ["9M"],
 			honeclaws: ["9M"],
 			partingshot: ["9M"],
+			asacoco: ["9M"],
+			dragonsmash: ["9M"],
         },
 	},	
 	cocodraco: {
@@ -95068,11 +95070,12 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			bulkup: ["9M"],
 			agility: ["9M"],
 			calmmind: ["9M"],
+			gorillagrip: ["9M"],
+			starassault: ["9M"],
         },
 	},	
 	watame: {
 		learnset: {
-			boomburst: ["9M"],
 			hypervoice: ["9M"],
 			hyperbeam: ["9M"],
 			bodyslam: ["9M"],
@@ -95084,7 +95087,6 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			wish: ["9M"],
 			psychicnoise: ["9M"],
 			zenheadbutt: ["9M"],
-			torchsong: ["9M"],
 			alluringvoice: ["9M"],
 			playrough: ["9M"],
 			hornleech: ["9M"],
@@ -95099,6 +95101,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			sing: ["9M"],
 			cottonguard: ["9M"],
 			calmmind: ["9M"],
+			nothingwrong: ["9M"],
         },
 	},	
 	luna: {
@@ -95134,6 +95137,8 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			lunarblessing: ["9M"],
 			faketears: ["9M"],
 			bloodmoon: ["9M"],
+			candycrash: ["9M"],
+			sweetassault: ["9M"],
         },
 	},	
 	towa: {
@@ -95179,6 +95184,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			tailwind: ["9M"],
 			calmmind: ["9M"],
 			trick: ["9M"],
+			devilishslam: ["9M"],
         },
 	},	
 	polka: {
@@ -95208,7 +95214,6 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			rest: ["9M"],
 			tripleaxel: ["9M"],
 			firstimpression: ["9M"],
-			uturn: ["9M"],
 			lashout: ["9M"],
 			darkpulse: ["9M"],
 			irontail: ["9M"],
@@ -95229,6 +95234,8 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			honeclaws: ["9M"],
 			nastyplot: ["9M"],
 			topsyturvy: ["9M"],
+			clowntown: ["9M"],
+			polmao: ["9M"],
         },
 	},	
 	botan: {
@@ -95277,6 +95284,8 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			agility: ["9M"],
 			calmmind: ["9M"],
 			honeclaws: ["9M"],
+			gunfire: ["9M"],
+			lalion: ["9M"],
         },
 	},	
 	lamy: {
@@ -95314,6 +95323,8 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			aquaring: ["9M"],
 			lifedew: ["9M"],
 			calmmind: ["9M"],
+			wamywater: ["9M"],
+			sake: ["9M"],
         },
 	},	
 	nene: {
@@ -95358,6 +95369,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			healpulse: ["9M"],
 			nastyplot: ["9M"],
 			honeclaws: ["9M"],
+			nenemax: ["9M"],
         },
 	},	
 	aloe: {
@@ -95383,7 +95395,6 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			dualwingbeat: ["9M"],
 			airslash: ["9M"],
 			irontail: ["9M"],
-			makeitrain: ["9M"],
 			headsmash: ["9M"],
 			megahorn: ["9M"],
 			poisontail: ["9M"],
@@ -95392,7 +95403,6 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			psychicnoise: ["9M"],
 			spiritshackle: ["9M"],
 			shadowball: ["9M"],
-			torchsong: ["9M"],
 			flatter: ["9M"],
 			nastyplot: ["9M"],
 			partingshot: ["9M"],
@@ -95422,6 +95432,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			destinybond: ["9M"],
 			spite: ["9M"],
 			grudge: ["9M"],
+			succubussong: ["9M"],
         },
 	},	
 	iroha: {
@@ -95454,6 +95465,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			agility: ["9M"],
 			allyswitch: ["9M"],
 			calmmind: ["9M"],
+			samuraislash: ["9M"],
         },
 	},	
 	koyori: {
@@ -95489,6 +95501,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			tailwhip: ["9M"],
 			nastyplot: ["9M"],
 			honeclaws: ["9M"],
+			koyolabo: ["9M"],
         },
 	},	
 	laplus: {
@@ -95540,6 +95553,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			spite: ["9M"],
 			grudge: ["9M"],
 			babydolleyes: ["9M"],
+			ymd: ["9M"],
         },
 	},	
 	lui: {
@@ -95580,6 +95594,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			swordsdance: ["9M"],
 			honeclaws: ["9M"],
 			nastyplot: ["9M"],
+			focusshades: ["9M"],
         },
 	},	
 	chloe: {
@@ -95630,6 +95645,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			trick: ["9M"],
 			haze: ["9M"],
 			charm: ["9M"],
+			cleanup: ["9M"],
         },
 	},	
 	moona: {

@@ -451,6 +451,13 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 
 		boost: "  [POKEMON] cut its own HP and maximized its Attack!",
 	},
+	sake: {
+		name: "Sake",
+		desc: "Raises the user's Attack by 12 stages in exchange for the user losing 1/2 of its maximum HP, rounded down. Fails if the user would faint or if its Attack stat stage is 6.",
+		shortDesc: "User loses 50% max HP. Maximizes Attack.",
+
+		boost: "  [POKEMON] drunkenly cut its own HP and maximized its Attack!",
+	},
 	bestow: {
 		name: "Bestow",
 		desc: "The target receives the user's held item. Fails if the user has no item or is holding a Mail or Z-Crystal, if the target is already holding an item, if the user is a Kyogre holding a Blue Orb, a Groudon holding a Red Orb, a Giratina holding a Griseous Orb, an Arceus holding a Plate, a Genesect holding a Drive, a Silvally holding a Memory, a Pokemon that can Mega Evolve holding the Mega Stone for its species, or if the target is one of those Pokemon and the user is holding the respective item.",
@@ -805,6 +812,16 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		desc: "Hits two to five times. Has a 35% chance to hit two or three times and a 15% chance to hit four or five times. If one of the hits breaks the target's substitute, it will take damage for the remaining hits. If the user has the Skill Link Ability, this move will always hit five times. If the user is holding Loaded Dice, this move will hit 4-5 times.",
 		shortDesc: "Hits 2-5 times in one turn.",
 	},
+	candycrash: {
+		name: "Candy Crash",
+		desc: "Hits two to five times. Has a 35% chance to hit two or three times and a 15% chance to hit four or five times. If one of the hits breaks the target's substitute, it will take damage for the remaining hits. If the user has the Skill Link Ability, this move will always hit five times. If the user is holding Loaded Dice, this move will hit 4-5 times.",
+		shortDesc: "Hits 2-5 times in one turn.",
+	},
+	starassault: {
+		name: "Star Assault",
+		desc: "Hits two to five times. Has a 35% chance to hit two or three times and a 15% chance to hit four or five times. If one of the hits breaks the target's substitute, it will take damage for the remaining hits. If the user has the Skill Link Ability, this move will always hit five times. If the user is holding Loaded Dice, this move will hit 4-5 times.",
+		shortDesc: "Hits 2-5 times in one turn.",
+	},
 	arrowassault: {
 		name: "Arrow Assault",
 		desc: "Hits two to five times. Has a 35% chance to hit two or three times and a 15% chance to hit four or five times. If one of the hits breaks the target's substitute, it will take damage for the remaining hits. If the user has the Skill Link Ability, this move will always hit five times. If the user is holding Loaded Dice, this move will hit 4-5 times.",
@@ -814,6 +831,11 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		name: "Elf Arrows",
 		desc: "Hits two to five times. Has a 35% chance to hit two or three times and a 15% chance to hit four or five times. If one of the hits breaks the target's substitute, it will take damage for the remaining hits. If the user has the Skill Link Ability, this move will always hit five times. If the user is holding Loaded Dice, this move will hit 4-5 times. Has a 10% chance to lower the target's Special Atk by 1.",
 		shortDesc: "Hits 2-5 times in one turn. 10% chance to lower the target's Sp. Atk by 1.",
+	},
+	gunfire: {
+		name: "Gunfire",
+		desc: "Hits three to eight times. Has a 35% chance to hit two or three times and a 15% chance to hit four or five or six or eight times. If one of the hits breaks the target's substitute, it will take damage for the remaining hits. If the user has the Skill Link Ability, this move will always hit five times. If the user is holding Loaded Dice, this move will hit 4-5 times.",
+		shortDesc: "Hits 3-8 times in one turn.",
 	},
 	yubiyubi: {
 		name: "Yubi Yubi",
@@ -1029,6 +1051,11 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	closecombat: {
 		name: "Close Combat",
+		desc: "Lowers the user's Defense and Special Defense by 1 stage.",
+		shortDesc: "Lowers the user's Defense and Sp. Def by 1.",
+	},
+	samuraislash: {
+		name: "Samurai Slash",
 		desc: "Lowers the user's Defense and Special Defense by 1 stage.",
 		shortDesc: "Lowers the user's Defense and Sp. Def by 1.",
 	},
@@ -1553,6 +1580,16 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 			desc: "If the target lost HP, the user takes recoil damage equal to 1/4 the HP lost by the target, rounded down, but not less than 1 HP. If this move breaks the target's substitute, the user does not take any recoil damage.",
 		},
 	},
+	gorillagrip: {
+		name: "Gorilla Grip",
+		desc: "If the target lost HP, the user takes recoil damage equal to 33% the HP lost by the target, rounded half up, but not less than 1 HP.",
+		shortDesc: "Has 33% recoil.",
+	},
+	ymd: {
+		name: "YMD",
+		desc: "If the target lost HP, the user takes recoil damage equal to 33% the HP lost by the target, rounded half up, but not less than 1 HP.",
+		shortDesc: "Has 33% recoil.",
+	},
 	doublehit: {
 		name: "Double Hit",
 		desc: "Hits twice. If the first hit breaks the target's substitute, it will take damage for the second hit.",
@@ -1689,6 +1726,11 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		desc: "The user recovers 1/2 the HP lost by the target, rounded half up.",
 		shortDesc: "User recovers 50% of the damage dealt.",
 	},
+	sweetassault: {
+		name: "Sweet Assault",
+		desc: "The user recovers 1/2 the HP lost by the target, rounded half up.",
+		shortDesc: "User recovers 50% of the damage dealt.",
+	},
 	drainpunch: {
 		name: "Drain Punch",
 		desc: "The user recovers 1/2 the HP lost by the target, rounded half up. If Big Root is held by the user, the HP recovered is 1.3x normal, rounded half down.",
@@ -1734,6 +1776,11 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		name: "Dual Wingbeat",
 		desc: "Hits twice. If the first hit breaks the target's substitute, it will take damage for the second hit.",
 		shortDesc: "Hits 2 times in one turn.",
+	},
+	clowntown: {
+		name: "Clown Town",
+		desc: "Has a 10% chance to confuse the target. Hits twice. If the first hit breaks the target's substitute, it will take damage for the second hit.",
+		shortDesc: "Hits 2 times in one turn, 10% chance to confuse the target.",
 	},
 	carrotstrike: {
 		name: "Carrot Strike",
@@ -2272,8 +2319,20 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 
 		removeItem: "  [POKEMON] flung its [ITEM]!",
 	},
+	cleanup: {
+		name: "Clean Up",
+		desc: "If this move is successful and the user has not fainted, the effects of Leech Seed and binding moves end for the user, and all hazards are removed from the user's side of the field. If this move is successful and the user has not fainted, user switches out after damaging the target.",
+		shortDesc: "Free user from hazards/bind/Leech Seed. User switches out after damaging the target.",
+	},
 	flipturn: {
 		name: "Flip Turn",
+		desc: "If this move is successful and the user has not fainted, the user switches out even if it is trapped and is replaced immediately by a selected party member. The user does not switch out if there are no unfainted party members, or if the target switched out using an Eject Button or through the effect of the Emergency Exit or Wimp Out Abilities.",
+		shortDesc: "User switches out after damaging the target.",
+
+		switchOut: "#uturn",
+	},
+	polmao: {
+		name: "PoLMAO",
 		desc: "If this move is successful and the user has not fainted, the user switches out even if it is trapped and is replaced immediately by a selected party member. The user does not switch out if there are no unfainted party members, or if the target switched out using an Eject Button or through the effect of the Emergency Exit or Wimp Out Abilities.",
 		shortDesc: "User switches out after damaging the target.",
 
@@ -2564,6 +2623,10 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	gigatonhammer: {
 		name: "Gigaton Hammer",
 		shortDesc: "Cannot be selected the turn after it's used.",
+	},
+	nenemax: {
+		name: "NeneMAX",
+		shortDesc: "Cannot be selected the turn after it's used. 10% chance to raise the user's SpDef by 1",
 	},
 	gigavolthavoc: {
 		name: "Gigavolt Havoc",
@@ -3004,6 +3067,11 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		desc: "If the target lost HP, the user takes recoil damage equal to 1/2 the HP lost by the target, rounded half up, but not less than 1 HP.",
 		shortDesc: "Has 1/2 recoil.",
 	},
+	dragonsmash: {
+		name: "Dragon Smash",
+		desc: "If the target lost HP, the user takes recoil damage equal to 1/2 the HP lost by the target, rounded half up, but not less than 1 HP.",
+		shortDesc: "Has 1/2 recoil.",
+	},
 	healbell: {
 		name: "Heal Bell",
 		desc: "Every Pokemon in the user's party is cured of its non-volatile status condition. Active Pokemon with the Soundproof Ability are not cured, unless they are the user.",
@@ -3199,6 +3267,13 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 
 		damage: "#crash",
 	},
+	devilishslam: {
+		name: "Devilish Slam",
+		desc: "If this attack is not successful, the user loses half of its maximum HP, rounded down, as crash damage. Pokemon with the Magic Guard Ability are unaffected by crash damage.",
+		shortDesc: "User loses 50% max HP if miss.",
+
+		damage: "#crash",
+	},
 	holdback: {
 		name: "Hold Back",
 		desc: "Leaves the target with at least 1 HP.",
@@ -3213,6 +3288,11 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		name: "Hone Claws",
 		desc: "Raises the user's Attack and accuracy by 1 stage.",
 		shortDesc: "Raises the user's Attack and accuracy by 1.",
+	},
+	focusshades: {
+		name: "Focus Shades",
+		desc: "Raises the user's Attack by 2 stages and accuracy by 1 stage.",
+		shortDesc: "Raises the user's Attack by 2 and accuracy by 1.",
 	},
 	hornattack: {
 		name: "Horn Attack",
@@ -3321,6 +3401,11 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 
 		activate: "#shadowforce",
 	},
+	succubussong: {
+		name: "Succubus Song",
+		desc: "Hits adjacent foes. Lowers the user's Special Attack by 1 stage.",
+		shortDesc: "Lowers the user's Sp. Atk by 1. Hits adjacent foes.",
+	},
 	hypervoice: {
 		name: "Hyper Voice",
 		desc: "No additional effect.",
@@ -3360,6 +3445,11 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		name: "Ice Beam",
 		desc: "Has a 10% chance to freeze the target.",
 		shortDesc: "10% chance to freeze the target.",
+	},
+	wamywater: {
+		name: "Wamy Water",
+		desc: "Has a 25% chance to freeze the target.",
+		shortDesc: "25% chance to freeze the target.",
 	},
 	cometslam: {
 		name: "Comet Slam",
@@ -4885,6 +4975,11 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		name: "Poison Jab",
 		desc: "Has a 30% chance to poison the target.",
 		shortDesc: "30% chance to poison the target.",
+	},
+	asacoco: {
+		name: "AsaCoco",
+		desc: "Has a 20% chance to badly poison the target.",
+		shortDesc: "20% chance to badly poison the target.",
 	},
 	poisonpowder: {
 		name: "Poison Powder",
@@ -6822,6 +6917,16 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		desc: "Raises the user's Attack by 2 stages.",
 		shortDesc: "Raises the user's Attack by 2.",
 	},
+	koyolabo: {
+		name: "Koyo Labo",
+		desc: "Raises the user's Attack by 2 stages.",
+		shortDesc: "Raises the user's Attack by 2.",
+	},
+	lalion: {
+		name: "Lalion",
+		desc: "Raises the user's Attack by 2 stages.",
+		shortDesc: "Raises the user's Attack by 2.",
+	},
 	bowdance: {
 		name: "Bow Dance",
 		desc: "Raises the user's Attack by 2 stages.",
@@ -7198,6 +7303,11 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		name: "Torch Song",
 		desc: "Has a 100% chance to raise the user's Special Attack by 1 stage.",
 		shortDesc: "100% chance to raise the user's Sp. Atk by 1.",
+	},
+	nothingwrong: {
+		name: "Nothing Wrong",
+		desc: "Has a 10% chance to raise the user's Special Attack by 1 stage.",
+		shortDesc: "10% chance to raise the user's Sp. Atk by 1.",
 	},
 	torment: {
 		name: "Torment",
