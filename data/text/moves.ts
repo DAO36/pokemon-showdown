@@ -1777,6 +1777,11 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		desc: "Hits twice. If the first hit breaks the target's substitute, it will take damage for the second hit.",
 		shortDesc: "Hits 2 times in one turn.",
 	},
+	deez: {
+		name: "Deez",
+		desc: "Hits twice. If the first hit breaks the target's substitute, it will take damage for the second hit.",
+		shortDesc: "Hits 2 times in one turn.",
+	},
 	clowntown: {
 		name: "Clown Town",
 		desc: "Has a 10% chance to confuse the target. Hits twice. If the first hit breaks the target's substitute, it will take damage for the second hit.",
@@ -2470,6 +2475,11 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		name: "Freeze-Dry",
 		desc: "Has a 10% chance to freeze the target. This move's type effectiveness against Water is changed to be super effective no matter what this move's type is.",
 		shortDesc: "10% chance to freeze. Super effective on Water.",
+	},
+	alientouch: {
+		name: "Alien Touch",
+		desc: "This move's type effectiveness against Dark is changed to be super effective no matter what this move's type is.",
+		shortDesc: "Super effective on Dark types.",
 	},
 	freezeshock: {
 		name: "Freeze Shock",
@@ -4298,6 +4308,11 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		name: "Meteor Mash",
 		desc: "Has a 20% chance to raise the user's Attack by 1 stage.",
 		shortDesc: "20% chance to raise the user's Attack by 1.",
+	},
+	moonstrike: {
+		name: "Moonstrike",
+		desc: "Has a 10% chance to raise the user's Special Defense by 1 stage.",
+		shortDesc: "10% chance to raise the user's SpDef by 1.",
 	},
 	boxingdoggo: {
 		name: "Boxing Doggo",

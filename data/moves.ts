@@ -4863,6 +4863,20 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Flying",
 		maxMove: {basePower: 130},
 	},
+	deez: {
+		num: 814,
+		accuracy: 90,
+		basePower: 60,
+		category: "Physical",
+		name: "Deez",
+		pp: 5,
+		priority: 0,
+		flags: {contact: 1, protect: 1, mirror: 1, metronome: 1},
+		multihit: 2,
+		secondary: null,
+		target: "normal",
+		type: "Grass",
+	},
 	carrotstrike: {
 		num: 814,
 		accuracy: 95,
@@ -6854,6 +6868,23 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		},
 		target: "normal",
 		type: "Ice",
+		contestType: "Beautiful",
+	},
+	alientouch: {
+		num: 573,
+		accuracy: 95,
+		basePower: 95,
+		category: "Physical",
+		name: "Alien Touch",
+		pp: 10,
+		priority: 0,
+		flags: {protect: 1, mirror: 1, metronome: 1},
+		onEffectiveness(typeMod, target, type) {
+			if (type === 'Dark') return 1;
+		},
+		secondary: null,
+		target: "normal",
+		type: "Psychic",
 		contestType: "Beautiful",
 	},
 	freezeshock: {
@@ -12947,6 +12978,27 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Steel",
 		contestType: "Cool",
 	},
+	moonstrike: {
+		num: 309,
+		accuracy: 100,
+		basePower: 100,
+		category: "Physical",
+		name: "Moonstrike",
+		pp: 10,
+		priority: 0,
+		flags: {protect: 1, mirror: 1, slicing: 1, metronome: 1},
+		secondary: {
+			chance: 10,
+			self: {
+				boosts: {
+					spd: 1,
+				},
+			},
+		},
+		target: "normal",
+		type: "Psychic",
+		contestType: "Cool",
+	},
 	boxingdoggo: {
 		num: 309,
 		accuracy: 90,
@@ -17978,6 +18030,33 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		target: "normal",
 		type: "Normal",
 		zMove: {boost: {spa: 1}},
+		contestType: "Cute",
+	},
+	paintbursh: {
+		num: 493,
+		accuracy: 100,
+		basePower: 0,
+		category: "Status",
+		name: "Paint Brush",
+		pp: 10,
+		priority: 0,
+		flags: {protect: 1, reflectable: 1, mirror: 1, allyanim: 1, metronome: 1},
+		onTryHit(target) {
+			if (target.getAbility().flags['cantsuppress'] || target.ability === 'color change' || target.ability === 'truant') {
+				return false;
+			}
+		},
+		onHit(pokemon) {
+			const oldAbility = pokemon.setAbility('color change');
+			if (oldAbility) {
+				this.add('-ability', pokemon, 'Color Change', '[from] move: Paint Brush');
+				return;
+			}
+			return oldAbility as false | null;
+		},
+		secondary: null,
+		target: "normal",
+		type: "Water",
 		contestType: "Cute",
 	},
 	sing: {

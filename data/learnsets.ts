@@ -95694,6 +95694,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			scaryface: ["9M"],
 			nastyplot: ["9M"],
 			torment: ["9M"],
+			moonstrike: ["9M"],
         },
 	},	
 	moonahoshinova: {
@@ -95740,6 +95741,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			scaryface: ["9M"],
 			nastyplot: ["9M"],
 			torment: ["9M"],
+			moonstrike: ["9M"],
         },
 	},	
 	iofi: {
@@ -95785,6 +95787,8 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			nastyplot: ["9M"],
 			moonlight: ["9M"],
 			sweetkiss: ["9M"],
+			alientouch: ["9M"],
+			paintbrush: ["9M"],
         },
 	},	
 	risu: {
@@ -95834,6 +95838,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			nastyplot: ["9M"],
 			partingshot: ["9M"],
 			charm: ["9M"],
+			deez: ["9M"],
         },
 	},	
 	risusaurus: {
