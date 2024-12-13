@@ -2714,7 +2714,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		flags: {},
 		// TODO show prepare message before the "POKEMON used MOVE!" message
 		// This happens even before sleep shows its "POKEMON is fast asleep." message
-		weather: 'rain',
+		weather: 'RainDance',
 		selfSwitch: true,
 		secondary: null,
 		target: "all",
