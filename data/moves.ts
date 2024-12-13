@@ -18032,7 +18032,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		zMove: {boost: {spa: 1}},
 		contestType: "Cute",
 	},
-	paintbursh: {
+	paintbrush: {
 		num: 493,
 		accuracy: 100,
 		basePower: 0,
