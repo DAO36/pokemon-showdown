@@ -982,6 +982,14 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		// TODO needs to be implemented
 		activate: "  [POKEMON] is preparing to tell a chillingly bad joke!",
 	},
+	rainshaman: {
+		name: "Rain Shaman",
+		desc: "For 5 turns, the weather becomes Rain. The user switches out even if it is trapped and is replaced immediately by a selected party member. The user does not switch out if there are no unfainted party members.",
+		shortDesc: "Starts Rain. User switches out.",
+
+		// TODO needs to be implemented
+		activate: "  [POKEMON] is a brat!",
+	},
 	chipaway: {
 		name: "Chip Away",
 		desc: "Ignores the target's stat stage changes, including evasiveness.",
@@ -1585,6 +1593,11 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		desc: "If the target lost HP, the user takes recoil damage equal to 33% the HP lost by the target, rounded half up, but not less than 1 HP.",
 		shortDesc: "Has 33% recoil.",
 	},
+	zombiestrike: {
+		name: "Zombie Strike",
+		desc: "If the target lost HP, the user takes recoil damage equal to 33% the HP lost by the target, rounded half up, but not less than 1 HP.",
+		shortDesc: "Has 33% recoil.",
+	},
 	ymd: {
 		name: "YMD",
 		desc: "If the target lost HP, the user takes recoil damage equal to 33% the HP lost by the target, rounded half up, but not less than 1 HP.",
@@ -1779,6 +1792,11 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	deez: {
 		name: "Deez",
+		desc: "Hits twice. If the first hit breaks the target's substitute, it will take damage for the second hit.",
+		shortDesc: "Hits 2 times in one turn.",
+	},
+	tonjok: {
+		name: "Tonjok",
 		desc: "Hits twice. If the first hit breaks the target's substitute, it will take damage for the second hit.",
 		shortDesc: "Hits 2 times in one turn.",
 	},
@@ -4309,6 +4327,16 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		desc: "Has a 20% chance to raise the user's Attack by 1 stage.",
 		shortDesc: "20% chance to raise the user's Attack by 1.",
 	},
+	keris: {
+		name: "Keris",
+		desc: "Has a 10% chance to raise the user's Defense by 1 stage.",
+		shortDesc: "10% chance to raise the user's Defense by 1.",
+	},
+	peacockattack: {
+		name: "Peacock Attack",
+		desc: "Has a 10% chance to raise the user's Special Attack by 1 stage.",
+		shortDesc: "10% chance to raise the user's Special Attack by 1.",
+	},
 	moonstrike: {
 		name: "Moonstrike",
 		desc: "Has a 10% chance to raise the user's Special Defense by 1 stage.",
@@ -4358,6 +4386,10 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	mightycleave: {
 		name: "Mighty Cleave",
 		shortDesc: "Bypasses protection without breaking it.",
+	},
+	spyshot: {
+		name: "Spy Shot",
+		shortDesc: "Bypasses subs and protection without breaking it. Never Misses.",
 	},
 	milkdrink: {
 		name: "Milk Drink",
@@ -4846,6 +4878,14 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		gen6: {
 			desc: "Lowers the target's Attack and Special Attack by 1 stage. If this move is successful, the user switches out even if it is trapped and is replaced immediately by a selected party member. The user does not switch out if there are no unfainted party members.",
 		},
+
+		heal: "#memento",
+		switchOut: "#uturn",
+	},
+	nopressure: {
+		name: "No Pressure",
+		desc: "Lowers the target's Defense and Special Defense by 1 stage. If this move is successful, the user switches out even if it is trapped and is replaced immediately by a selected party member. The user does not switch out if the target's Defense and Special Defense stat stages were both unchanged, or if there are no unfainted party members.",
+		shortDesc: "Lowers target's Def, Sp. Def by 1. User switches.",
 
 		heal: "#memento",
 		switchOut: "#uturn",

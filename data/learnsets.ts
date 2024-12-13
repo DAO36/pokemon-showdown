@@ -95932,6 +95932,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			memento: ["9M"],
 			partingshot: ["9M"],
 			sweetkiss: ["9M"],
+			zombiestrike: ["9M"],
         },
 	},	
 	olivia: {
@@ -96030,6 +96031,8 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			helpinghand: ["9M"],
 			nastyplot: ["9M"],
 			charm: ["9M"],
+			tonjok: ["9M"],
+			peacockattack: ["9M"],
         },
 	},	
 	anya: {
@@ -96040,11 +96043,9 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			secretsword: ["9M"],
 			focusblast: ["9M"],
 			aurasphere: ["9M"],
-			behemothblade: ["9M"],
 			smartstrike: ["9M"],
 			flashcannon: ["9M"],
 			doubleedge: ["9M"],
-			bitterblade: ["9M"],
 			mysticalfire: ["9M"],
 			leafblade: ["9M"],
 			solarblade: ["9M"],
@@ -96074,6 +96075,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			calmmind: ["9M"],
 			nastyplot: ["9M"],
 			torment: ["9M"],
+			keris: ["9M"],
         },
 	},	
 	zeta: {
@@ -96113,6 +96115,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			disable: ["9M"],
 			lockon: ["9M"],
 			psychup: ["9M"],
+			spyshot: ["9M"],
         },
 	},	
 	kaela: {
@@ -96147,6 +96150,8 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			bulkup: ["9M"],
 			calmmind: ["9M"],
 			wideguard: ["9M"],
+			nopressure: ["9M"],
+			dahlah: ["9M"],
         },
 	},	
 	kobo: {
@@ -96188,6 +96193,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			taunt: ["9M"],
 			babydolleyes: ["9M"],
 			charm: ["9M"],
+			rainshaman: ["9M"],
         },
 	},	
 	gura: {
