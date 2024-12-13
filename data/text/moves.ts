@@ -2478,8 +2478,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	alientouch: {
 		name: "Alien Touch",
-		desc: "This move's type effectiveness against Dark is changed to be super effective no matter what this move's type is.",
-		shortDesc: "Super effective on Dark types.",
+		desc: "This move's type effectiveness against Dark is changed to be neutrally effective no matter what this move's type is.",
+		shortDesc: "Psychic type move that can hit Dark types.",
 	},
 	freezeshock: {
 		name: "Freeze Shock",
