@@ -180,6 +180,10 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		name: "Aqua Tail",
 		shortDesc: "No additional effect.",
 	},
+	divafork: {
+		name: "Diva Fork",
+		shortDesc: "No additional effect.",
+	},
 	clubsmash: {
 		name: "Club Smash",
 		shortDesc: "No additional effect.",
@@ -623,6 +627,11 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 			desc: "Has a 30% chance to paralyze the target.",
 		},
 	},
+	forbiddenknowledge: {
+		name: "Forbidden Knowledge",
+		desc: "Has a 30% chance to paralyze the target. Damage doubles and no accuracy check is done if the target has used Minimize while active.",
+		shortDesc: "30% chance to paralyze the target.",
+	},
 	boltbeak: {
 		name: "Bolt Beak",
 		desc: "Power doubles if the user moves before the target.",
@@ -782,6 +791,16 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		name: "Bulk Up",
 		desc: "Raises the user's Attack and Defense by 1 stage.",
 		shortDesc: "Raises the user's Attack and Defense by 1.",
+	},
+	windup: {
+		name: "Wind Up",
+		desc: "Raises the user's Attack and Defense by 1 stage.",
+		shortDesc: "Raises the user's Attack and Defense by 1.",
+	},
+	rockhard: {
+		name: "Rock Hard",
+		desc: "Raises the user's Attack by 1 stage and Defense by 2 stages.",
+		shortDesc: "Raises the user's Atk by 1 and Def by 2.",
 	},
 	bulldoze: {
 		name: "Bulldoze",
@@ -1820,6 +1839,16 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		desc: "Hits twice. If the first hit breaks the target's substitute, it will take damage for the second hit.",
 		shortDesc: "Hits 2 times in one turn.",
 	},
+	fisted: {
+		name: "Fisted",
+		desc: "Hits twice. If the first hit breaks the target's substitute, it will take damage for the second hit.",
+		shortDesc: "Hits 2 times in one turn.",
+	},
+	twinstrikes: {
+		name: "Twin Strikes",
+		desc: "Has a higher chance for a critical hit. Hits twice. If the first hit breaks the target's substitute, it will take damage for the second hit.",
+		shortDesc: "Hits 2 times in one turn. High crit ratio.",
+	},
 	clockstrikes: {
 		name: "Clock Strikes",
 		desc: "Hits twice. If the first hit breaks the target's substitute, it will take damage for the second hit.",
@@ -2348,13 +2377,13 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		desc: "Has a 10% chance to burn the target.",
 		shortDesc: "10% chance to burn the target.",
 	},
-	parttimewarrior: {
-		name: "Part Time Warrior",
-		desc: "Has a 10% chance to burn the target.",
-		shortDesc: "10% chance to burn the target.",
-	},
 	phoenixblade: {
 		name: "Phoenix Blade",
+		desc: "Has a 20% chance to burn the target.",
+		shortDesc: "20% chance to burn the target.",
+	},
+	swordofjustice: {
+		name: "Sword of Justice",
 		desc: "Has a 20% chance to burn the target.",
 		shortDesc: "20% chance to burn the target.",
 	},
@@ -2567,6 +2596,11 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		name: "Alien Touch",
 		desc: "This move's type effectiveness against Dark is changed to be neutrally effective no matter what this move's type is.",
 		shortDesc: "Psychic type move that can hit Dark types.",
+	},
+	godeyes: {
+		name: "God Eyes",
+		desc: "Bypasses subs and protection without breaking it. Never Misses. Has a 25% chance to raise the user's Accuracy by 1 stage. This move's type effectiveness against Ghost is changed to be neutrally effective no matter what this move's type is.",
+		shortDesc: "Can hit Ghost types. 25% chance to raise Accuracy by 1. Bypasses subs and protection.",
 	},
 	freezeshock: {
 		name: "Freeze Shock",
@@ -3521,6 +3555,21 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		name: "Hyper Voice",
 		desc: "No additional effect.",
 		shortDesc: "No additional effect. Hits adjacent foes.",
+	},
+	automotanassault: {
+		name: "Automotan Assault",
+		desc: "No additional effect.",
+		shortDesc: "No additional effect.",
+	},
+	songofjustice: {
+		name: "Song of Justice",
+		desc: "No additional effect.",
+		shortDesc: "No additional effect. Hits adjacent foes.",
+	},
+	underworldmusic: {
+		name: "Underworld Music",
+		desc: "Has a 10% chance to lower the target's Attack by 1 stage.",
+		shortDesc: "10% chance to lower the target's Atk by 1. Hits adjacent foes.",
 	},
 	grimrapper: {
 		name: "Grim Rapper",

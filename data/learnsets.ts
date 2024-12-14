@@ -96735,7 +96735,6 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			memento: ["9M"],
 			phoenixblade: ["9M"],
 			phoenixshield: ["9M"],
-			parttimewarrior: ["9M"],
         },
 	},	
 	irys: {
@@ -97247,6 +97246,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			destinybond: ["9M"],
 			spite: ["9M"],
 			grudge: ["9M"],
+			forbiddenknowledge: ["9M"],
         },
 	},	
 	bijou: {
@@ -97302,6 +97302,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			babydolleyes: ["9M"],
 			charm: ["9M"],
 			mistyterrain: ["9M"],
+			rockhard: ["9M"],
         },
 	},	
 	nerissa: {
@@ -97353,6 +97354,8 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			swordsdance: ["9M"],
 			whirlwind: ["9M"],
 			agility: ["9M"],
+			underworldmusic: ["9M"],
+			divafork: ["9M"],
         },
 	},	
 	mococo: {
@@ -97403,6 +97406,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			trick: ["9M"],
 			curse: ["9M"],
 			charm: ["9M"],
+			twinstrikes: ["9M"],
         },
 	},	
 	fuwawa: {
@@ -97453,6 +97457,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			trick: ["9M"],
 			curse: ["9M"],
 			charm: ["9M"],
+			twinstrikes: ["9M"],
         },
 	},	
 	elizabeth: {
@@ -97492,6 +97497,8 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			sing: ["9M"],
 			swordsdance: ["9M"],
 			calmmind: ["9M"],
+			songofjustice: ["9M"],
+			swordofjustice: ["9M"],
         },
 	},	
 	gigi: {
@@ -97534,6 +97541,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			tailwhip: ["9M"],
 			agility: ["9M"],
 			trick: ["9M"],
+			fisted: ["9M"],
         },
 	},	
 	cecilia: {
@@ -97584,6 +97592,8 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			hypervoice: ["9M"],
 			psychicnoise: ["9M"],
 			sparklingaria: ["9M"],
+			automotanassault: ["9M"],
+			windup: ["9M"],
         },
 	},	
 	raora: {
@@ -97628,6 +97638,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			miracleeye: ["9M"],
 			gigadrain: ["9M"],
 			seedbomb: ["9M"],
+			godeyes: ["9M"],
         },
 	},	
 	syclar: {
