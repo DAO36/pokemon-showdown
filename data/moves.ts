@@ -1152,6 +1152,687 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Water",
 		contestType: "Cool",
 	},
+	moonstrike: {
+		num: 370,
+		accuracy: 100,
+		basePower: 100,
+		category: "Physical",
+		name: "Moonstrike",
+		pp: 10,
+		priority: 0,
+		flags: {protect: 1, mirror: 1, slicing: 1, metronome: 1},
+		secondary: {
+			chance: 10,
+			self: {
+				boosts: {
+					spd: 1,
+				},
+			},
+		},
+		target: "normal",
+		type: "Psychic",
+		contestType: "Cool",
+	},
+	alientouch: {
+		num: 370,
+		accuracy: 100,
+		basePower: 90,
+		category: "Physical",
+		name: "Alien Touch",
+		pp: 10,
+		priority: 0,
+		flags: {protect: 1, mirror: 1, contact: 1},
+		ignoreImmunity: true,
+		onEffectiveness(typeMod, target, type, move) {
+			if (move.type !== 'Psychic') return;
+			if (!target) return; // avoid crashing when called from a chat plugin
+			// ignore effectiveness if the target is Dark type and immune to Psychic
+			if (!target.runImmunity('Psychic')) {
+				if (target.hasType('Dark')) return 0;
+			}
+		},
+		secondary: null,
+		target: "normal",
+		type: "Psychic",
+		contestType: "Beautiful",
+	},
+	deez: {
+		num: 370,
+		accuracy: 90,
+		basePower: 60,
+		category: "Physical",
+		name: "Deez",
+		pp: 5,
+		priority: 0,
+		flags: {contact: 1, protect: 1, mirror: 1, metronome: 1},
+		multihit: 2,
+		secondary: null,
+		target: "normal",
+		type: "Grass",
+	},
+	zombiestrike: {
+		num: 370,
+		accuracy: 95,
+		basePower: 120,
+		category: "Physical",
+		name: "Zombie Strike",
+		pp: 5,
+		priority: 0,
+		flags: {contact: 1, protect: 1, mirror: 1, slicing: 1},
+		recoil: [33, 100],
+		secondary: null,
+		target: "normal",
+		type: "Ghost",
+		contestType: "Tough",
+	},
+	tonjok: {
+		num: 370,
+		accuracy: 95,
+		basePower: 50,
+		category: "Physical",
+		name: "Tonjok",
+		pp: 10,
+		priority: 0,
+		flags: {contact: 1, protect: 1, mirror: 1, punch: 1},
+		multihit: 2,
+		secondary: null,
+		target: "normal",
+		type: "Fighting",
+	},
+	peacockattack: {
+		num: 370,
+		accuracy: 100,
+		basePower: 85,
+		category: "Special",
+		name: "Peacock Attack",
+		pp: 15,
+		priority: 0,
+		flags: {protect: 1, mirror: 1, wind: 1, distance: 1},
+		secondary: {
+			chance: 10,
+			self: {
+				boosts: {
+					spa: 1,
+				},
+			},
+		},
+		target: "any",
+		type: "Flying",
+		contestType: "Cool",
+	},
+	keris: {
+		num: 370,
+		accuracy: 100,
+		basePower: 90,
+		category: "Physical",
+		name: "Keris",
+		pp: 10,
+		priority: 0,
+		flags: {contact: 1, protect: 1, mirror: 1, slicing: 1, metronome: 1},
+		secondary: {
+			chance: 10,
+			self: {
+				boosts: {
+					spd: 1,
+				},
+			},
+		},
+		target: "normal",
+		type: "Steel",
+		contestType: "Cool",
+	},
+	spyshot: {
+		num: 370,
+		accuracy: true,
+		basePower: 80,
+		category: "Physical",
+		name: "Spy Shot",
+		pp: 10,
+		priority: 0,
+		flags: {mirror: 1, bypasssub: 1, bullet: 1},
+		critRatio: 2,
+		tracksTarget: true,
+		secondary: null,
+		target: "normal",
+		type: "Dark",
+	},
+	nopressure: {
+		num: 370,
+		accuracy: 100,
+		basePower: 0,
+		category: "Status",
+		name: "No Pressure",
+		pp: 10,
+		priority: 0,
+		flags: {protect: 1, reflectable: 1, mirror: 1, sound: 1, bypasssub: 1},
+		onHit(target, source, move) {
+			const success = this.boost({def: -1, spd: -1}, target, source);
+			if (!success && !target.hasAbility('mirrorarmor')) {
+				delete move.selfSwitch;
+			}
+		},
+		selfSwitch: true,
+		secondary: null,
+		target: "normal",
+		type: "Steel",
+		contestType: "Cool",
+	},
+	dahlah: {
+		num: 370,
+		accuracy: 90,
+		basePower: 130,
+		category: "Physical",
+		name: "Dahlah",
+		pp: 5,
+		priority: 0,
+		flags: {contact: 1, protect: 1, mirror: 1, slicing: 1},
+		recoil: [33, 100],
+		secondary: null,
+		target: "normal",
+		type: "Steel",
+		contestType: "Tough",
+	},
+	rainshaman: {
+		num: 370,
+		accuracy: true,
+		basePower: 0,
+		category: "Status",
+		name: "Rain Shaman",
+		pp: 10,
+		priority: 0,
+		flags: {},
+		// TODO show prepare message before the "POKEMON used MOVE!" message
+		// This happens even before sleep shows its "POKEMON is fast asleep." message
+		weather: 'RainDance',
+		selfSwitch: true,
+		secondary: null,
+		target: "all",
+		type: "Water",
+	},
+	trident: {
+		num: 370,
+		accuracy: 85,
+		basePower: 120,
+		category: "Physical",
+		name: "Trident",
+		pp: 5,
+		priority: 0,
+		flags: {protect: 1, mirror: 1, slicing: 1},
+		critRatio: 2,
+		secondary: null,
+		target: "normal",
+		type: "Water",
+		contestType: "Tough",
+	},
+	sharkattack: {
+		num: 370,
+		accuracy: 95,
+		basePower: 80,
+		category: "Physical",
+		name: "Shark Attack",
+		pp: 10,
+		priority: 0,
+		flags: {contact: 1, protect: 1, mirror: 1, metronome: 1, bite: 1},
+		secondary: {
+			chance: 10,
+			self: {
+				boosts: {
+					spe: 1,
+				},
+			},
+		},
+		target: "normal",
+		type: "Water",
+		contestType: "Tough",
+	},
+	gawrrage: {
+		num: 370,
+		accuracy: 100,
+		basePower: 130,
+		category: "Physical",
+		name: "Gawr Rage",
+		pp: 5,
+		priority: 0,
+		flags: {contact: 1, protect: 1, mirror: 1, metronome: 1},
+		self: {
+			boosts: {
+				def: -1,
+				spd: -1,
+			},
+		},
+		secondary: null,
+		target: "normal",
+		type: "Water",
+		contestType: "Tough",
+	},
+	ameway: {
+		num: 370,
+		accuracy: true,
+		basePower: 0,
+		category: "Status",
+		name: "Ame Way",
+		pp: 20,
+		priority: 0,
+		flags: {snatch: 1, metronome: 1},
+		boosts: {
+			atk: 2,
+			spa: 2,
+		},
+		secondary: null,
+		target: "self",
+		type: "Psychic",
+		contestType: "Clever",
+	},
+	timetravel: {
+		num: 370,
+		accuracy: 100,
+		basePower: 40,
+		category: "Physical",
+		name: "Time Travel",
+		pp: 15,
+		priority: 1,
+		flags: {contact: 1, protect: 1, mirror: 1, metronome: 1},
+		selfSwitch: true,
+		secondary: null,
+		target: "normal",
+		type: "Psychic",
+	},
+	groundpound: {
+		num: 370,
+		accuracy: 85,
+		basePower: 140,
+		category: "Physical",
+		name: "Ground Pound",
+		pp: 5,
+		priority: 0,
+		flags: {contact: 1, protect: 1, mirror: 1, gravity: 1, metronome: 1},
+		hasCrashDamage: true,
+		onMoveFail(target, source, move) {
+			this.damage(source.baseMaxhp / 2, source, source, this.dex.conditions.get('High Jump Kick'));
+		},
+		secondary: null,
+		target: "normal",
+		type: "Ground",
+		contestType: "Cool",
+	},
+	scythe: {
+		num: 370,
+		accuracy: true,
+		basePower: 90,
+		category: "Physical",
+		name: "Scythe",
+		pp: 10,
+		priority: 0,
+		flags: {contact: 1, protect: 1, mirror: 1, metronome: 1, slicing: 1},
+		critRatio: 2,
+		secondary: null,
+		target: "normal",
+		type: "Ghost",
+		contestType: "Cool",
+	},
+	grimrapper: {
+		num: 370,
+		accuracy: 100,
+		basePower: 90,
+		category: "Special",
+		name: "Grim Rapper",
+		pp: 10,
+		priority: 0,
+		flags: {protect: 1, mirror: 1, sound: 1, bypasssub: 1, distance: 1},
+		secondary: null,
+		target: "allAdjacentFoes",
+		type: "Ghost",
+		contestType: "Cool",
+	},
+	tako: {
+		num: 370,
+		accuracy: 100,
+		basePower: 80,
+		category: "Special",
+		name: "Tako",
+		pp: 10,
+		priority: 0,
+		flags: {protect: 1, mirror: 1, metronome: 1},
+		secondary: {
+			chance: 10,
+			boosts: {
+				accuracy: -1,
+			},
+		},
+		target: "normal",
+		type: "Water",
+		contestType: "Tough",
+	},
+	wah: {
+		num: 370,
+		accuracy: true,
+		basePower: 0,
+		category: "Status",
+		name: "Wah",
+		pp: 20,
+		priority: 0,
+		flags: {snatch: 1, sound: 1},
+		boosts: {
+			spa: 2,
+		},
+		secondary: null,
+		target: "self",
+		type: "Normal",
+		contestType: "Clever",
+	},
+	tentaclesstrike: {
+		num: 370,
+		accuracy: 95,
+		basePower: 20,
+		category: "Physical",
+		name: "Tentacles Strike",
+		pp: 20,
+		priority: 0,
+		flags: {protect: 1, mirror: 1, metronome: 1, contact: 1},
+		multihit: [3, 8],
+		secondary: null,
+		target: "normal",
+		type: "Water",
+		contestType: "Cool",
+	},
+	aochan: {
+		num: 370,
+		accuracy: true,
+		basePower: 100,
+		category: "Physical",
+		name: "AO Chan",
+		pp: 10,
+		priority: 0,
+		flags: {protect: 1, mirror: 1, metronome: 1},
+		secondary: {
+			chance: 20,
+			self: {
+				boosts: {
+					spd: 1,
+				},
+			},
+		},
+		target: "normal",
+		type: "Psychic",
+		contestType: "Cool",
+	},
+	phoenixshield: {
+		num: 370,
+		accuracy: true,
+		basePower: 0,
+		category: "Status",
+		name: "Phoenix Shield",
+		pp: 10,
+		priority: 4,
+		flags: {metronome: 1, noassist: 1, failcopycat: 1},
+		stallingMove: true,
+		volatileStatus: 'burningbulwark',
+		onPrepareHit(pokemon) {
+			return !!this.queue.willAct() && this.runEvent('StallMove', pokemon);
+		},
+		onHit(pokemon) {
+			pokemon.addVolatile('stall');
+		},
+		condition: {
+			duration: 1,
+			onStart(target) {
+				this.add('-singleturn', target, 'move: Protect');
+			},
+			onTryHitPriority: 3,
+			onTryHit(target, source, move) {
+				if (!move.flags['protect'] || move.category === 'Status') {
+					if (['gmaxoneblow', 'gmaxrapidflow'].includes(move.id)) return;
+					if (move.isZ || move.isMax) target.getMoveHitData(move).zBrokeProtect = true;
+					return;
+				}
+				if (move.smartTarget) {
+					move.smartTarget = false;
+				} else {
+					this.add('-activate', target, 'move: Protect');
+				}
+				const lockedmove = source.getVolatile('lockedmove');
+				if (lockedmove) {
+					// Outrage counter is reset
+					if (source.volatiles['lockedmove'].duration === 2) {
+						delete source.volatiles['lockedmove'];
+					}
+				}
+				if (this.checkMoveMakesContact(move, source, target)) {
+					source.trySetStatus('brn', target);
+				}
+				return this.NOT_FAIL;
+			},
+			onHit(target, source, move) {
+				if (move.isZOrMaxPowered && this.checkMoveMakesContact(move, source, target)) {
+					source.trySetStatus('brn', target);
+				}
+			},
+		},
+		secondary: null,
+		target: "self",
+		type: "Fire",
+	},
+	phoenixblade: {
+		num: 370,
+		accuracy: 100,
+		basePower: 90,
+		category: "Physical",
+		name: "Phoenix Blade",
+		pp: 10,
+		priority: 0,
+		flags: {protect: 1, mirror: 1, contact: 1, slicing: 1},
+		secondary: {
+			chance: 20,
+			status: 'brn',
+		},
+		target: "normal",
+		type: "Fire",
+		contestType: "Beautiful",
+	},
+	hopesoda: {
+		num: 370,
+		accuracy: true,
+		basePower: 0,
+		category: "Status",
+		name: "Hope Soda",
+		pp: 20,
+		priority: 0,
+		flags: {snatch: 1, metronome: 1},
+		boosts: {
+			atk: 2,
+		},
+		secondary: null,
+		target: "self",
+		type: "Water",
+		contestType: "Beautiful",
+	},
+	hopeful: {
+		num: 370,
+		accuracy: 100,
+		basePower: 80,
+		category: "Physical",
+		name: "Hopeful",
+		pp: 10,
+		priority: 0,
+		flags: {protect: 1, contact: 1, mirror: 1},
+		self: {
+			onHit(pokemon, source, move) {
+				this.add('-activate', source, 'move: Aromatherapy');
+				for (const ally of source.side.pokemon) {
+					if (ally !== source && (ally.volatiles['substitute'] && !move.infiltrates)) {
+						continue;
+					}
+					ally.cureStatus();
+				}
+			},
+		},
+		secondary: null,
+		target: "normal",
+		type: "Fairy",
+		contestType: "Clever",
+	},
+	hopeless: {
+		num: 370,
+		accuracy: 85,
+		basePower: 140,
+		category: "Physical",
+		name: "Hopeless",
+		pp: 5,
+		priority: 0,
+		flags: {contact: 1, protect: 1, mirror: 1, metronome: 1},
+		self: {
+			boosts: {
+				def: -1,
+				spd: -1,
+			},
+		},
+		hasCrashDamage: true,
+		onMoveFail(target, source, move) {
+			this.damage(source.baseMaxhp / 2, source, source, this.dex.conditions.get('High Jump Kick'));
+		},
+		secondary: null,
+		target: "normal",
+		type: "Dark",
+		contestType: "Cool",
+	},
+	wormhole: {
+		num: 370,
+		accuracy: true,
+		basePower: 40,
+		category: "Special",
+		name: "Wormhole",
+		pp: 30,
+		priority: 1,
+		flags: {protect: 1, mirror: 1, distance: 1},
+		secondary: null,
+		target: "any",
+		type: "Psychic",
+		contestType: "Cool",
+	},
+	bigbang: {
+		num: 370,
+		accuracy: 80,
+		basePower: 150,
+		category: "Physical",
+		name: "Big Bang",
+		pp: 5,
+		priority: 0,
+		flags: {contact: 1, protect: 1, mirror: 1, metronome: 1},
+		recoil: [1, 2],
+		secondary: null,
+		target: "allAdjacentFoes",
+		type: "Psychic",
+		contestType: "Tough",
+	},
+	mothernature: {
+		num: 370,
+		accuracy: 100,
+		basePower: 90,
+		category: "Special",
+		name: "Mother Nature",
+		pp: 10,
+		priority: 0,
+		flags: {protect: 1, contact: 1, mirror: 1},
+		self: {
+			onHit(pokemon, source, move) {
+				this.add('-activate', source, 'move: Aromatherapy');
+				for (const ally of source.side.pokemon) {
+					if (ally !== source && (ally.volatiles['substitute'] && !move.infiltrates)) {
+						continue;
+					}
+					ally.cureStatus();
+				}
+			},
+		},
+		secondary: {
+			chance: 10,
+			self: {
+				boosts: {
+					spd: 1,
+				},
+			},
+		},
+		target: "normal",
+		type: "Grass",
+		contestType: "Clever",
+	},
+	clockstrikes: {
+		num: 370,
+		accuracy: 95,
+		basePower: 50,
+		category: "Physical",
+		name: "Clock Strikes",
+		pp: 10,
+		priority: 0,
+		flags: {contact: 1, protect: 1, mirror: 1, slicing: 1},
+		multihit: 2,
+		secondary: null,
+		target: "normal",
+		type: "Steel",
+	},
+	timeflies: {
+		num: 370,
+		accuracy: 100,
+		basePower: 50,
+		category: "Physical",
+		name: "Time Flies",
+		pp: 10,
+		priority: 2,
+		flags: {protect: 1, mirror: 1, distance: 1},
+		secondary: null,
+		target: "any",
+		type: "Psychic",
+		contestType: "Cool",
+	},
+	timetogo: {
+		num: 370,
+		accuracy: 100,
+		basePower: 55,
+		category: "Physical",
+		name: "Time to Go",
+		pp: 10,
+		priority: 2,
+		flags: {protect: 1, mirror: 1, distance: 1},
+		selfSwitch: true,
+		secondary: null,
+		target: "any",
+		type: "Psychic",
+	},
+	moomers: {
+		num: 370,
+		accuracy: 100,
+		basePower: 120,
+		category: "Physical",
+		name: "Moomers",
+		pp: 5,
+		priority: 0,
+		flags: {contact: 1, protect: 1, mirror: 1, wind: 1},
+		self: {
+			boosts: {
+				def: -1,
+				spd: -1,
+			},
+		},
+		secondary: null,
+		target: "normal",
+		type: "Flying",
+		contestType: "Tough",
+	},
+	chaosstrike: {
+		num: 370,
+		accuracy: 80,
+		basePower: 140,
+		category: "Physical",
+		name: "Chaos Strike",
+		pp: 5,
+		priority: 0,
+		flags: {contact: 1, protect: 1, mirror: 1, metronome: 1},
+		recoil: [33, 100],
+		secondary: null,
+		target: "normal",
+		type: "Dark",
+		contestType: "Tough",
+	},
 	absorb: {
 		num: 71,
 		accuracy: 100,
@@ -3280,83 +3961,12 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		maxMove: {basePower: 130},
 		contestType: "Cool",
 	},
-	tentaclesstrike: {
-		num: 331,
-		accuracy: 95,
-		basePower: 20,
-		category: "Physical",
-		name: "Tentacles Strike",
-		pp: 20,
-		priority: 0,
-		flags: {protect: 1, mirror: 1, metronome: 1, contact: 1},
-		multihit: [3, 8],
-		secondary: null,
-		target: "normal",
-		type: "Water",
-		contestType: "Cool",
-	},
 	burningbulwark: {
 		num: 908,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
 		name: "Burning Bulwark",
-		pp: 10,
-		priority: 4,
-		flags: {metronome: 1, noassist: 1, failcopycat: 1},
-		stallingMove: true,
-		volatileStatus: 'burningbulwark',
-		onPrepareHit(pokemon) {
-			return !!this.queue.willAct() && this.runEvent('StallMove', pokemon);
-		},
-		onHit(pokemon) {
-			pokemon.addVolatile('stall');
-		},
-		condition: {
-			duration: 1,
-			onStart(target) {
-				this.add('-singleturn', target, 'move: Protect');
-			},
-			onTryHitPriority: 3,
-			onTryHit(target, source, move) {
-				if (!move.flags['protect'] || move.category === 'Status') {
-					if (['gmaxoneblow', 'gmaxrapidflow'].includes(move.id)) return;
-					if (move.isZ || move.isMax) target.getMoveHitData(move).zBrokeProtect = true;
-					return;
-				}
-				if (move.smartTarget) {
-					move.smartTarget = false;
-				} else {
-					this.add('-activate', target, 'move: Protect');
-				}
-				const lockedmove = source.getVolatile('lockedmove');
-				if (lockedmove) {
-					// Outrage counter is reset
-					if (source.volatiles['lockedmove'].duration === 2) {
-						delete source.volatiles['lockedmove'];
-					}
-				}
-				if (this.checkMoveMakesContact(move, source, target)) {
-					source.trySetStatus('brn', target);
-				}
-				return this.NOT_FAIL;
-			},
-			onHit(target, source, move) {
-				if (move.isZOrMaxPowered && this.checkMoveMakesContact(move, source, target)) {
-					source.trySetStatus('brn', target);
-				}
-			},
-		},
-		secondary: null,
-		target: "self",
-		type: "Fire",
-	},
-	phoenixshield: {
-		num: 908,
-		accuracy: true,
-		basePower: 0,
-		category: "Status",
-		name: "Phoenix Shield",
 		pp: 10,
 		priority: 4,
 		flags: {metronome: 1, noassist: 1, failcopycat: 1},
@@ -3490,24 +4100,6 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		target: "self",
 		type: "Psychic",
 		zMove: {effect: 'clearnegativeboost'},
-		contestType: "Clever",
-	},
-	ameway: {
-		num: 347,
-		accuracy: true,
-		basePower: 0,
-		category: "Status",
-		name: "Ame Way",
-		pp: 20,
-		priority: 0,
-		flags: {snatch: 1, metronome: 1},
-		boosts: {
-			atk: 2,
-			spa: 2,
-		},
-		secondary: null,
-		target: "self",
-		type: "Psychic",
 		contestType: "Clever",
 	},
 	camouflage: {
@@ -3775,23 +4367,6 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		target: "all",
 		type: "Ice",
 	},
-	rainshaman: {
-		num: 881,
-		accuracy: true,
-		basePower: 0,
-		category: "Status",
-		name: "Rain Shaman",
-		pp: 10,
-		priority: 0,
-		flags: {},
-		// TODO show prepare message before the "POKEMON used MOVE!" message
-		// This happens even before sleep shows its "POKEMON is fast asleep." message
-		weather: 'RainDance',
-		selfSwitch: true,
-		secondary: null,
-		target: "all",
-		type: "Water",
-	},
 	chipaway: {
 		num: 498,
 		accuracy: 100,
@@ -3965,46 +4540,6 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		secondary: null,
 		target: "normal",
 		type: "Fighting",
-		contestType: "Tough",
-	},
-	moomers: {
-		num: 370,
-		accuracy: 100,
-		basePower: 120,
-		category: "Physical",
-		name: "Moomers",
-		pp: 5,
-		priority: 0,
-		flags: {contact: 1, protect: 1, mirror: 1, metronome: 1},
-		self: {
-			boosts: {
-				def: -1,
-				spd: -1,
-			},
-		},
-		secondary: null,
-		target: "normal",
-		type: "Flying",
-		contestType: "Tough",
-	},
-	gawrrage: {
-		num: 370,
-		accuracy: 100,
-		basePower: 130,
-		category: "Physical",
-		name: "Gawr Rage",
-		pp: 5,
-		priority: 0,
-		flags: {contact: 1, protect: 1, mirror: 1, metronome: 1},
-		self: {
-			boosts: {
-				def: -1,
-				spd: -1,
-			},
-		},
-		secondary: null,
-		target: "normal",
-		type: "Water",
 		contestType: "Tough",
 	},
 	coaching: {
@@ -4667,27 +5202,6 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		},
 		target: "normal",
 		type: "Dark",
-		contestType: "Tough",
-	},
-	sharkattack: {
-		num: 242,
-		accuracy: 95,
-		basePower: 80,
-		category: "Physical",
-		name: "Shark Attack",
-		pp: 10,
-		priority: 0,
-		flags: {contact: 1, protect: 1, mirror: 1, metronome: 1, bite: 1},
-		secondary: {
-			chance: 10,
-			self: {
-				boosts: {
-					spe: 1,
-				},
-			},
-		},
-		target: "normal",
-		type: "Water",
 		contestType: "Tough",
 	},
 	crushclaw: {
@@ -5389,66 +5903,6 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Normal",
 		contestType: "Tough",
 	},
-	chaosstrike: {
-		num: 38,
-		accuracy: 80,
-		basePower: 140,
-		category: "Physical",
-		name: "Chaos Strike",
-		pp: 5,
-		priority: 0,
-		flags: {contact: 1, protect: 1, mirror: 1, metronome: 1},
-		recoil: [33, 100],
-		secondary: null,
-		target: "normal",
-		type: "Dark",
-		contestType: "Tough",
-	},
-	bigbang: {
-		num: 38,
-		accuracy: 85,
-		basePower: 140,
-		category: "Physical",
-		name: "Big Bang",
-		pp: 5,
-		priority: 0,
-		flags: {contact: 1, protect: 1, mirror: 1, metronome: 1},
-		recoil: [33, 100],
-		secondary: null,
-		target: "allAdjacentFoes",
-		type: "Psychic",
-		contestType: "Tough",
-	},
-	dahlah: {
-		num: 38,
-		accuracy: 90,
-		basePower: 130,
-		category: "Physical",
-		name: "Dahlah",
-		pp: 15,
-		priority: 0,
-		flags: {contact: 1, protect: 1, mirror: 1, slicing: 1},
-		recoil: [33, 100],
-		secondary: null,
-		target: "normal",
-		type: "Steel",
-		contestType: "Tough",
-	},
-	zombiestrike: {
-		num: 38,
-		accuracy: 90,
-		basePower: 120,
-		category: "Physical",
-		name: "Zombie Strike",
-		pp: 5,
-		priority: 0,
-		flags: {contact: 1, protect: 1, mirror: 1, metronome: 1},
-		recoil: [33, 100],
-		secondary: null,
-		target: "normal",
-		type: "Ghost",
-		contestType: "Tough",
-	},
 	doublehit: {
 		num: 458,
 		accuracy: 90,
@@ -5947,48 +6401,6 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		secondary: null,
 		target: "normal",
 		type: "Dark",
-	},
-	tonjok: {
-		num: 814,
-		accuracy: 95,
-		basePower: 50,
-		category: "Physical",
-		name: "Tonjok",
-		pp: 10,
-		priority: 0,
-		flags: {contact: 1, protect: 1, mirror: 1, punch: 1},
-		multihit: 2,
-		secondary: null,
-		target: "normal",
-		type: "Fighting",
-	},
-	deez: {
-		num: 814,
-		accuracy: 90,
-		basePower: 60,
-		category: "Physical",
-		name: "Deez",
-		pp: 5,
-		priority: 0,
-		flags: {contact: 1, protect: 1, mirror: 1, metronome: 1},
-		multihit: 2,
-		secondary: null,
-		target: "normal",
-		type: "Grass",
-	},
-	clockstrikes: {
-		num: 814,
-		accuracy: 95,
-		basePower: 50,
-		category: "Physical",
-		name: "Clock Strikes",
-		pp: 10,
-		priority: 0,
-		flags: {contact: 1, protect: 1, mirror: 1, slicing: 1},
-		multihit: 2,
-		secondary: null,
-		target: "normal",
-		type: "Steel",
 	},
 	dynamaxcannon: {
 		num: 744,
@@ -7333,23 +7745,6 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Fire",
 		contestType: "Beautiful",
 	},
-	phoenixblade: {
-		num: 53,
-		accuracy: 100,
-		basePower: 90,
-		category: "Physical",
-		name: "Phoenix Blade",
-		pp: 10,
-		priority: 0,
-		flags: {protect: 1, mirror: 1, slicing: 1},
-		secondary: {
-			chance: 20,
-			status: 'brn',
-		},
-		target: "normal",
-		type: "Fire",
-		contestType: "Beautiful",
-	},
 	flareblitz: {
 		num: 394,
 		accuracy: 100,
@@ -7509,34 +7904,6 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		secondary: null,
 		target: "normal",
 		type: "Water",
-	},
-	timetogo: {
-		num: 812,
-		accuracy: 100,
-		basePower: 70,
-		category: "Physical",
-		name: "Time to Go",
-		pp: 10,
-		priority: 1,
-		flags: {protect: 1, mirror: 1, metronome: 1},
-		selfSwitch: true,
-		secondary: null,
-		target: "any",
-		type: "Psychic",
-	},
-	timetravel: {
-		num: 812,
-		accuracy: 100,
-		basePower: 60,
-		category: "Physical",
-		name: "Time Travel",
-		pp: 15,
-		priority: 0,
-		flags: {contact: 1, protect: 1, mirror: 1, metronome: 1},
-		selfSwitch: true,
-		secondary: null,
-		target: "normal",
-		type: "Psychic",
 	},
 	floatyfall: {
 		num: 731,
@@ -7923,29 +8290,6 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		},
 		target: "normal",
 		type: "Ice",
-		contestType: "Beautiful",
-	},
-	alientouch: {
-		num: 573,
-		accuracy: 100,
-		basePower: 100,
-		category: "Physical",
-		name: "Alien Touch",
-		pp: 10,
-		priority: 0,
-		flags: {protect: 1, mirror: 1, contact: 1},
-		ignoreImmunity: true,
-		onEffectiveness(typeMod, target, type, move) {
-			if (move.type !== 'Psychic') return;
-			if (!target) return; // avoid crashing when called from a chat plugin
-			// ignore effectiveness if the target is Dark type and immune to Psychic
-			if (!target.runImmunity('Psychic')) {
-				if (target.hasType('Dark')) return 0;
-			}
-		},
-		secondary: null,
-		target: "normal",
-		type: "Psychic",
 		contestType: "Beautiful",
 	},
 	godeyes: {
@@ -10807,48 +11151,6 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Fighting",
 		contestType: "Cool",
 	},
-	groundpound: {
-		num: 136,
-		accuracy: 85,
-		basePower: 140,
-		category: "Physical",
-		name: "Ground Pound",
-		pp: 5,
-		priority: 0,
-		flags: {contact: 1, protect: 1, mirror: 1, gravity: 1, metronome: 1},
-		hasCrashDamage: true,
-		onMoveFail(target, source, move) {
-			this.damage(source.baseMaxhp / 2, source, source, this.dex.conditions.get('High Jump Kick'));
-		},
-		secondary: null,
-		target: "normal",
-		type: "Ground",
-		contestType: "Cool",
-	},
-	hopeless: {
-		num: 136,
-		accuracy: 90,
-		basePower: 140,
-		category: "Physical",
-		name: "Hopeless",
-		pp: 5,
-		priority: 0,
-		flags: {contact: 1, protect: 1, mirror: 1, metronome: 1},
-		self: {
-			boosts: {
-				def: -1,
-				spd: -1,
-			},
-		},
-		hasCrashDamage: true,
-		onMoveFail(target, source, move) {
-			this.damage(source.baseMaxhp / 2, source, source, this.dex.conditions.get('High Jump Kick'));
-		},
-		secondary: null,
-		target: "normal",
-		type: "Dark",
-		contestType: "Cool",
-	},
 	holdback: {
 		num: 610,
 		accuracy: 100,
@@ -11196,20 +11498,6 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		secondary: null,
 		target: "allAdjacentFoes",
 		type: "Dark",
-		contestType: "Cool",
-	},
-	grimrapper: {
-		num: 304,
-		accuracy: 100,
-		basePower: 90,
-		category: "Special",
-		name: "Grim Rapper",
-		pp: 10,
-		priority: 0,
-		flags: {protect: 1, mirror: 1, sound: 1, bypasssub: 1, metronome: 1},
-		secondary: null,
-		target: "allAdjacentFoes",
-		type: "Ghost",
 		contestType: "Cool",
 	},
 	hypnosis: {
@@ -12185,21 +12473,6 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Grass",
 		contestType: "Cool",
 	},
-	scythe: {
-		num: 348,
-		accuracy: 100,
-		basePower: 90,
-		category: "Physical",
-		name: "Scythe",
-		pp: 10,
-		priority: 0,
-		flags: {contact: 1, protect: 1, mirror: 1, metronome: 1, slicing: 1},
-		critRatio: 2,
-		secondary: null,
-		target: "normal",
-		type: "Ghost",
-		contestType: "Cool",
-	},
 	leafstorm: {
 		num: 437,
 		accuracy: 90,
@@ -12718,20 +12991,6 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		secondary: null,
 		target: "normal",
 		type: "Fighting",
-		contestType: "Cool",
-	},
-	timeflies: {
-		num: 183,
-		accuracy: 100,
-		basePower: 50,
-		category: "Physical",
-		name: "Time Flies",
-		pp: 10,
-		priority: 2,
-		flags: {protect: 1, mirror: 1, metronome: 1},
-		secondary: null,
-		target: "any",
-		type: "Psychic",
 		contestType: "Cool",
 	},
 	magicalleaf: {
@@ -13889,90 +14148,6 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Steel",
 		contestType: "Cool",
 	},
-	aochan: {
-		num: 309,
-		accuracy: 100,
-		basePower: 100,
-		category: "Physical",
-		name: "AO Chan",
-		pp: 10,
-		priority: 0,
-		flags: {protect: 1, mirror: 1, metronome: 1},
-		secondary: {
-			chance: 20,
-			self: {
-				boosts: {
-					spd: 1,
-				},
-			},
-		},
-		target: "normal",
-		type: "Psychic",
-		contestType: "Cool",
-	},
-	keris: {
-		num: 309,
-		accuracy: 100,
-		basePower: 90,
-		category: "Physical",
-		name: "Keris",
-		pp: 10,
-		priority: 0,
-		flags: {contact: 1, protect: 1, mirror: 1, slicing: 1, metronome: 1},
-		secondary: {
-			chance: 10,
-			self: {
-				boosts: {
-					def: 1,
-				},
-			},
-		},
-		target: "normal",
-		type: "Steel",
-		contestType: "Cool",
-	},
-	peacockattack: {
-		num: 309,
-		accuracy: 100,
-		basePower: 85,
-		category: "Special",
-		name: "Peacock Attack",
-		pp: 15,
-		priority: 0,
-		flags: {protect: 1, mirror: 1, wind: 1, metronome: 1},
-		secondary: {
-			chance: 10,
-			self: {
-				boosts: {
-					spa: 1,
-				},
-			},
-		},
-		target: "normal",
-		type: "Flying",
-		contestType: "Cool",
-	},
-	moonstrike: {
-		num: 309,
-		accuracy: 100,
-		basePower: 100,
-		category: "Physical",
-		name: "Moonstrike",
-		pp: 10,
-		priority: 0,
-		flags: {protect: 1, mirror: 1, slicing: 1, metronome: 1},
-		secondary: {
-			chance: 10,
-			self: {
-				boosts: {
-					spd: 1,
-				},
-			},
-		},
-		target: "normal",
-		type: "Psychic",
-		contestType: "Cool",
-	},
 	metronome: {
 		num: 118,
 		accuracy: true,
@@ -14785,23 +14960,6 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		zMove: {effect: 'clearnegativeboost'},
 		contestType: "Clever",
 	},
-	wah: {
-		num: 417,
-		accuracy: true,
-		basePower: 0,
-		category: "Status",
-		name: "Wah",
-		pp: 20,
-		priority: 0,
-		flags: {snatch: 1, sound: 1},
-		boosts: {
-			spa: 2,
-		},
-		secondary: null,
-		target: "self",
-		type: "Normal",
-		contestType: "Clever",
-	},
 	naturalgift: {
 		num: 363,
 		accuracy: 100,
@@ -15211,25 +15369,6 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Water",
 		contestType: "Tough",
 	},
-	tako: {
-		num: 190,
-		accuracy: 95,
-		basePower: 80,
-		category: "Special",
-		name: "Tako",
-		pp: 10,
-		priority: 0,
-		flags: {protect: 1, mirror: 1, metronome: 1},
-		secondary: {
-			chance: 10,
-			boosts: {
-				accuracy: -1,
-			},
-		},
-		target: "normal",
-		type: "Water",
-		contestType: "Tough",
-	},
 	octolock: {
 		num: 753,
 		accuracy: 100,
@@ -15468,27 +15607,6 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		target: "normal",
 		type: "Dark",
 		zMove: {effect: 'healreplacement'},
-		contestType: "Cool",
-	},
-	nopressure: {
-		num: 575,
-		accuracy: 100,
-		basePower: 0,
-		category: "Status",
-		name: "No Pressure",
-		pp: 10,
-		priority: 0,
-		flags: {protect: 1, reflectable: 1, mirror: 1, sound: 1, bypasssub: 1, metronome: 1},
-		onHit(target, source, move) {
-			const success = this.boost({def: -1, spd: -1}, target, source);
-			if (!success && !target.hasAbility('mirrorarmor')) {
-				delete move.selfSwitch;
-			}
-		},
-		selfSwitch: true,
-		secondary: null,
-		target: "normal",
-		type: "Steel",
 		contestType: "Cool",
 	},
 	payback: {
@@ -19705,21 +19823,6 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		target: "normal",
 		type: "Water",
 	},
-	spyshot: {
-		num: 745,
-		accuracy: true,
-		basePower: 90,
-		category: "Physical",
-		name: "Spy Shot",
-		pp: 10,
-		priority: 0,
-		flags: {mirror: 1, bypasssub: 1, bullet: 1},
-		critRatio: 2,
-		tracksTarget: true,
-		secondary: null,
-		target: "normal",
-		type: "Dark",
-	},
 	snore: {
 		num: 173,
 		accuracy: 100,
@@ -19982,63 +20085,6 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		secondary: null,
 		target: "normal",
 		type: "Fairy",
-		contestType: "Clever",
-	},
-	hopeful: {
-		num: 740,
-		accuracy: 100,
-		basePower: 80,
-		category: "Physical",
-		name: "Hopeful",
-		pp: 10,
-		priority: 0,
-		flags: {protect: 1, contact: 1, mirror: 1},
-		self: {
-			onHit(pokemon, source, move) {
-				this.add('-activate', source, 'move: Aromatherapy');
-				for (const ally of source.side.pokemon) {
-					if (ally !== source && (ally.volatiles['substitute'] && !move.infiltrates)) {
-						continue;
-					}
-					ally.cureStatus();
-				}
-			},
-		},
-		secondary: null,
-		target: "normal",
-		type: "Fairy",
-		contestType: "Clever",
-	},
-	mothernature: {
-		num: 740,
-		accuracy: 100,
-		basePower: 90,
-		category: "Special",
-		name: "Mother Nature",
-		pp: 10,
-		priority: 0,
-		flags: {protect: 1, contact: 1, mirror: 1},
-		self: {
-			onHit(pokemon, source, move) {
-				this.add('-activate', source, 'move: Aromatherapy');
-				for (const ally of source.side.pokemon) {
-					if (ally !== source && (ally.volatiles['substitute'] && !move.infiltrates)) {
-						continue;
-					}
-					ally.cureStatus();
-				}
-			},
-		},
-		secondary: {
-			chance: 10,
-			self: {
-				boosts: {
-					spd: 1,
-				},
-			},
-		},
-		target: "normal",
-		type: "Grass",
 		contestType: "Clever",
 	},
 	spectralthief: {
@@ -20767,21 +20813,6 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Rock",
 		contestType: "Tough",
 	},
-	trident: {
-		num: 444,
-		accuracy: 85,
-		basePower: 120,
-		category: "Physical",
-		name: "Trident",
-		pp: 5,
-		priority: 0,
-		flags: {protect: 1, mirror: 1, slicing: 1},
-		critRatio: 2,
-		secondary: null,
-		target: "normal",
-		type: "Water",
-		contestType: "Tough",
-	},
 	storedpower: {
 		num: 500,
 		accuracy: 100,
@@ -21410,23 +21441,6 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		target: "self",
 		type: "Normal",
 		zMove: {effect: 'clearnegativeboost'},
-		contestType: "Beautiful",
-	},
-	hopesoda: {
-		num: 14,
-		accuracy: true,
-		basePower: 0,
-		category: "Status",
-		name: "Hope Soda",
-		pp: 20,
-		priority: 0,
-		flags: {snatch: 1, metronome: 1},
-		boosts: {
-			atk: 2,
-		},
-		secondary: null,
-		target: "self",
-		type: "Water",
 		contestType: "Beautiful",
 	},
 	synchronoise: {
@@ -23078,20 +23092,6 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		secondary: null,
 		target: "normal",
 		type: "Fighting",
-		contestType: "Cool",
-	},
-	wormhole: {
-		num: 410,
-		accuracy: 100,
-		basePower: 40,
-		category: "Special",
-		name: "Wormhole",
-		pp: 30,
-		priority: 1,
-		flags: {protect: 1, mirror: 1, metronome: 1},
-		secondary: null,
-		target: "any",
-		type: "Psychic",
 		contestType: "Cool",
 	},
 	vcreate: {

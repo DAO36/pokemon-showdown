@@ -2435,15 +2435,15 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	timetravel: {
 		name: "Time Travel",
-		desc: "If this move is successful and the user has not fainted, the user switches out even if it is trapped and is replaced immediately by a selected party member. The user does not switch out if there are no unfainted party members, or if the target switched out using an Eject Button or through the effect of the Emergency Exit or Wimp Out Abilities.",
-		shortDesc: "User switches out after damaging the target.",
+		desc: "Usually goes first. If this move is successful and the user has not fainted, the user switches out even if it is trapped and is replaced immediately by a selected party member. The user does not switch out if there are no unfainted party members, or if the target switched out using an Eject Button or through the effect of the Emergency Exit or Wimp Out Abilities.",
+		shortDesc: "User switches out after damaging the target. Usually goes first.",
 
 		switchOut: "#uturn",
 	},
 	timetogo: {
 		name: "Time to Go",
-		desc: "If this move is successful and the user has not fainted, the user switches out even if it is trapped and is replaced immediately by a selected party member. The user does not switch out if there are no unfainted party members, or if the target switched out using an Eject Button or through the effect of the Emergency Exit or Wimp Out Abilities.",
-		shortDesc: "User switches out after damaging the target.",
+		desc: "If this move is successful and the user has not fainted, the user switches out even if it is trapped and is replaced immediately by a selected party member. The user does not switch out if there are no unfainted party members, or if the target switched out using an Eject Button or through the effect of the Emergency Exit or Wimp Out Abilities. Almost always goes first.",
+		shortDesc: "User switches out after damaging the target. Almost always goes first.",
 
 		switchOut: "#uturn",
 	},
@@ -3933,8 +3933,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	scythe: {
 		name: "Scythe",
-		desc: "Has a higher chance for a critical hit.",
-		shortDesc: "High critical hit ratio.",
+		desc: "Has a higher chance for a critical hit. Never misses.",
+		shortDesc: "High critical hit ratio. Never misses.",
 	},
 	leafstorm: {
 		name: "Leaf Storm",
@@ -4459,13 +4459,13 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	aochan: {
 		name: "AO Chan",
-		desc: "Has a 20% chance to raise the user's Special Defense by 1 stage.",
-		shortDesc: "20% chance to raise the user's Sp. Def by 1.",
+		desc: "Has a 20% chance to raise the user's Special Defense by 1 stage. Never misses.",
+		shortDesc: "20% chance to raise the user's Sp. Def by 1. Never misses.",
 	},
 	keris: {
 		name: "Keris",
-		desc: "Has a 10% chance to raise the user's Defense by 1 stage.",
-		shortDesc: "10% chance to raise the user's Defense by 1.",
+		desc: "Has a 10% chance to raise the user's Special Defense by 1 stage.",
+		shortDesc: "10% chance to raise the user's Sp. Def by 1.",
 	},
 	peacockattack: {
 		name: "Peacock Attack",
@@ -7775,8 +7775,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	wormhole: {
 		name: "Wormhole",
-		desc: "No additional effect.",
-		shortDesc: "Usually goes first.",
+		desc: "This move always hits. Usually goes first.",
+		shortDesc: "Usually goes first. Never Misses",
 	},
 	vcreate: {
 		name: "V-create",
