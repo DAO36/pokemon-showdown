@@ -10732,7 +10732,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	idolsong: {
 		num: 304,
 		accuracy: 100,
-		basePower: 100,
+		basePower: 90,
 		category: "Special",
 		name: "Idol Song",
 		pp: 10,
@@ -10741,7 +10741,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		secondary: null,
 		target: "allAdjacentFoes",
 		type: "Fairy",
-		contestType: "Cool",
+		contestType: "Cute",
 	},
 	divasong: {
 		num: 304,
@@ -13653,7 +13653,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		},
 		target: "normal",
 		type: "Fairy",
-		contestType: "Cool",
+		contestType: "Cute",
 	},
 	metronome: {
 		num: 118,
@@ -21555,6 +21555,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		secondary: null,
 		target: "self",
 		type: "Fairy",
+		contestType: "Beautiful",
 	},
 	tarshot: {
 		num: 749,
