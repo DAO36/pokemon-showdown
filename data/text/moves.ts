@@ -831,6 +831,11 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		desc: "Hits two to five times. Has a 35% chance to hit two or three times and a 15% chance to hit four or five times. If one of the hits breaks the target's substitute, it will take damage for the remaining hits. If the user has the Skill Link Ability, this move will always hit five times. If the user is holding Loaded Dice, this move will hit 4-5 times.",
 		shortDesc: "Hits 2-5 times in one turn.",
 	},
+	samuraistrikes: {
+		name: "Samurai Strikes",
+		desc: "Hits two to five times. Has a 35% chance to hit two or three times and a 15% chance to hit four or five times. If one of the hits breaks the target's substitute, it will take damage for the remaining hits. If the user has the Skill Link Ability, this move will always hit five times. If the user is holding Loaded Dice, this move will hit 4-5 times.",
+		shortDesc: "Hits 2-5 times in one turn.",
+	},
 	tentaclesstrike: {
 		name: "Tentacles Strike",
 		desc: "Hits three to eight times. Has a 35% chance to hit two or three times and a 15% chance to hit four to eight times. If one of the hits breaks the target's substitute, it will take damage for the remaining hits. If the user has the Skill Link Ability, this move will always hit five times. If the user is holding Loaded Dice, this move will hit 4-5 times.",
@@ -841,15 +846,10 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		desc: "Hits two to five times. Has a 35% chance to hit two or three times and a 15% chance to hit four or five times. If one of the hits breaks the target's substitute, it will take damage for the remaining hits. If the user has the Skill Link Ability, this move will always hit five times. If the user is holding Loaded Dice, this move will hit 4-5 times.",
 		shortDesc: "Hits 2-5 times in one turn.",
 	},
-	starassault: {
-		name: "Star Assault",
-		desc: "Hits two to five times. Has a 35% chance to hit two or three times and a 15% chance to hit four or five times. If one of the hits breaks the target's substitute, it will take damage for the remaining hits. If the user has the Skill Link Ability, this move will always hit five times. If the user is holding Loaded Dice, this move will hit 4-5 times.",
-		shortDesc: "Hits 2-5 times in one turn.",
-	},
 	arrowassault: {
 		name: "Arrow Assault",
-		desc: "Hits two to five times. Has a 35% chance to hit two or three times and a 15% chance to hit four or five times. If one of the hits breaks the target's substitute, it will take damage for the remaining hits. If the user has the Skill Link Ability, this move will always hit five times. If the user is holding Loaded Dice, this move will hit 4-5 times.",
-		shortDesc: "Hits 2-5 times in one turn.",
+		desc: "Has a 10% chance to burn the target. Hits two to five times. Has a 35% chance to hit two or three times and a 15% chance to hit four or five times. If one of the hits breaks the target's substitute, it will take damage for the remaining hits. If the user has the Skill Link Ability, this move will always hit five times. If the user is holding Loaded Dice, this move will hit 4-5 times.",
+		shortDesc: "Hits 2-5 times in one turn. 10% chance to burn",
 	},
 	elfarrows: {
 		name: "Elf Arrows",
@@ -1098,11 +1098,6 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	gawrrage: {
 		name: "Gawr Rage",
-		desc: "Lowers the user's Defense and Special Defense by 1 stage.",
-		shortDesc: "Lowers the user's Defense and Sp. Def by 1.",
-	},
-	samuraislash: {
-		name: "Samurai Slash",
 		desc: "Lowers the user's Defense and Special Defense by 1 stage.",
 		shortDesc: "Lowers the user's Defense and Sp. Def by 1.",
 	},
@@ -1866,8 +1861,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	clowntown: {
 		name: "Clown Town",
-		desc: "Has a 10% chance to confuse the target. Hits twice. If the first hit breaks the target's substitute, it will take damage for the second hit.",
-		shortDesc: "Hits 2 times in one turn, 10% chance to confuse the target.",
+		desc: "Has a 20% chance to confuse the target. Hits twice. If the first hit breaks the target's substitute, it will take damage for the second hit.",
+		shortDesc: "Hits 2 times in one turn, 20% chance to confuse the target.",
 	},
 	carrotstrike: {
 		name: "Carrot Strike",
@@ -3398,13 +3393,6 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 
 		damage: "#crash",
 	},
-	devilishslam: {
-		name: "Devilish Slam",
-		desc: "If this attack is not successful, the user loses half of its maximum HP, rounded down, as crash damage. Pokemon with the Magic Guard Ability are unaffected by crash damage.",
-		shortDesc: "User loses 50% max HP if miss.",
-
-		damage: "#crash",
-	},
 	groundpound: {
 		name: "Ground Pound",
 		desc: "If this attack is not successful, the user loses half of its maximum HP, rounded down, as crash damage. Pokemon with the Magic Guard Ability are unaffected by crash damage.",
@@ -3548,8 +3536,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	succubussong: {
 		name: "Succubus Song",
-		desc: "Hits adjacent foes. Lowers the user's Special Attack by 1 stage.",
-		shortDesc: "Lowers the user's Sp. Atk by 1. Hits adjacent foes.",
+		desc: "Hits adjacent foes. Lowers the user's Special Attack by 1 stage. This move never misses.",
+		shortDesc: "Lowers the user's Sp. Atk by 1. Hits adjacent foes. Never misses.",
 	},
 	hypervoice: {
 		name: "Hyper Voice",
@@ -3613,8 +3601,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	wamywater: {
 		name: "Wamy Water",
-		desc: "Has a 25% chance to freeze the target.",
-		shortDesc: "25% chance to freeze the target.",
+		desc: "Has a 20% chance to freeze the target.",
+		shortDesc: "20% chance to freeze the target.",
 	},
 	cometslam: {
 		name: "Comet Slam",
@@ -5190,8 +5178,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	asacoco: {
 		name: "AsaCoco",
-		desc: "Has a 20% chance to badly poison the target.",
-		shortDesc: "20% chance to badly poison the target.",
+		desc: "Has a 25% chance to badly poison the target.",
+		shortDesc: "25% chance to badly poison the target.",
 	},
 	poisonpowder: {
 		name: "Poison Powder",
@@ -6901,8 +6889,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	ahoy: {
 		name: "Ahoy",
-		desc: "Has a 10% chance to confuse the target.",
-		shortDesc: "10% chance to confuse the target.",
+		desc: "Has a 20% chance to confuse the target.",
+		shortDesc: "20% chance to confuse the target.",
 	},
 	strength: {
 		name: "Strength",
@@ -7051,6 +7039,16 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		name: "Superpower",
 		desc: "Lowers the user's Attack and Defense by 1 stage.",
 		shortDesc: "Lowers the user's Attack and Defense by 1.",
+	},
+	succubusstrike: {
+		name: "Succubus Strike",
+		desc: "Lowers the user's Attack and Special Defense by 1 stage.",
+		shortDesc: "Lowers the user's Atk and Sp. Def by 1.",
+	},
+	daredevil: {
+		name: "Daredevil",
+		desc: "Lowers the user's Attack and Defense by 1 stage. Never misses.",
+		shortDesc: "Lowers the user's Attack and Defense by 1. Never misses.",
 	},
 	supersonic: {
 		name: "Supersonic",
@@ -7543,8 +7541,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	nothingwrong: {
 		name: "Nothing Wrong",
-		desc: "Has a 10% chance to raise the user's Special Attack by 1 stage.",
-		shortDesc: "10% chance to raise the user's Sp. Atk by 1.",
+		desc: "Raises the user's Attack and Special Defense by 1 stage.",
+		shortDesc: "Raises the user's Atk and Sp. Def by 1.",
 	},
 	torment: {
 		name: "Torment",

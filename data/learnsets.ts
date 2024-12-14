@@ -95071,13 +95071,13 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			agility: ["9M"],
 			calmmind: ["9M"],
 			gorillagrip: ["9M"],
-			starassault: ["9M"],
         },
 	},	
 	watame: {
 		learnset: {
 			hypervoice: ["9M"],
 			hyperbeam: ["9M"],
+			boomburst: ["9M"],
 			bodyslam: ["9M"],
 			overdrive: ["9M"],
 			wildcharge: ["9M"],
@@ -95184,7 +95184,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			tailwind: ["9M"],
 			calmmind: ["9M"],
 			trick: ["9M"],
-			devilishslam: ["9M"],
+			daredevil: ["9M"],
         },
 	},	
 	polka: {
@@ -95433,6 +95433,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			spite: ["9M"],
 			grudge: ["9M"],
 			succubussong: ["9M"],
+			succubusstrike: ["9M"],
         },
 	},	
 	iroha: {
@@ -95465,7 +95466,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			agility: ["9M"],
 			allyswitch: ["9M"],
 			calmmind: ["9M"],
-			samuraislash: ["9M"],
+			samuraistrikes: ["9M"],
         },
 	},	
 	koyori: {
