@@ -20349,7 +20349,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		name: "Mumei-Evil",
 		types: ["Flying", "Dark"],
 		gender: "F",
-		baseStats: {hp: 80, atk: 165, def: 95, spa: 90, spd: 75, spe: 95},
+		baseStats: {hp: 80, atk: 160, def: 100, spa: 95, spd: 75, spe: 90},
 		abilities: {0: "Unnerve", 1: "Pressure", H: "Intimidate"},
 		heightm: 1.56,
 		weightkg: 55.5,

@@ -96830,6 +96830,8 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			morningsun: ["9M"],
 			growth: ["9M"],
 			bulkup: ["9M"],
+			wormhole: ["9M"],
+			bigbang: ["9M"],
         },
 	},	
 	fauna: {
@@ -96884,6 +96886,8 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			healingwish: ["9M"],
 			sandstorm: ["9M"],
 			snowscape: ["9M"],
+			hail: ["9M"],
+			mothernature: ["9M"],
         },
 	},	
 	kronii: {
@@ -96925,7 +96929,6 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			headsmash: ["9M"],
 			ancientpower: ["9M"],
 			xscissor: ["9M"],
-			uturn: ["9M"],
 			nightslash: ["9M"],
 			darkpulse: ["9M"],
 			lashout: ["9M"],
@@ -96955,6 +96958,10 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			taunt: ["9M"],
 			torment: ["9M"],
 			storedpower: ["9M"],
+			uturn: ["9M"],
+			clockstrikes: ["9M"],
+			timeflies: ["9M"],
+			timetogo: ["9M"],
         },
 	},	
 	kroniiboros: {
@@ -97006,6 +97013,8 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			aquatail: ["9M"],
 			poisontail: ["9M"],
 			crunch: ["9M"],
+			timetogo: ["9M"],
+			timeflies: ["9M"],
         },
 	},	
 	mumei: {
@@ -97063,6 +97072,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			spite: ["9M"],
 			grudge: ["9M"],
 			charm: ["9M"],
+			moomers: ["9M"],
         },
 	},	
 	mumeievil: {
@@ -97182,6 +97192,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			magicroom: ["9M"],
 			confuseray: ["9M"],
 			spite: ["9M"],
+			chaosstrike: ["9M"],
         },
 	},	
 	shiori: {

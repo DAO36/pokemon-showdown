@@ -1613,6 +1613,16 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		desc: "If the target lost HP, the user takes recoil damage equal to 33% the HP lost by the target, rounded half up, but not less than 1 HP.",
 		shortDesc: "Has 33% recoil.",
 	},
+	bigbang: {
+		name: "Big Bang",
+		desc: "Hits adjacent foes. If the target lost HP, the user takes recoil damage equal to 33% the HP lost by the target, rounded half up, but not less than 1 HP.",
+		shortDesc: "Has 33% recoil. Hits adjacent foes.",
+	},
+	chaosstrike: {
+		name: "Chaos Strike",
+		desc: "Hits adjacent foes. If the target lost HP, the user takes recoil damage equal to 33% the HP lost by the target, rounded half up, but not less than 1 HP.",
+		shortDesc: "Has 33% recoil. Hits adjacent foes.",
+	},
 	zombiestrike: {
 		name: "Zombie Strike",
 		desc: "If the target lost HP, the user takes recoil damage equal to 33% the HP lost by the target, rounded half up, but not less than 1 HP.",
@@ -1807,6 +1817,11 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	dualwingbeat: {
 		name: "Dual Wingbeat",
+		desc: "Hits twice. If the first hit breaks the target's substitute, it will take damage for the second hit.",
+		shortDesc: "Hits 2 times in one turn.",
+	},
+	clockstrikes: {
+		name: "Clock Strikes",
 		desc: "Hits twice. If the first hit breaks the target's substitute, it will take damage for the second hit.",
 		shortDesc: "Hits 2 times in one turn.",
 	},
@@ -2046,7 +2061,7 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		desc: "Has a 100% chance to raise the user's Speed by 1 stage and a higher chance for a critical hit.",
 		shortDesc: "100% chance to raise user Speed by 1. High crit.",
 	},
-	sharkatack: {
+	sharkattack: {
 		name: "Shark Attack",
 		desc: "Has a 10% chance to raise the user's Speed by 1 stage.",
 		shortDesc: "10% chance to raise user Speed by 1.",
@@ -2099,6 +2114,11 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		gen4: {
 			shortDesc: "Usually goes first.",
 		},
+	},
+	timeflies: {
+		name: "Time Flies",
+		desc: "No additional effect.",
+		shortDesc: "Almost always goes first.",
 	},
 	facade: {
 		name: "Facade",
@@ -2391,6 +2411,13 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	timetravel: {
 		name: "Time Travel",
+		desc: "If this move is successful and the user has not fainted, the user switches out even if it is trapped and is replaced immediately by a selected party member. The user does not switch out if there are no unfainted party members, or if the target switched out using an Eject Button or through the effect of the Emergency Exit or Wimp Out Abilities.",
+		shortDesc: "User switches out after damaging the target.",
+
+		switchOut: "#uturn",
+	},
+	timetogo: {
+		name: "Time to Go",
 		desc: "If this move is successful and the user has not fainted, the user switches out even if it is trapped and is replaced immediately by a selected party member. The user does not switch out if there are no unfainted party members, or if the target switched out using an Eject Button or through the effect of the Emergency Exit or Wimp Out Abilities.",
 		shortDesc: "User switches out after damaging the target.",
 
@@ -6525,6 +6552,11 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		desc: "Every Pokemon in the user's party is cured of its non-volatile status condition.",
 		shortDesc: "Cures the user's party of all status conditions.",
 	},
+	mothernature: {
+		name: "Mother Nature",
+		desc: "Every Pokemon in the user's party is cured of its non-volatile status condition.",
+		shortDesc: "Cures the user's party of all status conditions.",
+	},
 	spectralthief: {
 		name: "Spectral Thief",
 		desc: "The target's stat stages greater than 0 are stolen from it and applied to the user before dealing damage.",
@@ -7691,6 +7723,11 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	vacuumwave: {
 		name: "Vacuum Wave",
+		desc: "No additional effect.",
+		shortDesc: "Usually goes first.",
+	},
+	wormhole: {
+		name: "Wormhole",
 		desc: "No additional effect.",
 		shortDesc: "Usually goes first.",
 	},
