@@ -3021,7 +3021,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	gawrrage: {
 		num: 370,
 		accuracy: 100,
-		basePower: 120,
+		basePower: 130,
 		category: "Physical",
 		name: "Gawr Rage",
 		pp: 5,
@@ -3762,7 +3762,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	},
 	sharkattack: {
 		num: 242,
-		accuracy: 100,
+		accuracy: 95,
 		basePower: 80,
 		category: "Physical",
 		name: "Shark Attack",
