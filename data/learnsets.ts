@@ -96417,6 +96417,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			taunt: ["9M"],
 			ameway: ["9M"],
 			timetravel: ["9M"],
+			groundpound: ["9M"],
         },
 	},	
 	amesmol: {

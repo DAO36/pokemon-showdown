@@ -3344,6 +3344,13 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 
 		damage: "#crash",
 	},
+	groundpound: {
+		name: "Ground Pound",
+		desc: "If this attack is not successful, the user loses half of its maximum HP, rounded down, as crash damage. Pokemon with the Magic Guard Ability are unaffected by crash damage.",
+		shortDesc: "User loses 50% max HP if miss.",
+
+		damage: "#crash",
+	},
 	hopeless: {
 		name: "Hopeless",
 		desc: "Lowers the user's Defense and Special Defense by 1 stage. If this attack is not successful, the user loses half of its maximum HP, rounded down, as crash damage. Pokemon with the Magic Guard Ability are unaffected by crash damage.",

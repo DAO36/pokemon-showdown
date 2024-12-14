@@ -2337,7 +2337,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
-		name: "Phoenix Blade",
+		name: "Phoenix Shield",
 		pp: 10,
 		priority: 4,
 		flags: {metronome: 1, noassist: 1, failcopycat: 1},
@@ -9976,6 +9976,24 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		secondary: null,
 		target: "normal",
 		type: "Fighting",
+		contestType: "Cool",
+	},
+	groundpound: {
+		num: 136,
+		accuracy: 85,
+		basePower: 140,
+		category: "Physical",
+		name: "Ground Pound",
+		pp: 5,
+		priority: 0,
+		flags: {contact: 1, protect: 1, mirror: 1, gravity: 1, metronome: 1},
+		hasCrashDamage: true,
+		onMoveFail(target, source, move) {
+			this.damage(source.baseMaxhp / 2, source, source, this.dex.conditions.get('High Jump Kick'));
+		},
+		secondary: null,
+		target: "normal",
+		type: "Ground",
 		contestType: "Cool",
 	},
 	hopeless: {
