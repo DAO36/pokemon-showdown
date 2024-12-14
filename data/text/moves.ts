@@ -812,6 +812,11 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		desc: "Hits two to five times. Has a 35% chance to hit two or three times and a 15% chance to hit four or five times. If one of the hits breaks the target's substitute, it will take damage for the remaining hits. If the user has the Skill Link Ability, this move will always hit five times. If the user is holding Loaded Dice, this move will hit 4-5 times.",
 		shortDesc: "Hits 2-5 times in one turn.",
 	},
+	tentaclesstrike: {
+		name: "Tentacles Strike",
+		desc: "Hits three to eight times. Has a 35% chance to hit two or three times and a 15% chance to hit four to eight times. If one of the hits breaks the target's substitute, it will take damage for the remaining hits. If the user has the Skill Link Ability, this move will always hit five times. If the user is holding Loaded Dice, this move will hit 4-5 times.",
+		shortDesc: "Hits 3-8 times in one turn.",
+	},
 	candycrash: {
 		name: "Candy Crash",
 		desc: "Hits two to five times. Has a 35% chance to hit two or three times and a 15% chance to hit four or five times. If one of the hits breaks the target's substitute, it will take damage for the remaining hits. If the user has the Skill Link Ability, this move will always hit five times. If the user is holding Loaded Dice, this move will hit 4-5 times.",
@@ -852,6 +857,11 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		desc: "The user is protected from most attacks made by other Pokemon during this turn, and Pokemon trying to make contact with the user become burned. Non-damaging moves go through this protection. This move has a 1/X chance of being successful, where X starts at 1 and triples each time this move is successfully used. X resets to 1 if this move fails, if the user's last move used is not Baneful Bunker, Burning Bulwark, Detect, Endure, King's Shield, Max Guard, Obstruct, Protect, Quick Guard, Silk Trap, Spiky Shield, or Wide Guard, or if it was one of those moves and the user's protection was broken. Fails if the user moves last this turn.",
 		shortDesc: "Protects from damaging attacks. Contact: burn.",
 	},
+	phoenixshield: {
+		name: "Phoenix Shield",
+		desc: "The user is protected from most attacks made by other Pokemon during this turn, and Pokemon trying to make contact with the user become burned. Non-damaging moves go through this protection. This move has a 1/X chance of being successful, where X starts at 1 and triples each time this move is successfully used. X resets to 1 if this move fails, if the user's last move used is not Baneful Bunker, Burning Bulwark, Detect, Endure, King's Shield, Max Guard, Obstruct, Protect, Quick Guard, Silk Trap, Spiky Shield, or Wide Guard, or if it was one of those moves and the user's protection was broken. Fails if the user moves last this turn.",
+		shortDesc: "Protects from damaging attacks. Contact: burn.",
+	},
 	burningjealousy: {
 		name: "Burning Jealousy",
 		desc: "Has a 100% chance to burn the target if it had a stat stage raised this turn.",
@@ -876,6 +886,11 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		name: "Calm Mind",
 		desc: "Raises the user's Special Attack and Special Defense by 1 stage.",
 		shortDesc: "Raises the user's Sp. Atk and Sp. Def by 1.",
+	},
+	ameway: {
+		name: "Ame Way",
+		desc: "Raises the user's Attack and Special Attack by 2 stages.",
+		shortDesc: "Raises the user's Atk and Sp. Atk by 2.",
 	},
 	magiconion: {
 		name: "Magic Onion",
@@ -1059,6 +1074,11 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	closecombat: {
 		name: "Close Combat",
+		desc: "Lowers the user's Defense and Special Defense by 1 stage.",
+		shortDesc: "Lowers the user's Defense and Sp. Def by 1.",
+	},
+	gawrrage: {
+		name: "Gawr Rage",
 		desc: "Lowers the user's Defense and Special Defense by 1 stage.",
 		shortDesc: "Lowers the user's Defense and Sp. Def by 1.",
 	},
@@ -2026,6 +2046,11 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		desc: "Has a 100% chance to raise the user's Speed by 1 stage and a higher chance for a critical hit.",
 		shortDesc: "100% chance to raise user Speed by 1. High crit.",
 	},
+	sharkatack: {
+		name: "Shark Attack",
+		desc: "Has a 10% chance to raise the user's Speed by 1 stage.",
+		shortDesc: "10% chance to raise user Speed by 1.",
+	},
 	eternabeam: {
 		name: "Eternabeam",
 		desc: "If this move is successful, the user must recharge on the following turn and cannot select a move.",
@@ -2303,6 +2328,16 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		desc: "Has a 10% chance to burn the target.",
 		shortDesc: "10% chance to burn the target.",
 	},
+	parttimewarrior: {
+		name: "Part Time Warrior",
+		desc: "Has a 10% chance to burn the target.",
+		shortDesc: "10% chance to burn the target.",
+	},
+	phoenixblade: {
+		name: "Phoenix Blade",
+		desc: "Has a 20% chance to burn the target.",
+		shortDesc: "20% chance to burn the target.",
+	},
 	flareblitz: {
 		name: "Flare Blitz",
 		desc: "Has a 10% chance to burn the target. If the target lost HP, the user takes recoil damage equal to 33% the HP lost by the target, rounded half up, but not less than 1 HP.",
@@ -2349,6 +2384,13 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	flipturn: {
 		name: "Flip Turn",
+		desc: "If this move is successful and the user has not fainted, the user switches out even if it is trapped and is replaced immediately by a selected party member. The user does not switch out if there are no unfainted party members, or if the target switched out using an Eject Button or through the effect of the Emergency Exit or Wimp Out Abilities.",
+		shortDesc: "User switches out after damaging the target.",
+
+		switchOut: "#uturn",
+	},
+	timetravel: {
+		name: "Time Travel",
 		desc: "If this move is successful and the user has not fainted, the user switches out even if it is trapped and is replaced immediately by a selected party member. The user does not switch out if there are no unfainted party members, or if the target switched out using an Eject Button or through the effect of the Emergency Exit or Wimp Out Abilities.",
 		shortDesc: "User switches out after damaging the target.",
 
@@ -3302,6 +3344,13 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 
 		damage: "#crash",
 	},
+	hopeless: {
+		name: "Hopeless",
+		desc: "Lowers the user's Defense and Special Defense by 1 stage. If this attack is not successful, the user loses half of its maximum HP, rounded down, as crash damage. Pokemon with the Magic Guard Ability are unaffected by crash damage.",
+		shortDesc: "Lowers the user's Def and Sp. Def by 1. User loses 50% max HP if miss.",
+
+		damage: "#crash",
+	},
 	holdback: {
 		name: "Hold Back",
 		desc: "Leaves the target with at least 1 HP.",
@@ -3436,6 +3485,11 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	hypervoice: {
 		name: "Hyper Voice",
+		desc: "No additional effect.",
+		shortDesc: "No additional effect. Hits adjacent foes.",
+	},
+	grimrapper: {
+		name: "Grim Rapper",
 		desc: "No additional effect.",
 		shortDesc: "No additional effect. Hits adjacent foes.",
 	},
@@ -3803,6 +3857,11 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	leafblade: {
 		name: "Leaf Blade",
+		desc: "Has a higher chance for a critical hit.",
+		shortDesc: "High critical hit ratio.",
+	},
+	scythe: {
+		name: "Scythe",
 		desc: "Has a higher chance for a critical hit.",
 		shortDesc: "High critical hit ratio.",
 	},
@@ -4327,6 +4386,11 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		desc: "Has a 20% chance to raise the user's Attack by 1 stage.",
 		shortDesc: "20% chance to raise the user's Attack by 1.",
 	},
+	aochan: {
+		name: "AO Chan",
+		desc: "Has a 20% chance to raise the user's Special Defense by 1 stage.",
+		shortDesc: "20% chance to raise the user's Sp. Def by 1.",
+	},
 	keris: {
 		name: "Keris",
 		desc: "Has a 10% chance to raise the user's Defense by 1 stage.",
@@ -4676,6 +4740,11 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		desc: "Raises the user's Special Attack by 2 stages.",
 		shortDesc: "Raises the user's Sp. Atk by 2.",
 	},
+	wah: {
+		name: "Wah",
+		desc: "Raises the user's Special Attack by 2 stages.",
+		shortDesc: "Raises the user's Sp. Atk by 2.",
+	},
 	naturalgift: {
 		name: "Natural Gift",
 		desc: "The type and power of this move depend on the user's held Berry, and the Berry is lost. Fails if the user is not holding a Berry, if the user has the Klutz Ability, or if Embargo or Magic Room is in effect for the user.",
@@ -4793,6 +4862,11 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		name: "Octazooka",
 		desc: "Has a 50% chance to lower the target's accuracy by 1 stage.",
 		shortDesc: "50% chance to lower the target's accuracy by 1.",
+	},
+	tako: {
+		name: "Tako",
+		desc: "Has a 10% chance to lower the target's accuracy by 1 stage.",
+		shortDesc: "10% chance to lower the target's accuracy by 1.",
 	},
 	octolock: {
 		name: "Octolock",
@@ -6439,6 +6513,11 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		desc: "Every Pokemon in the user's party is cured of its non-volatile status condition.",
 		shortDesc: "Cures the user's party of all status conditions.",
 	},
+	hopeful: {
+		name: "Hopeful",
+		desc: "Every Pokemon in the user's party is cured of its non-volatile status condition.",
+		shortDesc: "Cures the user's party of all status conditions.",
+	},
 	spectralthief: {
 		name: "Spectral Thief",
 		desc: "The target's stat stages greater than 0 are stolen from it and applied to the user before dealing damage.",
@@ -6712,6 +6791,11 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		desc: "Has a higher chance for a critical hit.",
 		shortDesc: "High critical hit ratio.",
 	},
+	trident: {
+		name: "Trident",
+		desc: "Has a higher chance for a critical hit.",
+		shortDesc: "High critical hit ratio.",
+	},
 	storedpower: {
 		name: "Stored Power",
 		desc: "Power is equal to 20+(X*20), where X is the user's total stat stage changes that are greater than 0.",
@@ -6974,6 +7058,11 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	swordsdance: {
 		name: "Swords Dance",
+		desc: "Raises the user's Attack by 2 stages.",
+		shortDesc: "Raises the user's Attack by 2.",
+	},
+	hopesoda: {
+		name: "Hope Soda",
 		desc: "Raises the user's Attack by 2 stages.",
 		shortDesc: "Raises the user's Attack by 2.",
 	},
