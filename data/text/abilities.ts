@@ -215,6 +215,10 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 		name: "Clear Body",
 		shortDesc: "Prevents other Pokemon from lowering this Pokemon's stat stages.",
 	},
+	seiso: {
+		name: "Seiso",
+		shortDesc: "Prevents other Pokemon from lowering this Pokemon's stat stages.",
+	},
 	cloudnine: {
 		name: "Cloud Nine",
 		shortDesc: "While this Pokemon is active, the effects of weather conditions are disabled.",
@@ -245,6 +249,11 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	competitive: {
 		name: "Competitive",
+		desc: "This Pokemon's Special Attack is raised by 2 stages for each of its stat stages that is lowered by an opposing Pokemon.",
+		shortDesc: "This Pokemon's Sp. Atk is raised by 2 for each of its stats that is lowered by a foe.",
+	},
+	elite: {
+		name: "Elite",
 		desc: "This Pokemon's Special Attack is raised by 2 stages for each of its stat stages that is lowered by an opposing Pokemon.",
 		shortDesc: "This Pokemon's Sp. Atk is raised by 2 for each of its stats that is lowered by a foe.",
 	},
@@ -1386,6 +1395,11 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 		name: "Punk Rock",
 		desc: "This Pokemon's sound-based moves have their power multiplied by 1.3. This Pokemon takes halved damage from sound-based moves.",
 		shortDesc: "This Pokemon receives 1/2 damage from sound moves. Its own have 1.3x power.",
+	},
+	diva: {
+		name: "Diva",
+		desc: "This Pokemon's sound-based moves have their power multiplied by 1.3.",
+		shortDesc: "Its own have 1.3x power.",
 	},
 	purepower: {
 		name: "Pure Power",

@@ -8056,8 +8056,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		desc: "Raises the user's Attack and Special Attack by 1 stage.",
 		shortDesc: "Raises the user's Attack and Sp. Atk by 1.",
 	},
-	elite: {
-		name: "Elite",
+	eliteidol: {
+		name: "Elite Idol",
 		desc: "Raises the user's Attack and Special Attack by 2 stages.",
 		shortDesc: "Raises the user's Attack and Sp. Atk by 2.",
 	},

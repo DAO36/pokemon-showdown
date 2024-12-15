@@ -93654,7 +93654,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			nastyplot: ["9M"],
 			sakuraiattack: ["9M"],
 			lavabucket: ["9M"],
-			elite: ["9M"],
+			eliteidol: ["9M"],
         },
 	},
 	mikoelite: {
@@ -93702,7 +93702,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			darkestlariat: ["9M"],
 			sakuraiattack: ["9M"],
 			lavabucket: ["9M"],
-			elite: ["9M"],			
+			eliteidol: ["9M"],			
 			rest: ["9M"],			
         },
 	},
