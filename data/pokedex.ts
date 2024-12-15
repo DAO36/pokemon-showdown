@@ -18518,7 +18518,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		types: ["Fairy"],
 		gender: "F",
 		baseStats: {hp: 80, atk: 75, def: 75, spa: 125, spd: 150, spe: 95},
-		abilities: {0: "Dazzling", 1: "Serene Grace", H: "Misty Surge"},
+		abilities: {0: "Dazzling", 1: "Serene Grace", H: "Misty Surge", S: "Seiso Singer"},
 		heightm: 1.6,
 		weightkg: 55.5,
 		color: "Brown",
