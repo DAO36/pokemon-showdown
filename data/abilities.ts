@@ -40,19 +40,6 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 0.1,
 		num: 0,
 	},
-	seisosinger: {
-		onBasePowerPriority: 7,
-		onBasePower(basePower, attacker, defender, move) {
-			if (move.flags['sound']) {
-				this.debug('Seiso Singer boost');
-				return this.chainModify([5325, 4096]);
-			}
-		},
-		flags: {breakable: 1},
-		name: "Seiso Singer",
-		rating: 3.5,
-		num: 244,
-	},
 	adaptability: {
 		onModifySTAB(stab, source, target, move) {
 			if (move.forceSTAB || source.hasType(move.type)) {
