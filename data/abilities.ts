@@ -48,6 +48,29 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 4,
 		num: -19,		
 	},
+	purepower: {
+		onModifySpAPriority: 5,
+		onModifyAtk(spa) {
+			return this.chainModify(2);
+		},
+		flags: {},
+		name: "Pure Power",
+		rating: 5,
+		num: 74,
+	},
+	diva: {
+		onBasePowerPriority: 7,
+		onBasePower(basePower, attacker, defender, move) {
+			if (move.flags['sound']) {
+				this.debug('Punk Rock boost');
+				return this.chainModify([5325, 4096]);
+			}
+		},
+		flags: {breakable: 1},
+		name: "Diva",
+		rating: 3.5,
+		num: 244,
+	},
 	adaptability: {
 		onModifySTAB(stab, source, target, move) {
 			if (move.forceSTAB || source.hasType(move.type)) {
@@ -3535,16 +3558,6 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		name: "Punk Rock",
 		rating: 3.5,
 		num: 244,
-	},
-	purepower: {
-		onModifyAtkPriority: 5,
-		onModifyAtk(atk) {
-			return this.chainModify(2);
-		},
-		flags: {},
-		name: "Pure Power",
-		rating: 5,
-		num: 74,
 	},
 	purifyingsalt: {
 		onSetStatus(status, target, source, effect) {

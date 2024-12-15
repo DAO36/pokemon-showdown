@@ -53,12 +53,12 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Fairy",
 		contestType: "Cute",
 	},
-	seiso: {
+	tskr: {
 		num: 370,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
-		name: "Seiso",
+		name: "TSKR",
 		pp: 10,
 		priority: 0,
 		flags: {snatch: 1, metronome: 1},

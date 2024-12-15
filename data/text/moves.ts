@@ -7274,8 +7274,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		desc: "The user cures its non-volatile status condition. Raises the user's Special Attack and Special Defense by 1 stage.",
 		shortDesc: "Cures user's status, raises Sp. Atk, Sp. Def by 1.",
 	},
-	seiso: {
-		name: "Seiso",
+	tskr: {
+		name: "TSKR",
 		desc: "The user cures its non-volatile status condition. Raises the user's Special Attack by 2 stages.",
 		shortDesc: "Cures user's status, raises Sp. Atk by 2.",
 	},
