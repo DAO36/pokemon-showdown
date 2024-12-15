@@ -97584,7 +97584,6 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			magnetrise: ["9M"],
 			electricterrain: ["9M"],
 			endure: ["9M"],
-			recover: ["9M"],
 			swordsdance: ["9M"],
 			calmmind: ["9M"],
 			overdrive: ["9M"],

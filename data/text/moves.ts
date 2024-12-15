@@ -629,8 +629,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	forbiddenknowledge: {
 		name: "Forbidden Knowledge",
-		desc: "Has a 30% chance to paralyze the target. Damage doubles and no accuracy check is done if the target has used Minimize while active.",
-		shortDesc: "30% chance to paralyze the target.",
+		desc: "Has a 30% chance to paralyze the target. This attack never misses.",
+		shortDesc: "30% chance to paralyze the target. Never misses.",
 	},
 	boltbeak: {
 		name: "Bolt Beak",
@@ -794,8 +794,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	windup: {
 		name: "Wind Up",
-		desc: "Raises the user's Attack and Defense by 1 stage.",
-		shortDesc: "Raises the user's Attack and Defense by 1.",
+		desc: "The user restores 1/2 of its maximum HP, rounded half up.",
+		shortDesc: "Heals the user by 50% of its max HP.",
 	},
 	rockhard: {
 		name: "Rock Hard",
