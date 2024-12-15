@@ -390,6 +390,10 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 		name: "Drizzle",
 		shortDesc: "On switch-in, this Pokemon summons Rain Dance.",
 	},
+	spacetime: {
+		name: "SpaceTime",
+		shortDesc: "On switch-in, this Pokemon summons Trick Room.",
+	},
 	drought: {
 		name: "Drought",
 		shortDesc: "On switch-in, this Pokemon summons Sunny Day.",
