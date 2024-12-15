@@ -44,7 +44,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		onBasePowerPriority: 7,
 		onBasePower(basePower, attacker, defender, move) {
 			if (move.flags['sound']) {
-				this.debug('Punk Rock boost');
+				this.debug('Seiso Singer boost');
 				return this.chainModify([5325, 4096]);
 			}
 		},
