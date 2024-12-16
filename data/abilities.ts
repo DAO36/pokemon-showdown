@@ -170,7 +170,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		onDamagingHitOrder: 1,
 		onDamagingHit(damage, target, source, move) {
 			{
-				this.damage(source.baseMaxhp / 8, source, target);
+				this.damage(source.baseMaxhp / 10, source, target);
 			}
 		},
 		flags: {},
@@ -215,6 +215,93 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		name: "Elvish Dancing",
 		rating: 2,
 		num: 28,
+	},
+	apex: {
+		onDamage(damage, target, source, effect) {
+			if (
+				effect.effectType === "Move" &&
+				!effect.multihit &&
+				(!effect.negateSecondary && !(effect.hasSheerForce && source.hasAbility('sheerforce')))
+			) {
+				this.effectState.checkedBerserk = false;
+			} else {
+				this.effectState.checkedBerserk = true;
+			}
+		},
+		onTryEatItem(item) {
+			const healingItems = [
+				'aguavberry', 'enigmaberry', 'figyberry', 'iapapaberry', 'magoberry', 'sitrusberry', 'wikiberry', 'oranberry', 'berryjuice',
+			];
+			if (healingItems.includes(item.id)) {
+				return this.effectState.checkedBerserk;
+			}
+			return true;
+		},
+		onAfterMoveSecondary(target, source, move) {
+			this.effectState.checkedBerserk = true;
+			if (!source || source === target || !target.hp || !move.totalDamage) return;
+			const lastAttackedBy = target.getLastAttackedBy();
+			if (!lastAttackedBy) return;
+			const damage = move.multihit && !move.smartTarget ? move.totalDamage : lastAttackedBy.damage;
+			if (target.hp <= target.maxhp / 2 && target.hp + damage > target.maxhp / 2) {
+				this.boost({spa: 1}, target, target);
+			}
+		},
+		flags: {},
+		name: "Apex",
+		rating: 2,
+		num: 201,
+	},
+	oni: {
+		onBasePowerPriority: 21,
+		onBasePower(basePower, attacker, defender, move) {
+			if (move.flags['contact']) {
+				return this.chainModify([5325, 4096]);
+			}
+		},
+		flags: {},
+		name: "Oni",
+		rating: 3.5,
+		num: 181,
+	},
+	nursery: {
+		onSwitchOut(pokemon) {
+			pokemon.heal(pokemon.baseMaxhp / 3);
+		},
+		flags: {},
+		name: "Nursery",
+		rating: 4.5,
+		num: 144,
+	},
+	witchcraft: {
+		onModifySpePriority: 6,
+		onModifySpe(pokemon) {
+			if (this.field.isTerrain('psychicterrain')) return this.chainModify(1.5);
+		},
+		flags: {breakable: 1},
+		name: "Witchcraft",
+		rating: 0.5,
+		num: 179,
+	},
+	shubashuba: {
+		onModifyAtkPriority: 5,
+		onModifyAtk(atk, attacker, defender, move) {
+			if (move.type === 'Water') {
+				this.debug('Shuba Shuba boost');
+				return this.chainModify(1.5);
+			}
+		},
+		onModifySpAPriority: 5,
+		onModifySpA(atk, attacker, defender, move) {
+			if (move.type === 'Water') {
+				this.debug('Shuba Shuba boost');
+				return this.chainModify(1.5);
+			}
+		},
+		flags: {},
+		name: "Shuba Shuba",
+		rating: 3.5,
+		num: 276,
 	},
 	adaptability: {
 		onModifySTAB(stab, source, target, move) {

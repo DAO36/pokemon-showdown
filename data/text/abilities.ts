@@ -173,6 +173,11 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 		desc: "When this Pokemon has more than 1/2 its maximum HP and takes damage from an attack bringing it to 1/2 or less of its maximum HP, its Special Attack is raised by 1 stage. This effect applies after all hits from a multi-hit move. This effect is prevented if the move had a secondary effect removed by the Sheer Force Ability.",
 		shortDesc: "This Pokemon's Sp. Atk is raised by 1 when it reaches 1/2 or less of its max HP.",
 	},
+	apex: {
+		name: "Apex",
+		desc: "When this Pokemon has more than 1/2 its maximum HP and takes damage from an attack bringing it to 1/2 or less of its maximum HP, its Special Attack is raised by 1 stage. This effect applies after all hits from a multi-hit move. This effect is prevented if the move had a secondary effect removed by the Sheer Force Ability.",
+		shortDesc: "This Pokemon's Sp. Atk is raised by 1 when it reaches 1/2 or less of its max HP.",
+	},
 	bigpecks: {
 		name: "Big Pecks",
 		shortDesc: "Prevents other Pokemon from lowering this Pokemon's Defense stat stage.",
@@ -1032,8 +1037,8 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	stellar: {
 		name: "Stellar",
-		desc: "When one of this Pokemon's stat stages would be lowered by another Pokemon, that Pokemon's stat stage is lowered instead. This effect does not happen if this Pokemon's stat stage was already -6. If the other Pokemon has a substitute, neither Pokemon has its stat stage lowered.",
-		shortDesc: "If this user's stat stages would be lowered, the attacker's are lowered instead.",
+		desc: "When one of this Comet's stat stages would be lowered by another Pokemon, that Pokemon's stat stage is lowered instead. This effect does not happen if this Pokemon's stat stage was already -6. If the other Pokemon has a substitute, neither Pokemon has its stat stage lowered.",
+		shortDesc: "If this Comet's stat stages would be lowered, the attacker's are lowered instead.",
 	},
 	mistysurge: {
 		name: "Misty Surge",
@@ -1082,8 +1087,8 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	fbking: {
 		name: "FBKing",
-		desc: "This Pokemon's Attack is raised by 1 stage if it attacks and knocks out another Pokemon.",
-		shortDesc: "This Pokemon's Attack is raised by 1 stage if it attacks and KOes another Pokemon.",
+		desc: "This Fox's Attack is raised by 1 stage if she attacks and knocks out another Pokemon.",
+		shortDesc: "This Fox's Attack is raised by 1 stage if she attacks and KOes another Pokemon.",
 	},
 	multiscale: {
 		name: "Multiscale",
@@ -1408,8 +1413,8 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	diva: {
 		name: "Diva",
-		desc: "This Pokemon's sound-based moves have their power multiplied by 1.3.",
-		shortDesc: "Its own have 1.3x power.",
+		desc: "This Diva's sound-based moves have her power multiplied by 1.3. Also iimune to sound based moves and effects",
+		shortDesc: "Immune to sound based moves. Her own sounds have 1.3x power.",
 	},
 	purepower: {
 		name: "Pure Power",
@@ -1499,6 +1504,10 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 		name: "Regenerator",
 		shortDesc: "This Pokemon restores 1/3 of its maximum HP, rounded down, when it switches out.",
 	},
+	nursery: {
+		name: "Nursery",
+		shortDesc: "This Nurse restores 1/3 of her maximum HP, rounded down, when she switches out.",
+	},
 	ripen: {
 		name: "Ripen",
 		desc: "When this Pokemon eats certain Berries, the effects are doubled. Berries that restore HP or PP have the amount doubled, Berries that raise stat stages have the amount doubled, Berries that halve damage taken quarter it instead, and a Jaboca Berry or Rowap Berry has the attacker lose 1/4 of its maximum HP, rounded down.",
@@ -1526,6 +1535,10 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 		name: "Rocky Payload",
 		shortDesc: "This Pokemon's offensive stat is multiplied by 1.5 while using a Rock-type attack.",
 	},
+	shubashuba: {
+		name: "Shuba Shuba",
+		shortDesc: "This Duck's offensive stat is multiplied by 1.5 while using a Water-type attack.",
+	},
 	roughskin: {
 		name: "Rough Skin",
 		desc: "Pokemon making contact with this Pokemon lose 1/8 of their maximum HP, rounded down.",
@@ -1542,8 +1555,8 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	iamgod: {
 		name: "I Am God",
-		desc: "Pokemon making contact with this Pokemon lose 1/8 of their maximum HP, rounded down.",
-		shortDesc: "Pokemon making contact with this Pokemon lose 1/8 of their max HP.",
+		desc: "Pokemon making contact with this Pokemon lose 1/10 of their maximum HP, rounded down.",
+		shortDesc: "Pokemon making contact with this Pokemon lose 1/10 of their max HP.",
 
 		damage: "  [POKEMON] was hurt trying to hurt God!",
 	},
@@ -1906,6 +1919,10 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 		name: "Surge Surfer",
 		shortDesc: "If Electric Terrain is active, this Pokemon's Speed is doubled.",
 	},
+	witchcraft: {
+		name: "Witchcraft",
+		shortDesc: "If Psychic Terrain is active, this Witch's Speed is boosted by 50%.",
+	},
 	highspecsrobot: {
 		name: "High Specs Robot",
 		shortDesc: "If Electric Terrain is active, the Speed of the Specs is doubled.",
@@ -2073,6 +2090,10 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	toughclaws: {
 		name: "Tough Claws",
 		shortDesc: "This Pokemon's contact moves have their power multiplied by 1.3.",
+	},
+	oni: {
+		name: "Oni",
+		shortDesc: "This Oni's contact moves have her power multiplied by 1.3.",
 	},
 	toxicboost: {
 		name: "Toxic Boost",

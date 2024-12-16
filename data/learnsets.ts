@@ -94186,6 +94186,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			crosspoison: ["9M"],
 			psychocut: ["9M"],
 			extrasensory: ["9M"],
+			headsmash: ["9M"],
 			megahorn: ["9M"],
 			xscissor: ["9M"],
 			shadowsneak: ["9M"],
