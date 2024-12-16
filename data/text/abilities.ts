@@ -198,6 +198,11 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 			desc: "If this Pokemon eats a held Berry, it restores 1/3 of its maximum HP, rounded down, in addition to the Berry's effect. This effect can also activate after the effects of Bug Bite, Fling, and Pluck if the eaten Berry has an effect on this Pokemon.",
 		},
 	},
+	haachamacooking: {
+		name: "Haachama Cooking",
+		desc: "If this Master Chef eats a held Berry, it restores 1/3 of its maximum HP, rounded down, in addition to the Berry's effect. This effect can also activate after the effects of Bug Bite, Fling, Pluck, Stuff Cheeks, and Teatime if the eaten Berry had an effect on this Pokemon.",
+		shortDesc: "If this Master Chef eats a Berry, it restores 1/3 of its max HP after the Berry's effect.",
+	},
 	chillingneigh: {
 		name: "Chilling Neigh",
 		desc: "This Pokemon's Attack is raised by 1 stage if it attacks and knocks out another Pokemon.",
@@ -1075,6 +1080,11 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 		desc: "This Pokemon's Attack is raised by 1 stage if it attacks and knocks out another Pokemon.",
 		shortDesc: "This Pokemon's Attack is raised by 1 stage if it attacks and KOes another Pokemon.",
 	},
+	fbking: {
+		name: "FBKing",
+		desc: "This Pokemon's Attack is raised by 1 stage if it attacks and knocks out another Pokemon.",
+		shortDesc: "This Pokemon's Attack is raised by 1 stage if it attacks and KOes another Pokemon.",
+	},
 	multiscale: {
 		name: "Multiscale",
 		shortDesc: "If this Pokemon is at full HP, damage taken from attacks is halved.",
@@ -1530,6 +1540,13 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 
 		damage: "  [POKEMON] was hurt!",
 	},
+	iamgod: {
+		name: "I Am God",
+		desc: "Pokemon making contact with this Pokemon lose 1/8 of their maximum HP, rounded down.",
+		shortDesc: "Pokemon making contact with this Pokemon lose 1/8 of their max HP.",
+
+		damage: "  [POKEMON] was hurt trying to hurt God!",
+	},
 	runaway: {
 		name: "Run Away",
 		shortDesc: "No competitive use.",
@@ -1944,6 +1961,11 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 			desc: "If another Pokemon burns, paralyzes, or poisons this Pokemon, that Pokemon receives the same non-volatile status condition. If another Pokemon badly poisons this Pokemon, that Pokemon becomes poisoned.",
 		},
 	},
+	elvishdancing: {
+		name: "Elvish Dancing",
+		desc: "If another Pokemon burns, paralyzes, poisons, or badly poisons this Pokemon, that Pokemon receives the same non-volatile status condition.",
+		shortDesc: "If another Pokemon burns/poisons/paralyzes this Pokemon, it also gets that status.",
+	},
 	tabletsofruin: {
 		name: "Tablets of Ruin",
 		shortDesc: "Active Pokemon without this Ability have their Attack multiplied by 0.75.",
@@ -2191,6 +2213,11 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 		name: "Water Absorb",
 		desc: "This Pokemon is immune to Water-type moves and restores 1/4 of its maximum HP, rounded down, when hit by a Water-type move.",
 		shortDesc: "This Pokemon heals 1/4 of its max HP when hit by Water moves; Water immunity.",
+	},
+	vampire: {
+		name: "Vampire",
+		desc: "This Vampire is immune to Water-type moves and drinks them up to restores 1/4 of its maximum HP, rounded down, when hit by a Water-type move.",
+		shortDesc: "This Vampire heals 1/4 of its max HP by drinking Water moves; Water immunity.",
 	},
 	waterbubble: {
 		name: "Water Bubble",

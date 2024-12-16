@@ -916,8 +916,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		desc: "Raises the user's Special Attack by 1 stage and Special Defense by 2 stages.",
 		shortDesc: "Raises the user's Sp. Atk by 1 and Sp. Def by 2.",
 	},
-	iamgod: {
-		name: "I Am God",
+	godlydance: {
+		name: "Godly Dance",
 		desc: "Raises the user's Attack, Special Attack, Speed, and Accuracy all by 1 stage.",
 		shortDesc: "Raises the user's Atk, SpAtk, Speed, and Acc by 1.",
 	},
@@ -5504,8 +5504,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		desc: "Raises the user's Special Attack, Special Defense, and Speed by 1 stage.",
 		shortDesc: "Raises the user's Sp. Atk, Sp. Def, Speed by 1.",
 	},
-	fbking: {
-		name: "FBKing",
+	konkon: {
+		name: "Kon Kon",
 		desc: "Raises the user's Attack, Special Attack, and Speed by 1 stage.",
 		shortDesc: "Raises the user's Atk, SpAtk, Speed by 1.",
 	},

@@ -138,18 +138,6 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	},
 	diva: {
 		onTryBoost(boost, target, source, effect) {
-			if (source && target === source) return;
-			let showMsg = false;
-			let i: BoostID;
-			for (i in boost) {
-				if (boost[i]! < 0) {
-					delete boost[i];
-					showMsg = true;
-				}
-			}
-			if (showMsg && !(effect as ActiveMove).secondaries && effect.id !== 'octolock') {
-				this.add("-fail", target, "unboost", "[from] ability: Diva", "[of] " + target);
-			}
 		},
 		onTryHit(target, source, move) {
 			if (target !== source && move.flags['sound']) {
@@ -166,6 +154,67 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		name: "Diva",
 		rating: 2,
 		num: 29,
+	},
+	fbking: {
+		onSourceAfterFaint(length, target, source, effect) {
+			if (effect && effect.effectType === 'Move') {
+				this.boost({atk: length}, source);
+			}
+		},
+		flags: {},
+		name: "FBKing",
+		rating: 3,
+		num: 153,
+	},
+	iamgod: {
+		onDamagingHitOrder: 1,
+		onDamagingHit(damage, target, source, move) {
+			{
+				this.damage(source.baseMaxhp / 8, source, target);
+			}
+		},
+		flags: {},
+		name: "I Am God",
+		rating: 2.5,
+		num: 24,
+	},
+	haachamacooking: {
+		onEatItem(item, pokemon) {
+			this.heal(pokemon.baseMaxhp / 3);
+		},
+		flags: {},
+		name: "Haachama Cooking",
+		rating: 2,
+		num: 167,
+	},
+	vampire: {
+		onTryHit(target, source, move) {
+			if (target !== source && move.type === 'Water') {
+				if (!this.heal(target.baseMaxhp / 4)) {
+					this.add('-immune', target, '[from] ability: Vampire');
+				}
+				return null;
+			}
+		},
+		flags: {breakable: 1},
+		name: "Vampire",
+		rating: 3.5,
+		num: 11,
+	},
+	elvishdancing: {
+		onAfterSetStatus(status, target, source, effect) {
+			if (!source || source === target) return;
+			if (effect && effect.id === 'toxicspikes') return;
+			if (status.id === 'slp' || status.id === 'frz') return;
+			this.add('-activate', target, 'ability: Elvish Dancing');
+			// Hack to make status-prevention abilities think Synchronize is a status move
+			// and show messages when activating against it.
+			source.trySetStatus(status, target, {status: status.id, id: 'synchronize'} as Effect);
+		},
+		flags: {},
+		name: "Elvish Dancing",
+		rating: 2,
+		num: 28,
 	},
 	adaptability: {
 		onModifySTAB(stab, source, target, move) {

@@ -237,12 +237,12 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Ice",
 		contestType: "Cool",
 	},
-	fbking: {
+	konkon: {
 		num: 370,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
-		name: "FBKing",
+		name: "Kon Kon",
 		pp: 10,
 		priority: 0,
 		flags: {snatch: 1, metronome: 1},
@@ -253,7 +253,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		},
 		secondary: null,
 		target: "self",
-		type: "Normal",
+		type: "Grass",
 		contestType: "Cool",
 	},
 	godlyattack: {
@@ -271,15 +271,15 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Normal",
 		contestType: "Tough",
 	},
-	iamgod: {
+	godlydance: {
 		num: 370,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
-		name: "I Am God",
+		name: "Godly Dance",
 		pp: 10,
 		priority: 0,
-		flags: {snatch: 1, metronome: 1},
+		flags: {snatch: 1, dance: 1},
 		boosts: {
 			atk: 1,
 			spa: 1,
