@@ -217,7 +217,7 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	seiso: {
 		name: "Seiso",
-		shortDesc: "Prevents other Pokemon from lowering this Pokemon's stat stages.",
+		shortDesc: "Sora is so seiso it prevents others from lowering her stat stages.",
 	},
 	cloudnine: {
 		name: "Cloud Nine",
@@ -249,11 +249,6 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	competitive: {
 		name: "Competitive",
-		desc: "This Pokemon's Special Attack is raised by 2 stages for each of its stat stages that is lowered by an opposing Pokemon.",
-		shortDesc: "This Pokemon's Sp. Atk is raised by 2 for each of its stats that is lowered by a foe.",
-	},
-	elite: {
-		name: "Elite",
 		desc: "This Pokemon's Special Attack is raised by 2 stages for each of its stat stages that is lowered by an opposing Pokemon.",
 		shortDesc: "This Pokemon's Sp. Atk is raised by 2 for each of its stats that is lowered by a foe.",
 	},
@@ -1029,6 +1024,11 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 		name: "Mirror Armor",
 		desc: "When one of this Pokemon's stat stages would be lowered by another Pokemon, that Pokemon's stat stage is lowered instead. This effect does not happen if this Pokemon's stat stage was already -6. If the other Pokemon has a substitute, neither Pokemon has its stat stage lowered.",
 		shortDesc: "If this Pokemon's stat stages would be lowered, the attacker's are lowered instead.",
+	},
+	stellar: {
+		name: "Stellar",
+		desc: "When one of this Pokemon's stat stages would be lowered by another Pokemon, that Pokemon's stat stage is lowered instead. This effect does not happen if this Pokemon's stat stage was already -6. If the other Pokemon has a substitute, neither Pokemon has its stat stage lowered.",
+		shortDesc: "If this user's stat stages would be lowered, the attacker's are lowered instead.",
 	},
 	mistysurge: {
 		name: "Misty Surge",
@@ -1889,6 +1889,10 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 		name: "Surge Surfer",
 		shortDesc: "If Electric Terrain is active, this Pokemon's Speed is doubled.",
 	},
+	highspecsrobot: {
+		name: "High Specs Robot",
+		shortDesc: "If Electric Terrain is active, the Speed of the Specs is doubled.",
+	},
 	swarm: {
 		name: "Swarm",
 		desc: "When this Pokemon has 1/3 or less of its maximum HP, rounded down, its offensive stat is multiplied by 1.5 while using a Bug-type attack.",
@@ -2012,6 +2016,11 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 		name: "Thermal Exchange",
 		desc: "This Pokemon's Attack is raised 1 stage after it is damaged by a Fire-type move. This Pokemon cannot be burned. Gaining this Ability while burned cures it.",
 		shortDesc: "This Pokemon's Attack is raised by 1 when damaged by Fire moves; can't be burned.",
+	},
+	elite: {
+		name: "Elite",
+		desc: "This Pokemon's Special Attack is raised 1 stage after it is damaged by a Fire-type move. This Pokemon cannot be burned. Gaining this Ability while burned cures it.",
+		shortDesc: "This Pokemon's Sp. Atk is raised by 1 when damaged by Fire moves; can't be burned.",
 	},
 	thickfat: {
 		name: "Thick Fat",

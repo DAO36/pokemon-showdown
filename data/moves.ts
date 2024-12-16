@@ -102,12 +102,12 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Fire",
 		contestType: "Tough",
 	},
-	eliteidol: {
+	elitemiko: {
 		num: 370,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
-		name: "Elite Idol",
+		name: "Elite Miko",
 		pp: 15,
 		priority: 0,
 		flags: {snatch: 1, metronome: 1},

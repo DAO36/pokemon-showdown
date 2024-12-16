@@ -24,7 +24,7 @@ Ratings and how they work:
 
  4: Very useful
 	  One of the more popular abilities. It requires minimal support to be effective.
-	ex. Adaptability, Magic Bounce
+	ex. Magic Bounce
 
  5: Essential
 	  The sort of ability that defines metagames.
@@ -79,38 +79,93 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		num: 29,
 	},
 	elite: {
-		onAfterEachBoost(boost, target, source, effect) {
-			if (!source || target.isAlly(source)) {
-				return;
+		onDamagingHit(damage, target, source, move) {
+			if (move.type === 'Fire') {
+				this.boost({spa: 1});
 			}
-			let statsLowered = false;
-			let i: BoostID;
-			for (i in boost) {
-				if (boost[i]! < 0) {
-					statsLowered = true;
+		},
+		onUpdate(pokemon) {
+			if (pokemon.status === 'brn') {
+				this.add('-activate', pokemon, 'ability: Elite');
+				pokemon.cureStatus();
+			}
+		},
+		onSetStatus(status, target, source, effect) {
+			if (status.id !== 'brn') return;
+			if ((effect as Move)?.status) {
+				this.add('-immune', target, '[from] ability: Elite');
+			}
+			return false;
+		},
+		flags: {breakable: 1},
+		name: "Elite",
+		rating: 2.5,
+		num: 270,
+	},
+	stellar: {
+		onTryBoost(boost, target, source, effect) {
+			// Don't bounce self stat changes, or boosts that have already bounced
+			if (!source || target === source || !boost || effect.name === 'Stellar') return;
+			let b: BoostID;
+			for (b in boost) {
+				if (boost[b]! < 0) {
+					if (target.boosts[b] === -6) continue;
+					const negativeBoost: SparseBoostsTable = {};
+					negativeBoost[b] = boost[b];
+					delete boost[b];
+					if (source.hp) {
+						this.add('-ability', target, 'Stellar');
+						this.boost(negativeBoost, source, target, null, true);
+					}
 				}
 			}
-			if (statsLowered) {
-				this.boost({spa: 2}, target, target, null, false, true);
+		},
+		flags: {breakable: 1},
+		name: "Stellar",
+		rating: 2,
+		num: 240,
+	},
+	highspecsrobot: {
+		onModifySpe(spe) {
+			if (this.field.isTerrain('electricterrain')) {
+				return this.chainModify(2);
 			}
 		},
 		flags: {},
-		name: "Elite",
-		rating: 2.5,
-		num: 172,
+		name: "High Specs Robot",
+		rating: 3,
+		num: 207,
 	},
 	diva: {
-		onBasePowerPriority: 7,
-		onBasePower(basePower, attacker, defender, move) {
+		onTryBoost(boost, target, source, effect) {
+			if (source && target === source) return;
+			let showMsg = false;
+			let i: BoostID;
+			for (i in boost) {
+				if (boost[i]! < 0) {
+					delete boost[i];
+					showMsg = true;
+				}
+			}
+			if (showMsg && !(effect as ActiveMove).secondaries && effect.id !== 'octolock') {
+				this.add("-fail", target, "unboost", "[from] ability: Diva", "[of] " + target);
+			}
+		},
+		onTryHit(target, source, move) {
+			if (target !== source && move.flags['sound']) {
+				this.add('-immune', target, '[from] ability: Diva');
+				return null;
+			}
+		},
+		onAllyTryHitSide(target, source, move) {
 			if (move.flags['sound']) {
-				this.debug('Punk Rock boost');
-				return this.chainModify([5325, 4096]);
+				this.add('-immune', this.effectState.target, '[from] ability: Diva');
 			}
 		},
 		flags: {breakable: 1},
 		name: "Diva",
-		rating: 3.5,
-		num: 244,
+		rating: 2,
+		num: 29,
 	},
 	adaptability: {
 		onModifySTAB(stab, source, target, move) {
