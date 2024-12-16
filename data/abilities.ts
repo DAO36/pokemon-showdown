@@ -339,17 +339,17 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 2,
 		num: 201,
 	},
-	mogumogu: {
+	grassabsorb: {
 		onTryHit(target, source, move) {
 			if (target !== source && move.type === 'Grass') {
 				if (!this.heal(target.baseMaxhp / 4)) {
-					this.add('-immune', target, '[from] ability: Water Absorb');
+					this.add('-immune', target, '[from] ability: Grass Absorb');
 				}
 				return null;
 			}
 		},
 		flags: {breakable: 1},
-		name: "Mogu Mogu",
+		name: "Grass Absorb",
 		rating: 3.5,
 		num: 11,
 	},
