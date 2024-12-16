@@ -340,6 +340,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		num: 201,
 	},
 	mogumogu: {
+		onTryHitPriority: 1,
 		onTryHit(target, source, move) {
 			if (target !== source && move.type === 'Grass') {
 				if (!this.heal(target.baseMaxhp / 4)) {
