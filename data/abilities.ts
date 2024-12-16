@@ -342,8 +342,8 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	mogumogu: {
 		onTryHit(target, source, move) {
 			if (target !== source && move.type === 'Grass') {
-				if (!this.heal(source.baseMaxhp / 4)) {
-					this.add('-immune', source, '[from] ability: Mogu Mogu');
+				if (!this.heal(target.baseMaxhp / 4)) {
+					this.add('-immune', target, '[from] ability: Mogu Mogu');
 				}
 				return null;
 			}
