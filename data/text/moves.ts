@@ -1101,8 +1101,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		desc: "Lowers the user's Defense and Special Defense by 1 stage.",
 		shortDesc: "Lowers the user's Defense and Sp. Def by 1.",
 	},
-	warcriminal: {
-		name: "War Criminal",
+	pekopeko: {
+		name: "Peko Peko",
 		desc: "Lowers the user's Defense and Special Defense by 1 stage.",
 		shortDesc: "Lowers the user's Defense and Sp. Def by 1.",
 	},

@@ -339,19 +339,26 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 2,
 		num: 201,
 	},
-	grassabsorb: {
+	mogumogu: {
+		onTryHitPriority: 1,
 		onTryHit(target, source, move) {
 			if (target !== source && move.type === 'Grass') {
-				if (!this.heal(target.baseMaxhp / 4)) {
-					this.add('-immune', target, '[from] ability: Grass Absorb');
+				if (!this.boost({atk: 1})) {
+					this.add('-immune', target, '[from] ability: Mogu Mogu');
 				}
 				return null;
 			}
 		},
+		onAllyTryHitSide(target, source, move) {
+			if (source === this.effectState.target || !target.isAlly(source)) return;
+			if (move.type === 'Grass') {
+				this.boost({atk: 1}, this.effectState.target);
+			}
+		},
 		flags: {breakable: 1},
-		name: "Grass Absorb",
-		rating: 3.5,
-		num: 11,
+		name: "Mogu Mogu",
+		rating: 3,
+		num: 157,
 	},
 	miomama: {
 		onModifyMovePriority: -5,
@@ -371,6 +378,22 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		name: "Mio Mama",
 		rating: 3,
 		num: 113,
+	},
+	warcriminal: {
+		onEmergencyExit(target) {
+			if (!this.canSwitch(target.side) || target.forceSwitchFlag || target.switchFlag) return;
+			for (const side of this.sides) {
+				for (const active of side.active) {
+					active.switchFlag = false;
+				}
+			}
+			target.switchFlag = true;
+			this.add('-activate', target, 'ability: War Criminal');
+		},
+		flags: {},
+		name: "War Criminal",
+		rating: 1,
+		num: 194,
 	},
 	adaptability: {
 		onModifySTAB(stab, source, target, move) {
