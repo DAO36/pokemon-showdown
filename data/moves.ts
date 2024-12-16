@@ -598,12 +598,12 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Normal",
 		contestType: "Cool",
 	},
-	mogumogu: {
+	moguyummy: {
 		num: 370,
 		accuracy: 95,
 		basePower: 80,
 		category: "Physical",
-		name: "Mogu Mogu",
+		name: "Mogu Yummy",
 		pp: 10,
 		priority: 0,
 		flags: {contact: 1, protect: 1, mirror: 1, heal: 1, bite: 1},

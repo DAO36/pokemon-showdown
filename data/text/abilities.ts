@@ -173,6 +173,11 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 		desc: "When this Pokemon has more than 1/2 its maximum HP and takes damage from an attack bringing it to 1/2 or less of its maximum HP, its Special Attack is raised by 1 stage. This effect applies after all hits from a multi-hit move. This effect is prevented if the move had a secondary effect removed by the Sheer Force Ability.",
 		shortDesc: "This Pokemon's Sp. Atk is raised by 1 when it reaches 1/2 or less of its max HP.",
 	},
+	doog: {
+		name: "Doog",
+		desc: "When this Doggo has more than 1/2 its maximum HP and takes damage from an attack bringing it to 1/2 or less of its maximum HP, its Attack is raised by 1 stage. This effect applies after all hits from a multi-hit move. This effect is prevented if the move had a secondary effect removed by the Sheer Force Ability.",
+		shortDesc: "This Doggo's Atk is raised by 1 when it reaches 1/2 or less of her max HP.",
+	},
 	apex: {
 		name: "Apex",
 		desc: "When this Pokemon has more than 1/2 its maximum HP and takes damage from an attack bringing it to 1/2 or less of its maximum HP, its Special Attack is raised by 1 stage. This effect applies after all hits from a multi-hit move. This effect is prevented if the move had a secondary effect removed by the Sheer Force Ability.",
@@ -1612,6 +1617,11 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 			shortDesc: "This Pokemon can hit Ghost types with Normal- and Fighting-type moves.",
 		},
 	},
+	miomama: {
+		name: "Mio Mama",
+		desc: "This Wolf can hit Dark types with Psychic-type moves. This Wolf is immune to the effect of the Intimidate Ability.",
+		shortDesc: "Psychic moves hit Dark. Immune to Intimidate.",
+	},
 	screencleaner: {
 		name: "Screen Cleaner",
 		shortDesc: "On switch-in, the effects of Aurora Veil, Light Screen, and Reflect end for both sides.",
@@ -2234,6 +2244,11 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 		name: "Water Absorb",
 		desc: "This Pokemon is immune to Water-type moves and restores 1/4 of its maximum HP, rounded down, when hit by a Water-type move.",
 		shortDesc: "This Pokemon heals 1/4 of its max HP when hit by Water moves; Water immunity.",
+	},
+	mogumogu: {
+		name: "Mogu Mogu",
+		desc: "This Cat is immune to Grass-type moves and restores 1/4 of her maximum HP, rounded down, when hit by a Grass-type move.",
+		shortDesc: "This Cat heals 1/4 of her max HP when hit by Grass moves; Grass immunity.",
 	},
 	vampire: {
 		name: "Vampire",

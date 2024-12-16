@@ -94571,7 +94571,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			agility: ["9M"],
 			calmmind: ["9M"],
 			honeclaws: ["9M"],
-			mogumogu: ["9M"],
+			moguyummy: ["9M"],
         },
 	},	
 	pekora: {
