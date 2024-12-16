@@ -77,7 +77,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 	charmander: {
 		num: 4,
 		name: "Charmander",
-		types: ["Fire"],
+		types: ["Fire", "Dragon"],
 		genderRatio: {M: 0.875, F: 0.125},
 		baseStats: {hp: 39, atk: 52, def: 43, spa: 60, spd: 50, spe: 65},
 		abilities: {0: "Blaze", H: "Solar Power"},
@@ -108,7 +108,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		types: ["Fire", "Flying"],
 		genderRatio: {M: 0.875, F: 0.125},
 		baseStats: {hp: 78, atk: 84, def: 78, spa: 109, spd: 85, spe: 100},
-		abilities: {0: "Blaze", 1: "Shed Skin", H: "Solar Power", S: "Dragon's Maw"},
+		abilities: {0: "Blaze", 1: "Truant", H: "Solar Power", S: "Dragon's Maw"},
 		heightm: 1.7,
 		weightkg: 90.5,
 		color: "Red",
