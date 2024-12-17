@@ -94788,7 +94788,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			protect: ["9M"],
 			rest: ["9M"],
 			destinybond: ["9M"],
-			yandere: ["9M"],
+			necromancy: ["9M"],
         },
 	},
 	flare: {

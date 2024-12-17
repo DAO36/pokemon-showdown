@@ -827,6 +827,11 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 			desc: "On switch-in, this Pokemon lowers the Attack of opposing Pokemon by 1 stage. Pokemon behind a substitute are immune.",
 		},
 	},
+	yandere: {
+		name: "Yandere",
+		desc: "On switch-in, this Pokemon lowers the Special Attack of opposing Pokemon by 1 stage. Pokemon with the Inner Focus, Oblivious, Own Tempo, or Scrappy Abilities and Pokemon behind a substitute are immune.",
+		shortDesc: "On switch-in, this Pokemon lowers the Sp. Atk of opponents by 1 stage."
+	},
 	intrepidsword: {
 		name: "Intrepid Sword",
 		shortDesc: "On switch-in, this Pokemon's Attack is raised by 1 stage. Once per battle.",
@@ -845,6 +850,11 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 		name: "Iron Fist",
 		desc: "This Pokemon's punch-based attacks have their power multiplied by 1.2.",
 		shortDesc: "This Pokemon's punch-based attacks have 1.2x power. Sucker Punch is not boosted.",
+	},
+	muscleknight: {
+		name: "Muscle Knight",
+		desc: "This Knight's punch-based attacks have their power multiplied by 1.2.",
+		shortDesc: "This Knight's punch-based attacks have 1.2x power. Sucker Punch is not boosted.",
 	},
 	justified: {
 		name: "Justified",
@@ -1195,6 +1205,10 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	opportunist: {
 		name: "Opportunist",
 		shortDesc: "When an opposing Pokemon has a stat stage raised, this Pokemon copies the effect.",
+	},
+	piracy: {
+		name: "Piracy",
+		shortDesc: "When an opposing Pokemon has a stat stage raised, she pirates the effect.",
 	},
 	orichalcumpulse: {
 		name: "Orichalcum Pulse",
@@ -1548,6 +1562,10 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	shubashuba: {
 		name: "Shuba Shuba",
 		shortDesc: "This Duck's offensive stat is multiplied by 1.5 while using a Water-type attack.",
+	},
+	elvishflare: {
+		name: "Elvish Flare",
+		shortDesc: "This Elf's offensive stat is multiplied by 1.5 while using a Fire-type attack.",
 	},
 	roughskin: {
 		name: "Rough Skin",

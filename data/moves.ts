@@ -676,23 +676,6 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Steel",
 		contestType: "Cool",
 	},
-	yandere: {
-		num: 370,
-		accuracy: 95,
-		basePower: 95,
-		category: "Physical",
-		name: "Yandere",
-		pp: 10,
-		priority: 0,
-		flags: {contact: 1, protect: 1, mirror: 1, metronome: 1},
-		secondary: {
-			chance: 20,
-			volatileStatus: 'flinch',
-		},
-		target: "normal",
-		type: "Dark",
-		contestType: "Tough",
-	},
 	arrowassault: {
 		num: 370,
 		accuracy: 95,
@@ -17679,6 +17662,34 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		secondary: null,
 		target: "self",
 		type: "Normal",
+	},
+	necromancy: {
+		num: 370,
+		accuracy: true,
+		basePower: 0,
+		category: "Status",
+		name: "Necromancy",
+		pp: 1,
+		noPPBoosts: true,
+		priority: 0,
+		flags: {heal: 1, nosketch: 1},
+		onTryHit(source) {
+			if (!source.side.pokemon.filter(ally => ally.fainted).length) {
+				return false;
+			}
+		},
+		slotCondition: 'revivalblessing',
+		// No this not a real switchout move
+		// This is needed to trigger a switch protocol to choose a fainted party member
+		// Feel free to refactor
+		selfSwitch: true,
+		condition: {
+			duration: 1,
+			// reviving implemented in side.ts, kind of
+		},
+		secondary: null,
+		target: "self",
+		type: "Ghost",
 	},
 	risingvoltage: {
 		num: 804,
