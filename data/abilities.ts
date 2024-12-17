@@ -853,8 +853,8 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 				this.damage(target.baseMaxhp / 8, target, target);
 			}
 		},
-		onResidual(pokemon) {
-            if (!pokemon.effectiveWeather()) {
+		onResidual(target) {
+            if (!target.effectiveWeather()) {
             }
         },
 		flags: {breakable: 1},
