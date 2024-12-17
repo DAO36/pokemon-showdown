@@ -954,30 +954,30 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		onTryHit(target, source, move) {
 			if (target !== source && move.type === 'Fire') {
 				move.accuracy = true;
-				if (!target.addVolatile('flashfire')) {
+				if (!target.addVolatile('mightyphoenix')) {
 					this.add('-immune', target, '[from] ability: Mighty Phoenix');
 				}
 				return null;
 			}
 		},
 		onEnd(pokemon) {
-			pokemon.removeVolatile('flashfire');
+			pokemon.removeVolatile('mightyphoenix');
 		},
 		condition: {
 			noCopy: true, // doesn't get copied by Baton Pass
 			onStart(target) {
-				this.add('-start', target, 'ability: Flash Fire');
+				this.add('-start', target, 'ability: Mighty Phoenix');
 			},
 			onModifyAtkPriority: 5,
 			onModifyAtk(atk, attacker, defender, move) {
-				if (move.type === 'Fire' && attacker.hasAbility('flashfire')) {
-					this.debug('Flash Fire boost');
+				if (move.type === 'Fire' && attacker.hasAbility('mightyphoenix')) {
+					this.debug('Mighty Phoenix boost');
 					return this.chainModify(1.5);
 				}
 			},
 			onModifySpAPriority: 5,
 			onModifySpA(atk, attacker, defender, move) {
-				if (move.type === 'Fire' && attacker.hasAbility('flashfire')) {
+				if (move.type === 'Fire' && attacker.hasAbility('mightyphoenix')) {
 					this.debug('Flash Fire boost');
 					return this.chainModify(1.5);
 				}
