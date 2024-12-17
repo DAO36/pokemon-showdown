@@ -531,6 +531,73 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3,
 		num: 153,
 	},
+	thelegendofpolka: {
+		onModifySecondaries(secondaries) {
+			this.debug('Shield Dust prevent secondary');
+			return secondaries.filter(effect => !!(effect.self || effect.dustproof));
+		},
+		flags: {breakable: 1},
+		name: "The Legend of Polka",
+		rating: 2,
+		num: 19,
+	},
+	botanx: {
+		onSourceModifyAccuracyPriority: -1,
+		onSourceModifyAccuracy(accuracy) {
+			if (typeof accuracy !== 'number') return;
+			this.debug('compoundeyes - enhancing accuracy');
+			return this.chainModify([5325, 4096]);
+		},
+		flags: {},
+		name: "Botan X",
+		rating: 3,
+		num: 14,
+	},
+	frozensake: {
+		onDamagingHit(damage, target, source, move) {
+			if (this.checkMoveMakesContact(move, source, target)) {
+				if (this.randomChance(2, 10)) {
+					source.trySetStatus('frz', target);
+				}
+			}
+		},
+		flags: {},
+		name: "Flame Body",
+		rating: 2,
+		num: 49,
+	},
+	supernenchi: {
+		onSourceAfterFaint(length, target, source, effect) {
+			if (effect && effect.effectType === 'Move') {
+				const bestStat = source.getBestStat(true, true);
+				this.boost({[bestStat]: length}, source);
+			}
+		},
+		flags: {},
+		name: "Super Nenechi",
+		rating: 3.5,
+		num: 224,
+	},
+	succubus: {
+		onStart(pokemon) {
+			let activated = false;
+			for (const target of pokemon.adjacentFoes()) {
+				if (!activated) {
+					this.add('-ability', pokemon, 'Succubus', 'boost');
+					activated = true;
+				}
+				if (target.volatiles['substitute']) {
+					this.add('-immune', target);
+				} else {
+					this.boost({spe: -1}, target, pokemon, null, true);
+				}
+			}
+		},
+		flags: {},
+		name: "Succubus",
+		rating: 3.5,
+		num: 22,
+	},
 	adaptability: {
 		onModifySTAB(stab, source, target, move) {
 			if (move.forceSTAB || source.hasType(move.type)) {

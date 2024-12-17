@@ -168,6 +168,11 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 		desc: "This Pokemon's highest stat is raised by 1 stage if it attacks and knocks out another Pokemon. Stat stage changes are not considered. If multiple stats are tied, Attack, Defense, Special Attack, Special Defense, and Speed are prioritized in that order.",
 		shortDesc: "This Pokemon's highest stat is raised by 1 if it attacks and KOes another Pokemon.",
 	},
+	supernenechi: {
+		name: "Super Nenechi",
+		desc: "NENEMAX's highest stat is raised by 1 stage if she attacks and knocks out another Pokemon. Stat stage changes are not considered. If multiple stats are tied, Attack, Defense, Special Attack, Special Defense, and Speed are prioritized in that order.",
+		shortDesc: "NENEMAX's highest stat is raised by 1 if she attacks and KOs another Pokemon.",
+	},
 	berserk: {
 		name: "Berserk",
 		desc: "When this Pokemon has more than 1/2 its maximum HP and takes damage from an attack bringing it to 1/2 or less of its maximum HP, its Special Attack is raised by 1 stage. This effect applies after all hits from a multi-hit move. This effect is prevented if the move had a secondary effect removed by the Sheer Force Ability.",
@@ -270,6 +275,10 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	compoundeyes: {
 		name: "Compound Eyes",
 		shortDesc: "This Pokemon's moves have their accuracy multiplied by 1.3.",
+	},
+	botanx: {
+		name: "Botan X",
+		shortDesc: "This Lion's moves have her accuracy multiplied by 1.3. thanks to her goggles",
 	},
 	contrary: {
 		name: "Contrary",
@@ -513,6 +522,10 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 			desc: "1/3 chance a Pokemon making contact with this Pokemon will be burned. This effect does not happen if this Pokemon did not lose HP from the attack.",
 			shortDesc: "1/3 chance a Pokemon making contact with this Pokemon will be burned.",
 		},
+	},
+	frozensake: {
+		name: "Frozen Sake",
+		shortDesc: "20% chance a Pokemon making contact with this Elf will be frozen.",
 	},
 	flareboost: {
 		name: "Flare Boost",
@@ -829,8 +842,13 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	yandere: {
 		name: "Yandere",
-		desc: "On switch-in, this Pokemon lowers the Speed of opposing Pokemon by 1 stage. Pokemon with the Inner Focus, Oblivious, Own Tempo, or Scrappy Abilities and Pokemon behind a substitute are immune.",
-		shortDesc: "On switch-in, this Pokemon lowers the Speed of opponents by 1 stage."
+		desc: "On switch-in, this Yandere lowers the Speed of opposing Pokemon by 1 stage. Pokemon with the Inner Focus, Oblivious, Own Tempo, or Scrappy Abilities and Pokemon behind a substitute are immune.",
+		shortDesc: "On switch-in, this Yandere lowers the Speed of opponents by 1 stage."
+	},
+	succubus: {
+		name: "Succubus",
+		desc: "On switch-in, this Succubus lowers the Special Attack of opposing Pokemon by 1 stage. Pokemon with the Inner Focus, Oblivious, Own Tempo, or Scrappy Abilities and Pokemon behind a substitute are immune.",
+		shortDesc: "On switch-in, this Succubus lowers the Sp. Atk of opponents by 1 stage."
 	},
 	intrepidsword: {
 		name: "Intrepid Sword",
@@ -1734,6 +1752,10 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	shielddust: {
 		name: "Shield Dust",
 		shortDesc: "This Pokemon is not affected by the secondary effect of another Pokemon's attack.",
+	},
+	thelegendofpolka: {
+		name: "The Legend of Polka",
+		shortDesc: "This Fennec Fox is not affected by the secondary effect of another Pokemon's attack.",
 	},
 	shieldsdown: {
 		name: "Shields Down",
