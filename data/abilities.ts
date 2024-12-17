@@ -145,7 +145,12 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		num: 207,
 	},
 	diva: {
-		onTryBoost(boost, target, source, effect) {
+		onBasePowerPriority: 7,
+		onBasePower(basePower, attacker, defender, move) {
+			if (move.flags['sound']) {
+				this.debug('Diva boost');
+				return this.chainModify([5325, 4096]);
+			}
 		},
 		onTryHit(target, source, move) {
 			if (target !== source && move.flags['sound']) {
