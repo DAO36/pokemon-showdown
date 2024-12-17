@@ -51,6 +51,11 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 		desc: "When this Pokemon has more than 1/2 its maximum HP and takes damage from an attack bringing it to 1/2 or less of its maximum HP, its Attack, Special Attack, and Speed are raised by 1 stage, and its Defense and Special Defense are lowered by 1 stage. This effect applies after all hits from a multi-hit move. This effect is prevented if the move had a secondary effect removed by the Sheer Force Ability.",
 		shortDesc: "At 1/2 or less of this Pokemon's max HP: +1 Atk, Sp. Atk, Spe, and -1 Def, Sp. Def.",
 	},
+	iamgod: {
+		name: "I Am God",
+		desc: "When this Pokemon has more than 1/2 its maximum HP and takes damage from an attack bringing it to 1/2 or less of its maximum HP, its Attack, Special Attack, and Speed are raised by 1 stage, and its Defense and Special Defense are lowered by 1 stage. This effect applies after all hits from a multi-hit move. This effect is prevented if the move had a secondary effect removed by the Sheer Force Ability.",
+		shortDesc: "At 1/2 or less of this Pokemon's max HP: +1 Atk, Sp. Atk, Spe, and -1 Def, Sp. Def.",
+	},
 	anticipation: {
 		name: "Anticipation",
 		desc: "On switch-in, this Pokemon is alerted if any opposing Pokemon has an attack that is super effective against this Pokemon, or an OHKO move. This effect considers any move that deals direct damage as an attacking move of its respective type, Hidden Power counts as its determined type, and Judgment, Multi-Attack, Natural Gift, Revelation Dance, Techno Blast, and Weather Ball are considered Normal-type moves.",
@@ -1668,12 +1673,12 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 
 		damage: "  [POKEMON] was hurt!",
 	},
-	iamgod: {
-		name: "I Am God",
-		desc: "Pokemon making contact with this Pokemon lose 1/10 of their maximum HP, rounded down.",
-		shortDesc: "Pokemon making contact with this Pokemon lose 1/10 of their max HP.",
+	babydonthurtme: {
+		name: "Baby Dont Hurt Me",
+		desc: "Pokemon that attack this Pokemon lose 1/8 of their maximum HP, rounded down.",
+		shortDesc: "Pokemon that attack this Pokemon lose 1/8 of their max HP.",
 
-		damage: "  [POKEMON] was hurt trying to hurt God!",
+		damage: "  [POKEMON] was hurt trying to hurt you!",
 	},
 	forbiddenwah: {
 		name: "Forbidden Wah",
