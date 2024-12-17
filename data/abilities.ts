@@ -854,8 +854,6 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			}
 		},
 		onResidual(target) {
-            if (!target.effectiveWeather()) {
-            }
         },
 		flags: {breakable: 1},
 		name: "Power of Atlantis",
