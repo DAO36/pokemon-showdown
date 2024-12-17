@@ -849,8 +849,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			if (target.hasItem('utilityumbrella')) return;
 			if (effect.id === 'raindance' || effect.id === 'primordialsea') {
 				this.heal(target.baseMaxhp / 8);
-			} else if (effect.id === 'none') {
-				this.damage(target.baseMaxhp / 8, target, target);
+			} else { this.damage(target.baseMaxhp / 8, target, target);
 			}
 		},
 		flags: {breakable: 1},
