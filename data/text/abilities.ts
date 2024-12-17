@@ -829,8 +829,8 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	yandere: {
 		name: "Yandere",
-		desc: "On switch-in, this Pokemon lowers the Special Attack of opposing Pokemon by 1 stage. Pokemon with the Inner Focus, Oblivious, Own Tempo, or Scrappy Abilities and Pokemon behind a substitute are immune.",
-		shortDesc: "On switch-in, this Pokemon lowers the Sp. Atk of opponents by 1 stage."
+		desc: "On switch-in, this Pokemon lowers the Speed of opposing Pokemon by 1 stage. Pokemon with the Inner Focus, Oblivious, Own Tempo, or Scrappy Abilities and Pokemon behind a substitute are immune.",
+		shortDesc: "On switch-in, this Pokemon lowers the Speed of opponents by 1 stage."
 	},
 	intrepidsword: {
 		name: "Intrepid Sword",
@@ -1105,6 +1105,11 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 		desc: "This Pokemon's Attack is raised by 1 stage if it attacks and knocks out another Pokemon.",
 		shortDesc: "This Pokemon's Attack is raised by 1 stage if it attacks and KOes another Pokemon.",
 	},
+	devildiva: {
+		name: "Devil Diva",
+		desc: "This Devil's Attack is raised by 1 stage if she attacks and knocks out another Pokemon.",
+		shortDesc: "This Devil's Attack is raised by 1 stage if she attacks and KOes another Pokemon.",
+	},
 	fbking: {
 		name: "FBKing",
 		desc: "This Fox's Attack is raised by 1 stage if she attacks and knocks out another Pokemon.",
@@ -1230,6 +1235,11 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 			shortDesc: "This Pokemon is immune to damage from Sandstorm or Hail.",
 		},
 	},
+	watamelon: {
+		name: "Watamelon",
+		desc: "This Sheep is wearing a watermelon that grants her immunity to powder moves, damage from Sandstorm, and the effects of Rage Powder and the Effect Spore Ability.",
+		shortDesc: "This Sheep's watermelon helmet makes her immune to powder moves, Sandstorm damage, and Effect Spore.",
+	},
 	overgrow: {
 		name: "Overgrow",
 		desc: "When this Pokemon has 1/3 or less of its maximum HP, rounded down, its offensive stat is multiplied by 1.5 while using a Grass-type attack.",
@@ -1320,6 +1330,11 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 		name: "Poison Heal",
 		desc: "If this Pokemon is poisoned, it restores 1/8 of its maximum HP, rounded down, at the end of each turn instead of losing HP.",
 		shortDesc: "This Pokemon is healed by 1/8 of its max HP each turn when poisoned; no HP loss.",
+	},
+	highonasacoco: {
+		name: "High on Asacoco",
+		desc: "If this Dragon is poisoned, it restores 1/8 of its maximum HP, rounded down, at the end of each turn instead of losing HP.",
+		shortDesc: "This Dragon is healed by 1/8 of its max HP each turn when high no asacoco; no HP loss.",
 	},
 	poisonpoint: {
 		name: "Poison Point",
@@ -1566,6 +1581,10 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	elvishflare: {
 		name: "Elvish Flare",
 		shortDesc: "This Elf's offensive stat is multiplied by 1.5 while using a Fire-type attack.",
+	},
+	oni: {
+		name: "Oni",
+		shortDesc: "This Oni's offensive stat is multiplied by 1.5 while using a Fire-type attack.",
 	},
 	roughskin: {
 		name: "Rough Skin",
@@ -1960,6 +1979,10 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 		name: "High Specs Robot",
 		shortDesc: "If Electric Terrain is active, the Speed of the Specs is doubled.",
 	},
+	sugarrush: {
+		name: "Sugar Rush",
+		shortDesc: "If Misty Terrain is active, the Speed of the baby is doubled.",
+	},
 	swarm: {
 		name: "Swarm",
 		desc: "When this Pokemon has 1/3 or less of its maximum HP, rounded down, its offensive stat is multiplied by 1.5 while using a Bug-type attack.",
@@ -2124,9 +2147,9 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 		name: "Tough Claws",
 		shortDesc: "This Pokemon's contact moves have their power multiplied by 1.3.",
 	},
-	oni: {
-		name: "Oni",
-		shortDesc: "This Oni's contact moves have her power multiplied by 1.3.",
+	pptgrip: {
+		name: "PPT Grip",
+		shortDesc: "This Angel's grip causes contact moves to have their power multiplied by 1.3.",
 	},
 	toxicboost: {
 		name: "Toxic Boost",

@@ -95103,6 +95103,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			cottonguard: ["9M"],
 			calmmind: ["9M"],
 			nothingwrong: ["9M"],
+			ubersheep: ["9M"],
         },
 	},	
 	luna: {

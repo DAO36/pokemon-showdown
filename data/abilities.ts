@@ -253,16 +253,24 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		num: 201,
 	},
 	oni: {
-		onBasePowerPriority: 21,
-		onBasePower(basePower, attacker, defender, move) {
-			if (move.flags['contact']) {
-				return this.chainModify([5325, 4096]);
+		onModifyAtkPriority: 5,
+		onModifyAtk(atk, attacker, defender, move) {
+			if (move.type === 'Fire') {
+				this.debug('Oni boost');
+				return this.chainModify(1.5);
+			}
+		},
+		onModifySpAPriority: 5,
+		onModifySpA(atk, attacker, defender, move) {
+			if (move.type === 'Fire') {
+				this.debug('Oni boost');
+				return this.chainModify(1.5);
 			}
 		},
 		flags: {},
 		name: "Oni",
 		rating: 3.5,
-		num: 181,
+		num: 276,
 	},
 	nursery: {
 		onSwitchOut(pokemon) {
@@ -412,7 +420,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 				if (target.volatiles['substitute']) {
 					this.add('-immune', target);
 				} else {
-					this.boost({spa: -1}, target, pokemon, null, true);
+					this.boost({spe: -1}, target, pokemon, null, true);
 				}
 			}
 		},
@@ -459,6 +467,69 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		name: "Piracy",
 		rating: 3,
 		num: 290,
+	},
+	highonasacoco: {
+		onDamagePriority: 1,
+		onDamage(damage, target, source, effect) {
+			if (effect.id === 'psn' || effect.id === 'tox') {
+				this.heal(target.baseMaxhp / 8);
+				return false;
+			}
+		},
+		flags: {},
+		name: "High on Asacoco",
+		rating: 4,
+		num: 90,
+	},
+	pptgrip: {
+		onBasePowerPriority: 21,
+		onBasePower(basePower, attacker, defender, move) {
+			if (move.flags['contact']) {
+				return this.chainModify([5325, 4096]);
+			}
+		},
+		flags: {},
+		name: "PPT Grip",
+		rating: 3.5,
+		num: 181,
+	},
+	watamelon: {
+		onImmunity(type, pokemon) {
+			if (type === 'sandstorm' || type === 'hail' || type === 'powder') return false;
+		},
+		onTryHitPriority: 1,
+		onTryHit(target, source, move) {
+			if (move.flags['powder'] && target !== source && this.dex.getImmunity('powder', target)) {
+				this.add('-immune', target, '[from] ability: Watamelon');
+				return null;
+			}
+		},
+		flags: {breakable: 1},
+		name: "Watamelon",
+		rating: 2,
+		num: 142,
+	},
+	sugarrush: {
+		onModifySpe(spe) {
+			if (this.field.isTerrain('mistyterrain')) {
+				return this.chainModify(2);
+			}
+		},
+		flags: {},
+		name: "Sugar Rush",
+		rating: 3,
+		num: 207,
+	},
+	devildiva: {
+		onSourceAfterFaint(length, target, source, effect) {
+			if (effect && effect.effectType === 'Move') {
+				this.boost({atk: length}, source);
+			}
+		},
+		flags: {},
+		name: "Devil Diva",
+		rating: 3,
+		num: 153,
 	},
 	adaptability: {
 		onModifySTAB(stab, source, target, move) {
