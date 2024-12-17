@@ -1058,6 +1058,10 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 		name: "Merciless",
 		shortDesc: "This Pokemon's attacks are critical hits if the target is poisoned.",
 	},
+	toxicgamer: {
+		name: "Toxic Gamer",
+		shortDesc: "This Detective's attacks are critical hits if the target is poisoned.",
+	},
 	mimicry: {
 		name: "Mimicry",
 		desc: "This Pokemon's types change to match the active Terrain when this Pokemon acquires this Ability, or whenever a Terrain begins. Electric type during Electric Terrain, Grass type during Grassy Terrain, Fairy type during Misty Terrain, and Psychic type during Psychic Terrain. If this Ability is acquired without an active Terrain, or a Terrain ends, this Pokemon's types become the original types for its species.",
@@ -1142,6 +1146,11 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 		name: "Moxie",
 		desc: "This Pokemon's Attack is raised by 1 stage if it attacks and knocks out another Pokemon.",
 		shortDesc: "This Pokemon's Attack is raised by 1 stage if it attacks and KOes another Pokemon.",
+	},
+	death: {
+		name: "Death",
+		desc: "The Grim Rapper's Attack and Special Attack are both each raised by 1 stage if it attacks and knocks out another Pokemon.",
+		shortDesc: "The Grim Rapper's Atk and Sp. Atk are raised by 1 stage if it attacks and KOes another Pokemon.",
 	},
 	samurai: {
 		name: "Samurai",
@@ -1598,6 +1607,10 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 		name: "Regenerator",
 		shortDesc: "This Pokemon restores 1/3 of its maximum HP, rounded down, when it switches out.",
 	},
+	mightyphoenix: {
+		name: "Mighty Phoenix",
+		shortDesc: "This Phoenix restores 1/3 of its maximum HP, rounded down, when it switches out.",
+	},
 	nursery: {
 		name: "Nursery",
 		shortDesc: "This Nurse restores 1/3 of her maximum HP, rounded down, when she switches out.",
@@ -1657,6 +1670,13 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	iamgod: {
 		name: "I Am God",
+		desc: "Pokemon making contact with this Pokemon lose 1/10 of their maximum HP, rounded down.",
+		shortDesc: "Pokemon making contact with this Pokemon lose 1/10 of their max HP.",
+
+		damage: "  [POKEMON] was hurt trying to hurt God!",
+	},
+	forbiddenwah: {
+		name: "Forbidden Wah",
 		desc: "Pokemon making contact with this Pokemon lose 1/10 of their maximum HP, rounded down.",
 		shortDesc: "Pokemon making contact with this Pokemon lose 1/10 of their max HP.",
 

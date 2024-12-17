@@ -848,15 +848,64 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		onWeather(target, source, effect) {
 			if (target.hasItem('utilityumbrella')) return;
 			if (effect.id === 'raindance' || effect.id === 'primordialsea') {
-				this.heal(target.baseMaxhp / 8);
-			} else if (effect.id === 'weather') {
+				this.heal(target.baseMaxhp / 10);
+			} else if (effect.id === 'sunnyday' || effect.id === 'desolateland' || effect.id === 'snowscape' || effect.id === 'sandstorm') {
 				this.damage(target.baseMaxhp / 8, target, target);
 			}
 		},
+		onResidual(target) {
+            for (const target of this.getAllActive()) {
+                this.damage(target.baseMaxhp / 8);
+            }
+        },
 		flags: {breakable: 1},
 		name: "Power of Atlantis",
 		rating: 3,
 		num: 87,
+	},
+	toxicgamer: {
+		onModifyCritRatio(critRatio, source, target) {
+			if (target && ['psn', 'tox'].includes(target.status)) return 5;
+		},
+		flags: {},
+		name: "Toxic Gamer",
+		rating: 1.5,
+		num: 196,
+	},
+	death: {
+		onAnyFaintPriority: 1,
+		onAnyFaint() {
+			this.boost({spa: 1, atk: 1}, this.effectState.target);
+		},
+		flags: {},
+		name: "Death",
+		rating: 3.5,
+		num: 220,
+	},
+	theforbiddenwah: {
+		onDamagingHitOrder: 1,
+		onDamagingHit(damage, target, source, move) {
+			{
+				this.damage(source.baseMaxhp / 8, source, target);
+			}
+			if (this.checkMoveMakesContact(move, source, target, true)) {
+				this.damage(source.baseMaxhp / 0, source, target);
+			}
+			
+		},
+		flags: {},
+		name: "The Forbidden Wah",
+		rating: 2.5,
+		num: 24,
+	},
+	mightyphoenix: {
+		onSwitchOut(pokemon) {
+			pokemon.heal(pokemon.baseMaxhp / 3);
+		},
+		flags: {},
+		name: "Mighty Phoenix",
+		rating: 4.5,
+		num: 144,
 	},
 	adaptability: {
 		onModifySTAB(stab, source, target, move) {
