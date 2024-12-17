@@ -340,25 +340,18 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		num: 201,
 	},
 	mogumogu: {
-		onTryHitPriority: 1,
 		onTryHit(target, source, move) {
 			if (target !== source && move.type === 'Grass') {
-				if (!this.boost({atk: 1})) {
+				if (!this.heal(target.baseMaxhp / 4, target, target)) {
 					this.add('-immune', target, '[from] ability: Mogu Mogu');
 				}
 				return null;
 			}
 		},
-		onAllyTryHitSide(target, source, move) {
-			if (source === this.effectState.target || !target.isAlly(source)) return;
-			if (move.type === 'Grass') {
-				this.boost({atk: 1}, this.effectState.target);
-			}
-		},
 		flags: {breakable: 1},
 		name: "Mogu Mogu",
-		rating: 3,
-		num: 157,
+		rating: 3.5,
+		num: 11,
 	},
 	miomama: {
 		onModifyMovePriority: -5,
