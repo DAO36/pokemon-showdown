@@ -1566,7 +1566,7 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	purepower: {
 		name: "Pure Power",
-		shortDesc: "This Pokemon's Attack is doubled.",
+		shortDesc: "This Pokemon's Special Attack is doubled.",
 	},
 	purifyingsalt: {
 		name: "Purifying Salt",
