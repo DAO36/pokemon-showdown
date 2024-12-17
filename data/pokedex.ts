@@ -20164,7 +20164,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		types: ["Fire", "Flying"],
 		gender: "F",
 		baseStats: {hp: 100, atk: 120, def: 90, spa: 120, spd: 110, spe: 60},
-		abilities: {0: "Big Pecks", 1: "Flame Body", H: "Sharpness", S: "Mighty Phoenix"},
+		abilities: {0: "Big Pecks", 1: "Sharpness", H: "Regenerator", S: "Mighty Phoenix"},
 		heightm: 1.65,
 		weightkg: 55.5,
 		color: "Brown",
