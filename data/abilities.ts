@@ -854,8 +854,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			}
 		},
 		onResidual(pokemon) {
-            for (const target of this.getAllActive()) {
-                this.damage(target.baseMaxhp / 8);
+            if (!pokemon.effectiveWeather()) {
             }
         },
 		flags: {breakable: 1},
@@ -885,13 +884,9 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	theforbiddenwah: {
 		onDamagingHitOrder: 1,
 		onDamagingHit(damage, target, source, move) {
-			{
+			if (move.category === 'Special') {
 				this.damage(source.baseMaxhp / 8, source, target);
 			}
-			if (this.checkMoveMakesContact(move, source, target, true)) {
-				this.damage(source.baseMaxhp / 0, source, target);
-			}
-			
 		},
 		flags: {},
 		name: "The Forbidden Wah",
