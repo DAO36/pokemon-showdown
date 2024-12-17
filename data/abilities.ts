@@ -852,7 +852,11 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			} if (!target.effectiveWeather()) {
 				this.damage(target.baseMaxhp / 8, target, target);
 			}
-		},	
+		},
+		onResidual(pokemon) {
+            if (!pokemon.effectiveWeather()) {
+            }
+        },
 		flags: {breakable: 1},
 		name: "Power of Atlantis",
 		rating: 3,
