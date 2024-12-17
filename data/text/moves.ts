@@ -797,11 +797,6 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		desc: "The user restores 1/2 of its maximum HP, rounded half up.",
 		shortDesc: "Heals the user by 50% of its max HP.",
 	},
-	rockhard: {
-		name: "Rock Hard",
-		desc: "Raises the user's Attack by 1 stage and Defense by 2 stages.",
-		shortDesc: "Raises the user's Atk by 1 and Def by 2.",
-	},
 	bulldoze: {
 		name: "Bulldoze",
 		desc: "Has a 100% chance to lower the target's Speed by 1 stage.",
@@ -958,6 +953,11 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		name: "Ceaseless Edge",
 		desc: "If this move is successful, it sets up a hazard on the opposing side of the field, damaging each opposing Pokemon that switches in, unless it is a Flying-type Pokemon or has the Levitate Ability. A maximum of three layers may be set, and opponents lose 1/8 of their maximum HP with one layer, 1/6 of their maximum HP with two layers, and 1/4 of their maximum HP with three layers, all rounded down. Can be removed from the opposing side if any Pokemon uses Tidy Up, or if any opposing Pokemon uses Mortal Spin, Rapid Spin, or Defog successfully, or is hit by Defog.",
 		shortDesc: "Sets a layer of Spikes on the opposing side.",
+	},
+	bejeweled: {
+		name: "Bejeweled",
+		desc: "If this move is successful, it sets up a hazard on the opposing side of the field, damaging each opposing Pokemon that switches in, unless it is a Flying-type Pokemon or has the Levitate Ability. A maximum of three layers may be set, and opponents lose 1/8 of their maximum HP with one layer, 1/6 of their maximum HP with two layers, and 1/4 of their maximum HP with three layers, all rounded down. Can be removed from the opposing side if any Pokemon uses Tidy Up, or if any opposing Pokemon uses Mortal Spin, Rapid Spin, or Defog successfully, or is hit by Defog. This move never misses.",
+		shortDesc: "Sets a layer of Spikes on the opposing side. Never misses.",
 	},
 	celebrate: {
 		name: "Celebrate",

@@ -587,6 +587,11 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 		desc: "This Pokemon receives 1/2 damage from contact moves, but double damage from Fire moves.",
 		shortDesc: "This Pokemon takes 1/2 damage from contact moves, 2x damage from Fire moves.",
 	},
+	rockhard: {
+		name: "Rock Hard",
+		desc: "This Rock receives 1/2 damage from contact moves, but 50% more damage from Steel type moves.",
+		shortDesc: "This Rock takes 1/2 damage from contact moves, 1.5x damage from Steel moves.",
+	},
 	forecast: {
 		name: "Forecast",
 		desc: "If this Pokemon is a Castform, its type changes to the current weather condition's type, except Sandstorm. This effect is prevented if this Pokemon is holding a Utility Umbrella and the weather is Rain Dance or Sunny Day.",
@@ -656,6 +661,14 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	gooey: {
 		name: "Gooey",
 		shortDesc: "Pokemon making contact with this Pokemon have their Speed lowered by 1 stage.",
+	},
+	thefuzzyone: {
+		name: "The Fuzzy One",
+		shortDesc: "Pokemon making contact with this Dog have their Defense lowered by 1 stage.",
+	},
+	thefluffyone: {
+		name: "The Fluffy One",
+		shortDesc: "Pokemon making contact with this Dog have their Attack lowered by 1 stage.",
 	},
 	gorillatactics: {
 		name: "Gorilla Tactics",
@@ -1289,6 +1302,10 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 		name: "Opportunist",
 		shortDesc: "When an opposing Pokemon has a stat stage raised, this Pokemon copies the effect.",
 	},
+	archivist: {
+		name: "Archivist",
+		shortDesc: "When an opposing Pokemon has a stat stage raised, this Pokemon copies the effect.",
+	},
 	piracy: {
 		name: "Piracy",
 		shortDesc: "When an opposing Pokemon has a stat stage raised, she pirates the effect.",
@@ -1739,6 +1756,11 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 		name: "Erofi",
 		desc: "This Alien is immune to Dark-type moves and raises her Attack by 1 stage when hit by a Dark-type move.",
 		shortDesc: "This Alien's Attack is raised 1 stage if hit by a Dark move; Dark immunity.",
+	},
+	underworlddiva: {
+		name: "Underworld Diva",
+		desc: "This Raven is immune to Sound-type moves and raises her Attack and Special Attack by 1 stage when hit by a Sound-type move.",
+		shortDesc: "This Raven's Atk and Sp. Atk are both raised by 1 if hit by a Sound move; Sound immunity.",
 	},
 	schooling: {
 		name: "Schooling",
@@ -2464,8 +2486,8 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	societalcollapse: {
 		name: "Societal Collapse",
-		desc: "If a special attack hits this Owl, her Special Defense is lowered by 1 stage and her Special Attack is raised by 1 stages.",
-		shortDesc: "If a special attack hits this Owl, Sp. Def is lowered by 1, Sp. Atk is raised by 1.",
+		desc: "If a special attack hits this Owl, her Special Defense is lowered by 1 stage and her Speed is raised by 2 stages.",
+		shortDesc: "If a special attack hits this Owl, Sp. Def is lowered by 1, Speed is raised by 2.",
 	},
 	wellbakedbody: {
 		name: "Well-Baked Body",

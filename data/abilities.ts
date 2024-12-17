@@ -997,7 +997,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	societalcollapse: {
 		onDamagingHit(damage, target, source, move) {
 			if (move.category === 'Special') {
-				this.boost({spd: -1, spa: 1}, target, target);
+				this.boost({spd: -1, spe: 2}, target, target);
 			}
 		},
 		flags: {},
@@ -1017,6 +1017,80 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		name: "Chaos",
 		rating: 4.5,
 		num: 126,
+	},
+	archivist: {
+		onFoeAfterBoost(boost, target, source, effect) {
+			if (effect?.name === 'Archivist' || effect?.name === 'Mirror Herb') return;
+			const pokemon = this.effectState.target;
+			const positiveBoosts: Partial<BoostsTable> = {};
+			let i: BoostID;
+			for (i in boost) {
+				if (boost[i]! > 0) {
+					positiveBoosts[i] = boost[i];
+				}
+			}
+			if (Object.keys(positiveBoosts).length < 1) return;
+			this.boost(positiveBoosts, pokemon);
+		},
+		flags: {},
+		name: "Archivist",
+		rating: 3,
+		num: 290,
+	},
+	rockhard: {
+		onSourceModifyDamage(damage, source, target, move) {
+			let mod = 1;
+			if (move.type === 'Steel') mod *= 1.5;
+			if (move.flags['contact']) mod /= 2;
+			return this.chainModify(mod);
+		},
+		flags: {breakable: 1},
+		name: "Rock Hard",
+		rating: 3.5,
+		num: 218,
+	},
+	underworlddiva: {
+		onTryHit(target, source, move) {
+			if (target !== source && move.flags['sound']) {
+				if (!this.boost({atk: 1, spa: 1})) {
+					this.add('-immune', target, '[from] ability: Underworld Diva');
+				}
+				return null;
+			}
+		},
+		onAllyTryHitSide(target, source, move) {
+			if (move.flags['sound']) {
+				this.add('-immune', this.effectState.target, '[from] ability: Underworld Diva');
+			}
+		},
+		flags: {breakable: 1},
+		name: "Underworld Diva",
+		rating: 2,
+		num: 43,
+	},
+	thefuzzyone: {
+		onDamagingHit(damage, target, source, move) {
+			if (this.checkMoveMakesContact(move, source, target, true)) {
+				this.add('-ability', target, 'The Fuzzy One');
+				this.boost({def: -1}, source, target, null, true);
+			}
+		},
+		flags: {},
+		name: "The Fuzzy One",
+		rating: 2,
+		num: 183,
+	},
+	thefluffyone: {
+		onDamagingHit(damage, target, source, move) {
+			if (this.checkMoveMakesContact(move, source, target, true)) {
+				this.add('-ability', target, 'The Fluffy One');
+				this.boost({atk: -1}, source, target, null, true);
+			}
+		},
+		flags: {},
+		name: "The Fluffy One",
+		rating: 2,
+		num: 183,
 	},
 	adaptability: {
 		onModifySTAB(stab, source, target, move) {

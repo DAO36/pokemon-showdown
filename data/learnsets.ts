@@ -97303,7 +97303,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			babydolleyes: ["9M"],
 			charm: ["9M"],
 			mistyterrain: ["9M"],
-			rockhard: ["9M"],
+			bejeweled: ["9M"],
         },
 	},	
 	nerissa: {

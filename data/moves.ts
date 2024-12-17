@@ -1757,13 +1757,14 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	clockstrikes: {
 		num: 370,
 		accuracy: 95,
-		basePower: 50,
+		basePower: 55,
 		category: "Physical",
 		name: "Clock Strikes",
-		pp: 10,
+		pp: 5,
 		priority: 0,
 		flags: {contact: 1, protect: 1, mirror: 1, slicing: 1},
 		multihit: 2,
+		critRatio: 2,
 		secondary: null,
 		target: "normal",
 		type: "Steel",
@@ -1848,23 +1849,32 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Psychic",
 		contestType: "Tough",
 	},
-	rockhard: {
+	bejeweled: {
 		num: 370,
 		accuracy: true,
-		basePower: 0,
-		category: "Status",
-		name: "Rock Hard",
-		pp: 15,
+		basePower: 80,
+		category: "Physical",
+		name: "Bejeweled",
+		pp: 10,
 		priority: 0,
-		flags: {snatch: 1, metronome: 1},
-		boosts: {
-			atk: 1,
-			def: 2,
+		flags: {protect: 1, mirror: 1, metronome: 1, slicing: 1},
+		onAfterHit(target, source, move) {
+			if (!move.hasSheerForce && source.hp) {
+				for (const side of source.side.foeSidesWithConditions()) {
+					side.addSideCondition('spikes');
+				}
+			}
 		},
-		secondary: null,
-		target: "self",
+		onAfterSubDamage(damage, target, source, move) {
+			if (!move.hasSheerForce && source.hp) {
+				for (const side of source.side.foeSidesWithConditions()) {
+					side.addSideCondition('spikes');
+				}
+			}
+		},
+		secondary: {}, // Sheer Force-boosted
+		target: "normal",
 		type: "Rock",
-		contestType: "Cool",
 	},
 	underworldmusic: {
 		num: 370,
