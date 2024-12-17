@@ -1482,8 +1482,8 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 			shortDesc: "This Pokemon's type changes to match the type of the move it is about to use.",
 		},
 	},
-	secretagent: {
-		name: "Secret Agent",
+	undercoveragent: {
+		name: "Undercover Agent",
 		desc: "This Spy's type changes to match the type of the move it is about to use. This effect comes after all effects that change a move's type.",
 	},
 	protosynthesis: {
@@ -1880,6 +1880,14 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 		name: "Solar Power",
 		desc: "If Sunny Day is active, this Pokemon's Special Attack is multiplied by 1.5 and it loses 1/8 of its maximum HP, rounded down, at the end of each turn. These effects are prevented if the Pokemon is holding a Utility Umbrella.",
 		shortDesc: "If Sunny Day is active, this Pokemon's Sp. Atk is 1.5x; loses 1/8 max HP per turn.",
+		gen7: {
+			desc: "If Sunny Day is active, this Pokemon's Special Attack is multiplied by 1.5 and it loses 1/8 of its maximum HP, rounded down, at the end of each turn.",
+		},
+	},
+	powerofatlantis: {
+		name: "Power of Atlantis",
+		desc: "If Rain is active, this Shark's Attack and Special Attack is multiplied by 1.5 and she gains 1/8 of her maximum HP, rounded down, at the end of each turn. If there's no weather, she loses 1/8 of her maximum HP, rounded down, at the end of each turn. These effects are prevented if the Pokemon is holding a Utility Umbrella.",
+		shortDesc: "If Rain Dance is active, this Shark's Atk and Sp. Atk is 1.5x; gains 1/8 HP during Rain. Loses 1/8 max HP per turn if no weather.",
 		gen7: {
 			desc: "If Sunny Day is active, this Pokemon's Special Attack is multiplied by 1.5 and it loses 1/8 of its maximum HP, rounded down, at the end of each turn.",
 		},

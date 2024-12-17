@@ -795,18 +795,18 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 2.5,
 		num: 160,
 	},
-	secretagent: {
+	undercoveragent: {
         onPrepareHit(source, target, move) {
             if (move.hasBounced || move.flags['futuremove'] || move.sourceEffect === 'snatch') return;
             const type = move.type;
             if (type && type !== '???' && source.getTypes().join() !== type) {
                 if (!source.setType(type)) return;
-                this.add('-start', source, 'typechange', type, '[from] ability: Secret Agent');
+                this.add('-start', source, 'typechange', type, '[from] ability: Undercovert Agent');
             }
         },
         onSwitchIn() {},
         rating: 4.5,
-        name: "Secret Agent",
+        name: "Undercover Agent",
         num: 236
 	},
 	grindstone: {
@@ -831,6 +831,32 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		name: "Wet Hair",
 		rating: 2,
 		num: 221,
+	},
+	powerofatlantis: {
+		onModifySpAPriority: 5,
+		onModifySpA(spa, pokemon) {
+			if (['raindance', 'primordialsea'].includes(pokemon.effectiveWeather())) {
+				return this.chainModify(1.5);
+			}
+		},
+		onModifyAtkPriority: 5,
+		onModifyAtk(spa, pokemon) {
+			if (['raindance', 'primordialsea'].includes(pokemon.effectiveWeather())) {
+				return this.chainModify(1.5);
+			}
+		},
+		onWeather(target, source, effect) {
+			if (target.hasItem('utilityumbrella')) return;
+			if (effect.id === 'raindance' || effect.id === 'primordialsea') {
+				this.heal(target.baseMaxhp / 8);
+			} else if (effect.id === 'null') {
+				this.damage(target.baseMaxhp / 8, target, target);
+			}
+		},
+		flags: {breakable: 1},
+		name: "Power of Atlantis",
+		rating: 3,
+		num: 87,
 	},
 	adaptability: {
 		onModifySTAB(stab, source, target, move) {
