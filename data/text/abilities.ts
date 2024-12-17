@@ -56,6 +56,11 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 		desc: "When this Pokemon has more than 1/2 its maximum HP and takes damage from an attack bringing it to 1/2 or less of its maximum HP, its Attack, Special Attack, and Speed are raised by 1 stage, and its Defense and Special Defense are lowered by 1 stage. This effect applies after all hits from a multi-hit move. This effect is prevented if the move had a secondary effect removed by the Sheer Force Ability.",
 		shortDesc: "At 1/2 or less of this Pokemon's max HP: +1 Atk, Sp. Atk, Spe, and -1 Def, Sp. Def.",
 	},
+	neverlosehope: {
+		name: "Never Lose Hope",
+		desc: "When this Nephilim has more than 1/2 its maximum HP and takes damage from an attack bringing it to 1/2 or less of its maximum HP, its Attack, Special Attack, and Speed are raised by 1 stage, and its Defense and Special Defense are lowered by 1 stage. This effect applies after all hits from a multi-hit move. This effect is prevented if the move had a secondary effect removed by the Sheer Force Ability.",
+		shortDesc: "At 1/2 or less of this Nephilim's max HP: +1 Atk, Sp. Atk, Spe, and -1 Def, Sp. Def.",
+	},
 	anticipation: {
 		name: "Anticipation",
 		desc: "On switch-in, this Pokemon is alerted if any opposing Pokemon has an attack that is super effective against this Pokemon, or an OHKO move. This effect considers any move that deals direct damage as an attacking move of its respective type, Hidden Power counts as its determined type, and Judgment, Multi-Attack, Natural Gift, Revelation Dance, Techno Blast, and Weather Ball are considered Normal-type moves.",
@@ -295,6 +300,10 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 			desc: "If this Pokemon has a stat stage raised it is lowered instead, and vice versa.",
 		},
 	},
+	chaos: {
+		name: "Chaos",
+		shortDesc: "If this Pokemon has a stat stage raised it is lowered instead, and vice versa. +2 for every 1",
+	},
 	corrosion: {
 		name: "Corrosion",
 		shortDesc: "This Pokemon can poison or badly poison a Pokemon regardless of its typing.",
@@ -423,9 +432,13 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 		name: "Drizzle",
 		shortDesc: "On switch-in, this Pokemon summons Rain Dance.",
 	},
-	spacetime: {
-		name: "SpaceTime",
-		shortDesc: "On switch-in, this Pokemon summons Trick Room.",
+	timedilation: {
+		name: "Time Dilation",
+		shortDesc: "On switch-in, the Warden of Time summons Trick Room.",
+	},
+	gravitationalpull: {
+		name: "Gravitational Pull",
+		shortDesc: "On switch-in, this BEEG Astrogirl summons Gravity.",
 	},
 	drought: {
 		name: "Drought",
@@ -2080,6 +2093,10 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 		name: "Surge Surfer",
 		shortDesc: "If Electric Terrain is active, this Pokemon's Speed is doubled.",
 	},
+	faunasweep: {
+		name: "Fauna Sweep",
+		shortDesc: "If Grassy Terrain is active, this Kirin's Speed is doubled.",
+	},
 	witchcraft: {
 		name: "Witchcraft",
 		shortDesc: "If Psychic Terrain is active, this Witch's Speed is boosted by 50%.",
@@ -2444,6 +2461,11 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 		name: "Zombie",
 		desc: "If a physical attack hits this Zombie, her Defense is lowered by 1 stage and her Speed is raised by 2 stages.",
 		shortDesc: "If a physical attack hits this Zombie, Defense is lowered by 1, Speed is raised by 2.",
+	},
+	societalcollapse: {
+		name: "Societal Collapse",
+		desc: "If a special attack hits this Owl, her Special Defense is lowered by 1 stage and her Special Attack is raised by 1 stages.",
+		shortDesc: "If a special attack hits this Owl, Sp. Def is lowered by 1, Sp. Atk is raised by 1.",
 	},
 	wellbakedbody: {
 		name: "Well-Baked Body",

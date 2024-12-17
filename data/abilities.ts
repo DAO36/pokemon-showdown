@@ -40,11 +40,19 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 0.1,
 		num: 0,
 	},
-	spacetime: {
+	timedilation: {
 		onStart(pokemon) {
 			this.field.addPseudoWeather('trickroom', pokemon);
 		},
-		name: "SpaceTime",
+		name: "Time Dilation",
+		rating: 4,
+		num: -19,		
+	},
+	gravitationalpull: {
+		onStart(pokemon) {
+			this.field.addPseudoWeather('gravity', pokemon);
+		},
+		name: "Gravitational Pull",
 		rating: 4,
 		num: -19,		
 	},
@@ -938,6 +946,77 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		name: "Mighty Phoenix",
 		rating: 4.5,
 		num: 144,
+	},
+	neverlosehope: {
+		onDamage(damage, target, source, effect) {
+			if (
+				effect.effectType === "Move" &&
+				!effect.multihit &&
+				(!effect.negateSecondary && !(effect.hasSheerForce && source.hasAbility('sheerforce')))
+			) {
+				this.effectState.checkedAngerShell = false;
+			} else {
+				this.effectState.checkedAngerShell = true;
+			}
+		},
+		onTryEatItem(item) {
+			const healingItems = [
+				'aguavberry', 'enigmaberry', 'figyberry', 'iapapaberry', 'magoberry', 'sitrusberry', 'wikiberry', 'oranberry', 'berryjuice',
+			];
+			if (healingItems.includes(item.id)) {
+				return this.effectState.checkedAngerShell;
+			}
+			return true;
+		},
+		onAfterMoveSecondary(target, source, move) {
+			this.effectState.checkedAngerShell = true;
+			if (!source || source === target || !target.hp || !move.totalDamage) return;
+			const lastAttackedBy = target.getLastAttackedBy();
+			if (!lastAttackedBy) return;
+			const damage = move.multihit ? move.totalDamage : lastAttackedBy.damage;
+			if (target.hp <= target.maxhp / 2 && target.hp + damage > target.maxhp / 2) {
+				this.boost({atk: 1, spa: 1, spe: 1, def: -1, spd: -1}, target, target);
+			}
+		},
+		flags: {},
+		name: "Never Lose Hope",
+		rating: 3,
+		num: 271,
+	},
+	faunasweep: {
+		onModifySpe(spe) {
+			if (this.field.isTerrain('grassyterrain')) {
+				return this.chainModify(2);
+			}
+		},
+		flags: {},
+		name: "Fauna Sweep",
+		rating: 3,
+		num: 207,
+	},
+	societalcollapse: {
+		onDamagingHit(damage, target, source, move) {
+			if (move.category === 'Special') {
+				this.boost({spd: -1, spa: 1}, target, target);
+			}
+		},
+		flags: {},
+		name: "Societal Collapse",
+		rating: 1,
+		num: 133,
+	},
+	chaos: {
+		onChangeBoost(boost, target, source, effect) {
+			if (effect && effect.id === 'zpower') return;
+			let i: BoostID;
+			for (i in boost) {
+				boost[i]! *= -2;
+			}
+		},
+		flags: {breakable: 1},
+		name: "Chaos",
+		rating: 4.5,
+		num: 126,
 	},
 	adaptability: {
 		onModifySTAB(stab, source, target, move) {
