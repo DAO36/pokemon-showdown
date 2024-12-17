@@ -562,7 +562,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			}
 		},
 		flags: {},
-		name: "Flame Body",
+		name: "Frozen Sake",
 		rating: 2,
 		num: 49,
 	},
