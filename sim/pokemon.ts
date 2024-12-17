@@ -841,6 +841,16 @@ export class Pokemon {
 			}
 		}
 
+		// Check if any active pokemon have the ability Cleaner
+		if (this.hasItem('Ability Shield') || this.ability === ('cleaner' as ID)) return false;
+		for (const pokemon of this.battle.getAllActive()) {
+			// can't use hasAbility because it would lead to infinite recursion
+			if (pokemon.ability === ('cleaner' as ID) && !pokemon.volatiles['gastroacid'] &&
+				!pokemon.transformed && !pokemon.abilityState.ending && !this.volatiles['commanding']) {
+				return true;
+			}
+		}
+
 		return false;
 	}
 
