@@ -1482,6 +1482,10 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 			shortDesc: "This Pokemon's type changes to match the type of the move it is about to use.",
 		},
 	},
+	secretagent: {
+		name: "Secret Agent",
+		desc: "This Spy's type changes to match the type of the move it is about to use. This effect comes after all effects that change a move's type.",
+	},
 	protosynthesis: {
 		name: "Protosynthesis",
 		desc: "If Sunny Day is active or this Pokemon uses a held Booster Energy, this Pokemon's highest stat is multiplied by 1.3, or by 1.5 if the highest stat is Speed. Stat stage changes are considered at the time this Ability activates. If multiple stats are tied, Attack, Defense, Special Attack, Special Defense, and Speed are prioritized in that order. If this effect was started by Sunny Day, a held Booster Energy will not activate and the effect ends when Sunny Day is no longer active. If this effect was started by a held Booster Energy, it ends when this Pokemon is no longer active.",
@@ -2125,6 +2129,10 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 		name: "Tangling Hair",
 		shortDesc: "Pokemon making contact with this Pokemon have their Speed lowered by 1 stage.",
 	},
+	wethair: {
+		name: "Wet Hair",
+		shortDesc: "Pokemon making contact with this Rain Shaman have their Accuracy lowered by 1 stage.",
+	},
 	technician: {
 		name: "Technician",
 		desc: "This Pokemon's moves of 60 power or less have their power multiplied by 1.5, including Struggle. This effect comes after a move's effect changes its own power.",
@@ -2381,6 +2389,10 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	watercompaction: {
 		name: "Water Compaction",
 		shortDesc: "This Pokemon's Defense is raised 2 stages after it is damaged by a Water-type move.",
+	},
+	grindstone: {
+		name: "Grindstone",
+		shortDesc: "This Blacksmith's Defense is raised 2 stages after it is damaged by a Ground-type move.",
 	},
 	waterveil: {
 		name: "Water Veil",

@@ -795,6 +795,43 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 2.5,
 		num: 160,
 	},
+	secretagent: {
+        onPrepareHit(source, target, move) {
+            if (move.hasBounced || move.flags['futuremove'] || move.sourceEffect === 'snatch') return;
+            const type = move.type;
+            if (type && type !== '???' && source.getTypes().join() !== type) {
+                if (!source.setType(type)) return;
+                this.add('-start', source, 'typechange', type, '[from] ability: Secret Agent');
+            }
+        },
+        onSwitchIn() {},
+        rating: 4.5,
+        name: "Secret Agent",
+        num: 236
+	},
+	grindstone: {
+		onDamagingHit(damage, target, source, move) {
+			if (move.type === 'Ground') {
+				this.boost({def: 2});
+			}
+		},
+		flags: {},
+		name: "Grindstone",
+		rating: 1.5,
+		num: 195,
+	},
+	wethair: {
+		onDamagingHit(damage, target, source, move) {
+			if (this.checkMoveMakesContact(move, source, target, true)) {
+				this.add('-ability', target, 'Wet Hair');
+				this.boost({accuracy: -1}, source, target, null, true);
+			}
+		},
+		flags: {},
+		name: "Wet Hair",
+		rating: 2,
+		num: 221,
+	},
 	adaptability: {
 		onModifySTAB(stab, source, target, move) {
 			if (move.forceSTAB || source.hasType(move.type)) {
