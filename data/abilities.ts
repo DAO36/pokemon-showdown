@@ -715,6 +715,86 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 1.5,
 		num: 177,
 	},
+	moongoddess: {
+		onAnyFaintPriority: 1,
+		onAnyFaint() {
+			this.boost({spa: 1}, this.effectState.target);
+		},
+		flags: {},
+		name: "Moon Goddess",
+		rating: 3.5,
+		num: 220,
+	},
+	erofi: {
+		onTryHitPriority: 1,
+		onTryHit(target, source, move) {
+			if (target !== source && move.type === 'Dark') {
+				if (!this.boost({atk: 1})) {
+					this.add('-immune', target, '[from] ability: Erofi');
+				}
+				return null;
+			}
+		},
+		onAllyTryHitSide(target, source, move) {
+			if (source === this.effectState.target || !target.isAlly(source)) return;
+			if (move.type === 'Dark') {
+				this.boost({atk: 1}, this.effectState.target);
+			}
+		},
+		flags: {breakable: 1},
+		name: "Erofi",
+		rating: 3,
+		num: 157,
+	},
+	nnn: {
+		onDamagingHit(damage, target, source, move) {
+			this.field.setTerrain('grassyterrain');
+		},
+		flags: {},
+		name: "NNN",
+		rating: 2.5,
+		num: 269,
+	},
+	zombie: {
+		onDamagingHit(damage, target, source, move) {
+			if (move.category === 'Physical') {
+				this.boost({def: -1, spe: 2}, target, target);
+			}
+		},
+		flags: {},
+		name: "Zombie",
+		rating: 1,
+		num: 133,
+	},
+	tonjokqueen: {
+		onTryHit(target, source, move) {
+			if (target !== source && move.flags['punch']) {
+				this.add('-immune', target, '[from] ability: TonjokQueen');
+				return null;
+			}
+		},
+		onAllyTryHitSide(target, source, move) {
+			if (move.flags['punch']) {
+				this.add('-immune', this.effectState.target, '[from] ability: TonjokQueen');
+			}
+		},
+		flags: {breakable: 1},
+		name: "TonjokQueen",
+		rating: 2,
+		num: 43,
+	},
+	bluntblade: {
+		onDamagingHitOrder: 1,
+		onDamagingHit(damage, target, source, move) {
+			if (this.checkMoveMakesContact(move, source, target, true)) {
+				this.damage(source.baseMaxhp / 8, source, target);
+			}
+		},
+		flags: {},
+		name: "Blunt Blade",
+		rating: 2.5,
+		num: 160,
+	},
 	adaptability: {
 		onModifySTAB(stab, source, target, move) {
 			if (move.forceSTAB || source.hasType(move.type)) {

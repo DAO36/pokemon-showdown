@@ -872,6 +872,13 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 
 		damage: "#roughskin",
 	},
+	bluntblade: {
+		name: "Blunt Blade",
+		desc: "Pokemon making contact with this Keris lose 1/8 of their maximum HP, rounded down.",
+		shortDesc: "Pokemon making contact with this Keris lose 1/8 of their max HP.",
+
+		damage: "#roughskin",
+	},
 	ironfist: {
 		name: "Iron Fist",
 		desc: "This Pokemon's punch-based attacks have their power multiplied by 1.2.",
@@ -1686,6 +1693,11 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 		desc: "This Pokemon is immune to Grass-type moves and raises its Attack by 1 stage when hit by a Grass-type move.",
 		shortDesc: "This Pokemon's Attack is raised 1 stage if hit by a Grass move; Grass immunity.",
 	},
+	erofi: {
+		name: "Erofi",
+		desc: "This Alien is immune to Dark-type moves and raises her Attack by 1 stage when hit by a Dark-type move.",
+		shortDesc: "This Alien's Attack is raised 1 stage if hit by a Dark move; Dark immunity.",
+	},
 	schooling: {
 		name: "Schooling",
 		desc: "On switch-in, if this Pokemon is a Wishiwashi that is level 20 or above and has more than 1/4 of its maximum HP left, it changes to School Form. If it is in School Form and its HP drops to 1/4 of its maximum HP or less, it changes to Solo Form at the end of the turn. If it is in Solo Form and its HP is greater than 1/4 its maximum HP at the end of the turn, it changes to School Form.",
@@ -1715,6 +1727,10 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	seedsower: {
 		name: "Seed Sower",
 		shortDesc: "When this Pokemon is hit by an attack, the effect of Grassy Terrain begins.",
+	},
+	nnn: {
+		name: "NNN",
+		shortDesc: "When this Squirrel is hit by an attack, the effect of Grassy Terrain begins.",
 	},
 	serenegrace: {
 		name: "Serene Grace",
@@ -1872,6 +1888,10 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 		name: "Soul-Heart",
 		shortDesc: "This Pokemon's Special Attack is raised by 1 stage when another Pokemon faints.",
 	},
+	moongoddess: {
+		name: "Moon Goddess",
+		shortDesc: "This Moon Goddess' Special Attack is raised by 1 stage when another Pokemon faints.",
+	},
 	soundproof: {
 		name: "Soundproof",
 		shortDesc: "This Pokemon is immune to sound-based moves, unless it used the move.",
@@ -1884,6 +1904,10 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 		gen4: {
 			shortDesc: "This Pokemon is immune to sound-based moves, including Heal Bell.",
 		},
+	},
+	tonkjokqueen: {
+		name: "TonjokQueen",
+		shortDesc: "This Queen of Tonjoks is immune to punching-based moves."
 	},
 	speedboost: {
 		name: "Speed Boost",
@@ -2370,6 +2394,11 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 			desc: "If a physical attack hits this Pokemon, its Defense is lowered by 1 stage and its Speed is raised by 1 stage.",
 			shortDesc: "If a physical attack hits this Pokemon, Defense is lowered by 1, Speed is raised by 1.",
 		},
+	},
+	zombie: {
+		name: "Zombie",
+		desc: "If a physical attack hits this Zombie, her Defense is lowered by 1 stage and her Speed is raised by 2 stages.",
+		shortDesc: "If a physical attack hits this Zombie, Defense is lowered by 1, Speed is raised by 2.",
 	},
 	wellbakedbody: {
 		name: "Well-Baked Body",
