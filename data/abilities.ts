@@ -849,11 +849,12 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			if (target.hasItem('utilityumbrella')) return;
 			if (effect.id === 'raindance' || effect.id === 'primordialsea') {
 				this.heal(target.baseMaxhp / 8);
-			} if (!target.effectiveWeather()) {
+			}
+		},	
+		onResidual(target) {
+			if (!target.effectiveWeather()){
 				this.damage(target.baseMaxhp / 8, target, target);
 			}
-		},
-		onResidual(target) {
         },
 		flags: {breakable: 1},
 		name: "Power of Atlantis",
