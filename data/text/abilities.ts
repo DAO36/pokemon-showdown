@@ -1905,7 +1905,7 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 			shortDesc: "This Pokemon is immune to sound-based moves, including Heal Bell.",
 		},
 	},
-	tonkjokqueen: {
+	tonjokqueen: {
 		name: "TonjokQueen",
 		shortDesc: "This Queen of Tonjoks is immune to punching-based moves."
 	},
