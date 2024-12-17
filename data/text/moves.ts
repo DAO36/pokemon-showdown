@@ -2594,8 +2594,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	godeyes: {
 		name: "God Eyes",
-		desc: "Bypasses subs and protection without breaking it. Never Misses. Has a 25% chance to raise the user's Accuracy by 1 stage. This move's type effectiveness against Ghost is changed to be neutrally effective no matter what this move's type is.",
-		shortDesc: "Can hit Ghost types. 25% chance to raise Accuracy by 1. Bypasses subs and protection.",
+		desc: "Bypasses subs and protection without breaking it. Never Misses. Has a 20% chance to raise the user's Accuracy by 1 stage. This move's type effectiveness against Ghost is changed to be neutrally effective no matter what this move's type is.",
+		shortDesc: "Can hit Ghost types. 20% chance to raise Accuracy by 1. Bypasses subs and protection.",
 	},
 	freezeshock: {
 		name: "Freeze Shock",

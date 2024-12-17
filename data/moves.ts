@@ -2018,7 +2018,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		},
 		tracksTarget: true,
 		secondary: {
-			chance: 25,
+			chance: 20,
 			self: {
 				boosts: {
 					accuracy: 1,

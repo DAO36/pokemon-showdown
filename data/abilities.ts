@@ -1134,7 +1134,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 4,
 		num: 192,
 	},
-	bigcatbigtrouble: {
+	bigcatmeansbigtrouble: {
 		onBasePowerPriority: 19,
 		onBasePower(basePower, attacker, defender, move) {
 			if (move.flags['bite']) {
@@ -1146,7 +1146,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			if (boost.accuracy && boost.accuracy < 0) {
 				delete boost.accuracy;
 				if (!(effect as ActiveMove).secondaries) {
-					this.add("-fail", target, "unboost", "accuracy", "[from] ability: Keen Eye", "[of] " + target);
+					this.add("-fail", target, "unboost", "accuracy", "[from] ability: Big Cat Means Big Trouble", "[of] " + target);
 				}
 			}
 		},
@@ -1154,7 +1154,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			move.ignoreEvasion = true;
 		},
 		flags: {},
-		name: "Big Cat Big Trouble",
+		name: "Big Cat Means Big Trouble",
 		rating: 3.5,
 		num: 173,
 	},

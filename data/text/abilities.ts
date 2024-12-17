@@ -2091,8 +2091,8 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 		desc: "This Pokemon's bite-based attacks have their power multiplied by 1.5.",
 		shortDesc: "This Pokemon's bite-based attacks have 1.5x power. Bug Bite is not boosted.",
 	},
-	bigcatbigtrouble: {
-		name: "Big Cat Big Trouble",
+	bigcatmeansbigtrouble: {
+		name: "Big Cat Means Big Trouble",
 		desc: "This Cat's bite-based attacks have their power multiplied by 1.5. This Cat's accuracy can't be lowered by others; ignores their evasiveness stat.",
 		shortDesc: "This Cat's bite-based attacks have 1.5x power. Bug Bite is not boosted. Accuracy can't be lowered; ignores evasiveness.",
 	},
