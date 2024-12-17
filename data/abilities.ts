@@ -849,11 +849,11 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			if (target.hasItem('utilityumbrella')) return;
 			if (effect.id === 'raindance' || effect.id === 'primordialsea') {
 				this.heal(target.baseMaxhp / 10);
-			} else if (effect.id === 'sunnyday' || effect.id === 'desolateland' || effect.id === 'snowscape' || effect.id === 'sandstorm') {
+			} else if (effect.id === 'sunnyday' || effect.id === 'desolateland') {
 				this.damage(target.baseMaxhp / 8, target, target);
 			}
 		},
-		onResidual(target) {
+		onResidual(pokemon) {
             for (const target of this.getAllActive()) {
                 this.damage(target.baseMaxhp / 8);
             }
