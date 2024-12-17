@@ -848,15 +848,11 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		onWeather(target, source, effect) {
 			if (target.hasItem('utilityumbrella')) return;
 			if (effect.id === 'raindance' || effect.id === 'primordialsea') {
-				this.heal(target.baseMaxhp / 10);
-			} else if (effect.id === 'sunnyday' || effect.id === 'desolateland') {
+				this.heal(target.baseMaxhp / 8);
+			} if (!target.effectiveWeather()) {
 				this.damage(target.baseMaxhp / 8, target, target);
 			}
-		},
-		onResidual(pokemon) {
-            if (!pokemon.effectiveWeather()) {
-            }
-        },
+		},	
 		flags: {breakable: 1},
 		name: "Power of Atlantis",
 		rating: 3,
