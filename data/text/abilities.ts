@@ -397,6 +397,11 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 		desc: "This Pokemon's Attack is raised by 2 stages for each of its stat stages that is lowered by an opposing Pokemon.",
 		shortDesc: "This Pokemon's Attack is raised by 2 for each of its stats that is lowered by a foe.",
 	},
+	chaser: {
+		name: "Chaser",
+		desc: "This Gremlin's Speed is raised by 2 stages for each of her stat stages that is lowered by an opposing Pokemon.",
+		shortDesc: "This Gremlin's Speed is raised by 2 for each of her stats that is lowered by a foe.",
+	},
 	deltastream: {
 		name: "Delta Stream",
 		desc: "On switch-in, the weather becomes Delta Stream, which removes the weaknesses of the Flying type from Flying-type Pokemon. This weather remains in effect until this Ability is no longer active for any Pokemon, or the weather is changed by the Desolate Land or Primordial Sea Abilities.",
@@ -1022,6 +1027,11 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 		name: "Liquid Voice",
 		desc: "This Pokemon's sound-based moves become Water-type moves. This effect comes after other effects that change a move's type, but before Ion Deluge and Electrify's effects.",
 		shortDesc: "This Pokemon's sound-based moves become Water type.",
+	},
+	flamingvoice: {
+		name: "Flaming Voice",
+		desc: "This User's sound-based moves become Fire-type moves. This effect comes after other effects that change a move's type, but before Ion Deluge and Electrify's effects.",
+		shortDesc: "This User's sound-based moves become Fire type.",
 	},
 	longreach: {
 		name: "Long Reach",
@@ -2002,6 +2012,10 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 		name: "Stamina",
 		shortDesc: "This Pokemon's Defense is raised by 1 stage after it is damaged by a move.",
 	},
+	durable: {
+		name: "Durable",
+		shortDesc: "This Pokemon's Defense is raised by 1 stage after it is damaged by a move.",
+	},
 	stancechange: {
 		name: "Stance Change",
 		desc: "If this Pokemon is an Aegislash, it changes to Blade Forme before using an attacking move, and changes to Shield Forme before using King's Shield.",
@@ -2076,6 +2090,11 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 		name: "Strong Jaw",
 		desc: "This Pokemon's bite-based attacks have their power multiplied by 1.5.",
 		shortDesc: "This Pokemon's bite-based attacks have 1.5x power. Bug Bite is not boosted.",
+	},
+	bigcatbigtrouble: {
+		name: "Big Cat Big Trouble",
+		desc: "This Cat's bite-based attacks have their power multiplied by 1.5. This Cat's accuracy can't be lowered by others; ignores their evasiveness stat.",
+		shortDesc: "This Cat's bite-based attacks have 1.5x power. Bug Bite is not boosted. Accuracy can't be lowered; ignores evasiveness.",
 	},
 	sturdy: {
 		name: "Sturdy",

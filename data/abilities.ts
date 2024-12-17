@@ -1040,7 +1040,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	rockhard: {
 		onSourceModifyDamage(damage, source, target, move) {
 			let mod = 1;
-			if (move.type === 'Steel') mod *= 1.5;
+			if (move.type === 'Steel') mod *= 2;
 			if (move.flags['contact']) mod /= 2;
 			return this.chainModify(mod);
 		},
@@ -1052,7 +1052,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	underworlddiva: {
 		onTryHit(target, source, move) {
 			if (target !== source && move.flags['sound']) {
-				if (!this.boost({atk: 1, spa: 1})) {
+				if (!this.boost({spa: 1})) {
 					this.add('-immune', target, '[from] ability: Underworld Diva');
 				}
 				return null;
@@ -1091,6 +1091,72 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		name: "The Fluffy One",
 		rating: 2,
 		num: 183,
+	},
+	flamingvoice: {
+		onModifyTypePriority: -1,
+		onModifyType(move, pokemon) {
+			if (move.flags['sound'] && !pokemon.volatiles['dynamax']) { // hardcode
+				move.type = 'Fire';
+			}
+		},
+		flags: {},
+		name: "Flaming Voice",
+		rating: 1.5,
+		num: 204,
+	},
+	chaser: {
+		onAfterEachBoost(boost, target, source, effect) {
+			if (!source || target.isAlly(source)) {
+				return;
+			}
+			let statsLowered = false;
+			let i: BoostID;
+			for (i in boost) {
+				if (boost[i]! < 0) {
+					statsLowered = true;
+				}
+			}
+			if (statsLowered) {
+				this.boost({spe: 2}, target, target, null, false, true);
+			}
+		},
+		flags: {},
+		name: "Chaser",
+		rating: 3,
+		num: 128,
+	},
+	durable: {
+		onDamagingHit(damage, target, source, effect) {
+			this.boost({def: 1});
+		},
+		flags: {},
+		name: "Durable",
+		rating: 4,
+		num: 192,
+	},
+	bigcatbigtrouble: {
+		onBasePowerPriority: 19,
+		onBasePower(basePower, attacker, defender, move) {
+			if (move.flags['bite']) {
+				return this.chainModify(1.5);
+			}
+		},
+		onTryBoost(boost, target, source, effect) {
+			if (source && target === source) return;
+			if (boost.accuracy && boost.accuracy < 0) {
+				delete boost.accuracy;
+				if (!(effect as ActiveMove).secondaries) {
+					this.add("-fail", target, "unboost", "accuracy", "[from] ability: Keen Eye", "[of] " + target);
+				}
+			}
+		},
+		onModifyMove(move) {
+			move.ignoreEvasion = true;
+		},
+		flags: {},
+		name: "Big Cat Big Trouble",
+		rating: 3.5,
+		num: 173,
 	},
 	adaptability: {
 		onModifySTAB(stab, source, target, move) {
