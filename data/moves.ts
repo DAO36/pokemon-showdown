@@ -812,7 +812,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Normal",
 		contestType: "Clever",
 	},
-	uberhseep: {
+	ubersheep: {
 		num: 370,
 		accuracy: true,
 		basePower: 0,
