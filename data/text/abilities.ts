@@ -617,6 +617,10 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 			shortDesc: "This Pokemon's Flying-type moves have their priority increased by 1.",
 		},
 	},
+	thexo: {
+		name: "The XO",
+		shortDesc: "This Falcon has her Flying-type status moves have +1 priority.",
+	},
 	galvanize: {
 		name: "Galvanize",
 		desc: "This Pokemon's Normal-type moves become Electric-type moves and have their power multiplied by 1.2. This effect comes after other effects that change a move's type, but before Ion Deluge and Electrify's effects.",
@@ -643,6 +647,10 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	grasspelt: {
 		name: "Grass Pelt",
 		shortDesc: "If Grassy Terrain is active, this Pokemon's Defense is multiplied by 1.5.",
+	},
+	madscience: {
+		name: "Mad Science",
+		shortDesc: "If Psychic Terrain is active, this Coyote's Special Defense is multiplied by 1.5.",
 	},
 	grassysurge: {
 		name: "Grassy Surge",
@@ -1073,6 +1081,11 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 		desc: "When one of this Pokemon's stat stages would be lowered by another Pokemon, that Pokemon's stat stage is lowered instead. This effect does not happen if this Pokemon's stat stage was already -6. If the other Pokemon has a substitute, neither Pokemon has its stat stage lowered.",
 		shortDesc: "If this Pokemon's stat stages would be lowered, the attacker's are lowered instead.",
 	},
+	yamada: {
+		name: "Yamada",
+		desc: "When one of YMD's stat stages would be lowered by another Pokemon, that Pokemon's stat stage is lowered instead. This effect does not happen if this Pokemon's stat stage was already -6. If the other Pokemon has a substitute, neither Pokemon has its stat stage lowered.",
+		shortDesc: "If this YMD's stat stages would be lowered, the attacker's are lowered instead.",
+	},
 	stellar: {
 		name: "Stellar",
 		desc: "When one of this Comet's stat stages would be lowered by another Pokemon, that Pokemon's stat stage is lowered instead. This effect does not happen if this Pokemon's stat stage was already -6. If the other Pokemon has a substitute, neither Pokemon has its stat stage lowered.",
@@ -1122,6 +1135,11 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 		name: "Moxie",
 		desc: "This Pokemon's Attack is raised by 1 stage if it attacks and knocks out another Pokemon.",
 		shortDesc: "This Pokemon's Attack is raised by 1 stage if it attacks and KOes another Pokemon.",
+	},
+	samurai: {
+		name: "Samurai",
+		desc: "This Samurai's Attack is raised by 1 stage if she attacks and knocks out another Pokemon.",
+		shortDesc: "This Samurai's Attack is raised by 1 stage if she attacks and KOes another Pokemon.",
 	},
 	devildiva: {
 		name: "Devil Diva",
@@ -1195,6 +1213,14 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 
 		start: "  Neutralizing gas filled the area!",
 		end: "  The effects of the neutralizing gas wore off!",
+	},
+	cleaner: {
+		name: "Cleaner",
+		desc: "While this Orca is active, Abilities have no effect. This Ability activates before hazards and other Abilities take effect. Does not affect the As One, Battle Bond, Comatose, Disguise, Gulp Missile, Ice Face, Multitype, Neutralizing Gas, Power Construct, RKS System, Schooling, Shields Down, Stance Change, Tera Shift, Zen Mode, or Zero to Hero Abilities.",
+		shortDesc: "While this Orca is active, Abilities have no effect.",
+
+		start: "  The cleaner is neutralizing the abilities!",
+		end: "  The effects of the Cleaner wore off!",
 	},
 	noguard: {
 		name: "No Guard",
