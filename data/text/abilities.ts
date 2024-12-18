@@ -1654,7 +1654,7 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	mightyphoenix: {
 		name: "Mighty Phoenix",
-		shortDesc: "This Phoenix restores 1/3 of its maximum HP, rounded down, when it switches out.",
+		shortDesc: "30% chance a Pokemon making contact with this Pokemon will be burned. This Pokemon is immune to Fire-type moves. The first time it is hit by a Fire-type move, its offensive stat is multiplied by 1.5 while using a Fire-type.",
 	},
 	nursery: {
 		name: "Nursery",
@@ -1769,8 +1769,8 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	underworlddiva: {
 		name: "Underworld Diva",
-		desc: "This Raven is immune to Sound-type moves and raises her Attack and Special Attack by 1 stage when hit by a Sound-type move.",
-		shortDesc: "This Raven's Atk and Sp. Atk are both raised by 1 if hit by a Sound move; Sound immunity.",
+		desc: "This Raven is immune to Sound-type moves and raises her Special Attack by 1 stage when hit by a Sound-type move.",
+		shortDesc: "This Raven's Sp. Atk is raised by 1 if hit by a Sound move; Sound immunity.",
 	},
 	schooling: {
 		name: "Schooling",
@@ -2095,6 +2095,11 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 		name: "Big Cat Means Big Trouble",
 		desc: "This Cat's bite-based attacks have their power multiplied by 1.5. This Cat's accuracy can't be lowered by others; ignores their evasiveness stat.",
 		shortDesc: "This Cat's bite-based attacks have 1.5x power. Bug Bite is not boosted. Accuracy can't be lowered; ignores evasiveness.",
+	},
+	bigcatbigtrouble: {
+		name: "Big Cat Big Trouble",
+		desc: "This Cat's bite-based attacks have their power multiplied by 1.5. This Cat's Accuracy is raised by 2 for each of its stats that is lowered by a foe.",
+		shortDesc: "This Cat's bite-based attacks have 1.5x power. Bug Bite is not boosted.  This Cat's Accuracy is raised by 2 for each of its stats that is lowered by a foe.",
 	},
 	sturdy: {
 		name: "Sturdy",
@@ -2483,7 +2488,7 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	grindstone: {
 		name: "Grindstone",
-		shortDesc: "This Blacksmith's Defense is raised 2 stages after it is damaged by a Ground-type move.",
+		shortDesc: "If Sandstorm is active, this Blacksmith restores 1/12 of its maximum HP per turn. This Pokemon's Ground/Rock/Steel attacks do 1.3x in Sandstorm.",
 	},
 	waterveil: {
 		name: "Water Veil",

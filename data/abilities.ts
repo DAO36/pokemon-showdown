@@ -859,15 +859,25 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
         num: 236
 	},
 	grindstone: {
-		onDamagingHit(damage, target, source, move) {
-			if (move.type === 'Ground') {
-				this.boost({def: 2});
+		onWeather(target, source, effect) {
+			if (target.hasItem('utilityumbrella')) return;
+			if (effect.id === 'sandstorm') {
+				this.heal(target.baseMaxhp / 12);
+			}
+		},
+		onBasePowerPriority: 21,
+		onBasePower(basePower, attacker, defender, move) {
+			if (this.field.isWeather('sandstorm')) {
+				if (move.type === 'Rock' || move.type === 'Ground' || move.type === 'Steel') {
+					this.debug('Grindstone boost');
+					return this.chainModify([5325, 4096]);
+				}
 			}
 		},
 		flags: {},
 		name: "Grindstone",
 		rating: 1.5,
-		num: 195,
+		num: 44,
 	},
 	wethair: {
 		onDamagingHit(damage, target, source, move) {
@@ -1199,6 +1209,36 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		},
 		flags: {},
 		name: "Big Cat Means Big Trouble",
+		rating: 3.5,
+		num: 173,
+	},
+	bigcatbigtrouble: {
+		onBasePowerPriority: 19,
+		onBasePower(basePower, attacker, defender, move) {
+			if (move.flags['bite']) {
+				return this.chainModify(1.5);
+			}
+		},
+		onAfterEachBoost(boost, target, source, effect) {
+			if (!source || target.isAlly(source)) {
+				return;
+			}
+			let statsLowered = false;
+			let i: BoostID;
+			for (i in boost) {
+				if (boost[i]! < 0) {
+					statsLowered = true;
+				}
+			}
+			if (statsLowered) {
+				this.boost({accuracy: 2}, target, target, null, false, true);
+			}
+		},
+		onModifyMove(move) {
+			move.ignoreEvasion = true;
+		},
+		flags: {},
+		name: "Big Cat Big Trouble",
 		rating: 3.5,
 		num: 173,
 	},
