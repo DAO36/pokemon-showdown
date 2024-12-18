@@ -5,6 +5,14 @@ export const ItemsText: {[id: IDEntry]: ItemText} = {
 
 		block: "  [POKEMON]'s Ability is protected by the effects of its Ability Shield!",
 	},
+	freezeorb: {
+		name: "Freeze Orb",
+		shortDesc: "At the end of every turn, this item attempts to freeze the holder.",
+	},
+	shockorb: {
+		name: "Shock Orb",
+		shortDesc: "At the end of every turn, this item attempts to paralyze the holder.",
+	},
 	sorite: {
 		name: "Sorite",
 		shortDesc: "If held by Tokino Sora, this item allows her to Mega Evolve in battle.",
