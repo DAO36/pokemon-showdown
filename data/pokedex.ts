@@ -20521,7 +20521,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		requiredItem: "Bijoulite",
 	},
 	pebble: {
-		num: 778,
+		num: 74,
 		name: "Pebble",
 		types: ["Rock"],
 		gender: "N",
