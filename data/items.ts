@@ -2866,6 +2866,36 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		num: 273,
 		gen: 4,
 	},
+	freezeorb: {
+		name: "Freeze Orb",
+		spritenum: 575,
+		fling: {
+			basePower: 30,
+			status: 'frz',
+		},
+		onResidualOrder: 28,
+		onResidualSubOrder: 3,
+		onResidual(pokemon) {
+			pokemon.trySetStatus('frz', pokemon);
+		},
+		num: 273,
+		gen: 4,
+	},
+	shockorb: {
+		name: "Shock Orb",
+		spritenum: 575,
+		fling: {
+			basePower: 30,
+			status: 'par',
+		},
+		onResidualOrder: 28,
+		onResidualSubOrder: 3,
+		onResidual(pokemon) {
+			pokemon.trySetStatus('par', pokemon);
+		},
+		num: 273,
+		gen: 4,
+	},
 	flameplate: {
 		name: "Flame Plate",
 		spritenum: 146,

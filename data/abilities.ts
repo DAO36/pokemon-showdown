@@ -236,6 +236,18 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 2,
 		num: 167,
 	},
+	splitpersonalities: {
+		onResidualOrder: 29,
+		onResidual(pokemon) {
+			if (pokemon.species.baseSpecies !== 'Akai' || pokemon.terastallized) return;
+			const targetForme = pokemon.species.name === 'Akai' ? 'Akai-Haato' : 'Akai';
+			pokemon.formeChange(targetForme);
+		},
+		flags: {failroleplay: 1, noreceiver: 1, noentrain: 1, notrace: 1, failskillswap: 1, notransform: 1},
+		name: "Split Personalities",
+		rating: 1,
+		num: 258,
+	},
 	vampire: {
 		onTryHit(target, source, move) {
 			if (target !== source && move.type === 'Water') {

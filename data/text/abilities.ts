@@ -768,6 +768,11 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 		desc: "If this Pokemon is a Morpeko, it changes formes between its Full Belly Mode and Hangry Mode at the end of each turn.",
 		shortDesc: "If Morpeko, it changes between Full Belly and Hangry Mode at the end of each turn.",
 	},
+	splitpersonalities: {
+		name: "Split Personalities",
+		desc: "If this is Akai, she changes formes between her Idol Mode and Haachama Mode at the end of each turn.",
+		shortDesc: "If Akai, it changes between Idol and Haachama Mode at the end of each turn.",
+	},
 	hustle: {
 		name: "Hustle",
 		desc: "This Pokemon's Attack is multiplied by 1.5 and the accuracy of its physical attacks is multiplied by 0.8.",

@@ -322,6 +322,41 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Bug",
 		contestType: "Cool",
 	},
+	alterego: {
+		num: 783,
+		accuracy: 100,
+		basePower: 90,
+		category: "Special",
+		name: "Alter Ego",
+		pp: 15,
+		priority: 0,
+		flags: {protect: 1, mirror: 1},
+		secondary: {
+			chance: 20,
+			boosts: {
+				spe: -1,
+			},
+		},
+		onTry(source) {
+			if (source.species.baseSpecies === 'Akai') {
+				return;
+			}
+			this.attrLastMove('[still]');
+			this.add('-fail', source, 'move: Aura Wheel');
+			this.hint("Only Akai or Haachama can use this move.");
+			return null;
+		},
+		onModifyType(move, pokemon) {
+			if (pokemon.species.name === 'Akai-Haato') {
+				move.type = 'Dark';
+				move.category = 'Physical';
+			} else {
+				move.type = 'Fairy';
+			}
+		},
+		target: "normal",
+		type: "Fairy",
+	},
 	kapu: {
 		num: 370,
 		accuracy: 100,
@@ -1716,7 +1751,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		pp: 5,
 		priority: 0,
 		flags: {contact: 1, protect: 1, mirror: 1, metronome: 1},
-		recoil: [1, 2],
+		recoil: [33, 100],
 		secondary: null,
 		target: "allAdjacentFoes",
 		type: "Psychic",

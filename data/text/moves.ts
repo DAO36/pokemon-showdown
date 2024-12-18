@@ -306,6 +306,11 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		desc: "Has a 100% chance to raise the user's Speed by 1 stage. If the user is a Morpeko in Full Belly Mode, this move is Electric type. If the user is a Morpeko in Hangry Mode, this move is Dark type. This move cannot be used successfully unless the user's current form, while considering Transform, is Full Belly or Hangry Mode Morpeko.",
 		shortDesc: "Morpeko: Electric; Hangry: Dark; 100% +1 Spe.",
 	},
+	alterego: {
+		name: "Alter Ego",
+		desc: "Has a 20% chance to lower the foe's Speed by 1 stage. If the user is Akai in Idol Mode, this move is Fairy type. If she is in Haachama Mode, this move is Dark type. This move cannot be used successfully unless the user's current form, while considering Transform, is Akai or Haato Mode.",
+		shortDesc: "Akai: Fairy; Haato: Dark; 20% to lower foe's Spe.",
+	},
 	aurorabeam: {
 		name: "Aurora Beam",
 		desc: "Has a 10% chance to lower the target's Attack by 1 stage.",
