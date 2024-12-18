@@ -6317,6 +6317,11 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		doublesTier: "(DUU)",
 		natDexTier: "OU",
 	},
+	boomei: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "OU",
+	},
 	bae: {
 		tier: "OU",
 		doublesTier: "(DUU)",
@@ -6346,6 +6351,11 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
         tier: "OU",
         doublesTier: "(DUU)",
         natDexTier: "OU",	
+	},
+	pebble: {
+		tier: "PU",
+		doublesTier: "(DUU)",
+		natDexTier: "PU",
 	},
 	nerissa: {
 		tier: "OU",
