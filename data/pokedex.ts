@@ -18752,7 +18752,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		requiredItem: "Matsurite",
 	},
 	haachama: {
-		num: 877,
+		num: 596,
 		name: "Haachama",
 		types: ["Dark", "Bug"],
 		gender: "F",
@@ -18766,7 +18766,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		formeOrder: ["Haachama", "Haachama-Mega"],
 	},
 	haachamamega: {
-		num: 877,
+		num: 596,
 		name: "Haachama-Mega",
 		baseSpecies: "Haachama",
 		forme: "Mega",
@@ -18781,7 +18781,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		requiredItem: "Haachamite",
 	},
 	akai: {
-		num: 681,
+		num: 168,
 		name: "Akai",
 		baseForme: "Idol",
 		types: ["Fairy"],
@@ -18795,7 +18795,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		formeOrder: ["Aegislash", "Aegislash-Blade"],
 	},
 	akaihaato: {
-		num: 681,
+		num: 168,
 		name: "Akai-Haato",
 		baseSpecies: "Akai",
 		forme: "Haato",
