@@ -4176,6 +4176,11 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 				pokemon.removeVolatile('taunt');
 				// Taunt's volatile already sends the -end message when removed
 			}
+			if (pokemon.volatiles['scarylook']) {
+				this.add('-activate', pokemon, 'ability: Oblivious');
+				pokemon.removeVolatile('scarylook');
+				// Scary Look's volatile already sends the -end message when removed
+			}
 		},
 		onImmunity(type, pokemon) {
 			if (type === 'attract') return false;

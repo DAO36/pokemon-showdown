@@ -297,6 +297,18 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		activate: "  [POKEMON] is in love with [TARGET]!",
 		cant: "[POKEMON] is immobilized by love!",
 	},
+	loveislove: {
+		name: "Love is Love",
+		desc: "Causes the target to become infatuated, making it unable to attack 50% of the time. Fails if the target is already infatuated. The effect ends when either the user or the target is no longer active. Pokemon with the Oblivious Ability or protected by the Aroma Veil Ability are immune.",
+		shortDesc: "A target of the opposite gender gets infatuated.",
+
+		start: "  [POKEMON] fell in love!",
+		startFromItem: "  [POKEMON] fell in love because of the [ITEM]!",
+		end: "  [POKEMON] got over its infatuation!",
+		endFromItem: "  [POKEMON] cured its infatuation using its [ITEM]!",
+		activate: "  [POKEMON] is in love with [TARGET]!",
+		cant: "[POKEMON] is immobilized by love!",
+	},
 	aurasphere: {
 		name: "Aura Sphere",
 		shortDesc: "This move does not check accuracy.",
@@ -7323,6 +7335,15 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		start: "  [POKEMON] fell for the taunt!",
 		end: "  [POKEMON] shook off the taunt!",
 		cant: "[POKEMON] can't use [MOVE] after the taunt!",
+	},
+	scarylook: {
+		name: "Scary Look",
+		desc: "A horrifying look prevents the target from using damaging moves for its next three turns. Pokemon with the Oblivious Ability or protected by the Aroma Veil Ability are immune.",
+		shortDesc: "Target becomes scared and can't use attacking moves in next 3 turns.",
+
+		start: "  [POKEMON] is scared!",
+		end: "  [POKEMON] is no longer afraid!",
+		cant: "[POKEMON] is too scared to use [MOVE]!",
 	},
 	tearfullook: {
 		name: "Tearful Look",

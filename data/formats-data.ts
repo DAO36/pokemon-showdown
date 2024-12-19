@@ -6187,6 +6187,11 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
         doublesTier: "(DUU)",
         natDexTier: "OU",	
 	},
+	ckia: {
+		tier: "NFE",
+		doublesTier: "(DUU)",
+		natDexTier: "NFE",
+	},
 	kobo: {
 		tier: "OU",
 		doublesTier: "(DUU)",
@@ -6271,6 +6276,11 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
         tier: "OU",
         doublesTier: "(DUU)",
         natDexTier: "OU",	
+	},
+	froggywawa: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "UU",
 	},
 	irys: {
 		tier: "OU",
