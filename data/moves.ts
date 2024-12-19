@@ -2833,13 +2833,22 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		basePower: 0,
 		category: "Status",
 		name: "Love is Love",
-		pp: 10,
+		pp: 15,
 		priority: 0,
 		flags: {protect: 1, reflectable: 1, mirror: 1, bypasssub: 1, metronome: 1},
 		volatileStatus: 'attract',
 		condition: {
 			noCopy: true, // doesn't get copied by Baton Pass
 			onStart(pokemon, source, effect) {
+				if (!(pokemon.gender === 'M' && source.gender === 'M') && !(pokemon.gender === 'F' && source.gender === 'F')) {
+					this.debug('incompatible gender');
+					return false;
+				}
+				if (!this.runEvent('Attract', pokemon, source)) {
+					this.debug('Attract event failed');
+					return false;
+				}
+
 				if (effect.name === 'Cute Charm') {
 					this.add('-start', pokemon, 'Attract', '[from] ability: Cute Charm', '[of] ' + source);
 				} else if (effect.name === 'Destiny Knot') {
@@ -2866,9 +2875,12 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 				this.add('-end', pokemon, 'Attract', '[silent]');
 			},
 		},
+		onTryImmunity(target, source) {
+			return (target.gender === 'M' && source.gender === 'M') || (target.gender === 'F' && source.gender === 'F');
+		},
 		secondary: null,
 		target: "normal",
-		type: "Normal",
+		type: "Fairy",
 		contestType: "Cute",
 	},
 	aurasphere: {
