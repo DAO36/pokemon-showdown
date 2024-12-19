@@ -8042,6 +8042,11 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		desc: "Burns the target.",
 		shortDesc: "Burns the target.",
 	},
+	freezeray: {
+		name: "Freeze-Ray",
+		desc: "Freezes the target.",
+		shortDesc: "Freezes the target.",
+	},
 	wingattack: {
 		name: "Wing Attack",
 		shortDesc: "No additional effect.",

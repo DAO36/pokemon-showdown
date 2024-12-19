@@ -93755,6 +93755,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			glare: ["9M"],
 			suicopath: ["9M"],
 			cometslam: ["9M"],
+			freezeray: ["9M"],
         },
 	},
 	roboco: {
@@ -93888,6 +93889,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			honeclaws: ["9M"],
 			konkon: ["9M"],
 			snowdash: ["9M"],
+			freezeray: ["9M"],
         },
 	},
 	fubuzilla: {
@@ -95427,6 +95429,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			calmmind: ["9M"],
 			wamywater: ["9M"],
 			sake: ["9M"],
+			freezeray: ["9M"],
         },
 	},	
 	nene: {
@@ -95890,6 +95893,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			sweetkiss: ["9M"],
 			alientouch: ["9M"],
 			paintbrush: ["9M"],
+			freezeray: ["9M"],
         },
 	},	
 	risu: {
