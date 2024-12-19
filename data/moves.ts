@@ -2844,6 +2844,10 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 					this.debug('incompatible gender');
 					return false;
 				}
+				if (!(pokemon.gender === 'M' && source.gender === 'M') && !(pokemon.gender === 'F' && source.gender === 'F')) {
+					this.debug('incompatible gender');
+					return false;
+				}
 				if (!this.runEvent('Attract', pokemon, source)) {
 					this.debug('Attract event failed');
 					return false;
