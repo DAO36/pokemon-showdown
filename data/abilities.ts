@@ -45,7 +45,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			this.field.addPseudoWeather('trickroom', pokemon);
 		},
 		name: "Time Dilation",
-		rating: 4,
+		rating: 5,
 		num: -19,		
 	},
 	gravitationalpull: {
@@ -53,7 +53,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			this.field.addPseudoWeather('gravity', pokemon);
 		},
 		name: "Gravitational Pull",
-		rating: 4,
+		rating: 1,
 		num: -19,		
 	},
 	purepower: {
@@ -165,7 +165,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		},
 		flags: {breakable: 1},
 		name: "Diva",
-		rating: 2,
+		rating: 4,
 		num: 29,
 	},
 	fbking: {
@@ -188,7 +188,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		},
 		flags: {},
 		name: "Baby Dont Hurt Me",
-		rating: 2.5,
+		rating: 5,
 		num: 24,
 	},
 	iamgod: {
@@ -245,7 +245,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		},
 		flags: {failroleplay: 1, noreceiver: 1, noentrain: 1, notrace: 1, failskillswap: 1, notransform: 1},
 		name: "Split Personalities",
-		rating: 1,
+		rating: 2,
 		num: 258,
 	},
 	vampire: {
@@ -349,7 +349,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		},
 		flags: {breakable: 1},
 		name: "Witchcraft",
-		rating: 0.5,
+		rating: 1.5,
 		num: 179,
 	},
 	shubashuba: {
@@ -405,7 +405,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		},
 		flags: {},
 		name: "Doog",
-		rating: 2,
+		rating: 3,
 		num: 201,
 	},
 	mogumogu: {
@@ -419,7 +419,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		},
 		flags: {breakable: 1},
 		name: "Mogu Mogu",
-		rating: 3.5,
+		rating: 2.5,
 		num: 11,
 	},
 	miomama: {
@@ -438,7 +438,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		},
 		flags: {},
 		name: "Mio Mama",
-		rating: 3,
+		rating: 5,
 		num: 113,
 	},
 	warcriminal: {
@@ -454,7 +454,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		},
 		flags: {},
 		name: "War Criminal",
-		rating: 1,
+		rating: 1.5,
 		num: 194,
 	},
 	muscleknight: {
@@ -487,7 +487,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		},
 		flags: {},
 		name: "Yandere",
-		rating: 3.5,
+		rating: 4,
 		num: 22,
 	},
 	elvishflare: {
@@ -624,7 +624,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		},
 		flags: {},
 		name: "Frozen Sake",
-		rating: 2,
+		rating: 4,
 		num: 49,
 	},
 	supernenechi: {
@@ -656,7 +656,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		},
 		flags: {},
 		name: "Succubus",
-		rating: 3.5,
+		rating: 4,
 		num: 22,
 	},
 	samurai: {
@@ -677,7 +677,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		},
 		flags: {breakable: 1},
 		name: "Mad Science",
-		rating: 0.5,
+		rating: 1.5,
 		num: 179,
 	},
 	cleaner: {
@@ -773,7 +773,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		},
 		flags: {},
 		name: "The XO",
-		rating: 1.5,
+		rating: 4.5,
 		num: 177,
 	},
 	moongoddess: {
@@ -804,7 +804,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		},
 		flags: {breakable: 1},
 		name: "Erofi",
-		rating: 3,
+		rating: 5,
 		num: 157,
 	},
 	nnn: {
@@ -824,7 +824,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		},
 		flags: {},
 		name: "Zombie",
-		rating: 1,
+		rating: 2,
 		num: 133,
 	},
 	tonjokqueen: {
@@ -841,7 +841,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		},
 		flags: {breakable: 1},
 		name: "TonjokQueen",
-		rating: 2,
+		rating: 3,
 		num: 43,
 	},
 	bluntblade: {
@@ -866,7 +866,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
             }
         },
         onSwitchIn() {},
-        rating: 4.5,
+        rating: 5,
         name: "Undercover Agent",
         num: 236
 	},
@@ -888,7 +888,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		},
 		flags: {},
 		name: "Grindstone",
-		rating: 1.5,
+		rating: 3,
 		num: 44,
 	},
 	wethair: {
@@ -900,7 +900,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		},
 		flags: {},
 		name: "Wet Hair",
-		rating: 2,
+		rating: 3.5,
 		num: 221,
 	},
 	powerofatlantis: {
@@ -931,7 +931,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
         },
 		flags: {breakable: 1},
 		name: "Power of Atlantis",
-		rating: 3,
+		rating: 4.5,
 		num: 87,
 	},
 	toxicgamer: {
@@ -950,7 +950,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		},
 		flags: {},
 		name: "Death",
-		rating: 3.5,
+		rating: 4.5,
 		num: 220,
 	},
 	theforbiddenwah: {
@@ -962,7 +962,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		},
 		flags: {},
 		name: "The Forbidden Wah",
-		rating: 2.5,
+		rating: 4.5,
 		num: 24,
 	},
 	mightyphoenix: {
@@ -1010,7 +1010,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		},
 		flags: {breakable: 1},
 		name: "Mighty Phoenix",
-		rating: 3.5,
+		rating: 4,
 		num: 18,
 	},
 	neverlosehope: {
@@ -1068,7 +1068,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		},
 		flags: {},
 		name: "Societal Collapse",
-		rating: 1,
+		rating: 2,
 		num: 133,
 	},
 	chaos: {
@@ -1131,7 +1131,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		},
 		flags: {breakable: 1},
 		name: "Underworld Diva",
-		rating: 2,
+		rating: 2.5,
 		num: 43,
 	},
 	thefuzzyone: {
@@ -1143,7 +1143,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		},
 		flags: {},
 		name: "The Fuzzy One",
-		rating: 2,
+		rating: 3.5,
 		num: 183,
 	},
 	thefluffyone: {
@@ -1155,7 +1155,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		},
 		flags: {},
 		name: "The Fluffy One",
-		rating: 2,
+		rating: 2.5,
 		num: 183,
 	},
 	flamingvoice: {
@@ -1221,7 +1221,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		},
 		flags: {},
 		name: "Big Cat Means Big Trouble",
-		rating: 3.5,
+		rating: 4,
 		num: 173,
 	},
 	bigcatbigtrouble: {

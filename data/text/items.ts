@@ -9,6 +9,10 @@ export const ItemsText: {[id: IDEntry]: ItemText} = {
 		name: "Freeze Orb",
 		shortDesc: "At the end of every turn, this item attempts to freeze the holder.",
 	},
+	sleepyorb: {
+		name: "Sleepy Orb",
+		shortDesc: "At the end of every turn, this item attempts to put the holder to sleep. Zzz.",
+	},
 	shockorb: {
 		name: "Shock Orb",
 		shortDesc: "At the end of every turn, this item attempts to paralyze the holder.",
@@ -360,7 +364,11 @@ export const ItemsText: {[id: IDEntry]: ItemText} = {
 	},
 	assaultvest: {
 		name: "Assault Vest",
-		shortDesc: "Holder's Sp. Def is 1.5x, but it can only select damaging moves.",
+		shortDesc: "Holder's Special Def is 1.5x, but it can only select damaging moves.",
+	},
+	attackvest: {
+		name: "Attack Vest",
+		shortDesc: "Holder's Defense is 1.5x, but it can only select damaging moves.",
 	},
 	audinite: {
 		name: "Audinite",
@@ -777,6 +785,10 @@ export const ItemsText: {[id: IDEntry]: ItemText} = {
 	eviolite: {
 		name: "Eviolite",
 		shortDesc: "If holder's species can evolve, its Defense and Sp. Def are 1.5x.",
+	},
+	eviolite2: {
+		name: "Eviolite2",
+		shortDesc: "If holder's species can evolve, its Attack and Special Attack are 1.5x.",
 	},
 	expertbelt: {
 		name: "Expert Belt",
@@ -1244,6 +1256,12 @@ export const ItemsText: {[id: IDEntry]: ItemText} = {
 
 		damage: "  [POKEMON] lost some of its HP!",
 	},
+	deathorb: {
+		name: "Death Orb",
+		shortDesc: "Holder's attacks do 1.8x damage, and it loses 1/4 its max HP after the attack.",
+
+		damage: "  [POKEMON] is dying!",
+	},
 	lightball: {
 		name: "Light Ball",
 		shortDesc: "If held by a Pikachu, its Attack and Sp. Atk are doubled.",
@@ -1704,6 +1722,14 @@ export const ItemsText: {[id: IDEntry]: ItemText} = {
 		name: "Punching Glove",
 		shortDesc: "Holder's punch-based attacks have 1.1x power and do not make contact.",
 	},
+	dentures: {
+		name: "Dentures",
+		shortDesc: "Holder's bite-based attacks have 1.1x power and do not make contact.",
+	},
+	dagger: {
+		name: "Dagger",
+		shortDesc: "Holder's slice-based attacks have 1.1x power and do not make contact.",
+	},
 	qualotberry: {
 		name: "Qualot Berry",
 		shortDesc: "Cannot be eaten by the holder. No effect when eaten with Bug Bite or Pluck.",
@@ -1805,6 +1831,12 @@ export const ItemsText: {[id: IDEntry]: ItemText} = {
 		shortDesc: "If holder is hit by a contact move, the attacker loses 1/6 of its max HP.",
 
 		damage: "  [POKEMON] was hurt by the Rocky Helmet!",
+	},
+	cursedhelmet: {
+		name: "Cursed Helmet",
+		shortDesc: "If holder is hit by a move, the attacker loses 1/6 of its max HP.",
+
+		damage: "  [POKEMON] is going to die!",
 	},
 	roomservice: {
 		name: "Room Service",
@@ -2097,6 +2129,18 @@ export const ItemsText: {[id: IDEntry]: ItemText} = {
 	throatspray: {
 		name: "Throat Spray",
 		shortDesc: "Raises holder's Special Attack by 1 stage after it uses a sound move. Single use.",
+	},
+	brassknuckle: {
+		name: "Brass Knuckle",
+		shortDesc: "Raises holder's Attack by 1 stage after it uses a punching move. Single use.",
+	},
+	toothbrush: {
+		name: "Toothbrush",
+		shortDesc: "Raises holder's Attack by 1 stage after it uses a bite move. Single use.",
+	},
+	knife: {
+		name: "Knife",
+		shortDesc: "Raises holder's Attack by 1 stage after it uses a slicing move. Single use.",
 	},
 	thunderstone: {
 		name: "Thunder Stone",
@@ -2596,6 +2640,14 @@ export const ItemsText: {[id: IDEntry]: ItemText} = {
 		name: "Weakness Policy",
 		shortDesc: "If holder is hit super effectively, raises Attack, Sp. Atk by 2 stages. Single use.",
 	},
+	insurance: {
+		name: "Insurance",
+		shortDesc: "If holder is hit super effectively, raises Defense, Sp. Def by 2 stages. Single use.",
+	},
+	obamacare: {
+		name: "Obamacare",
+		shortDesc: "If holder is hit super effectively, raises Speed by 2 stages. Single use. Thanks Obama.",
+	},
 	wellspringmask: {
 		name: "Wellspring Mask",
 		shortDesc: "Ogerpon-Wellspring: 1.2x power attacks; Terastallize to gain Embody Aspect.",
@@ -2649,7 +2701,11 @@ export const ItemsText: {[id: IDEntry]: ItemText} = {
 
 	berserkgene: {
 		name: "Berserk Gene",
-		shortDesc: "(Gen 2) On switch-in, raises holder's Attack by 2 and confuses it. Single use.",
+		shortDesc: "On switch-in, raises holder's Attack, Special Attack, and Speed by 2 and confuses it. Single use.",
+	},
+	berserkdna: {
+		name: "Berserk DNA",
+		shortDesc: "On switch-in, raises holder's Attack, Defense, Special Attack, Special Defense, and Speed all by 2 and confuses it. Single use.",
 	},
 	berry: {
 		name: "Berry",

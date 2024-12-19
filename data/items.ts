@@ -1229,6 +1229,27 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		num: 640,
 		gen: 6,
 	},
+	attackvest: {
+		name: "Attack Vest",
+		spritenum: 581,
+		fling: {
+			basePower: 80,
+		},
+		onModifyDefPriority: 1,
+		onModifyDef(def) {
+			return this.chainModify(1.5);
+		},
+		onDisableMove(pokemon) {
+			for (const moveSlot of pokemon.moveSlots) {
+				const move = this.dex.moves.get(moveSlot.id);
+				if (move.category === 'Status' && move.id !== 'mefirst') {
+					pokemon.disableMove(moveSlot.id);
+				}
+			}
+		},
+		num: 640,
+		gen: 6,
+	},
 	audinite: {
 		name: "Audinite",
 		spritenum: 617,
@@ -2634,6 +2655,27 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		num: 538,
 		gen: 5,
 	},
+	eviolite2: {
+		name: "Eviolite2",
+		spritenum: 130,
+		fling: {
+			basePower: 40,
+		},
+		onModifyAtkPriority: 2,
+		onModifyAtk(atk, pokemon) {
+			if (pokemon.baseSpecies.nfe) {
+				return this.chainModify(1.5);
+			}
+		},
+		onModifySpAPriority: 2,
+		onModifySpA(spa, pokemon) {
+			if (pokemon.baseSpecies.nfe) {
+				return this.chainModify(1.5);
+			}
+		},
+		num: 538,
+		gen: 5,
+	},
 	expertbelt: {
 		name: "Expert Belt",
 		spritenum: 132,
@@ -2879,7 +2921,22 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 			pokemon.trySetStatus('frz', pokemon);
 		},
 		num: 273,
-		gen: 4,
+		gen: 9,
+	},
+	sleepyorb: {
+		name: "Sleepy Orb",
+		spritenum: 575,
+		fling: {
+			basePower: 30,
+			status: 'slp',
+		},
+		onResidualOrder: 28,
+		onResidualSubOrder: 3,
+		onResidual(pokemon) {
+			pokemon.trySetStatus('slp', pokemon);
+		},
+		num: 273,
+		gen: 9,
 	},
 	shockorb: {
 		name: "Shock Orb",
@@ -2894,7 +2951,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 			pokemon.trySetStatus('par', pokemon);
 		},
 		num: 273,
-		gen: 4,
+		gen: 9,
 	},
 	flameplate: {
 		name: "Flame Plate",
@@ -4066,6 +4123,23 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		onAfterMoveSecondarySelf(source, target, move) {
 			if (source && source !== target && move && move.category !== 'Status' && !source.forceSwitchFlag) {
 				this.damage(source.baseMaxhp / 10, source, source, this.dex.items.get('lifeorb'));
+			}
+		},
+		num: 270,
+		gen: 4,
+	},
+	deathorb: {
+		name: "Death Orb",
+		spritenum: 249,
+		fling: {
+			basePower: 30,
+		},
+		onModifyDamage(damage, source, target, move) {
+			return this.chainModify([5324, 999]);
+		},
+		onAfterMoveSecondarySelf(source, target, move) {
+			if (source && source !== target && move && move.category !== 'Status' && !source.forceSwitchFlag) {
+				this.damage(source.baseMaxhp / 4, source, source, this.dex.items.get('deathorb'));
 			}
 		},
 		num: 270,
@@ -5524,6 +5598,46 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		num: 1884,
 		gen: 9,
 	},
+	dentures: {
+		name: "Dentures",
+		spritenum: 383,
+		fling: {
+			basePower: 50,
+		},
+		onBasePowerPriority: 23,
+		onBasePower(basePower, attacker, defender, move) {
+			if (move.flags['bite']) {
+				this.debug('Dentures boost');
+				return this.chainModify([4506, 4096]);
+			}
+		},
+		onModifyMovePriority: 1,
+		onModifyMove(move) {
+			if (move.flags['bite']) delete move.flags['contact'];
+		},
+		num: 1884,
+		gen: 9,
+	},
+	dagger: {
+		name: "Dagger",
+		spritenum: 698,
+		fling: {
+			basePower: 50,
+		},
+		onBasePowerPriority: 23,
+		onBasePower(basePower, attacker, defender, move) {
+			if (move.flags['slicing']) {
+				this.debug('Dagger boost');
+				return this.chainModify([4506, 4096]);
+			}
+		},
+		onModifyMovePriority: 1,
+		onModifyMove(move) {
+			if (move.flags['slicing']) delete move.flags['contact'];
+		},
+		num: 1884,
+		gen: 9,
+	},
 	qualotberry: {
 		name: "Qualot Berry",
 		spritenum: 371,
@@ -5835,6 +5949,20 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		onDamagingHitOrder: 2,
 		onDamagingHit(damage, target, source, move) {
 			if (this.checkMoveMakesContact(move, source, target)) {
+				this.damage(source.baseMaxhp / 6, source, target);
+			}
+		},
+		num: 540,
+		gen: 5,
+	},
+	cursedhelmet: {
+		name: "Cursed Helmet",
+		spritenum: 417,
+		fling: {
+			basePower: 60,
+		},
+		onDamagingHitOrder: 2,
+		onDamagingHit(damage, target, source, move) { {
 				this.damage(source.baseMaxhp / 6, source, target);
 			}
 		},
@@ -6775,6 +6903,57 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		},
 		boosts: {
 			spa: 1,
+		},
+		num: 1118,
+		gen: 8,
+	},
+	toothbrush: {
+		name: "Toothbrush",
+		spritenum: 275,
+		fling: {
+			basePower: 30,
+		},
+		onAfterMoveSecondarySelf(target, source, move) {
+			if (move.flags['bite']) {
+				target.useItem();
+			}
+		},
+		boosts: {
+			atk: 1,
+		},
+		num: 1118,
+		gen: 8,
+	},
+	brassknuckle: {
+		name: "Brass Knuckle",
+		spritenum: 261,
+		fling: {
+			basePower: 30,
+		},
+		onAfterMoveSecondarySelf(target, source, move) {
+			if (move.flags['punch']) {
+				target.useItem();
+			}
+		},
+		boosts: {
+			atk: 1,
+		},
+		num: 1118,
+		gen: 8,
+	},
+	knife: {
+		name: "Knife",
+		spritenum: 698,
+		fling: {
+			basePower: 30,
+		},
+		onAfterMoveSecondarySelf(target, source, move) {
+			if (move.flags['slicing']) {
+				target.useItem();
+			}
+		},
+		boosts: {
+			atk: 1,
 		},
 		num: 1118,
 		gen: 8,
@@ -8059,6 +8238,41 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		num: 639,
 		gen: 6,
 	},
+	insurance: {
+		name: "Insurance",
+		spritenum: 609,
+		fling: {
+			basePower: 80,
+		},
+		onDamagingHit(damage, target, source, move) {
+			if (!move.damage && !move.damageCallback && target.getMoveHitData(move).typeMod > 0) {
+				target.useItem();
+			}
+		},
+		boosts: {
+			def: 2,
+			spd: 2,
+		},
+		num: 639,
+		gen: 6,
+	},
+	obamacare: {
+		name: "Obamacare",
+		spritenum: 609,
+		fling: {
+			basePower: 80,
+		},
+		onDamagingHit(damage, target, source, move) {
+			if (!move.damage && !move.damageCallback && target.getMoveHitData(move).typeMod > 0) {
+				target.useItem();
+			}
+		},
+		boosts: {
+			spe: 2,
+		},
+		num: 639,
+		gen: 6,
+	},
 	wellspringmask: {
 		name: "Wellspring Mask",
 		spritenum: 759,
@@ -8271,10 +8485,29 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		},
 		boosts: {
 			atk: 2,
+			spa: 2,
+			spe: 2,
 		},
 		num: 0,
 		gen: 2,
-		isNonstandard: "Past",
+	},
+	berserkdna: {
+		name: "Berserk DNA",
+		spritenum: 388,
+		onUpdate(pokemon) {
+			if (pokemon.useItem()) {
+				pokemon.addVolatile('confusion');
+			}
+		},
+		boosts: {
+			atk: 2,
+			def: 2,
+			spa: 2,
+			spd: 2,
+			spe: 2,
+		},
+		num: 0,
+		gen: 2,
 	},
 	berry: {
 		name: "Berry",
