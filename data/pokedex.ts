@@ -20188,7 +20188,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		types: ["Psychic", "Water"],
 		gender: "F",
 		baseStats: {hp: 80, atk: 115, def: 75, spa: 125, spd: 140, spe: 65},
-		abilities: {0: "Suction Cups", 1: "Serene Grace", H: "Magic Guard", S: "The Forbidden Wah"},
+		abilities: {0: "Suction Cups", 1: "Serene Grace", H: "Magic Guard", S: "Forbidden Wah"},
 		heightm: 1.57,
 		weightkg: 55.5,
 		color: "Purple",
