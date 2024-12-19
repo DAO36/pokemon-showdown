@@ -2840,7 +2840,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		condition: {
 			noCopy: true, // doesn't get copied by Baton Pass
 			onStart(pokemon, source, effect) {
-				if (!(pokemon.gender === 'N' && source.gender === 'N') && !(pokemon.gender === 'N' && source.gender === 'N')) {
+				if (!(pokemon.gender === 'M' && source.gender === 'F') && !(pokemon.gender === 'F' && source.gender === 'M')) {
 					this.debug('incompatible gender');
 					return false;
 				}
@@ -2874,9 +2874,6 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 			onEnd(pokemon) {
 				this.add('-end', pokemon, 'Attract', '[silent]');
 			},
-		},
-		onTryImmunity(target, source) {
-			return (target.gender === 'N' && source.gender === 'N') || (target.gender === 'N' && source.gender === 'N');
 		},
 		secondary: null,
 		target: "normal",
