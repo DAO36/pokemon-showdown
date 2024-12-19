@@ -40,22 +40,6 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 0.1,
 		num: 0,
 	},
-	timedilation: {
-		onStart(pokemon) {
-			this.field.addPseudoWeather('trickroom', pokemon);
-		},
-		name: "Time Dilation",
-		rating: 5,
-		num: -19,		
-	},
-	gravitationalpull: {
-		onStart(pokemon) {
-			this.field.addPseudoWeather('gravity', pokemon);
-		},
-		name: "Gravitational Pull",
-		rating: 1,
-		num: -19,		
-	},
 	purepower: {
 		onModifySpAPriority: 5,
 		onModifyAtk(spa) {
@@ -1049,6 +1033,22 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3,
 		num: 271,
 	},
+	timedilation: {
+		onStart(pokemon) {
+			this.field.addPseudoWeather('trickroom', pokemon);
+		},
+		name: "Time Dilation",
+		rating: 5,
+		num: -19,		
+	},
+	gravitationalpull: {
+		onStart(pokemon) {
+			this.field.addPseudoWeather('gravity', pokemon);
+		},
+		name: "Gravitational Pull",
+		rating: 1,
+		num: -19,		
+	},
 	faunasweep: {
 		onModifySpe(spe) {
 			if (this.field.isTerrain('grassyterrain')) {
@@ -1072,17 +1072,12 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		num: 133,
 	},
 	chaos: {
-		onChangeBoost(boost, target, source, effect) {
-			if (effect && effect.id === 'zpower') return;
-			let i: BoostID;
-			for (i in boost) {
-				boost[i]! *= -2;
-			}
+		onStart(pokemon) {
+			this.field.addPseudoWeather('magicroom', pokemon);
 		},
-		flags: {breakable: 1},
 		name: "Chaos",
-		rating: 4.5,
-		num: 126,
+		rating: 5,
+		num: -19,		
 	},
 	archivist: {
 		onFoeAfterBoost(boost, target, source, effect) {

@@ -302,7 +302,7 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	chaos: {
 		name: "Chaos",
-		shortDesc: "If this Pokemon has a stat stage raised it is lowered instead, and vice versa. +2 for every 1",
+		shortDesc: "On switch-in, the Harbinger of Chaos summons Magic Room.",
 	},
 	corrosion: {
 		name: "Corrosion",
