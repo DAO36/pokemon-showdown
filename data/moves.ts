@@ -2841,8 +2841,8 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 			noCopy: true, // doesn't get copied by Baton Pass
 			onStart(pokemon, source, effect) {
 				if (!(pokemon.gender === 'M' && source.gender === 'F') && !(pokemon.gender === 'F' && source.gender === 'M')) {
-					this.debug('incompatible gender');
-					return true;
+					this.debug('attract');
+					return false;
 				}
 				if (!this.runEvent('Attract', pokemon, source)) {
 					this.debug('Attract event failed');
