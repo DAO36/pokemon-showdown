@@ -937,7 +937,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 4.5,
 		num: 220,
 	},
-	theforbiddenwah: {
+	forbiddenwah: {
 		onDamagingHitOrder: 1,
 		onDamagingHit(damage, target, source, move) {
 			if (move.category === 'Special') {
@@ -945,7 +945,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			}
 		},
 		flags: {},
-		name: "The Forbidden Wah",
+		name: "Forbidden Wah",
 		rating: 4.5,
 		num: 24,
 	},
