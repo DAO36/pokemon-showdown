@@ -94876,7 +94876,6 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			scaryface: ["9M"],
 			screech: ["9M"],
 			whirlwind: ["9M"],
-			revivalblessing: ["9M"],
 			roost: ["9M"],
 			defog: ["9M"],
 			tailwind: ["9M"],
@@ -94891,6 +94890,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			rest: ["9M"],
 			destinybond: ["9M"],
 			necromancy: ["9M"],
+			deadlyenvy: ["9M"],
         },
 	},
 	flare: {

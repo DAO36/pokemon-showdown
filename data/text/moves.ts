@@ -7171,6 +7171,11 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		desc: "Raises the user's Attack by 2 stages.",
 		shortDesc: "Raises the user's Attack by 2.",
 	},
+	deadlyenvy: {
+		name: "Deadly Envy",
+		desc: "Raises the user's Attack by 2 stages.",
+		shortDesc: "Raises the user's Attack by 2.",
+	},
 	hopesoda: {
 		name: "Hope Soda",
 		desc: "Raises the user's Attack by 2 stages.",

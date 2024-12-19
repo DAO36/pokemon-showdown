@@ -784,6 +784,51 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		target: "normal",
 		type: "Water",
 	},
+	deadlyenvy: {
+		num: 14,
+		accuracy: true,
+		basePower: 0,
+		category: "Status",
+		name: "Deadly Envy",
+		pp: 20,
+		priority: 0,
+		flags: {snatch: 1, metronome: 1},
+		boosts: {
+			atk: 2,
+		},
+		secondary: null,
+		target: "self",
+		type: "Dark",
+		contestType: "Beautiful",
+	},
+	necromancy: {
+		num: 370,
+		accuracy: true,
+		basePower: 0,
+		category: "Status",
+		name: "Necromancy",
+		pp: 1,
+		noPPBoosts: true,
+		priority: 0,
+		flags: {heal: 1, nosketch: 1},
+		onTryHit(source) {
+			if (!source.side.pokemon.filter(ally => ally.fainted).length) {
+				return false;
+			}
+		},
+		slotCondition: 'revivalblessing',
+		// No this not a real switchout move
+		// This is needed to trigger a switch protocol to choose a fainted party member
+		// Feel free to refactor
+		selfSwitch: true,
+		condition: {
+			duration: 1,
+			// reviving implemented in side.ts, kind of
+		},
+		secondary: null,
+		target: "self",
+		type: "Ghost",
+	},
 	asacoco: {
 		num: 370,
 		accuracy: 90,
@@ -17724,34 +17769,6 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		secondary: null,
 		target: "self",
 		type: "Normal",
-	},
-	necromancy: {
-		num: 370,
-		accuracy: true,
-		basePower: 0,
-		category: "Status",
-		name: "Necromancy",
-		pp: 1,
-		noPPBoosts: true,
-		priority: 0,
-		flags: {heal: 1, nosketch: 1},
-		onTryHit(source) {
-			if (!source.side.pokemon.filter(ally => ally.fainted).length) {
-				return false;
-			}
-		},
-		slotCondition: 'revivalblessing',
-		// No this not a real switchout move
-		// This is needed to trigger a switch protocol to choose a fainted party member
-		// Feel free to refactor
-		selfSwitch: true,
-		condition: {
-			duration: 1,
-			// reviving implemented in side.ts, kind of
-		},
-		secondary: null,
-		target: "self",
-		type: "Ghost",
 	},
 	risingvoltage: {
 		num: 804,
