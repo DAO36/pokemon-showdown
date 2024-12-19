@@ -49,8 +49,8 @@ export const ItemsText: {[id: IDEntry]: ItemText} = {
 		name: "Haachamite",
 		shortDesc: "If held by Akai Haato, this item allows her to Mega Evolve in battle.",
 	},
-	melite: {
-		name: "Melite",
+	melitite: {
+		name: "Melitite",
 		shortDesc: "If held by Yozora Mel, this item allows her to Mega Evolve in battle.",
 	},
 	akirosite: {
