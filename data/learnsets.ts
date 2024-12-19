@@ -94951,6 +94951,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			foulplay: ["9M"],
 			lashout: ["9M"],
 			darkpulse: ["9M"],
+			swordsdance: ["9M"],
 			snarl: ["9M"],
 			bodyslam: ["9M"],
 			thief: ["9M"],
