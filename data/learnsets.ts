@@ -96955,7 +96955,6 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			meteorbeam: ["9M"],
 			ancientpower: ["9M"],
 			megahorn: ["9M"],
-			torchsong: ["9M"],
 			sparklingaria: ["9M"],
 			overdrive: ["9M"],
 			mistyterrain: ["9M"],
