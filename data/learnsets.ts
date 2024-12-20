@@ -97800,7 +97800,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			metalclaw: ["9M"],
 			irontail: ["9M"],
 			playrough: ["9M"],
-			dazzlinggleam: ["9M"],
+			moonblast: ["9M"],
 			ancientpower: ["9M"],
 			honeclaws: ["9M"],
 			disable: ["9M"],
