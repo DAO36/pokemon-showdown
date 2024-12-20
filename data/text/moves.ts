@@ -1113,6 +1113,11 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		desc: "Lowers the user's Defense and Special Defense by 1 stage.",
 		shortDesc: "Lowers the user's Defense and Sp. Def by 1.",
 	},
+	moomers: {
+		name: "Moomers",
+		desc: "Lowers the user's Defense and Special Defense by 1 stage.",
+		shortDesc: "Lowers the user's Defense and Sp. Def by 1.",
+	},
 	gawrrage: {
 		name: "Gawr Rage",
 		desc: "Lowers the user's Defense and Special Defense by 1 stage.",
