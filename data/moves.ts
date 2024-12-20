@@ -941,7 +941,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	},
 	daredevil: {
 		num: 370,
-		accuracy: true,
+		accuracy: 95,
 		basePower: 110,
 		category: "Physical",
 		name: "Daredevil",
@@ -1083,7 +1083,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	},
 	succubussong: {
 		num: 370,
-		accuracy: true,
+		accuracy: 95,
 		basePower: 110,
 		category: "Special",
 		name: "Succubus Song",
@@ -1102,7 +1102,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	},
 	succubusstrike: {
 		num: 370,
-		accuracy: true,
+		accuracy: 95,
 		basePower: 110,
 		category: "Physical",
 		name: "Succubus Strike",

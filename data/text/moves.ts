@@ -1639,6 +1639,11 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 			desc: "If the target lost HP, the user takes recoil damage equal to 1/4 the HP lost by the target, rounded down, but not less than 1 HP. If this move breaks the target's substitute, the user does not take any recoil damage.",
 		},
 	},
+	dahlah: {
+		name: "Dahlah",
+		desc: "If the target lost HP, the user takes recoil damage equal to 33% the HP lost by the target, rounded half up, but not less than 1 HP.",
+		shortDesc: "Has 33% recoil.",
+	},
 	gorillagrip: {
 		name: "Gorilla Grip",
 		desc: "If the target lost HP, the user takes recoil damage equal to 33% the HP lost by the target, rounded half up, but not less than 1 HP.",
@@ -3553,8 +3558,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	succubussong: {
 		name: "Succubus Song",
-		desc: "Hits adjacent foes. Lowers the user's Special Attack by 1 stage. This move never misses.",
-		shortDesc: "Lowers the user's Sp. Atk by 1. Hits adjacent foes. Never misses.",
+		desc: "Hits adjacent foes. Lowers the user's Special Attack by 1 stage.",
+		shortDesc: "Lowers the user's Sp. Atk by 1. Hits adjacent foes.",
 	},
 	hypervoice: {
 		name: "Hyper Voice",
@@ -7071,8 +7076,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	daredevil: {
 		name: "Daredevil",
-		desc: "Lowers the user's Attack and Defense by 1 stage. Never misses.",
-		shortDesc: "Lowers the user's Attack and Defense by 1. Never misses.",
+		desc: "Lowers the user's Attack and Defense by 1 stage.",
+		shortDesc: "Lowers the user's Attack and Defense by 1.",
 	},
 	supersonic: {
 		name: "Supersonic",
