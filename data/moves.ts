@@ -1496,7 +1496,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		flags: {snatch: 1, metronome: 1},
 		boosts: {
 			atk: 2,
-			spa: 2,
+			accuracy: 1,
 		},
 		secondary: null,
 		target: "self",

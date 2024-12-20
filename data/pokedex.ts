@@ -20707,7 +20707,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		types: ["Steel", "Electric"],
 		gender: "F",
 		baseStats: {hp: 80, atk: 125, def: 135, spa: 110, spd: 90, spe: 60},
-		abilities: {0: "Justified", 1: "Soundproof", H: "Shaprness", S: "Durable"},
+		abilities: {0: "Justified", 1: "Soundproof", H: "Sharpness", S: "Durable"},
 		heightm: 1.62,
 		weightkg: 55.5,
 		color: "Green",

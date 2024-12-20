@@ -920,8 +920,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	ameway: {
 		name: "Ame Way",
-		desc: "Raises the user's Attack and Special Attack by 2 stages.",
-		shortDesc: "Raises the user's Atk and Sp. Atk by 2.",
+		desc: "Raises the user's Attack by 2 stages and Accuracy by 1 stage.",
+		shortDesc: "Raises the user's Atk by 2 Accuracy by 1.",
 	},
 	magiconion: {
 		name: "Magic Onion",
