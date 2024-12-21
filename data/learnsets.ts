@@ -97644,6 +97644,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			stoneedge: ["9M"],
 			rockslide: ["9M"],
 			rockblast: ["9M"],
+			saltcure: ["9M"],
 			earthpower: ["9M"],
 			scorchingsands: ["9M"],
 			earthquake: ["9M"],
