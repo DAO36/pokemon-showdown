@@ -846,7 +846,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
             const type = move.type;
             if (type && type !== '???' && source.getTypes().join() !== type) {
                 if (!source.setType(type)) return;
-                this.add('-start', source, 'typechange', type, '[from] ability: Undercovert Agent');
+                this.add('-start', source, 'typechange', type, '[from] ability: Undercover Agent');
             }
         },
         onSwitchIn() {},
