@@ -1,7 +1,7 @@
 export const DefaultText: {[id: IDEntry]: DefaultText} = {
 	default: {
-		startBattle: "Battle started between [TRAINER] and [TRAINER]!",
-		winBattle: "**[TRAINER]** won the battle!",
+		startBattle: "Battle started between [TRAINER] vs [TRAINER]!",
+		winBattle: "**[TRAINER]** won the battle gg ez!",
 		tieBattle: "Tie between [TRAINER] and [TRAINER]!",
 
 		pokemon: "[NICKNAME]",
@@ -17,7 +17,7 @@ export const DefaultText: {[id: IDEntry]: DefaultText} = {
 		switchOut: "[TRAINER] withdrew [NICKNAME]!",
 		switchOutOwn: "[NICKNAME], come back!",
 		drag: "[FULLNAME] was dragged out!",
-		faint: "[POKEMON] fainted!",
+		faint: "[POKEMON] died!",
 		swap: "[POKEMON] and [TARGET] switched places!",
 		swapCenter: "[POKEMON] moved to the center!",
 
@@ -117,7 +117,7 @@ export const DefaultText: {[id: IDEntry]: DefaultText} = {
 		immune: "  It doesn't affect [POKEMON]...",
 		immuneNoPokemon: "  It had no effect!", // old gens
 		immuneOHKO: "  [POKEMON] is unaffected!",
-		miss: "  [POKEMON] avoided the attack!",
+		miss: "  [POKEMON] dodged the attack!",
 		missNoPokemon: "  [SOURCE]'s attack missed!", // old gens
 
 		center: "  Automatic center!",
@@ -174,7 +174,7 @@ export const DefaultText: {[id: IDEntry]: DefaultText} = {
 		alreadyStarted: "  [POKEMON] is already burned!",
 		end: "  [POKEMON]'s burn was healed!",
 		endFromItem: "  [POKEMON]'s [ITEM] healed its burn!",
-		damage: "  [POKEMON] was hurt by its burn!",
+		damage: "  [POKEMON] is being burned alive!",
 	},
 	frz: {
 		start: "  [POKEMON] was frozen solid!",
@@ -207,12 +207,12 @@ export const DefaultText: {[id: IDEntry]: DefaultText} = {
 		damage: "#psn",
 	},
 	slp: {
-		start: "  [POKEMON] fell asleep!",
+		start: "  [POKEMON] fell asleep! Zzz.",
 		startFromRest: "  [POKEMON] slept and became healthy!",
-		alreadyStarted: "  [POKEMON] is already asleep!",
+		alreadyStarted: "  [POKEMON] is already asleep! ZZz.",
 		end: "  [POKEMON] woke up!",
 		endFromItem: "  [POKEMON]'s [ITEM] woke it up!",
-		cant: "[POKEMON] is fast asleep.",
+		cant: "[POKEMON] is fast asleep! Zzz.",
 	},
 
 	// misc effects
@@ -223,7 +223,7 @@ export const DefaultText: {[id: IDEntry]: DefaultText} = {
 		endFromItem: "  [POKEMON]'s [ITEM] snapped it out of its confusion!",
 		alreadyStarted: "  [POKEMON] is already confused!",
 		activate: "  [POKEMON] is confused!",
-		damage: "It hurt itself in its confusion!",
+		damage: "It hurt itself in its viisble confusion!",
 	},
 	drain: {
 		heal: "  [SOURCE] had its energy drained!",
