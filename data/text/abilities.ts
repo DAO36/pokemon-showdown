@@ -773,6 +773,14 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 		desc: "If this is Akai, she changes formes between her Idol Mode and Haachama Mode at the end of each turn.",
 		shortDesc: "If Akai, it changes between Idol and Haachama Mode at the end of each turn.",
 	},
+	alteregos: {
+		name: "Alter Egos",
+		desc: "If Akai Haato, she changes to Haachama before using an attacking move, and changes to Haachama Forme before using Red Heart.",
+		shortDesc: "If Akai Haato, changes to Haachama before attacks and Haachama before Red Heart.",
+
+		transform: "Changed to Haachama!",
+		transformEnd: "Changed to Akai Haato!",
+	},
 	hustle: {
 		name: "Hustle",
 		desc: "This Pokemon's Attack is multiplied by 1.5 and the accuracy of its physical attacks is multiplied by 0.8.",

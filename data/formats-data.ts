@@ -5757,12 +5757,12 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
         doublesTier: "(DUU)",
         natDexTier: "OU",
 	},
-	haachama: {
+	akaihaato: {
 		tier: "OU",
 		doublesTier: "(DUU)",
 		natDexTier: "UU",
 	},
-	haachamamega: {
+	akaihaatomega: {
         tier: "OU",
         doublesTier: "(DUU)",
         natDexTier: "OU",
@@ -5772,7 +5772,17 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		doublesTier: "(DUU)",
 		natDexTier: "OU",
 	},
-	akaihaato: {
+	akai2: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "OU",
+	},
+	haachama: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "OU",
+	},
+	haachamachama: {
 		tier: "OU",
 		doublesTier: "(DUU)",
 		natDexTier: "OU",

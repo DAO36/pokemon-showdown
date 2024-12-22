@@ -332,25 +332,58 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		priority: 0,
 		flags: {protect: 1, mirror: 1},
 		secondary: {
-			chance: 20,
-			boosts: {
-				spe: -1,
-			},
+			chance: 10,
+			volatileStatus: 'flinch',
 		},
 		onTry(source) {
 			if (source.species.baseSpecies === 'Akai') {
 				return;
 			}
 			this.attrLastMove('[still]');
-			this.add('-fail', source, 'move: Aura Wheel');
+			this.add('-fail', source, 'move: Alter Ego');
 			this.hint("Only Akai or Haachama can use this move.");
 			return null;
 		},
 		onModifyType(move, pokemon) {
-			if (pokemon.species.name === 'Akai-Haato') {
+			if (pokemon.species.name === 'Akai2') {
 				move.category = 'Physical';
 			}	
-			if (pokemon.species.name === 'Akai-Haato') {	
+			if (pokemon.species.name === 'Akai2') {	
+				move.type = 'Dark';
+			} else {
+				move.type = 'Fairy';
+			}
+		},
+		target: "normal",
+		type: "Fairy",
+	},
+	redheart: {
+		num: 783,
+		accuracy: 100,
+		basePower: 100,
+		category: "Special",
+		name: "Red Heart",
+		pp: 10,
+		priority: 0,
+		flags: {protect: 1, mirror: 1},
+		secondary: {
+			chance: 10,
+			volatileStatus: 'flinch',
+		},
+		onTry(source) {
+			if (source.species.baseSpecies === 'Haachama') {
+				return;
+			}
+			this.attrLastMove('[still]');
+			this.add('-fail', source, 'move: Red Heart');
+			this.hint("Only Akai or Haachama can use this move.");
+			return null;
+		},
+		onModifyType(move, pokemon) {
+			if (pokemon.species.name === 'Haachama-Chama') {
+				move.category = 'Physical';
+			}	
+			if (pokemon.species.name === 'Haachama-Chama') {	
 				move.type = 'Dark';
 			} else {
 				move.type = 'Fairy';

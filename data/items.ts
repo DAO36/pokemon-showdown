@@ -126,9 +126,9 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	haachamite: {
 		name: "Haachamite",
 		spritenum: 575,
-		megaStone: "Haachama-Mega",
-		megaEvolves: "Haachama",
-		itemUser: ["Haachama"],
+		megaStone: "Akai Haato-Mega",
+		megaEvolves: "Akai Haato",
+		itemUser: ["Akai Haato"],
 		onTakeItem(item, source) {
 			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
 			return true;

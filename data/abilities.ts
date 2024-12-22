@@ -232,6 +232,19 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 2,
 		num: 258,
 	},
+	alteregos: {
+		onModifyMovePriority: 1,
+		onModifyMove(move, attacker, defender) {
+			if (attacker.species.baseSpecies !== 'Haachama' || attacker.transformed) return;
+			if (move.id !== 'redheart') return;
+			const targetForme = (move.id === 'redheart' ? 'Haachama' : 'Haachama-Chama');
+			if (attacker.species.name !== targetForme) attacker.formeChange(targetForme);
+		},
+		flags: {failroleplay: 1, noreceiver: 1, noentrain: 1, notrace: 1, failskillswap: 1, cantsuppress: 1},
+		name: "Alter Egos",
+		rating: 4,
+		num: 176,
+	},
 	vampire: {
 		onTryHit(target, source, move) {
 			if (target !== source && move.type === 'Water') {
