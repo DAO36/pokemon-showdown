@@ -370,15 +370,6 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 			chance: 10,
 			volatileStatus: 'flinch',
 		},
-		onTry(source) {
-			if (source.species.baseSpecies === 'Haachama') {
-				return;
-			}
-			this.attrLastMove('[still]');
-			this.add('-fail', source, 'move: Red Heart');
-			this.hint("Only Akai or Haachama can use this move.");
-			return null;
-		},
 		onModifyType(move, pokemon) {
 			if (pokemon.species.name === 'Haachama-Chama') {
 				move.category = 'Physical';
