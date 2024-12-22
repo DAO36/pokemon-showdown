@@ -236,7 +236,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		onModifyMovePriority: 1,
 		onModifyMove(move, attacker, defender) {
 			if (attacker.species.baseSpecies !== 'Haachama' || attacker.transformed) return;
-			if (move.id === 'redheart') return;
+			if (move.category === 'Status' && move.id !== 'redheart') return;
 			const targetForme = (move.id === 'redheart' ? 'Haachama' : 'Haachama-Chama');
 			if (attacker.species.name !== targetForme) attacker.formeChange(targetForme);
 		},

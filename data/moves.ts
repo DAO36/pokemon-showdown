@@ -358,30 +358,62 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Fairy",
 	},
 	redheart: {
-		num: 783,
-		accuracy: 100,
-		basePower: 100,
-		category: "Special",
+		num: 588,
+		accuracy: true,
+		basePower: 0,
+		category: "Status",
 		name: "Red Heart",
 		pp: 10,
-		priority: 0,
-		flags: {protect: 1, mirror: 1},
-		secondary: {
-			chance: 10,
-			volatileStatus: 'flinch',
+		priority: 4,
+		flags: {noassist: 1, failcopycat: 1, failinstruct: 1},
+		stallingMove: true,
+		volatileStatus: 'redheart',
+		onPrepareHit(pokemon) {
+			return !!this.queue.willAct() && this.runEvent('StallMove', pokemon);
 		},
-		onModifyType(move, pokemon) {
-			if (pokemon.species.name === 'Haachama-Chama') {
-				move.category = 'Physical';
-			}	
-			if (pokemon.species.name === 'Haachama-Chama') {	
-				move.type = 'Dark';
-			} else {
-				move.type = 'Fairy';
-			}
+		onHit(pokemon) {
+			pokemon.addVolatile('stall');
 		},
-		target: "normal",
-		type: "Fairy",
+		condition: {
+			duration: 1,
+			onStart(target) {
+				this.add('-singleturn', target, 'Protect');
+			},
+			onTryHitPriority: 3,
+			onTryHit(target, source, move) {
+				if (!move.flags['protect'] || move.category === 'Status') {
+					if (['gmaxoneblow', 'gmaxrapidflow'].includes(move.id)) return;
+					if (move.isZ || move.isMax) target.getMoveHitData(move).zBrokeProtect = true;
+					return;
+				}
+				if (move.smartTarget) {
+					move.smartTarget = false;
+				} else {
+					this.add('-activate', target, 'move: Protect');
+				}
+				const lockedmove = source.getVolatile('lockedmove');
+				if (lockedmove) {
+					// Outrage counter is reset
+					if (source.volatiles['lockedmove'].duration === 2) {
+						delete source.volatiles['lockedmove'];
+					}
+				}
+				if (move.category === 'Special') {
+					this.boost({spa: -1}, source, target, this.dex.getActiveMove("Red Heart"));
+				}
+				return this.NOT_FAIL;
+			},
+			onHit(target, source, move) {
+				if (move.isZOrMaxPowered && move.category === 'Special') {
+					this.boost({spa: -1}, source, target, this.dex.getActiveMove("Red Heart"));
+				}
+			},
+		},
+		secondary: null,
+		target: "self",
+		type: "Steel",
+		zMove: {effect: 'clearnegativeboost'},
+		contestType: "Cool",
 	},
 	kapu: {
 		num: 370,
