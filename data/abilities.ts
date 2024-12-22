@@ -224,7 +224,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		onResidualOrder: 29,
 		onResidual(pokemon) {
 			if (pokemon.species.baseSpecies !== 'Akai' || pokemon.terastallized) return;
-			const targetForme = pokemon.species.name === 'Akai' ? 'Akai-Haato' : 'Akai';
+			const targetForme = pokemon.species.name === 'Akai' ? 'AkaiTwo' : 'Akai';
 			pokemon.formeChange(targetForme);
 		},
 		flags: {failroleplay: 1, noreceiver: 1, noentrain: 1, notrace: 1, failskillswap: 1, notransform: 1},
@@ -236,7 +236,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		onModifyMovePriority: 1,
 		onModifyMove(move, attacker, defender) {
 			if (attacker.species.baseSpecies !== 'Haachama' || attacker.transformed) return;
-			if (move.id !== 'redheart') return;
+			if (move.id === 'redheart') return;
 			const targetForme = (move.id === 'redheart' ? 'Haachama' : 'Haachama-Chama');
 			if (attacker.species.name !== targetForme) attacker.formeChange(targetForme);
 		},

@@ -345,10 +345,10 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 			return null;
 		},
 		onModifyType(move, pokemon) {
-			if (pokemon.species.name === 'Akai2') {
+			if (pokemon.species.name === 'AkaiTwo') {
 				move.category = 'Physical';
 			}	
-			if (pokemon.species.name === 'Akai2') {	
+			if (pokemon.species.name === 'AkaiTwo') {	
 				move.type = 'Dark';
 			} else {
 				move.type = 'Fairy';

@@ -5772,7 +5772,7 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		doublesTier: "(DUU)",
 		natDexTier: "OU",
 	},
-	akai2: {
+	akaitwo: {
 		tier: "OU",
 		doublesTier: "(DUU)",
 		natDexTier: "OU",

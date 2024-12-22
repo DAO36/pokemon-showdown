@@ -18791,12 +18791,12 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		weightkg: 55.5,
 		color: "Yellow",
 		eggGroups: ["Human-Like"],
-		otherFormes: ["Akai2"],
-		formeOrder: ["Akai", "Akai2"],
+		otherFormes: ["AkaiTwo"],
+		formeOrder: ["Akai", "AkaiTwo"],
 	},
-	akai2: {
+	akaitwo: {
 		num: 168,
-		name: "Akai2",
+		name: "AkaiTwo",
 		baseSpecies: "Akai",
 		forme: "Haato",
 		types: ["Dark"],
