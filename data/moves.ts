@@ -414,6 +414,23 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Fairy",
 		contestType: "Cute",
 	},
+	fourcoursemeal: {
+		num: 370,
+		accuracy: true,
+		basePower: 0,
+		category: "Status",
+		name: "Four Course Meal",
+		pp: 20,
+		priority: 0,
+		flags: {snatch: 1, bite: 1, metronome: 1},
+		boosts: {
+			atk: 2,
+		},
+		secondary: null,
+		target: "self",
+		type: "Bug",
+		contestType: "Beautiful",
+	},
 	kapu: {
 		num: 370,
 		accuracy: 100,

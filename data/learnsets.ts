@@ -94078,6 +94078,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			lovelykiss: ["9M"],
 			splitpersonality: ["9M"],
 			spidercooking: ["9M"],
+			fourcoursemeal: ["9M"],
         },
 	},	
 	akai: {
@@ -94132,6 +94133,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			splitpersonality: ["9M"],
 			spidercooking: ["9M"],
 			alterego: ["9M"],
+			fourcoursemeal: ["9M"],
         },
 	},	
 	haachama: {
@@ -94186,6 +94188,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			splitpersonality: ["9M"],
 			spidercooking: ["9M"],
 			redheart: ["9M"],
+			fourcoursemeal: ["9M"],
         },
 	},
 	mel: {
