@@ -6432,6 +6432,11 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
         doublesTier: "(DUU)",
         natDexTier: "OU",	
 	},
+	fuwamoco: {
+        tier: "OU",
+        doublesTier: "(DUU)",
+        natDexTier: "OU",	
+	},
 	elizabethrosebloodflame: {
 		tier: "OU",
 		doublesTier: "(DUU)",

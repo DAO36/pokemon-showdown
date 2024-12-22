@@ -2078,6 +2078,40 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		target: "normal",
 		type: "Dark",
 	},
+	baubau: {
+		num: 783,
+		accuracy: 100,
+		basePower: 40,
+		category: "Physical",
+		name: "Bau Bau",
+		pp: 10,
+		priority: 0,
+		flags: {protect: 1, contact: 1},
+		critRatio: 2,
+		multihit: 2,
+		secondary: {
+			chance: 10,
+			volatileStatus: 'flinch',
+		},
+		onTry(source) {
+			if (source.species.baseSpecies === 'FuwaMoco') {
+				return;
+			}
+			this.attrLastMove('[still]');
+			this.add('-fail', source, 'move: Bau Bau');
+			this.hint("Only a Pokemon whose form is FuwaMoco or FuwaMoco-Wawa can use this move.");
+			return null;
+		},
+		onModifyType(move, pokemon) {
+			if (pokemon.species.name === 'FuwaMoco-Wawa') {
+				move.type = 'Fairy';
+			} else {
+				move.type = 'Dark';
+			}
+		},
+		target: "normal",
+		type: "Dark",
+	},
 	songofjustice: {
 		num: 370,
 		accuracy: 100,

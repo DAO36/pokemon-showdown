@@ -1166,6 +1166,18 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 2.5,
 		num: 183,
 	},
+	tagteam: {
+		onResidualOrder: 29,
+		onResidual(pokemon) {
+			if (pokemon.species.baseSpecies !== 'FuwaMoco' || pokemon.terastallized) return;
+			const targetForme = pokemon.species.name === 'FuwaMoco' ? 'FuwaMoco-Wawa' : 'FuwaMoco';
+			pokemon.formeChange(targetForme);
+		},
+		flags: {failroleplay: 1, noreceiver: 1, noentrain: 1, notrace: 1, failskillswap: 1, notransform: 1},
+		name: "Tag Team",
+		rating: 1,
+		num: 258,
+	},
 	flamingvoice: {
 		onModifyTypePriority: -1,
 		onModifyType(move, pokemon) {
