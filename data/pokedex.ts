@@ -18526,10 +18526,10 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		otherFormes: ["Tokino Sora-Mega"],
 		formeOrder: ["Tokino Sora", "Tokino Sora-Mega"],
 	},
-	soramega: {
+	tokinosoramega: {
 		num: 216,
-		name: "Sora-Mega",
-		baseSpecies: "Sora",
+		name: "Tokino Sora-Mega",
+		baseSpecies: "Tokino Sora",
 		forme: "Mega",
 		types: ["Fairy"],
 		gender: "F",
@@ -19771,8 +19771,8 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 	},
 	moonahoshinovamega: {
 		num: 337,
-		name: "Moona-Mega",
-		baseSpecies: "Moona",
+		name: "Moona Hoshinova-Mega",
+		baseSpecies: "Moona Hoshinova",
 		forme: "Mega",
 		types: ["Fairy", "Psychic"],
 		gender: "F",

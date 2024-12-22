@@ -6237,7 +6237,7 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		doublesTier: "(DUU)",
 		natDexTier: "OU",
 	},
-	amemega: {
+	ameliawatsonmega: {
         tier: "OU",
         doublesTier: "(DUU)",
         natDexTier: "OU",	
