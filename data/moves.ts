@@ -411,9 +411,8 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		},
 		secondary: null,
 		target: "self",
-		type: "Steel",
-		zMove: {effect: 'clearnegativeboost'},
-		contestType: "Cool",
+		type: "Fairy",
+		contestType: "Cute",
 	},
 	kapu: {
 		num: 370,
