@@ -35,9 +35,9 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	sorite: {
 		name: "Sorite",
 		spritenum: 575,
-		megaStone: "Sora-Mega",
-		megaEvolves: "Sora",
-		itemUser: ["Sora"],
+		megaStone: "Tokino Sora-Mega",
+		megaEvolves: "Tokino Sora",
+		itemUser: ["Tokino Sora"],
 		onTakeItem(item, source) {
 			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
 			return true;
@@ -48,9 +48,9 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	mikorite: {
 		name: "Mikorite",
 		spritenum: 575,
-		megaStone: "Miko-Mega",
-		megaEvolves: "Miko",
-		itemUser: ["Miko"],
+		megaStone: "Sakura Miko-Mega",
+		megaEvolves: "Sakura Miko",
+		itemUser: ["Sakura Miko"],
 		onTakeItem(item, source) {
 			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
 			return true;
@@ -61,9 +61,9 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	suisite: {
 		name: "Suisite",
 		spritenum: 575,
-		megaStone: "Suisei-Mega",
-		megaEvolves: "Suisei",
-		itemUser: ["Suisei"],
+		megaStone: "Hoshimachi Suisei-Mega",
+		megaEvolves: "Hoshimachi Suisei",
+		itemUser: ["Hoshimachi Suisei"],
 		onTakeItem(item, source) {
 			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
 			return true;
@@ -100,9 +100,9 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	fubukite: {
 		name: "Fubukite",
 		spritenum: 575,
-		megaStone: "Fubuki-Mega",
-		megaEvolves: "Fubuki",
-		itemUser: ["Fubuki"],
+		megaStone: "Shirakami Fubuki-Mega",
+		megaEvolves: "Shirakami Fubuki",
+		itemUser: ["Shirakami Fubuki"],
 		onTakeItem(item, source) {
 			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
 			return true;
@@ -113,9 +113,9 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	matsurite: {
 		name: "Matsurite",
 		spritenum: 575,
-		megaStone: "Matsuri-Mega",
-		megaEvolves: "Matsuri",
-		itemUser: ["Matsuri"],
+		megaStone: "Natsuiro Matsuri-Mega",
+		megaEvolves: "Natsuiro Matsuri",
+		itemUser: ["Natsuiro Matsuri"],
 		onTakeItem(item, source) {
 			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
 			return true;
@@ -139,9 +139,9 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	melitite: {
 		name: "Melitite",
 		spritenum: 575,
-		megaStone: "Mel-Mega",
-		megaEvolves: "Mel",
-		itemUser: ["Mel"],
+		megaStone: "Yozora Mel-Mega",
+		megaEvolves: "Yozora Mel",
+		itemUser: ["Yozora Mel"],
 		onTakeItem(item, source) {
 			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
 			return true;
@@ -152,9 +152,9 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	akirosite: {
 		name: "Akirosite",
 		spritenum: 575,
-		megaStone: "Akirose-Mega",
-		megaEvolves: "Akirose",
-		itemUser: ["Akirose"],
+		megaStone: "Aki Rosenthal-Mega",
+		megaEvolves: "Aki Rosenthal",
+		itemUser: ["Aki Rosenthal"],
 		onTakeItem(item, source) {
 			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
 			return true;
@@ -165,9 +165,9 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	aquanite: {
 		name: "Aquanite",
 		spritenum: 575,
-		megaStone: "Aqua-Mega",
-		megaEvolves: "Aqua",
-		itemUser: ["Aqua"],
+		megaStone: "Minato Aqua-Mega",
+		megaEvolves: "Minato Aqua",
+		itemUser: ["Minato Aqua"],
 		onTakeItem(item, source) {
 			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
 			return true;
@@ -178,9 +178,9 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	ayamite: {
 		name: "Ayamite",
 		spritenum: 575,
-		megaStone: "Ayame-Mega",
-		megaEvolves: "Ayame",
-		itemUser: ["Ayame"],
+		megaStone: "Nakiri Ayame-Mega",
+		megaEvolves: "Nakiri Ayame",
+		itemUser: ["Nakiri Ayame"],
 		onTakeItem(item, source) {
 			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
 			return true;
@@ -191,9 +191,9 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	chocolite: {
 		name: "Chocolite",
 		spritenum: 575,
-		megaStone: "Choco-Mega",
-		megaEvolves: "Choco",
-		itemUser: ["Choco"],
+		megaStone: "Yuzuki Choco-Mega",
+		megaEvolves: "Yuzuki Choco",
+		itemUser: ["Yuzuki Choco"],
 		onTakeItem(item, source) {
 			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
 			return true;
@@ -204,9 +204,9 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	shionite: {
 		name: "Shionite",
 		spritenum: 575,
-		megaStone: "Shion-Mega",
-		megaEvolves: "Shion",
-		itemUser: ["Shion"],
+		megaStone: "Murasaki Shion-Mega",
+		megaEvolves: "Murasaki Shion",
+		itemUser: ["Murasaki Shion"],
 		onTakeItem(item, source) {
 			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
 			return true;
@@ -217,9 +217,9 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	subarite: {
 		name: "Subarite",
 		spritenum: 575,
-		megaStone: "Subaru-Mega",
-		megaEvolves: "Subaru",
-		itemUser: ["Subaru"],
+		megaStone: "Oozora Subaru-Mega",
+		megaEvolves: "Oozora Subaru",
+		itemUser: ["Oozora Subaru"],
 		onTakeItem(item, source) {
 			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
 			return true;
@@ -230,9 +230,9 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	koronite: {
 		name: "Koronite",
 		spritenum: 575,
-		megaStone: "Korone-Mega",
-		megaEvolves: "Korone",
-		itemUser: ["Korone"],
+		megaStone: "Inugami Korone-Mega",
+		megaEvolves: "Inugami Korone",
+		itemUser: ["Inugami Korone"],
 		onTakeItem(item, source) {
 			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
 			return true;
@@ -243,9 +243,9 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	mionite: {
 		name: "Mionite",
 		spritenum: 575,
-		megaStone: "Mio-Mega",
-		megaEvolves: "Mio",
-		itemUser: ["Mio"],
+		megaStone: "Ookami Mio-Mega",
+		megaEvolves: "Ookami Mio",
+		itemUser: ["Ookami Mio"],
 		onTakeItem(item, source) {
 			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
 			return true;
@@ -256,9 +256,9 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	okayunite: {
 		name: "Okayunite",
 		spritenum: 575,
-		megaStone: "Okayu-Mega",
-		megaEvolves: "Okayu",
-		itemUser: ["Okayu"],
+		megaStone: "Nekomata Okayu-Mega",
+		megaEvolves: "Nekomata Okayu",
+		itemUser: ["Nekomata Okayu"],
 		onTakeItem(item, source) {
 			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
 			return true;
@@ -269,9 +269,9 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	pekorite: {
 		name: "Pekorite",
 		spritenum: 575,
-		megaStone: "Pekora-Mega",
-		megaEvolves: "Pekora",
-		itemUser: ["Pekora"],
+		megaStone: "Usada Pekora-Mega",
+		megaEvolves: "Usada Pekora",
+		itemUser: ["Usada Pekora"],
 		onTakeItem(item, source) {
 			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
 			return true;
@@ -282,9 +282,9 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	noelite: {
 		name: "Noelite",
 		spritenum: 575,
-		megaStone: "Noel-Mega",
-		megaEvolves: "Noel",
-		itemUser: ["Noel"],
+		megaStone: "Shirogane Noel-Mega",
+		megaEvolves: "Shirogane Noel",
+		itemUser: ["Shirogane Noel"],
 		onTakeItem(item, source) {
 			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
 			return true;
@@ -295,9 +295,9 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	rushianite: {
 		name: "Rushianite",
 		spritenum: 575,
-		megaStone: "Rushia-Mega",
-		megaEvolves: "Rushia",
-		itemUser: ["Rushia"],
+		megaStone: "Uruha Rushia-Mega",
+		megaEvolves: "Uruha Rushia",
+		itemUser: ["Uruha Rushia"],
 		onTakeItem(item, source) {
 			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
 			return true;
@@ -308,9 +308,9 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	flarite: {
 		name: "Flarite",
 		spritenum: 575,
-		megaStone: "Flare-Mega",
-		megaEvolves: "Flare",
-		itemUser: ["Flare"],
+		megaStone: "Shiranui Flare-Mega",
+		megaEvolves: "Shiranui Flare",
+		itemUser: ["Shiranui Flare"],
 		onTakeItem(item, source) {
 			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
 			return true;
@@ -321,9 +321,9 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	marinite: {
 		name: "Marinite",
 		spritenum: 575,
-		megaStone: "Marine-Mega",
-		megaEvolves: "Marine",
-		itemUser: ["Marine"],
+		megaStone: "Houshou Marine-Mega",
+		megaEvolves: "Houshou Marine",
+		itemUser: ["Houshou Marine"],
 		onTakeItem(item, source) {
 			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
 			return true;
@@ -334,9 +334,9 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	coconite: {
 		name: "Coconite",
 		spritenum: 575,
-		megaStone: "Coco-Mega",
-		megaEvolves: "Coco",
-		itemUser: ["Coco"],
+		megaStone: "Kiryu Coco-Mega",
+		megaEvolves: "Kiryu Coco",
+		itemUser: ["Kiryu Coco"],
 		onTakeItem(item, source) {
 			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
 			return true;
@@ -347,9 +347,9 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	kanatite: {
 		name: "Kanatite",
 		spritenum: 575,
-		megaStone: "Kanata-Mega",
-		megaEvolves: "Kanata",
-		itemUser: ["Kanata"],
+		megaStone: "Amane Kanata-Mega",
+		megaEvolves: "Amane Kanata",
+		itemUser: ["Amane Kanata"],
 		onTakeItem(item, source) {
 			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
 			return true;
@@ -360,9 +360,9 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	watamite: {
 		name: "Watamite",
 		spritenum: 575,
-		megaStone: "Watame-Mega",
-		megaEvolves: "Watame",
-		itemUser: ["Watame"],
+		megaStone: "Tsunomaki Watame-Mega",
+		megaEvolves: "Tsunomaki Watame",
+		itemUser: ["Tsunomaki Watame"],
 		onTakeItem(item, source) {
 			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
 			return true;
@@ -373,9 +373,9 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	lunarite: {
 		name: "Lunarite",
 		spritenum: 575,
-		megaStone: "Luna-Mega",
-		megaEvolves: "Luna",
-		itemUser: ["Luna"],
+		megaStone: "Himemori Luna-Mega",
+		megaEvolves: "Himemori Luna",
+		itemUser: ["Himemori Luna"],
 		onTakeItem(item, source) {
 			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
 			return true;
@@ -386,9 +386,9 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	towasite: {
 		name: "Towasite",
 		spritenum: 575,
-		megaStone: "Towa-Mega",
-		megaEvolves: "Towa",
-		itemUser: ["Towa"],
+		megaStone: "Tokoyami Towa-Mega",
+		megaEvolves: "Tokoyami Towa",
+		itemUser: ["Tokoyami Towa"],
 		onTakeItem(item, source) {
 			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
 			return true;
@@ -399,9 +399,9 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	polkanite: {
 		name: "Polkanite",
 		spritenum: 575,
-		megaStone: "Polka-Mega",
-		megaEvolves: "Polka",
-		itemUser: ["Polka"],
+		megaStone: "Omaru Polka-Mega",
+		megaEvolves: "Omaru Polka",
+		itemUser: ["Omaru Polka"],
 		onTakeItem(item, source) {
 			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
 			return true;
@@ -412,9 +412,9 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	botanite: {
 		name: "Botanite",
 		spritenum: 575,
-		megaStone: "Botan-Mega",
-		megaEvolves: "Botan",
-		itemUser: ["Botan"],
+		megaStone: "Shishiro Botan-Mega",
+		megaEvolves: "Shishiro Botan",
+		itemUser: ["Shishiro Botan"],
 		onTakeItem(item, source) {
 			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
 			return true;
@@ -425,9 +425,9 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	lamilite: {
 		name: "Lamilite",
 		spritenum: 575,
-		megaStone: "Lamy-Mega",
-		megaEvolves: "Lamy",
-		itemUser: ["Lamy"],
+		megaStone: "Yukihana Lamy-Mega",
+		megaEvolves: "Yukihana Lamy",
+		itemUser: ["Yukihana Lamy"],
 		onTakeItem(item, source) {
 			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
 			return true;
@@ -438,9 +438,9 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	nenenite: {
 		name: "Nenenite",
 		spritenum: 575,
-		megaStone: "Nene-Mega",
-		megaEvolves: "Nene",
-		itemUser: ["Nene"],
+		megaStone: "Momosuzu Nene-Mega",
+		megaEvolves: "Momosuzu Nene",
+		itemUser: ["Momosuzu Nene"],
 		onTakeItem(item, source) {
 			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
 			return true;
@@ -451,9 +451,9 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	aloelite: {
 		name: "Aloelite",
 		spritenum: 575,
-		megaStone: "Aloe-Mega",
-		megaEvolves: "Aloe",
-		itemUser: ["Aloe"],
+		megaStone: "Mano Aloe-Mega",
+		megaEvolves: "Mano Aloe",
+		itemUser: ["Mano Aloe"],
 		onTakeItem(item, source) {
 			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
 			return true;
@@ -464,9 +464,9 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	irohite: {
 		name: "Irohite",
 		spritenum: 575,
-		megaStone: "Iroha-Mega",
-		megaEvolves: "Iroha",
-		itemUser: ["Iroha"],
+		megaStone: "Kazama Iroha-Mega",
+		megaEvolves: "Kazama Iroha",
+		itemUser: ["Kazama Iroha"],
 		onTakeItem(item, source) {
 			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
 			return true;
@@ -477,9 +477,9 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	koyorite: {
 		name: "Koyorite",
 		spritenum: 575,
-		megaStone: "Koyori-Mega",
-		megaEvolves: "Koyori",
-		itemUser: ["Koyori"],
+		megaStone: "Hakui Koyori-Mega",
+		megaEvolves: "Hakui Koyori",
+		itemUser: ["Hakui Koyori"],
 		onTakeItem(item, source) {
 			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
 			return true;
@@ -490,9 +490,9 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	laplusite: {
 		name: "Laplusite",
 		spritenum: 575,
-		megaStone: "Laplus-Mega",
-		megaEvolves: "Laplus",
-		itemUser: ["Laplus"],
+		megaStone: "Laplus Darkness-Mega",
+		megaEvolves: "Laplus Darkness",
+		itemUser: ["Laplus Darkness"],
 		onTakeItem(item, source) {
 			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
 			return true;
@@ -503,9 +503,9 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	luinite: {
 		name: "Luinite",
 		spritenum: 575,
-		megaStone: "Lui-Mega",
-		megaEvolves: "Lui",
-		itemUser: ["Lui"],
+		megaStone: "Takane Lui-Mega",
+		megaEvolves: "Takane Lui",
+		itemUser: ["Takane Lui"],
 		onTakeItem(item, source) {
 			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
 			return true;
@@ -516,9 +516,9 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	chloelite: {
 		name: "Chloelite",
 		spritenum: 575,
-		megaStone: "Chloe-Mega",
-		megaEvolves: "Chloe",
-		itemUser: ["Chloe"],
+		megaStone: "Sakamata Chloe-Mega",
+		megaEvolves: "Sakamata Chloe",
+		itemUser: ["Sakamata Chloe"],
 		onTakeItem(item, source) {
 			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
 			return true;
@@ -529,9 +529,9 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	moonite: {
 		name: "Moonite",
 		spritenum: 575,
-		megaStone: "Moona-Mega",
-		megaEvolves: "Moona",
-		itemUser: ["Moona"],
+		megaStone: "Moona Hoshinova-Mega",
+		megaEvolves: "Moona Hoshinova",
+		itemUser: ["Moona Hoshinova"],
 		onTakeItem(item, source) {
 			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
 			return true;
@@ -542,9 +542,9 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	iofinite: {
 		name: "Iofinite",
 		spritenum: 575,
-		megaStone: "Iofi-Mega",
-		megaEvolves: "Iofi",
-		itemUser: ["Iofi"],
+		megaStone: "Airani Iofifteen-Mega",
+		megaEvolves: "Airani Iofifteen",
+		itemUser: ["Airani Iofifteen"],
 		onTakeItem(item, source) {
 			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
 			return true;
@@ -555,9 +555,9 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	risurite: {
 		name: "Risurite",
 		spritenum: 575,
-		megaStone: "Risu-Mega",
-		megaEvolves: "Risu",
-		itemUser: ["Risu"],
+		megaStone: "Ayunda Risu-Mega",
+		megaEvolves: "Ayunda Risu",
+		itemUser: ["Ayunda Risu"],
 		onTakeItem(item, source) {
 			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
 			return true;
@@ -568,9 +568,9 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	ollilite: {
 		name: "Ollilite",
 		spritenum: 575,
-		megaStone: "Ollie-Mega",
-		megaEvolves: "Ollie",
-		itemUser: ["Ollie"],
+		megaStone: "Kureiji Ollie-Mega",
+		megaEvolves: "Kureiji Ollie",
+		itemUser: ["Kureiji Ollie"],
 		onTakeItem(item, source) {
 			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
 			return true;
@@ -581,9 +581,9 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	reinite: {
 		name: "Reinite",
 		spritenum: 575,
-		megaStone: "Reine-Mega",
-		megaEvolves: "Reine",
-		itemUser: ["Reine"],
+		megaStone: "Pavolia Reine-Mega",
+		megaEvolves: "Pavolia Reine",
+		itemUser: ["Pavolia Reine"],
 		onTakeItem(item, source) {
 			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
 			return true;
@@ -594,9 +594,9 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	anyanite: {
 		name: "Anyanite",
 		spritenum: 575,
-		megaStone: "Anya-Mega",
-		megaEvolves: "Anya",
-		itemUser: ["Anya"],
+		megaStone: "Anya Melfissa-Mega",
+		megaEvolves: "Anya Melfissa",
+		itemUser: ["Anya Melfissa"],
 		onTakeItem(item, source) {
 			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
 			return true;
@@ -607,9 +607,9 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	zetanite: {
 		name: "Zetanite",
 		spritenum: 575,
-		megaStone: "Zeta-Mega",
-		megaEvolves: "Zeta",
-		itemUser: ["Zeta"],
+		megaStone: "Vestia Zeta-Mega",
+		megaEvolves: "Vestia Zeta",
+		itemUser: ["Vestia Zeta"],
 		onTakeItem(item, source) {
 			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
 			return true;
@@ -620,9 +620,9 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	kaelite: {
 		name: "Kaelite",
 		spritenum: 575,
-		megaStone: "Kaela-Mega",
-		megaEvolves: "Kaela",
-		itemUser: ["Kaela"],
+		megaStone: "Kaela Kovalskia-Mega",
+		megaEvolves: "Kaela Kovalskia",
+		itemUser: ["Kaela Kovalskia"],
 		onTakeItem(item, source) {
 			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
 			return true;
@@ -633,9 +633,9 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	kobonite: {
 		name: "Kobonite",
 		spritenum: 575,
-		megaStone: "Kobo-Mega",
-		megaEvolves: "Kobo",
-		itemUser: ["Kobo"],
+		megaStone: "Kobo Kanaeru-Mega",
+		megaEvolves: "Kobo Kanaeru",
+		itemUser: ["Kobo Kanaeru"],
 		onTakeItem(item, source) {
 			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
 			return true;
@@ -646,9 +646,9 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	gurite: {
 		name: "Gurite",
 		spritenum: 575,
-		megaStone: "Gura-Mega",
-		megaEvolves: "Gura",
-		itemUser: ["Gura"],
+		megaStone: "Gawr Gura-Mega",
+		megaEvolves: "Gawr Gura",
+		itemUser: ["Gawr Gura"],
 		onTakeItem(item, source) {
 			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
 			return true;
@@ -659,9 +659,9 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	amelite: {
 		name: "Amelite",
 		spritenum: 575,
-		megaStone: "Ame-Mega",
-		megaEvolves: "Ame",
-		itemUser: ["Ame"],
+		megaStone: "Amelia Watson-Mega",
+		megaEvolves: "Amelia Watson",
+		itemUser: ["Amelia Watson"],
 		onTakeItem(item, source) {
 			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
 			return true;
@@ -672,9 +672,9 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	callite: {
 		name: "Callite",
 		spritenum: 575,
-		megaStone: "Calliope-Mega",
-		megaEvolves: "Calliope",
-		itemUser: ["Calliope"],
+		megaStone: "Mori Calliope-Mega",
+		megaEvolves: "Mori Calliope",
+		itemUser: ["Mori Calliope"],
 		onTakeItem(item, source) {
 			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
 			return true;
@@ -685,9 +685,9 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	inanite: {
 		name: "Inanite",
 		spritenum: 575,
-		megaStone: "Ina-Mega",
-		megaEvolves: "Ina",
-		itemUser: ["Ina"],
+		megaStone: "Ninomae Ina\u2019nis-Mega",
+		megaEvolves: "Ninomae Ina\u2019nis",
+		itemUser: ["Ninomae Ina\u2019nis"],
 		onTakeItem(item, source) {
 			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
 			return true;
@@ -698,9 +698,9 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	kiarite: {
 		name: "Kiarite",
 		spritenum: 575,
-		megaStone: "Kiara-Mega",
-		megaEvolves: "Kiara",
-		itemUser: ["Kiara"],
+		megaStone: "Takanashi Kiara-Mega",
+		megaEvolves: "Takanashi Kiara",
+		itemUser: ["Takanashi Kiara"],
 		onTakeItem(item, source) {
 			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
 			return true;
@@ -724,9 +724,9 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	sanalite: {
 		name: "Sanalite",
 		spritenum: 575,
-		megaStone: "Sana-Mega",
-		megaEvolves: "Sana",
-		itemUser: ["Sana"],
+		megaStone: "Tsukumo Sana-Mega",
+		megaEvolves: "Tsukumo Sana",
+		itemUser: ["Tsukumo Sana"],
 		onTakeItem(item, source) {
 			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
 			return true;
@@ -737,9 +737,9 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	faunite: {
 		name: "Faunite",
 		spritenum: 575,
-		megaStone: "Fauna-Mega",
-		megaEvolves: "Fauna",
-		itemUser: ["Fauna"],
+		megaStone: "Ceres Fauna-Mega",
+		megaEvolves: "Ceres Fauna",
+		itemUser: ["Ceres Fauna"],
 		onTakeItem(item, source) {
 			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
 			return true;
@@ -750,9 +750,9 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	kroniite: {
 		name: "Kroniite",
 		spritenum: 575,
-		megaStone: "Kronii-Mega",
-		megaEvolves: "Kronii",
-		itemUser: ["Kronii"],
+		megaStone: "Ouro Kronii-Mega",
+		megaEvolves: "Ouro Kronii",
+		itemUser: ["Ouro Kronii"],
 		onTakeItem(item, source) {
 			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
 			return true;
@@ -763,9 +763,9 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	mumeinite: {
 		name: "Mumeinite",
 		spritenum: 575,
-		megaStone: "Mumei-Mega",
-		megaEvolves: "Mumei",
-		itemUser: ["Mumei"],
+		megaStone: "Nanashi Mumei-Mega",
+		megaEvolves: "Nanashi Mumei",
+		itemUser: ["Nanashi Mumei"],
 		onTakeItem(item, source) {
 			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
 			return true;
@@ -776,9 +776,9 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	baelite: {
 		name: "Baelite",
 		spritenum: 575,
-		megaStone: "Bae-Mega",
-		megaEvolves: "Bae",
-		itemUser: ["Bae"],
+		megaStone: "Hakos Baelz-Mega",
+		megaEvolves: "Hakos Baelz",
+		itemUser: ["Hakos Baelz"],
 		onTakeItem(item, source) {
 			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
 			return true;
@@ -789,9 +789,9 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	shiorite: {
 		name: "Shiorite",
 		spritenum: 575,
-		megaStone: "Shiori-Mega",
-		megaEvolves: "Shiori",
-		itemUser: ["Shiori"],
+		megaStone: "Shiori Novella-Mega",
+		megaEvolves: "Shiori Novella",
+		itemUser: ["Shiori Novella"],
 		onTakeItem(item, source) {
 			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
 			return true;
@@ -802,9 +802,9 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	bijoulite: {
 		name: "Bijoulite",
 		spritenum: 575,
-		megaStone: "Bijou-Mega",
-		megaEvolves: "Bijou",
-		itemUser: ["Bijou"],
+		megaStone: "Koseki Bijou-Mega",
+		megaEvolves: "Koseki Bijou",
+		itemUser: ["Koseki Bijou"],
 		onTakeItem(item, source) {
 			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
 			return true;
@@ -815,9 +815,9 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	nerissite: {
 		name: "Nerissite",
 		spritenum: 575,
-		megaStone: "Nerissa-Mega",
-		megaEvolves: "Nerissa",
-		itemUser: ["Nerissa"],
+		megaStone: "Nerissa Ravencroft-Mega",
+		megaEvolves: "Nerissa Ravencroft",
+		itemUser: ["Nerissa Ravencroft"],
 		onTakeItem(item, source) {
 			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
 			return true;
@@ -828,9 +828,9 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	mococite: {
 		name: "Mococite",
 		spritenum: 575,
-		megaStone: "Mococo-Mega",
-		megaEvolves: "Mococo",
-		itemUser: ["Mococo"],
+		megaStone: "Mococo Abyssgard-Mega",
+		megaEvolves: "Mococo Abyssgard",
+		itemUser: ["Mococo Abyssgard"],
 		onTakeItem(item, source) {
 			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
 			return true;
@@ -841,9 +841,9 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	fuwawite: {
 		name: "Fuwawite",
 		spritenum: 575,
-		megaStone: "Fuwawa-Mega",
-		megaEvolves: "Fuwawa",
-		itemUser: ["Fuwawa"],
+		megaStone: "Fuwawa Abyssgard-Mega",
+		megaEvolves: "Fuwawa Abyssgard",
+		itemUser: ["Fuwawa Abyssgard"],
 		onTakeItem(item, source) {
 			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
 			return true;
@@ -854,9 +854,9 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	elizalite: {
 		name: "Elizalite",
 		spritenum: 575,
-		megaStone: "Elizabeth-Mega",
-		megaEvolves: "Elizabeth",
-		itemUser: ["Elizabeth"],
+		megaStone: "Elizabeth Rose Bloodflame-Mega",
+		megaEvolves: "Elizabeth Rose Bloodflame",
+		itemUser: ["Elizabeth Rose Bloodflame"],
 		onTakeItem(item, source) {
 			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
 			return true;
@@ -867,9 +867,9 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	giginite: {
 		name: "Giginite",
 		spritenum: 575,
-		megaStone: "Gigi-Mega",
-		megaEvolves: "Gigi",
-		itemUser: ["Gigi"],
+		megaStone: "Gigi Murin-Mega",
+		megaEvolves: "Gigi Murin",
+		itemUser: ["Gigi Murin"],
 		onTakeItem(item, source) {
 			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
 			return true;
@@ -880,9 +880,9 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	cecilite: {
 		name: "Cecilite",
 		spritenum: 575,
-		megaStone: "Cecilia-Mega",
-		megaEvolves: "Cecilia",
-		itemUser: ["Cecilia"],
+		megaStone: "Cecilia Immergreen-Mega",
+		megaEvolves: "Cecilia Immergreen",
+		itemUser: ["Cecilia Immergreen"],
 		onTakeItem(item, source) {
 			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
 			return true;
@@ -893,9 +893,9 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	raorite: {
 		name: "Raorite",
 		spritenum: 575,
-		megaStone: "Raora-Mega",
-		megaEvolves: "Raora",
-		itemUser: ["Raora"],
+		megaStone: "Raora Panthera-Mega",
+		megaEvolves: "Raora Panthera",
+		itemUser: ["Raora Panthera"],
 		onTakeItem(item, source) {
 			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
 			return true;

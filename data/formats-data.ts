@@ -5672,37 +5672,37 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		doublesTier: "(DUU)",
 		natDexTier: "RUBL",
 	},
-	sora: {
+	tokinosora: {
 		tier: "OU",
 		doublesTier: "(DUU)",
 		natDexTier: "UU",
 	},
-	soramega: {
+	tokinosoramega: {
         tier: "OU",
         doublesTier: "(DUU)",
         natDexTier: "OU",
 	},
-	miko: {
+	sakuramiko: {
 		tier: "OU",
 		doublesTier: "(DUU)",
 		natDexTier: "OU",
 	},
-	mikomega: {
+	sakuramikomega: {
         tier: "OU",
         doublesTier: "(DUU)",
         natDexTier: "Uber",
 	},
-	mikoelite: {
+	sakuramikoelite: {
 		tier: "OU",
 		doublesTier: "(DUU)",
 		natDexTier: "Uber",
 	},
-	suisei: {
+	hoshimachisuisei: {
 		tier: "OU",
 		doublesTier: "(DUU)",
 		natDexTier: "Uber",
 	},
-	suiseimega: {
+	hoshimachisuiseimega: {
         tier: "OU",
         doublesTier: "(DUU)",
         natDexTier: "Uber",
@@ -5727,12 +5727,12 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
         doublesTier: "(DUU)",
         natDexTier: "OU",
 	},
-	fubuki: {
+	shirakamifubuki: {
 		tier: "OU",
 		doublesTier: "(DUU)",
 		natDexTier: "OU",
 	},
-	fubukimega: {
+	shirakamifubukimega: {
         tier: "OU",
         doublesTier: "(DUU)",
         natDexTier: "Uber",
@@ -5747,12 +5747,12 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
         doublesTier: "(DUU)",
         natDexTier: "Uber",
 	},
-	matsuri: {
+	natsuiromatsuri: {
 		tier: "OU",
 		doublesTier: "(DUU)",
 		natDexTier: "UU",
 	},
-	matsurimega: {
+	natsuiromatsurimega: {
         tier: "OU",
         doublesTier: "(DUU)",
         natDexTier: "OU",
@@ -5787,92 +5787,92 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		doublesTier: "(DUU)",
 		natDexTier: "OU",
 	},
-	mel: {
+	yozoramel: {
 		tier: "OU",
 		doublesTier: "(DUU)",
 		natDexTier: "UU",
 	},
-	melmega: {
+	yozoramelmega: {
         tier: "OU",
         doublesTier: "(DUU)",
         natDexTier: "OU",
 	},
-	akirose: {
+	akirosenthal: {
 		tier: "OU",
 		doublesTier: "(DUU)",
 		natDexTier: "UU",
 	},
-	akirosemega: {
+	akirosenthalmega: {
         tier: "OU",
         doublesTier: "(DUU)",
         natDexTier: "OU",
 	},
-	aqua: {
+	minatoaqua: {
 		tier: "OU",
 		doublesTier: "(DUU)",
 		natDexTier: "UU",
 	},
-	aquamega: {
+	minatoaquamega: {
         tier: "OU",
         doublesTier: "(DUU)",
         natDexTier: "OU",
 	},
-	ayame: {
+	nakiriayame: {
 		tier: "OU",
 		doublesTier: "(DUU)",
 		natDexTier: "OU",
 	},
-	ayamemega: {
+	nakiriayamemega: {
         tier: "OU",
         doublesTier: "(DUU)",
         natDexTier: "Uber",
 	},
-	choco: {
+	yuzukichoco: {
 		tier: "OU",
 		doublesTier: "(DUU)",
 		natDexTier: "OU",
 	},
-	chocomega: {
+	yuzukichocomega: {
         tier: "OU",
         doublesTier: "(DUU)",
         natDexTier: "OU",
 	},
-	shion: {
+	murasakishion: {
 		tier: "OU",
 		doublesTier: "(DUU)",
 		natDexTier: "OU",
 	},
-	shionmega: {
+	murasakishionmega: {
         tier: "OU",
         doublesTier: "(DUU)",
         natDexTier: "Uber",
 	},
-	subaru: {
+	oozorasubaru: {
 		tier: "OU",
 		doublesTier: "(DUU)",
 		natDexTier: "UU",
 	},
-	subarumega: {
+	oozorasubarumega: {
         tier: "OU",
         doublesTier: "(DUU)",
         natDexTier: "OU",
 	},
-	korone: {
+	inugamikorone: {
 		tier: "OU",
 		doublesTier: "(DUU)",
 		natDexTier: "OU",
 	},
-	koronemega: {
+	inugamikoronemega: {
         tier: "OU",
         doublesTier: "(DUU)",
         natDexTier: "Uber",
 	},
-	mio: {
+	ookamimio: {
 		tier: "OU",
 		doublesTier: "(DUU)",
 		natDexTier: "OU",
 	},
-	miomega: {
+	ookamimiomega: {
         tier: "OU",
         doublesTier: "(DUU)",
         natDexTier: "Uber",
@@ -5882,22 +5882,22 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
         doublesTier: "(DUber)",
         natDexTier: "Uber",
 	},
-	okayu: {
+	nekomataokayu: {
 		tier: "OU",
 		doublesTier: "(DUU)",
 		natDexTier: "OU",
 	},
-	okayumega: {
+	nekomataokayumega: {
         tier: "OU",
         doublesTier: "(DUU)",
         natDexTier: "OU",
 	},
-	pekora: {
+	usadapekora: {
 		tier: "OU",
 		doublesTier: "(DUU)",
 		natDexTier: "OU",
 	},
-	pekoramega: {
+	usadapekoramega: {
         tier: "OU",
         doublesTier: "(DUU)",
         natDexTier: "Uber",
@@ -5907,52 +5907,52 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		doublesTier: "(DUU)",
 		natDexTier: "OU",
 	},
-	noel: {
+	shiroganenoel: {
 		tier: "OU",
 		doublesTier: "(DUU)",
 		natDexTier: "OU",
 	},
-	noelmega: {
+	shiroganenoelmega: {
         tier: "OU",
         doublesTier: "(DUU)",
         natDexTier: "OU",
 	},
-	rushia: {
+	uruharushia: {
 		tier: "OU",
 		doublesTier: "(DUU)",
 		natDexTier: "OU",
 	},
-	rushiamega: {
+	uruharushiamega: {
         tier: "OU",
         doublesTier: "(DUU)",
         natDexTier: "OU",
 	},
-	flare: {
+	shiranuiflare: {
 		tier: "OU",
 		doublesTier: "(DUU)",
 		natDexTier: "OU",
 	},
-	flaremega: {
+	shiranuiflaremega: {
         tier: "OU",
         doublesTier: "(DUU)",
         natDexTier: "OU",
 	},
-	marine: {
+	houshoumarine: {
 		tier: "OU",
 		doublesTier: "(DUU)",
 		natDexTier: "UU",
 	},
-	marinemega: {
+	houshoumarinemega: {
         tier: "OU",
         doublesTier: "(DUU)",
         natDexTier: "OU",
 	},
-	coco: {
+	kiryucoco: {
 		tier: "OU",
 		doublesTier: "(DUU)",
 		natDexTier: "UU",
 	},
-	cocomega: {
+	kiryucocomega: {
         tier: "OU",
         doublesTier: "(DUU)",
         natDexTier: "OU",
@@ -5962,177 +5962,177 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
         doublesTier: "(DUber)",
         natDexTier: "Uber",
 	},
-	kanata: {
+	amanekanata: {
 		tier: "OU",
 		doublesTier: "(DUU)",
 		natDexTier: "OU",
 	},
-	kanatamega: {
+	amanekanatamega: {
         tier: "OU",
         doublesTier: "(DUU)",
         natDexTier: "OU",
 	},
-	watame: {
+	tsunomakiwatame: {
 		tier: "OU",
 		doublesTier: "(DUU)",
 		natDexTier: "OU",
 	},
-	watamemega: {
+	tsunomakiwatamemega: {
         tier: "OU",
         doublesTier: "(DUU)",
         natDexTier: "OU",
 	},
-	luna: {
+	himemoriluna: {
 		tier: "OU",
 		doublesTier: "(DUU)",
 		natDexTier: "UU",
 	},
-	lunamega: {
+	himemorilunamega: {
         tier: "OU",
         doublesTier: "(DUU)",
         natDexTier: "OU",
 	},
-	towa: {
+	tokoyamitowa: {
 		tier: "OU",
 		doublesTier: "(DUU)",
 		natDexTier: "OU",
 	},
-	towamega: {
+	tokoyamitowamega: {
         tier: "OU",
         doublesTier: "(DUU)",
         natDexTier: "OU",	
 	},
-	polka: {
+	omarupolka: {
 		tier: "OU",
 		doublesTier: "(DUU)",
 		natDexTier: "OU",
 	},
-	polkamega: {
+	omarupolkamega: {
         tier: "OU",
         doublesTier: "(DUU)",
         natDexTier: "OU",	
 	},
-	botan: {
+	shishirobotan: {
 		tier: "OU",
 		doublesTier: "(DUU)",
 		natDexTier: "OU",
 	},
-	botanmega: {
+	shishirobotanmega: {
         tier: "OU",
         doublesTier: "(DUU)",
         natDexTier: "OU",	
 	},
-	lamy: {
+	yukihanalamy: {
 		tier: "OU",
 		doublesTier: "(DUU)",
 		natDexTier: "OU",
 	},
-	lamymega: {
+	yukihanalamymega: {
         tier: "OU",
         doublesTier: "(DUU)",
         natDexTier: "OU",	
 	},
-	nene: {
+	momosuzunene: {
 		tier: "OU",
 		doublesTier: "(DUU)",
 		natDexTier: "UU",
 	},
-	nenemega: {
+	momosuzunenemega: {
         tier: "OU",
         doublesTier: "(DUU)",
         natDexTier: "OU",	
 	},
-	aloe: {
+	manoaloe: {
 		tier: "OU",
 		doublesTier: "(DUU)",
 		natDexTier: "Uber",
 	},
-	aloemega: {
+	manoaloemega: {
         tier: "OU",
         doublesTier: "(DUU)",
         natDexTier: "Uber",	
 	},
-	iroha: {
+	kazamairoha: {
 		tier: "OU",
 		doublesTier: "(DUU)",
 		natDexTier: "OU",
 	},
-	irohamega: {
+	kazamairohamega: {
         tier: "OU",
         doublesTier: "(DUU)",
         natDexTier: "Uber",	
 	},
-	koyori: {
+	hakuikoyori: {
 		tier: "OU",
 		doublesTier: "(DUU)",
 		natDexTier: "OU",
 	},
-	koyorimega: {
+	hakuikoyorimega: {
         tier: "OU",
         doublesTier: "(DUU)",
         natDexTier: "Uber",	
 	},
-	laplus: {
+	laplusdarkness: {
 		tier: "OU",
 		doublesTier: "(DUU)",
 		natDexTier: "UU",
 	},
-	laplusmega: {
+	laplusdarknessmega: {
         tier: "OU",
         doublesTier: "(DUU)",
         natDexTier: "OU",	
 	},
-	lui: {
+	takanelui: {
 		tier: "OU",
 		doublesTier: "(DUU)",
 		natDexTier: "UU",
 	},
-	luimega: {
+	takaneluimega: {
         tier: "OU",
         doublesTier: "(DUU)",
         natDexTier: "OU",	
 	},
-	chloe: {
+	sakamatachloe: {
 		tier: "OU",
 		doublesTier: "(DUU)",
 		natDexTier: "UU",
 	},
-	chloemega: {
+	sakamatachloemega: {
         tier: "OU",
         doublesTier: "(DUU)",
         natDexTier: "OU",	
-	},
-	moona: {
-		tier: "OU",
-		doublesTier: "(DUU)",
-		natDexTier: "OU",
-	},
-	moonamega: {
-        tier: "OU",
-        doublesTier: "(DUU)",
-        natDexTier: "Uber",	
 	},
 	moonahoshinova: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "OU",
+	},
+	moonahoshinovamega: {
+        tier: "OU",
+        doublesTier: "(DUU)",
+        natDexTier: "Uber",	
+	},
+	hoshinova: {
         tier: "Uber",
         doublesTier: "(DUber)",
         natDexTier: "Uber",	
 	},
-	iofi: {
+	airaniiofifteen: {
 		tier: "OU",
 		doublesTier: "(DUU)",
 		natDexTier: "UU",
 	},
-	iofimega: {
+	airaniiofifteenmega: {
         tier: "OU",
         doublesTier: "(DUU)",
         natDexTier: "OU",	
 	},
-	risu: {
+	ayundarisu: {
 		tier: "OU",
 		doublesTier: "(DUU)",
 		natDexTier: "OU",
 	},
-	risumega: {
+	ayundarisumega: {
         tier: "OU",
         doublesTier: "(DUU)",
         natDexTier: "OU",	
@@ -6142,12 +6142,12 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
         doublesTier: "(DUber)",
         natDexTier: "Uber",	
 	},
-	ollie: {
+	kureijiollie: {
 		tier: "OU",
 		doublesTier: "(DUU)",
 		natDexTier: "OU",
 	},
-	olliemega: {
+	kureijiolliemega: {
         tier: "OU",
         doublesTier: "(DUU)",
         natDexTier: "Uber",	
@@ -6157,42 +6157,42 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
         doublesTier: "(DUU)",
         natDexTier: "UU",	
 	},
-	reine: {
+	pavoliareine: {
 		tier: "OU",
 		doublesTier: "(DUU)",
 		natDexTier: "OU",
 	},
-	reinemega: {
+	pavoliareinemega: {
         tier: "OU",
         doublesTier: "(DUU)",
         natDexTier: "OU",	
 	},
-	anya: {
+	anyamelfissa: {
 		tier: "OU",
 		doublesTier: "(DUU)",
 		natDexTier: "OU",
 	},
-	anyamega: {
+	anyamelfissamega: {
         tier: "OU",
         doublesTier: "(DUU)",
         natDexTier: "Uber",	
 	},
-	zeta: {
+	vestiazeta: {
 		tier: "OU",
 		doublesTier: "(DUU)",
 		natDexTier: "OU",
 	},
-	zetamega: {
+	vestiazetamega: {
         tier: "OU",
         doublesTier: "(DUU)",
         natDexTier: "OU",	
 	},
-	kaela: {
+	kaelakovalskia: {
 		tier: "OU",
 		doublesTier: "(DUU)",
 		natDexTier: "OU",
 	},
-	kaelamega: {
+	kaelakovalskiamega: {
         tier: "OU",
         doublesTier: "(DUU)",
         natDexTier: "OU",	
@@ -6202,22 +6202,22 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		doublesTier: "(DUU)",
 		natDexTier: "NFE",
 	},
-	kobo: {
+	kobokanaeru: {
 		tier: "OU",
 		doublesTier: "(DUU)",
 		natDexTier: "OU",
 	},
-	kobomega: {
+	kobokanaerumega: {
         tier: "OU",
         doublesTier: "(DUU)",
         natDexTier: "OU",	
 	},
-	gura: {
+	gawrgura: {
 		tier: "OU",
 		doublesTier: "(DUU)",
 		natDexTier: "OU",
 	},
-	guramega: {
+	gawrguramega: {
         tier: "OU",
         doublesTier: "(DUU)",
         natDexTier: "Uber",	
@@ -6232,7 +6232,7 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
         doublesTier: "(DUber)",
         natDexTier: "Uber",
 	},
-	ame: {
+	ameliawatson: {
 		tier: "OU",
 		doublesTier: "(DUU)",
 		natDexTier: "OU",
@@ -6257,32 +6257,32 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		doublesTier: "(DUU)",
 		natDexTier: "UU",
 	},
-	calliope: {
+	moricalliope: {
 		tier: "OU",
 		doublesTier: "(DUU)",
 		natDexTier: "OU",
 	},
-	calliopemega: {
+	moricalliopemega: {
         tier: "OU",
         doublesTier: "(DUU)",
         natDexTier: "OU",	
 	},
-	ina: {
+	ninomaeinanis: {
 		tier: "OU",
 		doublesTier: "(DUU)",
 		natDexTier: "OU",
 	},
-	inamega: {
+	ninomaeinanismega: {
         tier: "OU",
         doublesTier: "(DUU)",
         natDexTier: "OU",	
 	},
-	kiara: {
+	takanashikiara: {
 		tier: "OU",
 		doublesTier: "(DUU)",
 		natDexTier: "OU",
 	},
-	kiaramega: {
+	takanashikiaramega: {
         tier: "OU",
         doublesTier: "(DUU)",
         natDexTier: "OU",	
@@ -6302,12 +6302,12 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
         doublesTier: "(DUU)",
         natDexTier: "OU",	
 	},
-	sana: {
+	tsukumosana: {
 		tier: "OU",
 		doublesTier: "(DUU)",
 		natDexTier: "OU",
 	},
-	sanamega: {
+	tsukumosanamega: {
         tier: "OU",
         doublesTier: "(DUU)",
         natDexTier: "Uber",	
@@ -6317,22 +6317,22 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
         doublesTier: "(DUber)",
         natDexTier: "Uber",
 	},
-	fauna: {
+	ceresfauna: {
 		tier: "OU",
 		doublesTier: "(DUU)",
 		natDexTier: "OU",
 	},
-	faunamega: {
+	ceresfaunamega: {
         tier: "OU",
         doublesTier: "(DUU)",
         natDexTier: "OU",	
 	},
-	kronii: {
+	ourokronii: {
 		tier: "OU",
 		doublesTier: "(DUU)",
 		natDexTier: "OU",
 	},
-	kroniimega: {
+	ourokroniimega: {
         tier: "OU",
         doublesTier: "(DUU)",
         natDexTier: "OU",	
@@ -6342,12 +6342,12 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		doublesTier: "(DUU)",
 		natDexTier: "Uber",
 	},
-	mumei: {
+	nanashimumei: {
 		tier: "OU",
 		doublesTier: "(DUU)",
 		natDexTier: "OU",
 	},
-	mumeimega: {
+	nanashimumeimega: {
         tier: "OU",
         doublesTier: "(DUU)",
         natDexTier: "OU",	
@@ -6362,12 +6362,12 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		doublesTier: "(DUU)",
 		natDexTier: "UU",
 	},
-	bae: {
+	hakosbaelz: {
 		tier: "OU",
 		doublesTier: "(DUU)",
 		natDexTier: "OU",
 	},
-	baemega: {
+	hakosbaelzmega: {
         tier: "OU",
         doublesTier: "(DUU)",
         natDexTier: "OU",	
@@ -6377,22 +6377,22 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		doublesTier: "(DUU)",
 		natDexTier: "UU",
 	},
-	shiori: {
+	shiorinovella: {
 		tier: "OU",
 		doublesTier: "(DUU)",
 		natDexTier: "OU",
 	},
-	shiorimega: {
+	shiorinovellamega: {
         tier: "OU",
         doublesTier: "(DUU)",
         natDexTier: "OU",	
 	},
-	bijou: {
+	kosekibijou: {
 		tier: "OU",
 		doublesTier: "(DUU)",
 		natDexTier: "OU",
 	},
-	bijoumega: {
+	kosekibijoumega: {
         tier: "OU",
         doublesTier: "(DUU)",
         natDexTier: "OU",	
@@ -6402,72 +6402,72 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		doublesTier: "(DUU)",
 		natDexTier: "PU",
 	},
-	nerissa: {
+	nerissaravencroft: {
 		tier: "OU",
 		doublesTier: "(DUU)",
 		natDexTier: "OU",
 	},
-	nerissamega: {
+	nerissaravencroftmega: {
         tier: "OU",
         doublesTier: "(DUU)",
         natDexTier: "OU",	
 	},
-	mococo: {
+	mococoabyssgard: {
 		tier: "OU",
 		doublesTier: "(DUU)",
 		natDexTier: "OU",
 	},
-	mococomega: {
+	mococoabyssgardmega: {
         tier: "OU",
         doublesTier: "(DUU)",
         natDexTier: "Uber",	
 	},
-	fuwawa: {
+	fuwawaabyssgard: {
 		tier: "OU",
 		doublesTier: "(DUU)",
 		natDexTier: "UU",
 	},
-	fuwawamega: {
+	fuwawaabyssgardmega: {
         tier: "OU",
         doublesTier: "(DUU)",
         natDexTier: "OU",	
 	},
-	elizabeth: {
+	elizabethrosebloodflame: {
 		tier: "OU",
 		doublesTier: "(DUU)",
 		natDexTier: "OU",
 	},
-	elizabethmega: {
+	elizabethrosebloodflamemega: {
         tier: "OU",
         doublesTier: "(DUU)",
         natDexTier: "OU",	
 	},
-	gigi: {
+	gigimurin: {
 		tier: "OU",
 		doublesTier: "(DUU)",
 		natDexTier: "OU",
 	},
-	gigimega: {
+	gigimurinmega: {
         tier: "OU",
         doublesTier: "(DUU)",
         natDexTier: "Uber",	
 	},
-	cecilia: {
+	ceciliaimmergreen: {
 		tier: "OU",
 		doublesTier: "(DUU)",
 		natDexTier: "OU",
 	},
-	ceciliamega: {
+	ceciliaimmergreenmega: {
         tier: "OU",
         doublesTier: "(DUU)",
         natDexTier: "OU",	
 	},
-	raora: {
+	raorapanthera: {
 		tier: "OU",
 		doublesTier: "(DUU)",
 		natDexTier: "UU",
 	},
-	raoramega: {
+	raorapantheramega: {
         tier: "OU",
         doublesTier: "(DUU)",
         natDexTier: "OU",	

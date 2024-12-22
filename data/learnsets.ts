@@ -93576,7 +93576,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 		],
 		eventOnly: true,
 	},
-	sora: {
+	tokinosora: {
 		learnset: {
 			dazzlinggleam: ["9M"],
 			alluringvoice: ["9M"],
@@ -93611,7 +93611,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			tskr: ["9M"],
         },
 	},
-	miko: {
+	sakuramiko: {
 		learnset: {
 			dazzlinggleam: ["9M"],
 			playrough: ["9M"],
@@ -93657,7 +93657,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			elitemiko: ["9M"],
         },
 	},
-	mikoelite: {
+	sakuramikoelite: {
 		learnset: {
 			alluringvoice: ["9M"],
 			flareblitz: ["9M"],
@@ -93706,7 +93706,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			rest: ["9M"],			
         },
 	},
-	suisei: {
+	hoshimachisuisei: {
 		learnset: {
 			icehammer: ["9M"],
 			iciclespear: ["9M"],
@@ -93844,7 +93844,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			divasong: ["9M"]
         },
 	},
-	fubuki: {
+	shirakamifubuki: {
 		learnset: {
 			fakeout: ["9M"],
 			auroraveil: ["9M"],
@@ -93980,7 +93980,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			honeclaws: ["9M"],
         },
 	},
-	matsuri: {
+	natsuiromatsuri: {
 		learnset: {
 			doubleedge: ["9M"],
 			quickattack: ["9M"],
@@ -94191,7 +94191,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			fourcoursemeal: ["9M"],
         },
 	},
-	mel: {
+	yozoramel: {
 		learnset: {
 			aerialace: ["9M"],
 			dualwingbeat: ["9M"],
@@ -94233,7 +94233,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			banpire: ["9M"],
         },
 	},	
-	akirose: {
+	akirosenthal: {
 		learnset: {
 			psychic: ["9M"],
 			eeriespell: ["9M"],
@@ -94276,7 +94276,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			twintails: ["9M"],
         },
 	},	
-	aqua: {
+	minatoaqua: {
 		learnset: {
 			hydropump: ["9M"],
 			surf: ["9M"],
@@ -94324,7 +94324,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			gamermaid: ["9M"],
         },
 	},
-	ayame: {
+	nakiriayame: {
 		learnset: {
 			nightslash: ["9M"],
 			darkpulse: ["9M"],
@@ -94366,7 +94366,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			underworldslash: ["9M"],
         },
 	},
-	choco: {
+	yuzukichoco: {
 		learnset: {
 			drainingkiss: ["9M"],
 			dazzlinggleam: ["9M"],
@@ -94418,7 +94418,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			nursing: ["9M"],
         },
 	},
-	shion: {
+	murasakishion: {
 		learnset: {
 			psychic: ["9M"],
 			psyshock: ["9M"],
@@ -94466,7 +94466,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			magiconion: ["9M"],
         },
 	},
-	subaru: {
+	oozorasubaru: {
 		learnset: {
 			bravebird: ["9M"],
 			drillpeck: ["9M"],
@@ -94528,7 +94528,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			oozorapolice: ["9M"],
         },
 	},		
-	korone: {
+	inugamikorone: {
 		learnset: {
 			closecombat: ["9M"],
 			doubleedge: ["9M"],
@@ -94588,7 +94588,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			yubiyubi: ["9M"],
         },
 	},	
-	mio: {
+	ookamimio: {
 		learnset: {
 			psychicfangs: ["9M"],
 			futuresight: ["9M"],
@@ -94694,7 +94694,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			bulletpunch: ["9M"],
         },
 	},
-	okayu: {
+	nekomataokayu: {
 		learnset: {
 			hyperfang: ["9M"],
 			fakeout: ["9M"],
@@ -94733,7 +94733,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			moguyummy: ["9M"],
         },
 	},	
-	pekora: {
+	usadapekora: {
 		learnset: {
 			darkpulse: ["9M"],
 			foulplay: ["9M"],
@@ -94843,7 +94843,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			pekopeko: ["9M"],
         },
 	},		
-	noel: {
+	shiroganenoel: {
 		learnset: {
 			closecombat: ["9M"],
 			dynamicpunch: ["9M"],
@@ -94893,7 +94893,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			clubsmash: ["9M"],
         },
 	},		
-	rushia: {
+	uruharushia: {
 		learnset: {
 			fakeout: ["9M"],
 			lashout: ["9M"],
@@ -94950,7 +94950,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			deadlyenvy: ["9M"],
         },
 	},
-	flare: {
+	shiranuiflare: {
 		learnset: {
 			playrough: ["9M"],
 			dazzlinggleam: ["9M"],
@@ -94994,7 +94994,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			bowdance: ["9M"],
         },
 	},
-	marine: {
+	houshoumarine: {
 		learnset: {
 			wavecrash: ["9M"],
 			liquidation: ["9M"],
@@ -95046,7 +95046,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			ahoy: ["9M"],
         },
 	},		
-	coco: {
+	kiryucoco: {
 		learnset: {
 			dragondance: ["9M"],
 			outrage: ["9M"],
@@ -95179,7 +95179,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			partingshot: ["9M"],
         },
 	},	
-	kanata: {
+	amanekanata: {
 		learnset: {
 			alluringvoice: ["9M"],
 			dazzlinggleam: ["9M"],
@@ -95234,7 +95234,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			gorillagrip: ["9M"],
         },
 	},	
-	watame: {
+	tsunomakiwatame: {
 		learnset: {
 			hypervoice: ["9M"],
 			hyperbeam: ["9M"],
@@ -95266,7 +95266,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			ubersheep: ["9M"],
         },
 	},	
-	luna: {
+	himemoriluna: {
 		learnset: {
 			moonblast: ["9M"],
 			dazzlinggleam: ["9M"],
@@ -95303,7 +95303,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			sweetassault: ["9M"],
         },
 	},	
-	towa: {
+	tokoyamitowa: {
 		learnset: {
 			foulplay: ["9M"],
 			suckerpunch: ["9M"],
@@ -95349,7 +95349,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			daredevil: ["9M"],
         },
 	},	
-	polka: {
+	omarupolka: {
 		learnset: {
 			fakeout: ["9M"],
 			hyperfang: ["9M"],
@@ -95400,7 +95400,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			polmao: ["9M"],
         },
 	},	
-	botan: {
+	shishirobotan: {
 		learnset: {
 			closecombat: ["9M"],
 			brickbreak: ["9M"],
@@ -95450,7 +95450,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			lalion: ["9M"],
         },
 	},	
-	lamy: {
+	yukihanalamy: {
 		learnset: {
 			fakeout: ["9M"],
 			blizzard: ["9M"],
@@ -95490,7 +95490,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			freezeray: ["9M"],
         },
 	},	
-	nene: {
+	momosuzunene: {
 		learnset: {
 			playrough: ["9M"],
 			dazzlinggleam: ["9M"],
@@ -95535,7 +95535,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			nenemax: ["9M"],
         },
 	},	
-	aloe: {
+	manoaloe: {
 		learnset: {
 			knockoff: ["9M"],
 			lashout: ["9M"],
@@ -95599,7 +95599,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			succubusstrike: ["9M"],
         },
 	},	
-	iroha: {
+	kazamairoha: {
 		learnset: {
 			closecombat: ["9M"],
 			sacredsword: ["9M"],
@@ -95632,7 +95632,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			samuraistrikes: ["9M"],
         },
 	},	
-	koyori: {
+	hakuikoyori: {
 		learnset: {
 			psychic: ["9M"],
 			psyshock: ["9M"],
@@ -95668,7 +95668,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			koyolabo: ["9M"],
         },
 	},	
-	laplus: {
+	laplusdarkness: {
 		learnset: {
 			zenheadbutt: ["9M"],
 			psychic: ["9M"],
@@ -95720,7 +95720,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			ymd: ["9M"],
         },
 	},	
-	lui: {
+	takanelui: {
 		learnset: {
 			bravebird: ["9M"],
 			drillpeck: ["9M"],
@@ -95761,7 +95761,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			focusshades: ["9M"],
         },
 	},	
-	chloe: {
+	sakamatachloe: {
 		learnset: {
 			wavecrash: ["9M"],
 			liquidation: ["9M"],
@@ -95812,7 +95812,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			cleanup: ["9M"],
         },
 	},	
-	moona: {
+	moonahoshinova: {
 		learnset: {
 			moonblast: ["9M"],
 			dazzlinggleam: ["9M"],
@@ -95861,7 +95861,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			moonstrike: ["9M"],
         },
 	},	
-	moonahoshinova: {
+	hoshinova: {
 		learnset: {
 			moonblast: ["9M"],
 			facade: ["9M"],
@@ -95908,7 +95908,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			moonstrike: ["9M"],
         },
 	},	
-	iofi: {
+	airaniiofifteen: {
 		learnset: {
 			psychic: ["9M"],
 			extrasensory: ["9M"],
@@ -95954,7 +95954,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			freezeray: ["9M"],
         },
 	},	
-	risu: {
+	ayundarisu: {
 		learnset: {
 			hyperfang: ["9M"],
 			quickattack: ["9M"],
@@ -96044,7 +96044,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			roar: ["9M"],
         },
 	},	
-	ollie: {
+	kureijiollie: {
 		learnset: {
 			poltergeist: ["9M"],
 			shadowsneak: ["9M"],
@@ -96151,7 +96151,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			sweetkiss: ["9M"],
         },
 	},	
-	reine: {
+	pavoliareine: {
 		learnset: {
 			bravebird: ["9M"],
 			hurricane: ["9M"],
@@ -96198,7 +96198,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			peacockattack: ["9M"],
         },
 	},	
-	anya: {
+	anyamelfissa: {
 		learnset: {
 			closecombat: ["9M"],
 			sacredsword: ["9M"],
@@ -96241,7 +96241,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			keris: ["9M"],
         },
 	},	
-	zeta: {
+	vestiazeta: {
 		learnset: {
 			crunch: ["9M"],
 			darkpulse: ["9M"],
@@ -96281,7 +96281,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			spyshot: ["9M"],
         },
 	},	
-	kaela: {
+	kaelakovalskia: {
 		learnset: {
 			meteormash: ["9M"],
 			steelroller: ["9M"],
@@ -96350,7 +96350,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			dahlah: ["9M"],
         },
 	},	
-	kobo: {
+	kobokanaeru: {
 		learnset: {
 			surf: ["9M"],
 			hydropump: ["9M"],
@@ -96392,7 +96392,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			rainshaman: ["9M"],
         },
 	},	
-	gura: {
+	gawrgura: {
 		learnset: {
 			surf: ["9M"],
 			wavecrash: ["9M"],
@@ -96560,7 +96560,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			sharkattack: ["9M"],
         },
 	},	
-	ame: {
+	ameliawatson: {
 		learnset: {
 			zenheadbutt: ["9M"],
 			psychic: ["9M"],
@@ -96771,7 +96771,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			roost: ["9M"],
         },
 	},	
-	calliope: {
+	moricalliope: {
 		learnset: {
 			phantomforce: ["9M"],
 			spiritshackle: ["9M"],
@@ -96818,7 +96818,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			grimrapper: ["9M"],
         },
 	},	
-	ina: {
+	ninomaeinanis: {
 		learnset: {
 			psychic: ["9M"],
 			eeriespell: ["9M"],
@@ -96870,7 +96870,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			aochan: ["9M"],
         },
 	},	
-	kiara: {
+	takanashikiara: {
 		learnset: {
 			flareblitz: ["9M"],
 			flamecharge: ["9M"],
@@ -97034,7 +97034,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			hopeless: ["9M"],
         },
 	},	
-	sana: {
+	tsukumosana: {
 		learnset: {
 			weatherball: ["9M"],
 			psychic: ["9M"],
@@ -97118,7 +97118,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			bigbang: ["9M"],
         },
 	},	
-	fauna: {
+	ceresfauna: {
 		learnset: {
 			leafstorm: ["9M"],
 			solarbeam: ["9M"],
@@ -97174,7 +97174,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			mothernature: ["9M"],
         },
 	},	
-	kronii: {
+	ourokronii: {
 		learnset: {
 			psychocut: ["9M"],
 			zenheadbutt: ["9M"],
@@ -97301,7 +97301,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			timeflies: ["9M"],
         },
 	},	
-	mumei: {
+	nanashimumei: {
 		learnset: {
 			doubleedge: ["9M"],
 			hypervoice: ["9M"],
@@ -97464,7 +97464,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			hex: ["9M"],
         },
 	},
-	bae: {
+	hakosbaelz: {
 		learnset: {
 			crunch: ["9M"],
 			foulplay: ["9M"],
@@ -97582,7 +97582,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			chaosstrike: ["9M"],
         },
 	},	
-	shiori: {
+	shiorinovella: {
 		learnset: {
 			darkpulse: ["9M"],
 			foulplay: ["9M"],
@@ -97637,7 +97637,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			forbiddenknowledge: ["9M"],
         },
 	},	
-	bijou: {
+	kosekibijou: {
 		learnset: {
 			diamondstorm: ["9M"],
 			powergem: ["9M"],
@@ -97724,7 +97724,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			bejeweled: ["9M"],
         },
 	},
-	nerissa: {
+	nerissaravencroft: {
 		learnset: {
 			bravebird: ["9M"],
 			drillpeck: ["9M"],
@@ -97777,7 +97777,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			divafork: ["9M"],
         },
 	},	
-	mococo: {
+	mococoabyssgard: {
 		learnset: {
 			crunch: ["9M"],
 			suckerpunch: ["9M"],
@@ -97825,7 +97825,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			twinstrikes: ["9M"],
         },
 	},	
-	fuwawa: {
+	fuwawaabyssgard: {
 		learnset: {
 			crunch: ["9M"],
 			suckerpunch: ["9M"],
@@ -97873,7 +97873,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			twinstrikes: ["9M"],
         },
 	},	
-	elizabeth: {
+	elizabethrosebloodflame: {
 		learnset: {
 			flareblitz: ["9M"],
 			flamecharge: ["9M"],
@@ -97914,7 +97914,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			swordofjustice: ["9M"],
         },
 	},	
-	gigi: {
+	gigimurin: {
 		learnset: {
 			crunch: ["9M"],
 			suckerpunch: ["9M"],
@@ -97957,7 +97957,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			fisted: ["9M"],
         },
 	},	
-	cecilia: {
+	ceciliaimmergreen: {
 		learnset: {
 			steelroller: ["9M"],
 			ironhead: ["9M"],
@@ -98008,7 +98008,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			windup: ["9M"],
         },
 	},	
-	raora: {
+	raorapanthera: {
 		learnset: {
 			fakeout: ["9M"],
 			tailslap: ["9M"],
