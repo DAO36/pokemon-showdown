@@ -298,12 +298,16 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		category: "Physical",
 		name: "Split Personality",
 		pp: 10,
-		priority: 0,
 		flags: {contact: 1, protect: 1, mirror: 1, metronome: 1},
+		onEffectiveness(typeMod, target, type, move) {
+			return typeMod + this.dex.getEffectiveness('Fairy', type);
+		},
+		priority: 0,
 		multihit: 2,
 		secondary: null,
-		target: "normal",
+		target: "any",
 		type: "Dark",
+		contestType: "Tough",
 	},
 	spidercooking: {
 		num: 370,
@@ -1133,12 +1137,12 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Poison",
 		contestType: "Cute",
 	},
-	nenemax: {
+	nenemaxattack: {
 		num: 370,
-		accuracy: 85,
+		accuracy: 80,
 		basePower: 150,
 		category: "Physical",
-		name: "NeneMAX",
+		name: "NeneMAX Attack",
 		pp: 5,
 		priority: 0,
 		flags: {protect: 1, mirror: 1, contact: 1, cantusetwice: 1},

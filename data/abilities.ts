@@ -40,6 +40,18 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 0.1,
 		num: 0,
 	},
+	corruption: {
+		onDamagingHitOrder: 1,
+		onDamagingHit(damage, target, source, move) {
+			{
+				this.damage(source.baseMaxhp / 1, source, target);
+			}
+		},
+		flags: {},
+		name: "Corruption",
+		rating: 5,
+		num: 24,
+	},
 	purepower: {
 		onModifySpAPriority: 5,
 		onModifyAtk(spa) {

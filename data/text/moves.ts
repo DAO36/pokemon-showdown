@@ -1918,8 +1918,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	splitpersonality: {
 		name: "Split Personality",
-		desc: "Hits twice. If the first hit breaks the target's substitute, it will take damage for the second hit.",
-		shortDesc: "Hits 2 times in one turn.",
+		desc: "This move combines Fairy in its type effectiveness against the target. Hits twice. If the first hit breaks the target's substitute, it will take damage for the second hit.",
+		shortDesc: "Combines Fairy in its type effectiveness. Hits 2 times in one turn.",
 	},
 	dynamaxcannon: {
 		name: "Dynamax Cannon",
@@ -2787,8 +2787,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		name: "Gigaton Hammer",
 		shortDesc: "Cannot be selected the turn after it's used.",
 	},
-	nenemax: {
-		name: "NeneMAX",
+	nenemaxattack: {
+		name: "NeneMAX Attack",
 		shortDesc: "Cannot be selected the turn after it's used. 10% chance to raise the user's SpDef by 1",
 	},
 	gigavolthavoc: {
