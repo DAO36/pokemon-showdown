@@ -378,8 +378,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	snowdash: {
 		name: "Snow Dash",
-		desc: "If this attack is not successful, the user loses half of its maximum HP, rounded down, as crash damage. Pokemon with the Magic Guard Ability are unaffected by crash damage.",
-		shortDesc: "User loses 50% max HP if miss.",
+		desc: "Has a 10% chance to freeze the foe .If this attack is not successful, the user loses half of its maximum HP, rounded down, as crash damage. Pokemon with the Magic Guard Ability are unaffected by crash damage.",
+		shortDesc: "User loses 50% max HP if miss. 10% chance to freeze.",
 
 		damage: "#crash",
 	},
@@ -3963,7 +3963,7 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	sakuraiattack: {
 		name: "Sakurai Attack",
-		shortDesc: "No additional effect.",
+		shortDesc: "No additional effect. Hits adjacent foes.",
 	},
 	leafblade: {
 		name: "Leaf Blade",
@@ -5946,8 +5946,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	lavabucket: {
 		name: "Lava Bucket",
-		desc: "Has a 25% chance to burn the target.",
-		shortDesc: "25% chance to burn the target.",
+		desc: "Has a 25% chance to burn the target. Hits adjacent foes.",
+		shortDesc: "25% chance to burn the target. Hits adjacent foes.",
 	},
 	sacredsword: {
 		name: "Sacred Sword",
@@ -8126,8 +8126,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	elitemiko: {
 		name: "Elite Miko",
-		desc: "Raises the user's Attack and Special Attack by 2 stages.",
-		shortDesc: "Raises the user's Attack and Sp. Atk by 2.",
+		desc: "Raises the user's Attack by 2 stages.",
+		shortDesc: "Raises the user's Attack by 2.",
 	},
 	worryseed: {
 		name: "Worry Seed",
