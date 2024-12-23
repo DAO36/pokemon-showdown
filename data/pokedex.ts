@@ -19991,7 +19991,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		requiredItem: "Anyanite",
 	},
 	zeta: {
-		num: 827,
+		num: 818,
 		name: "Zeta",
 		types: ["Dark", "Psychic"],
 		gender: "F",
@@ -20005,7 +20005,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		formeOrder: ["Zeta", "Zeta-Mega"],
 	},
 	zetamega: {
-		num: 828,
+		num: 818,
 		name: "Zeta-Mega",
 		baseSpecies: "Zeta",
 		forme: "Mega",
@@ -20061,7 +20061,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		eggGroups: ["Human-Like"],
 	},
 	kobo: {
-		num: 816,
+		num: 351,
 		name: "Kobo",
 		types: ["Water"],
 		gender: "F",
@@ -20075,7 +20075,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		formeOrder: ["Kobo", "Kobo-Mega"],
 	},
 	kobomega: {
-		num: 817,
+		num: 351,
 		name: "Kobo-Mega",
 		baseSpecies: "Kobo",
 		forme: "Mega",
