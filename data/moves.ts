@@ -293,7 +293,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	},
 	splitpersonality: {
 		num: 370,
-		accuracy: 95,
+		accuracy: 100,
 		basePower: 50,
 		category: "Physical",
 		name: "Split Personality",
