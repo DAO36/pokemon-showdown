@@ -19191,7 +19191,6 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 	pekorawarcriminal: {
 		num: 815,
 		name: "Pekora-WarCriminal",
-		baseSpecies: "Pekora",
 		types: ["Dark", "Grass"],
 		gender: "F",
 		baseStats: {hp: 75, atk: 145, def: 135, spa: 125, spd: 75, spe: 25},
