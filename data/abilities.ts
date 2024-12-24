@@ -247,9 +247,9 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	alteregos: {
 		onModifyMovePriority: 1,
 		onModifyMove(move, attacker, defender) {
-			if (attacker.species.baseSpecies !== 'Akai Haato' || attacker.transformed) return;
+			if (attacker.species.baseSpecies !== 'AkaiHaato' || attacker.transformed) return;
 			if (move.category === 'Status' && move.id !== 'redheart') return;
-			const targetForme = (move.id === 'redheart' ? 'Akai Haato' : 'Akai Haato-Haachama');
+			const targetForme = (move.id === 'redheart' ? 'AkaiHaato' : 'AkaiHaato-Haachama');
 			if (attacker.species.name !== targetForme) attacker.formeChange(targetForme);
 		},
 		flags: {failroleplay: 1, noreceiver: 1, noentrain: 1, notrace: 1, failskillswap: 1, cantsuppress: 1},
