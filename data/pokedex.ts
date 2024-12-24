@@ -19810,6 +19810,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 	hoshinova: {
 		num: 800,
 		name: "Hoshinova",
+		baseSpecies: "Moona",
 		types: ["Dark", "Psychic"],
 		gender: "F",
 		baseStats: {hp: 95, atk: 155, def: 110, spa: 135, spd: 150, spe: 55},
@@ -20051,6 +20052,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 	ckia: {
 		num: 957,
 		name: "Ckia",
+		baseSpecies: "Kaela",
 		types: ["Steel"],
 		gender: "F",
 		baseStats: {hp: 75, atk: 120, def: 100, spa: 80, spd: 75, spe: 105},
@@ -20161,7 +20163,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 	amemega: {
 		num: 836,
 		name: "Ame-Mega",
-		baseSpecies: "Amelia Watson",
+		baseSpecies: "Ame",
 		forme: "Mega",
 		types: ["Psychic", "Poison"],
 		gender: "F",
@@ -20176,7 +20178,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 	amesmol: {
 		num: 859,
 		name: "Ame-Smol",
-		baseSpecies: "Amelia Watson",
+		baseSpecies: "Ame",
 		types: ["Psychic", "Dark"],
 		gender: "F",
 		baseStats: {hp: 50, atk: 150, def: 50, spa: 150, spd: 50, spe: 150},
@@ -20189,7 +20191,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 	amebuff: {
 		num: 68,
 		name: "Ame-Buff",
-		baseSpecies: "Amelia Watson",
+		baseSpecies: "Ame",
 		types: ["Psychic", "Fighting"],
 		gender: "F",
 		baseStats: {hp: 101, atk: 166, def: 155, spa: 85, spd: 99, spe: 60},
@@ -20202,7 +20204,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 	amebee: {
 		num: 15,
 		name: "Ame-Bee",
-		baseSpecies: "Amelia Watson",
+		baseSpecies: "Ame",
 		types: ["Bug", "Poison"],
 		gender: "F",
 		baseStats: {hp: 55, atk: 125, def: 50, spa: 115, spd: 70, spe: 110},
@@ -20302,6 +20304,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 	froggywawa: {
 		num: 656,
 		name: "Froggy Wawa",
+		baseSpecies: "Kiara",
 		types: ["Water", "Poison"],
 		gender: "F",
 		baseStats: {hp: 75, atk: 105, def: 70, spa: 115, spd: 80, spe: 110},
@@ -20540,6 +20543,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 	baerat: {
 		num: 925,
 		name: "Baerat",
+		baseSpecies: "Bae",
 		types: ["Dark"],
 		gender: "F",
 		baseStats: {hp: 66, atk: 130, def: 55, spa: 99, spd: 72, spe: 133},
