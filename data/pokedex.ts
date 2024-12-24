@@ -19170,8 +19170,8 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		weightkg: 55.5,
 		color: "Blue",
 		eggGroups: ["Human-Like", "Field"],
-		otherFormes: ["Pekora-Mega", "Pekora-War-Criminal"],
-		formeOrder: ["Pekora", "Pekora-Mega", "Pekora-War-Criminal"],
+		otherFormes: ["Pekora-Mega", "Pekora-WarCriminal"],
+		formeOrder: ["Pekora", "Pekora-Mega", "Pekora-WarCriminal"],
 	},
 	pekoramega: {
 		num: 428,
@@ -19190,7 +19190,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 	},
 	pekorawarcriminal: {
 		num: 815,
-		name: "Pekora-War-Criminal",
+		name: "Pekora-WarCriminal",
 		baseSpecies: "Pekora",
 		types: ["Dark", "Grass"],
 		gender: "F",
