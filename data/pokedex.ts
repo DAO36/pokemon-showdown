@@ -18817,7 +18817,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 	akaihaato: {
 		num: 665,
 		name: "AkaiHaato",
-		baseForme: "Idol",
+		baseForme: "Akai",
 		types: ["Fairy"],
 		gender: "F",
 		baseStats: {hp: 80, atk: 80, def: 115, spa: 90, spd: 145, spe: 70},
@@ -18833,7 +18833,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		num: 452,
 		name: "AkaiHaato-Haachama",
 		baseSpecies: "AkaiHaato",
-		forme: "Evil",
+		forme: "Haachama",
 		types: ["Dark"],
 		gender: "F",
 		baseStats: {hp: 80, atk: 130, def: 70, spa: 125, spd: 65, spe: 110},
