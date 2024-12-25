@@ -40,7 +40,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		name: "Ankimo Attack",
 		pp: 10,
 		priority: 0,
-		flags: {protect: 1, mirror: 1, metronome: 1},
+		flags: {protect: 1, mirror: 1, contact: 1},
 		secondary: {
 			chance: 20,
 			self: {
@@ -192,7 +192,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		basePower: 0,
 		category: "Status",
 		name: "Upgrade PC",
-		pp: 15,
+		pp: 20,
 		priority: 0,
 		flags: {snatch: 1, metronome: 1},
 		boosts: {
@@ -307,7 +307,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		priority: 0,
 		multihit: 2,
 		secondary: null,
-		target: "any",
+		target: "normal",
 		type: "Dark",
 		contestType: "Tough",
 	},
@@ -471,7 +471,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	},
 	elfdance: {
 		num: 370,
-		accuracy: 100,
+		accuracy: 95,
 		basePower: 95,
 		category: "Physical",
 		name: "Elf Dance",
@@ -484,7 +484,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	},
 	twintails: {
 		num: 370,
-		accuracy: 95,
+		accuracy: 100,
 		basePower: 50,
 		category: "Physical",
 		name: "Twin Tails",
@@ -546,17 +546,16 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	underworldslash: {
 		num: 370,
 		accuracy: 100,
-		basePower: 75,
+		basePower: 70,
 		category: "Physical",
 		name: "Underworld Slash",
 		pp: 15,
 		priority: 0,
 		flags: {protect: 1, mirror: 1, contact: 1, slicing: 1},
+		critRatio: 2,
 		secondary: {
-			chance: 10,
-			boosts: {
-				spa: -1,
-			},
+			chance: 20,
+			status: 'brn',
 		},
 		target: "normal",
 		type: "Fire",
@@ -609,7 +608,14 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		pp: 5,
 		priority: 0,
 		flags: {protect: 1, mirror: 1, metronome: 1},
-		secondary: null,
+		secondary: {
+			chance: 20,
+			self: {
+				boosts: {
+					spd: 1,
+				},
+			},
+		},		
 		target: "normal",
 		type: "Psychic",
 		contestType: "Beautiful",
@@ -629,7 +635,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		},
 		secondary: null,
 		target: "self",
-		type: "Psychic",
+		type: "Grass",
 		contestType: "Clever",
 	},
 	duckasmr: {
@@ -737,10 +743,10 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		name: "Tarot Attack",
 		pp: 15,
 		priority: 0,
-		flags: {protect: 1, mirror: 1, metronome: 1},
+		flags: {protect: 1, mirror: 1, distance: 1},
 		multihit: [2, 5],
 		secondary: null,
-		target: "normal",
+		target: "any",
 		type: "Psychic",
 		contestType: "Cool",
 	},
@@ -758,7 +764,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		target: "normal",
 		type: "Grass",
 	},
-	pekopeko: {
+	painpeko: {
 		num: 370,
 		accuracy: 90,
 		basePower: 120,
@@ -918,7 +924,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		priority: 0,
 		flags: {contact: 1, protect: 1, mirror: 1, slicing: 1},
 		secondary: {
-			chance: 25,
+			chance: 30,
 			status: 'tox',
 		},
 		target: "normal",
@@ -950,7 +956,12 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		priority: 0,
 		flags: {contact: 1, protect: 1, mirror: 1, metronome: 1, punch: 1},
 		recoil: [33, 100],
-		secondary: null,
+		secondary: {
+			chance: 10,
+			boosts: {
+				def: -1,
+			},
+		},
 		target: "normal",
 		type: "Fairy",
 		contestType: "Tough",
@@ -970,7 +981,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		},
 		secondary: null,
 		target: "self",
-		type: "Normal",
+		type: "Dark",
 		contestType: "Clever",
 	},
 	ubersheep: {
@@ -998,7 +1009,14 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		priority: 0,
 		flags: {protect: 1, mirror: 1, metronome: 1},
 		multihit: [2, 5],
-		secondary: null,
+		secondary: {
+			chance: 10,
+			self: {
+				boosts: {
+					spe: 1,
+				},
+			},
+		},
 		target: "normal",
 		type: "Fairy",
 		contestType: "Cute",
@@ -1049,7 +1067,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		flags: {contact: 1, protect: 1, mirror: 1, dance: 1},
 		multihit: 2,
 		secondary: {
-			chance: 20,
+			chance: 25,
 			volatileStatus: 'confusion',
 		},
 		target: "normal",
@@ -1058,7 +1076,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	polmao: {
 		num: 370,
 		accuracy: 100,
-		basePower: 60,
+		basePower: 70,
 		category: "Physical",
 		name: "PoLMAO",
 		pp: 10,
@@ -1072,7 +1090,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	},
 	gunfire: {
 		num: 370,
-		accuracy: 95,
+		accuracy: 100,
 		basePower: 15,
 		category: "Physical",
 		name: "Gunfire",
@@ -1105,7 +1123,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	wamywater: {
 		num: 370,
 		accuracy: 95,
-		basePower: 85,
+		basePower: 80,
 		category: "Special",
 		name: "Wamy Water",
 		pp: 10,
@@ -1150,11 +1168,8 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		priority: 0,
 		flags: {protect: 1, mirror: 1, contact: 1, cantusetwice: 1},
 		secondary: {
-			chance: 10,
-			self: {
-				boosts: {
-					spd: 1,
-				},
+			boosts: {
+				spe: -1,
 			},
 		},
 		target: "normal",
@@ -1209,7 +1224,14 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		priority: 0,
 		flags: {contact: 1, protect: 1, mirror: 1, metronome: 1},
 		recoil: [33, 100],
-		secondary: null,
+		secondary: {
+			chance: 10,
+			self: {
+				boosts: {
+					spd: 1,
+				},
+			},
+		},
 		target: "normal",
 		type: "Psychic",
 		contestType: "Tough",
@@ -1267,7 +1289,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	cleanup: {
 		num: 370,
 		accuracy: 100,
-		basePower: 60,
+		basePower: 50,
 		category: "Physical",
 		name: "Clean Up",
 		pp: 10,
@@ -1335,7 +1357,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	alientouch: {
 		num: 370,
 		accuracy: 100,
-		basePower: 90,
+		basePower: 80,
 		category: "Physical",
 		name: "Alien Touch",
 		pp: 10,
@@ -1354,6 +1376,33 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		target: "normal",
 		type: "Psychic",
 		contestType: "Beautiful",
+	},
+	paintbrush: {
+		num: 370,
+		accuracy: 100,
+		basePower: 90,
+		category: "Physical",
+		name: "Paint Brush",
+		pp: 15,
+		priority: 0,
+		flags: {protect: 1, reflectable: 1, mirror: 1, allyanim: 1, metronome: 1},
+		onTryHit(target) {
+			if (target.getAbility().flags['cantsuppress'] || target.ability === 'color change' || target.ability === 'truant') {
+				return false;
+			}
+		},
+		onHit(pokemon) {
+			const oldAbility = pokemon.setAbility('color change');
+			if (oldAbility) {
+				this.add('-ability', pokemon, 'Color Change', '[from] move: Paint Brush');
+				return;
+			}
+			return oldAbility as false | null;
+		},
+		secondary: null,
+		target: "normal",
+		type: "Psychic",
+		contestType: "Cute",
 	},
 	deez: {
 		num: 370,
@@ -19307,33 +19356,6 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		target: "normal",
 		type: "Normal",
 		zMove: {boost: {spa: 1}},
-		contestType: "Cute",
-	},
-	paintbrush: {
-		num: 493,
-		accuracy: 100,
-		basePower: 0,
-		category: "Status",
-		name: "Paint Brush",
-		pp: 10,
-		priority: 0,
-		flags: {protect: 1, reflectable: 1, mirror: 1, allyanim: 1, metronome: 1},
-		onTryHit(target) {
-			if (target.getAbility().flags['cantsuppress'] || target.ability === 'color change' || target.ability === 'truant') {
-				return false;
-			}
-		},
-		onHit(pokemon) {
-			const oldAbility = pokemon.setAbility('color change');
-			if (oldAbility) {
-				this.add('-ability', pokemon, 'Color Change', '[from] move: Paint Brush');
-				return;
-			}
-			return oldAbility as false | null;
-		},
-		secondary: null,
-		target: "normal",
-		type: "Water",
 		contestType: "Cute",
 	},
 	sing: {

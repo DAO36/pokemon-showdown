@@ -155,8 +155,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	underworldslash: {
 		name: "Underworld Slash",
-		desc: "Has a higher chance for a critical hit.",
-		shortDesc: "High critical hit ratio.",
+		desc: "Has a higher chance for a critical hit. Has a 20% chance to burn the foe.",
+		shortDesc: "High critical hit ratio. 20% chance to burn.",
 	},
 	aquajet: {
 		name: "Aqua Jet",
@@ -875,8 +875,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	candycrash: {
 		name: "Candy Crash",
-		desc: "Hits two to five times. Has a 35% chance to hit two or three times and a 15% chance to hit four or five times. If one of the hits breaks the target's substitute, it will take damage for the remaining hits. If the user has the Skill Link Ability, this move will always hit five times. If the user is holding Loaded Dice, this move will hit 4-5 times.",
-		shortDesc: "Hits 2-5 times in one turn.",
+		desc: "Has a 10% chance to raise the user's Speed by 1 stage .Hits two to five times. Has a 35% chance to hit two or three times and a 15% chance to hit four or five times. If one of the hits breaks the target's substitute, it will take damage for the remaining hits. If the user has the Skill Link Ability, this move will always hit five times. If the user is holding Loaded Dice, this move will hit 4-5 times.",
+		shortDesc: "Hits 2-5 times in one turn. 10% chance to raise Speed by 1",
 	},
 	arrowassault: {
 		name: "Arrow Assault",
@@ -1143,8 +1143,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		desc: "Lowers the user's Defense and Special Defense by 1 stage.",
 		shortDesc: "Lowers the user's Defense and Sp. Def by 1.",
 	},
-	pekopeko: {
-		name: "Peko Peko",
+	painpeko: {
+		name: "Pain Peko",
 		desc: "Lowers the user's Defense and Special Defense by 1 stage.",
 		shortDesc: "Lowers the user's Defense and Sp. Def by 1.",
 	},
@@ -1671,8 +1671,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	gorillagrip: {
 		name: "Gorilla Grip",
-		desc: "If the target lost HP, the user takes recoil damage equal to 33% the HP lost by the target, rounded half up, but not less than 1 HP.",
-		shortDesc: "Has 33% recoil.",
+		desc: "Has a 10% chance to lower the foe's Defense by 1 stage. If the target lost HP, the user takes recoil damage equal to 33% the HP lost by the target, rounded half up, but not less than 1 HP.",
+		shortDesc: "Has 33% recoil. 10% to lower Def by 1",
 	},
 	bigbang: {
 		name: "Big Bang",
@@ -1691,8 +1691,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	ymd: {
 		name: "YMD",
-		desc: "If the target lost HP, the user takes recoil damage equal to 33% the HP lost by the target, rounded half up, but not less than 1 HP.",
-		shortDesc: "Has 33% recoil.",
+		desc: "Has a 10% to raise the user's Special Defense by 1 stage. If the target lost HP, the user takes recoil damage equal to 33% the HP lost by the target, rounded half up, but not less than 1 HP.",
+		shortDesc: "Has 33% recoil. 10% to raise Sp. Def by 1",
 	},
 	doublehit: {
 		name: "Double Hit",
@@ -1908,8 +1908,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	clowntown: {
 		name: "Clown Town",
-		desc: "Has a 20% chance to confuse the target. Hits twice. If the first hit breaks the target's substitute, it will take damage for the second hit.",
-		shortDesc: "Hits 2 times in one turn, 20% chance to confuse the target.",
+		desc: "Has a 25% chance to confuse the target. Hits twice. If the first hit breaks the target's substitute, it will take damage for the second hit.",
+		shortDesc: "Hits 2 times in one turn, 25% chance to confuse the target.",
 	},
 	carrotstrike: {
 		name: "Carrot Strike",
@@ -2799,7 +2799,7 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	nenemaxattack: {
 		name: "NeneMAX Attack",
-		shortDesc: "Cannot be selected the turn after it's used. 10% chance to raise the user's SpDef by 1",
+		shortDesc: "Cannot be selected the turn after it's used. Lower's the user's Speed by 1 stage if it successfully hits the target",
 	},
 	gigavolthavoc: {
 		name: "Gigavolt Havoc",
@@ -3531,7 +3531,7 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	witchattack: {
 		name: "Witch Attack",
-		shortDesc: "No additional effect.",
+		shortDesc: "20% chance to raises user's Special Defense by 1 stage.",
 	},
 	hydrosteam: {
 		name: "Hydro Steam",
@@ -5227,8 +5227,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	asacoco: {
 		name: "AsaCoco",
-		desc: "Has a 25% chance to badly poison the target.",
-		shortDesc: "25% chance to badly poison the target.",
+		desc: "Has a 30% chance to badly poison the target.",
+		shortDesc: "30% chance to badly poison the target.",
 	},
 	poisonpowder: {
 		name: "Poison Powder",

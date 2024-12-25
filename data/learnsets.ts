@@ -94786,7 +94786,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			curse: ["9M"],
 			charm: ["9M"],
 			carrotstrike: ["9M"],
-			pekopeko: ["9M"],
+			painpeko: ["9M"],
         },
 	},		
 	pekorawarcriminal: {
@@ -94840,7 +94840,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			spite: ["9M"],
 			curse: ["9M"],
 			carrotstrike: ["9M"],
-			pekopeko: ["9M"],
+			painpeko: ["9M"],
         },
 	},		
 	noel: {
@@ -95994,7 +95994,6 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			nastyplot: ["9M"],
 			moonlight: ["9M"],
 			sweetkiss: ["9M"],
-			alientouch: ["9M"],
 			paintbrush: ["9M"],
 			freezeray: ["9M"],
         },
