@@ -97964,7 +97964,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			charm: ["9M"],
 			twinstrikes: ["9M"],
 			nastyplot: ["9M"],
-			baubau: ["9M"],
+			fuwamocomorning: ["9M"],
         },
 	},	
 	elizabeth: {

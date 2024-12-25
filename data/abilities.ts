@@ -1178,7 +1178,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 2.5,
 		num: 183,
 	},
-	tagteam: {
+	baubau: {
 		onResidualOrder: 29,
 		onResidual(pokemon) {
 			if (pokemon.species.baseSpecies !== 'FuwaMoco' || pokemon.terastallized) return;
@@ -1186,7 +1186,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			pokemon.formeChange(targetForme);
 		},
 		flags: {failroleplay: 1, noreceiver: 1, noentrain: 1, notrace: 1, failskillswap: 1, notransform: 1},
-		name: "Tag Team",
+		name: "Bau Bau",
 		rating: 1,
 		num: 258,
 	},

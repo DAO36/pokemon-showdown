@@ -675,10 +675,10 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 		name: "The Fluffy One",
 		shortDesc: "Pokemon making contact with this Dog have their Attack lowered by 1 stage.",
 	},
-	tagteam: {
-		name: "Tag Team",
-		desc: "If this is FuwaMoco, she changes formes between Mococo and Fuwawa at the end of each turn.",
-		shortDesc: "If FuwaMoco, she changes between Mococo and Fuwawa at the end of each turn.",
+	baubau: {
+		name: "Bau Bau",
+		desc: "If this is FuwaMoco, changes formes between Mococo and Fuwawa at the end of each turn.",
+		shortDesc: "If FuwaMoco, changes between Mococo and Fuwawa at the end of each turn.",
 	},
 	gorillatactics: {
 		name: "Gorilla Tactics",

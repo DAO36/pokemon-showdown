@@ -2140,12 +2140,12 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		target: "normal",
 		type: "Dark",
 	},
-	baubau: {
+	fuwamocomorning: {
 		num: 783,
 		accuracy: 100,
 		basePower: 50,
 		category: "Physical",
-		name: "Bau Bau",
+		name: "FuwaMoco Morning",
 		pp: 10,
 		priority: 0,
 		flags: {protect: 1, contact: 1},
@@ -2160,7 +2160,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 				return;
 			}
 			this.attrLastMove('[still]');
-			this.add('-fail', source, 'move: Bau Bau');
+			this.add('-fail', source, 'move: FuwaMoco Morning');
 			this.hint("Only a Pokemon whose form is FuwaMoco or FuwaMoco-Wawa can use this move.");
 			return null;
 		},

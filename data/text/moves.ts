@@ -318,8 +318,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		desc: "Has a 100% chance to raise the user's Speed by 1 stage. If the user is a Morpeko in Full Belly Mode, this move is Electric type. If the user is a Morpeko in Hangry Mode, this move is Dark type. This move cannot be used successfully unless the user's current form, while considering Transform, is Full Belly or Hangry Mode Morpeko.",
 		shortDesc: "Morpeko: Electric; Hangry: Dark; 100% +1 Spe.",
 	},
-	baubau: {
-		name: "Bau Bau",
+	fuwamocomorning: {
+		name: "FuwaMoco Morning",
 		desc: "Has a high chance to land a critical hit. Has a 10% chance to flinch the foe. If the user is Mococo, this move is Dark type. If the user is a Fuwawa, this move is Fairy type. This move cannot be used successfully unless the user's current form, while considering Transform, is Fuwawa or Mococo.",
 		shortDesc: "Mococo: Dark; Fuwawa: Fairy; 10% to flinch. High crit ratio.",
 	},
