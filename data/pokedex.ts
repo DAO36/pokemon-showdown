@@ -18702,7 +18702,6 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 	fubuzilla: {
 		num: 985,
 		name: "Fubuzilla",
-		baseSpecies: "Fubuki",
 		types: ["Ice", "Dragon"],
 		gender: "F",
 		baseStats: {hp: 155, atk: 150, def: 115, spa: 130, spd: 80, spe: 70},
@@ -18715,7 +18714,6 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 	kurokami: {
 		num: 827,
 		name: "Kurokami",
-		baseSpecies: "Fubuki",
 		types: ["Dark", "Ice"],
 		gender: "F",
 		baseStats: {hp: 80, atk: 130, def: 85, spa: 120, spd: 75, spe: 110},
@@ -19120,7 +19118,6 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 	hatotaurus: {
 		num: 398,
 		name: "Hatotaurus",
-		baseSpecies: "Mio",
 		types: ["Flying"],
 		gender: "M",
 		baseStats: {hp: 125, atk: 155, def: 140, spa: 130, spd: 100, spe: 50},
@@ -19348,7 +19345,6 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 	cocodraco: {
 		num: 621,
 		name: "Coco-Draco",
-		baseSpecies: "Coco",
 		types: ["Dragon", "Flying"],
 		gender: "F",
 		baseStats: {hp: 155, atk: 165, def: 155, spa: 120, spd: 75, spe: 50},
@@ -19809,7 +19805,6 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 	hoshinova: {
 		num: 800,
 		name: "Hoshinova",
-		baseSpecies: "Moona",
 		types: ["Dark", "Psychic"],
 		gender: "F",
 		baseStats: {hp: 95, atk: 155, def: 110, spa: 135, spd: 150, spe: 55},
@@ -19922,7 +19917,6 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 	olivia: {
 		num: 327,
 		name: "Olivia",
-		baseSpecies: "Ollie",
 		types: ["Normal"],
 		gender: "F",
 		baseStats: {hp: 80, atk: 120, def: 80, spa: 115, spd: 80, spe: 105},
@@ -20051,7 +20045,6 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 	ckia: {
 		num: 957,
 		name: "Ckia",
-		baseSpecies: "Kaela",
 		types: ["Steel"],
 		gender: "F",
 		baseStats: {hp: 75, atk: 120, def: 100, spa: 80, spd: 75, spe: 105},
@@ -20122,7 +20115,6 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 	guragawr: {
 		num: 319,
 		name: "Gura-Gawr",
-		baseSpecies: "Gura",
 		types: ["Water", "Dark"],
 		gender: "F",
 		baseStats: {hp: 75, atk: 145, def: 90, spa: 110, spd: 75, spe: 105},
@@ -20135,7 +20127,6 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 	gurazilla: {
 		num: 445,
 		name: "Gurazilla",
-		baseSpecies: "Gura",
 		types: ["Water", "Dragon"],
 		gender: "F",
 		baseStats: {hp: 110, atk: 155, def: 125, spa: 115, spd: 110, spe: 85},
@@ -20177,7 +20168,6 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 	amesmol: {
 		num: 859,
 		name: "Ame-Smol",
-		baseSpecies: "Ame",
 		types: ["Psychic", "Dark"],
 		gender: "F",
 		baseStats: {hp: 50, atk: 150, def: 50, spa: 150, spd: 50, spe: 150},
@@ -20190,7 +20180,6 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 	amebuff: {
 		num: 68,
 		name: "Ame-Buff",
-		baseSpecies: "Ame",
 		types: ["Psychic", "Fighting"],
 		gender: "F",
 		baseStats: {hp: 101, atk: 166, def: 155, spa: 85, spd: 99, spe: 60},
@@ -20203,7 +20192,6 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 	amebee: {
 		num: 15,
 		name: "Ame-Bee",
-		baseSpecies: "Ame",
 		types: ["Bug", "Poison"],
 		gender: "F",
 		baseStats: {hp: 55, atk: 125, def: 50, spa: 115, spd: 70, spe: 110},
@@ -20303,7 +20291,6 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 	froggywawa: {
 		num: 656,
 		name: "Froggy Wawa",
-		baseSpecies: "Kiara",
 		types: ["Water", "Poison"],
 		gender: "F",
 		baseStats: {hp: 75, atk: 105, def: 70, spa: 115, spd: 80, spe: 110},
@@ -20374,7 +20361,6 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 	sanabeeg: {
 		num: 338,
 		name: "Sana-Beeg",
-		baseSpecies: "Sana",
 		types: ["Psychic"],
 		gender: "F",
 		baseStats: {hp: 200, atk: 100, def: 180, spa: 90, spd: 125, spe: 25},
@@ -20445,7 +20431,6 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 	kroniiboros: {
 		num: 23,
 		name: "Kronii-Boros",
-		baseSpecies: "Kronii",
 		types: ["Psychic", "Dragon"],
 		gender: "F",
 		baseStats: {hp: 50, atk: 120, def: 55, spa: 115, spd: 155, spe: 105},
@@ -20487,7 +20472,6 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 	mumeievil: {
 		num: 717,
 		name: "Mumei-Evil",
-		baseSpecies: "Mumei",
 		types: ["Flying", "Dark"],
 		gender: "F",
 		baseStats: {hp: 80, atk: 150, def: 95, spa: 105, spd: 75, spe: 95},
@@ -20500,7 +20484,6 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 	boomei: {
 		num: 778,
 		name: "Boomei",
-		baseSpecies: "Mumei",
 		types: ["Normal", "Ghost"],
 		gender: "F",
 		baseStats: {hp: 80, atk: 115, def: 70, spa: 120, spd: 150, spe: 65},
@@ -20542,7 +20525,6 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 	baerat: {
 		num: 925,
 		name: "Baerat",
-		baseSpecies: "Bae",
 		types: ["Dark"],
 		gender: "F",
 		baseStats: {hp: 66, atk: 130, def: 55, spa: 99, spd: 72, spe: 133},
@@ -20613,7 +20595,6 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 	pebble: {
 		num: 74,
 		name: "Pebble",
-		baseSpecies: "Bijou",
 		types: ["Rock"],
 		gender: "N",
 		baseStats: {hp: 69, atk: 69, def: 169, spa: 69, spd: 169, spe: 10},
