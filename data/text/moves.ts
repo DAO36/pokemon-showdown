@@ -1666,8 +1666,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	dahlah: {
 		name: "Dahlah",
-		desc: "If the target lost HP, the user takes recoil damage equal to 33% the HP lost by the target, rounded half up, but not less than 1 HP.",
-		shortDesc: "Has 33% recoil.",
+		desc: "Has a 10% chance to lower the target's Defense by 1 stage. If the target lost HP, the user takes recoil damage equal to 33% the HP lost by the target, rounded half up, but not less than 1 HP.",
+		shortDesc: "Has 33% recoil. 10% to lower foe's Def by 1",
 	},
 	gorillagrip: {
 		name: "Gorilla Grip",
@@ -1681,8 +1681,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	chaosstrike: {
 		name: "Chaos Strike",
-		desc: "Hits adjacent foes. If the target lost HP, the user takes recoil damage equal to 33% the HP lost by the target, rounded half up, but not less than 1 HP.",
-		shortDesc: "Has 33% recoil. Hits adjacent foes.",
+		desc: "Has a 30% to inflict confusion on the target(s). Hits adjacent foes. If the target lost HP, the user takes recoil damage equal to 33% the HP lost by the target, rounded half up, but not less than 1 HP.",
+		shortDesc: "30% to confuse. 33% recoil. Hits adjacent foes.",
 	},
 	zombiestrike: {
 		name: "Zombie Strike",
@@ -2134,8 +2134,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	sharkattack: {
 		name: "Shark Attack",
-		desc: "Has a 10% chance to raise the user's Speed by 1 stage.",
-		shortDesc: "10% chance to raise user Speed by 1.",
+		desc: "No additional effect.",
+		shortDesc: "No additional effect.",
 	},
 	eternabeam: {
 		name: "Eternabeam",
@@ -2482,8 +2482,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	timetravel: {
 		name: "Time Travel",
-		desc: "Usually goes first. If this move is successful and the user has not fainted, the user switches out even if it is trapped and is replaced immediately by a selected party member. The user does not switch out if there are no unfainted party members, or if the target switched out using an Eject Button or through the effect of the Emergency Exit or Wimp Out Abilities.",
-		shortDesc: "User switches out after damaging the target. Usually goes first.",
+		desc: "Usually goes first. If this move is successful and the user has not fainted, the user switches out even if it is trapped and is replaced immediately by a selected party member. The user does not switch out if there are no unfainted party members, or if the target switched out using an Eject Button or through the effect of the Emergency Exit or Wimp Out Abilities. This attack never misses.",
+		shortDesc: "User switches out after damaging the target. Usually goes first. Never misses.",
 
 		switchOut: "#uturn",
 	},
@@ -2641,8 +2641,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	godeyes: {
 		name: "God Eyes",
-		desc: "Bypasses subs and protection without breaking it. Never Misses. Has a 20% chance to raise the user's Accuracy by 1 stage. This move's type effectiveness against Ghost is changed to be neutrally effective no matter what this move's type is.",
-		shortDesc: "Can hit Ghost types. 20% chance to raise Accuracy by 1. Bypasses subs and protection.",
+		desc: "Bypasses subs and protection without breaking it. Never Misses. Has a 10% chance to raise the user's Accuracy by 1 stage. This move's type effectiveness against Ghost is changed to be neutrally effective no matter what this move's type is.",
+		shortDesc: "Can hit Ghost types. 10% chance to raise Accuracy by 1. Bypasses subs and protection.",
 	},
 	freezeshock: {
 		name: "Freeze Shock",
@@ -3593,8 +3593,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	automotanassault: {
 		name: "Automotan Assault",
-		desc: "No additional effect.",
-		shortDesc: "No additional effect.",
+		desc: "Has a 10% chance to paralyze the target.",
+		shortDesc: "10% to paralyze target.",
 	},
 	songofjustice: {
 		name: "Song of Justice",
@@ -4508,8 +4508,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	aochan: {
 		name: "AO Chan",
-		desc: "Has a 20% chance to raise the user's Special Defense by 1 stage. Never misses.",
-		shortDesc: "20% chance to raise the user's Sp. Def by 1. Never misses.",
+		desc: "This attack never misses.",
+		shortDesc: "Never misses.",
 	},
 	keris: {
 		name: "Keris",
@@ -6923,8 +6923,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	trident: {
 		name: "Trident",
-		desc: "Has a higher chance for a critical hit.",
-		shortDesc: "High critical hit ratio.",
+		desc: "Has a higher chance for a critical hit. This move can hit a target using Bounce, Fly, or Sky Drop, or is under the effect of Sky Drop. If the weather is Primordial Sea or Rain Dance, this move does not check accuracy. If the weather is Desolate Land or Sunny Day, this move's accuracy is 50%. If this move is used against a Pokemon holding Utility Umbrella, this move's accuracy remains at 80%.",
+		shortDesc: "High critical hit ratio. Does not miss in Rain",
 	},
 	storedpower: {
 		name: "Stored Power",

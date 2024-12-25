@@ -1435,7 +1435,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	},
 	tonjok: {
 		num: 370,
-		accuracy: 95,
+		accuracy: 100,
 		basePower: 50,
 		category: "Physical",
 		name: "Tonjok",
@@ -1535,7 +1535,12 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		priority: 0,
 		flags: {contact: 1, protect: 1, mirror: 1, slicing: 1},
 		recoil: [33, 100],
-		secondary: null,
+		secondary: {
+			chance: 10,
+			boosts: {
+				def: -1,
+			},
+		},
 		target: "normal",
 		type: "Steel",
 		contestType: "Tough",
@@ -1559,13 +1564,25 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	},
 	trident: {
 		num: 370,
-		accuracy: 85,
-		basePower: 120,
+		accuracy: 80,
+		basePower: 110,
 		category: "Physical",
 		name: "Trident",
 		pp: 5,
 		priority: 0,
 		flags: {protect: 1, mirror: 1, slicing: 1},
+		onModifyMove(move, pokemon, target) {
+			switch (target?.effectiveWeather()) {
+			case 'raindance':
+			case 'primordialsea':
+				move.accuracy = true;
+				break;
+			case 'sunnyday':
+			case 'desolateland':
+				move.accuracy = 50;
+				break;
+			}
+		},
 		critRatio: 2,
 		secondary: null,
 		target: "normal",
@@ -1581,14 +1598,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		pp: 10,
 		priority: 0,
 		flags: {contact: 1, protect: 1, mirror: 1, metronome: 1, bite: 1},
-		secondary: {
-			chance: 10,
-			self: {
-				boosts: {
-					spe: 1,
-				},
-			},
-		},
+		secondary: null,
 		target: "normal",
 		type: "Water",
 		contestType: "Tough",
@@ -1633,7 +1643,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	},
 	timetravel: {
 		num: 370,
-		accuracy: 100,
+		accuracy: true,
 		basePower: 40,
 		category: "Physical",
 		name: "Time Travel",
@@ -1666,7 +1676,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	scythe: {
 		num: 370,
 		accuracy: true,
-		basePower: 90,
+		basePower: 80,
 		category: "Physical",
 		name: "Scythe",
 		pp: 10,
@@ -1681,7 +1691,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	grimrapper: {
 		num: 370,
 		accuracy: 100,
-		basePower: 90,
+		basePower: 80,
 		category: "Special",
 		name: "Grim Rapper",
 		pp: 10,
@@ -1725,7 +1735,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		},
 		secondary: null,
 		target: "self",
-		type: "Normal",
+		type: "Psychic",
 		contestType: "Clever",
 	},
 	tentaclesstrike: {
@@ -1752,14 +1762,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		pp: 10,
 		priority: 0,
 		flags: {protect: 1, mirror: 1, metronome: 1},
-		secondary: {
-			chance: 20,
-			self: {
-				boosts: {
-					spd: 1,
-				},
-			},
-		},
+		secondary: null,
 		target: "normal",
 		type: "Psychic",
 		contestType: "Cool",
@@ -1909,8 +1912,8 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		basePower: 40,
 		category: "Special",
 		name: "Wormhole",
-		pp: 30,
-		priority: 1,
+		pp: 25,
+		priority: 2,
 		flags: {protect: 1, mirror: 1, distance: 1},
 		secondary: null,
 		target: "any",
@@ -1996,7 +1999,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	timetogo: {
 		num: 370,
 		accuracy: 100,
-		basePower: 55,
+		basePower: 50,
 		category: "Physical",
 		name: "Time to Go",
 		pp: 10,
@@ -2037,7 +2040,10 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		priority: 0,
 		flags: {contact: 1, protect: 1, mirror: 1, metronome: 1},
 		recoil: [33, 100],
-		secondary: null,
+		secondary: {
+			chance: 30,
+			volatileStatus: 'confusion',
+		},
 		target: "normal",
 		type: "Dark",
 		contestType: "Tough",
@@ -2089,7 +2095,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	underworldmusic: {
 		num: 370,
 		accuracy: 100,
-		basePower: 85,
+		basePower: 80,
 		category: "Special",
 		name: "Underworld Music",
 		pp: 10,
@@ -2137,7 +2143,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	baubau: {
 		num: 783,
 		accuracy: 100,
-		basePower: 40,
+		basePower: 50,
 		category: "Physical",
 		name: "Bau Bau",
 		pp: 10,
@@ -2216,13 +2222,16 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	automotanassault: {
 		num: 895,
 		accuracy: 100,
-		basePower: 85,
+		basePower: 80,
 		category: "Physical",
 		name: "Automotan Assault",
 		pp: 15,
 		priority: 0,
 		flags: {protect: 1, mirror: 1, contact: 1, slicing: 1},
-		secondary: null,
+		secondary: {
+			chance: 10,
+			status: 'par',
+		},
 		target: "normal",
 		type: "Steel",
 		contestType: "Cool",
@@ -2262,7 +2271,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		},
 		tracksTarget: true,
 		secondary: {
-			chance: 20,
+			chance: 10,
 			self: {
 				boosts: {
 					accuracy: 1,

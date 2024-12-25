@@ -1022,7 +1022,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 4,
 		num: 18,
 	},
-	neverlosehope: {
+	yabairys: {
 		onDamage(damage, target, source, effect) {
 			if (
 				effect.effectType === "Move" &&
@@ -1054,7 +1054,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			}
 		},
 		flags: {},
-		name: "Never Lose Hope",
+		name: "YabaIRyS",
 		rating: 3,
 		num: 271,
 	},

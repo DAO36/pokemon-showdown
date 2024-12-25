@@ -20305,7 +20305,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		types: ["Fairy", "Dark"],
 		gender: "F",
 		baseStats: {hp: 80, atk: 120, def: 80, spa: 120, spd: 130, spe: 70},
-		abilities: {0: "Defiant", 1: "Competitive", H: "Levitate", S: "Never Lose Hope"},
+		abilities: {0: "Defiant", 1: "Competitive", H: "Levitate", S: "YabaIRyS"},
 		heightm: 1.66,
 		weightkg: 55.5,
 		color: "Purple",
