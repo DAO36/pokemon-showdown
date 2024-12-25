@@ -19355,7 +19355,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		eggGroups: ["Dragon", "Monster"],
 	},
 	kanata: {
-		num: 467,
+		num: 176,
 		name: "Kanata",
 		types: ["Fairy", "Flying"],
 		gender: "F",
