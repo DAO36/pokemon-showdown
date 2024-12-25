@@ -20554,7 +20554,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 	},
 	shiori: {
 		num: 575,
-		name: "Shiori Novella",
+		name: "Shiori",
 		types: ["Dark", "Psychic"],
 		gender: "F",
 		baseStats: {hp: 90, atk: 120, def: 80, spa: 125, spd: 110, spe: 75},
