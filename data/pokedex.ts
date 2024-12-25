@@ -19875,7 +19875,6 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 	risusaurus: {
 		num: 820,
 		name: "Risusaurus",
-		baseSpecies: "Risu",
 		types: ["Dragon"],
 		gender: "F",
 		baseStats: {hp: 120, atk: 155, def: 115, spa: 145, spd: 90, spe: 80},
