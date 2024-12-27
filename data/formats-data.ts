@@ -6482,6 +6482,11 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
         doublesTier: "(DUU)",
         natDexTier: "OU",	
 	},
+	lamball: {
+        tier: "RU",
+        doublesTier: "(DUU)",
+        natDexTier: "RU",	
+	},
 	missingno: {
 		isNonstandard: "Custom",
 		tier: "Illegal",

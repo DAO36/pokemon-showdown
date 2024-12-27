@@ -20836,6 +20836,17 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		eggGroups: ["Human-Like", "Field"],
 		requiredItem: "Raorite",
 	},
+	lamball: {
+		num: 831,
+		name: "Lamball",
+		types: ["Normal"],
+		baseStats: {hp: 66, atk: 90, def: 99, spa: 50, spd: 84, spe: 101},
+		abilities: {0: "Fluffy", 1: "Run Away", H: "Bulletproof"},
+		heightm: 0.6,
+		weightkg: 6,
+		color: "White",
+		eggGroups: ["Field"],
+	},
 	syclar: {
 		num: -1,
 		name: "Syclar",
