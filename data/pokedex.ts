@@ -4278,7 +4278,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		name: "Scizor",
 		types: ["Bug", "Steel"],
 		baseStats: {hp: 70, atk: 130, def: 100, spa: 55, spd: 80, spe: 65},
-		abilities: {0: "Tough Ckaws", 1: "Technician", H: "Speed Boost"},
+		abilities: {0: "Tough Claws", 1: "Technician", H: "Speed Boost"},
 		heightm: 1.8,
 		weightkg: 118,
 		color: "Red",

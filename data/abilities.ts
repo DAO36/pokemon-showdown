@@ -67,12 +67,12 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	nouturn: {
 		onFoeTryMove(target, source, move) {
 			const targetAllExceptions = ['revivalblessing', 'necromancy'];
-			if (move.target === 'foeSide' || (move.target === 'all' && !targetAllExceptions.includes(move.id))) {
+			if (move.target === 'foeSide' || (move.target === 'all' || move.target === 'self' && !targetAllExceptions.includes(move.id))) {
 				return;
 			}
 
 			const nouturnHolder = this.effectState.target;
-			if ((source.isAlly(nouturnHolder) || move.target === 'all') && move.flags['switches']) {
+			if ((source.isAlly(nouturnHolder) || move.target === 'any' || move.target === 'self') && move.flags['switches']) {
 				this.attrLastMove('[still]');
 				this.add('cant', nouturnHolder, 'ability: No U-Turn', move, '[of] ' + target);
 				return false;
