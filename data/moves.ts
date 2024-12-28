@@ -769,7 +769,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		accuracy: 90,
 		basePower: 120,
 		category: "Physical",
-		name: "Peko Peko",
+		name: "Pain Peko",
 		pp: 5,
 		priority: 0,
 		flags: {contact: 1, protect: 1, mirror: 1, metronome: 1},
