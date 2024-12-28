@@ -95,6 +95,11 @@ export const Tags: {[id: IDEntry]: TagData} = {
 		desc: "Boosted 1.5x by Strong Jaw.",
 		moveFilter: move => 'bite' in move.flags,
 	},
+	switches: {
+		name: "Switches",
+		desc: "Doesn't affect No U-turn Pokemon.",
+		moveFilter: move => 'switches' in move.flags,
+	},
 	ballistic: {
 		name: "Ballistic",
 		desc: "Doesn't affect Bulletproof Pokémon.",
