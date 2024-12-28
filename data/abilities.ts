@@ -52,6 +52,37 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 5,
 		num: 24,
 	},
+	nouturn2: {
+		onTryHit(pokemon, target, move) {
+			if (move.flags['switches']) {
+				this.add('-immune', pokemon, '[from] ability: No U-Turn2');
+				return null;
+			}
+		},
+		flags: {breakable: 1},
+		name: "No U-Turn2",
+		rating: 3,
+		num: 171,
+	},
+	nouturn: {
+		onFoeTryMove(target, source, move) {
+			const targetAllExceptions = ['revivalblessing', 'necromancy'];
+			if (move.target === 'foeSide' || (move.target === 'all' && !targetAllExceptions.includes(move.id))) {
+				return;
+			}
+
+			const nouturnHolder = this.effectState.target;
+			if ((source.isAlly(nouturnHolder) || move.target === 'all') && move.flags['switches']) {
+				this.attrLastMove('[still]');
+				this.add('cant', nouturnHolder, 'ability: No U-Turn', move, '[of] ' + target);
+				return false;
+			}
+		},
+		flags: {breakable: 1},
+		name: "No U-Turn",
+		rating: 2.5,
+		num: 219,
+	},
 	purepower: {
 		onModifySpAPriority: 5,
 		onModifyAtk(spa) {

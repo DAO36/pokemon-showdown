@@ -569,7 +569,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		name: "Nursing",
 		pp: 5,
 		priority: 0,
-		flags: {snatch: 1, heal: 1, metronome: 1},
+		flags: {snatch: 1, heal: 1, metronome: 1, switches: 1},
 		slotCondition: 'Wish',
 		condition: {
 			onStart(pokemon, source) {
@@ -1081,7 +1081,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		name: "PoLMAO",
 		pp: 10,
 		priority: 0,
-		flags: {contact: 1, protect: 1, mirror: 1, dance: 1},
+		flags: {contact: 1, protect: 1, mirror: 1, dance: 1, switches: 1},
 		selfSwitch: true,
 		secondary: null,
 		target: "normal",
@@ -1294,7 +1294,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		name: "Clean Up",
 		pp: 10,
 		priority: 0,
-		flags: {contact: 1, protect: 1, mirror: 1, metronome: 1},
+		flags: {contact: 1, protect: 1, mirror: 1, metronome: 1, switches: 1},
 		onAfterHit(target, pokemon, move) {
 			if (!move.hasSheerForce) {
 				if (pokemon.hp && pokemon.removeVolatile('leechseed')) {
@@ -1512,7 +1512,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		name: "No Pressure",
 		pp: 10,
 		priority: 0,
-		flags: {protect: 1, reflectable: 1, mirror: 1, sound: 1, bypasssub: 1},
+		flags: {protect: 1, reflectable: 1, mirror: 1, sound: 1, bypasssub: 1, switches: 1},
 		onHit(target, source, move) {
 			const success = this.boost({def: -1, spd: -1}, target, source);
 			if (!success && !target.hasAbility('mirrorarmor')) {
@@ -1553,7 +1553,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		name: "Rain Shaman",
 		pp: 10,
 		priority: 0,
-		flags: {},
+		flags: {switches: 1},
 		// TODO show prepare message before the "POKEMON used MOVE!" message
 		// This happens even before sleep shows its "POKEMON is fast asleep." message
 		weather: 'RainDance',
@@ -1649,7 +1649,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		name: "Time Travel",
 		pp: 15,
 		priority: 1,
-		flags: {contact: 1, protect: 1, mirror: 1, metronome: 1},
+		flags: {contact: 1, protect: 1, mirror: 1, metronome: 1, switches: 1},
 		selfSwitch: true,
 		secondary: null,
 		target: "normal",
@@ -2004,7 +2004,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		name: "Time to Go",
 		pp: 10,
 		priority: 2,
-		flags: {protect: 1, mirror: 1, distance: 1},
+		flags: {protect: 1, mirror: 1, distance: 1, switches: 1},
 		selfSwitch: true,
 		secondary: null,
 		target: "any",
@@ -3394,7 +3394,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		name: "Baton Pass",
 		pp: 40,
 		priority: 0,
-		flags: {metronome: 1},
+		flags: {metronome: 1, switches: 1},
 		onHit(target) {
 			if (!this.canSwitch(target.side) || target.volatiles['commanded']) {
 				this.attrLastMove('[still]');
@@ -4740,7 +4740,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		name: "Chilly Reception",
 		pp: 10,
 		priority: 0,
-		flags: {},
+		flags: {switches: 1},
 		// TODO show prepare message before the "POKEMON used MOVE!" message
 		// This happens even before sleep shows its "POKEMON is fast asleep." message
 		weather: 'snow',
@@ -8252,7 +8252,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		name: "Flip Turn",
 		pp: 20,
 		priority: 0,
-		flags: {contact: 1, protect: 1, mirror: 1, metronome: 1},
+		flags: {contact: 1, protect: 1, mirror: 1, metronome: 1, switches: 1},
 		selfSwitch: true,
 		secondary: null,
 		target: "normal",
@@ -15875,7 +15875,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		name: "Parting Shot",
 		pp: 20,
 		priority: 0,
-		flags: {protect: 1, reflectable: 1, mirror: 1, sound: 1, bypasssub: 1, metronome: 1},
+		flags: {protect: 1, reflectable: 1, mirror: 1, sound: 1, bypasssub: 1, metronome: 1, switches: 1},
 		onHit(target, source, move) {
 			const success = this.boost({atk: -1, spa: -1}, target, source);
 			if (!success && !target.hasAbility('mirrorarmor')) {
@@ -19015,7 +19015,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		name: "Shed Tail",
 		pp: 10,
 		priority: 0,
-		flags: {},
+		flags: {switches: 1},
 		volatileStatus: 'substitute',
 		onTryHit(source) {
 			if (!this.canSwitch(source.side) || source.volatiles['commanded']) {
@@ -22207,7 +22207,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		name: "Teleport",
 		pp: 20,
 		priority: -6,
-		flags: {metronome: 1},
+		flags: {metronome: 1, switches: 1},
 		onTry(source) {
 			return !!this.canSwitch(source.side);
 		},
@@ -23270,7 +23270,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		name: "U-turn",
 		pp: 20,
 		priority: 0,
-		flags: {contact: 1, protect: 1, mirror: 1, metronome: 1},
+		flags: {contact: 1, protect: 1, mirror: 1, metronome: 1, switches: 1},
 		selfSwitch: true,
 		secondary: null,
 		target: "normal",
@@ -23526,7 +23526,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		name: "Volt Switch",
 		pp: 20,
 		priority: 0,
-		flags: {protect: 1, mirror: 1, metronome: 1},
+		flags: {protect: 1, mirror: 1, metronome: 1, switches: 1},
 		selfSwitch: true,
 		secondary: null,
 		target: "normal",
