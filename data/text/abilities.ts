@@ -2402,7 +2402,7 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 			desc: "This Pokemon skips every other turn instead of using a move. If this Pokemon replaces a Pokemon that fainted during end-of-turn effects, its first turn will be skipped.",
 		},
 
-		cant: "[POKEMON] is loafing around!",
+		cant: "[POKEMON] is too lazy! Zzz...",
 	},
 	turboblaze: {
 		name: "Turboblaze",

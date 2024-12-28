@@ -1,7 +1,7 @@
 export const DefaultText: {[id: IDEntry]: DefaultText} = {
 	default: {
 		startBattle: "Battle started between [TRAINER] vs [TRAINER]!",
-		winBattle: "**[TRAINER]** won the battle gg ez!",
+		winBattle: "**[TRAINER]** won the battle!",
 		tieBattle: "Tie between [TRAINER] and [TRAINER]!",
 
 		pokemon: "[NICKNAME]",
@@ -17,7 +17,7 @@ export const DefaultText: {[id: IDEntry]: DefaultText} = {
 		switchOut: "[TRAINER] withdrew [NICKNAME]!",
 		switchOutOwn: "[NICKNAME], come back!",
 		drag: "[FULLNAME] was dragged out!",
-		faint: "[POKEMON] died!",
+		faint: "[POKEMON] has fainted!",
 		swap: "[POKEMON] and [TARGET] switched places!",
 		swapCenter: "[POKEMON] moved to the center!",
 
