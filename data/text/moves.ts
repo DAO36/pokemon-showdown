@@ -306,7 +306,7 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		startFromItem: "  [POKEMON] fell in love because of the [ITEM]!",
 		end: "  [POKEMON] got over its infatuation!",
 		endFromItem: "  [POKEMON] cured its infatuation using its [ITEM]!",
-		activate: "  [POKEMON] is in love with [TARGET]!",
+		activate: "  [POKEMON] is gay for [TARGET]!",
 		cant: "[POKEMON] is immobilized by love!",
 	},
 	aurasphere: {
@@ -6171,7 +6171,7 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		},
 
 		activate: "  It broke through [TARGET]'s protection!",
-		prepare: "[POKEMON] vanished instantly!",
+		prepare: "[POKEMON] dissapeared into think air!",
 	},
 	shadowpunch: {
 		name: "Shadow Punch",
@@ -7206,10 +7206,12 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		desc: "Raises the user's Attack by 2 stages.",
 		shortDesc: "Raises the user's Attack by 2.",
 	},
-	deadlyenvy: {
-		name: "Deadly Envy",
-		desc: "Raises the user's Attack by 2 stages.",
-		shortDesc: "Raises the user's Attack by 2.",
+	yanderestrike: {
+		name: "Yandere Strike",
+		desc: "If an opposing Pokemon switches out this turn, this move hits that Pokemon before it leaves the field, even if it was not the original target. If the user moves after an opponent using Flip Turn, Parting Shot, Teleport, U-turn, or Volt Switch, but not Baton Pass, it will hit that opponent before it leaves the field. Power doubles and no accuracy check is done if the user hits an opponent switching out, and the user's turn is over; if an opponent faints from this, the replacement Pokemon does not become active until the end of the turn.",
+		shortDesc: "If a foe is switching out, hits it at 2x power.",
+
+		activate: "  ([TARGET] is trying to escape...)",
 	},
 	hopesoda: {
 		name: "Hope Soda",
