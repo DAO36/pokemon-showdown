@@ -97296,6 +97296,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 	kroniiboros: {
 		learnset: {
 			coil: ["9M"],
+			psychoshift: ["9M"],
 			storedpower: ["9M"],
 			psychicfangs: ["9M"],
 			psychic: ["9M"],
