@@ -20,11 +20,11 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	},
 	idolsong: {
 		num: 370,
-		accuracy: 100,
-		basePower: 90,
+		accuracy: 95,
+		basePower: 100,
 		category: "Special",
 		name: "Idol Song",
-		pp: 10,
+		pp: 5,
 		priority: 0,
 		flags: {protect: 1, mirror: 1, sound: 1, bypasssub: 1, metronome: 1},
 		secondary: null,
@@ -42,7 +42,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		priority: 0,
 		flags: {protect: 1, mirror: 1, contact: 1},
 		secondary: {
-			chance: 20,
+			chance: 10,
 			self: {
 				boosts: {
 					atk: 1,
@@ -87,15 +87,19 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	},
 	lavabucket: {
 		num: 370,
-		accuracy: 80,
+		accuracy: 90,
 		basePower: 120,
 		category: "Special",
 		name: "Lava Bucket",
 		pp: 5,
 		priority: 0,
 		flags: {protect: 1, mirror: 1, metronome: 1},
+		recoil: [33, 100],
 		secondary: {
-			chance: 30,
+			chance: 100,
+			status: 'brn',
+		},
+		self: {
 			status: 'brn',
 		},
 		target: "allAdjacentFoes",
@@ -142,12 +146,13 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	cometslam: {
 		num: 370,
 		accuracy: 95,
-		basePower: 100,
+		basePower: 120,
 		category: "Physical",
 		name: "Comet Slam",
 		pp: 10,
 		priority: 0,
 		flags: {protect: 1, mirror: 1, gravity: 1},
+		recoil: [33, 100],
 		secondary: {
 			chance: 10,
 			status: 'frz',
@@ -172,7 +177,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	laserbeam: {
 		num: 370,
 		accuracy: 90,
-		basePower: 110,
+		basePower: 120,
 		category: "Special",
 		name: "Laser Beam",
 		pp: 5,
@@ -2713,7 +2718,6 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		accuracy: 100,
 		basePower: 80,
 		category: "Physical",
-		isNonstandard: "Past",
 		name: "Anchor Shot",
 		pp: 20,
 		priority: 0,
@@ -17035,7 +17039,6 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		accuracy: 100,
 		basePower: 0,
 		category: "Status",
-		isNonstandard: "Past",
 		name: "Psycho Shift",
 		pp: 10,
 		priority: 0,

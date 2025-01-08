@@ -957,6 +957,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		name: "Upgrade PC",
 		desc: "Raises the user's Special Attack and Defense by 1 stage.",
 		shortDesc: "Raises the user's Sp. Atk and Def by 1.",
+
+		start: "  [SOURCE] is now high specs robot!",
 	},
 	camouflage: {
 		name: "Camouflage",
@@ -3620,6 +3622,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		name: "Idol Song",
 		desc: "Hits adjacent foes. No additional effect.",
 		shortDesc: "No additional effect. Hits adjacent foes.",
+
+		start: "  [SOURCE] gives an idol performance!",
 	},
 	divasong: {
 		name: "Diva Song",
@@ -4533,8 +4537,10 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	ankimoattack: {
 		name: "Ankimo Attack",
-		desc: "Has a 20% chance to raise the user's Attack by 1 stage.",
-		shortDesc: "20% chance to raise the user's Attack by 1.",
+		desc: "Has a 10% chance to raise the user's Attack by 1 stage.",
+		shortDesc: "10% chance to raise the user's Attack by 1.",
+
+		start: "  Ankimo assists in the attack!",
 	},
 	metronome: {
 		name: "Metronome",
@@ -5956,8 +5962,10 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	lavabucket: {
 		name: "Lava Bucket",
-		desc: "Has a 25% chance to burn the target. Hits adjacent foes.",
-		shortDesc: "25% chance to burn the target. Hits adjacent foes.",
+		desc: "Has a 100% chance to burn the target. Hits adjacent foes. User gets burned and if the target lost HP, the user takes recoil damage equal to 33% the HP lost by the target, rounded half up, but not less than 1 HP.",
+		shortDesc: "100% chance to burn the target. Hits adjacent foes. User gets burned and gets 33% recoil damage.",
+
+		start: "  [SOURCE] dropped lava everywhere! Atsui!",
 	},
 	sacredsword: {
 		name: "Sacred Sword",
@@ -7344,6 +7352,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		name: "TSKR",
 		desc: "The user cures its non-volatile status condition. Raises the user's Special Attack by 2 stages.",
 		shortDesc: "Cures user's status, raises Sp. Atk by 2.",
+
+		activate: "  [SOURCE] cured her party of any statuses!",
 	},
 	tarshot: {
 		name: "Tar Shot",
@@ -8140,6 +8150,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		name: "Elite Miko",
 		desc: "Raises the user's Attack by 2 stages.",
 		shortDesc: "Raises the user's Attack by 2.",
+
+		start: "  [SOURCE] becomes elite!",
 	},
 	worryseed: {
 		name: "Worry Seed",
