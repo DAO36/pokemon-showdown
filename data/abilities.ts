@@ -93,7 +93,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 5,
 		num: 74,
 	},
-	seiso: {
+	seiso: { // reskin of Clear Body
 		onTryBoost(boost, target, source, effect) {
 			if (source && target === source) return;
 			let showMsg = false;
@@ -113,7 +113,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 2,
 		num: 29,
 	},
-	elite: {
+	elite: { // reskin of Thermal Exchange, but SpA instead of Atk
 		onDamagingHit(damage, target, source, move) {
 			if (move.type === 'Fire') {
 				this.boost({spa: 1});
@@ -137,7 +137,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 2.5,
 		num: 270,
 	},
-	stellar: {
+	stellar: { // reskin of Mirror Armour
 		onTryBoost(boost, target, source, effect) {
 			// Don't bounce self stat changes, or boosts that have already bounced
 			if (!source || target === source || !boost || effect.name === 'Stellar') return;
@@ -160,7 +160,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 2,
 		num: 240,
 	},
-	highspecsrobot: {
+	highspecsrobot: { // reskin of Surge Surfer
 		onModifySpe(spe) {
 			if (this.field.isTerrain('electricterrain')) {
 				return this.chainModify(2);
@@ -171,7 +171,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3,
 		num: 207,
 	},
-	diva: {
+	diva: { // combines Soundproof with Punk Rock
 		onBasePowerPriority: 7,
 		onBasePower(basePower, attacker, defender, move) {
 			if (move.flags['sound']) {
@@ -195,7 +195,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 4,
 		num: 29,
 	},
-	fbking: {
+	fbking: { // reskin of Moxie
 		onSourceAfterFaint(length, target, source, effect) {
 			if (effect && effect.effectType === 'Move') {
 				this.boost({atk: length}, source);
@@ -218,7 +218,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 5,
 		num: 24,
 	},
-	iamgod: {
+	iamgod: { // reskin of Anger Shell
 		onDamage(damage, target, source, effect) {
 			if (
 				effect.effectType === "Move" &&
@@ -254,7 +254,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3,
 		num: 271,
 	},
-	haachamacooking: {
+	haachamacooking: { // reskin of Cheek Pouch
 		onEatItem(item, pokemon) {
 			this.heal(pokemon.baseMaxhp / 3);
 		},
@@ -263,7 +263,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 2,
 		num: 167,
 	},
-	splitpersonalities: {
+	splitpersonalities: { // reskin of Hunger Switch
 		onResidualOrder: 29,
 		onResidual(pokemon) {
 			if (pokemon.species.baseSpecies !== 'Akai' || pokemon.terastallized) return;
@@ -275,7 +275,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 2,
 		num: 258,
 	},
-	alteregos: {
+	alteregos: { // reskin of Stance Change
 		onModifyMovePriority: 1,
 		onModifyMove(move, attacker, defender) {
 			if (attacker.species.baseSpecies !== 'AkaiHaato' || attacker.transformed) return;
@@ -288,7 +288,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 4,
 		num: 176,
 	},
-	vampire: {
+	vampire: { // reskin of Water Absorb
 		onTryHit(target, source, move) {
 			if (target !== source && move.type === 'Water') {
 				if (!this.heal(target.baseMaxhp / 4)) {
@@ -302,7 +302,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3.5,
 		num: 11,
 	},
-	elvishdancing: {
+	elvishdancing: { // reskin of Synchronize
 		onAfterSetStatus(status, target, source, effect) {
 			if (!source || source === target) return;
 			if (effect && effect.id === 'toxicspikes') return;
@@ -317,7 +317,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 2,
 		num: 28,
 	},
-	apex: {
+	apex: { // reskin of Berserk
 		onDamage(damage, target, source, effect) {
 			if (
 				effect.effectType === "Move" &&
@@ -353,7 +353,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 2,
 		num: 201,
 	},
-	oni: {
+	oni: { // reskin of Rocky Payload but for Fire
 		onModifyAtkPriority: 5,
 		onModifyAtk(atk, attacker, defender, move) {
 			if (move.type === 'Fire') {
@@ -373,7 +373,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3.5,
 		num: 276,
 	},
-	nursery: {
+	nursery: { // reskin of Regenerator
 		onSwitchOut(pokemon) {
 			pokemon.heal(pokemon.baseMaxhp / 3);
 		},
@@ -382,7 +382,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 4.5,
 		num: 144,
 	},
-	witchcraft: {
+	witchcraft: { // reskin of Surge Surfer but for Psychic Terrain
 		onModifySpePriority: 6,
 		onModifySpe(pokemon) {
 			if (this.field.isTerrain('psychicterrain')) return this.chainModify(1.5);
@@ -392,7 +392,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 1.5,
 		num: 179,
 	},
-	shubashuba: {
+	shubashuba: { // reskin of Rocky Payload but for Water
 		onModifyAtkPriority: 5,
 		onModifyAtk(atk, attacker, defender, move) {
 			if (move.type === 'Water') {
@@ -412,7 +412,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3.5,
 		num: 276,
 	},
-	doog: {
+	doog: { // reskin of Berserk but for Atk instead of SpA
 		onDamage(damage, target, source, effect) {
 			if (
 				effect.effectType === "Move" &&
@@ -448,7 +448,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3,
 		num: 201,
 	},
-	mogumogu: {
+	mogumogu: { // reskin of Water Absorb but for Grass
 		onTryHit(target, source, move) {
 			if (target !== source && move.type === 'Grass') {
 				if (!this.heal(target.baseMaxhp / 4, target, target)) {
@@ -462,7 +462,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 2.5,
 		num: 11,
 	},
-	miomama: {
+	miomama: { // reskin of Scrappy but for Psychic => Dark instead of Normal/Fighting => Ghost
 		onModifyMovePriority: -5,
 		onModifyMove(move) {
 			if (!move.ignoreImmunity) move.ignoreImmunity = {};
@@ -481,7 +481,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 5,
 		num: 113,
 	},
-	warcriminal: {
+	warcriminal: { // reskin of Emergency Exit/Wimp Out
 		onEmergencyExit(target) {
 			if (!this.canSwitch(target.side) || target.forceSwitchFlag || target.switchFlag) return;
 			for (const side of this.sides) {
@@ -497,7 +497,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 1.5,
 		num: 194,
 	},
-	muscleknight: {
+	muscleknight: { // reskin of Iron Fist
 		onBasePowerPriority: 23,
 		onBasePower(basePower, attacker, defender, move) {
 			if (move.flags['punch']) {
@@ -510,7 +510,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3,
 		num: 89,
 	},
-	yandere: {
+	yandere: { // reskin of Intimidate but for Speed instead of Attack
 		onStart(pokemon) {
 			let activated = false;
 			for (const target of pokemon.adjacentFoes()) {
@@ -530,7 +530,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 4,
 		num: 22,
 	},
-	elvishflare: {
+	elvishflare: { // reskin of Rocky Payload but for Fire
 		onModifyAtkPriority: 5,
 		onModifyAtk(atk, attacker, defender, move) {
 			if (move.type === 'Fire') {
@@ -550,7 +550,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3.5,
 		num: 276,
 	},
-	piracy: {
+	piracy: { // reskin of Oppurtunist
 		onFoeAfterBoost(boost, target, source, effect) {
 			if (effect?.name === 'Piracy' || effect?.name === 'Mirror Herb') return;
 			const pokemon = this.effectState.target;
@@ -569,7 +569,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3,
 		num: 290,
 	},
-	highonasacoco: {
+	highonasacoco: { // reskin of Poison Heal
 		onDamagePriority: 1,
 		onDamage(damage, target, source, effect) {
 			if (effect.id === 'psn' || effect.id === 'tox') {
@@ -582,7 +582,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 4,
 		num: 90,
 	},
-	pptgrip: {
+	pptgrip: { // reskin of Tough Claws
 		onBasePowerPriority: 21,
 		onBasePower(basePower, attacker, defender, move) {
 			if (move.flags['contact']) {
@@ -594,7 +594,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3.5,
 		num: 181,
 	},
-	watamelon: {
+	watamelon: { // reskin of Overcoat
 		onImmunity(type, pokemon) {
 			if (type === 'sandstorm' || type === 'hail' || type === 'powder') return false;
 		},
@@ -610,7 +610,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 2,
 		num: 142,
 	},
-	sugarrush: {
+	sugarrush: { // reskin of Surge Surfer but for Fairy Terrain
 		onModifySpe(spe) {
 			if (this.field.isTerrain('mistyterrain')) {
 				return this.chainModify(2);
@@ -621,7 +621,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3,
 		num: 207,
 	},
-	devildiva: {
+	devildiva: { // reskin of Moxie
 		onSourceAfterFaint(length, target, source, effect) {
 			if (effect && effect.effectType === 'Move') {
 				this.boost({atk: length}, source);
@@ -632,7 +632,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3,
 		num: 153,
 	},
-	thelegendofpolka: {
+	thelegendofpolka: { // reskin of Shield Dust
 		onModifySecondaries(secondaries) {
 			this.debug('Shield Dust prevent secondary');
 			return secondaries.filter(effect => !!(effect.self || effect.dustproof));
@@ -642,7 +642,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 2,
 		num: 19,
 	},
-	botanx: {
+	botanx: { // reskin of Compound Eyes
 		onSourceModifyAccuracyPriority: -1,
 		onSourceModifyAccuracy(accuracy) {
 			if (typeof accuracy !== 'number') return;
@@ -654,7 +654,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3,
 		num: 14,
 	},
-	frozensake: {
+	frozensake: { // reskin of Static but for Freeze instead of Paralyze
 		onDamagingHit(damage, target, source, move) {
 			if (this.checkMoveMakesContact(move, source, target)) {
 				if (this.randomChance(2, 10)) {
@@ -667,7 +667,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 4,
 		num: 49,
 	},
-	supernenechi: {
+	supernenechi: { // reskin of Beast Boost
 		onSourceAfterFaint(length, target, source, effect) {
 			if (effect && effect.effectType === 'Move') {
 				const bestStat = source.getBestStat(true, true);
@@ -679,7 +679,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3.5,
 		num: 224,
 	},
-	succubus: {
+	succubus: { // reskin of Intimimidate but for Special Attack instead of Physical Attack
 		onStart(pokemon) {
 			let activated = false;
 			for (const target of pokemon.adjacentFoes()) {
@@ -699,7 +699,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 4,
 		num: 22,
 	},
-	samurai: {
+	samurai: { // reskin of Moxie
 		onSourceAfterFaint(length, target, source, effect) {
 			if (effect && effect.effectType === 'Move') {
 				this.boost({atk: length}, source);
@@ -710,7 +710,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3,
 		num: 153,
 	},
-	madscience: {
+	madscience: { // reskin of Surge Surfer but for Psychic Terrain and Special Defense instead of Speed
 		onModifySpDPriority: 6,
 		onModifySpD(pokemon) {
 			if (this.field.isTerrain('psychicterrain')) return this.chainModify(1.5);
@@ -720,7 +720,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 1.5,
 		num: 179,
 	},
-	cleaner: {
+	cleaner: { // reskin of Neutralizing Gas
 		// Ability suppression implemented in sim/pokemon.ts:Pokemon#ignoringAbility
 		onPreStart(pokemon) {
 			this.add('-ability', pokemon, 'Cleaner');
@@ -784,7 +784,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3.5,
 		num: 256,
 	},
-	yamada: {
+	yamada: { // reskin of Mirror Armour
 		onTryBoost(boost, target, source, effect) {
 			// Don't bounce self stat changes, or boosts that have already bounced
 			if (!source || target === source || !boost || effect.name === 'Yamada') return;
@@ -807,7 +807,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 2,
 		num: 240,
 	},
-	thexo: {
+	thexo: { // reskin of Gale Wings pre-nerf, but for Flying type Status moves only
 		onModifyPriority(priority, pokemon, target, move) {
 			if (move.type === 'Flying' && move.category === 'Status') return priority + 1;
 		},
@@ -816,7 +816,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 4.5,
 		num: 177,
 	},
-	moongoddess: {
+	moongoddess: { // reskin of Soul-Heart
 		onAnyFaintPriority: 1,
 		onAnyFaint() {
 			this.boost({spa: 1}, this.effectState.target);
@@ -826,7 +826,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3.5,
 		num: 220,
 	},
-	erofi: {
+	erofi: { // reskin of Sap Sipper but for Dark type immunity instead of Grass
 		onTryHitPriority: 1,
 		onTryHit(target, source, move) {
 			if (target !== source && move.type === 'Dark') {
@@ -847,7 +847,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 5,
 		num: 157,
 	},
-	nnn: {
+	nnn: { // reskin of Seed Sower
 		onDamagingHit(damage, target, source, move) {
 			this.field.setTerrain('grassyterrain');
 		},
@@ -856,7 +856,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 2.5,
 		num: 269,
 	},
-	zombie: {
+	zombie: { // reskin of Weak Armour
 		onDamagingHit(damage, target, source, move) {
 			if (move.category === 'Physical') {
 				this.boost({def: -1, spe: 2}, target, target);
@@ -867,7 +867,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 2,
 		num: 133,
 	},
-	tonjokqueen: {
+	tonjokqueen: { // grants immunity from punching moves
 		onTryHit(target, source, move) {
 			if (target !== source && move.flags['punch']) {
 				this.add('-immune', target, '[from] ability: TonjokQueen');
@@ -884,7 +884,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3,
 		num: 43,
 	},
-	bluntblade: {
+	bluntblade: { // reskin of Iron Barbs
 		onDamagingHitOrder: 1,
 		onDamagingHit(damage, target, source, move) {
 			if (this.checkMoveMakesContact(move, source, target, true)) {
@@ -896,7 +896,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 2.5,
 		num: 160,
 	},
-	undercoveragent: {
+	undercoveragent: { // reskin of Protean pre-nerf
         onPrepareHit(source, target, move) {
             if (move.hasBounced || move.flags['futuremove'] || move.sourceEffect === 'snatch') return;
             const type = move.type;
@@ -910,7 +910,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
         name: "Undercover Agent",
         num: 236
 	},
-	grindstone: {
+	grindstone: { // combines Sand Force with Rain Dish (but Sandstorm instead of Rain)
 		onWeather(target, source, effect) {
 			if (target.hasItem('utilityumbrella')) return;
 			if (effect.id === 'sandstorm') {
@@ -931,7 +931,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3,
 		num: 44,
 	},
-	wethair: {
+	wethair: { // reskin of Tangled hair but lowers accuracy instead of speed
 		onDamagingHit(damage, target, source, move) {
 			if (this.checkMoveMakesContact(move, source, target, true)) {
 				this.add('-ability', target, 'Wet Hair');
@@ -942,7 +942,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		name: "Wet Hair",
 		rating: 3.5,
 		num: 221,
-	},
+	}, // combines Dry Skin with Solar Power, if there's: no weather/sun/sandstorm; takes passive damage. If Rain: passively heals; Atk and SpA is boosted
 	powerofatlantis: {
 		onModifySpAPriority: 5,
 		onModifySpA(spa, pokemon) {
@@ -974,7 +974,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 4.5,
 		num: 87,
 	},
-	toxicgamer: {
+	toxicgamer: { // reskin of Merciless
 		onModifyCritRatio(critRatio, source, target) {
 			if (target && ['psn', 'tox'].includes(target.status)) return 5;
 		},
@@ -983,7 +983,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 1.5,
 		num: 196,
 	},
-	death: {
+	death: { // combines Soul-Heart and Moxie
 		onAnyFaintPriority: 1,
 		onAnyFaint() {
 			this.boost({spa: 1, atk: 1}, this.effectState.target);
@@ -993,7 +993,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 4.5,
 		num: 220,
 	},
-	forbiddenwah: {
+	forbiddenwah: { // reskin of Rough Skin, but only affects Special Moves instead of Contact Moves
 		onDamagingHitOrder: 1,
 		onDamagingHit(damage, target, source, move) {
 			if (move.category === 'Special') {
@@ -1005,7 +1005,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 4.5,
 		num: 24,
 	},
-	mightyphoenix: {
+	mightyphoenix: { // combines Flame Body with Flash Fire
 		onDamagingHit(damage, target, source, move) {
 			if (this.checkMoveMakesContact(move, source, target)) {
 				if (this.randomChance(3, 10)) {
@@ -1053,7 +1053,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 4,
 		num: 18,
 	},
-	yabairys: {
+	yabairys: { // reskin of Anger Shell
 		onDamage(damage, target, source, effect) {
 			if (
 				effect.effectType === "Move" &&
@@ -1089,7 +1089,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3,
 		num: 271,
 	},
-	timedilation: {
+	timedilation: { // sets up Trick Room on switch-in (effects end prematurely if user/foe with this ability switches in)
 		onStart(pokemon) {
 			this.field.addPseudoWeather('trickroom', pokemon);
 		},
@@ -1097,7 +1097,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 5,
 		num: -19,		
 	},
-	gravitationalpull: {
+	gravitationalpull: { // sets up Gravity on switch-in (effects end prematurely if user/foe with this ability switches in)
 		onStart(pokemon) {
 			this.field.addPseudoWeather('gravity', pokemon);
 		},
@@ -1105,7 +1105,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 1,
 		num: -19,		
 	},
-	faunasweep: {
+	faunasweep: { // reskin of Surge Surfer but for Grass Terrain
 		onModifySpe(spe) {
 			if (this.field.isTerrain('grassyterrain')) {
 				return this.chainModify(2);
@@ -1116,7 +1116,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3,
 		num: 207,
 	},
-	societalcollapse: {
+	societalcollapse: { // reskin of Weak Armour but for SpDef < Special Moves instead of Def < Contact Moves
 		onDamagingHit(damage, target, source, move) {
 			if (move.category === 'Special') {
 				this.boost({spd: -1, spe: 2}, target, target);
@@ -1127,7 +1127,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 2,
 		num: 133,
 	},
-	chaos: {
+	chaos: { // sets up Magic Room on switch-in (effects end prematurely if user/foe with this ability switches in)
 		onStart(pokemon) {
 			this.field.addPseudoWeather('magicroom', pokemon);
 		},
@@ -1135,7 +1135,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 5,
 		num: -19,		
 	},
-	archivist: {
+	archivist: { // reskin of Oppurtunist
 		onFoeAfterBoost(boost, target, source, effect) {
 			if (effect?.name === 'Archivist' || effect?.name === 'Mirror Herb') return;
 			const pokemon = this.effectState.target;
@@ -1154,7 +1154,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3,
 		num: 290,
 	},
-	rockhard: {
+	rockhard: { // reskin of Fluffy, but instead of Fire being omitted, it is Steel
 		onSourceModifyDamage(damage, source, target, move) {
 			let mod = 1;
 			if (move.type === 'Steel') mod *= 2;
@@ -1166,7 +1166,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3.5,
 		num: 218,
 	},
-	underworlddiva: {
+	underworlddiva: { // if hit by Sound type move, boosts SpA by 1; Sound type immunity
 		onTryHit(target, source, move) {
 			if (target !== source && move.flags['sound']) {
 				if (!this.boost({spa: 1})) {
@@ -1185,7 +1185,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 2.5,
 		num: 43,
 	},
-	thefuzzyone: {
+	thefuzzyone: { // reskin of Tangled Hair but lowers Def instead of Spe
 		onDamagingHit(damage, target, source, move) {
 			if (this.checkMoveMakesContact(move, source, target, true)) {
 				this.add('-ability', target, 'The Fuzzy One');
@@ -1197,7 +1197,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3.5,
 		num: 183,
 	},
-	thefluffyone: {
+	thefluffyone: { // reskin of Tangled hair but lowers Atk instead of Spe
 		onDamagingHit(damage, target, source, move) {
 			if (this.checkMoveMakesContact(move, source, target, true)) {
 				this.add('-ability', target, 'The Fluffy One');
@@ -1209,7 +1209,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 2.5,
 		num: 183,
 	},
-	baubau: {
+	baubau: { // reskin of Hunger Switch but it is Dark > Fairy > Dark instead of Electric > Dark > Electric
 		onResidualOrder: 29,
 		onResidual(pokemon) {
 			if (pokemon.species.baseSpecies !== 'FuwaMoco' || pokemon.terastallized) return;
@@ -1221,7 +1221,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 1,
 		num: 258,
 	},
-	flamingvoice: {
+	flamingvoice: { // reskin of Liquid Voice but it's Fire instead of Water
 		onModifyTypePriority: -1,
 		onModifyType(move, pokemon) {
 			if (move.flags['sound'] && !pokemon.volatiles['dynamax']) { // hardcode
@@ -1233,7 +1233,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 1.5,
 		num: 204,
 	},
-	chaser: {
+	chaser: { // reskin of Defiant but for Speed instead of Atk
 		onAfterEachBoost(boost, target, source, effect) {
 			if (!source || target.isAlly(source)) {
 				return;
@@ -1254,7 +1254,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3,
 		num: 128,
 	},
-	durable: {
+	durable: { // reskin of Stamina
 		onDamagingHit(damage, target, source, effect) {
 			this.boost({def: 1});
 		},
@@ -1263,7 +1263,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 4,
 		num: 192,
 	},
-	bigcatmeansbigtrouble: {
+	bigcatmeansbigtrouble: { // combines Strong Jaw + Keen Eye (UNUSED)
 		onBasePowerPriority: 19,
 		onBasePower(basePower, attacker, defender, move) {
 			if (move.flags['bite']) {
@@ -1287,7 +1287,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 4,
 		num: 173,
 	},
-	bigcatbigtrouble: {
+	bigcatbigtrouble: { // combines Strong Jaw + Defiant but for Accuracy instead of Attack + Keen Eye (USING THIS VERSION)
 		onBasePowerPriority: 19,
 		onBasePower(basePower, attacker, defender, move) {
 			if (move.flags['bite']) {

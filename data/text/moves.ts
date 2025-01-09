@@ -186,7 +186,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	clubsmash: {
 		name: "Club Smash",
-		shortDesc: "No additional effect.",
+		desc: "If the target lost HP, the user takes recoil damage equal to 33% the HP lost by the target, rounded half up, but not less than 1 HP. Has a higher chance for a critical hit.",
+		shortDesc: "Has 33% recoil. High criticial hit ratio",
 	},
 	elfdance: {
 		name: "Elf Dance",
@@ -320,8 +321,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	fuwamocomorning: {
 		name: "FuwaMoco Morning",
-		desc: "Has a high chance to land a critical hit. Has a 10% chance to flinch the foe. If the user is Mococo, this move is Dark type. If the user is a Fuwawa, this move is Fairy type. This move cannot be used successfully unless the user's current form, while considering Transform, is Fuwawa or Mococo.",
-		shortDesc: "Mococo: Dark; Fuwawa: Fairy; 10% to flinch. High crit ratio.",
+		desc: "If the user is Mococo, this move is Dark type. If the user is a Fuwawa, this move is Fairy type. This move cannot be used successfully unless the user's current form, while considering Transform, is Fuwawa or Mococo.",
+		shortDesc: "Mococo: Dark; Fuwawa: Fairy.",
 	},
 	alterego: {
 		name: "Alter Ego",
@@ -865,13 +866,13 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	samuraistrikes: {
 		name: "Samurai Strikes",
-		desc: "Hits two to five times. Has a 35% chance to hit two or three times and a 15% chance to hit four or five times. If one of the hits breaks the target's substitute, it will take damage for the remaining hits. If the user has the Skill Link Ability, this move will always hit five times. If the user is holding Loaded Dice, this move will hit 4-5 times.",
-		shortDesc: "Hits 2-5 times in one turn.",
+		desc: "Hits two to six times. Has a 35% chance to hit two or three times and a 15% chance to hit four or six times. If one of the hits breaks the target's substitute, it will take damage for the remaining hits. If the user has the Skill Link Ability, this move will always hit six times. If the user is holding Loaded Dice, this move will hit 4-6 times.",
+		shortDesc: "Hits 2-6 times in one turn.",
 	},
 	tentaclesstrike: {
 		name: "Tentacles Strike",
-		desc: "Hits three to eight times. Has a 35% chance to hit two or three times and a 15% chance to hit four to eight times. If one of the hits breaks the target's substitute, it will take damage for the remaining hits. If the user has the Skill Link Ability, this move will always hit five times. If the user is holding Loaded Dice, this move will hit 4-5 times.",
-		shortDesc: "Hits 3-8 times in one turn.",
+		desc: "Hits two to eight times. Has a 35% chance to hit two or three times and a 15% chance to hit four to eight times. If one of the hits breaks the target's substitute, it will take damage for the remaining hits. If the user has the Skill Link Ability, this move will always hit five times. If the user is holding Loaded Dice, this move will hit 4-5 times.",
+		shortDesc: "Hits 2-8 times in one turn.",
 	},
 	candycrash: {
 		name: "Candy Crash",
@@ -945,13 +946,13 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	magiconion: {
 		name: "Magic Onion",
-		desc: "Raises the user's Special Attack by 1 stage and Special Defense by 2 stages.",
-		shortDesc: "Raises the user's Sp. Atk by 1 and Sp. Def by 2.",
+		desc: "Raises the user's Attack by 2 stages.",
+		shortDesc: "Raises the user's Atk by 2.",
 	},
-	godlydance: {
-		name: "Godly Dance",
-		desc: "Raises the user's Attack, Special Attack, Speed, and Accuracy all by 1 stage.",
-		shortDesc: "Raises the user's Atk, SpAtk, Speed, and Acc by 1.",
+	iamgodok: {
+		name: "I am God OK",
+		desc: "Raises the user's Attack, Speed, and Accuracy all by 1 stage.",
+		shortDesc: "Raises the user's Atk, Speed, and Acc by 1.",
 	},
 	upgradepc: {
 		name: "Upgrade PC",
@@ -995,8 +996,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	bejeweled: {
 		name: "Bejeweled",
-		desc: "If this move is successful, it sets up a hazard on the opposing side of the field, damaging each opposing Pokemon that switches in, unless it is a Flying-type Pokemon or has the Levitate Ability. A maximum of three layers may be set, and opponents lose 1/8 of their maximum HP with one layer, 1/6 of their maximum HP with two layers, and 1/4 of their maximum HP with three layers, all rounded down. Can be removed from the opposing side if any Pokemon uses Tidy Up, or if any opposing Pokemon uses Mortal Spin, Rapid Spin, or Defog successfully, or is hit by Defog. This move never misses.",
-		shortDesc: "Sets a layer of Spikes on the opposing side. Never misses.",
+		desc: "If this move is successful, it sets up stealth rock on the opposing side of the field, damaging each opposing Pokemon that switches in, unless it is a Flying-type Pokemon or has the Levitate Ability. A maximum of three layers may be set, and opponents lose 1/8 of their maximum HP with one layer, 1/6 of their maximum HP with two layers, and 1/4 of their maximum HP with three layers, all rounded down. Can be removed from the opposing side if any Pokemon uses Tidy Up, or if any opposing Pokemon uses Mortal Spin, Rapid Spin, or Defog successfully, or is hit by Defog.",
+		shortDesc: "Sets stealth rock on the opposing side.",
 	},
 	celebrate: {
 		name: "Celebrate",
@@ -1668,8 +1669,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	dahlah: {
 		name: "Dahlah",
-		desc: "Has a 10% chance to lower the target's Defense by 1 stage. If the target lost HP, the user takes recoil damage equal to 33% the HP lost by the target, rounded half up, but not less than 1 HP.",
-		shortDesc: "Has 33% recoil. 10% to lower foe's Def by 1",
+		desc: "Has a 20% chance to flinch the target. If the target lost HP, the user takes recoil damage equal to 33% the HP lost by the target, rounded half up, but not less than 1 HP.",
+		shortDesc: "Has 33% recoil. 20% to flinch target",
 	},
 	gorillagrip: {
 		name: "Gorilla Grip",
@@ -1683,8 +1684,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	chaosstrike: {
 		name: "Chaos Strike",
-		desc: "Has a 30% to inflict confusion on the target(s). Hits adjacent foes. If the target lost HP, the user takes recoil damage equal to 33% the HP lost by the target, rounded half up, but not less than 1 HP.",
-		shortDesc: "30% to confuse. 33% recoil. Hits adjacent foes.",
+		desc: "Has a 50% to inflict confusion on the target. If the target lost HP, the user takes recoil damage equal to 33% the HP lost by the target, rounded half up, but not less than 1 HP.",
+		shortDesc: "50% to confuse. 33% recoil.",
 	},
 	zombiestrike: {
 		name: "Zombie Strike",
@@ -1693,8 +1694,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	ymd: {
 		name: "YMD",
-		desc: "Has a 10% to raise the user's Special Defense by 1 stage. If the target lost HP, the user takes recoil damage equal to 33% the HP lost by the target, rounded half up, but not less than 1 HP.",
-		shortDesc: "Has 33% recoil. 10% to raise Sp. Def by 1",
+		desc: "Has a 20% to raise the user's Special Defense by 1 stage. If the target lost HP, the user takes recoil damage equal to 33% the HP lost by the target, rounded half up, but not less than 1 HP.",
+		shortDesc: "Has 33% recoil. 20% to raise Sp. Def by 1",
 	},
 	doublehit: {
 		name: "Double Hit",
@@ -1910,8 +1911,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	clowntown: {
 		name: "Clown Town",
-		desc: "Has a 25% chance to confuse the target. Hits twice. If the first hit breaks the target's substitute, it will take damage for the second hit.",
-		shortDesc: "Hits 2 times in one turn, 25% chance to confuse the target.",
+		desc: "Has a 10% chance to confuse the target. Hits twice. If the first hit breaks the target's substitute, it will take damage for the second and third hits.",
+		shortDesc: "Hits 3 times in one turn, 10% chance to confuse the target.",
 	},
 	carrotstrike: {
 		name: "Carrot Strike",
@@ -1920,8 +1921,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	dualblades: {
 		name: "Dual Blades",
-		desc: "Hits twice. If the first hit breaks the target's substitute, it will take damage for the second hit.",
-		shortDesc: "Hits 2 times in one turn.",
+		desc: "Hits twice. If the first hit breaks the target's substitute, it will take damage for the second hit. Has a higher chance for a critical hit.",
+		shortDesc: "Hits 2 times in one turn. High critical hit ratio",
 	},
 	twintails: {
 		name: "Twin Tails",
@@ -2423,8 +2424,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	phoenixblade: {
 		name: "Phoenix Blade",
-		desc: "Has a 20% chance to burn the target.",
-		shortDesc: "20% chance to burn the target.",
+		desc: "Has a 30% chance to burn the target.",
+		shortDesc: "30% chance to burn the target.",
 	},
 	swordofjustice: {
 		name: "Sword of Justice",
@@ -3533,7 +3534,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	witchattack: {
 		name: "Witch Attack",
-		shortDesc: "20% chance to raises user's Special Defense by 1 stage.",
+		desc: "Lowers the user's Special Attack by 2 stages.",
+		shortDesc: "Lowers the user's Sp. Atk by 2.",
 	},
 	hydrosteam: {
 		name: "Hydro Steam",
@@ -3595,13 +3597,18 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	automotanassault: {
 		name: "Automotan Assault",
+		desc: "Has a higher chance for a critical hit.",
+		shortDesc: "High critical hit ratio.",
+	},
+	energyblade: {
+		name: "Energy Blade",
 		desc: "Has a 10% chance to paralyze the target.",
-		shortDesc: "10% to paralyze target.",
+		shortDesc: "10% chance to paralyze the target.",
 	},
 	songofjustice: {
 		name: "Song of Justice",
-		desc: "No additional effect.",
-		shortDesc: "No additional effect. Hits adjacent foes.",
+		desc: "Has a 100% chance to raise the user's Special Defense by 1 stage.",
+		shortDesc: "100% chance to raise the user's Sp. Def by 1. Hits adjacent foes.",
 	},
 	underworldmusic: {
 		name: "Underworld Music",
@@ -3615,8 +3622,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	duckasmr: {
 		name: "Duck ASMR",
-		desc: "No additional effect.",
-		shortDesc: "No additional effect. Hits adjacent foes.",
+		desc: "Has a 10% chance to confuse the target.",
+		shortDesc: "10% to confuse target. Hits adjacent foes.",
 	},
 	idolsong: {
 		name: "Idol Song",
@@ -3652,8 +3659,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	wamywater: {
 		name: "Wamy Water",
-		desc: "Has a 20% chance to freeze the target.",
-		shortDesc: "20% chance to freeze the target.",
+		desc: "Has a 30% chance to freeze the target.",
+		shortDesc: "30% chance to freeze the target.",
 	},
 	cometslam: {
 		name: "Comet Slam",
@@ -4579,7 +4586,7 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	spyshot: {
 		name: "Spy Shot",
-		shortDesc: "Bypasses subs and protection without breaking it. Never Misses.",
+		shortDesc: "Bypasses subs and protection without breaking it. Never Misses. High critical hit ratio.",
 	},
 	milkdrink: {
 		name: "Milk Drink",
@@ -4991,8 +4998,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	tako: {
 		name: "Tako",
-		desc: "Has a 10% chance to lower the target's accuracy by 1 stage.",
-		shortDesc: "10% chance to lower the target's accuracy by 1.",
+		desc: "Has a 25% chance to lower the target's accuracy by 1 stage.",
+		shortDesc: "25% chance to lower the target's accuracy by 1.",
 	},
 	octolock: {
 		name: "Octolock",
@@ -5233,8 +5240,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	asacoco: {
 		name: "AsaCoco",
-		desc: "Has a 30% chance to badly poison the target.",
-		shortDesc: "30% chance to badly poison the target.",
+		desc: "Has a 50% chance to badly poison the target.",
+		shortDesc: "50% chance to badly poison the target.",
 	},
 	poisonpowder: {
 		name: "Poison Powder",
@@ -5561,8 +5568,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	konkon: {
 		name: "Kon Kon",
-		desc: "Raises the user's Attack, Special Attack, and Speed by 1 stage.",
-		shortDesc: "Raises the user's Atk, SpAtk, Speed by 1.",
+		desc: "Raises the user's Special Attack, and Speed by 1 stage.",
+		shortDesc: "Raises the user's SpAtk and Speed by 1.",
 	},
 	rage: {
 		name: "Rage",
@@ -7626,8 +7633,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	nothingwrong: {
 		name: "Nothing Wrong",
-		desc: "Raises the user's Attack and Special Defense by 1 stage.",
-		shortDesc: "Raises the user's Atk and Sp. Def by 1.",
+		desc: "Raises the user's Attack by 2 stages.",
+		shortDesc: "Raises the user's Def by 2.",
 	},
 	torment: {
 		name: "Torment",
