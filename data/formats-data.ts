@@ -6502,6 +6502,44 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
         doublesTier: "(DUU)",
         natDexTier: "RU",	
 	},
+	foxparks: {
+        tier: "PU",
+        doublesTier: "(DUU)",
+        natDexTier: "ZUBL",	
+	},
+	foxparksalola: {
+        tier: "PU",
+        doublesTier: "(DUU)",
+        natDexTier: "ZUBL",	
+	},
+	fuack: {
+        tier: "PU",
+        doublesTier: "(DUU)",
+        natDexTier: "ZUBL",	
+	},
+	sparkit: {
+        tier: "PU",
+        doublesTier: "(DUU)",
+        natDexTier: "ZU",	
+	},
+	tanzee: {
+        tier: "ZUBL",
+        doublesTier: "(DUU)",
+        natDexTier: "ZU",	
+	},
+	rooby: {
+        tier: "RU",
+        doublesTier: "(DUU)",
+        natDexTier: "PUBL",	
+	},
+	pengullet: {
+		tier: "NFE",
+	},
+	penking: {
+		tier: "RU",
+		doublesTier: "(DUU)",
+		natDexTier: "PUBL",
+	},
 	ultima: {
         tier: "AG",
         doublesTier: "(DUU)",
