@@ -6540,6 +6540,21 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		doublesTier: "(DUU)",
 		natDexTier: "PUBL",
 	},
+	jolthog: {
+		tier: "ZU",
+		doublesTier: "(DUU)",
+		natDexTier: "ZU",
+	},
+	jolthogalola: {
+		tier: "ZU",
+		doublesTier: "(DUU)",
+		natDexTier: "ZU",
+	},
+	gumoss: {
+		tier: "RU",
+		doublesTier: "(DUU)",
+		natDexTier: "PUBL",
+	},
 	ultima: {
         tier: "AG",
         doublesTier: "(DUU)",
