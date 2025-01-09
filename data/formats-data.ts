@@ -6483,9 +6483,29 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
         natDexTier: "OU",	
 	},
 	lamball: {
+        tier: "PU",
+        doublesTier: "(DUU)",
+        natDexTier: "PU",	
+	},
+	cattiva: {
+        tier: "PU",
+        doublesTier: "(DUU)",
+        natDexTier: "PUBL",	
+	},
+	chikipi: {
+        tier: "ZU",
+        doublesTier: "(DUU)",
+        natDexTier: "ZU",	
+	},
+	lifmunk: {
         tier: "RU",
         doublesTier: "(DUU)",
         natDexTier: "RU",	
+	},
+	ultima: {
+        tier: "AG",
+        doublesTier: "(DUU)",
+        natDexTier: "AG",	
 	},
 	missingno: {
 		isNonstandard: "Custom",
