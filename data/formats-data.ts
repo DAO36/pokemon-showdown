@@ -6528,7 +6528,7 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
         natDexTier: "ZU",	
 	},
 	rooby: {
-        tier: "RU",
+        tier: "NU",
         doublesTier: "(DUU)",
         natDexTier: "PUBL",	
 	},
@@ -6551,9 +6551,44 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		natDexTier: "ZU",
 	},
 	gumoss: {
-		tier: "RU",
+		tier: "NU",
 		doublesTier: "(DUU)",
 		natDexTier: "PUBL",
+	},
+	vixy: {
+		tier: "PU",
+		doublesTier: "(DUU)",
+		natDexTier: "ZUBL",
+	},
+	hoocrates: {
+		tier: "NU",
+		doublesTier: "(DUU)",
+		natDexTier: "PUBL",
+	},
+	teafant: {
+		tier: "NU",
+		doublesTier: "(DUU)",
+		natDexTier: "PUBL",
+	},
+	depresso: {
+		tier: "RU",
+		doublesTier: "(DUU)",
+		natDexTier: "NUBL",
+	},
+	cremis: {
+		tier: "PU",
+		doublesTier: "(DUU)",
+		natDexTier: "ZUBL",
+	},
+	daedream: {
+		tier: "UU",
+		doublesTier: "(DUU)",
+		natDexTier: "RUBL",
+	},
+	rushoar: {
+		tier: "NUBL",
+		doublesTier: "(DUU)",
+		natDexTier: "NU",
 	},
 	ultima: {
         tier: "AG",
