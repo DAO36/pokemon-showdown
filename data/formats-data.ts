@@ -6827,6 +6827,11 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		doublesTier: "(DUU)",
 		natDexTier: "UUBL",
 	},
+	univolt: {
+		tier: "PU",
+		doublesTier: "(DUU)",
+		natDexTier: "ZUBL",
+	},
 	ultima: {
         tier: "AG",
         doublesTier: "(DUU)",
