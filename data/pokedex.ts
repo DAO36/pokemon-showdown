@@ -21717,7 +21717,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		num: 523,
 		name: "Univolt",
 		types: ["Electric"],
-		baseStats: {hp: 70, atk: 123, def: 63, spa: 80, spd: 63, spe: 116},
+		baseStats: {hp: 11, atk: 100, def: 63, spa: 80, spd: 63, spe: 116},
 		abilities: {0: "Lightning Rod", 1: "Sap Sipper", H: "Speed Boost"},
 		heightm: 1.6,
 		weightkg: 79.5,
