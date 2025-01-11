@@ -6204,8 +6204,6 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 	},
 	ckia: {
 		tier: "NFE",
-		doublesTier: "(DUU)",
-		natDexTier: "NFE",
 	},
 	kobo: {
 		tier: "OU",
@@ -6679,6 +6677,155 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		tier: "PUBL",
 		doublesTier: "(DUU)",
 		natDexTier: "ZU",
+	},
+	capriry: {
+		tier: "PU",
+		doublesTier: "(DUU)",
+		natDexTier: "ZU",
+	},
+	capriryalola: {
+		tier: "NU",
+		doublesTier: "(DUU)",
+		natDexTier: "PU",
+	},
+	melpaca: {
+		tier: "NFE",
+	},
+	kingpaca: {
+		tier: "PUBL",
+		doublesTier: "(DUU)",
+		natDexTier: "PU",
+	},
+	kingpacaalola: {
+		tier: "PU",
+		doublesTier: "(DUU)",
+		natDexTier: "ZU",
+	},
+	eikthyrdeer: {
+		tier: "ZUBL",
+		doublesTier: "(DUU)",
+		natDexTier: "ZU",
+	},
+	eikthyrdeeralola: {
+		tier: "PU",
+		doublesTier: "(DUU)",
+		natDexTier: "ZUBL",
+	},
+	nitewing: {
+		tier: "RUBL",
+		doublesTier: "(DUU)",
+		natDexTier: "NUBL",
+	},
+	ribunny: {
+		tier: "NU",
+		doublesTier: "(DUU)",
+		natDexTier: "PUBL",
+	},
+	ribunnyalola: {
+		tier: "NU",
+		doublesTier: "(DUU)",
+		natDexTier: "PU",
+	},
+	incineram: {
+		tier: "OU",
+		doublesTier: "DOU",
+		natDexTier: "UUBL",
+	},
+	incineramalola: {
+		tier: "OU",
+		doublesTier: "DOU",
+		natDexTier: "UU",
+	},
+	cinnamoth: {
+		tier: "NU",
+		doublesTier: "(DUU)",
+		natDexTier: "PU",
+	},
+	arsox: {
+		tier: "RU",
+		doublesTier: "(DUU)",
+		natDexTier: "NU",
+	},
+	dumud: {
+		tier: "UU",
+		doublesTier: "(DUU)",
+		natDexTier: "RUBL",
+	},
+	cawgnito: {
+		tier: "RU",
+		doublesTier: "(DUU)",
+		natDexTier: "NU",
+	},
+	leezpunk: {
+		tier: "NU",
+		doublesTier: "(DUU)",
+		natDexTier: "PUBL",
+	},
+	leezpunkalola: {
+		tier: "NUBL",
+		doublesTier: "(DUU)",
+		natDexTier: "PU",
+	},
+	loupmoon: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "UU",
+	},
+	loupmoonalola: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "UUBL",
+	},
+	galeclaw: {
+		tier: "RU",
+		doublesTier: "(DUU)",
+		natDexTier: "NU",
+	},
+	robinquill: {
+		tier: "NUBL",
+		doublesTier: "(DUU)",
+		natDexTier: "PUBL",
+	},
+	gorirat: {
+		tier: "UUBL",
+		doublesTier: "(DUU)",
+		natDexTier: "UU",
+	},
+	goriratalola: {
+		tier: "UU",
+		doublesTier: "(DUU)",
+		natDexTier: "UUBL",
+	},
+	beegarde: {
+		tier: "NFE",
+	},
+	elizabee: {
+		tier: "RU",
+		doublesTier: "(DUU)",
+		natDexTier: "NU",
+	},
+	grintale: {
+		tier: "PUBL",
+		doublesTier: "(DUU)",
+		natDexTier: "PU",
+	},
+	swee: {
+		tier: "NFE",
+	},
+	sweepa: {
+		tier: "PU",
+		doublesTier: "(DUU)",
+		natDexTier: "ZU",
+	},
+	chillet: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "UU",
+	},
+	chilletalola: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "UUBL",
 	},
 	ultima: {
         tier: "AG",
