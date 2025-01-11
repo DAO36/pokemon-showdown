@@ -2461,17 +2461,17 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 	deoxysattack: {
 		tier: "Uber",
 		doublesTier: "DUber",
-		natDexTier: "Uber",
+		natDexTier: "OU",
 	},
 	deoxysdefense: {
-		tier: "NUBL",
+		tier: "PUBL",
 		doublesTier: "(DUU)",
-		natDexTier: "RUBL",
+		natDexTier: "PU",
 	},
 	deoxysspeed: {
-		tier: "OU",
+		tier: "UU",
 		doublesTier: "(DUU)",
-		natDexTier: "Uber",
+		natDexTier: "RUBL",
 	},
 	turtwig: {
 		tier: "LC",
@@ -6589,6 +6589,96 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		tier: "NUBL",
 		doublesTier: "(DUU)",
 		natDexTier: "NU",
+	},
+	nox: {
+		tier: "RU",
+		doublesTier: "(DUU)",
+		natDexTier: "NUBL",
+	},
+	fuddler: {
+		tier: "RU",
+		doublesTier: "(DUU)",
+		natDexTier: "NUBL",
+	},
+	killamari: {
+		tier: "RU",
+		doublesTier: "(DUU)",
+		natDexTier: "NUBL",
+	},
+	mau: {
+		tier: "PU",
+		doublesTier: "(DUU)",
+		natDexTier: "ZU",
+	},
+	maualola: {
+		tier: "PU",
+		doublesTier: "(DUU)",
+		natDexTier: "ZU",
+	},
+	celeray: {
+		tier: "NU",
+		doublesTier: "(DUU)",
+		natDexTier: "PUBL",
+	},
+	direhowl: {
+		tier: "PU",
+		doublesTier: "(DUU)",
+		natDexTier: "ZUBL",
+	},
+	tocotoco: {
+		tier: "PUBL",
+		doublesTier: "(DUU)",
+		natDexTier: "ZUBL",
+	},
+	flopie: {
+		tier: "UU",
+		doublesTier: "(DUU)",
+		natDexTier: "RU",
+	},
+	mozzarina: {
+		tier: "ZUBL",
+		doublesTier: "(DUU)",
+		natDexTier: "ZU",
+	},
+	bristle: {
+		tier: "NU",
+		doublesTier: "(DUU)",
+		natDexTier: "PUBL",
+	},
+	gobfin: {
+		tier: "UU",
+		doublesTier: "(DUU)",
+		natDexTier: "RUBL",
+	},
+	gobfinalola: {
+		tier: "UU",
+		doublesTier: "(DUU)",
+		natDexTier: "RUBL",
+	},
+	hangyu: {
+		tier: "RU",
+		doublesTier: "(DUU)",
+		natDexTier: "NU",
+	},
+	hangyualola: {
+		tier: "PU",
+		doublesTier: "(DUU)",
+		natDexTier: "ZUBL",
+	},
+	mossanda: {
+		tier: "UU",
+		doublesTier: "(DUU)",
+		natDexTier: "RU",
+	},
+	mossandaalola: {
+		tier: "UU",
+		doublesTier: "(DUU)",
+		natDexTier: "RU",
+	},
+	woolipop: {
+		tier: "PUBL",
+		doublesTier: "(DUU)",
+		natDexTier: "ZU",
 	},
 	ultima: {
         tier: "AG",
