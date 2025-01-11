@@ -6832,6 +6832,56 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		doublesTier: "(DUU)",
 		natDexTier: "ZUBL",
 	},
+	foxcicle: {
+        tier: "OU",
+        doublesTier: "(DUU)",
+        natDexTier: "UU",	
+	},
+	pyrin: {
+        tier: "PUBL",
+        doublesTier: "(DUU)",
+        natDexTier: "ZU",	
+	},
+	pyrinalola: {
+        tier: "PU",
+        doublesTier: "(DUU)",
+        natDexTier: "ZUBL",	
+	},
+	reindrix: {
+        tier: "OU",
+        doublesTier: "(DUU)",
+        natDexTier: "UUBL",	
+	},
+	reyhound: {
+        tier: "NU",
+        doublesTier: "(DUU)",
+        natDexTier: "PUBL",	
+	},
+	kitsun: {
+        tier: "OU",
+        doublesTier: "(DUU)",
+        natDexTier: "UU",	
+	},
+	kitsunalola: {
+        tier: "OU",
+        doublesTier: "(DUU)",
+        natDexTier: "UUBL",	
+	},
+	dazzi: {
+        tier: "OU",
+        doublesTier: "(DUU)",
+        natDexTier: "UUBL",	
+	},
+	dazzialola: {
+        tier: "UU",
+        doublesTier: "(DUU)",
+        natDexTier: "RU",	
+	},
+	lunaris: {
+        tier: "OU",
+        doublesTier: "(DUU)",
+        natDexTier: "UUBL",	
+	},
 	ultima: {
         tier: "AG",
         doublesTier: "(DUU)",
