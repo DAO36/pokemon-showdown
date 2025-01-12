@@ -6977,6 +6977,91 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		doublesTier: "(DUU)",
 		natDexTier: "UU",
 	},
+	verdash: {
+		tier: "PUBL",
+		doublesTier: "(DUU)",
+		natDexTier: "ZUBL",
+	},
+	vaelet: {
+		tier: "UU",
+		doublesTier: "(DUU)",
+		natDexTier: "NU",
+	},
+	sibelyx: {
+		tier: "RU",
+		doublesTier: "(DUU)",
+		natDexTier: "PUBL",
+	},
+	elphidran: {
+		tier: "UU",
+		doublesTier: "DOU",
+		natDexTier: "NUBL",
+	},
+	elphidranalola: {
+		tier: "UUBL",
+		doublesTier: "DOU",
+		natDexTier: "RUBL",
+	},
+	kelpsea: {
+		tier: "PU",
+		doublesTier: "(DUU)",
+		natDexTier: "ZU",
+	},
+	kelpseaalola: {
+		tier: "PUBL",
+		doublesTier: "(DUU)",
+		natDexTier: "ZUBL",
+	},
+	azurobe: {
+		tier: "UU",
+		doublesTier: "(DUU)",
+		natDexTier: "RU",
+	},
+	cryolinx: {
+		tier: "NUBL",
+		doublesTier: "(DUU)",
+		natDexTier: "ZUBL",
+	},
+	cryolinxalola: {
+		tier: "NU",
+		doublesTier: "(DUU)",
+		natDexTier: "PUBL",
+	},
+	blazehowl: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "UU",
+	},
+	blazehowlalola: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "UUBL",
+	},
+	relaxaurus: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "UUBL",
+	},
+	relaxaurusalola: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "UU",
+	},
+	broncherry: {
+		tier: "UU",
+		doublesTier: "(DUU)",
+		natDexTier: "NU",
+	},
+	broncherryalola: {
+		tier: "UUBL",
+		doublesTier: "(DUU)",
+		natDexTier: "NUBL",
+	},
+	petallia: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "UU",
+	},
 	ultima: {
         tier: "AG",
         doublesTier: "(DUU)",
