@@ -6873,7 +6873,7 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
         natDexTier: "UUBL",	
 	},
 	dazzialola: {
-        tier: "UU",
+        tier: "UUBL",
         doublesTier: "(DUU)",
         natDexTier: "RU",	
 	},
@@ -6881,6 +6881,101 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
         tier: "OU",
         doublesTier: "(DUU)",
         natDexTier: "UUBL",	
+	},
+	dinossom: {
+        tier: "UU",
+        doublesTier: "(DUU)",
+        natDexTier: "RUBL",	
+	},
+	dinossomalola: {
+        tier: "UUBL",
+        doublesTier: "(DUU)",
+        natDexTier: "RU",	
+	},
+	surfent: {
+        tier: "UU",
+        doublesTier: "(DUU)",
+        natDexTier: "RUBL",	
+	},
+	surfentalola: {
+        tier: "UUBL",
+        doublesTier: "(DUU)",
+        natDexTier: "RU",	
+	},
+	maraith: {
+        tier: "OU",
+        doublesTier: "(DUU)",
+        natDexTier: "UUBL",	
+	},
+	digtoise: {
+		tier: "RUBL",
+		doublesTier: "(DUU)",
+		natDexTier: "RU",
+	},
+	tombat: {
+		tier: "NUBL",
+		doublesTier: "(DUU)",
+		natDexTier: "PUBL",
+	},
+	lovander: {
+		tier: "UUBL",
+		doublesTier: "(DUU)",
+		natDexTier: "RUBL",
+	},
+	flambelle: {
+		tier: "RU",
+		doublesTier: "(DUU)",
+		natDexTier: "NUBL",
+	},
+	vanwyrm: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "UUBL",
+	},
+	vanwyrmalola: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "UU",
+	},
+	bushi: {
+		tier: "NU",
+		doublesTier: "(DUU)",
+		natDexTier: "PU",
+	},
+	bushialola: {
+		tier: "NUBL",
+		doublesTier: "(DUU)",
+		natDexTier: "PUBL",
+	},
+	beakon: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "UU",
+	},
+	ragnahawk: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "UUBL",
+	},
+	katress: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "UUBL",
+	},
+	katressalola: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "UU",
+	},
+	wixen: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "UUBL",
+	},
+	wixenalola: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "UU",
 	},
 	ultima: {
         tier: "AG",
