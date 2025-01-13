@@ -7062,6 +7062,146 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		doublesTier: "(DUU)",
 		natDexTier: "UU",
 	},
+	reptyro: {
+		tier: "UU",
+		doublesTier: "(DUU)",
+		natDexTier: "RU",
+	},
+	reptyroalola: {
+		tier: "NU",
+		doublesTier: "(DUU)",
+		natDexTier: "PU",
+	},
+	mammorest: {
+		tier: "UU",
+		doublesTier: "(DUU)",
+		natDexTier: "RU",
+	},
+	mammorestalola: {
+		tier: "NU",
+		doublesTier: "(DUU)",
+		natDexTier: "PU",
+	},
+	wumpo: {
+		tier: "NU",
+		doublesTier: "(DUU)",
+		natDexTier: "ZU",
+	},
+	wumpoalola: {
+		tier: "NUBL",
+		doublesTier: "(DUU)",
+		natDexTier: "ZUBL",
+	},
+	warsect: {
+		tier: "RUBL",
+		doublesTier: "(DUU)",
+		natDexTier: "PU",
+	},
+	warsectalola: {
+        tier: "RUBL",
+        doublesTier: "(DUU)",
+        natDexTier: "PU",
+	},
+	fenglope: {
+		tier: "RU",
+		doublesTier: "(DUU)",
+		natDexTier: "PU",
+	},
+	fenglopealola: {
+		tier: "RUBL",
+		doublesTier: "(DUU)",
+		natDexTier: "PUBL",
+	},
+	felbat: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "UU",
+	},
+	quivern: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "UU",
+	},
+	quivernalola: {
+		tier: "UU",
+		doublesTier: "(DUU)",
+		natDexTier: "NUBL",
+	},
+	blazamut: {
+		tier: "Uber",
+		doublesTier: "DUber",
+		natDexTier: "OU",
+	},
+	blazamutalola: {
+		tier: "Uber",
+		doublesTier: "DUber",
+		natDexTier: "Uber",
+	},
+	helzephyr: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "UUBL",
+	},
+	helzephyralola: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "UU",
+	},
+	astegon: {
+		tier: "Uber",
+		doublesTier: "DOU",
+		natDexTier: "OU",
+	},
+	menasting: {
+		tier: "Uber",
+		doublesTier: "DUber",
+		natDexTier: "OU",
+	},
+	menastingalola: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "UUBL",
+	},
+	anubis: {
+        tier: "OU",
+        doublesTier: "DOU",
+        natDexTier: "UUBL",
+	},
+	jormuntide: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "UUBL",
+	},
+	jormuntidealola: {
+        tier: "UUBL",
+        doublesTier: "(DUU)",
+        natDexTier: "UU",
+	},
+	suzaku: {
+        tier: "OU",
+        doublesTier: "(DUU)",
+        natDexTier: "UU",
+	},
+	suzakualola: {
+        tier: "OU",
+        doublesTier: "(DUU)",
+        natDexTier: "UUBL",
+	},
+	grizzbolt: {
+        tier: "UU",
+        doublesTier: "(DUU)",
+        natDexTier: "NUBL",
+	},
+	lyleen: {
+        tier: "Uber",
+        doublesTier: "DOU",
+        natDexTier: "UUBL",
+	},
+	lyleenalola: {
+        tier: "UUBL",
+        doublesTier: "DOU",
+        natDexTier: "UU",
+	},
 	ultima: {
         tier: "AG",
         doublesTier: "(DUU)",
