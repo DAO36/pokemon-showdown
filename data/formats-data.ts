@@ -7267,6 +7267,141 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		doublesTier: "(DUU)",
 		natDexTier: "ZUBL",
 	},
+	lullu: {
+		tier: "UU",
+		doublesTier: "(DUU)",
+		natDexTier: "NU",
+	},
+	shroomer: {
+        tier: "PUBL",
+        doublesTier: "(DUU)",
+        natDexTier: "ZU",
+	},
+	shroomeralola: {
+        tier: "RU",
+        doublesTier: "(DUU)",
+        natDexTier: "NUBL",
+	},
+	kikit: {
+		tier: "PU",
+		doublesTier: "(DUU)",
+		natDexTier: "ZU",
+	},
+	sootseer: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "NUBL",
+	},
+	prixter: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "UU",
+	},
+	knocklem: {
+		tier: "Uber",
+		doublesTier: "DUber",
+		natDexTier: "OU",
+	},
+	yakumo: {
+		tier: "PUBL",
+		doublesTier: "(DUU)",
+		natDexTier: "ZUBL",
+	},
+	dogen: {
+		tier: "UU",
+		doublesTier: "(DUU)",
+		natDexTier: "NU",
+	},
+	dazemu: {
+		tier: "UU",
+		doublesTier: "(DUU)",
+		natDexTier: "NU",
+	},
+	mimog: {
+		tier: "PU",
+		doublesTier: "(DUU)",
+		natDexTier: "ZU",
+	},
+	xenovader: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "UUBL",
+	},
+	xenogard: {
+		tier: "Uber",
+		doublesTier: "DOU",
+		natDexTier: "OU",
+	},
+	xenolord: {
+		tier: "Uber",
+		doublesTier: "DUber",
+		natDexTier: "Uber",
+	},
+	nitemary: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "UU",
+	},
+	starryon: {
+		tier: "UU",
+		doublesTier: "(DUU)",
+		natDexTier: "NU",
+	},
+	silvegis: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "RUBL",
+	},
+	smokie: {
+		tier: "UU",
+		doublesTier: "(DUU)",
+		natDexTier: "RU",
+	},
+	celesdir: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "RUBL",
+	},
+	omascul: {
+		tier: "UU",
+		doublesTier: "(DUU)",
+		natDexTier: "RU",
+	},
+	splatterina: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "RUBL",
+	},
+	tarantriss: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "UU",
+	},
+	azurmane: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "UUBL",
+	},
+	bastigor: {
+		tier: "Uber",
+		doublesTier: "(DUU)",
+		natDexTier: "OU",
+	},
+	prunelia: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "UU",
+	},
+	nyafia: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "UUBL",
+	},
+	gildane: {
+		tier: "UU",
+		doublesTier: "(DUU)",
+		natDexTier: "NUBL",
+	},
 	ultima: {
         tier: "AG",
         doublesTier: "(DUU)",
