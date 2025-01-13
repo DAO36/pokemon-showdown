@@ -7202,6 +7202,71 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
         doublesTier: "DOU",
         natDexTier: "UU",
 	},
+	faleris: {
+        tier: "OU",
+        doublesTier: "DOU",
+        natDexTier: "UU",
+	},
+	falerisalola: {
+        tier: "OU",
+        doublesTier: "DOU",
+        natDexTier: "UUBL",
+	},
+	orserk: {
+        tier: "Uber",
+        doublesTier: "DOU",
+        natDexTier: "UUBL",
+	},
+	shadowbeak: {
+        tier: "Uber",
+        doublesTier: "DOU",
+        natDexTier: "OU",
+	},
+	paladius: {
+        tier: "Uber",
+        doublesTier: "DUber",
+        natDexTier: "Uber",
+	},
+	necromus: {
+        tier: "Uber",
+        doublesTier: "DUber",
+        natDexTier: "Uber",
+	},
+	frostallion: {
+        tier: "Uber",
+        doublesTier: "DUber",
+        natDexTier: "OU",
+	},
+	frostallionalola: {
+        tier: "Uber",
+        doublesTier: "DUber",
+        natDexTier: "Uber",
+	},
+	jetragon: {
+        tier: "AG",
+        doublesTier: "DUber",
+        natDexTier: "Uber",
+	},
+	bellanoir: {
+        tier: "Uber",
+        doublesTier: "DUber",
+        natDexTier: "OU",
+	},
+	bellanoiralola: {
+        tier: "OU",
+        doublesTier: "DUber",
+        natDexTier: "UUBL",
+	},
+	selyne: {
+        tier: "OU",
+        doublesTier: "(DUU)",
+        natDexTier: "UU",
+	},
+	croajiro: {
+		tier: "NU",
+		doublesTier: "(DUU)",
+		natDexTier: "ZUBL",
+	},
 	ultima: {
         tier: "AG",
         doublesTier: "(DUU)",
