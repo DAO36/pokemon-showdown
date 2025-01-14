@@ -105651,6 +105651,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			psychocut: ["9M"],
 			extrasensory: ["9M"],
 			agility: ["9M"],
+			teleport: ["9M"],
 			calmmind: ["9M"],
 			highhorsepower: ["9M"],
 			headsmash: ["9M"],
