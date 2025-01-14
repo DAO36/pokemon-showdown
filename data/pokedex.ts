@@ -22321,11 +22321,11 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		formeOrder: ["Reptyro", "Reptyro-Alola"],
 	},
 	reptyroalola: {
-		num: 154,
+		num: 485,
 		name: "Reptyro-Alola",
 		baseSpecies: "Reptyro",
 		forme: "Alola",
-		types: ["Fire", "Ground"],
+		types: ["Ice", "Ground"],
 		baseStats: {hp: 100, atk: 120, def: 111, spa: 99, spd: 75, spe: 30},
 		abilities: {0: "Ice Body", 1: "Earth Eater", H: "Sand Force"},
 		heightm: 2.8,
