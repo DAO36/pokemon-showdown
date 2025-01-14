@@ -21220,7 +21220,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		eggGroups: ["Grass", "Fairy"],
 	},
 	gobfin: {
-		num: 441,
+		num: 443,
 		name: "Gobfin",
 		types: ["Water"],
 		baseStats: {hp: 64, atk: 133, def: 90, spa: 96, spd: 50, spe: 72},
@@ -21233,7 +21233,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		formeOrder: ["Gobfin", "Gobfin-Alola"],
 	},
 	gobfinalola: {
-		num: 441,
+		num: 443,
 		name: "Gobfin-Alola",
 		baseSpecies: "Gobfin",
 		forme: "Alola",
@@ -21349,7 +21349,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 	kingpaca: {
 		num: 181,
 		name: "Kingpaca",
-		types: ["Nomral"],
+		types: ["Normal"],
 		baseStats: {hp: 127, atk: 133, def: 111, spa: 50, spd: 77, spe: 44},
 		abilities: {0: "Fluffy", H: "Thick Fat"},
 		heightm: 2.4,

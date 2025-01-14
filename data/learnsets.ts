@@ -99280,7 +99280,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			flowertrick: ["9M"],
 			leafstorm: ["9M"],
 			petaldance: ["9M"],
-			enenrgyball: ["9M"],
+			energyball: ["9M"],
 			gigadrain: ["9M"],
 			ingrain: ["9M"],
 			leechseed: ["9M"],
