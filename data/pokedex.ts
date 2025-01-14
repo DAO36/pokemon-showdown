@@ -21197,7 +21197,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 	},
 	mozzarina: {
 		num: 241,
-		name: "Miltank",
+		name: "Mozzarina",
 		types: ["Normal"],
 		genderRatio: {M: 0.20, F: 0.80},
 		baseStats: {hp: 111, atk: 85, def: 101, spa: 55, spd: 78, spe: 50},

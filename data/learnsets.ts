@@ -99138,7 +99138,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			trailblaze: ["9M"],
 			closecombat: ["9M"],
 			poisonfang: ["9M"],
-			psychcifangs: ["9M"],
+			psychicfangs: ["9M"],
 			agility: ["9M"],
 			drillrun: ["9M"],
 			earthpower: ["9M"],
