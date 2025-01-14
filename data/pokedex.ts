@@ -21999,7 +21999,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		formeOrder: ["Bushi", "Bushi-Alola"],
 	},
 	bushialola: {
-		num: 717,
+		num: 475,
 		name: "Bushi-Alola",
 		baseSpecies: "Bushi",
 		forme: "Alola",
