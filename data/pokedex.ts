@@ -22481,7 +22481,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		name: "Blazamut",
 		types: ["Fire", "Rock"],
 		baseStats: {hp: 110, atk: 150, def: 110, spa: 95, spd: 80, spe: 55},
-		abilities: {0: "Magma Amror", 1: "Solid Rock", H: "Drought"},
+		abilities: {0: "Magma Armor", 1: "Solid Rock", H: "Drought"},
 		heightm: 3.6,
 		weightkg: 966,
 		color: "Red",
