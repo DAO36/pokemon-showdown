@@ -21411,9 +21411,9 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		color: "Brown",
 		eggGroups: ["Flying"],
 	},
-	ribunny: {
+	ribbuny: {
 		num: 427,
-		name: "Ribunny",
+		name: "Ribbuny",
 		types: ["Normal"],
 		genderRatio: {M: 0.40, F: 0.60},
 		baseStats: {hp: 45, atk: 36, def: 44, spa: 104, spd: 101, spe: 114},
@@ -21422,13 +21422,13 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		weightkg: 5.5,
 		color: "Pink",
 		eggGroups: ["Field", "Fairy"],
-		otherFormes: ["Ribunny-Alola"],
-		formeOrder: ["Ribunny", "Ribunny-Alola"],
+		otherFormes: ["Ribbuny-Alola"],
+		formeOrder: ["Ribbuny", "Ribbuny-Alola"],
 	},
-	ribunnyalola: {
+	ribbunyalola: {
 		num: 427,
-		name: "Ribunny-Alola",
-		baseSpecies: "Ribunny",
+		name: "Ribbuny-Alola",
+		baseSpecies: "Ribbuny",
 		forme: "Alola",
 		types: ["Grass"],
 		genderRatio: {M: 0.40, F: 0.60},

@@ -99830,7 +99830,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			steelwing: ["9M"],
 		},
 	},
-	ribunny: {
+	ribbuny: {
 		learnset: {
 			protect: ["9M"],
 			substitute: ["9M"],
@@ -99863,7 +99863,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			charm: ["9M"],
 		},
 	},
-	ribunnyalola: {
+	ribbunyalola: {
 		learnset: {
 			protect: ["9M"],
 			substitute: ["9M"],

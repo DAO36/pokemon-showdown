@@ -6716,12 +6716,12 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		doublesTier: "(DUU)",
 		natDexTier: "NUBL",
 	},
-	ribunny: {
+	ribbuny: {
 		tier: "NU",
 		doublesTier: "(DUU)",
 		natDexTier: "PUBL",
 	},
-	ribunnyalola: {
+	ribbunyalola: {
 		tier: "NU",
 		doublesTier: "(DUU)",
 		natDexTier: "PU",
