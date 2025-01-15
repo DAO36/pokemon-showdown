@@ -22660,7 +22660,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		formeOrder: ["Lyleen", "Lyleen-Alola"],
 	},
 	lyleenalola: {
-		num: 130,
+		num: 671,
 		name: "Lyleen-Alola",
 		baseSpecies: "Lyleen",
 		forme: "Alola",
@@ -22738,7 +22738,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 	},
 	necromus: {
 		num: 888,
-		name: "Necormus",
+		name: "Necromus",
 		types: ["Dark", "Fighting"],
 		baseStats: {hp: 80, atk: 170, def: 77, spa: 150, spd: 60, spe: 143},
 		abilities: {0: "Pressure", H: "Sharpness"},
