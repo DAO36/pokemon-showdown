@@ -98092,6 +98092,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			sparklingaria: ["9M"],
 			automotanassault: ["9M"],
 			windup: ["9M"],
+			energyblade: ["9M"],
         },
 	},	
 	raora: {
