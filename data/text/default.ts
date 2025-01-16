@@ -15,7 +15,7 @@ export const DefaultText: {[id: IDEntry]: DefaultText} = {
 		switchIn: "[TRAINER] sent out [FULLNAME]!",
 		switchInOwn: "Go! [FULLNAME]!",
 		switchOut: "[TRAINER] withdrew [NICKNAME]!",
-		switchOutOwn: "[NICKNAME], come back!",
+		switchOutOwn: "[NICKNAME], return!",
 		drag: "[FULLNAME] was dragged out!",
 		faint: "[POKEMON] has fainted!",
 		swap: "[POKEMON] and [TARGET] switched places!",
@@ -66,14 +66,14 @@ export const DefaultText: {[id: IDEntry]: DefaultText} = {
 		eatItem: "  ([POKEMON] ate its [ITEM]!)",
 		useGem: "  The [ITEM] strengthened [POKEMON]'s power!",
 		eatItemWeaken: "  The [ITEM] weakened damage to [POKEMON]!",
-		removeItem: "  [POKEMON] lost its [ITEM]!",
-		activateItem: "  ([POKEMON] used its [ITEM]!)",
+		removeItem: "  [POKEMON] lost thier [ITEM]!",
+		activateItem: "  ([POKEMON] used their [ITEM]!)",
 		activateWeaken: "  The [ITEM] weakened the damage to [POKEMON]!",
 
 		damage: "  ([POKEMON] was hurt!)",
 		damagePercentage: "  ([POKEMON] lost [PERCENTAGE] of its health!)",
 		damageFromPokemon: "  [POKEMON] was hurt by [SOURCE]'s [ITEM]!", // Jaboca/Rowap Berry
-		damageFromItem: "  [POKEMON] was hurt by its [ITEM]!", // Sticky Barb
+		damageFromItem: "  [POKEMON] was hurt by their [ITEM]!", // Sticky Barb
 		damageFromPartialTrapping: "  [POKEMON] is hurt by [MOVE]!",
 		heal: "  [POKEMON] had its HP restored.",
 		healFromZEffect: "  [POKEMON] restored its HP using its Z-Power!",
@@ -112,7 +112,7 @@ export const DefaultText: {[id: IDEntry]: DefaultText} = {
 		superEffectiveSpread: "  It's super effective on [POKEMON]!",
 		resisted: "  It's not very effective...",
 		resistedSpread: "  It's not very effective on [POKEMON].",
-		crit: "  A critical hit!",
+		crit: "  A critical hit! Additional damage!",
 		critSpread: "  A critical hit on [POKEMON]!",
 		immune: "  It doesn't affect [POKEMON]...",
 		immuneNoPokemon: "  It had no effect!", // old gens
@@ -209,7 +209,7 @@ export const DefaultText: {[id: IDEntry]: DefaultText} = {
 	slp: {
 		start: "  [POKEMON] fell asleep! Zzz.",
 		startFromRest: "  [POKEMON] slept and became healthy!",
-		alreadyStarted: "  [POKEMON] is already asleep! ZZz.",
+		alreadyStarted: "  [POKEMON] is already asleep! Zzz.",
 		end: "  [POKEMON] woke up!",
 		endFromItem: "  [POKEMON]'s [ITEM] woke it up!",
 		cant: "[POKEMON] is fast asleep! Zzz.",
@@ -217,12 +217,12 @@ export const DefaultText: {[id: IDEntry]: DefaultText} = {
 
 	// misc effects
 	confusion: {
-		start: "  [POKEMON] became confused!",
+		start: "  [POKEMON] became confused!?",
 		startFromFatigue: "  [POKEMON] became confused due to fatigue!",
 		end: "  [POKEMON] snapped out of its confusion!",
 		endFromItem: "  [POKEMON]'s [ITEM] snapped it out of its confusion!",
 		alreadyStarted: "  [POKEMON] is already confused!",
-		activate: "  [POKEMON] is confused!",
+		activate: "  [POKEMON] is confused!?",
 		damage: "It hurt itself in its viisble confusion!",
 	},
 	drain: {
@@ -260,7 +260,7 @@ export const DefaultText: {[id: IDEntry]: DefaultText} = {
 		start: "  ([POKEMON]'s Dynamax!)",
 		end: "  ([POKEMON] returned to normal!)",
 		block: "  The move was blocked by the power of Dynamax!",
-		fail: "  [POKEMON] shook its head. It seems like it can't use this move...",
+		fail: "  [POKEMON] shook its head, smh. It seems like it can't use this move...",
 	},
 
 	// weather
@@ -327,7 +327,7 @@ export const DefaultText: {[id: IDEntry]: DefaultText} = {
 	grassyterrain: {
 		start: "  Grass grew to cover the battlefield!",
 		end: "  The grass disappeared from the battlefield.",
-		heal: "  [POKEMON]'s HP was restored.",
+		heal: "  [POKEMON]'s HP was restored by the Grassy Terrain!",
 	},
 	mistyterrain: {
 		start: "  Mist swirled around the battlefield!",
