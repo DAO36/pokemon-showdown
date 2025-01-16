@@ -6852,7 +6852,7 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
         doublesTier: "(DUU)",
         natDexTier: "UUBL",	
 	},
-	reyhound: {
+	rayhound: {
         tier: "NU",
         doublesTier: "(DUU)",
         natDexTier: "PUBL",	

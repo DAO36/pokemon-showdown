@@ -21773,9 +21773,9 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		color: "Blue",
 		eggGroups: ["Field"],
 	},
-	reyhound: {
+	rayhound: {
 		num: 836,
-		name: "Reyhound",
+		name: "Rayhound",
 		types: ["Electric"],
 		baseStats: {hp: 68, atk: 108, def: 50, spa: 85, spd: 70, spe: 144},
 		abilities: {0: "Motor Drive", 1: "Quick Feet", H: "Strong Jaw"},

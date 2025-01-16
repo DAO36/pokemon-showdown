@@ -100946,7 +100946,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			dazzlinggleam: ["9M"],
 		},
 	},
-	reyhound: {
+	rayhound: {
 		learnset: {
 			protect: ["9M"],
 			substitute: ["9M"],
