@@ -6678,12 +6678,12 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		doublesTier: "(DUU)",
 		natDexTier: "ZU",
 	},
-	capriry: {
+	caprity: {
 		tier: "PU",
 		doublesTier: "(DUU)",
 		natDexTier: "ZU",
 	},
-	capriryalola: {
+	caprityalola: {
 		tier: "NU",
 		doublesTier: "(DUU)",
 		natDexTier: "PU",

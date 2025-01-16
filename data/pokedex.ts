@@ -21308,9 +21308,9 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		color: "Pink",
 		eggGroups: ["Fairy", "Field"],
 	},
-	capriry: {
+	caprity: {
 		num: 673,
-		name: "Capriry",
+		name: "Caprity",
 		types: ["Grass"],
 		baseStats: {hp: 75, atk: 65, def: 95, spa: 90, spd: 115, spe: 50},
 		abilities: {0: "Harvest", H: "Cud Chew"},
@@ -21318,13 +21318,13 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		weightkg: 43,
 		color: "Grass",
 		eggGroups: ["Field"],
-		otherFormes: ["Capriry-Alola"],
-		formeOrder: ["Capriry", "Capriry-Alola"],
+		otherFormes: ["Caprity-Alola"],
+		formeOrder: ["Caprity", "Caprity-Alola"],
 	},
-	capriryalola: {
+	caprityalola: {
 		num: 673,
-		name: "Capriry-Alola",
-		baseSpecies: "Capriry",
+		name: "Caprity-Alola",
+		baseSpecies: "Caprity",
 		forme: "Alola",
 		types: ["Dark"],
 		baseStats: {hp: 75, atk: 65, def: 95, spa: 90, spd: 115, spe: 50},

@@ -99567,7 +99567,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			mistyterrain: ["9M"],
 		},
 	},
-	capriry: {
+	caprity: {
 		learnset: {
 			protect: ["9M"],
 			substitute: ["9M"],
@@ -99596,7 +99596,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			solarblade: ["9M"],
 		},
 	},
-	capriryalola: {
+	caprityalola: {
 		learnset: {
 			protect: ["9M"],
 			substitute: ["9M"],
