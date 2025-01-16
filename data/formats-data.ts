@@ -6613,7 +6613,7 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		doublesTier: "(DUU)",
 		natDexTier: "ZU",
 	},
-	celeray: {
+	celaray: {
 		tier: "NU",
 		doublesTier: "(DUU)",
 		natDexTier: "PUBL",

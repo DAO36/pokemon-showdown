@@ -21150,9 +21150,9 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		color: "Blue",
 		eggGroups: ["Field"],
 	},
-	celeray: {
+	celaray: {
 		num: 458,
-		name: "Celeray",
+		name: "Celaray",
 		types: ["Water", "Flying"],
 		baseStats: {hp: 40, atk: 50, def: 44, spa: 90, spd: 76, spe: 124},
 		abilities: {0: "Hydration", 1: "Wind Rider", H: "Swift Swim"},

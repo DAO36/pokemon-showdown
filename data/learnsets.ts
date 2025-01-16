@@ -99086,7 +99086,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			dazzlinggleam: ["9M"],
 		},
 	},
-	celeray: {
+	celaray: {
 		learnset: {
 			protect: ["9M"],
 			substitute: ["9M"],
