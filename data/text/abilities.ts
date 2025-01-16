@@ -3,6 +3,11 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 		name: "No Ability",
 		shortDesc: "Does nothing.",
 	},
+	corruption: {
+		name: "Corruption",
+		desc: "...something's not right...",
+		shortDesc: "...something's not right...",
+	},
 	adaptability: {
 		name: "Adaptability",
 		desc: "This Pokemon's moves that match one of its types have a same-type attack bonus (STAB) of 2 instead of 1.5.",
@@ -58,8 +63,8 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	yabairys: {
 		name: "YabaIRyS",
-		desc: "When this Nephilim has more than 1/2 its maximum HP and takes damage from an attack bringing it to 1/2 or less of its maximum HP, its Attack, Special Attack, and Speed are raised by 1 stage, and its Defense and Special Defense are lowered by 1 stage. This effect applies after all hits from a multi-hit move. This effect is prevented if the move had a secondary effect removed by the Sheer Force Ability.",
-		shortDesc: "At 1/2 or less of this Nephilim's max HP: +1 Atk, Sp. Atk, Spe, and -1 Def, Sp. Def.",
+		desc: "This Nephelim's sound-based moves have their power multiplied by 1.3; Prevents other Pokemon from lowering this Nephelim's stat stages.",
+		shortDesc: "Sound based moves have 1.3x power. This user's stats cannot be lowered.",
 	},
 	anticipation: {
 		name: "Anticipation",
@@ -410,8 +415,8 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	chaser: {
 		name: "Chaser",
-		desc: "This Gremlin's Speed is raised by 2 stages for each of her stat stages that is lowered by an opposing Pokemon.",
-		shortDesc: "This Gremlin's Speed is raised by 2 for each of her stats that is lowered by a foe.",
+		desc: "This Gremlin's Speed is raised by 1 stage if it attacks and knocks out another Pokemon.",
+		shortDesc: "This Gremlin's Speed is raised by 1 stage if it attacks and KOes another Pokemon.",
 	},
 	deltastream: {
 		name: "Delta Stream",
@@ -2319,8 +2324,8 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	elite: {
 		name: "Elite",
-		desc: "This Pokemon's Special Attack is raised 1 stage after it is damaged by a Fire-type move. This Pokemon cannot be burned. Gaining this Ability while burned cures it.",
-		shortDesc: "This Pokemon's Sp. Atk is raised by 1 when damaged by Fire moves; can't be burned.",
+		desc: "This Pokemon's Special Attack is raised 2 stage after it is damaged by a Fire-type move. This Pokemon cannot be burned. Gaining this Ability while burned cures it.",
+		shortDesc: "This Pokemon's Sp. Atk is raised by 2 when damaged by Fire moves; can't be burned.",
 	},
 	thickfat: {
 		name: "Thick Fat",

@@ -87,7 +87,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	},
 	lavabucket: {
 		num: 370,
-		accuracy: 90,
+		accuracy: 85,
 		basePower: 120,
 		category: "Special",
 		name: "Lava Bucket",

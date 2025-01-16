@@ -116,7 +116,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	elite: { // reskin of Thermal Exchange, but SpA instead of Atk
 		onDamagingHit(damage, target, source, move) {
 			if (move.type === 'Fire') {
-				this.boost({spa: 1});
+				this.boost({spa: 2});
 			}
 		},
 		onUpdate(pokemon) {
@@ -1053,40 +1053,31 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 4,
 		num: 18,
 	},
-	yabairys: { // reskin of Anger Shell
-		onDamage(damage, target, source, effect) {
-			if (
-				effect.effectType === "Move" &&
-				!effect.multihit &&
-				(!effect.negateSecondary && !(effect.hasSheerForce && source.hasAbility('sheerforce')))
-			) {
-				this.effectState.checkedAngerShell = false;
-			} else {
-				this.effectState.checkedAngerShell = true;
+	yabairys: { // combines Clear Body with Punk Rock (but without the sound immunity)
+		onTryBoost(boost, target, source, effect) {
+			if (source && target === source) return;
+			let showMsg = false;
+			let i: BoostID;
+			for (i in boost) {
+				if (boost[i]! < 0) {
+					delete boost[i];
+					showMsg = true;
+				}
+			}
+			if (showMsg && !(effect as ActiveMove).secondaries && effect.id !== 'octolock') {
+				this.add("-fail", target, "unboost", "[from] ability: YabaIRyS", "[of] " + target);
 			}
 		},
-		onTryEatItem(item) {
-			const healingItems = [
-				'aguavberry', 'enigmaberry', 'figyberry', 'iapapaberry', 'magoberry', 'sitrusberry', 'wikiberry', 'oranberry', 'berryjuice',
-			];
-			if (healingItems.includes(item.id)) {
-				return this.effectState.checkedAngerShell;
-			}
-			return true;
-		},
-		onAfterMoveSecondary(target, source, move) {
-			this.effectState.checkedAngerShell = true;
-			if (!source || source === target || !target.hp || !move.totalDamage) return;
-			const lastAttackedBy = target.getLastAttackedBy();
-			if (!lastAttackedBy) return;
-			const damage = move.multihit ? move.totalDamage : lastAttackedBy.damage;
-			if (target.hp <= target.maxhp / 2 && target.hp + damage > target.maxhp / 2) {
-				this.boost({atk: 1, spa: 1, spe: 1, def: -1, spd: -1}, target, target);
+		onBasePowerPriority: 7,
+		onBasePower(basePower, attacker, defender, move) {
+			if (move.flags['sound']) {
+				this.debug('YabaIRyS boost');
+				return this.chainModify([5325, 4096]);
 			}
 		},
-		flags: {},
+		flags: {breakable: 1},
 		name: "YabaIRyS",
-		rating: 3,
+		rating: 3.5,
 		num: 271,
 	},
 	timedilation: { // sets up Trick Room on switch-in (effects end prematurely if user/foe with this ability switches in)
@@ -1233,7 +1224,18 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 1.5,
 		num: 204,
 	},
-	chaser: { // reskin of Defiant but for Speed instead of Atk
+	chaser: { // reskin of Moxie but for Speed instead of ATK
+		onSourceAfterFaint(length, target, source, effect) {
+			if (effect && effect.effectType === 'Move') {
+				this.boost({spe: length}, source);
+			}
+		},
+		flags: {},
+		name: "Chaser",
+		rating: 3,
+		num: 153,
+	},
+	chaser2: { // reskin of Defiant but for Speed instead of Atk (UNUSED)
 		onAfterEachBoost(boost, target, source, effect) {
 			if (!source || target.isAlly(source)) {
 				return;
@@ -1250,7 +1252,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			}
 		},
 		flags: {},
-		name: "Chaser",
+		name: "Chaser2",
 		rating: 3,
 		num: 128,
 	},
