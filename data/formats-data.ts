@@ -6638,7 +6638,7 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		doublesTier: "(DUU)",
 		natDexTier: "ZU",
 	},
-	bristle: {
+	bristla: {
 		tier: "NU",
 		doublesTier: "(DUU)",
 		natDexTier: "PUBL",

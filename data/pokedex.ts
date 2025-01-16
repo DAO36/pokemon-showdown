@@ -21207,9 +21207,9 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		color: "White",
 		eggGroups: ["Field"],
 	},
-	bristle: {
+	bristla: {
 		num: 182,
-		name: "Bristle",
+		name: "Bristla",
 		types: ["Grass"],
 		genderRatio: {M: 0.40, F: 0.60},
 		baseStats: {hp: 75, atk: 87, def: 77, spa: 96, spd: 99, spe: 66},

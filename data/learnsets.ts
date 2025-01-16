@@ -99261,7 +99261,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			heavyslam: ["9M"],
 		},
 	},
-	bristle: {
+	bristla: {
 		learnset: {
 			protect: ["9M"],
 			substitute: ["9M"],
