@@ -1536,7 +1536,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Ghost",
 		contestType: "Tough",
 	},
-	tonjok: { // dual wingbeat but fighting
+	tonjok: { // dual wingbeat but flying...wait
 		num: 370,
 		accuracy: 100,
 		basePower: 40,
@@ -1548,7 +1548,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		multihit: 2,
 		secondary: null,
 		target: "normal",
-		type: "Fighting",
+		type: "Flying",
 	},
 	peacockattack: {
 		num: 370,
