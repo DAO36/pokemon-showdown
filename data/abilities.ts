@@ -867,7 +867,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 2,
 		num: 133,
 	},
-	tonjokqueen: { // grants immunity from punching moves
+	tonjokqueen: { // grants immunity from punching moves + boost punches
 		onTryHit(target, source, move) {
 			if (target !== source && move.flags['punch']) {
 				this.add('-immune', target, '[from] ability: TonjokQueen');
@@ -877,6 +877,13 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		onAllyTryHitSide(target, source, move) {
 			if (move.flags['punch']) {
 				this.add('-immune', this.effectState.target, '[from] ability: TonjokQueen');
+			}
+		},
+		onBasePowerPriority: 23,
+		onBasePower(basePower, attacker, defender, move) {
+			if (move.flags['punch']) {
+				this.debug('Iron Fist boost');
+				return this.chainModify([4915, 4096]);
 			}
 		},
 		flags: {breakable: 1},
