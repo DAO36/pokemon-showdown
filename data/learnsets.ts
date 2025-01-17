@@ -95531,7 +95531,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			healpulse: ["9M"],
 			nastyplot: ["9M"],
 			honeclaws: ["9M"],
-			nenemaxatatck: ["9M"],
+			nenemaxattack: ["9M"],
         },
 	},	
 	nenemax: {
