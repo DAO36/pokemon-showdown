@@ -186,8 +186,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	clubsmash: {
 		name: "Club Smash",
-		desc: "If the target lost HP, the user takes recoil damage equal to 33% the HP lost by the target, rounded half up, but not less than 1 HP. Has a higher chance for a critical hit.",
-		shortDesc: "Has 33% recoil. High criticial hit ratio",
+		desc: "Has a 10% chance to lower the target's Attack by 1 stage. If the target lost HP, the user takes recoil damage equal to 33% the HP lost by the target, rounded half up, but not less than 1 HP.",
+		shortDesc: "Has 33% recoil. 10% chance to lower Atk by 1.",
 	},
 	elfdance: {
 		name: "Elf Dance",
@@ -1682,11 +1682,6 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		desc: "Has a 10% chance to lower the foe's Defense by 1 stage. If the target lost HP, the user takes recoil damage equal to 33% the HP lost by the target, rounded half up, but not less than 1 HP.",
 		shortDesc: "Has 33% recoil. 10% to lower Def by 1",
 	},
-	bigbang: {
-		name: "Big Bang",
-		desc: "Hits adjacent foes. If the target lost HP, the user takes recoil damage equal to 33% the HP lost by the target, rounded half up, but not less than 1 HP.",
-		shortDesc: "Has 33% recoil. Hits adjacent foes.",
-	},
 	chaosstrike: {
 		name: "Chaos Strike",
 		desc: "Has a 50% to inflict confusion on the target. If the target lost HP, the user takes recoil damage equal to 33% the HP lost by the target, rounded half up, but not less than 1 HP.",
@@ -1694,6 +1689,16 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	zombiestrike: {
 		name: "Zombie Strike",
+		desc: "If the target lost HP, the user takes recoil damage equal to 33% the HP lost by the target, rounded half up, but not less than 1 HP.",
+		shortDesc: "Has 33% recoil.",
+	},
+	supernova: {
+		name: "Supernova",
+		desc: "If the target lost HP, the user takes recoil damage equal to 33% the HP lost by the target, rounded half up, but not less than 1 HP.",
+		shortDesc: "Has 33% recoil.",
+	},
+	natureswrath: {
+		name: "Nature's Wrath",
 		desc: "If the target lost HP, the user takes recoil damage equal to 33% the HP lost by the target, rounded half up, but not less than 1 HP.",
 		shortDesc: "Has 33% recoil.",
 	},
@@ -1835,6 +1840,11 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	kapu: {
 		name: "Kapu",
+		desc: "The user recovers 1/2 the HP lost by the target, rounded half up.",
+		shortDesc: "User recovers 50% of the damage dealt.",
+	},
+	mamamia: {
+		name: "Mama Mia",
 		desc: "The user recovers 1/2 the HP lost by the target, rounded half up.",
 		shortDesc: "User recovers 50% of the damage dealt.",
 	},
@@ -2154,6 +2164,11 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		name: "Expanding Force",
 		desc: "If the current terrain is Psychic Terrain and the user is grounded, this move hits all opposing Pokemon and has its power multiplied by 1.5.",
 		shortDesc: "User on Psychic Terrain: 1.5x power, hits foes.",
+	},
+	bigbang: {
+		name: "Big Bang",
+		desc: "Sana faints after using this move, even if this move fails for having no target. This move is prevented from executing if any active Pokemon has the Damp Ability.",
+		shortDesc: "Hits adjacent Pokemon. The user faints.",
 	},
 	explosion: {
 		name: "Explosion",
@@ -3612,8 +3627,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	songofjustice: {
 		name: "Song of Justice",
-		desc: "Has a 100% chance to raise the user's Special Defense by 1 stage.",
-		shortDesc: "100% chance to raise the user's Sp. Def by 1. Hits adjacent foes.",
+		desc: "Has a 10% chance to raise the user's Special Defense by 1 stage.",
+		shortDesc: "10% chance to raise the user's Sp. Def by 1. Hits adjacent foes.",
 	},
 	underworldmusic: {
 		name: "Underworld Music",
@@ -5454,6 +5469,11 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		desc: "Lowers the user's Special Attack by 2 stages.",
 		shortDesc: "Lowers the user's Sp. Atk by 2.",
 	},
+	madscientist: {
+		name: "Mad Scientist",
+		desc: "Lowers the user's Special Attack by 2 stages. If the target lost HP, the user takes recoil damage equal to 1/3 the HP lost by the target, rounded half up, but not less than 1 HP.",
+		shortDesc: "Has 1/3 recoil. Lowers the user's Sp. Atk by 2.",
+	},
 	psychocut: {
 		name: "Psycho Cut",
 		desc: "Has a higher chance for a critical hit.",
@@ -7218,6 +7238,16 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	swordsdance: {
 		name: "Swords Dance",
+		desc: "Raises the user's Attack by 2 stages.",
+		shortDesc: "Raises the user's Attack by 2.",
+	},
+	gamerkirin: {
+		name: "Gamer Kirin",
+		desc: "Raises the user's Attack by 2 stages.",
+		shortDesc: "Raises the user's Attack by 2.",
+	},
+	divadance: {
+		name: "Diva Dance",
 		desc: "Raises the user's Attack by 2 stages.",
 		shortDesc: "Raises the user's Attack by 2.",
 	},

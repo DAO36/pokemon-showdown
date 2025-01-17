@@ -93839,7 +93839,8 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			trickroom: ["9M"],
 			charm: ["9M"],
 			mistyterrain: ["9M"],
-			divasong: ["9M"]
+			divasong: ["9M"],
+			divadance: ["9M"],
         },
 	},
 	fubuki: {
@@ -95709,6 +95710,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			nastyplot: ["9M"],
 			honeclaws: ["9M"],
 			koyolabo: ["9M"],
+			madscientist: ["9M"],
         },
 	},	
 	laplus: {
@@ -97113,6 +97115,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			bulkup: ["9M"],
 			wormhole: ["9M"],
 			bigbang: ["9M"],
+			supernova: ["9M"],
         },
 	},	
 	sanabeeg: {
@@ -97154,6 +97157,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			bulkup: ["9M"],
 			wormhole: ["9M"],
 			bigbang: ["9M"],
+			supernova: ["9M"],
         },
 	},	
 	fauna: {
@@ -97210,6 +97214,8 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			snowscape: ["9M"],
 			hail: ["9M"],
 			mothernature: ["9M"],
+			natureswrath: ["9M"],
+			gamerkirin: ["9M"],
         },
 	},	
 	kronii: {
@@ -98141,6 +98147,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			gigadrain: ["9M"],
 			seedbomb: ["9M"],
 			godeyes: ["9M"],
+			mamamia: ["9M"],
         },
 	},	
 	lamball: {
