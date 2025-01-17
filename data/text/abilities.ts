@@ -954,6 +954,10 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 		desc: "This Pokemon's punch-based attacks have their power multiplied by 1.2.",
 		shortDesc: "This Pokemon's punch-based attacks have 1.2x power. Sucker Punch is not boosted.",
 	},
+	tonjokqueen: {
+		name: "TonjokQueen",
+		shortDesc: "This Queen of Tonjoks has her punch-based attacks have 1.2x power; Sucker Punch is not boosted. Immune to punching-based moves."
+	},
 	muscleknight: {
 		name: "Muscle Knight",
 		desc: "This Knight's punch-based attacks have their power multiplied by 1.2.",
@@ -2020,10 +2024,6 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 		gen4: {
 			shortDesc: "This Pokemon is immune to sound-based moves, including Heal Bell.",
 		},
-	},
-	tonjokqueen: {
-		name: "TonjokQueen",
-		shortDesc: "This Queen of Tonjoks is immune to punching-based moves."
 	},
 	speedboost: {
 		name: "Speed Boost",
