@@ -2127,13 +2127,13 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	},
 	bejeweled: { // sets up sneaky pebbles
 		num: 830,
-		accuracy: 95,
-		basePower: 80,
-		category: "Physical",
+		accuracy: 100,
+		basePower: 70,
+		category: "Special",
 		name: "Bejeweled",
 		pp: 10,
 		priority: 0,
-		flags: {protect: 1, mirror: 1, metronome: 1,},
+		flags: {protect: 1, mirror: 1, slicing: 1,},
 		onAfterHit(target, source, move) {
 			if (!move.hasSheerForce && source.hp) {
 				for (const side of source.side.foeSidesWithConditions()) {
@@ -2148,9 +2148,39 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 				}
 			}
 		},
+		critRatio: 2,
+		secondary: {}, // Sheer Force-boosted
+		target: "normal",
+		type: "Ground",
+	},
+	bibooblade: { // sets up spikes
+		num: 348,
+		accuracy: true,
+		basePower: 70,
+		category: "Physical",
+		name: "Biboo Blade",
+		pp: 10,
+		priority: 0,
+		flags: {contact: 1, protect: 1, mirror: 1, metronome: 1, slicing: 1},
+		onAfterHit(target, source, move) {
+			if (!move.hasSheerForce && source.hp) {
+				for (const side of source.side.foeSidesWithConditions()) {
+					side.addSideCondition('spikes');
+				}
+			}
+		},
+		onAfterSubDamage(damage, target, source, move) {
+			if (!move.hasSheerForce && source.hp) {
+				for (const side of source.side.foeSidesWithConditions()) {
+					side.addSideCondition('spikes');
+				}
+			}
+		},
+		critRatio: 2,
 		secondary: {}, // Sheer Force-boosted
 		target: "normal",
 		type: "Rock",
+		contestType: "Cool",
 	},
 	underworldmusic: {
 		num: 370,
