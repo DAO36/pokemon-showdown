@@ -52,6 +52,18 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 5,
 		num: 24,
 	},
+	kamikaze: {
+		onDamagingHitOrder: 1,
+		onDamagingHit(damage, target, source, move) {
+			if (!target.hp) {
+				this.damage(source.baseMaxhp / 2, source, target);
+			}
+		},
+		flags: {},
+		name: "Kamikaze",
+		rating: 2,
+		num: 106,
+	},
 	nouturn2: {
 		onTryHit(pokemon, target, move) {
 			if (move.flags['switches']) {

@@ -29,6 +29,13 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 
 		damage: "  [POKEMON] was hurt!",
 	},
+	kamikaze: {
+		name: "Kamikaze",
+		desc: "If the user is knocked out by a Pokemon, that Pokemon loses 1/2 of its maximum HP, rounded down. If any active Pokemon has the Damp Ability, this effect is prevented.",
+		shortDesc: "If this Pokemon is KOed, the attacker loses 1/2 its max HP.",
+
+		damage: "  [SOURCE] blew themselves up!",
+	},
 	airlock: {
 		name: "Air Lock",
 		shortDesc: "While this Pokemon is active, the effects of weather conditions are disabled.",
