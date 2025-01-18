@@ -22767,7 +22767,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		name: "Frostallion-Alola",
 		baseSpecies: "Frostallion",
 		forme: "Alola",
-		types: ["Water", "Flying"],
+		types: ["Dark", "Flying"],
 		baseStats: {hp: 80, atk: 155, def: 77, spa: 140, spd: 111, spe: 117},
 		abilities: {0: "Pressure", H: "Cursed Body"},
 		heightm: 3.14,
