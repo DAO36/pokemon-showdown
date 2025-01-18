@@ -19,6 +19,113 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		num: 1881,
 		gen: 9,
 	},
+	choicedrip: {
+		name: "Choice Drip",
+		spritenum: 68,
+		fling: {
+			basePower: 10,
+		},
+		onStart(pokemon) {
+			if (pokemon.volatiles['choicelock']) {
+				this.debug('removing choicelock: ' + pokemon.volatiles['choicelock']);
+			}
+			pokemon.removeVolatile('choicelock');
+		},
+		onModifyMove(move, pokemon) {
+			pokemon.addVolatile('choicelock');
+		},
+		onModifyAtkPriority: 1,
+		onModifyAtk(atk, pokemon) {
+			if (pokemon.volatiles['dynamax']) return;
+			return this.chainModify(1.5);
+		},	
+		onModifySpe(spe, pokemon) {
+			if (pokemon.volatiles['dynamax']) return;
+			return this.chainModify(1.5);
+		},
+		onModifySpAPriority: 1,
+		onModifySpA(spa, pokemon) {
+			if (pokemon.volatiles['dynamax']) return;
+			return this.chainModify(1.5);
+		},
+		isChoice: true,
+		num: 297,
+		gen: 4,
+	},
+	batteries: {
+		name: "Batteries",
+		spritenum: 60,
+		fling: {
+			basePower: 60,
+		},
+		onDamagingHit(damage, target, source, move) {
+			if (move.type === 'Electric') {
+				target.useItem();
+			}
+		},
+		boosts: {
+			atk: 1,
+			spa: 1,
+			def: 1,
+			spd: 1,
+			spe: 1,
+		},
+		num: 546,
+		gen: 5,
+	},
+	hammertime: {
+		name: "Hammer Time",
+		spritenum: 491,
+		fling: {
+			basePower: 120,
+		},
+		onModifyAtkPriority: 1,
+		onModifyAtk(atk, pokemon) {
+			if (pokemon.baseSpecies.baseSpecies === 'Tinkatuff' || pokemon.baseSpecies.baseSpecies === 'Tinkaton') {
+				return this.chainModify(2);
+			}
+		},
+		itemUser: ["Tinkatuff", "Tinkaton"],
+		num: 258,
+		gen: 9,
+	},
+	flinchorb: {
+		name: "Flinch Orb",
+		spritenum: 236,
+		fling: {
+			basePower: 80,
+			volatileStatus: 'flinch',
+		},
+		onModifyMovePriority: -1,
+		onModifyMove(move) {
+			if (move.category !== "Status") {
+				if (!move.secondaries) move.secondaries = [];
+				for (const secondary of move.secondaries) {
+					if (secondary.volatileStatus === 'flinch') return;
+				}
+				move.secondaries.push({
+					chance: 50,
+					volatileStatus: 'flinch',
+				});
+			}
+		},
+		num: 221,
+		gen: 2,
+	},
+	junkfood: {
+		name: "Junk Food",
+		spritenum: 242,
+		fling: {
+			basePower: 10,
+		},
+		onResidualOrder: 5,
+		onResidualSubOrder: 4,
+		onResidual(pokemon) {
+			this.heal(pokemon.baseMaxhp / 8);
+		},
+		num: 234,
+		gen: 2,
+	},
 	deathorb: {
 		name: "Death Orb",
 		spritenum: 249,
@@ -35,6 +142,86 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		},
 		num: 270,
 		gen: 4,
+	},
+	freezeorb: {
+		name: "Freeze Orb",
+		spritenum: 575,
+		fling: {
+			basePower: 30,
+			status: 'frz',
+		},
+		onResidualOrder: 28,
+		onResidualSubOrder: 3,
+		onResidual(pokemon) {
+			pokemon.trySetStatus('frz', pokemon);
+		},
+		num: 273,
+		gen: 9,
+	},
+	sleepyorb: {
+		name: "Sleepy Orb",
+		spritenum: 575,
+		fling: {
+			basePower: 30,
+			status: 'slp',
+		},
+		onResidualOrder: 28,
+		onResidualSubOrder: 3,
+		onResidual(pokemon) {
+			pokemon.trySetStatus('slp', pokemon);
+		},
+		num: 273,
+		gen: 9,
+	},
+	shockorb: {
+		name: "Shock Orb",
+		spritenum: 575,
+		fling: {
+			basePower: 30,
+			status: 'par',
+		},
+		onResidualOrder: 28,
+		onResidualSubOrder: 3,
+		onResidual(pokemon) {
+			pokemon.trySetStatus('par', pokemon);
+		},
+		num: 273,
+		gen: 9,
+	},
+	insurance: {
+		name: "Insurance",
+		spritenum: 609,
+		fling: {
+			basePower: 80,
+		},
+		onDamagingHit(damage, target, source, move) {
+			if (!move.damage && !move.damageCallback && target.getMoveHitData(move).typeMod > 0) {
+				target.useItem();
+			}
+		},
+		boosts: {
+			def: 2,
+			spd: 2,
+		},
+		num: 639,
+		gen: 6,
+	},
+	obamacare: {
+		name: "Obamacare",
+		spritenum: 609,
+		fling: {
+			basePower: 80,
+		},
+		onDamagingHit(damage, target, source, move) {
+			if (!move.damage && !move.damageCallback && target.getMoveHitData(move).typeMod > 0) {
+				target.useItem();
+			}
+		},
+		boosts: {
+			spe: 2,
+		},
+		num: 639,
+		gen: 6,
 	},
 	berserkdna: {
 		name: "Berserk DNA",
@@ -3047,51 +3234,6 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		num: 273,
 		gen: 4,
 	},
-	freezeorb: {
-		name: "Freeze Orb",
-		spritenum: 575,
-		fling: {
-			basePower: 30,
-			status: 'frz',
-		},
-		onResidualOrder: 28,
-		onResidualSubOrder: 3,
-		onResidual(pokemon) {
-			pokemon.trySetStatus('frz', pokemon);
-		},
-		num: 273,
-		gen: 9,
-	},
-	sleepyorb: {
-		name: "Sleepy Orb",
-		spritenum: 575,
-		fling: {
-			basePower: 30,
-			status: 'slp',
-		},
-		onResidualOrder: 28,
-		onResidualSubOrder: 3,
-		onResidual(pokemon) {
-			pokemon.trySetStatus('slp', pokemon);
-		},
-		num: 273,
-		gen: 9,
-	},
-	shockorb: {
-		name: "Shock Orb",
-		spritenum: 575,
-		fling: {
-			basePower: 30,
-			status: 'par',
-		},
-		onResidualOrder: 28,
-		onResidualSubOrder: 3,
-		onResidual(pokemon) {
-			pokemon.trySetStatus('par', pokemon);
-		},
-		num: 273,
-		gen: 9,
-	},
 	flameplate: {
 		name: "Flame Plate",
 		spritenum: 146,
@@ -4182,7 +4324,6 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		itemUser: ["Farfetch\u2019d", "Farfetch\u2019d-Galar", "Sirfetch\u2019d"],
 		num: 259,
 		gen: 8,
-		isNonstandard: "Past",
 	},
 	leftovers: {
 		name: "Leftovers",
@@ -8251,41 +8392,6 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		boosts: {
 			atk: 2,
 			spa: 2,
-		},
-		num: 639,
-		gen: 6,
-	},
-	insurance: {
-		name: "Insurance",
-		spritenum: 609,
-		fling: {
-			basePower: 80,
-		},
-		onDamagingHit(damage, target, source, move) {
-			if (!move.damage && !move.damageCallback && target.getMoveHitData(move).typeMod > 0) {
-				target.useItem();
-			}
-		},
-		boosts: {
-			def: 2,
-			spd: 2,
-		},
-		num: 639,
-		gen: 6,
-	},
-	obamacare: {
-		name: "Obamacare",
-		spritenum: 609,
-		fling: {
-			basePower: 80,
-		},
-		onDamagingHit(damage, target, source, move) {
-			if (!move.damage && !move.damageCallback && target.getMoveHitData(move).typeMod > 0) {
-				target.useItem();
-			}
-		},
-		boosts: {
-			spe: 2,
 		},
 		num: 639,
 		gen: 6,

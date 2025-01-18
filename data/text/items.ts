@@ -503,6 +503,10 @@ export const ItemsText: {[id: IDEntry]: ItemText} = {
 		name: "Cell Battery",
 		shortDesc: "Raises holder's Attack by 1 if hit by an Electric-type attack. Single use.",
 	},
+	batteries: {
+		name: "Batteries",
+		shortDesc: "Raises holder's Atk, Def, Sp. Atk, Sp. Def, and Speed all by 1 if hit by an Electric-type attack. Single use.",
+	},
 	charcoal: {
 		name: "Charcoal",
 		shortDesc: "Holder's Fire-type attacks have 1.2x power.",
@@ -557,6 +561,10 @@ export const ItemsText: {[id: IDEntry]: ItemText} = {
 	choicespecs: {
 		name: "Choice Specs",
 		shortDesc: "Holder's Sp. Atk is 1.5x, but it can only select the first move it executes.",
+	},
+	choicedrip: {
+		name: "Choice Drip",
+		shortDesc: "Holder's Atk, Sp. Atk, and Speed is 1.5x, but it can only select the first move it executes.",
 	},
 	chopleberry: {
 		name: "Chople Berry",
@@ -1191,6 +1199,11 @@ export const ItemsText: {[id: IDEntry]: ItemText} = {
 		desc: "Holder's attacks without a chance to make the target flinch gain a 10% chance to make the target flinch. Evolves Poliwhirl into Politoed and Slowpoke into Slowking when traded.",
 		shortDesc: "Holder's attacks without a chance to flinch gain a 10% chance to flinch.",
 	},
+	flinchorb: {
+		name: "Flinch Orb",
+		desc: "Holder's attacks without a chance to make the target flinch gain a 50% chance to make the target flinch. Evolves Poliwhirl into Politoed and Slowpoke into Slowking when traded.",
+		shortDesc: "Holder's attacks without a chance to flinch gain a 50/50 chance to flinch.",
+	},
 	kommoniumz: {
 		name: "Kommonium Z",
 		shortDesc: "If held by a Kommo-o with Clanging Scales, it can use Clangorous Soulblaze.",
@@ -1235,6 +1248,12 @@ export const ItemsText: {[id: IDEntry]: ItemText} = {
 		shortDesc: "At the end of every turn, holder restores 1/16 of its max HP.",
 
 		heal: "  [POKEMON] restored a little HP using its Leftovers!",
+	},
+	junkfood: {
+		name: "Junk Food",
+		shortDesc: "At the end of every turn, holder restores 1/8 of its max HP.",
+
+		heal: "  [POKEMON] is gourging on McRonald's!",
 	},
 	leppaberry: {
 		name: "Leppa Berry",
@@ -2125,6 +2144,10 @@ export const ItemsText: {[id: IDEntry]: ItemText} = {
 	thickclub: {
 		name: "Thick Club",
 		shortDesc: "If held by a Cubone or a Marowak, its Attack is doubled.",
+	},
+	hammertime: {
+		name: "Hammer Time",
+		shortDesc: "If held by a Tinkatuff or a Tinkaton, its Attack is doubled.",
 	},
 	throatspray: {
 		name: "Throat Spray",
