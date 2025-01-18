@@ -100362,7 +100362,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			protect: ["9M"],
 			substitute: ["9M"],
 			rest: ["9M"],
-			galeclaw: ["9M"],
+			doubleedge: ["9M"],
 			facade: ["9M"],
 			quickattack: ["9M"],
 			weatherball: ["9M"],
