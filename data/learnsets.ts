@@ -102415,6 +102415,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			aquajet: ["9M"],
 			flipturn: ["9M"],
 			hydropump: ["9M"],
+			icespinner: ["9M"],
 			surf: ["9M"],
 			aquaring: ["9M"],
 			raindance: ["9M"],
