@@ -100389,6 +100389,9 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			lashout: ["9M"],
 			darkpulse: ["9M"],
 			steelwing: ["9M"],
+			nastyplot: ["9M"],
+			airslash: ["9M"],
+			hurricane: ["9M"],
 		},
 	},
 	robinquill: {
