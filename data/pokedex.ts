@@ -22535,7 +22535,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		name: "Astegon",
 		types: ["Dragon", "Dark"],
 		baseStats: {hp: 111, atk: 150, def: 133, spa: 76, spd: 64, spe: 66},
-		abilities: {0: "Levitate", 1: "Intimidate"},
+		abilities: {0: "Levitate", H: "Intimidate"},
 		heightm: 4.2,
 		weightkg: 360,
 		color: "Black",
