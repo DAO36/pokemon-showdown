@@ -104166,7 +104166,6 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			darkpulse: ["9M"],
 			lashout: ["9M"],
 			suckerpunch: ["9M"],
-			throat: ["9M"],
 			icebeam: ["9M"],
 			tripleaxel: ["9M"],
 		},
