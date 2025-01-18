@@ -100307,6 +100307,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			honeclaws: ["9M"],
 			nastyplot: ["9M"],
 			metalclaw: ["9M"],
+			megahorn: ["9M"],
 		},
 	},
 	loupmoonalola: {
@@ -100314,6 +100315,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			protect: ["9M"],
 			substitute: ["9M"],
 			rest: ["9M"],
+			megahorn: ["9M"],
 			facade: ["9M"],
 			furyattack: ["9M"],
 			disable: ["9M"],
