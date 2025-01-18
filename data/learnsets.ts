@@ -103813,7 +103813,6 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			megakick: ["9M"],
 			megapunch: ["9M"],
 			quickattack: ["9M"],
-			closecombat: ["9M"],
 			extremespeed: ["9M"],
 			triattack: ["9M"],
 			growl: ["9M"],
