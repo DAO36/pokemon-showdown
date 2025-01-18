@@ -102491,7 +102491,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			bulkup: ["9M"],
 			psychocut: ["9M"],
 			headlongrush: ["9M"],
-			iciciclespear: ["9M"],
+			iciclespear: ["9M"],
 			rockblast: ["9M"],
 			rockslide: ["9M"],
 			earthpower: ["9M"],
