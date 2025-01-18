@@ -23076,7 +23076,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		num: 562,
 		name: "Omascul",
 		types: ["Dark", "Flying"],
-		baseStats: {hp: 75, atk: 120, def: 70, spa: 110, spd: 75, spe: 60},
+		baseStats: {hp: 75, atk: 120, def: 70, spa: 110, spd: 90, spe: 60},
 		abilities: {0: "Pressure", 1: "Unnerve", H: "Intimidate"},
 		heightm: 1.75,
 		weightkg: 66.6,
