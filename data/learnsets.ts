@@ -98812,6 +98812,8 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			babydolleyes: ["9M"],
 			charm: ["9M"],
 			mistyterrain: ["9M"],
+			earthpower: ["9M"],
+			discharge: ["9M"],
 		},
 	},
 	daedream: {
