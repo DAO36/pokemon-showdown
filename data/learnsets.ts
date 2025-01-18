@@ -102323,6 +102323,8 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			irontail: ["9M"],
 			flashcannon: ["9M"],
 			dazzlinggleam: ["9M"],
+			hydropump: ["9M"],
+			surf: ["9M"],
 		},
 	},
 	kelpsea: {
