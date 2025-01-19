@@ -1275,14 +1275,33 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3,
 		num: 128,
 	},
-	durable: { // reskin of Stamina
+	durable2: { // reskin of Stamina (UNUSED)
 		onDamagingHit(damage, target, source, effect) {
 			this.boost({def: 1});
 		},
 		flags: {},
-		name: "Durable",
+		name: "Durable2",
 		rating: 4,
 		num: 192,
+	},
+	durable: { // reskin of Download except its for DEF/SDEF instead of ATK/SATK
+		onStart(pokemon) {
+			let totalatk = 0;
+			let totalspa = 0;
+			for (const target of pokemon.foes()) {
+				totalatk += target.getStat('atk', false, true);
+				totalspa += target.getStat('spa', false, true);
+			}
+			if (totalatk && totalatk >= totalspa) {
+				this.boost({def: 1});
+			} else if (totalspa) {
+				this.boost({spd: 1});
+			}
+		},
+		flags: {},
+		name: "Durable",
+		rating: 3.5,
+		num: 88,
 	},
 	bigcatmeansbigtrouble: { // combines Strong Jaw + Keen Eye (UNUSED)
 		onBasePowerPriority: 19,

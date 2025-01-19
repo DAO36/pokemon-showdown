@@ -452,6 +452,11 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 		desc: "On switch-in, this Pokemon's Attack or Special Attack is raised by 1 stage based on the weaker combined defensive stat of all opposing Pokemon. Attack is raised if their Defense is lower, and Special Attack is raised if their Special Defense is the same or lower.",
 		shortDesc: "On switch-in, Attack or Sp. Atk is raised 1 stage based on the foes' weaker Defense.",
 	},
+	durable: {
+		name: "Durable",
+		desc: "On switch-in, this Pokemon's Defense or Special Defense is raised by 1 stage based on the weaker combined offensive stat of all opposing Pokemon. Defense is raised if their Attack is lower, and Special Defense is raised if their Special Attack is the same or lower.",
+		shortDesc: "On switch-in, Defense or Sp. Def is raised 1 stage based on the foes' weaker Offensive stat.",
+	},
 	dragonsmaw: {
 		name: "Dragon's Maw",
 		shortDesc: "This Pokemon's offensive stat is multiplied by 1.5 while using a Dragon-type attack.",
@@ -2053,8 +2058,8 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 		name: "Stamina",
 		shortDesc: "This Pokemon's Defense is raised by 1 stage after it is damaged by a move.",
 	},
-	durable: {
-		name: "Durable",
+	durable2: {
+		name: "Durable2",
 		shortDesc: "This Pokemon's Defense is raised by 1 stage after it is damaged by a move.",
 	},
 	stancechange: {
