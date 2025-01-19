@@ -2059,7 +2059,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		name: "Mother Nature",
 		pp: 10,
 		priority: 0,
-		flags: {protect: 1, contact: 1, mirror: 1},
+		flags: {protect: 1, mirror: 1},
 		self: {
 			onHit(pokemon, source, move) {
 				this.add('-activate', source, 'move: Aromatherapy');
