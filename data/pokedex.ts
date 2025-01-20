@@ -21073,7 +21073,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		num: 518,
 		name: "Daedream",
 		types: ["Dark"],
-		baseStats: {hp: 78, atk: 55, def: 66, spa: 136, spd: 123, spe: 77},
+		baseStats: {hp: 77, atk: 55, def: 66, spa: 133, spd: 111, spe: 103},
 		abilities: {0: "Forewarn", 1: "Frisk", H: "Levitate"},
 		heightm: 1.1,
 		weightkg: 60.5,
