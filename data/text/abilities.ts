@@ -2395,6 +2395,10 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 		name: "Spiky",
 		shortDesc: "If this Pokemon is hit by a physical attack, Spikes are set on the opposing side.",
 	},
+	sneakypebbles: {
+		name: "Sneaky Pebbles",
+		shortDesc: "If this Pokemon is hit by a physical attack, Stealth Rock is set on the opposing side.",
+	},
 	firewall: {
 		name: "Firewall",
 		shortDesc: "If this Pokemon is hit by a physical attack, Reflect is set up; If this Pokemon is hit by a special attack, Light Screen is set up",
