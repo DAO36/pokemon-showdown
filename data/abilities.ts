@@ -64,7 +64,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 2,
 		num: 106,
 	},
-	airforce: {
+	airforce: { // sets up tailwind on switch-in :o
         onStart(source) {
             source.side.addSideCondition('tailwind', source);
         },
@@ -98,40 +98,6 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		},
 		flags: {},
 		name: "Sneaky Pebbles",
-		rating: 3.5,
-		num: 295,
-	},
-	spidersoup: {
-		onDamagingHitOrder: 1,
-		onDamagingHit(damage, target, source, move) {
-			const side = source.isAlly(target) ? source.side.foe : source.side;
-			const stickyweb = side.sideConditions['stickyweb'];
-			if (target.runEffectiveness(move) >= 1 && (!stickyweb || stickyweb.layers < 1)) {
-				this.add('-activate', target, 'ability: Spider Soup');
-				side.addSideCondition('stickyweb', target);
-			}
-		},
-		flags: {},
-		name: "Spider Soup",
-		rating: 3.5,
-		num: 295,
-	},
-	firewall: {
-		onDamagingHit(damage, target, source, move) {
-			const side = source.isAlly(target) ? source.side : source.side.foe;
-			const reflect = side.sideConditions['reflect'];
-			const lightscreen = side.sideConditions['lightscreen'];
-			if (move.category === 'Physical' && (!reflect || reflect.layers < 1)) {
-				this.add('-activate', target, 'ability: Firewall');
-				side.addSideCondition('reflect', target);
-			} 
-			if (move.category === 'Special' && (!lightscreen || lightscreen.layers < 1)) {
-				this.add('-activate', target, 'ability: Firewall');
-				side.addSideCondition('lightscreen', target);
-			}
-		},
-		flags: {},
-		name: "Firewall",
 		rating: 3.5,
 		num: 295,
 	},
@@ -337,7 +303,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3,
 		num: 271,
 	},
-	haachamacooking: { // reskin of Cheek Pouch
+	haachamacooking: { // reskin of Cheek Pouch (UNUSED)
 		onEatItem(item, pokemon) {
 			this.heal(pokemon.baseMaxhp / 3);
 		},
@@ -345,6 +311,21 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		name: "Haachama Cooking",
 		rating: 2,
 		num: 167,
+	},
+	spidersoup: { // if haachama is hit by a super-effective move, sets up sticky web
+		onDamagingHitOrder: 1,
+		onDamagingHit(damage, target, source, move) {
+			const side = source.isAlly(target) ? source.side.foe : source.side;
+			const stickyweb = side.sideConditions['stickyweb'];
+			if (target.runEffectiveness(move) >= 1 && (!stickyweb || stickyweb.layers < 1)) {
+				this.add('-activate', target, 'ability: Spider Soup');
+				side.addSideCondition('stickyweb', target);
+			}
+		},
+		flags: {},
+		name: "Spider Soup",
+		rating: 3.5,
+		num: 295,
 	},
 	splitpersonalities: { // reskin of Hunger Switch
 		onResidualOrder: 29,
@@ -793,7 +774,26 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3,
 		num: 153,
 	},
-	madscience: { // reskin of Surge Surfer but for Psychic Terrain and Special Defense instead of Speed
+	firewall: { // if hit by physical move, sets up reflect; if hit by special move, sets up light screen
+		onDamagingHit(damage, target, source, move) {
+			const side = source.isAlly(target) ? source.side : source.side.foe;
+			const reflect = side.sideConditions['reflect'];
+			const lightscreen = side.sideConditions['lightscreen'];
+			if (move.category === 'Physical' && (!reflect || reflect.layers < 1)) {
+				this.add('-activate', target, 'ability: Firewall');
+				side.addSideCondition('reflect', target);
+			} 
+			if (move.category === 'Special' && (!lightscreen || lightscreen.layers < 1)) {
+				this.add('-activate', target, 'ability: Firewall');
+				side.addSideCondition('lightscreen', target);
+			}
+		},
+		flags: {},
+		name: "Firewall",
+		rating: 3.5,
+		num: 295,
+	},
+	madscience: { // reskin of Surge Surfer but for Psychic Terrain and SpDef instead of Speed (UNUSED)
 		onModifySpDPriority: 6,
 		onModifySpD(pokemon) {
 			if (this.field.isTerrain('psychicterrain')) return this.chainModify(1.5);
