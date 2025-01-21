@@ -106,7 +106,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		onDamagingHit(damage, target, source, move) {
 			const side = source.isAlly(target) ? source.side.foe : source.side;
 			const stickyweb = side.sideConditions['stickyweb'];
-			if (target.runEffectiveness(move) <= 1 && (!stickyweb || stickyweb.layers < 1)) {
+			if (target.runEffectiveness(move) >= 1 && (!stickyweb || stickyweb.layers < 1)) {
 				this.add('-activate', target, 'ability: Spider Soup');
 				side.addSideCondition('stickyweb', target);
 			}
