@@ -248,7 +248,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		},
 		onDamagingHitOrder: 2,
 		onDamagingHit(damage, target, source, move) { {
-				this.damage(source.baseMaxhp / 6, source, target);
+				this.damage(source.baseMaxhp / 4, source, target);
 			}
 		},
 		num: 540,

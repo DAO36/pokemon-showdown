@@ -1853,7 +1853,7 @@ export const ItemsText: {[id: IDEntry]: ItemText} = {
 	},
 	cursedhelmet: {
 		name: "Cursed Helmet",
-		shortDesc: "If holder is hit by a move, the attacker loses 1/6 of its max HP.",
+		shortDesc: "If holder is hit by a move, the attacker loses 1/4 of its max HP.",
 
 		damage: "  [POKEMON] is going to die!",
 	},
