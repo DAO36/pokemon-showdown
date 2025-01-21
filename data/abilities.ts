@@ -117,7 +117,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	}, // if (target.runEffectiveness(move) <= 0) {
 	firewall: {
 		onDamagingHit(damage, target, source, move) {
-			const side = source.isAlly(target) ? source.side.foe : source.side;
+			const side = source.isAlly(target) ? source.side : source.side.foe;
 			const reflect = side.sideConditions['reflect'];
 			const lightscreen = side.sideConditions['lightscreen'];
 			if (move.category === 'Physical' && (!reflect || reflect.layers < 1)) {
