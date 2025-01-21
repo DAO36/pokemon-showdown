@@ -101,6 +101,20 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3.5,
 		num: 295,
 	},
+	spidersoup: {
+		onDamagingHit(damage, target, source, move) {
+			const side = source.isAlly(target) ? source.side.foe : source.side;
+			const stickyweb = side.sideConditions['stickyweb'];
+			if (target.runEffectiveness(move) <= 0 && (!stickyweb || stickyweb.layers < 1)) {
+				this.add('-activate', target, 'ability: Spider Soup');
+				side.addSideCondition('stickyweb', target);
+			}
+		},
+		flags: {},
+		name: "Spider Soup",
+		rating: 3.5,
+		num: 295,
+	}, // if (target.runEffectiveness(move) <= 0) {
 	firewall: {
 		onDamagingHit(damage, target, source, move) {
 			const side = source.isAlly(target) ? source.side.foe : source.side;
