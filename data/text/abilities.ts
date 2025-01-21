@@ -473,6 +473,10 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 		name: "Gravitational Pull",
 		shortDesc: "On switch-in, this BEEG Astrogirl summons Gravity.",
 	},
+	airforce: {
+		name: "Air Force",
+		shortDesc: "On switch-in, this Pokemon summons Tailwind.",
+	},
 	drought: {
 		name: "Drought",
 		shortDesc: "On switch-in, this Pokemon summons Sunny Day.",

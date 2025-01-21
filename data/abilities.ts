@@ -64,6 +64,15 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 2,
 		num: 106,
 	},
+	airforce: {
+        onStart(source) {
+            source.side.addSideCondition('tailwind', source);
+        },
+        flags: {},
+        name: "Air Force",
+        rating: 5,
+        num: 318,
+    },
 	nouturn2: {
 		onTryHit(pokemon, target, move) {
 			if (move.flags['switches']) {
