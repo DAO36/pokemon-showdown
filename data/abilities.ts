@@ -73,6 +73,53 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
         rating: 5,
         num: 318,
     },
+	spiky: {
+		onDamagingHit(damage, target, source, move) {
+			const side = source.isAlly(target) ? source.side.foe : source.side;
+			const spikes = side.sideConditions['spikes'];
+			if (move.category === 'Physical' && (!spikes || spikes.layers < 3)) {
+				this.add('-activate', target, 'ability: Spiky');
+				side.addSideCondition('spikes', target);
+			}
+		},
+		flags: {},
+		name: "Spiky",
+		rating: 3.5,
+		num: 295,
+	},
+	sneakypebbles: {
+		onDamagingHit(damage, target, source, move) {
+			const side = source.isAlly(target) ? source.side.foe : source.side;
+			const stealthrock = side.sideConditions['stealthrock'];
+			if (move.category === 'Physical' && (!stealthrock || stealthrock.layers < 1)) {
+				this.add('-activate', target, 'ability: Sneaky Pebbles');
+				side.addSideCondition('stealthrock', target);
+			}
+		},
+		flags: {},
+		name: "Sneaky Pebbles",
+		rating: 3.5,
+		num: 295,
+	},
+	firewall: {
+		onDamagingHit(damage, target, source, move) {
+			const side = source.isAlly(target) ? source.side.foe : source.side;
+			const reflect = side.sideConditions['reflect'];
+			const lightscreen = side.sideConditions['lightscreen'];
+			if (move.category === 'Physical' && (!reflect || reflect.layers < 1)) {
+				this.add('-activate', target, 'ability: Firewall');
+				side.addSideCondition('reflect', target);
+			} 
+			if (move.category === 'Special' && (!lightscreen || lightscreen.layers < 1)) {
+				this.add('-activate', target, 'ability: Firewall');
+				side.addSideCondition('lightscreen', target);
+			}
+		},
+		flags: {},
+		name: "Firewall",
+		rating: 3.5,
+		num: 295,
+	},
 	nouturn2: {
 		onTryHit(pokemon, target, move) {
 			if (move.flags['switches']) {
