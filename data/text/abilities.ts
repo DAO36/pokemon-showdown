@@ -717,6 +717,12 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 		desc: "This Pokemon's Attack is multiplied by 1.5, but it can only select the first move it executes. These effects are prevented while this Pokemon is Dynamaxed.",
 		shortDesc: "This Pokemon's Attack is 1.5x, but it can only select the first move it executes.",
 	},
+	overpowered: {
+		name: "Overpowered",
+		shortDesc: "Holder's attacks do 1.3x damage, and it loses 1/10 its max HP after the attack.",
+
+		damage: "  [POKEMON] lost some of its HP!",
+	},
 	grasspelt: {
 		name: "Grass Pelt",
 		shortDesc: "If Grassy Terrain is active, this Pokemon's Defense is multiplied by 1.5.",

@@ -73,6 +73,29 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
         rating: 5,
         num: 318,
     },
+	overpowered: {
+		onModifySpAPriority: 5,
+		onModifySpA(spa, pokemon) {
+		 {
+				return this.chainModify(1.3);
+			}
+		},
+		onModifyAtkPriority: 5,
+		onModifyAtk(atk, pokemon) {
+		 {
+				return this.chainModify(1.3);
+			}
+		},
+		onAfterMoveSecondarySelf(source, target, move) {
+			if (source && source !== target && move && move.category !== 'Status' && !source.forceSwitchFlag) {
+				this.damage(source.baseMaxhp / 10, source, source,);
+			}
+		},
+		flags: {},
+		name: "Overpowered",
+		rating: 3.5,
+		num: 94,
+	},
 	spiky: {
 		onDamagingHit(damage, target, source, move) {
 			const side = source.isAlly(target) ? source.side.foe : source.side;
