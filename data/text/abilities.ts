@@ -2143,8 +2143,17 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	bigcatmeansbigtrouble: {
 		name: "Big Cat Means Big Trouble",
-		desc: "This Cat's bite-based attacks have their power multiplied by 1.5. This Cat ignores a target's evasiveness stat stage.",
-		shortDesc: "This Cat's bite-based attacks have 1.5x power. Bug Bite is not boosted. ignores foe's evasiveness stats.",
+		desc: "This Cat's bite-based attacks have their power multiplied by 1.5. Prevents other Pokemon from lowering this Cat's accuracy stat stage. This Cat ignores a target's evasiveness stat stage.",
+		shortDesc: "This Cat's bite-based attacks have 1.5x power. This Cat's accuracy can't be lowered by others; ignores foe's evasiveness stats.",
+	},
+	neye: {
+		name: "Keen Eye",
+		desc: "Prevents other Pokemon from lowering this Pokemon's accuracy stat stage. This Pokemon ignores a target's evasiveness stat stage.",
+		shortDesc: "This Pokemon's accuracy can't be lowered by others; ignores their evasiveness stat.",
+		gen5: {
+			desc: "Prevents other Pokemon from lowering this Pokemon's accuracy stat stage.",
+			shortDesc: "Prevents other Pokemon from lowering this Pokemon's accuracy stat stage.",
+		},
 	},
 	sturdy: {
 		name: "Sturdy",
