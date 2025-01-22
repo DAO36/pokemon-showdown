@@ -270,7 +270,7 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	seiso: {
 		name: "Seiso",
-		shortDesc: "Sora is so seiso it prevents others from lowering her stat stages.",
+		shortDesc: "Sora is so seiso it prevents others from lowering her stat stages. Immune to flinching",
 	},
 	cloudnine: {
 		name: "Cloud Nine",
