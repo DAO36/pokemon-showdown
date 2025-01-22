@@ -1381,24 +1381,12 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3.5,
 		num: 88,
 	},
-	bigcatmeansbigtrouble: { // combines Strong Jaw + Keen Eye
+	bigcatmeansbigtrouble: { // reskin of Strong Jaw
 		onBasePowerPriority: 19,
 		onBasePower(basePower, attacker, defender, move) {
 			if (move.flags['bite']) {
 				return this.chainModify(1.5);
 			}
-		},
-		onTryBoost(boost, target, source, effect) {
-			if (source && target === source) return;
-			if (boost.accuracy && boost.accuracy < 0) {
-				delete boost.accuracy;
-				if (!(effect as ActiveMove).secondaries) {
-					this.add("-fail", target, "unboost", "accuracy", "[from] ability: Big Cat Means Big Trouble", "[of] " + target);
-				}
-			}
-		},
-		onModifyMove(move) {
-			move.ignoreEvasion = true;
 		},
 		flags: {},
 		name: "Big Cat Means Big Trouble",
