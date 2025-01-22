@@ -64,6 +64,18 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 2,
 		num: 106,
 	},
+	killswitch: {
+		onDamagingHitOrder: 1,
+		onSwitchOut(source) {
+			{
+				source.faint;
+			}
+		},
+		flags: {failroleplay: 1, noreceiver: 1, noentrain: 1, notrace: 1, failskillswap: 1, cantsuppress: 1, notransform: 1},
+		name: "Kill Switch",
+		rating: 5,
+		num: 278,
+	},
 	airforce: { // sets up tailwind on switch-in :o
         onStart(source) {
             source.side.addSideCondition('tailwind', source);

@@ -2634,6 +2634,12 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 		transform: "Zen Mode triggered!",
 		transformEnd: "Zen Mode ended!",
 	},
+	killswitch: {
+		name: "Kill Switch",
+		shortDesc: "If this Pokemon switches out, it faints.",
+
+		activate: "  [POKEMON] died!",
+	},
 	zerotohero: {
 		name: "Zero to Hero",
 		shortDesc: "If this Pokemon is a Palafin in Zero Form, switching out has it change to Hero Form.",
