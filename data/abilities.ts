@@ -73,29 +73,6 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
         rating: 5,
         num: 318,
     },
-	overpowered: {
-		onModifySpAPriority: 5,
-		onModifySpA(spa, pokemon) {
-		 {
-				return this.chainModify(1.3);
-			}
-		},
-		onModifyAtkPriority: 5,
-		onModifyAtk(atk, pokemon) {
-		 {
-				return this.chainModify(1.3);
-			}
-		},
-		onAfterMoveSecondarySelf(source, target, move) {
-			if (source && source !== target && move && move.category !== 'Status' && !source.forceSwitchFlag) {
-				this.damage(source.baseMaxhp / 10, source, source,);
-			}
-		},
-		flags: {},
-		name: "Overpowered",
-		rating: 3.5,
-		num: 94,
-	},
 	spiky: {
 		onDamagingHit(damage, target, source, move) {
 			const side = source.isAlly(target) ? source.side.foe : source.side;
@@ -293,41 +270,28 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 5,
 		num: 24,
 	},
-	iamgod: { // reskin of Anger Shell
-		onDamage(damage, target, source, effect) {
-			if (
-				effect.effectType === "Move" &&
-				!effect.multihit &&
-				(!effect.negateSecondary && !(effect.hasSheerForce && source.hasAbility('sheerforce')))
-			) {
-				this.effectState.checkedAngerShell = false;
-			} else {
-				this.effectState.checkedAngerShell = true;
+	iamgod: { // life orb as an ability but better
+		onModifySpAPriority: 5,
+		onModifySpA(spa, pokemon) {
+		 {
+				return this.chainModify(1.5);
 			}
 		},
-		onTryEatItem(item) {
-			const healingItems = [
-				'aguavberry', 'enigmaberry', 'figyberry', 'iapapaberry', 'magoberry', 'sitrusberry', 'wikiberry', 'oranberry', 'berryjuice',
-			];
-			if (healingItems.includes(item.id)) {
-				return this.effectState.checkedAngerShell;
+		onModifyAtkPriority: 5,
+		onModifyAtk(atk, pokemon) {
+		 {
+				return this.chainModify(1.5);
 			}
-			return true;
 		},
-		onAfterMoveSecondary(target, source, move) {
-			this.effectState.checkedAngerShell = true;
-			if (!source || source === target || !target.hp || !move.totalDamage) return;
-			const lastAttackedBy = target.getLastAttackedBy();
-			if (!lastAttackedBy) return;
-			const damage = move.multihit ? move.totalDamage : lastAttackedBy.damage;
-			if (target.hp <= target.maxhp / 2 && target.hp + damage > target.maxhp / 2) {
-				this.boost({atk: 1, spa: 1, spe: 1, def: -1, spd: -1}, target, target);
+		onAfterMoveSecondarySelf(source, target, move) {
+			if (source && source !== target && move && move.category !== 'Status' && !source.forceSwitchFlag) {
+				this.damage(source.baseMaxhp / 10, source, source,);
 			}
 		},
 		flags: {},
-		name: "I Am God",
-		rating: 3,
-		num: 271,
+		name: "I am God",
+		rating: 4,
+		num: 94,
 	},
 	haachamacooking: { // reskin of Cheek Pouch (UNUSED)
 		onEatItem(item, pokemon) {
