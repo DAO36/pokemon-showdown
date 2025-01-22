@@ -270,7 +270,7 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	seiso: {
 		name: "Seiso",
-		shortDesc: "Sora is so seiso it prevents others from lowering her stat stages. Immune to flinching",
+		shortDesc: "Sora is so seiso it prevents others from lowering her stat stages. Cannot be made to flinch.",
 	},
 	cloudnine: {
 		name: "Cloud Nine",
@@ -1195,8 +1195,8 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	yamada: {
 		name: "Yamada",
-		desc: "When one of YMD's stat stages would be lowered by another Pokemon, that Pokemon's stat stage is lowered instead. This effect does not happen if this Pokemon's stat stage was already -6. If the other Pokemon has a substitute, neither Pokemon has its stat stage lowered. This user cannot be struck by a critical hit.",
-		shortDesc: "If this YMD's stat stages would be lowered, the attacker's are lowered instead; Cannot be hit by critical hits.",
+		desc: "When one of YMD's stat stages would be lowered by another Pokemon, that Pokemon's stat stage is lowered instead. This effect does not happen if this Pokemon's stat stage was already -6. If the other Pokemon has a substitute, neither Pokemon has its stat stage lowered. Cannot be made to flinch.",
+		shortDesc: "If this YMD's stat stages would be lowered, the attacker's are lowered instead; Cannot be made to flinch.",
 	},
 	stellar: {
 		name: "Stellar",
@@ -1931,7 +1931,7 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	thelegendofpolka: {
 		name: "The Legend of Polka",
-		shortDesc: "This Fennec Fox is not affected by the secondary effect of another Pokemon's attack.",
+		shortDesc: "This Fennec Fox is not affected by the secondary effect of another Pokemon's attack; Cannot be made to flinch, or be struck by critical hits",
 	},
 	shieldsdown: {
 		name: "Shields Down",

@@ -165,7 +165,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 5,
 		num: 74,
 	},
-	seiso: { // reskin of Clear Body
+	seiso: { // reskin of Clear Body + immune to flinching
 		onTryAddVolatile(status, pokemon) {
 			if (status.id === 'flinch') return null;
 		},
@@ -684,7 +684,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3.5,
 		num: 181,
 	},
-	watamelon: { // reskin of Overcoat
+	watamelon: { // reskin of Overcoat + immune to crits
 		onCriticalHit: false,
 		onImmunity(type, pokemon) {
 			if (type === 'sandstorm' || type === 'hail' || type === 'powder') return false;
@@ -723,7 +723,11 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3,
 		num: 153,
 	},
-	thelegendofpolka: { // reskin of Shield Dust
+	thelegendofpolka: { // reskin of Shield Dust + immunity to flinch/crits
+		onCriticalHit: false,
+		onTryAddVolatile(status, pokemon) {
+			if (status.id === 'flinch') return null;
+		},
 		onModifySecondaries(secondaries) {
 			this.debug('Shield Dust prevent secondary');
 			return secondaries.filter(effect => !!(effect.self || effect.dustproof));
@@ -894,7 +898,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3.5,
 		num: 256,
 	},
-	yamada: { // reskin of Mirror Armour
+	yamada: { // reskin of Mirror Armour + cant flinch
 		onTryAddVolatile(status, pokemon) {
 			if (status.id === 'flinch') return null;
 		},
