@@ -1189,8 +1189,8 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	yamada: {
 		name: "Yamada",
-		desc: "When one of YMD's stat stages would be lowered by another Pokemon, that Pokemon's stat stage is lowered instead. This effect does not happen if this Pokemon's stat stage was already -6. If the other Pokemon has a substitute, neither Pokemon has its stat stage lowered.",
-		shortDesc: "If this YMD's stat stages would be lowered, the attacker's are lowered instead.",
+		desc: "When one of YMD's stat stages would be lowered by another Pokemon, that Pokemon's stat stage is lowered instead. This effect does not happen if this Pokemon's stat stage was already -6. If the other Pokemon has a substitute, neither Pokemon has its stat stage lowered. This user cannot be struck by a critical hit.",
+		shortDesc: "If this YMD's stat stages would be lowered, the attacker's are lowered instead; Cannot be hit by critical hits.",
 	},
 	stellar: {
 		name: "Stellar",
@@ -1396,8 +1396,8 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	watamelon: {
 		name: "Watamelon",
-		desc: "This Sheep is wearing a watermelon that grants her immunity to powder moves, damage from Sandstorm, and the effects of Rage Powder and the Effect Spore Ability.",
-		shortDesc: "This Sheep's watermelon helmet makes her immune to powder moves, Sandstorm damage, and Effect Spore.",
+		desc: "This Sheep is wearing a watermelon that grants her immunity to powder moves, damage from Sandstorm, and the effects of Rage Powder and the Effect Spore Ability. Also cannot be struck by a critical hit.",
+		shortDesc: "This Sheep's watermelon helmet makes her immune to powder moves, Sandstorm damage, and Effect Spore. Immune to critical hits.",
 	},
 	overgrow: {
 		name: "Overgrow",
@@ -2143,13 +2143,8 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	bigcatmeansbigtrouble: {
 		name: "Big Cat Means Big Trouble",
-		desc: "This Cat's bite-based attacks have their power multiplied by 1.5. This Cat's accuracy can't be lowered by others; ignores their evasiveness stat.",
-		shortDesc: "This Cat's bite-based attacks have 1.5x power. Bug Bite is not boosted. Accuracy can't be lowered; ignores evasiveness.",
-	},
-	bigcatbigtrouble: {
-		name: "Big Cat Big Trouble",
-		desc: "This Cat's bite-based attacks have their power multiplied by 1.5. This Cat's Accuracy is raised by 2 for each of its stats that is lowered by a foe.",
-		shortDesc: "This Cat's bite-based attacks have 1.5x power. Bug Bite is not boosted.  This Cat's Accuracy is raised by 2 for each of its stats that is lowered by a foe.",
+		desc: "This Cat's bite-based attacks have their power multiplied by 1.5. This Cat ignores a target's evasiveness stat stage.",
+		shortDesc: "This Cat's bite-based attacks have 1.5x power. Bug Bite is not boosted. ignores foe's evasiveness stats.",
 	},
 	sturdy: {
 		name: "Sturdy",
@@ -2633,12 +2628,6 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 
 		transform: "Zen Mode triggered!",
 		transformEnd: "Zen Mode ended!",
-	},
-	killswitch: {
-		name: "Kill Switch",
-		shortDesc: "If this Pokemon switches out, it faints.",
-
-		activate: "  [POKEMON] died!",
 	},
 	zerotohero: {
 		name: "Zero to Hero",

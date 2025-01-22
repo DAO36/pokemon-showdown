@@ -20813,7 +20813,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		types: ["Normal"],
 		gender: "F",
 		baseStats: {hp: 90, atk: 125, def: 90, spa: 105, spd: 80, spe: 110},
-		abilities: {0: "Justified", 1: "Keen Eye", H: "Trace", S: "Big Cat Big Trouble"},
+		abilities: {0: "Justified", 1: "Keen Eye", H: "Trace", S: "Big Cat Means Big Trouble"},
 		heightm: 1.58,
 		weightkg: 55.5,
 		color: "Pink",

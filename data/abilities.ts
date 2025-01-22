@@ -64,18 +64,6 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 2,
 		num: 106,
 	},
-	killswitch: {
-		onDamagingHitOrder: 1,
-		onSwitchOut(source) {
-			{
-				source.faint;
-			}
-		},
-		flags: {failroleplay: 1, noreceiver: 1, noentrain: 1, notrace: 1, failskillswap: 1, cantsuppress: 1, notransform: 1},
-		name: "Kill Switch",
-		rating: 5,
-		num: 278,
-	},
 	airforce: { // sets up tailwind on switch-in :o
         onStart(source) {
             source.side.addSideCondition('tailwind', source);
@@ -146,7 +134,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	},
 	purepower: {
 		onModifySpAPriority: 5,
-		onModifyAtk(spa) {
+		onModifySpA(spa) {
 			return this.chainModify(2);
 		},
 		flags: {},
@@ -155,6 +143,9 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		num: 74,
 	},
 	seiso: { // reskin of Clear Body
+		onTryAddVolatile(status, pokemon) {
+			if (status.id === 'flinch') return null;
+		},
 		onTryBoost(boost, target, source, effect) {
 			if (source && target === source) return;
 			let showMsg = false;
@@ -671,6 +662,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		num: 181,
 	},
 	watamelon: { // reskin of Overcoat
+		onCriticalHit: false,
 		onImmunity(type, pokemon) {
 			if (type === 'sandstorm' || type === 'hail' || type === 'powder') return false;
 		},
@@ -880,6 +872,9 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		num: 256,
 	},
 	yamada: { // reskin of Mirror Armour
+		onTryAddVolatile(status, pokemon) {
+			if (status.id === 'flinch') return null;
+		},
 		onTryBoost(boost, target, source, effect) {
 			// Don't bounce self stat changes, or boosts that have already bounced
 			if (!source || target === source || !boost || effect.name === 'Yamada') return;
@@ -1386,20 +1381,11 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3.5,
 		num: 88,
 	},
-	bigcatmeansbigtrouble: { // combines Strong Jaw + Keen Eye (UNUSED)
+	bigcatmeansbigtrouble: { // combines Strong Jaw + Keen Eye* (USING THIS VERSION)
 		onBasePowerPriority: 19,
 		onBasePower(basePower, attacker, defender, move) {
 			if (move.flags['bite']) {
 				return this.chainModify(1.5);
-			}
-		},
-		onTryBoost(boost, target, source, effect) {
-			if (source && target === source) return;
-			if (boost.accuracy && boost.accuracy < 0) {
-				delete boost.accuracy;
-				if (!(effect as ActiveMove).secondaries) {
-					this.add("-fail", target, "unboost", "accuracy", "[from] ability: Big Cat Means Big Trouble", "[of] " + target);
-				}
 			}
 		},
 		onModifyMove(move) {
@@ -1407,36 +1393,6 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		},
 		flags: {},
 		name: "Big Cat Means Big Trouble",
-		rating: 4,
-		num: 173,
-	},
-	bigcatbigtrouble: { // combines Strong Jaw + Defiant but for Accuracy instead of Attack + Keen Eye (USING THIS VERSION)
-		onBasePowerPriority: 19,
-		onBasePower(basePower, attacker, defender, move) {
-			if (move.flags['bite']) {
-				return this.chainModify(1.5);
-			}
-		},
-		onAfterEachBoost(boost, target, source, effect) {
-			if (!source || target.isAlly(source)) {
-				return;
-			}
-			let statsLowered = false;
-			let i: BoostID;
-			for (i in boost) {
-				if (boost[i]! < 0) {
-					statsLowered = true;
-				}
-			}
-			if (statsLowered) {
-				this.boost({accuracy: 2}, target, target, null, false, true);
-			}
-		},
-		onModifyMove(move) {
-			move.ignoreEvasion = true;
-		},
-		flags: {},
-		name: "Big Cat Big Trouble",
 		rating: 3.5,
 		num: 173,
 	},
