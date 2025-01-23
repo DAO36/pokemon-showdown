@@ -564,9 +564,9 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		num: 219,
 	},
 	yandere: {
-		onFoeTryMove(pokemon, target, move) {
+		onFoeTryMove(pokemon, source, move) {
 			if (move.flags['switches']) {
-				this.add('-immune', pokemon, '[from] ability: Yandere');
+				this.add('cant', pokemon, '[from] ability: Yandere');
 				return null;
 			}
 		},
