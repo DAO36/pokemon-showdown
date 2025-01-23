@@ -549,11 +549,6 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		onFoeTryMove(pokemon, target, move) {
 			if (move.flags['switches']) {
 				this.add('-block', target, 'ability: Yandere', move, pokemon);
-				return null;
-			}
-			else if (move.target === 'foeSide' || (move.target === 'self')) {
-				this.add('-block', target, 'ability: Yandere', move, pokemon);
-				return null;
 			}
 		},
 		flags: {breakable: 1},
