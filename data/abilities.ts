@@ -548,14 +548,14 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	yandere: {
 		onFoeTryMove(target, source, move) {
 			const targetAllExceptions = ['revivalblessing', 'necromancy'];
-			if (move.target === 'foeSide' || (move.target === 'self' && !targetAllExceptions.includes(move.id))) {
+			if (move.target === 'foeSide' || (move.target === 'self' && move.id === 'teleport' && move.id === 'batonpass' && move.id === 'rainshaman' && move.id === 'chillyreception' && !targetAllExceptions.includes(move.id))) {
 				return;
 			}
 
 			const yandereHolder = this.effectState.target;
 			if ((source.isAlly(yandereHolder) || move.target === 'all') && move.flags['switches']) {
 				this.attrLastMove('[still]');
-				this.add('cant', yandereHolder, 'ability: Yandere', move, '[of] ' + target);
+				this.add('cant', yandereHolder, 'ability: Yandere', move, '[of] ' + source);
 				return false;
 			}
 		},
