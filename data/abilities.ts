@@ -555,7 +555,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			const yandereHolder = this.effectState.target;
 			if ((source.isAlly(yandereHolder) || move.target === 'self') && move.flags['switches']) {
 				this.attrLastMove('[still]');
-				this.add('cant', yandereHolder, 'ability: Yandere', move, '[of] ' + source);
+				this.add('cant', yandereHolder, 'ability: Yandere', move, '[from] ' + target);
 				return false;
 			}
 		},
