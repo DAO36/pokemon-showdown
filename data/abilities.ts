@@ -545,42 +545,35 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3,
 		num: 89,
 	},
-	yandere: {
+	yanderee: {
 		onFoeTryMove(target, source, move) {
 			if (move.target === 'foeSide' || (move.target === 'all')) {
 				return;
 			}
 
-			const yandereHolder = this.effectState.target;
-			if ((source.isAlly(yandereHolder) || move.target === 'self') && move.flags['switches']) {
+			const yandereeHolder = this.effectState.target;
+			if ((source.isAlly(yandereeHolder) || move.target === 'self') && move.flags['switches']) {
 				this.attrLastMove('[still]');
-				this.add('cant', yandereHolder, 'ability: Yandere', move, '[from] ' + target);
+				this.add('cant', yandereeHolder, 'ability: Yanderee', move, '[from] ' + target);
 				return false;
+			}
+		},
+		flags: {breakable: 1},
+		name: "Yanderee",
+		rating: 2.5,
+		num: 219,
+	},
+	yandere: {
+		onFoeTryMove(pokemon, target, move) {
+			if (move.flags['switches']) {
+				this.add('-immune', pokemon, '[from] ability: Yandere');
+				return null;
 			}
 		},
 		flags: {breakable: 1},
 		name: "Yandere",
-		rating: 2.5,
-		num: 219,
-	},
-	zling: {
-		onFoeTryMove(target, source, move) {
-			const targetAllExceptions = ['perishsong', 'flowershield', 'rototiller'];
-			if (move.target === 'foeSide' || (move.target === 'all' && !targetAllExceptions.includes(move.id))) {
-				return;
-			}
-
-			const dazzlingHolder = this.effectState.target;
-			if ((source.isAlly(dazzlingHolder) || move.target === 'all') && move.priority > 0.1) {
-				this.attrLastMove('[still]');
-				this.add('cant', dazzlingHolder, 'ability: Dazzling', move, '[of] ' + target);
-				return false;
-			}
-		},
-		flags: {breakable: 1},
-		name: "Dazzling",
-		rating: 2.5,
-		num: 219,
+		rating: 3,
+		num: 171,
 	},
 	elvishflare: { // reskin of Rocky Payload but for Fire
 		onModifyAtkPriority: 5,
