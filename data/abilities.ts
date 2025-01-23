@@ -567,7 +567,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	zling: {
 		onFoeTryMove(target, source, move) {
 			const targetAllExceptions = ['perishsong', 'flowershield', 'rototiller'];
-			if (move.target === 'foeSide' || (move.target === 'all' && !targetAllExceptions.includes(move.id))) {
+			if (move.target === 'foeSide' || (move.target === 'self' && !targetAllExceptions.includes(move.id))) {
 				return;
 			}
 
