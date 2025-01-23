@@ -548,7 +548,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	yandere: {
 		onFoeTryMove(target, source, move) {
 			const targetAllExceptions = ['revivalblessing', 'necromancy'];
-			if (move.target === 'foeSide' || (move.target === 'all' || move.target === 'self' && move.id === 'teleport' && move.id === 'batonpass' && move.id === 'rainshaman' && move.id === 'chillyreception' && !targetAllExceptions.includes(move.id))) {
+			if (move.target === 'foeSide' || (move.target === 'self' && move.id === 'teleport' && move.id === 'batonpass' && move.id === 'rainshaman' && move.id === 'chillyreception' && !targetAllExceptions.includes(move.id))) {
 				return;
 			}
 
