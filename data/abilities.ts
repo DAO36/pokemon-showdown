@@ -64,6 +64,18 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 2,
 		num: 106,
 	},
+	babydonthurtme: {
+		onDamagingHitOrder: 1,
+		onDamagingHit(damage, target, source, move) {
+			{
+				this.damage(source.baseMaxhp / 8, source, target);
+			}
+		},
+		flags: {},
+		name: "Baby Dont Hurt Me",
+		rating: 5,
+		num: 24,
+	},
 	airforce: { // sets up tailwind on switch-in :o
         onStart(source) {
             source.side.addSideCondition('tailwind', source);
@@ -112,25 +124,6 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		name: "No U-Turn2",
 		rating: 3,
 		num: 171,
-	},
-	nouturn: {
-		onFoeTryMove(target, source, move) {
-			const targetAllExceptions = ['revivalblessing', 'necromancy'];
-			if (move.target === 'foeSide' || (move.target === 'all' || move.target === 'self' && move.id === 'teleport' && move.id === 'batonpass' && move.id === 'rainshaman' && move.id === 'chillyreception' && !targetAllExceptions.includes(move.id))) {
-				return;
-			}
-
-			const nouturnHolder = this.effectState.target;
-			if ((source.isAlly(nouturnHolder) || move.target === 'self') && move.flags['switches']) {
-				this.attrLastMove('[still]');
-				this.add('cant', nouturnHolder, 'ability: No U-Turn', move, '[of] ' + target);
-				return false;
-			}
-		},
-		flags: {breakable: 1},
-		name: "No U-Turn",
-		rating: 2.5,
-		num: 219,
 	},
 	purepower: {
 		onModifySpAPriority: 5,
@@ -257,18 +250,6 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		name: "FBKing",
 		rating: 3,
 		num: 153,
-	},
-	babydonthurtme: {
-		onDamagingHitOrder: 1,
-		onDamagingHit(damage, target, source, move) {
-			{
-				this.damage(source.baseMaxhp / 8, source, target);
-			}
-		},
-		flags: {},
-		name: "Baby Dont Hurt Me",
-		rating: 5,
-		num: 24,
 	},
 	iamgod: { // life orb as an ability but better
 		onModifySpAPriority: 5,
@@ -564,25 +545,24 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3,
 		num: 89,
 	},
-	yandere: { // reskin of Intimidate but for Speed instead of Attack
-		onStart(pokemon) {
-			let activated = false;
-			for (const target of pokemon.adjacentFoes()) {
-				if (!activated) {
-					this.add('-ability', pokemon, 'Yandere', 'boost');
-					activated = true;
-				}
-				if (target.volatiles['substitute']) {
-					this.add('-immune', target);
-				} else {
-					this.boost({spe: -1}, target, pokemon, null, true);
-				}
+	yandere: {
+		onFoeTryMove(target, source, move) {
+			const targetAllExceptions = ['revivalblessing', 'necromancy'];
+			if (move.target === 'foeSide' || (move.target === 'all' || move.target === 'self' && move.id === 'teleport' && move.id === 'batonpass' && move.id === 'rainshaman' && move.id === 'chillyreception' && !targetAllExceptions.includes(move.id))) {
+				return;
+			}
+
+			const nouturnHolder = this.effectState.target;
+			if ((source.isAlly(nouturnHolder) || move.target === 'self') && move.flags['switches']) {
+				this.attrLastMove('[still]');
+				this.add('cant', nouturnHolder, 'ability: Yandere', move, '[of] ' + target);
+				return false;
 			}
 		},
-		flags: {},
+		flags: {breakable: 1},
 		name: "Yandere",
-		rating: 4,
-		num: 22,
+		rating: 2.5,
+		num: 219,
 	},
 	elvishflare: { // reskin of Rocky Payload but for Fire
 		onModifyAtkPriority: 5,
@@ -1071,13 +1051,33 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 1.5,
 		num: 196,
 	},
-	death: { // combines Soul-Heart and Moxie
+	death: { // reskin of Intimidate but for Speed instead of Attack
+		onStart(pokemon) {
+			let activated = false;
+			for (const target of pokemon.adjacentFoes()) {
+				if (!activated) {
+					this.add('-ability', pokemon, 'Death', 'boost');
+					activated = true;
+				}
+				if (target.volatiles['substitute']) {
+					this.add('-immune', target);
+				} else {
+					this.boost({spe: -1}, target, pokemon, null, true);
+				}
+			}
+		},
+		flags: {},
+		name: "Death",
+		rating: 4,
+		num: 22,
+	},
+	death2: { // combines Soul-Heart and Moxie (UNUSED)
 		onAnyFaintPriority: 1,
 		onAnyFaint() {
 			this.boost({spa: 1, atk: 1}, this.effectState.target);
 		},
 		flags: {},
-		name: "Death",
+		name: "Death2",
 		rating: 4.5,
 		num: 220,
 	},

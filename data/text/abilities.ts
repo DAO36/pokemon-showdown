@@ -937,8 +937,7 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	yandere: {
 		name: "Yandere",
-		desc: "On switch-in, this Yandere lowers the Speed of opposing Pokemon by 1 stage. Pokemon with the Inner Focus, Oblivious, Own Tempo, or Scrappy Abilities and Pokemon behind a substitute are immune.",
-		shortDesc: "On switch-in, this Yandere lowers the Speed of opponents by 1 stage."
+		shortDesc: "User is immune to pivot moves (U-Turn, Flip Turn, etc.); prevents opponents from switching via pivot moves."
 	},
 	succubus: {
 		name: "Succubus",
@@ -1245,8 +1244,8 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	death: {
 		name: "Death",
-		desc: "The Grim Rapper's Attack and Special Attack are both each raised by 1 stage if it attacks and knocks out another Pokemon.",
-		shortDesc: "The Grim Rapper's Atk and Sp. Atk are raised by 1 stage if it attacks and KOes another Pokemon.",
+		desc: "On switch-in, this Reaper lowers the Speed of opposing Pokemon by 1 stage. Pokemon with the Inner Focus, Oblivious, Own Tempo, or Scrappy Abilities and Pokemon behind a substitute are immune.",
+		shortDesc: "On switch-in, this Reaper lowers the Speed of opponents by 1 stage."
 	},
 	samurai: {
 		name: "Samurai",
