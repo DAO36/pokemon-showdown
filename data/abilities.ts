@@ -546,13 +546,9 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		num: 89,
 	},
 	yandere: {
-		onFoeTryMove(pokemon, target, move) {
-			if (move.target === 'all' && move.flags['switches']) {
-				this.add('-block', target, 'ability: Yandere', move, pokemon);
-				return null;
-			}
-			else if (move.flags['switches']) {
-				this.add('-block', target, 'ability: Yandere', move, pokemon);
+		onFoeTryMove(source, target, move) {
+			if (move.flags['switches']) {
+				this.add('-block', target, 'ability: Yandere', move, source);
 				return null;
 			}
 		},
@@ -560,25 +556,6 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		name: "Yandere",
 		rating: 3,
 		num: 171,
-	},
-	zling: {
-		onFoeTryMove(target, source, move) {
-			const targetAllExceptions = ['perishsong', 'flowershield', 'rototiller'];
-			if (move.target === 'foeSide' || (move.target === 'all' && !targetAllExceptions.includes(move.id))) {
-				return;
-			}
-
-			const dazzlingHolder = this.effectState.target;
-			if ((source.isAlly(dazzlingHolder) || move.target === 'all') && move.priority > 0.1) {
-				this.attrLastMove('[still]');
-				this.add('cant', dazzlingHolder, 'ability: Dazzling', move, '[of] ' + target);
-				return false;
-			}
-		},
-		flags: {breakable: 1},
-		name: "Dazzling",
-		rating: 2.5,
-		num: 219,
 	},
 	elvishflare: { // reskin of Rocky Payload but for Fire
 		onModifyAtkPriority: 5,
