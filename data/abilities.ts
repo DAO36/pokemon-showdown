@@ -545,28 +545,10 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3,
 		num: 89,
 	},
-	yanderee: {
-		onFoeTryMove(target, source, move) {
-			if (move.target === 'foeSide' || (move.target === 'all')) {
-				return;
-			}
-
-			const yandereeHolder = this.effectState.target;
-			if ((source.isAlly(yandereeHolder) || move.target === 'self') && move.flags['switches']) {
-				this.attrLastMove('[still]');
-				this.add('cant', yandereeHolder, 'ability: Yanderee', move, '[from] ' + target);
-				return false;
-			}
-		},
-		flags: {breakable: 1},
-		name: "Yanderee",
-		rating: 2.5,
-		num: 219,
-	},
 	yandere: {
-		onFoeTryMove(target, source, move) {
+		onFoeTryMove(pokemon, target, move) {
 			if (move.flags['switches']) {
-				this.add('cant', source, 'ability: Yandere', move, '[from] ' + target);
+				this.add('cant', pokemon, 'ability: Yandere', move, '[from] ' + target);
 				return null;
 			}
 		},
