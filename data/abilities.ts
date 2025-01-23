@@ -555,7 +555,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			const yandereHolder = this.effectState.target;
 			if ((source.isAlly(yandereHolder) || move.target === 'all') && move.flags['switches']) {
 				this.attrLastMove('[still]');
-				this.add('cant', yandereHolder, 'ability: Yandere', move, '[of] ' + target);
+				this.add('cant', target, '[from] ability: Yandere');
 				return false;
 			}
 		},
@@ -564,24 +564,19 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 2.5,
 		num: 219,
 	},
-	zling: {
-		onFoeTryMove(target, source, move) {
-			const targetAllExceptions = ['perishsong', 'flowershield', 'rototiller'];
-			if (move.target === 'foeSide' || (move.target === 'self' && !targetAllExceptions.includes(move.id))) {
-				return;
-			}
-
-			const dazzlingHolder = this.effectState.target;
-			if ((source.isAlly(dazzlingHolder) || move.target === 'all') && move.priority > 0.1) {
-				this.attrLastMove('[still]');
-				this.add('cant', dazzlingHolder, 'ability: Dazzling', move, '[of] ' + target);
-				return false;
+	mogu: { // reskin of Water Absorb but for Grass
+		onTryHit(target, source, move) {
+			if (target !== source && move.type === 'Grass') {
+				if (!this.heal(target.baseMaxhp / 4, target, target)) {
+					this.add('-immune', target, '[from] ability: Mogu Mogu');
+				}
+				return null;
 			}
 		},
 		flags: {breakable: 1},
-		name: "Dazzling",
+		name: "Mogu Mogu",
 		rating: 2.5,
-		num: 219,
+		num: 11,
 	},
 	elvishflare: { // reskin of Rocky Payload but for Fire
 		onModifyAtkPriority: 5,
