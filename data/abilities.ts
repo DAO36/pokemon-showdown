@@ -551,9 +551,11 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 				this.add('-block', target, 'ability: Yandere', move, pokemon);
 				return null;
 			}
+			const yandereHolder = this.effectState.target;
 			if (move.id === 'teleport' || move.id === 'batonpass') {
-				this.add('-block', pokemon, 'ability: Yandere', move, target);
-				return null;
+				this.attrLastMove('[still]');
+				this.add('cant', yandereHolder, 'ability: Yandere', move, '[of] ' + target);
+				return false;
 			}
 		},
 		flags: {breakable: 1},
@@ -579,6 +581,22 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		name: "Dazzling",
 		rating: 2.5,
 		num: 219,
+	},
+	dere: {
+		onFoeTryMove(pokemon, target, move) {
+			if (move.flags['switches']) {
+				this.add('-block', target, 'ability: Yandere', move, pokemon);
+				return null;
+			}
+			if (move.id === 'teleport' || move.id === 'batonpass') {
+				this.add('-block', pokemon, 'ability: Yandere', move, target);
+				return null;
+			}
+		},
+		flags: {breakable: 1},
+		name: "Yandere",
+		rating: 3,
+		num: 171,
 	},
 	elvishflare: { // reskin of Rocky Payload but for Fire
 		onModifyAtkPriority: 5,
