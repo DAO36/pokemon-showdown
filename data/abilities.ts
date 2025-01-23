@@ -551,6 +551,10 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 				this.add('-block', target, 'ability: Yandere', move, pokemon);
 				return null;
 			}
+			if (move.target === 'foeSide' || (move.target === 'all')) {
+				this.add('-block', target, 'ability: Yandere', move, pokemon);
+				return null;
+			}
 		},
 		flags: {breakable: 1},
 		name: "Yandere",
