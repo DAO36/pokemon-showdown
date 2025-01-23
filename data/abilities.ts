@@ -547,7 +547,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	},
 	yandere: {
 		onFoeTryMove(target, source, move) {
-			if (move.target === 'foeSide' || (move.target === 'all')) {
+			if (move.target === 'foeSide' || (move.target === 'all' || move.target === 'self' && move.id === 'rainshaman' && move.id === 'chillyreception')) {
 				return;
 			}
 
