@@ -3678,7 +3678,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		name: "Baton Pass",
 		pp: 40,
 		priority: 0,
-		flags: {metronome: 1, switches: 1},
+		flags: {metronome: 1},
 		onHit(target) {
 			if (!this.canSwitch(target.side) || target.volatiles['commanded']) {
 				this.attrLastMove('[still]');
@@ -22490,7 +22490,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		name: "Teleport",
 		pp: 20,
 		priority: -6,
-		flags: {metronome: 1, switches: 1},
+		flags: {metronome: 1},
 		onTry(source) {
 			return !!this.canSwitch(source.side);
 		},
