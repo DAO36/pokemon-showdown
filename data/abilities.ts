@@ -553,7 +553,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			}
 			const yandereHolder = this.effectState.target;
 			if (move.id === 'teleport' || move.id === 'batonpass') {
-				this.add('-immune', pokemon, '[from] ability: Yandere');
+				this.add('-immune', target, '[from] ability: Yandere');
 				return null;
 			}
 		},
