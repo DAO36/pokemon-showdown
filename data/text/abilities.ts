@@ -36,6 +36,13 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 
 		damage: "  [SOURCE] blew themselves up!",
 	},
+	nuke: {
+		name: "Nuke",
+		desc: "If the user is knocked out by a Pokemon, that Pokemon is OHKO'd.",
+		shortDesc: "If the user is KO'd by a Pokemon, that Pokemon also gets KO'd.",
+
+		damage: "  [POKEMON] got nuked!",
+	},
 	airlock: {
 		name: "Air Lock",
 		shortDesc: "While this Pokemon is active, the effects of weather conditions are disabled.",
