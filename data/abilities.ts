@@ -558,7 +558,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		num: 89,
 	},
 	yandere: {
-		onFoeTryMove(source, target, move) {
+		onFoeTryMove(target, source, move) {
 			const yandereHolder = this.effectState.target;
 			this.attrLastMove('[still]');
 			if (move.flags['switches']) {
