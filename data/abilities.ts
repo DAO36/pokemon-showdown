@@ -563,7 +563,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 				this.add('-block', target, 'ability: Yandere', move, source);
 				return null;
 			}
-			const yandereHolder = this.effectState.source;
+			const yandereHolder = this.effectState.target;
 			if (move.id === 'teleport' || move.id === 'batonpass') {
 				this.attrLastMove('[still]');
 				this.add('cant', source, 'ability: Yandere', move, '[from] ' + target);
