@@ -550,10 +550,9 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			if (move.flags['switches']) {
 				this.add('-block', target, 'ability: Yandere', move, pokemon);
 				return null;
-			}
-			const yandereHolder = this.effectState.target;
+			} 
 			if (move.id === 'teleport' || move.id === 'batonpass') {
-				this.add('-immune', target, '[from] ability: Yandere');
+				this.add('-immune', pokemon, '[from] ability: Yandere');
 				return null;
 			}
 		},
