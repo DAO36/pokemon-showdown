@@ -550,7 +550,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			const yandereHolder = this.effectState.target;
 			if (move.id === 'teleport' || move.id === 'batonpass' || move.id === 'uturn' || move.id === 'flipturn' || move.id === 'voltswitch' || move.id === 'chillyreception' || move.id === 'partingshot' || move.id === 'nopressure' || move.id === 'timetravel' || move.id === 'timetogo' || move.id === 'polmao' || move.id === 'nursing' || move.id === 'cleanup') {
 				this.attrLastMove('[still]');
-				this.add('-cant', yandereHolder, 'ability: Yandere', move, target);
+				this.add('-cant', yandereHolder, 'ability: Yandere', move, '[of] ' + target);
 				return null;
 			}
 		},
