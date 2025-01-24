@@ -551,10 +551,10 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 				this.add('-block', target, 'ability: Yandere', move, pokemon);
 				return null;
 			}
-			const yandereHolder = this.effectState.pokemon;
+			const yandereHolder = this.effectState.source;
 			if (move.id === 'teleport' || move.id === 'batonpass') {
 				this.attrLastMove('[still]');
-				this.add('-cant', target, 'ability: Yandere', move, '[from] ' + yandereHolder);
+				this.add('-cant', pokemon, 'ability: Yandere', move, '[from] ' + yandereHolder);
 				return false;
 			}
 		},
