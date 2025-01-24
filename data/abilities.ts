@@ -553,7 +553,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			}
 			if (move.id === 'teleport' || move.id === 'batonpass') { 
 				this.add('-cant', target, 'ability: Yandere', move, pokemon);
-				return false;
+				return null;
 			}
 		},
 		flags: {breakable: 1},
