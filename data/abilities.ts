@@ -557,7 +557,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3,
 		num: 89,
 	},
-	yandere: {
+	yandere2: {
 		onFoeTryMove(pokemon, target, move) {
 			if (move.flags['switches']) {
 				this.add('-block', target, 'ability: Yandere', move, pokemon);
@@ -571,30 +571,29 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			}
 		},
 		flags: {breakable: 1},
-		name: "Yandere",
+		name: "Yandere2",
 		rating: 3,
 		num: 171,
 	},
-	ing: {
+	yandere: {
 		onFoeTryMove(target, source, move) {
-			const targetAllExceptions = ['perishsong', 'flowershield', 'rototiller'];
-			if (move.target === 'foeSide' || (move.target === 'all' && !targetAllExceptions.includes(move.id))) {
-				return;
-			}
-
-			const dazzlingHolder = this.effectState.target;
-			if ((source.isAlly(dazzlingHolder) || move.target === 'all') && move.priority > 0.1) {
+			const yandereHolder = this.effectState.target;
+			if (move.id === 'teleport' || move.id === 'batonpass') {
 				this.attrLastMove('[still]');
-				this.add('cant', dazzlingHolder, 'ability: Dazzling', move, '[of] ' + target);
+				this.add('cant', yandereHolder, 'ability: Yandere', move, '[of] ' + target);
+				return false;
+			}
+			if (move.flags['switches']) {
+				this.add('cant', yandereHolder, 'ability: Yandere', move, '[of] ' + target);
 				return false;
 			}
 		},
 		flags: {breakable: 1},
-		name: "ing",
+		name: "Yandere",
 		rating: 2.5,
 		num: 219,
 	},
-	test: {
+	yandere3: {
 		onFoeTryMove(pokemon, target, move) {
 			if (move.flags['switches']) {
 				this.add('-block', target, 'ability: Yandere', move, pokemon);
@@ -608,7 +607,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			}
 		},
 		flags: {breakable: 1},
-		name: "Test",
+		name: "Yandere3",
 		rating: 3,
 		num: 171,
 	},
