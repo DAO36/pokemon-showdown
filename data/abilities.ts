@@ -557,55 +557,39 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3,
 		num: 89,
 	},
-	huh: {
-		onFoeTryMove(target, source, move) {
-			const targetAllExceptions = ['perishsong', 'flowershield', 'rototiller'];
-			if (move.target === 'foeSide' || (move.target === 'all' && !targetAllExceptions.includes(move.id))) {
-				return;
-			}
-
-			const dazzlingHolder = this.effectState.target;
-			if ((source.isAlly(dazzlingHolder) || move.target === 'all') && move.priority > 0.1) {
-				this.attrLastMove('[still]');
-				this.add('cant', dazzlingHolder, 'ability: Dazzling', move, '[of] ' + target);
-				return false;
-			}
-		},
-		flags: {breakable: 1},
-		name: "huh",
-		rating: 2.5,
-		num: 219,
-	},
-	yandere: {
-		onFoeTryMove(target, source, move) { 
-			const pokemon = this.effectState.pokemon;
-			const yandereHolder = this.effectState.source;
-			if ((source.isAlly(yandereHolder) || move.target === 'all') && move.flags['switches']) {
-				this.attrLastMove('[still]');
-				this.add('cant', source, 'ability: Yandere', move, '[of] ' + pokemon);
-				return false;
-			}
-		},
-		flags: {breakable: 1},
-		name: "Yandere",
-		rating: 2.5,
-		num: 219,
-	},
-	yandere3: {
+	yandere0: {
 		onFoeTryMove(pokemon, target, move) {
 			if (move.flags['switches']) {
-				this.add('-block', target, 'ability: Yandere', move, pokemon);
+				this.add('-block', target, 'ability: Yandere0', move, pokemon);
 				return null;
 			}
+			const yandere0Holder = this.effectState.target;
+			if (move.id === 'teleport' || move.id === 'batonpass') {
+				this.attrLastMove('[still]');
+				this.add('-block', yandere0Holder, 'ability: Yandere0');
+				return false;
+			}
+		},
+		flags: {breakable: 1},
+		name: "Yandere0",
+		rating: 3,
+		num: 171,
+	},
+	yandere: {
+		onFoeTryMove(pokemon, target, move) {
 			const yandereHolder = this.effectState.target;
 			if (move.id === 'teleport' || move.id === 'batonpass') {
 				this.attrLastMove('[still]');
-				this.add('-block', yandereHolder, 'ability: Yandere');
+				this.add('cant', yandereHolder, 'ability: Yandere');
 				return false;
 			}
+			if (move.flags['switches']) {
+				this.add('cant', yandereHolder, 'ability: Yandere');
+				return false;
+			} 
 		},
 		flags: {breakable: 1},
-		name: "Yandere3",
+		name: "Yandere",
 		rating: 3,
 		num: 171,
 	},
