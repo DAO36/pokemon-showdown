@@ -559,10 +559,10 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	},
 	zling: {
 		onFoeTryMove(target, source, move) { 
-			const dazzlingHolder = this.effectState.target;
-			if (move.priority > 0.1) {
+			const zlingHolder = this.effectState.target;
+			if ((source.isAlly(zlingHolder) || move.target === 'all') && move.priority > 0.1) {
 				this.attrLastMove('[still]');
-				this.add('cant', dazzlingHolder, 'ability: Dazzling', move, '[of] ' + target);
+				this.add('cant', zlingHolder, 'ability: zling', move, '[of] ' + target);
 				return false;
 			}
 		},
