@@ -557,9 +557,28 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3,
 		num: 89,
 	},
+	zling: {
+		onFoeTryMove(target, source, move) {
+			const targetAllExceptions = ['perishsong', 'flowershield', 'rototiller'];
+			if (move.target === 'foeSide' || (move.target === 'all' && !targetAllExceptions.includes(move.id))) {
+				return;
+			}
+
+			const dazzlingHolder = this.effectState.target;
+			if ((source.isAlly(dazzlingHolder) || move.target === 'all') && move.priority > 0.1) {
+				this.attrLastMove('[still]');
+				this.add('cant', dazzlingHolder, 'ability: Dazzling', move, '[of] ' + target);
+				return false;
+			}
+		},
+		flags: {breakable: 1},
+		name: "zling",
+		rating: 2.5,
+		num: 219,
+	},
 	yandere: {
 		onFoeTryMove(target, source, move) {
-			const yandereHolder = this.effectState.source;
+			const yandereHolder = this.effectState.target;
 			if (move.flags['switches']) {
 				this.attrLastMove('[still]');
 				this.add('cant', yandereHolder, 'ability: Yandere', move, '[of] ' + target);
