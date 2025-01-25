@@ -577,11 +577,12 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		num: 219,
 	},
 	zling: {
-		onFoeTryMove(target, source, move) { 
-			const dazzlingHolder = this.effectState.target;
+		onFoeTryMove(pokemon, source, move) { 
+			const dazzlingHolder = this.effectState.source;
+			const target = this.effectState.pokemon;
 			if ((source.isAlly(dazzlingHolder) || move.target === 'all') && move.priority > 0.1) {
 				this.attrLastMove('[still]');
-				this.add('cant', target, 'ability: zling', move, '[of] ' + dazzlingHolder);
+				this.add('cant', dazzlingHolder, 'ability: zling', move, '[of] ' + pokemon);
 				return false;
 			}
 		},
@@ -591,11 +592,12 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		num: 219,
 	},
 	yandere: {
-		onFoeTryMove(target, source, move) {
-			const dazzlingHolder = this.effectState.target;
-			if (((source.isAlly(dazzlingHolder) || move.target === 'all') && move.flags['switches'])) {
+		onFoeTryMove(pokemon, source, move) {
+			const yandereHolder = this.effectState.source;
+			const target = this.effectState.pokemon;
+			if ((move.flags['switches'])) {
 				this.attrLastMove('[still]');
-				this.add('cant', target, 'ability: Yandere', move, '[of] ' + dazzlingHolder);
+				this.add('cant', yandereHolder, 'ability: Yandere', move, '[of] ' + pokemon);
 				return false;
 			}
 		},
