@@ -559,24 +559,6 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	},
 	yandere2: {
 		onFoeTryMove(pokemon, target, move) {
-			if (move.flags['switches']) {
-				this.add('-block', target, 'ability: Yandere', move, pokemon);
-				return null;
-			}
-			const yandereHolder = this.effectState.target;
-			if (move.id === 'teleport' || move.id === 'batonpass') {
-				this.attrLastMove('[still]');
-				this.add('cant', target, 'ability: Yandere', move, '[of] ' + yandereHolder);
-				return false;
-			}
-		},
-		flags: {breakable: 1},
-		name: "Yandere2",
-		rating: 3,
-		num: 171,
-	},
-	yandere: {
-		onFoeTryMove(pokemon, target, move) {
 			const yandereHolder = this.effectState.target;
 			if (move.id === 'teleport' || move.id === 'batonpass') {
 				this.attrLastMove('[still]');
@@ -586,6 +568,25 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			if (move.flags['switches']) {
 				this.attrLastMove('[still]');
 				this.add('cant', target, 'ability: Yandere', move, pokemon);
+				return null;
+			}
+		},
+		flags: {breakable: 1},
+		name: "Yandere2",
+		rating: 3,
+		num: 171,
+	},
+	yandere: {
+		onFoeTryMove(source, pokemon, move) {
+			const yandereHolder = this.effectState.target;
+			if (move.id === 'teleport' || move.id === 'batonpass') {
+				this.attrLastMove('[still]');
+				this.add('cant', pokemon, 'ability: Yandere', move, '[of] ' + yandereHolder);
+				return false;
+			}
+			if (move.flags['switches']) {
+				this.attrLastMove('[still]');
+				this.add('cant', pokemon, 'ability: Yandere', move, source);
 				return null;
 			}
 		},
