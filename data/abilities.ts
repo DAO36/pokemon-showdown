@@ -592,12 +592,10 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		num: 219,
 	},
 	yandere: {
-		onFoeTryMove(pokemon, source, move) {
-			const yandereHolder = this.effectState.source;
-			const target = this.effectState.pokemon;
-			if ((move.flags['switches'])) {
+		onFoeTryMove(target, source, move) {
+			if (move.flags['switches']) {
 				this.attrLastMove('[still]');
-				this.add('cant', source, 'ability: Yandere', move, '[from] ' + source);
+				this.add('cant', this.effectState.target, 'ability: Yandere', move, '[of] ' + target);
 				return false;
 			}
 		},
