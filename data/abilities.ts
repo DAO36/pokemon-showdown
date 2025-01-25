@@ -560,7 +560,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	zling: {
 		onFoeTryMove(target, source, move) { 
 			const zlingHolder = this.effectState.target;
-			if ((source.isAlly(zlingHolder) || move.target === 'all') && move.priority > 0.1) {
+			if (move.priority > 0.1) {
 				this.attrLastMove('[still]');
 				this.add('cant', zlingHolder, 'ability: zling', move, '[of] ' + target);
 				return false;
@@ -576,7 +576,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			const yandereHolder = this.effectState.target;
 			if (((source.isAlly(yandereHolder) || move.target === 'all') && move.flags['switches'])) {
 				this.attrLastMove('[still]');
-				this.add('cant', yandereHolder, 'ability: Yandere', move, '[of] ' + target);
+				this.add('cant', yandereHolder, 'ability: Yandere', move, '[from] ' + target);
 				return false;
 			}
 		},
