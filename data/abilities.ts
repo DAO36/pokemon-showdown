@@ -567,7 +567,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			}
 		},
 		flags: {breakable: 1},
-		name: "Dazzling",
+		name: "Yandere",
 		rating: 2.5,
 		num: 219,
 	},
