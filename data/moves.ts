@@ -1388,12 +1388,12 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 				}
 			},
 			onSideStart(side) {
-				this.add('-sidestart', side, 'Screentime');
+				this.add('-sidestart', side, 'Hologram');
 			},
 			onSideResidualOrder: 26,
 			onSideResidualSubOrder: 4,
 			onSideEnd(side) {
-				this.add('-sideend', side, 'Screentime');
+				this.add('-sideend', side, 'Hologram');
 			},
 		},
 		secondary: null,
