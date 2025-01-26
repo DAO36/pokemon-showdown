@@ -24324,7 +24324,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	},
 	freezeray: {
 		num: 261,
-		accuracy: 85,
+		accuracy: 75,
 		basePower: 0,
 		category: "Status",
 		name: "Freeze-Ray",
