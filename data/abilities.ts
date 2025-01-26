@@ -856,14 +856,14 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			},
 	cleaner3: { // rids users side only really+visually but not opposing side COPY
 		onStart(pokemon) {
+			this.add('-activate', pokemon, 'ability: Cleaner');
 			let success = false;
 			const removeAll = [
 				'reflect', 'lightscreen', 'auroraveil', 'hologram', 'mist', 'spikes', 'toxicspikes', 'stealthrock', 'stickyweb', 'gmaxsteelsurge',
 			];
 			for (const remove of removeAll) {
 				if (pokemon.side.removeSideCondition(remove)) {
-					if (!success) {
-					this.add('-activate', pokemon, 'ability: Cleaner');
+					if (!success) { 
 					this.add('-sideend', pokemon.side, this.dex.conditions.get(remove).name,);
 					success = true;
 					}
