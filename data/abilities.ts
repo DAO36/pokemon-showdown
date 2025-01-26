@@ -841,7 +841,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			for (const remove of removeAll) {
 				if (pokemon.side.removeSideCondition(remove)) {
 					if (!success) {
-					this.add('-activate', pokemon, 'ability: Cleaner');
+					this.add('-activate', pokemon, 'ability: Blow Away');
 					this.add('-sideend', pokemon.side, this.dex.conditions.get(remove).name,);
 					success = true;
 					}
