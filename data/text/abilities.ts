@@ -7,6 +7,8 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 		name: "Corruption",
 		desc: "...something's not right...",
 		shortDesc: "...something's not right...",
+
+		damage: "  [POKEMON] was <0rRvqt3D...!",
 	},
 	adaptability: {
 		name: "Adaptability",
@@ -272,7 +274,7 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	seiso: {
 		name: "Seiso",
-		shortDesc: "Sora is so seiso it prevents others from lowering her stat stages. Cannot be made to flinch.",
+		shortDesc: "This Seiso idol cannot be poisoned, paralyzed, burned, or put to sleep; Cannot be made to flinch.",
 	},
 	cloudnine: {
 		name: "Cloud Nine",
@@ -818,8 +820,8 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 		desc: "If this is Akai, she changes formes between her Idol Mode and Haachama Mode at the end of each turn.",
 		shortDesc: "If Akai, it changes between Idol and Haachama Mode at the end of each turn.",
 	},
-	alteregos: {
-		name: "Alter Egos",
+	chamachange: {
+		name: "Chama Change",
 		desc: "If Akai Haato, she changes to Haachama before using an attacking move, and changes to Haachama Forme before using Red Heart.",
 		shortDesc: "If Akai Haato, changes to Haachama before attacks and Haachama before Red Heart.",
 
@@ -1194,15 +1196,19 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 		desc: "When one of this Pokemon's stat stages would be lowered by another Pokemon, that Pokemon's stat stage is lowered instead. This effect does not happen if this Pokemon's stat stage was already -6. If the other Pokemon has a substitute, neither Pokemon has its stat stage lowered.",
 		shortDesc: "If this Pokemon's stat stages would be lowered, the attacker's are lowered instead.",
 	},
+	thelegendofpolka: {
+		name: "The Legend of Polka",
+		desc: "Wh linch.",
+		shortDesc: "If nch.",
+	},
 	yamada: {
-		name: "Yamada",
-		desc: "When one of YMD's stat stages would be lowered by another Pokemon, that Pokemon's stat stage is lowered instead. This effect does not happen if this Pokemon's stat stage was already -6. If the other Pokemon has a substitute, neither Pokemon has its stat stage lowered. Cannot be made to flinch.",
-		shortDesc: "If this YMD's stat stages would be lowered, the attacker's are lowered instead; Cannot be made to flinch.",
+		name: "yamada",
+		desc: "When one of YMD's stat stages would be lowered by another Pokemon, that Pokemon's stat stage is lowered instead. This effect does not happen if this Comet's stat stage was already -6. If the other Pokemon has a substitute, neither Pokemon has its stat stage lowered. This Comet is unaffected by certain non-damaging moves directed at it and will instead use such moves against the original user. Moves reflected in this way are unable to be reflected again by this or Magic Coat's effect. Spikes, Stealth Rock, Sticky Web, and Toxic Spikes can only be reflected once per side, by the leftmost Pokemon under this or Magic Coat's effect. The Lightning Rod and Storm Drain Abilities redirect their respective moves before this Ability takes effect.",
+		shortDesc: "This YMD blocks certain Status moves and stat changes and bounces them back to the user.",
 	},
 	stellar: {
 		name: "Stellar",
-		desc: "When one of this Comet's stat stages would be lowered by another Pokemon, that Pokemon's stat stage is lowered instead. This effect does not happen if this Pokemon's stat stage was already -6. If the other Pokemon has a substitute, neither Pokemon has its stat stage lowered.",
-		shortDesc: "If this Comet's stat stages would be lowered, the attacker's are lowered instead.",
+		shortDesc: "This Comet is not affected by the secondary effect of another Pokemon's attack; Cannot be made to flinch, or be struck by critical hits",
 	},
 	mistysurge: {
 		name: "Misty Surge",
@@ -1331,14 +1337,6 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 
 		start: "  Neutralizing gas filled the area!",
 		end: "  The effects of the neutralizing gas wore off!",
-	},
-	cleaner: {
-		name: "Cleaner",
-		desc: "While this Orca is active, Abilities have no effect. This Ability activates before hazards and other Abilities take effect. Does not affect the As One, Battle Bond, Comatose, Disguise, Gulp Missile, Ice Face, Multitype, Neutralizing Gas, Power Construct, RKS System, Schooling, Shields Down, Stance Change, Tera Shift, Zen Mode, or Zero to Hero Abilities.",
-		shortDesc: "While this Orca is active, Abilities have no effect.",
-
-		start: "  The cleaner is neutralizing the abilities!",
-		end: "  The effects of the Cleaner wore off!",
 	},
 	noguard: {
 		name: "No Guard",
@@ -1859,6 +1857,10 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 		name: "Screen Cleaner",
 		shortDesc: "On switch-in, the effects of Aurora Veil, Light Screen, and Reflect end for both sides.",
 	},
+	cleaner: {
+		name: "Cleaner",
+		shortDesc: "On switch-in, Aurora Veil, Light Screen, Reflect, Stealth Rock, Spikes, Toxic Spikes, and Sticky Web are cleared up for both sides.",
+	},
 	seedsower: {
 		name: "Seed Sower",
 		shortDesc: "When this Pokemon is hit by an attack, the effect of Grassy Terrain begins.",
@@ -1929,10 +1931,6 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	shielddust: {
 		name: "Shield Dust",
 		shortDesc: "This Pokemon is not affected by the secondary effect of another Pokemon's attack.",
-	},
-	thelegendofpolka: {
-		name: "The Legend of Polka",
-		shortDesc: "This Fennec Fox is not affected by the secondary effect of another Pokemon's attack; Cannot be made to flinch, or be struck by critical hits",
 	},
 	shieldsdown: {
 		name: "Shields Down",

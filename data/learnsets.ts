@@ -95710,6 +95710,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			nastyplot: ["9M"],
 			honeclaws: ["9M"],
 			koyolabo: ["9M"],
+			hologram: ["9M"],
 			madscientist: ["9M"],
         },
 	},	

@@ -333,16 +333,6 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		name: "Red Heart",
 		desc: "The user is protected from most attacks made by other Pokemon during this turn, and Pokemon trying to use special attacks against the user have their Special Attack lowered by 1 stage. Non-damaging moves go through this protection. This move has a 1/X chance of being successful, where X starts at 1 and triples each time this move is successfully used. X resets to 1 if this move fails, if the user's last move used is not Baneful Bunker, Burning Bulwark, Detect, Endure, King's Shield, Max Guard, Obstruct, Protect, Quick Guard, Silk Trap, Spiky Shield, or Wide Guard, or if it was one of those moves and the user's protection was broken. Fails if the user moves last this turn.",
 		shortDesc: "Protects from damaging attacks. If hit by special attack; lowers atatcker's Sp. Atk by 1",
-		gen8: {
-			desc: "The user is protected from most attacks made by other Pokemon during this turn, and Pokemon trying to make contact with the user have their Attack lowered by 1 stage. Non-damaging moves go through this protection. This move has a 1/X chance of being successful, where X starts at 1 and triples each time this move is successfully used. X resets to 1 if this move fails, if the user's last move used is not Baneful Bunker, Detect, Endure, King's Shield, Max Guard, Obstruct, Protect, Quick Guard, Spiky Shield, or Wide Guard, or if it was one of those moves and the user's protection was broken. Fails if the user moves last this turn.",
-		},
-		gen7: {
-			desc: "The user is protected from most attacks made by other Pokemon during this turn, and Pokemon trying to make contact with the user have their Attack lowered by 2 stages. Non-damaging moves go through this protection. This move has a 1/X chance of being successful, where X starts at 1 and triples each time this move is successfully used. X resets to 1 if this move fails, if the user's last move used is not Baneful Bunker, Detect, Endure, King's Shield, Protect, Quick Guard, Spiky Shield, or Wide Guard, or if it was one of those moves and the user's protection was broken. Fails if the user moves last this turn.",
-			shortDesc: "Protects from damaging attacks. Contact: -2 Atk.",
-		},
-		gen6: {
-			desc: "The user is protected from most attacks made by other Pokemon during this turn, and Pokemon trying to make contact with the user have their Attack lowered by 2 stages. Non-damaging moves go through this protection. This move has a 1/X chance of being successful, where X starts at 1 and triples each time this move is successfully used. X resets to 1 if this move fails, if the user's last move used is not Detect, Endure, King's Shield, Protect, Quick Guard, Spiky Shield, or Wide Guard, or if it was one of those moves and the user's protection was broken. Fails if the user moves last this turn.",
-		},
 	},
 	aurorabeam: {
 		name: "Aurora Beam",
@@ -4741,6 +4731,15 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		name: "Mirror Shot",
 		desc: "Has a 30% chance to lower the target's accuracy by 1 stage.",
 		shortDesc: "30% chance to lower the target's accuracy by 1.",
+	},
+	hologram: {
+		name: "Hologram",
+		desc: "For 5 turns, the user and its party members are protected from status moves from other Pokemon. Fails if the effect is already active on the user's side.",
+		shortDesc: "For 5 turns, protects user's party from opposing status moves.",
+
+		start: "  [TEAM] summoned a hologram!",
+		end: "  [TEAM] is no longer protected!",
+		block: "  [POKEMON] is protected by the hologram!",
 	},
 	mist: {
 		name: "Mist",

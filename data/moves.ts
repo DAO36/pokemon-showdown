@@ -1369,6 +1369,38 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Psychic",
 		contestType: "Beautiful",
 	},
+	hologram: {
+		num: 54,
+		accuracy: true,
+		basePower: 0,
+		category: "Status",
+		name: "Hologram",
+		pp: 30,
+		priority: 0,
+		flags: {snatch: 1, metronome: 1},
+		sideCondition: 'hologram',
+		condition: {
+			duration: 5,
+			onTryHit(target, source, move) {
+				if (move.category === 'Status' && target !== source) {
+					this.add('-immune', target, '[from] move: Hologram');
+					return null;
+				}
+			},
+			onSideStart(side) {
+				this.add('-sidestart', side, 'Screentime');
+			},
+			onSideResidualOrder: 26,
+			onSideResidualSubOrder: 4,
+			onSideEnd(side) {
+				this.add('-sideend', side, 'Screentime');
+			},
+		},
+		secondary: null,
+		target: "allySide",
+		type: "Psychic",
+		contestType: "Clever",
+	},
 	madscientist: {
 		num: 354,
 		accuracy: 90,

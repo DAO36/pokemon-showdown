@@ -40,7 +40,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 0.1,
 		num: 0,
 	},
-	corruption: {
+	corruption: { // instantly kills any pokemon thats attacks user
 		onDamagingHitOrder: 1,
 		onDamagingHit(damage, target, source, move) {
 			{
@@ -52,7 +52,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 5,
 		num: 24,
 	},
-	kamikaze: {
+	kamikaze: { // any pokemon that KOs user loses 1/2 of their maximum HP
 		onDamagingHitOrder: 1,
 		onDamagingHit(damage, target, source, move) {
 			if (!target.hp) {
@@ -64,7 +64,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 2,
 		num: 106,
 	},
-	nuke: {
+	nuke: { // any pokemon that KOs user loses all their hp and dies
 		onDamagingHitOrder: 1,
 		onDamagingHit(damage, target, source, move) {
 			if (!target.hp) {
@@ -76,7 +76,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3.5,
 		num: 106,
 	},
-	babydonthurtme: {
+	babydonthurtme: { // any pokemon that attacks the user loses 1/8 of their max hp
 		onDamagingHitOrder: 1,
 		onDamagingHit(damage, target, source, move) {
 			{
@@ -97,7 +97,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
         rating: 5,
         num: 318,
     },
-	spiky: {
+	spiky: { // sets up a layer of spikes when hit by physical move
 		onDamagingHit(damage, target, source, move) {
 			const side = source.isAlly(target) ? source.side.foe : source.side;
 			const spikes = side.sideConditions['spikes'];
@@ -111,11 +111,11 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3.5,
 		num: 295,
 	},
-	sneakypebbles: {
+	sneakypebbles: { // sets up stealth rock when user is hit by an attacking move
 		onDamagingHit(damage, target, source, move) {
 			const side = source.isAlly(target) ? source.side.foe : source.side;
 			const stealthrock = side.sideConditions['stealthrock'];
-			if (move.category === 'Physical' && (!stealthrock || stealthrock.layers < 1)) {
+			if (move.category === 'Physical' || move.category === 'Special' && (!stealthrock || stealthrock.layers < 1)) {
 				this.add('-activate', target, 'ability: Sneaky Pebbles');
 				side.addSideCondition('stealthrock', target);
 			}
@@ -125,19 +125,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3.5,
 		num: 295,
 	},
-	nouturn2: {
-		onTryHit(pokemon, target, move) {
-			if (move.flags['switches']) {
-				this.add('-immune', pokemon, '[from] ability: No U-Turn2');
-				return null;
-			}
-		},
-		flags: {breakable: 1},
-		name: "No U-Turn2",
-		rating: 3,
-		num: 171,
-	},
-	purepower: {
+	purepower: { // Huge Power but for Special Attack
 		onModifySpAPriority: 5,
 		onModifySpA(spa) {
 			return this.chainModify(2);
@@ -147,23 +135,22 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 5,
 		num: 74,
 	},
-	seiso: { // reskin of Clear Body + immune to flinching
+	seiso: { // reskin of Immunity but for other statuses + immune to flinching
 		onTryAddVolatile(status, pokemon) {
 			if (status.id === 'flinch') return null;
 		},
-		onTryBoost(boost, target, source, effect) {
-			if (source && target === source) return;
-			let showMsg = false;
-			let i: BoostID;
-			for (i in boost) {
-				if (boost[i]! < 0) {
-					delete boost[i];
-					showMsg = true;
-				}
+		onUpdate(pokemon) {
+			if (pokemon.status === 'psn' || pokemon.status === 'tox' || pokemon.status === 'par' || pokemon.status === 'slp' || pokemon.status === 'brn') {
+				this.add('-activate', pokemon, 'ability: Immunity');
+				pokemon.cureStatus();
 			}
-			if (showMsg && !(effect as ActiveMove).secondaries && effect.id !== 'octolock') {
-				this.add("-fail", target, "unboost", "[from] ability: Seiso", "[of] " + target);
+		},
+		onSetStatus(status, target, source, effect) {
+			if (status.id !== 'psn' && status.id !== 'tox' && status.id !== 'par' && status.id !== 'slp' && status.id !== 'brn') return;
+			if ((effect as Move)?.status) {
+				this.add('-immune', target, '[from] ability: Seiso');
 			}
+			return false;
 		},
 		flags: {breakable: 1},
 		name: "Seiso",
@@ -194,28 +181,19 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 2.5,
 		num: 270,
 	},
-	stellar: { // reskin of Mirror Armour
-		onTryBoost(boost, target, source, effect) {
-			// Don't bounce self stat changes, or boosts that have already bounced
-			if (!source || target === source || !boost || effect.name === 'Stellar') return;
-			let b: BoostID;
-			for (b in boost) {
-				if (boost[b]! < 0) {
-					if (target.boosts[b] === -6) continue;
-					const negativeBoost: SparseBoostsTable = {};
-					negativeBoost[b] = boost[b];
-					delete boost[b];
-					if (source.hp) {
-						this.add('-ability', target, 'Stellar');
-						this.boost(negativeBoost, source, target, null, true);
-					}
-				}
-			}
+	stellar: { // reskin of Shield Dust + immunity to flinch/crits
+		onCriticalHit: false,
+		onTryAddVolatile(status, pokemon) {
+			if (status.id === 'flinch') return null;
+		},
+		onModifySecondaries(secondaries) {
+			this.debug('Stellar prevent secondary');
+			return secondaries.filter(effect => !!(effect.self || effect.dustproof));
 		},
 		flags: {breakable: 1},
 		name: "Stellar",
 		rating: 2,
-		num: 240,
+		num: 19,
 	},
 	highspecsrobot: { // reskin of Surge Surfer
 		onModifySpe(spe) {
@@ -310,7 +288,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3.5,
 		num: 295,
 	},
-	splitpersonalities: { // reskin of Hunger Switch
+	splitpersonalities: { // reskin of Hunger Switch (UNUSED)
 		onResidualOrder: 29,
 		onResidual(pokemon) {
 			if (pokemon.species.baseSpecies !== 'Akai' || pokemon.terastallized) return;
@@ -322,7 +300,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 2,
 		num: 258,
 	},
-	alteregos: { // reskin of Stance Change
+	chamachange: { // reskin of Stance Change
 		onModifyMovePriority: 1,
 		onModifyMove(move, attacker, defender) {
 			if (attacker.species.baseSpecies !== 'AkaiHaato' || attacker.transformed) return;
@@ -331,7 +309,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			if (attacker.species.name !== targetForme) attacker.formeChange(targetForme);
 		},
 		flags: {failroleplay: 1, noreceiver: 1, noentrain: 1, notrace: 1, failskillswap: 1, cantsuppress: 1},
-		name: "Alter Egos",
+		name: "Chama Change",
 		rating: 4,
 		num: 176,
 	},
@@ -557,25 +535,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3,
 		num: 89,
 	},
-	yandere0: {
-		onFoeTryMove(source, pokemon, move) {
-			const yandereHolder = this.effectState.source;
-			if (move.id === 'teleport' || move.id === 'batonpass') {
-				this.attrLastMove('[still]');
-				this.add('cant', yandereHolder, 'ability: Yandere0', move, '[of] ' + pokemon);
-				return false;
-			}
-			if (move.flags['switches']) {
-				this.add('cant', yandereHolder, 'ability: Yandere0', move, '[of] ' + pokemon);
-				return false;
-			} 
-		},
-		flags: {breakable: 1},
-		name: "Yandere0",
-		rating: 3,
-		num: 171,
-	},
-	yandere: {
+	yandere: { // blocks pivot moves like U-Turn/Volt Switch/Flip Turn and status like Teleport/Parting Shot/Baton Pass/Chilly Reception etc.
 		onFoeTryMove(pokemon, target, move) {
 			const yandereHolder = this.effectState.target;
 			if (move.id === 'teleport' || move.id === 'batonpass') {
@@ -696,19 +656,28 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3,
 		num: 153,
 	},
-	thelegendofpolka: { // reskin of Shield Dust + immunity to flinch/crits
-		onCriticalHit: false,
-		onTryAddVolatile(status, pokemon) {
-			if (status.id === 'flinch') return null;
+	thelegendofpolka: { // combines Skill Link + Techncician
+		onBasePowerPriority: 30,
+		onBasePower(basePower, attacker, defender, move) {
+			const basePowerAfterMultiplier = this.modify(basePower, this.event.modifier);
+			this.debug('Base Power: ' + basePowerAfterMultiplier);
+			if (basePowerAfterMultiplier <= 60) {
+				this.debug('Technician boost');
+				return this.chainModify(1.5);
+			}
 		},
-		onModifySecondaries(secondaries) {
-			this.debug('Shield Dust prevent secondary');
-			return secondaries.filter(effect => !!(effect.self || effect.dustproof));
+		onModifyMove(move) {
+			if (move.multihit && Array.isArray(move.multihit) && move.multihit.length) {
+				move.multihit = move.multihit[1];
+			}
+			if (move.multiaccuracy) {
+				delete move.multiaccuracy;
+			}
 		},
-		flags: {breakable: 1},
+		flags: {},
 		name: "The Legend of Polka",
-		rating: 2,
-		num: 19,
+		rating: 3.5,
+		num: 101,
 	},
 	botanx: { // reskin of Compound Eyes
 		onSourceModifyAccuracyPriority: -1,
@@ -722,7 +691,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3,
 		num: 14,
 	},
-	frozensake: { // reskin of Static but for Freeze instead of Paralyze
+	frozensake: { // reskin of Flame Body/Static but for Freeze instead of Paralyze
 		onDamagingHit(damage, target, source, move) {
 			if (this.checkMoveMakesContact(move, source, target)) {
 				if (this.randomChance(2, 10)) {
@@ -807,73 +776,50 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 1.5,
 		num: 179,
 	},
-	cleaner: { // reskin of Neutralizing Gas
-		// Ability suppression implemented in sim/pokemon.ts:Pokemon#ignoringAbility
-		onPreStart(pokemon) {
-			this.add('-ability', pokemon, 'Cleaner');
-			pokemon.abilityState.ending = false;
-			const strongWeathers = ['desolateland', 'primordialsea', 'deltastream'];
-			for (const target of this.getAllActive()) {
-				if (target.hasItem('Ability Shield')) {
-					this.add('-block', target, 'item: Ability Shield');
-					continue;
-				}
-				// Can't suppress a Tatsugiri inside of Dondozo already
-				if (target.volatiles['commanding']) {
-					continue;
-				}
-				if (target.illusion) {
-					this.singleEvent('End', this.dex.abilities.get('Illusion'), target.abilityState, target, pokemon, 'neutralizinggas');
-				}
-				if (target.volatiles['slowstart']) {
-					delete target.volatiles['slowstart'];
-					this.add('-end', target, 'Slow Start', '[silent]');
-				}
-				if (strongWeathers.includes(target.getAbility().id)) {
-					this.singleEvent('End', this.dex.abilities.get(target.getAbility().id), target.abilityState, target, pokemon, 'neutralizinggas');
-				}
-			}
-		},
-		onEnd(source) {
-			if (source.transformed) return;
-			for (const pokemon of this.getAllActive()) {
-				if (pokemon !== source && pokemon.hasAbility('Cleaner')) {
-					return;
-				}
-			}
-			this.add('-end', source, 'ability: Cleaner');
-
-			// FIXME this happens before the pokemon switches out, should be the opposite order.
-			// Not an easy fix since we cant use a supported event. Would need some kind of special event that
-			// gathers events to run after the switch and then runs them when the ability is no longer accessible.
-			// (If you're tackling this, do note extreme weathers have the same issue)
-
-			// Mark this pokemon's ability as ending so Pokemon#ignoringAbility skips it
-			if (source.abilityState.ending) return;
-			source.abilityState.ending = true;
-			const sortedActive = this.getAllActive();
-			this.speedSort(sortedActive);
-			for (const pokemon of sortedActive) {
-				if (pokemon !== source) {
-					if (pokemon.getAbility().flags['cantsuppress']) continue; // does not interact with e.g Ice Face, Zen Mode
-					if (pokemon.hasItem('abilityshield')) continue; // don't restart abilities that weren't suppressed
-
-					// Will be suppressed by Pokemon#ignoringAbility if needed
-					this.singleEvent('Start', pokemon.getAbility(), pokemon.abilityState, pokemon);
-					if (pokemon.ability === "gluttony") {
-						pokemon.abilityState.gluttony = false;
+	cleaner: {
+		onStart(pokemon) {
+			let activated = false;
+			for (const sideCondition of ['reflect', 'lightscreen', 'auroraveil', 'hologram', 'stealthrock', 'spikes', 'toxicspikes', 'stickyweb']) {
+				for (const side of [pokemon.side, ...pokemon.side.foeSidesWithConditions()]) {
+					if (side.getSideCondition(sideCondition)) {
+						if (!activated) {
+							this.add('-activate', pokemon, 'ability: Cleaner');
+							activated = true;
+						}
+						side.removeSideCondition(sideCondition);
 					}
 				}
 			}
 		},
-		flags: {failroleplay: 1, noreceiver: 1, noentrain: 1, notrace: 1, failskillswap: 1, notransform: 1},
+		flags: {},
 		name: "Cleaner",
-		rating: 3.5,
-		num: 256,
+		rating: 2,
+		num: 251,
 	},
-	yamada: { // reskin of Mirror Armour + cant flinch
-		onTryAddVolatile(status, pokemon) {
-			if (status.id === 'flinch') return null;
+	yamada: { // combines Mirror Armour + Magic Bounce
+		onTryHitPriority: 1,
+		onTryHit(target, source, move) {
+			if (target === source || move.hasBounced || !move.flags['reflectable']) {
+				return;
+			}
+			const newMove = this.dex.getActiveMove(move.id);
+			newMove.hasBounced = true;
+			newMove.pranksterBoosted = false;
+			this.actions.useMove(newMove, target, {target: source});
+			return null;
+		},
+		onAllyTryHitSide(target, source, move) {
+			if (target.isAlly(source) || move.hasBounced || !move.flags['reflectable']) {
+				return;
+			}
+			const newMove = this.dex.getActiveMove(move.id);
+			newMove.hasBounced = true;
+			newMove.pranksterBoosted = false;
+			this.actions.useMove(newMove, this.effectState.target, {target: source});
+			return null;
+		},
+		condition: {
+			duration: 1,
 		},
 		onTryBoost(boost, target, source, effect) {
 			// Don't bounce self stat changes, or boosts that have already bounced
