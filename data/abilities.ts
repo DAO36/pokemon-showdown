@@ -777,13 +777,14 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		num: 179,
 	},
 	cleaner: {
+		onTryHitPriority: 1,
 		onStart(pokemon) {
 			let activated = false;
 			for (const sideCondition of ['reflect', 'lightscreen', 'auroraveil', 'hologram', 'stealthrock', 'spikes', 'toxicspikes', 'stickyweb']) {
 				for (const side of [pokemon.side, ...pokemon.side.foeSidesWithConditions()]) {
 					if (side.getSideCondition(sideCondition)) {
 						if (!activated) {
-							this.add('-activate', pokemon, 'ability: Cleaner');
+							this.add('-sideend', pokemon.side, this.dex.conditions.get(sideCondition).name, '[from] ability: Cleaner', '[of] ' + pokemon);
 							activated = true;
 						}
 						side.removeSideCondition(sideCondition);
