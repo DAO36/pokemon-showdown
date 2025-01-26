@@ -796,7 +796,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 2,
 		num: 251,
 	},
-	blowaway: { 
+	blowaway: { // really rids all hazrads all sides but not visually
         onStart(pokemon) {
 			let activated = false;
 			for (const sideCondition of ['reflect', 'lightscreen', 'auroraveil', 'hologram', 'mist', 'spikes', 'toxicspikes', 'stealthrock', 'stickyweb', 'gmaxsteelsurge']) {
@@ -819,18 +819,20 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			rating: 2,
 			num: 251,
 		},
-	cleaner3: { 
+	cleaner3: { // rids users side only really+visually but not opposing side
 		onStart(pokemon) {
 			let success = false;
 			const removeAll = [
 				'reflect', 'lightscreen', 'auroraveil', 'hologram', 'mist', 'spikes', 'toxicspikes', 'stealthrock', 'stickyweb', 'gmaxsteelsurge',
 			];
 			for (const remove of removeAll) {
-				for (const side of [pokemon.side, ...pokemon.side.foeSidesWithConditions()])  
+			for (const side of [pokemon.side, ...pokemon.side.foeSidesWithConditions()]) 
 				if (pokemon.side.removeSideCondition(remove)) {
+					if (!success) {
 					this.add('-activate', pokemon, 'ability: Cleaner');
 					this.add('-sideend', pokemon.side, this.dex.conditions.get(remove).name,);
 					success = true;
+					}
 				}
 			}
 			this.field.clearTerrain();
@@ -842,26 +844,15 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		num: 251,
 	},
 	cleaner2: { 
-		onStart(all) {
-			let success = false; 
-			const removeTarget = [
-				'reflect', 'lightscreen', 'auroraveil', 'safeguard', 'mist', 'hologram', 'spikes', 'toxicspikes', 'stealthrock', 'stickyweb', 'gmaxsteelsurge',
-			];
+		onStart(pokemon) {
+			let success = false;
 			const removeAll = [
-				'reflect', 'lightscreen', 'auroraveil', 'safeguard', 'mist', 'hologram', 'spikes', 'toxicspikes', 'stealthrock', 'stickyweb', 'gmaxsteelsurge',
+				'reflect', 'lightscreen', 'auroraveil', 'hologram', 'mist', 'spikes', 'toxicspikes', 'stealthrock', 'stickyweb', 'gmaxsteelsurge',
 			];
-			for (const targetCondition of removeTarget) {
-				if (all.side.removeSideCondition(targetCondition)) {
-					if (!removeAll.includes(targetCondition)) continue;
-					this.add('-activate', all, 'ability: Cleaner');
-					this.add('-sideend', all.side, this.dex.conditions.get(targetCondition).name,);
-					success = true;
-				}
-			}
-			for (const sideCondition of removeAll) {
-				if (all.side.removeSideCondition(sideCondition)) {
-					this.add('-activate', all, 'ability: Cleaner');
-					this.add('-sideend', all.side, this.dex.conditions.get(sideCondition).name,);
+			for (const remove of removeAll) {
+				if (pokemon.side.removeSideCondition(remove)) {
+					this.add('-activate', pokemon, 'ability: Cleaner');
+					this.add('-sideend', pokemon.side, this.dex.conditions.get(remove).name,);
 					success = true;
 				}
 			}
