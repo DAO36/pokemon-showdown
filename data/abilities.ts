@@ -778,18 +778,19 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	},
 	blowaway: { 
         onStart(pokemon) {
-            let activated = false;
-            for (const sideCondition of ['spikes', 'toxicspikes', 'stealthrock', 'stickyweb', 'gmaxsteelsurge']) {
-                if (pokemon.side.removeSideCondition(sideCondition)) {
-                    if (activated) {
-                        this.add('-activate', pokemon, 'ability: Blow Away');
-                        activated = true;
-                    }
-                    this.add('-sideend', pokemon.side, this.dex.conditions.get(sideCondition).name, '[from] ability: Blow Away', '[of] ' + pokemon);
-                } 
-				pokemon.side.removeSideCondition(sideCondition);
-                } 
-            }, 
+			let success = false;
+			const removeAll = [
+				'reflect', 'lightscreen', 'auroraveil', 'hologram', 'mist', 'spikes', 'toxicspikes', 'stealthrock', 'stickyweb', 'gmaxsteelsurge',
+			];
+			for (const remove of removeAll) {
+				if (pokemon.side.removeSideCondition(remove)) { 
+					this.add('-sideend', pokemon.side, this.dex.conditions.get(remove).name, '[from] ability: Blow Away', '[of] ' + pokemon);
+					success = true;
+				}
+			}
+			this.field.clearTerrain();
+			return success;
+		},
 			flags: {},
 			name: "Blow Away",
 			rating: 2,
@@ -799,7 +800,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		onStart(pokemon) {
 			let success = false;
 			const removeAll = [
-				'reflect', 'lightscreen', 'auroraveil', 'safeguard', 'mist', 'spikes', 'toxicspikes', 'stealthrock', 'stickyweb', 'gmaxsteelsurge',
+				'reflect', 'lightscreen', 'auroraveil', 'hologram', 'mist', 'spikes', 'toxicspikes', 'stealthrock', 'stickyweb', 'gmaxsteelsurge',
 			];
 			for (const remove of removeAll) {
 				if (pokemon.side.removeSideCondition(remove)) {
