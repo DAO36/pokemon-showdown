@@ -785,8 +785,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			];
 			for (const sideCondition of removeAll) {
 				if (pokemon.side.removeSideCondition(sideCondition)) {
-					this.add('-activate', pokemon, 'ability: Cleaner');
-					this.add('-sideend', pokemon.side, this.dex.conditions.get(sideCondition).name,);
+					this.add('-activate', pokemon, 'ability: Cleaner', '-sideend', pokemon.side, this.dex.conditions.get(sideCondition).name,);
 					success = true;
 				}
 			}
@@ -803,7 +802,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		onStart(pokemon) {
 			let success = false; 
 			const removeTarget = [
-				'reflect', 'lightscreen', 'auroraveil', 'safeguard', 'mist', 'spikes', 'toxicspikes', 'stealthrock', 'stickyweb', 'gmaxsteelsurge',
+				'reflect', 'lightscreen', 'auroraveil', 'safeguard', 'mist', 'hologram', 'spikes', 'toxicspikes', 'stealthrock', 'stickyweb', 'gmaxsteelsurge',
 			];
 			const removeAll = [
 				'spikes', 'toxicspikes', 'stealthrock', 'stickyweb', 'gmaxsteelsurge',
@@ -811,13 +810,15 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			for (const targetCondition of removeTarget) {
 				if (pokemon.side.removeSideCondition(targetCondition)) {
 					if (!removeAll.includes(targetCondition)) continue;
-					this.add('-sideend', pokemon.side, this.dex.conditions.get(targetCondition).name, 'ability: Cleaner2', '[of] ' + pokemon);
+					this.add('-activate', pokemon, 'ability: Cleaner');
+					this.add('-sideend', pokemon.side, this.dex.conditions.get(targetCondition).name,);
 					success = true;
 				}
 			}
 			for (const sideCondition of removeAll) {
 				if (pokemon.side.removeSideCondition(sideCondition)) {
-					this.add('-sideend', pokemon.side, this.dex.conditions.get(sideCondition).name, 'ability: Cleaner2', '[of] ' + pokemon);
+					this.add('-activate', pokemon, 'ability: Cleaner');
+					this.add('-sideend', pokemon.side, this.dex.conditions.get(sideCondition).name,);
 					success = true;
 				}
 			}
