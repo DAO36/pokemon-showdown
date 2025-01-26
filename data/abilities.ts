@@ -799,15 +799,16 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	blowaway: { // really rids all hazrads all sides but not visually
         onStart(pokemon) {
 			let activated = false;
-			for (const remove of ['reflect', 'lightscreen', 'auroraveil', 'hologram', 'mist', 'spikes', 'toxicspikes', 'stealthrock', 'stickyweb', 'gmaxsteelsurge']) {
+			for (const sideCondition of ['reflect', 'lightscreen', 'auroraveil', 'hologram', 'mist', 'spikes', 'toxicspikes', 'stealthrock', 'stickyweb', 'gmaxsteelsurge']) {
 				for (const side of [pokemon.side, ...pokemon.side.foeSidesWithConditions()]) {
-					if (side.getSideCondition(remove)) {
+					for (const remove of sideCondition)
+					if (side.getSideCondition(sideCondition)) {
 						if (!activated) {
 							this.add('-activate', pokemon, 'ability: Blow Away');
-							this.add('-sideend', pokemon.side, this.dex.conditions.get(remove).name,);
+							this.add('-sideend', pokemon.side, this.dex.conditions.get(sideCondition).name,);
 							activated = true;
 						}
-						side.removeSideCondition(remove);
+						side.removeSideCondition(sideCondition);
 					}
 				}
 			}
