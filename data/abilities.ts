@@ -777,19 +777,30 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		num: 179,
 	},
 	cleaner2: {
+		onTryHitPriority: 1,
 		onStart(pokemon) {
-			let activated = false;
-			for (const sideCondition of ['reflect', 'lightscreen', 'auroraveil', 'hologram', 'stealthrock', 'spikes', 'toxicspikes', 'stickyweb']) {
-				for (const side of [pokemon.side, ...pokemon.side.foeSidesWithConditions()]) {
-					if (side.getSideCondition(sideCondition)) {
-						if (!activated) {
-							this.add('-sideend', pokemon.side, this.dex.conditions.get(sideCondition).name, '[from] ability: Blow Away', '[of] ' + pokemon);
-							activated = true;
-						}
-						side.removeSideCondition(sideCondition);
-					}
+			let success = false; 
+			const removeTarget = [
+				'reflect', 'lightscreen', 'auroraveil', 'safeguard', 'mist', 'spikes', 'toxicspikes', 'stealthrock', 'stickyweb', 'gmaxsteelsurge',
+			];
+			const removeAll = [
+				'spikes', 'toxicspikes', 'stealthrock', 'stickyweb', 'gmaxsteelsurge',
+			];
+			for (const targetCondition of removeTarget) {
+				if (pokemon.side.removeSideCondition(targetCondition)) {
+					if (!removeAll.includes(targetCondition)) continue;
+					this.add('-sideend', pokemon.side, this.dex.conditions.get(targetCondition).name, 'ability: Cleaner2', '[of] ' + pokemon);
+					success = true;
 				}
 			}
+			for (const sideCondition of removeAll) {
+				if (pokemon.side.removeSideCondition(sideCondition)) {
+					this.add('-sideend', pokemon.side, this.dex.conditions.get(sideCondition).name, 'ability: Cleaner2', '[of] ' + pokemon);
+					success = true;
+				}
+			}
+			this.field.clearTerrain();
+			return success;
 		},
 		flags: {},
 		name: "Cleaner2",
