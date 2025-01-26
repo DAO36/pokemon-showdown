@@ -776,20 +776,41 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 1.5,
 		num: 179,
 	},
-	blowaway: { 
-        onStart(pokemon) {
-			let success = false;
-			const removeAll = [
-				'reflect', 'lightscreen', 'auroraveil', 'hologram', 'mist', 'spikes', 'toxicspikes', 'stealthrock', 'stickyweb', 'gmaxsteelsurge',
-			];
-			for (const remove of removeAll) {
-				if (pokemon.side.removeSideCondition(remove)) { 
-					this.add('-activate', pokemon, 'ability: Cleaner', '-sideend', pokemon.side, this.dex.conditions.get(remove).name,);
-					success = true;
+	reencleaner: {
+		onStart(pokemon) {
+			let activated = false;
+			for (const sideCondition of ['reflect', 'lightscreen', 'auroraveil']) {
+				for (const side of [pokemon.side, ...pokemon.side.foeSidesWithConditions()]) {
+					if (side.getSideCondition(sideCondition)) {
+						if (!activated) {
+							this.add('-activate', pokemon, 'ability: Screen Cleaner');
+							activated = true;
+						}
+						side.removeSideCondition(sideCondition);
+					}
 				}
 			}
-			this.field.clearTerrain();
-			return success;
+		},
+		flags: {},
+		name: "Screen Cleaner",
+		rating: 2,
+		num: 251,
+	},
+	blowaway: { 
+        onStart(pokemon) {
+			let activated = false;
+			for (const sideCondition of ['reflect', 'lightscreen', 'auroraveil', 'hologram', 'mist', 'spikes', 'toxicspikes', 'stealthrock', 'stickyweb', 'gmaxsteelsurge']) {
+				for (const side of [pokemon.side, ...pokemon.side.foeSidesWithConditions()]) {
+					if (side.getSideCondition(sideCondition)) {
+						if (!activated) {
+							this.add('-activate', pokemon, 'ability: Blow Away');
+							this.add('-sideend', pokemon.side, this.dex.conditions.get(sideCondition).name,);
+							activated = true;
+						}
+						side.removeSideCondition(sideCondition);
+					}
+				}
+			}
 		},
 			flags: {},
 			name: "Blow Away",
