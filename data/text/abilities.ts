@@ -274,7 +274,7 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	seiso: {
 		name: "Seiso",
-		shortDesc: "This Seiso idol cannot be poisoned, paralyzed, burned, or put to sleep; Cannot be made to flinch.",
+		shortDesc: "This Seiso idol cannot be poisoned, paralyzed, burned, frozen, or put to sleep; Cannot be made to flinch.",
 	},
 	cloudnine: {
 		name: "Cloud Nine",
