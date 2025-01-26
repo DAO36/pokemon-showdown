@@ -838,28 +838,27 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 2,
 		num: 251,
 	},
-	cleaner2: {
-		onTryHitPriority: 1,
-		onStart(pokemon) {
+	cleaner2: { 
+		onStart(all) {
 			let success = false; 
 			const removeTarget = [
 				'reflect', 'lightscreen', 'auroraveil', 'safeguard', 'mist', 'hologram', 'spikes', 'toxicspikes', 'stealthrock', 'stickyweb', 'gmaxsteelsurge',
 			];
 			const removeAll = [
-				'spikes', 'toxicspikes', 'stealthrock', 'stickyweb', 'gmaxsteelsurge',
+				'reflect', 'lightscreen', 'auroraveil', 'safeguard', 'mist', 'hologram', 'spikes', 'toxicspikes', 'stealthrock', 'stickyweb', 'gmaxsteelsurge',
 			];
 			for (const targetCondition of removeTarget) {
-				if (pokemon.side.removeSideCondition(targetCondition)) {
+				if (all.side.removeSideCondition(targetCondition)) {
 					if (!removeAll.includes(targetCondition)) continue;
-					this.add('-activate', pokemon, 'ability: Cleaner');
-					this.add('-sideend', pokemon.side, this.dex.conditions.get(targetCondition).name,);
+					this.add('-activate', all, 'ability: Cleaner');
+					this.add('-sideend', all.side, this.dex.conditions.get(targetCondition).name,);
 					success = true;
 				}
 			}
 			for (const sideCondition of removeAll) {
-				if (pokemon.side.removeSideCondition(sideCondition)) {
-					this.add('-activate', pokemon, 'ability: Cleaner');
-					this.add('-sideend', pokemon.side, this.dex.conditions.get(sideCondition).name,);
+				if (all.side.removeSideCondition(sideCondition)) {
+					this.add('-activate', all, 'ability: Cleaner');
+					this.add('-sideend', all.side, this.dex.conditions.get(sideCondition).name,);
 					success = true;
 				}
 			}
