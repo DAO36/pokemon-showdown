@@ -779,21 +779,10 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	cleaner3: {
 		onTryHitPriority: 1,
 		onStart(pokemon) {
-			let success = false; 
-			const removeTarget = [
-				'reflect', 'lightscreen', 'auroraveil', 'safeguard', 'mist', 'hologram', 'spikes', 'toxicspikes', 'stealthrock', 'stickyweb', 'gmaxsteelsurge',
-			];
+			let success = false;
 			const removeAll = [
 				'reflect', 'lightscreen', 'auroraveil', 'safeguard', 'mist', 'hologram', 'spikes', 'toxicspikes', 'stealthrock', 'stickyweb', 'gmaxsteelsurge',
 			];
-			for (const targetCondition of removeTarget) {
-				if (pokemon.side.removeSideCondition(targetCondition)) {
-					if (!removeAll.includes(targetCondition)) continue;
-					this.add('-activate', pokemon, 'ability: Cleaner');
-					this.add('-sideend', pokemon.side, this.dex.conditions.get(targetCondition).name,);
-					success = true;
-				}
-			}
 			for (const sideCondition of removeAll) {
 				if (pokemon.side.removeSideCondition(sideCondition)) {
 					this.add('-activate', pokemon, 'ability: Cleaner');
