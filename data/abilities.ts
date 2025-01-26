@@ -796,15 +796,14 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 2,
 		num: 251,
 	},
-	blowaway: { // really rids all hazrads all sides but not visually
+	blowaway2: { // really rids all hazrads all sides but not visually
         onStart(pokemon) {
 			let activated = false;
 			for (const sideCondition of ['reflect', 'lightscreen', 'auroraveil', 'hologram', 'mist', 'spikes', 'toxicspikes', 'stealthrock', 'stickyweb', 'gmaxsteelsurge']) {
 				for (const side of [pokemon.side, ...pokemon.side.foeSidesWithConditions()]) {
-					for (const remove of sideCondition)
 					if (side.getSideCondition(sideCondition)) {
 						if (!activated) {
-							this.add('-activate', pokemon, 'ability: Blow Away');
+							this.add('-activate', pokemon, 'ability: Blow Away2');
 							this.add('-sideend', pokemon.side, this.dex.conditions.get(sideCondition).name,);
 							activated = true;
 						}
@@ -816,11 +815,47 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			return activated;
 		},
 			flags: {},
-			name: "Blow Away",
+			name: "Blow Away2",
 			rating: 2,
 			num: 251,
 		},
-	cleaner3: { // rids users side only really+visually but not opposing side
+		blowaway: { // really rids all hazrads all sides but not visually COPY
+			onStart(pokemon) {
+				let activated = false;
+				for (const sideCondition of ['reflect', 'lightscreen', 'auroraveil', 'hologram', 'mist', 'spikes', 'toxicspikes', 'stealthrock', 'stickyweb', 'gmaxsteelsurge']) {
+					for (const side of [pokemon.side, ...pokemon.side.foeSidesWithConditions()]) {
+						if (side.getSideCondition(sideCondition)) {
+							if (!activated) {
+								this.add('-activate', pokemon, 'ability: Blow Away');
+								this.add('-sideend', pokemon.side, this.dex.conditions.get(sideCondition).name,);
+								activated = true;
+							}
+							side.removeSideCondition(sideCondition);
+						}
+					}
+				}
+				let success = false;
+			const removeAll = [
+				'reflect', 'lightscreen', 'auroraveil', 'hologram', 'mist', 'spikes', 'toxicspikes', 'stealthrock', 'stickyweb', 'gmaxsteelsurge',
+			];
+			for (const remove of removeAll) {
+				if (pokemon.side.removeSideCondition(remove)) {
+					if (!success) {
+					this.add('-activate', pokemon, 'ability: Cleaner');
+					this.add('-sideend', pokemon.side, this.dex.conditions.get(remove).name,);
+					success = true;
+					}
+				}
+			}
+				this.field.clearTerrain();
+				return activated;
+			},
+				flags: {},
+				name: "Blow Away",
+				rating: 2,
+				num: 251,
+			},
+	cleaner3: { // rids users side only really+visually but not opposing side COPY
 		onStart(pokemon) {
 			let success = false;
 			const removeAll = [
@@ -843,7 +878,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 2,
 		num: 251,
 	},
-	cleaner2: { 
+	cleaner2: { // rids users side only really+visually but not opposing side
 		onStart(pokemon) {
 			let success = false;
 			const removeAll = [
