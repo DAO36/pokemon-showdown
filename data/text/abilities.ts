@@ -1198,8 +1198,8 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	thelegendofpolka: {
 		name: "The Legend of Polka",
-		desc: "Wh linch.",
-		shortDesc: "If nch.",
+		desc: "This Pokemon's moves of 60 power or less have their power multiplied by 1.5, including Struggle. This effect comes after a move's effect changes its own power.",
+		shortDesc: "This Pokemon's moves of 60 power or less have 1.5x power; multi-hit attacks always hit the maximum number of times.",
 	},
 	yamada: {
 		name: "yamada",
