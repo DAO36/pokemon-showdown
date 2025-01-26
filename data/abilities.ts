@@ -140,13 +140,13 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			if (status.id === 'flinch') return null;
 		},
 		onUpdate(pokemon) {
-			if (pokemon.status === 'psn' || pokemon.status === 'tox' || pokemon.status === 'par' || pokemon.status === 'slp' || pokemon.status === 'brn') {
+			if (pokemon.status === 'psn' || pokemon.status === 'tox' || pokemon.status === 'par' || pokemon.status === 'slp' || pokemon.status === 'brn' || pokemon.status === 'frz') {
 				this.add('-activate', pokemon, 'ability: Immunity');
 				pokemon.cureStatus();
 			}
 		},
 		onSetStatus(status, target, source, effect) {
-			if (status.id !== 'psn' && status.id !== 'tox' && status.id !== 'par' && status.id !== 'slp' && status.id !== 'brn') return;
+			if (status.id !== 'psn' && status.id !== 'tox' && status.id !== 'par' && status.id !== 'slp' && status.id !== 'brn' && status.id !== 'frz') return;
 			if ((effect as Move)?.status) {
 				this.add('-immune', target, '[from] ability: Seiso');
 			}
