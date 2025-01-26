@@ -835,13 +835,12 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 					}
 				}
 				let success = false;
-			const removeAll = [
+			    const removeAll = [
 				'reflect', 'lightscreen', 'auroraveil', 'hologram', 'mist', 'spikes', 'toxicspikes', 'stealthrock', 'stickyweb', 'gmaxsteelsurge',
 			];
 			for (const remove of removeAll) {
 				if (pokemon.side.removeSideCondition(remove)) {
-					if (!success) {
-					this.add('-activate', pokemon, 'ability: Blow Away');
+					if (!success) { 
 					this.add('-sideend', pokemon.side, this.dex.conditions.get(remove).name,);
 					success = true;
 					}
@@ -870,6 +869,19 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 					}
 				}
 			}
+			let activated = false;
+				for (const sideCondition of ['reflect', 'lightscreen', 'auroraveil', 'hologram', 'mist', 'spikes', 'toxicspikes', 'stealthrock', 'stickyweb', 'gmaxsteelsurge']) {
+					for (const side of [pokemon.side, ...pokemon.side.foeSidesWithConditions()]) {
+						if (side.getSideCondition(sideCondition)) {
+							if (!activated) {
+								this.add('-activate', pokemon, 'ability: Blow Away');
+								this.add('-sideend', pokemon.side, this.dex.conditions.get(sideCondition).name,);
+								activated = true;
+							}
+							side.removeSideCondition(sideCondition);
+						}
+					}
+				}
 			this.field.clearTerrain();
 			return success;
 		},
