@@ -811,6 +811,8 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 					}
 				}
 			}
+			this.field.clearTerrain();
+			return activated;
 		},
 			flags: {},
 			name: "Blow Away",
@@ -824,6 +826,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 				'reflect', 'lightscreen', 'auroraveil', 'hologram', 'mist', 'spikes', 'toxicspikes', 'stealthrock', 'stickyweb', 'gmaxsteelsurge',
 			];
 			for (const remove of removeAll) {
+				for (const side of [pokemon.side, ...pokemon.side.foeSidesWithConditions()])  
 				if (pokemon.side.removeSideCondition(remove)) {
 					this.add('-activate', pokemon, 'ability: Cleaner');
 					this.add('-sideend', pokemon.side, this.dex.conditions.get(remove).name,);
