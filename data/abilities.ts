@@ -779,17 +779,16 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	blowaway: { 
         onStart(pokemon) {
             let activated = false;
-            const removeAll = ['spikes', 'toxicspikes', 'stealthrock', 'stickyweb', 'gmaxsteelsurge', 'secretseeds']
-            for (const remove of removeAll) {
-                if (pokemon.side.getSideCondition(remove)) {
+            for (const sideCondition of ['spikes', 'toxicspikes', 'stealthrock', 'stickyweb', 'gmaxsteelsurge']) {
+                if (pokemon.side.removeSideCondition(sideCondition)) {
                     if (activated) {
                         this.add('-activate', pokemon, 'ability: Blow Away');
-                        this.add('-sideend', pokemon.side, this.dex.conditions.get(remove).name, '[from] ability: Blow Away', '[of] ' + pokemon);
                         activated = true;
                     }
-                    pokemon.side.removeSideCondition(remove);
-                }
-			    }
+                    this.add('-sideend', pokemon.side, this.dex.conditions.get(sideCondition).name, '[from] ability: Blow Away', '[of] ' + pokemon);
+                } 
+				pokemon.side.removeSideCondition(sideCondition);
+                } 
             }, 
 			flags: {},
 			name: "Blow Away",
