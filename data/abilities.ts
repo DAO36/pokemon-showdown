@@ -814,28 +814,29 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	blowaway: { // actually rids all hazards, visually only screens of all sides but only hazards on user side; opposite side still shows
 		onDamagingHitOrder: 1,
 		onDamagingHit(damage, target, source, move) {
-				this.add('-activate', source, 'ability: Blow Away');
-				let success = false;
+			this.add('-activate', source, 'ability: Cleaner');
+			let success = false;
+			if (!target.volatiles['substitute'] || move.infiltrates) success = !!this.boost({evasion: -1});
+			const removeTarget = [
+				'reflect', 'lightscreen', 'auroraveil', 'hologram', 'mist', 'spikes', 'toxicspikes', 'stealthrock', 'stickyweb', 'gmaxsteelsurge',
+			];
 			const removeAll = [
 				'reflect', 'lightscreen', 'auroraveil', 'hologram', 'mist', 'spikes', 'toxicspikes', 'stealthrock', 'stickyweb', 'gmaxsteelsurge',
 			];
-			for (const remove of removeAll)  
-				if (target.side.removeSideCondition(remove))
-					if (!success)   
-					this.add('-sideend', target.side, this.dex.conditions.get(remove).name,);
-					success = true; 
-				for (const sideCondition of ['reflect', 'lightscreen', 'auroraveil', 'hologram', 'mist', 'spikes', 'toxicspikes', 'stealthrock', 'stickyweb', 'gmaxsteelsurge']) {
-					for (const side of [source.side, ...source.side.foeSidesWithConditions()]) {
-						if (side.getSideCondition(sideCondition)) {
-							if (!success) { 
-								this.add('-sideend', side, this.dex.conditions.get(sideCondition).name,);
-								success = true;
-							}
-							side.removeSideCondition(sideCondition);
-						}
-					}
+			for (const targetCondition of removeTarget) {
+				if (target.side.removeSideCondition(targetCondition)) {
+					if (!removeAll.includes(targetCondition)) continue;
+					this.add('-sideend', target.side, this.dex.conditions.get(targetCondition).name);
+					success = true;
 				}
-			this.field.clearTerrain();  
+			}
+			for (const sideCondition of removeAll) {
+				if (source.side.removeSideCondition(sideCondition)) {
+					this.add('-sideend', source.side, this.dex.conditions.get(sideCondition).name);
+					success = true;
+				}
+			}
+			this.field.clearTerrain();
 			return success;
 		},
 			flags: {},
