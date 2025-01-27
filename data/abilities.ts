@@ -776,14 +776,14 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 1.5,
 		num: 179,
 	},
-	reencleaner: {
+	bruh: {
 		onStart(pokemon) {
 			let activated = false;
-			for (const sideCondition of ['reflect', 'lightscreen', 'auroraveil']) {
+			for (const sideCondition of ['reflect', 'lightscreen', 'auroraveil', 'hologram', 'mist', 'spikes', 'toxicspikes', 'stealthrock', 'stickyweb', 'gmaxsteelsurge']) {
 				for (const side of [pokemon.side, ...pokemon.side.foeSidesWithConditions()]) {
 					if (side.getSideCondition(sideCondition)) {
 						if (!activated) {
-							this.add('-activate', pokemon, 'ability: Screen Cleaner');
+							this.add('-sideend', pokemon.side, this.dex.conditions.get(sideCondition).name,);
 							activated = true;
 						}
 						side.removeSideCondition(sideCondition);
@@ -792,7 +792,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			}
 		},
 		flags: {},
-		name: "Screen Cleaner",
+		name: "Bruh",
 		rating: 2,
 		num: 251,
 	},
@@ -818,15 +818,16 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		num: 251,
 	},
 	blowaway: { // actually rids all hazards, visually only screens of all sides but only hazards on user side; opposite side still shows
-			onStart(pokemon) {
+			onStart(pokemon) {{
 				this.add('-activate', pokemon, 'ability: Blow Away');
 				let success = false;
 			const removeAll = [
 				'reflect', 'lightscreen', 'auroraveil', 'hologram', 'mist', 'spikes', 'toxicspikes', 'stealthrock', 'stickyweb', 'gmaxsteelsurge',
 			];
-			for (const sideCondition of removeAll) 
-				if (pokemon.side.removeSideCondition(sideCondition))  
-					this.add('-sideend', pokemon.side, this.dex.conditions.get(sideCondition).name,);
+			for (const remove of removeAll)  
+				if (pokemon.side.removeSideCondition(remove))  
+					if (!success)   
+					this.add('-sideend', pokemon.side, this.dex.conditions.get(remove).name,);
 					success = true;
 				for (const sideCondition of ['reflect', 'lightscreen', 'auroraveil', 'hologram', 'mist', 'spikes', 'toxicspikes', 'stealthrock', 'stickyweb', 'gmaxsteelsurge']) {
 					for (const side of [pokemon.side, ...pokemon.side.foeSidesWithConditions()]) {
@@ -840,7 +841,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 					}
 				}
 			this.field.clearTerrain();
-			return success;
+			return success;}
 		},
 			flags: {},
 			name: "Blow Away",
@@ -871,6 +872,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 					}
 				}
 			this.field.clearTerrain();
+			this.field.removePseudoWeather 
 			return success;
 		},
 		flags: {},
@@ -896,50 +898,6 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		},
 		flags: {},
 		name: "Cleaner2",
-		rating: 2,
-		num: 251,
-	},
-	blowaway2: { // really rids all hazrads all sides but not visually
-        onStart(pokemon) {
-			let activated = false;
-			for (const sideCondition of ['reflect', 'lightscreen', 'auroraveil', 'hologram', 'mist', 'spikes', 'toxicspikes', 'stealthrock', 'stickyweb', 'gmaxsteelsurge']) {
-				for (const side of [pokemon.side, ...pokemon.side.foeSidesWithConditions()]) {
-					if (side.getSideCondition(sideCondition)) {
-						if (!activated) {
-							this.add('-activate', pokemon, 'ability: Blow Away2');
-							this.add('-sideend', pokemon.side, this.dex.conditions.get(sideCondition).name,);
-							activated = true;
-						}
-						side.removeSideCondition(sideCondition);
-					}
-				}
-			}
-			this.field.clearTerrain();
-			return activated;
-		},
-			flags: {},
-			name: "Blow Away2",
-			rating: 2,
-			num: 251,
-	},
-	cleaner: {
-		onTryHitPriority: 1,
-		onStart(pokemon) {
-			let activated = false;
-			for (const sideCondition of ['reflect', 'lightscreen', 'auroraveil', 'hologram', 'stealthrock', 'spikes', 'toxicspikes', 'stickyweb']) {
-				for (const side of [pokemon.side, ...pokemon.side.foeSidesWithConditions()]) {
-					if (side.getSideCondition(sideCondition)) {
-						if (!activated) {
-							this.add('-activate', pokemon, 'ability: Cleaner');
-							activated = true;
-						}
-						side.removeSideCondition(sideCondition);
-					}
-				}
-			}
-		},
-		flags: {},
-		name: "Cleaner",
 		rating: 2,
 		num: 251,
 	},
