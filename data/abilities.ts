@@ -826,6 +826,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 				const removeAll = [
 					'reflect', 'lightscreen', 'auroraveil', 'hologram', 'mist', 'spikes', 'toxicspikes', 'stealthrock', 'stickyweb', 'gmaxsteelsurge',
 				];
+				for (const side of [pokemon.side, ...pokemon.side.foeSidesWithConditions()])
 				for (const remove of removeAll)  
 					if (pokemon.side.removeSideCondition(remove))  
 						if (!success)   
