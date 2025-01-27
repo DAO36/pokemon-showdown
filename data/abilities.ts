@@ -804,9 +804,9 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			rating: 2,
 			num: 251,
     },
-	cleaner2: { // actually rids all hazards, visually only screens of all sides but only hazards on user side; opposite side still shows
+	cleaner: { // actually rids all hazards, visually only screens of all sides but only hazards on user side; opposite side still shows
 		onStart(pokemon) {
-			this.add('-activate', pokemon, 'ability: Cleaner2');
+			this.add('-activate', pokemon, 'ability: Cleaner');
 			let success = false;
 			const removeAll = [
 				'reflect', 'lightscreen', 'auroraveil', 'hologram', 'mist', 'spikes', 'toxicspikes', 'stealthrock', 'stickyweb', 'gmaxsteelsurge',
@@ -831,7 +831,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			return success;
 		},
 		flags: {},
-		name: "Cleaner2",
+		name: "Cleaner",
 		rating: 2,
 		num: 251,
 	},
