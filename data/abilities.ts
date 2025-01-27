@@ -779,13 +779,13 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	bruh: {
 		onStart(pokemon) {
 			this.add('-activate', pokemon, 'ability: Bruh');
-			let activated = false;
+			let success = false;
 			for (const sideCondition of ['reflect', 'lightscreen', 'auroraveil', 'hologram', 'mist', 'spikes', 'toxicspikes', 'stealthrock', 'stickyweb', 'gmaxsteelsurge']) {
 				for (const side of [pokemon.side, ...pokemon.side.foeSidesWithConditions()]) {
 					if (side.getSideCondition(sideCondition)) {
-						if (!activated) {
+						if (!success) {
 							this.add('-sideend', side, this.dex.conditions.get(sideCondition).name,);
-							activated = true;
+							success = true;
 						}
 						side.removeSideCondition(sideCondition);
 					}
