@@ -776,9 +776,9 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 1.5,
 		num: 179,
 	},
-	bruh2: {
+	bruh: {
 		onStart(pokemon) {
-			this.add('-activate', pokemon, 'ability: Bruh2');
+			this.add('-activate', pokemon, 'ability: Bruh');
 			let activated = false;
 			for (const sideCondition of ['reflect', 'lightscreen', 'auroraveil', 'hologram', 'mist', 'spikes', 'toxicspikes', 'stealthrock', 'stickyweb', 'gmaxsteelsurge']) {
 				for (const side of [pokemon.side, ...pokemon.side.foeSidesWithConditions()]) {
@@ -795,53 +795,37 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			return true;	
 		},
 		flags: {},
-		name: "Bruh2",
-		rating: 2,
-		num: 251,
-	},
-	bruh: {
-		onStart(side) {
-			this.add('-activate', side, 'ability: Bruh');
-			let success = false; 
-			const removeTarget = [
-				'reflect', 'lightscreen', 'auroraveil', 'hologram', 'mist', 'spikes', 'toxicspikes', 'stealthrock', 'stickyweb', 'gmaxsteelsurge',
-			];
-			const removeAll = [
-				'reflect', 'lightscreen', 'auroraveil', 'hologram', 'mist', 'spikes', 'toxicspikes', 'stealthrock', 'stickyweb', 'gmaxsteelsurge',
-			];
-			for (const targetCondition of removeTarget) {   {
-					if (!removeAll.includes(targetCondition)) continue;
-					this.add('-sideend', side, this.dex.conditions.get(targetCondition).name,);
-					success = true;
-				}
-			}
-			for (const sideCondition of removeAll) {  {
-					this.add('-sideend', side, this.dex.conditions.get(sideCondition).name,);
-					success = true;
-				}
-			}
-			this.field.clearTerrain();
-			return success;
-		},
-		flags: {},
 		name: "Bruh",
 		rating: 2,
 		num: 251,
 	},
+	ugh: { // any pokemon that attacks the user loses 1/8 of their max hp
+		onDamagingHitOrder: 1,
+		onDamagingHit(damage, target, source, move) {
+			{
+				this.damage(source.baseMaxhp / 8, source, target);
+			}
+		},
+		flags: {},
+		name: "Baby Dont Hurt Me",
+		rating: 5,
+		num: 24,
+	},
 	blowaway: { // actually rids all hazards, visually only screens of all sides but only hazards on user side; opposite side still shows
-			onStart(pokemon) {
-				this.add('-activate', pokemon, 'ability: Blow Away');
+		onDamagingHitOrder: 1,
+		onDamagingHit(damage, target, source, move) {
+				this.add('-activate', source, 'ability: Blow Away');
 				let success = false;
 			const removeAll = [
 				'reflect', 'lightscreen', 'auroraveil', 'hologram', 'mist', 'spikes', 'toxicspikes', 'stealthrock', 'stickyweb', 'gmaxsteelsurge',
 			];
 			for (const remove of removeAll)  
-				if (pokemon.side.removeSideCondition(remove))
+				if (target.side.removeSideCondition(remove))
 					if (!success)   
-					this.add('-sideend', pokemon.side, this.dex.conditions.get(remove).name,);
+					this.add('-sideend', target.side, this.dex.conditions.get(remove).name,);
 					success = true; 
 				for (const sideCondition of ['reflect', 'lightscreen', 'auroraveil', 'hologram', 'mist', 'spikes', 'toxicspikes', 'stealthrock', 'stickyweb', 'gmaxsteelsurge']) {
-					for (const side of [pokemon.side, ...pokemon.side.foeSidesWithConditions()]) {
+					for (const side of [source.side, ...source.side.foeSidesWithConditions()]) {
 						if (side.getSideCondition(sideCondition)) {
 							if (!success) { 
 								this.add('-sideend', side, this.dex.conditions.get(sideCondition).name,);
@@ -999,6 +983,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		num: 157,
 	},
 	nnn: { // reskin of Seed Sower
+		onDamagingHitOrder: 1,
 		onDamagingHit(damage, target, source, move) {
 			this.field.setTerrain('grassyterrain');
 		},
