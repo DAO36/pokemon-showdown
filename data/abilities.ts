@@ -776,6 +776,29 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 1.5,
 		num: 179,
 	},
+	bruh: {
+		onStart(pokemon) {
+			this.add('-activate', pokemon, 'ability: Bruh');
+			let activated = false;
+			for (const sideCondition of ['reflect', 'lightscreen', 'auroraveil', 'hologram', 'mist', 'spikes', 'toxicspikes', 'stealthrock', 'stickyweb', 'gmaxsteelsurge']) {
+				for (const side of [pokemon.side, ...pokemon.side.foeSidesWithConditions()]) {
+					if (side.getSideCondition(sideCondition)) {
+						if (!activated) {
+							this.add('-sideend', side, this.dex.conditions.get(sideCondition).name,);
+							activated = true;
+						}
+						side.removeSideCondition(sideCondition);
+					}
+				}
+			}
+			this.field.clearTerrain();  
+			return true;	
+		},
+		flags: {},
+		name: "Bruh",
+		rating: 2,
+		num: 251,
+	},
 	blowaway: { // actually rids all hazards, visually only screens of all sides but only hazards on user side; opposite side still shows
 			onStart(pokemon) {
 				this.add('-activate', pokemon, 'ability: Blow Away');
@@ -784,12 +807,15 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 				'reflect', 'lightscreen', 'auroraveil', 'hologram', 'mist', 'spikes', 'toxicspikes', 'stealthrock', 'stickyweb', 'gmaxsteelsurge',
 			];
 			for (const remove of removeAll)  
-				if (pokemon.side.removeSideCondition(remove))   
+				if (pokemon.side.removeSideCondition(remove))
+					if (!success)   
+					this.add('-sideend', pokemon.side, this.dex.conditions.get(remove).name,);
+					success = true; 
 				for (const sideCondition of ['reflect', 'lightscreen', 'auroraveil', 'hologram', 'mist', 'spikes', 'toxicspikes', 'stealthrock', 'stickyweb', 'gmaxsteelsurge']) {
 					for (const side of [pokemon.side, ...pokemon.side.foeSidesWithConditions()]) {
 						if (side.getSideCondition(sideCondition)) {
 							if (!success) { 
-								this.add('-sideend', side, pokemon.side, this.dex.conditions.get(sideCondition).name,);
+								this.add('-sideend', side, this.dex.conditions.get(sideCondition).name,);
 								success = true;
 							}
 							side.removeSideCondition(sideCondition);
