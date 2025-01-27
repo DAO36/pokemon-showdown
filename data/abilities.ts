@@ -820,22 +820,22 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			num: 251,
 		},
 		blowaway: { // actually rids all hazards, visually only screens of all sides but only hazards on user side; opposite side still shows
-			onStart(target) {
-				this.add('-activate', target, 'ability: Blow Away');
+			onStart(source) {
+				this.add('-activate', source, 'ability: Blow Away');
 				let success = false;
 			const removeAll = [
 				'reflect', 'lightscreen', 'auroraveil', 'hologram', 'mist', 'spikes', 'toxicspikes', 'stealthrock', 'stickyweb', 'gmaxsteelsurge',
 			];
 			for (const remove of removeAll)  
-				if (target.side.removeSideCondition(remove))  
+				if (source.side.removeSideCondition(remove))  
 					if (!success)   
-					this.add('-sideend', target.side, this.dex.conditions.get(remove).name,);
+					this.add('-sideend', source.side, this.dex.conditions.get(remove).name,);
 					success = true; 
 				for (const sideCondition of ['reflect', 'lightscreen', 'auroraveil', 'hologram', 'mist', 'spikes', 'toxicspikes', 'stealthrock', 'stickyweb', 'gmaxsteelsurge']) {
-					for (const side of [target.side, ...target.side.foeSidesWithConditions()]) {
+					for (const side of [source.side, ...source.side.foeSidesWithConditions()]) {
 						if (side.getSideCondition(sideCondition)) {
 							if (!success) { 
-								this.add('-sideend', target.side, this.dex.conditions.get(sideCondition).name,);
+								this.add('-sideend', source.side, this.dex.conditions.get(sideCondition).name,);
 								success = true;
 							}
 							side.removeSideCondition(sideCondition);
