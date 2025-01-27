@@ -824,13 +824,13 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			for (const targetCondition of removeTarget) {
 				if (target.side.removeSideCondition(targetCondition)) {
 					if (!removeAll.includes(targetCondition)) continue;
-					this.add('-sideend', target.side, this.dex.conditions.get(targetCondition).name, '-activate', source, 'ability: Cleaner');
+					this.add('-sideend', target.side, this.dex.conditions.get(targetCondition).name, 'ability: Blow Away', '[of] ' + target);
 					success = true;
 				}
 			}
 			for (const sideCondition of removeAll) {
 				if (source.side.removeSideCondition(sideCondition)) {
-					this.add('-sideend', source.side, this.dex.conditions.get(sideCondition).name, '-activate', source, 'ability: Cleaner');
+					this.add('-sideend', source.side, this.dex.conditions.get(sideCondition).name, 'ability: Blow Away', '[of] ' + target);
 					success = true;
 				}
 			}
