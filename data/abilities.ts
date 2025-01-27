@@ -819,42 +819,38 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			rating: 2,
 			num: 251,
 		},
-		blowaway: { // really rids all hazrads all sides but not visually COPY
+		blowaway: { // actually rids all hazards, visually only screens of all sides but only hazards on user side; opposite side still shows
 			onStart(pokemon) {
-				let activated = false;
-				for (const sideCondition of ['reflect', 'lightscreen', 'auroraveil', 'hologram', 'mist', 'spikes', 'toxicspikes', 'stealthrock', 'stickyweb', 'gmaxsteelsurge']) {
-					for (const side of [pokemon.side, ...pokemon.side.foeSidesWithConditions()]) {
-						if (side.getSideCondition(sideCondition)) {
-							if (!activated) {
-								this.add('-activate', pokemon, 'ability: Blow Away');
-								this.add('-sideend', pokemon.side, this.dex.conditions.get(sideCondition).name,);
-								activated = true;
+				this.add('-activate', pokemon, 'ability: Blow Away');
+				let success = false;
+				const removeAll = [
+					'reflect', 'lightscreen', 'auroraveil', 'hologram', 'mist', 'spikes', 'toxicspikes', 'stealthrock', 'stickyweb', 'gmaxsteelsurge',
+				];
+				for (const remove of removeAll)  
+					if (pokemon.side.removeSideCondition(remove))  
+						if (!success)   
+						this.add('-sideend', pokemon.side, this.dex.conditions.get(remove).name,);
+						success = true; 
+					for (const sideCondition of ['reflect', 'lightscreen', 'auroraveil', 'hologram', 'mist', 'spikes', 'toxicspikes', 'stealthrock', 'stickyweb', 'gmaxsteelsurge']) {
+						for (const side of [pokemon.side, ...pokemon.side.foeSidesWithConditions()]) {
+							if (side.getSideCondition(sideCondition)) {
+								if (!success) { 
+									this.add('-sideend', pokemon.side, this.dex.conditions.get(sideCondition).name,);
+									success = true;
+								}
+								side.removeSideCondition(sideCondition);
 							}
-							side.removeSideCondition(sideCondition);
 						}
 					}
-				}
-				let success = false;
-			    const removeAll = [
-				'reflect', 'lightscreen', 'auroraveil', 'hologram', 'mist', 'spikes', 'toxicspikes', 'stealthrock', 'stickyweb', 'gmaxsteelsurge',
-			];
-			for (const remove of removeAll) {
-				if (pokemon.side.removeSideCondition(remove)) {
-					if (!success) { 
-					this.add('-sideend', pokemon.side, this.dex.conditions.get(remove).name,);
-					success = true;
-					}
-				}
-			}
 				this.field.clearTerrain();
-				return activated;
+				return success;
 			},
-				flags: {},
-				name: "Blow Away",
-				rating: 2,
-				num: 251,
-			},
-	cleaner3: { // rids users side only really+visually but not opposing side COPY
+			flags: {},
+			name: "Blow Away",
+			rating: 2,
+			num: 251,
+		},
+	cleaner3: { // actually rids all hazards, visually only screens of all sides but only hazards on user side; opposite side still shows
 		onStart(pokemon) {
 			this.add('-activate', pokemon, 'ability: Cleaner3');
 			let success = false;
