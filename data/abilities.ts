@@ -856,7 +856,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			},
 	cleaner3: { // rids users side only really+visually but not opposing side COPY
 		onStart(pokemon) {
-			this.add('-activate', pokemon, 'ability: Cleaner');
+			this.add('-activate', pokemon, 'ability: Cleaner3');
 			let success = false;
 			const removeAll = [
 				'reflect', 'lightscreen', 'auroraveil', 'hologram', 'mist', 'spikes', 'toxicspikes', 'stealthrock', 'stickyweb', 'gmaxsteelsurge',
@@ -887,7 +887,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	},
 	cleaner2: { // rids users side only really+visually but not opposing side
 		onStart(pokemon) {
-			this.add('-activate', pokemon, 'ability: Cleaner');
+			this.add('-activate', pokemon, 'ability: Cleaner2');
 			let success = false;
 			const removeAll = [
 				'reflect', 'lightscreen', 'auroraveil', 'hologram', 'mist', 'spikes', 'toxicspikes', 'stealthrock', 'stickyweb', 'gmaxsteelsurge',
