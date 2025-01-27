@@ -823,28 +823,28 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			onStart(pokemon) {
 				this.add('-activate', pokemon, 'ability: Blow Away');
 				let success = false;
-				const removeAll = [
-					'reflect', 'lightscreen', 'auroraveil', 'hologram', 'mist', 'spikes', 'toxicspikes', 'stealthrock', 'stickyweb', 'gmaxsteelsurge',
-				];
-				for (const sideCondition of removeAll)  
-					if (pokemon.side.removeSideCondition(sideCondition))  
-						if (!success)   
-							this.add('-sideend', pokemon.side, this.dex.conditions.get(sideCondition).name,);
-						success = true; 
-					for (const sideCondition of ['reflect', 'lightscreen', 'auroraveil', 'hologram', 'mist', 'spikes', 'toxicspikes', 'stealthrock', 'stickyweb', 'gmaxsteelsurge']) {
-						for (const side of [pokemon.side, ...pokemon.side.foeSidesWithConditions()]) {
-							if (side.getSideCondition(sideCondition)) {
-								if (!success) { 
-									this.add('-sideend', pokemon.side, this.dex.conditions.get(sideCondition).name,);
-									success = true;
-								}
-								side.removeSideCondition(sideCondition);
+			const removeAll = [
+				'reflect', 'lightscreen', 'auroraveil', 'hologram', 'mist', 'spikes', 'toxicspikes', 'stealthrock', 'stickyweb', 'gmaxsteelsurge',
+			];
+			for (const sideCondition of removeAll)  
+				if (pokemon.side.removeSideCondition(sideCondition))  
+					if (!success)   
+						this.add('-sideend', pokemon.side, this.dex.conditions.get(sideCondition).name,);
+					success = true; 
+				for (const sideCondition of ['reflect', 'lightscreen', 'auroraveil', 'hologram', 'mist', 'spikes', 'toxicspikes', 'stealthrock', 'stickyweb', 'gmaxsteelsurge']) {
+					for (const side of [pokemon.side, ...pokemon.side.foeSidesWithConditions()]) {
+						if (side.getSideCondition(sideCondition)) {
+							if (!success) { 
+								this.add('-sideend', pokemon.side, this.dex.conditions.get(sideCondition).name,);
+								success = true;
 							}
+							side.removeSideCondition(sideCondition);
 						}
 					}
-				this.field.clearTerrain();
-				return success;
-			},
+				}
+			this.field.clearTerrain();
+			return success;
+		},
 			flags: {},
 			name: "Blow Away",
 			rating: 2,
