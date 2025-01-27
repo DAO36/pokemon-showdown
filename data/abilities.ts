@@ -776,16 +776,16 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 1.5,
 		num: 179,
 	},
-	bruh: {
+	bruh2: {
 		onStart(pokemon) {
-			this.add('-activate', pokemon, 'ability: Bruh');
-			let success = false;
+			this.add('-activate', pokemon, 'ability: Bruh2');
+			let activated = false;
 			for (const sideCondition of ['reflect', 'lightscreen', 'auroraveil', 'hologram', 'mist', 'spikes', 'toxicspikes', 'stealthrock', 'stickyweb', 'gmaxsteelsurge']) {
 				for (const side of [pokemon.side, ...pokemon.side.foeSidesWithConditions()]) {
 					if (side.getSideCondition(sideCondition)) {
-						if (!success) {
+						if (!activated) {
 							this.add('-sideend', side, this.dex.conditions.get(sideCondition).name,);
-							success = true;
+							activated = true;
 						}
 						side.removeSideCondition(sideCondition);
 					}
@@ -793,6 +793,35 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			}
 			this.field.clearTerrain();  
 			return true;	
+		},
+		flags: {},
+		name: "Bruh2",
+		rating: 2,
+		num: 251,
+	},
+	bruh: {
+		onStart(side) {
+			this.add('-activate', side, 'ability: Bruh');
+			let success = false; 
+			const removeTarget = [
+				'reflect', 'lightscreen', 'auroraveil', 'hologram', 'mist', 'spikes', 'toxicspikes', 'stealthrock', 'stickyweb', 'gmaxsteelsurge',
+			];
+			const removeAll = [
+				'reflect', 'lightscreen', 'auroraveil', 'hologram', 'mist', 'spikes', 'toxicspikes', 'stealthrock', 'stickyweb', 'gmaxsteelsurge',
+			];
+			for (const targetCondition of removeTarget) {   {
+					if (!removeAll.includes(targetCondition)) continue;
+					this.add('-sideend', side, this.dex.conditions.get(targetCondition).name,);
+					success = true;
+				}
+			}
+			for (const sideCondition of removeAll) {  {
+					this.add('-sideend', side, this.dex.conditions.get(sideCondition).name,);
+					success = true;
+				}
+			}
+			this.field.clearTerrain();
+			return success;
 		},
 		flags: {},
 		name: "Bruh",
