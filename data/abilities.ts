@@ -820,30 +820,22 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			num: 251,
 		},
 		blowaway: { // actually rids all hazards, visually only screens of all sides but only hazards on user side; opposite side still shows
-			onStart(pokemon) {
-				this.add('-activate', pokemon, 'ability: Blow Away');
+			onStart(target) {
+				this.add('-activate', target, 'ability: Blow Away');
 				let success = false;
 			const removeAll = [
 				'reflect', 'lightscreen', 'auroraveil', 'hologram', 'mist', 'spikes', 'toxicspikes', 'stealthrock', 'stickyweb', 'gmaxsteelsurge',
 			];
-			const removeTarget = [
-				'reflect', 'lightscreen', 'auroraveil', 'safeguard', 'mist', 'spikes', 'toxicspikes', 'stealthrock', 'stickyweb', 'gmaxsteelsurge',
-			];
 			for (const remove of removeAll)  
-				if (pokemon.side.removeSideCondition(remove))  
+				if (target.side.removeSideCondition(remove))  
 					if (!success)   
-					this.add('-sideend', pokemon.side, this.dex.conditions.get(remove).name,);
+					this.add('-sideend', target.side, this.dex.conditions.get(remove).name,);
 					success = true; 
-					for (const remove of removeTarget)  
-						if (pokemon.side.removeSideCondition(remove))  
-							if (!success)   
-							this.add('-sideend', pokemon.side, this.dex.conditions.get(remove).name,);
-							success = true; 		
 				for (const sideCondition of ['reflect', 'lightscreen', 'auroraveil', 'hologram', 'mist', 'spikes', 'toxicspikes', 'stealthrock', 'stickyweb', 'gmaxsteelsurge']) {
-					for (const side of [pokemon.side, ...pokemon.side.foeSidesWithConditions()]) {
+					for (const side of [target.side, ...target.side.foeSidesWithConditions()]) {
 						if (side.getSideCondition(sideCondition)) {
 							if (!success) { 
-								this.add('-sideend', pokemon.side, this.dex.conditions.get(sideCondition).name,);
+								this.add('-sideend', target.side, this.dex.conditions.get(sideCondition).name,);
 								success = true;
 							}
 							side.removeSideCondition(sideCondition);
