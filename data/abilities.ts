@@ -811,12 +811,11 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 5,
 		num: 24,
 	},
-	blowaway: { // actually rids all hazards, visually only screens of all sides but only hazards on user side; opposite side still shows
+	blowaway: { // actually rids all hazards, visually only screens of all sides but only hazards on user side; opposite side still shows 
 		onDamagingHitOrder: 1,
-		onDamagingHit(damage, target, source, move) {
-			this.add('-activate', source, 'ability: Blow Away');
-			let success = false;
-			if (!target.volatiles['substitute'] || move.infiltrates) success = !!this.boost({evasion: -1});
+		onDamagingHit(damage, target, source, pokemon) { 
+			this.add('-activate', pokemon, 'ability: Cleaner');
+			let success = false; 
 			const removeTarget = [
 				'reflect', 'lightscreen', 'auroraveil', 'hologram', 'mist', 'spikes', 'toxicspikes', 'stealthrock', 'stickyweb', 'gmaxsteelsurge',
 			];
