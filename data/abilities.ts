@@ -822,7 +822,23 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		blowaway: { // actually rids all hazards, visually only screens of all sides but only hazards on user side; opposite side still shows
 			onStart(pokemon) {
 				this.add('-activate', pokemon, 'ability: Blow Away');
-				let success = false; 
+				let success = false;
+			const removeAll = [
+				'reflect', 'lightscreen', 'auroraveil', 'hologram', 'mist', 'spikes', 'toxicspikes', 'stealthrock', 'stickyweb', 'gmaxsteelsurge',
+			];
+			const removeTarget = [
+				'reflect', 'lightscreen', 'auroraveil', 'safeguard', 'mist', 'spikes', 'toxicspikes', 'stealthrock', 'stickyweb', 'gmaxsteelsurge',
+			];
+			for (const remove of removeAll)  
+				if (pokemon.side.removeSideCondition(remove))  
+					if (!success)   
+					this.add('-sideend', pokemon.side, this.dex.conditions.get(remove).name,);
+					success = true; 
+					for (const remove of removeTarget)  
+						if (pokemon.side.removeSideCondition(remove))  
+							if (!success)   
+							this.add('-sideend', pokemon.side, this.dex.conditions.get(remove).name,);
+							success = true; 		
 				for (const sideCondition of ['reflect', 'lightscreen', 'auroraveil', 'hologram', 'mist', 'spikes', 'toxicspikes', 'stealthrock', 'stickyweb', 'gmaxsteelsurge']) {
 					for (const side of [pokemon.side, ...pokemon.side.foeSidesWithConditions()]) {
 						if (side.getSideCondition(sideCondition)) {
