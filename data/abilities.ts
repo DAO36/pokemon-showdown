@@ -796,19 +796,38 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 2,
 		num: 251,
 	},
-		blowaway: { // actually rids all hazards, visually only screens of all sides but only hazards on user side; opposite side still shows
+	ner2: { // rids users side only really+visually but not opposing side
+		onStart(pokemon) {
+			this.add('-activate', pokemon, 'ability: Cleaner2');
+			let success = false;
+			const removeAll = [
+				'reflect', 'lightscreen', 'auroraveil', 'hologram', 'mist', 'spikes', 'toxicspikes', 'stealthrock', 'stickyweb', 'gmaxsteelsurge',
+			];
+			for (const remove of removeAll) {
+				if (pokemon.side.removeSideCondition(remove)) { 
+					this.add('-sideend', pokemon.side, this.dex.conditions.get(remove).name,);
+					success = true;
+				}
+			}
+			this.field.clearTerrain();
+			return success;
+		},
+		flags: {},
+		name: "Cleaner2",
+		rating: 2,
+		num: 251,
+	},
+	blowaway: { // actually rids all hazards, visually only screens of all sides but only hazards on user side; opposite side still shows
 			onStart(pokemon) {
 				this.add('-activate', pokemon, 'ability: Blow Away');
 				let success = false;
 			const removeAll = [
 				'reflect', 'lightscreen', 'auroraveil', 'hologram', 'mist', 'spikes', 'toxicspikes', 'stealthrock', 'stickyweb', 'gmaxsteelsurge',
 			];
-			for (const remove of removeAll)  
-				if (pokemon.side.removeSideCondition(remove))  
-					if (!success)   
-					this.add('-sideend', pokemon.side, this.dex.conditions.get(remove).name,);
-					success = true; 
-					success = false; 
+			for (const sideCondition of removeAll) 
+				if (pokemon.side.removeSideCondition(sideCondition))  
+					this.add('-sideend', pokemon.side, this.dex.conditions.get(sideCondition).name,);
+					success = true;
 				for (const sideCondition of ['reflect', 'lightscreen', 'auroraveil', 'hologram', 'mist', 'spikes', 'toxicspikes', 'stealthrock', 'stickyweb', 'gmaxsteelsurge']) {
 					for (const side of [pokemon.side, ...pokemon.side.foeSidesWithConditions()]) {
 						if (side.getSideCondition(sideCondition)) {
@@ -902,7 +921,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			name: "Blow Away2",
 			rating: 2,
 			num: 251,
-		},
+	},
 	cleaner: {
 		onTryHitPriority: 1,
 		onStart(pokemon) {
