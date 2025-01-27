@@ -813,8 +813,8 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	},
 	blowaway: { // actually rids all hazards, visually only screens of all sides but only hazards on user side; opposite side still shows 
 		onDamagingHitOrder: 1,
-		onDamagingHit(damage, target, source, pokemon) { 
-			this.add('-activate', pokemon, 'ability: Cleaner');
+		onDamagingHit(damage, target, source, move) { 
+			this.add('-activate', target, 'ability: Blow Away');
 			let success = false; 
 			const removeTarget = [
 				'reflect', 'lightscreen', 'auroraveil', 'hologram', 'mist', 'spikes', 'toxicspikes', 'stealthrock', 'stickyweb', 'gmaxsteelsurge',
