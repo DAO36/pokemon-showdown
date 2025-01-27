@@ -785,18 +785,21 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			];
 			for (const remove of removeAll)  
 				if (pokemon.side.removeSideCondition(remove))  
-					if (!success)     
+					if (!success)   
 					this.add('-sideend', pokemon.side, this.dex.conditions.get(remove).name,);
 					success = true; 
-				for (const sideCondition of ['reflect', 'lightscreen', 'auroraveil', 'hologram', 'mist', 'spikes', 'toxicspikes', 'stealthrock', 'stickyweb', 'gmaxsteelsurge'])  
+				for (const sideCondition of ['reflect', 'lightscreen', 'auroraveil', 'hologram', 'mist', 'spikes', 'toxicspikes', 'stealthrock', 'stickyweb', 'gmaxsteelsurge']) {
 					for (const side of [pokemon.side, ...pokemon.side.foeSidesWithConditions()]) {
-						if (side.getSideCondition(sideCondition)) 
-							if (!success)   
-								this.add('-sideend', pokemon.side, this.dex.conditions.get(sideCondition).name,);
-								success = true; 
-							side.removeSideCondition(sideCondition); 
+						if (side.getSideCondition(sideCondition)) {
+							if (!success) { 
+								this.add('-sideend', side, this.dex.conditions.get(sideCondition).name,);
+								success = true;
+							}
+							side.removeSideCondition(sideCondition);
+						}
+					}
 				}
-			this.field.clearTerrain();
+			this.field.clearTerrain();  
 			return success;
 		},
 			flags: {},
