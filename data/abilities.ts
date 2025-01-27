@@ -662,7 +662,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			const basePowerAfterMultiplier = this.modify(basePower, this.event.modifier);
 			this.debug('Base Power: ' + basePowerAfterMultiplier);
 			if (basePowerAfterMultiplier <= 60) {
-				this.debug('Technician boost');
+				this.debug('The Legend of Polka boost');
 				return this.chainModify(1.5);
 			}
 		},
