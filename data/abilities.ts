@@ -776,59 +776,20 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 1.5,
 		num: 179,
 	},
-	bruh: {
-		onStart(pokemon) {
-			let activated = false;
-			for (const sideCondition of ['reflect', 'lightscreen', 'auroraveil', 'hologram', 'mist', 'spikes', 'toxicspikes', 'stealthrock', 'stickyweb', 'gmaxsteelsurge']) {
-				for (const side of [pokemon.side, ...pokemon.side.foeSidesWithConditions()]) {
-					if (side.getSideCondition(sideCondition)) {
-						if (!activated) {
-							this.add('-sideend', pokemon.side, this.dex.conditions.get(sideCondition).name,);
-							activated = true;
-						}
-						side.removeSideCondition(sideCondition);
-					}
-				}
-			}
-		},
-		flags: {},
-		name: "Bruh",
-		rating: 2,
-		num: 251,
-	},
-	ner2: { // rids users side only really+visually but not opposing side
-		onStart(pokemon) {
-			this.add('-activate', pokemon, 'ability: Cleaner2');
-			let success = false;
-			const removeAll = [
-				'reflect', 'lightscreen', 'auroraveil', 'hologram', 'mist', 'spikes', 'toxicspikes', 'stealthrock', 'stickyweb', 'gmaxsteelsurge',
-			];
-			for (const remove of removeAll) {
-				if (pokemon.side.removeSideCondition(remove)) { 
-					this.add('-sideend', pokemon.side, this.dex.conditions.get(remove).name,);
-					success = true;
-				}
-			}
-			this.field.clearTerrain();
-			return success;
-		},
-		flags: {},
-		name: "Cleaner2",
-		rating: 2,
-		num: 251,
-	},
 	blowaway: { // actually rids all hazards, visually only screens of all sides but only hazards on user side; opposite side still shows
-			onStart(pokemon) {{
+			onStart(pokemon) {
 				this.add('-activate', pokemon, 'ability: Blow Away');
 				let success = false;
 			const removeAll = [
 				'reflect', 'lightscreen', 'auroraveil', 'hologram', 'mist', 'spikes', 'toxicspikes', 'stealthrock', 'stickyweb', 'gmaxsteelsurge',
 			];
-			for (const remove of removeAll)  
+			for (const remove of removeAll) {  
 				if (pokemon.side.removeSideCondition(remove))  
-					if (!success)   
+					if (!success) {   
 					this.add('-sideend', pokemon.side, this.dex.conditions.get(remove).name,);
 					success = true;
+					}
+			    }	
 				for (const sideCondition of ['reflect', 'lightscreen', 'auroraveil', 'hologram', 'mist', 'spikes', 'toxicspikes', 'stealthrock', 'stickyweb', 'gmaxsteelsurge']) {
 					for (const side of [pokemon.side, ...pokemon.side.foeSidesWithConditions()]) {
 						if (side.getSideCondition(sideCondition)) {
@@ -841,16 +802,17 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 					}
 				}
 			this.field.clearTerrain();
-			return success;}
+			this.field.removePseudoWeather
+			return success;
 		},
 			flags: {},
 			name: "Blow Away",
 			rating: 2,
 			num: 251,
 		},
-	cleaner3: { // actually rids all hazards, visually only screens of all sides but only hazards on user side; opposite side still shows
+	cleaner2: { // actually rids all hazards, visually only screens of all sides but only hazards on user side; opposite side still shows
 		onStart(pokemon) {
-			this.add('-activate', pokemon, 'ability: Cleaner3');
+			this.add('-activate', pokemon, 'ability: Cleaner2');
 			let success = false;
 			const removeAll = [
 				'reflect', 'lightscreen', 'auroraveil', 'hologram', 'mist', 'spikes', 'toxicspikes', 'stealthrock', 'stickyweb', 'gmaxsteelsurge',
@@ -876,13 +838,13 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			return success;
 		},
 		flags: {},
-		name: "Cleaner3",
+		name: "Cleaner2",
 		rating: 2,
 		num: 251,
 	},
-	cleaner2: { // rids users side only really+visually but not opposing side
+	cleaner1: { // rids users side only really+visually but not opposing side
 		onStart(pokemon) {
-			this.add('-activate', pokemon, 'ability: Cleaner2');
+			this.add('-activate', pokemon, 'ability: Cleaner1');
 			let success = false;
 			const removeAll = [
 				'reflect', 'lightscreen', 'auroraveil', 'hologram', 'mist', 'spikes', 'toxicspikes', 'stealthrock', 'stickyweb', 'gmaxsteelsurge',
@@ -894,10 +856,11 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 				}
 			}
 			this.field.clearTerrain();
+			this.field.removePseudoWeather
 			return success;
 		},
 		flags: {},
-		name: "Cleaner2",
+		name: "Cleaner1",
 		rating: 2,
 		num: 251,
 	},
