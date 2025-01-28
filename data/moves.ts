@@ -1381,6 +1381,12 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		sideCondition: 'hologram',
 		condition: {
 			duration: 5,
+			durationCallback(target, source, effect) {
+				if (source?.hasItem('lightclay')) {
+					return 8;
+				}
+				return 5;
+			},
 			onTryHit(target, source, move) {
 				if (move.category === 'Status' && target !== source) {
 					this.add('-immune', target, '[from] move: Hologram');

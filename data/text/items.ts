@@ -1293,9 +1293,9 @@ export const ItemsText: {[id: IDEntry]: ItemText} = {
 	},
 	lightclay: {
 		name: "Light Clay",
-		shortDesc: "Holder's use of Aurora Veil, Light Screen, or Reflect lasts 8 turns instead of 5.",
+		shortDesc: "Holder's use of Aurora Veil, Light Screen, Reflect, or Hologram lasts 8 turns instead of 5.",
 		gen6: {
-			shortDesc: "Holder's use of Light Screen or Reflect lasts 8 turns instead of 5.",
+			shortDesc: "Holder's use of Light Screen, Reflect, or Hologram lasts 8 turns instead of 5.",
 		},
 	},
 	loadeddice: {

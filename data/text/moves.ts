@@ -4732,15 +4732,6 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		desc: "Has a 30% chance to lower the target's accuracy by 1 stage.",
 		shortDesc: "30% chance to lower the target's accuracy by 1.",
 	},
-	hologram: {
-		name: "Hologram",
-		desc: "For 5 turns, the user and its party members are protected from status moves from other Pokemon. Fails if the effect is already active on the user's side.",
-		shortDesc: "For 5 turns, protects user's party from opposing status moves.",
-
-		start: "  [TEAM] summoned a hologram!",
-		end: "  [TEAM] is no longer protected!",
-		block: "  [POKEMON] is protected by the hologram!",
-	},
 	mist: {
 		name: "Mist",
 		desc: "For 5 turns, the user and its party members are protected from having their stat stages lowered by other Pokemon. Fails if the effect is already active on the user's side.",
@@ -5728,6 +5719,15 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		},
 
 		addItem: "  [POKEMON] found one [ITEM]!",
+	},
+	hologram: {
+		name: "Hologram",
+		desc: "For 5 turns, the user and its party members are protected from status moves from other Pokemon. Lasts for 8 turns if the user is holding Light Clay. Fails if the effect is already active on the user's side.",
+		shortDesc: "For 5 turns, protects user's party from status moves from other Pokemon",
+
+		start: "  [TEAM] summoned a hologram!",
+		end: "  [TEAM] is no longer protected!",
+		block: "  [POKEMON] is protected by the hologram!",
 	},
 	reflect: {
 		name: "Reflect",
