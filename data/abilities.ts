@@ -605,7 +605,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	},
 	piracy: { // reskin of Oppurtunist
 		onFoeAfterBoost(boost, target, source, effect) {
-			if (effect?.name === 'Piracy' || effect?.name === 'Spectral Thief') return;
+			if (effect?.name === 'Piracy' || effect?.name === 'Mirror Herb') return;
 			const pokemon = this.effectState.target;
 			const positiveBoosts: Partial<BoostsTable> = {};
 			let i: BoostID;
