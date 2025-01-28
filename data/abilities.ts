@@ -822,13 +822,24 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	blowaway: { // , 'ability: Dazzling', move, '[of] ' + target 
 		onDamagingHitOrder: 1,
 		onDamagingHit(damage, target, source, move) {  
-			let success = false;  
+			let success = false; 
+			const removeTarget = [
+				'reflect', 'lightscreen', 'auroraveil', 'hologram', 'mist', 'spikes', 'toxicspikes', 'stealthrock', 'stickyweb', 'gmaxsteelsurge',
+			];
 			const removeAll = [
 				'reflect', 'lightscreen', 'auroraveil', 'hologram', 'mist', 'spikes', 'toxicspikes', 'stealthrock', 'stickyweb', 'gmaxsteelsurge',
-			]; 
+			];
+			for (const targetCondition of removeTarget) {
+				{if (target.side.removeSideCondition(targetCondition)) {
+					if (!removeAll.includes(targetCondition)) continue;
+					this.add('-activate', target, 'ability: Cleaner'); return 1}
+					this.add('-sideend', target.side, this.dex.conditions.get(targetCondition).name);
+					success = true;
+				}
+			}
 			for (const sideCondition of removeAll) {
-				if (source.side.removeSideCondition(sideCondition)) {
-					this.add('-activate', target, 'ability: Cleaner');
+				{if (source.side.removeSideCondition(sideCondition)) {
+					this.add('-activate', target, 'ability: Cleaner'); return 1}
 					this.add('-sideend', source.side, this.dex.conditions.get(sideCondition).name);
 					success = true;
 				}
