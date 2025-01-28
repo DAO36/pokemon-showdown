@@ -776,10 +776,44 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 1.5,
 		num: 179,
 	},
-	bruh: { 
+	cleaner5: { // rids hazards on users sides and screens on foes sides when user is hit by an attacc, really and visuaklly (+leech seed binding and terrain) COPY fix the text in chat
+		onDamagingHitOrder: 1,
+		onDamagingHit(damage, pokemon, source, move) {  
+			this.add('-activate', source, 'ability: Cleaner5');	
+			let success = false; 
+			const removeSource = [
+				'spikes', 'toxicspikes', 'stealthrock', 'stickyweb', 'gmaxsteelsurge',
+			]; 
+			for (const targetCondition of removeSource) {
+				if (source.side.removeSideCondition(targetCondition)) { 
+					this.add('-sideend', source.side, this.dex.conditions.get(targetCondition).name);
+					success = true;
+				}
+			} 
+			if (source.hp && source.removeVolatile('leechseed')) {
+				this.add('-end', source, 'Leech Seed');
+			}
+			const sideConditions = ['reflect', 'lightscreen', 'auroraveil', 'hologram', 'mist'];
+			for (const condition of sideConditions) {
+				if (pokemon.hp && pokemon.side.removeSideCondition(condition)) {
+					this.add('-sideend', pokemon.side, this.dex.conditions.get(condition).name);
+				}
+			}
+			if (source.hp && source.volatiles['partiallytrapped']) {
+				source.removeVolatile('partiallytrapped'); 
+	        }
+			this.field.clearTerrain();
+			return success;
+		},
+		flags: {},
+		name: "Cleaner5",
+		rating: 2,
+		num: 251,
+	},
+	cleaner4: { // rids hazards on users sides and screens on foes sides when user is hit by an attacc, really and visuaklly (+leech seed binding and terrain)
 		onDamagingHitOrder: 1,
 		onDamagingHit(damage, target, source, move) {  
-			this.add('-activate', target, 'ability: Bruh');	
+			this.add('-activate', target, 'ability: Cleaner4');	
 			let success = false; 
 			const removeTarget = [
 				'spikes', 'toxicspikes', 'stealthrock', 'stickyweb', 'gmaxsteelsurge',
@@ -806,13 +840,14 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			return success;
 		},
 		flags: {},
-		name: "Bruh",
+		name: "Cleaner4",
 		rating: 2,
 		num: 251,
 	},
-	blowaway: {  
+	cleaner3: {  // successfully clears visually and really all hazards and screens on both sides BUT only when user is hit by an attacc
 		onDamagingHitOrder: 1,
 		onDamagingHit(damage, target, source, move) {  
+			this.add('-activate', target, 'ability: Cleaner3');
 			let success = false; 
 			const removeTarget = [
 				'reflect', 'lightscreen', 'auroraveil', 'hologram', 'mist', 'spikes', 'toxicspikes', 'stealthrock', 'stickyweb', 'gmaxsteelsurge',
@@ -822,15 +857,13 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			];
 			for (const targetCondition of removeTarget) {
 				if (target.side.removeSideCondition(targetCondition)) {
-					if (!removeAll.includes(targetCondition)) continue;
-					this.add('-activate', target, 'ability: Cleaner');
+					if (!removeAll.includes(targetCondition)) continue; 
 					this.add('-sideend', target.side, this.dex.conditions.get(targetCondition).name);
 					success = true;
 				}
 			}
 			for (const sideCondition of removeAll) {
-				if (source.side.removeSideCondition(sideCondition)) {
-					this.add('-activate', target, 'ability: Cleaner');
+				if (source.side.removeSideCondition(sideCondition)) { 
 					this.add('-sideend', source.side, this.dex.conditions.get(sideCondition).name);
 					success = true;
 				}
@@ -839,13 +872,13 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			return success;
 		},
 			flags: {},
-			name: "Blow Away",
+			name: "Cleaner3y",
 			rating: 2,
 			num: 251,
     },
-	cleaner: { // actually rids all hazards, visually only screens of all sides but only hazards on user side; opposite side still shows
+	cleaner2: { // actually rids all hazards, visually only screens of all sides but only hazards on user side; opposite side still shows
 		onStart(pokemon) {
-			this.add('-activate', pokemon, 'ability: Cleaner');
+			this.add('-activate', pokemon, 'ability: Cleaner2');
 			let success = false;
 			const removeAll = [
 				'reflect', 'lightscreen', 'auroraveil', 'hologram', 'mist', 'spikes', 'toxicspikes', 'stealthrock', 'stickyweb', 'gmaxsteelsurge',
@@ -870,7 +903,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			return success;
 		},
 		flags: {},
-		name: "Cleaner",
+		name: "Cleaner2",
 		rating: 2,
 		num: 251,
 	},
