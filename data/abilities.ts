@@ -907,7 +907,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 2,
 		num: 251,
 	},
-	cleaner1: { // rids users side only really+visually but not opposing side ['reflect', 'lightscreen', 'auroraveil', 'hologram', 'mist']
+	cleaner1: { // rids users side ONLY really+visually but not opposing side  
 		onStart(pokemon) {
 			this.add('-activate', pokemon, 'ability: Cleaner1');
 			let success = false;
@@ -932,22 +932,21 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		onStart(pokemon) {
 			this.add('-activate', pokemon, 'ability: Cleaner0');
 			let success = false; 
-				const sideConditions = ['spikes', 'toxicspikes', 'stealthrock', 'stickyweb', 'gmaxsteelsurge'];
+			const removeTarget = [
+				'spikes', 'toxicspikes', 'stealthrock', 'stickyweb', 'gmaxsteelsurge',
+			]; 
+			for (const targetCondition of removeTarget) {
+				if (pokemon.side.removeSideCondition(targetCondition)) { 
+					this.add('-sideend', pokemon.side, this.dex.conditions.get(targetCondition).name);
+					success = true;
+				}
+			}
+				const sideConditions = ['reflect', 'lightscreen', 'auroraveil', 'hologram', 'mist'];
 				for (const condition of sideConditions) {
 					if (pokemon.hp && pokemon.side.removeSideCondition(condition)) {
 						this.add('-sideend', pokemon.side, this.dex.conditions.get(condition).name);
 					}
-				} 
-				const removeTarget = [
-					'reflect', 'lightscreen', 'auroraveil', 'safeguard', 'mist', 'hologram',
-				];
-				for (const targetCondition of removeTarget) {
-					if (pokemon.side.removeSideCondition(targetCondition)) {
-						if (!removeTarget.includes(targetCondition)) continue;
-						this.add('-sideend', pokemon.side, this.dex.conditions.get(targetCondition).name);
-						success = true;
-					}
-				}
+				}	
 			this.field.clearTerrain(); 
 			return success;
 		},
