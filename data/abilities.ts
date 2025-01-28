@@ -981,7 +981,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		num: 251,
 	},
     leaner: {
-        onPreStart(pokemon) { 
+        onStart(pokemon) { 
 			this.add('-activate', pokemon, 'ability: Leaner');
 			let activated = false;
             for (const sideCondition of ['reflect', 'lightscreen', 'auroraveil', 'hologram', 'mist', 'safeguard']) {
