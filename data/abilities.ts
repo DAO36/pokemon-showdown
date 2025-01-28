@@ -954,7 +954,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
                 for (const side of [...pokemon.side.foeSidesWithConditions()]) {
                     if (side.getSideCondition(sideCondition)) {
                         if (!activated) {
-                            this.add('-activate', pokemon, 'ability: Leaner');
+                            this.add('-activate', pokemon);
                             activated = true;
                         }
                         side.removeSideCondition(sideCondition);
