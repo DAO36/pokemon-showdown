@@ -786,7 +786,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			]; 
 			for (const targetCondition of removePokemon) {
 				if (source.side.removeSideCondition(targetCondition)) { 
-					this.add('-sideend', source.side, this.dex.conditions.get(targetCondition).name);
+					this.add('-sideend', pokemon.side, this.dex.conditions.get(targetCondition).name);
 					success = true;
 				}
 			} 
@@ -872,7 +872,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			return success;
 		},
 			flags: {},
-			name: "Cleaner3y",
+			name: "Cleaner3",
 			rating: 2,
 			num: 251,
     },
