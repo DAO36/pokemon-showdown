@@ -947,21 +947,21 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		num: 251,
 	},
 	cleanera: { // rids users side only really+visually C O P Y P A S T A ['reflect', 'lightscreen', 'auroraveil', 'hologram', 'mist']
-		onPreStart(target) {
-			this.add('-activate', target, 'ability: CleanerA');
+		onPreStart(source) {
+			this.add('-activate', source, 'ability: CleanerA');
 			const sideConditions = ['reflect', 'lightscreen', 'auroraveil', 'hologram', 'mist'];
-			for (const condition of sideConditions) {
-				if (target.hp && target.side.removeSideCondition(condition)) {
-					this.add('-sideend', target.side, this.dex.conditions.get(condition).name);
-				}
-			}
-		},	
-		onStart(source) { 	
-			let success = false;
-			const sideConditions = ['spikes', 'toxicspikes', 'stealthrock', 'stickyweb', 'gmaxsteelsurge',];
 			for (const condition of sideConditions) {
 				if (source.hp && source.side.removeSideCondition(condition)) {
 					this.add('-sideend', source.side, this.dex.conditions.get(condition).name);
+				}
+			}
+		},	
+		onStart(target) { 	
+			let success = false;
+			const sideConditions = ['spikes', 'toxicspikes', 'stealthrock', 'stickyweb', 'gmaxsteelsurge',];
+			for (const condition of sideConditions) {
+				if (target.hp && target.side.removeSideCondition(condition)) {
+					this.add('-sideend', target.side, this.dex.conditions.get(condition).name);
 				}
 			}	
 			this.field.clearTerrain(); 
