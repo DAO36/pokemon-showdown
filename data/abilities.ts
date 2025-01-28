@@ -949,13 +949,14 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	cleanera: { // rids users side only really+visually C O P Y P A S T A ['reflect', 'lightscreen', 'auroraveil', 'hologram', 'mist']
 		onPreStart(pokemon) {
 			let activated = false;
-			for (const condition of ['reflect', 'lightscreen', 'auroraveil', 'hologram', 'mist']) {
-				for (const side of [pokemon.side.foeSidesWithConditions()]) {
-					if (pokemon.hp && pokemon.side.removeSideCondition(condition)) {
+			for (const sideCondition of ['reflect', 'lightscreen', 'auroraveil', 'hologram', 'mist']) {
+				for (const side of [pokemon.side, ...pokemon.side.foeSidesWithConditions()]) {
+					if (side.getSideCondition(sideCondition)) {
 						if (!activated) {
-							this.add('-sideend', pokemon.side, this.dex.conditions.get(condition).name);
+							this.add('-activate', pokemon);
 							activated = true;
-						} 
+						}
+						side.removeSideCondition(sideCondition);
 					}
 				}
 			}
@@ -979,14 +980,20 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 2,
 		num: 251,
 	},
-	ncleaner: {
-		onStart(source) { 
-			const sideConditions = ['reflect', 'lightscreen', 'auroraveil', 'hologram', 'mist'];
-			for (const condition of sideConditions) {
-				if (source.hp && source.side.removeSideCondition(condition)) {
-					this.add('-sideend', source.side, this.dex.conditions.get(condition).name);
+	encleaner: {
+		onStart(pokemon) {
+			let activated = false;
+			for (const sideCondition of ['reflect', 'lightscreen', 'auroraveil']) {
+				for (const side of [pokemon.side, ...pokemon.side.foeSidesWithConditions()]) {
+					if (side.getSideCondition(sideCondition)) {
+						if (!activated) {
+							this.add('-activate', pokemon, 'ability: Screen Cleaner');
+							activated = true;
+						}
+						side.removeSideCondition(sideCondition);
+					}
 				}
-			}	
+			}
 		},
 		flags: {},
 		name: "Screen Cleaner",
