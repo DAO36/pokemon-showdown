@@ -951,7 +951,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			this.add('-activate', target, 'ability: CleanerA');
 			let success = false; 
 			const removeTarget = [
-				'spikes', 'toxicspikes', 'stealthrock', 'stickyweb', 'gmaxsteelsurge',
+				'reflect', 'lightscreen', 'auroraveil', 'hologram', 'mist',
 			]; 
 			for (const targetCondition of removeTarget) {
 				if (target.side.removeSideCondition(targetCondition)) { 
@@ -962,7 +962,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		},	
 		onStart(source) { 	
 			let success = false;
-			const sideConditions = ['reflect', 'lightscreen', 'auroraveil', 'hologram', 'mist'];
+			const sideConditions = ['spikes', 'toxicspikes', 'stealthrock', 'stickyweb', 'gmaxsteelsurge',];
 			for (const condition of sideConditions) {
 				if (source.hp && source.side.removeSideCondition(condition)) {
 					this.add('-sideend', source.side, this.dex.conditions.get(condition).name);
