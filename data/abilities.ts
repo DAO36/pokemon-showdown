@@ -1002,7 +1002,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	},
 	cleanupcleanup: {  // successfully clears visually and really all hazards and screens on both sides BUT only when user is hit by an attacc
 		onStart(pokemon) {  
-			this.add('-activate', pokemon, 'ability: CleanerUpCleanUp');
+			this.add('-activate', pokemon, 'ability: CleanUpCleanUp');
 			let success = false; 
 			const removeTarget = [
 				'reflect', 'lightscreen', 'auroraveil', 'hologram', 'mist',
@@ -1027,7 +1027,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			return success;
 		},
 			flags: {},
-			name: "CleanerUpCleanUp",
+			name: "CleanUpCleanUp",
 			rating: 2,
 			num: 251,
     },
