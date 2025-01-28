@@ -584,9 +584,9 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3.5,
 		num: 276,
 	},
-	piracy: { // reskin of Oppurtunist
+	piracy2: { // reskin of Oppurtunist
 		onFoeAfterBoost(boost, target, source, effect) {
-			if (effect?.name === 'Piracy' || effect?.name === 'Mirror Herb') return;
+			if (effect?.name === 'Piracy2' || effect?.name === 'Mirror Herb') return;
 			const pokemon = this.effectState.target;
 			const positiveBoosts: Partial<BoostsTable> = {};
 			let i: BoostID;
@@ -597,6 +597,26 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			}
 			if (Object.keys(positiveBoosts).length < 1) return;
 			this.boost(positiveBoosts, pokemon);
+		},
+		flags: {},
+		name: "Piracy2",
+		rating: 3,
+		num: 290,
+	},
+	piracy: { // reskin of Oppurtunist
+		onFoeAfterBoost(boost, target, source, effect) {
+			if (effect?.name === 'Piracy' || effect?.name === 'Spectral Thief') return;
+			const pokemon = this.effectState.target;
+			const positiveBoosts: Partial<BoostsTable> = {};
+			let i: BoostID;
+			for (i in boost) {
+				if (boost[i]! > 0) {
+					positiveBoosts[i] = boost[i];
+				}
+			}
+			if (Object.keys(positiveBoosts).length < 1) return;
+			this.boost(positiveBoosts, pokemon);
+			this.add('spectralthief', target, 'ability: Piracy');
 		},
 		flags: {},
 		name: "Piracy",
