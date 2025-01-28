@@ -781,7 +781,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		onDamagingHit(damage, target, source, move) {  
 			let success = false; 
 			const removeTarget = [
-				'reflect', 'lightscreen', 'auroraveil', 'hologram',
+				'spikes', 'toxicspikes', 'stealthrock', 'stickyweb', 'gmaxsteelsurge',
 			]; 
 			for (const targetCondition of removeTarget) {
 				if (target.side.removeSideCondition(targetCondition)) { 
@@ -793,7 +793,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			if (source.hp && source.removeVolatile('leechseed')) {
 				this.add('-end', source, 'Leech Seed', '[from] ability: Bruh', '[of] ' + source);
 			}
-			const sideConditions = ['spikes', 'toxicspikes', 'stealthrock', 'stickyweb', 'gmaxsteelsurge'];
+			const sideConditions = ['reflect', 'lightscreen', 'auroraveil', 'hologram'];
 			for (const condition of sideConditions) {
 				if (source.hp && source.side.removeSideCondition(condition)) {
 					this.add('-sideend', source.side, this.dex.conditions.get(condition).name);
