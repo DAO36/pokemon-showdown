@@ -779,12 +779,12 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	cleaner5: { // rids hazards on users sides and screens on foes sides when user is hit by an attacc, really and visuaklly (+leech seed binding and terrain) COPY fix the text in chat
 		onDamagingHitOrder: 1,
 		onDamagingHit(damage, pokemon, source, move) {  
-			this.add('-activate', source, 'ability: Cleaner5');	
+			this.add('-activate', pokemon, 'ability: Cleaner5');	
 			let success = false; 
-			const removeSource = [
+			const removePokemon = [
 				'spikes', 'toxicspikes', 'stealthrock', 'stickyweb', 'gmaxsteelsurge',
 			]; 
-			for (const targetCondition of removeSource) {
+			for (const targetCondition of removePokemon) {
 				if (source.side.removeSideCondition(targetCondition)) { 
 					this.add('-sideend', source.side, this.dex.conditions.get(targetCondition).name);
 					success = true;
