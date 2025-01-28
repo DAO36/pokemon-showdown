@@ -776,50 +776,41 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 1.5,
 		num: 179,
 	},
-	bruh: {
-		onStart(pokemon) {
-			this.add('-activate', pokemon, 'ability: Bruh');
-			let activated = false;
-			for (const sideCondition of ['reflect', 'lightscreen', 'auroraveil', 'hologram', 'mist', 'spikes', 'toxicspikes', 'stealthrock', 'stickyweb', 'gmaxsteelsurge']) {
-				for (const side of [pokemon.side, ...pokemon.side.foeSidesWithConditions()]) {
-					if (side.getSideCondition(sideCondition)) {
-						if (!activated) {
-							this.add('-sideend', side, this.dex.conditions.get(sideCondition).name,);
-							activated = true;
-						}
-						side.removeSideCondition(sideCondition);
-					}
+	bruh: { 
+		onDamagingHitOrder: 1,
+		onDamagingHit(damage, target, source, move) {  
+			let success = false; 
+			const removeTarget = [
+				'reflect', 'lightscreen', 'auroraveil', 'hologram',
+			]; 
+			for (const targetCondition of removeTarget) {
+				if (target.side.removeSideCondition(targetCondition)) { 
+					this.add('-activate', target, 'ability: Bruh');
+					this.add('-sideend', target.side, this.dex.conditions.get(targetCondition).name);
+					success = true;
+				}
+			} 
+			if (source.hp && source.removeVolatile('leechseed')) {
+				this.add('-end', source, 'Leech Seed', '[from] ability: Bruh', '[of] ' + source);
+			}
+			const sideConditions = ['spikes', 'toxicspikes', 'stealthrock', 'stickyweb', 'gmaxsteelsurge'];
+			for (const condition of sideConditions) {
+				if (source.hp && source.side.removeSideCondition(condition)) {
+					this.add('-sideend', source.side, this.dex.conditions.get(condition).name);
 				}
 			}
-			this.field.clearTerrain();  
-			return true;	
+			if (source.hp && source.volatiles['partiallytrapped']) {
+				source.removeVolatile('partiallytrapped'); 
+	        }
+			this.field.clearTerrain();
+			return success;
 		},
 		flags: {},
 		name: "Bruh",
 		rating: 2,
 		num: 251,
 	},
-	date: {
-		onStart(pokemon) {
-			let activated = false;
-			for (const target of pokemon.adjacentFoes()) {
-				if (!activated) {
-					this.add('-ability', pokemon, 'Intimidate', 'boost');
-					activated = true;
-				}
-				if (target.volatiles['substitute']) {
-					this.add('-immune', target);
-				} else {
-					this.boost({atk: -1}, target, pokemon, null, true);
-				}
-			}
-		},
-		flags: {},
-		name: "Intimidate",
-		rating: 3.5,
-		num: 22,
-	},
-	blowaway: { // , 'ability: Dazzling', move, '[of] ' + target 
+	blowaway: {  
 		onDamagingHitOrder: 1,
 		onDamagingHit(damage, target, source, move) {  
 			let success = false; 
@@ -831,14 +822,16 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			];
 			for (const targetCondition of removeTarget) {
 				if (target.side.removeSideCondition(targetCondition)) {
-					if (!removeAll.includes(targetCondition)) continue; 
-					this.add('-sideend', target.side, this.dex.conditions.get(targetCondition).name, '[from] ability: Blow Away');
+					if (!removeAll.includes(targetCondition)) continue;
+					this.add('-activate', target, 'ability: Cleaner');
+					this.add('-sideend', target.side, this.dex.conditions.get(targetCondition).name);
 					success = true;
 				}
 			}
 			for (const sideCondition of removeAll) {
-				if (source.side.removeSideCondition(sideCondition)) { 
-					this.add('-sideend', source.side, this.dex.conditions.get(sideCondition).name, '[from] ability: Blow Away');
+				if (source.side.removeSideCondition(sideCondition)) {
+					this.add('-activate', target, 'ability: Cleaner');
+					this.add('-sideend', source.side, this.dex.conditions.get(sideCondition).name);
 					success = true;
 				}
 			}
