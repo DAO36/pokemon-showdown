@@ -947,13 +947,13 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		num: 251,
 	},
 	cleanera: { // rids users side only really+visually C O P Y P A S T A ['reflect', 'lightscreen', 'auroraveil', 'hologram', 'mist']
-		onPreStart(pokemon) {
+		onPreStart(target) {
 			let activated = false;
 			for (const sideCondition of ['reflect', 'lightscreen', 'auroraveil', 'hologram', 'mist']) {
-				for (const side of [pokemon.side, ...pokemon.side.foeSidesWithConditions()]) {
+				for (const side of [target.side, ...target.side.foeSidesWithConditions()]) {
 					if (side.getSideCondition(sideCondition)) {
 						if (!activated) {
-							this.add('-activate', pokemon);
+							this.add('-activate', target);
 							activated = true;
 						}
 						side.removeSideCondition(sideCondition);
