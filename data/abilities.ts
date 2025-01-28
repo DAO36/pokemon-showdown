@@ -778,20 +778,20 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	},
 	bruh: { 
 		onDamagingHitOrder: 1,
-		onDamagingHit(damage, target, source, move) {  
-			this.add('-activate', target, 'ability: Bruh');	
+		onDamagingHit(damage, pokemon, source, move) {  
+			this.add('-activate', source, 'ability: Bruh');	
 			let success = false; 
 			const removeTarget = [
 				'spikes', 'toxicspikes', 'stealthrock', 'stickyweb', 'gmaxsteelsurge',
 			]; 
 			for (const targetCondition of removeTarget) {
-				if (target.side.removeSideCondition(targetCondition)) { 
-					this.add('-sideend', target.side, this.dex.conditions.get(targetCondition).name);
+				if (source.side.removeSideCondition(targetCondition)) { 
+					this.add('-sideend', source.side, this.dex.conditions.get(targetCondition).name);
 					success = true;
 				}
 			} 
-			if (target.hp && target.removeVolatile('leechseed')) {
-				this.add('-end', target, 'Leech Seed');
+			if (source.hp && source.removeVolatile('leechseed')) {
+				this.add('-end', source, 'Leech Seed');
 			}
 			const sideConditions = ['reflect', 'lightscreen', 'auroraveil', 'hologram', 'mist'];
 			for (const condition of sideConditions) {
@@ -799,8 +799,8 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 					this.add('-sideend', source.side, this.dex.conditions.get(condition).name);
 				}
 			}
-			if (target.hp && target.volatiles['partiallytrapped']) {
-				target.removeVolatile('partiallytrapped'); 
+			if (source.hp && source.volatiles['partiallytrapped']) {
+				source.removeVolatile('partiallytrapped'); 
 	        }
 			this.field.clearTerrain();
 			return success;
