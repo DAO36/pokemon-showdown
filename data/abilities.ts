@@ -776,7 +776,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 1.5,
 		num: 179,
 	},
-	cleaner5: { // rids hazards on users sides and screens on foes sides when user is hit by an attacc, really and visuaklly (+leech seed binding and terrain)  
+	cleaner5: { // rids hazards on users sides and screens on foes sides BUT only when user is hit by an attacc, really/visually (+leech seed binding and terrain)
 		onDamagingHitOrder: 1,
 		onDamagingHit(damage, target, source, move) {  
 			this.add('-activate', target, 'ability: Cleaner5');	
@@ -793,7 +793,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			if (target.hp && target.removeVolatile('leechseed')) {
 				this.add('-end', target, 'Leech Seed');
 			}
-			const sideConditions = ['reflect', 'lightscreen', 'auroraveil', 'hologram', 'mist'];
+			const sideConditions = ['reflect', 'lightscreen', 'auroraveil', 'hologram', 'mist', 'safeguard'];
 			for (const condition of sideConditions) {
 				if (source.hp && source.side.removeSideCondition(condition)) {
 					this.add('-sideend', source.side, this.dex.conditions.get(condition).name);
@@ -810,44 +810,10 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 2,
 		num: 251,
 	},
-	cleaner4: { // rids hazards on users sides and screens on foes sides when user is hit by an attacc, really and visuaklly (+leech seed binding and terrain)
+	cleaner4: {  // successfully clears visually and really all hazards and screens on both sides BUT only when user is hit by an attacc
 		onDamagingHitOrder: 1,
 		onDamagingHit(damage, target, source, move) {  
-			this.add('-activate', target, 'ability: Cleaner4');	
-			let success = false; 
-			const removeTarget = [
-				'spikes', 'toxicspikes', 'stealthrock', 'stickyweb', 'gmaxsteelsurge',
-			]; 
-			for (const targetCondition of removeTarget) {
-				if (target.side.removeSideCondition(targetCondition)) { 
-					this.add('-sideend', target.side, this.dex.conditions.get(targetCondition).name);
-					success = true;
-				}
-			} 
-			if (target.hp && target.removeVolatile('leechseed')) {
-				this.add('-end', target, 'Leech Seed');
-			}
-			const sideConditions = ['reflect', 'lightscreen', 'auroraveil', 'hologram', 'mist'];
-			for (const condition of sideConditions) {
-				if (source.hp && source.side.removeSideCondition(condition)) {
-					this.add('-sideend', source.side, this.dex.conditions.get(condition).name);
-				}
-			}
-			if (target.hp && target.volatiles['partiallytrapped']) {
-				target.removeVolatile('partiallytrapped'); 
-	        }
-			this.field.clearTerrain();
-			return success;
-		},
-		flags: {},
-		name: "Cleaner4",
-		rating: 2,
-		num: 251,
-	},
-	cleaner3: {  // successfully clears visually and really all hazards and screens on both sides BUT only when user is hit by an attacc
-		onDamagingHitOrder: 1,
-		onDamagingHit(damage, target, source, move) {  
-			this.add('-activate', target, 'ability: Cleaner3');
+			this.add('-activate', target, 'ability: Cleaner4');
 			let success = false; 
 			const removeTarget = [
 				'reflect', 'lightscreen', 'auroraveil', 'hologram', 'mist', 'spikes', 'toxicspikes', 'stealthrock', 'stickyweb', 'gmaxsteelsurge',
@@ -872,11 +838,29 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			return success;
 		},
 			flags: {},
-			name: "Cleaner3",
+			name: "Cleaner4",
 			rating: 2,
 			num: 251,
     },
-	cleaner2: { // actually rids all hazards, visually only screens of all sides but only hazards on user side; opposite side still shows
+	cleaner3: { // rids users side only really+visually
+		onStart(pokemon) {
+			this.add('-activate', pokemon, 'ability: Cleaner3');
+			let success = false; 
+				const sideConditions = ['spikes', 'toxicspikes', 'stealthrock', 'stickyweb', 'gmaxsteelsurge'];
+				for (const condition of sideConditions) {
+					if (pokemon.hp && pokemon.side.removeSideCondition(condition)) {
+						this.add('-sideend', pokemon.side, this.dex.conditions.get(condition).name);
+					}
+				}
+			this.field.clearTerrain(); 
+			return success;
+		},
+		flags: {},
+		name: "Cleaner3",
+		rating: 2,
+		num: 251,
+	},
+	cleaner2: { // actually rids all hazards, visually only screens of all sides but only hazards on user side; opposite side still shows (ERROR)
 		onStart(pokemon) {
 			this.add('-activate', pokemon, 'ability: Cleaner2');
 			let success = false;
@@ -907,82 +891,9 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 2,
 		num: 251,
 	},
-	cleaner1: { // rids users side ONLY really+visually but not opposing side  
-		onStart(pokemon) {
-			this.add('-activate', pokemon, 'ability: Cleaner1');
-			let success = false;
-			const removeAll = [
-				'spikes', 'toxicspikes', 'stealthrock', 'stickyweb', 'gmaxsteelsurge',
-			];
-			for (const remove of removeAll) {
-				if (pokemon.side.removeSideCondition(remove)) { 
-					this.add('-sideend', pokemon.side, this.dex.conditions.get(remove).name,);
-					success = true;
-				}
-			}
-			this.field.clearTerrain(); 
-			return success;
-		},
-		flags: {},
-		name: "Cleaner1",
-		rating: 2,
-		num: 251,
-	},
-	cleaner0: { // rids users side only really+visually C O P Y P A S T A ['reflect', 'lightscreen', 'auroraveil', 'hologram', 'mist']
-		onStart(pokemon) {
-			this.add('-activate', pokemon, 'ability: Cleaner0');
-			let success = false; 
-				const sideConditions = ['spikes', 'toxicspikes', 'stealthrock', 'stickyweb', 'gmaxsteelsurge'];
-				for (const condition of sideConditions) {
-					if (pokemon.hp && pokemon.side.removeSideCondition(condition)) {
-						this.add('-sideend', pokemon.side, this.dex.conditions.get(condition).name);
-					}
-				}
-			this.field.clearTerrain(); 
-			return success;
-		},
-		flags: {},
-		name: "Cleaner0",
-		rating: 2,
-		num: 251,
-	},
-	cleaner: { // rids users side only really+visually C O P Y P A S T A ['reflect', 'lightscreen', 'auroraveil', 'hologram', 'mist']
-		onPreStart(pokemon) { 
-			this.add('-activate', pokemon, 'ability: Cleaner');
-			let activated = false;
-            for (const sideCondition of ['reflect', 'lightscreen', 'auroraveil', 'hologram', 'mist', 'safeguard']) {
-                for (const side of [...pokemon.side.foeSidesWithConditions()]) {
-                    if (side.getSideCondition(sideCondition)) {
-                        if (!activated) { 
-                            activated = true;
-                        }
-                        side.removeSideCondition(sideCondition);
-                    }
-                }
-            }
-		},	
-		onStart(target) { 	
-			let success = false; 
-			const removeTarget = [
-				'spikes', 'toxicspikes', 'stealthrock', 'stickyweb', 'gmaxsteelsurge',
-			]; 
-			for (const targetCondition of removeTarget) {
-				if (target.side.removeSideCondition(targetCondition)) { 
-					this.add('-sideend', target.side, this.dex.conditions.get(targetCondition).name);
-					success = true;
-				}
-			} 
-			this.field.clearTerrain(); 
-			return success;  	
-		},
-		flags: {},
-		name: "Cleaner",
-		rating: 2,
-		num: 251,
-	},
-    leaner: {
+	cleaner: { // upon switch in, clears users side of hazards; clears foes screens; removes terrain
         onStart(pokemon) { 
-			this.add('-activate', pokemon, 'ability: Leaner');
+			this.add('-activate', pokemon, 'ability: Cleaner');
 			let activated = false;
             for (const sideCondition of ['reflect', 'lightscreen', 'auroraveil', 'hologram', 'mist', 'safeguard']) {
                 for (const side of [...pokemon.side.foeSidesWithConditions()]) {
@@ -1008,7 +919,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			return success;  	
 		},
         flags: {},
-        name: "Leaner",
+        name: "Cleaner",
         rating: 2,
         num: 251,
     },

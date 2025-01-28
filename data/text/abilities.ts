@@ -1859,7 +1859,23 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	cleaner: {
 		name: "Cleaner",
-		shortDesc: "On switch-in, Aurora Veil, Light Screen, Reflect, Stealth Rock, Spikes, Toxic Spikes, and Sticky Web are cleared up for both sides.",
+		shortDesc: "On switch-in, user's side is cleared of hazards, while opposing side has their screens cleared; Removes terrain.",
+	},
+	cleaner2: {
+		name: "Cleaner2",
+		shortDesc: "On switch-in, Aurora Veil, Light Screen, Reflect, Mist, Hologram, Stealth Rock, Spikes, Toxic Spikes, and Sticky Web are cleared up for both sides; Removes terrain.",
+	},
+	cleaner3: {
+		name: "Cleaner3",
+		shortDesc: "On switch-in, Stealth Rock, Spikes, Toxic Spikes, and Sticky Web are cleared up for the user's side; Removes terrain.",
+	},
+	cleaner4: {
+		name: "Cleaner4",
+		shortDesc: "If this Pokemon is hit by an attack, Aurora Veil, Light Screen, Reflect, Mist, Hologram, Stealth Rock, Spikes, Toxic Spikes, and Sticky Web are cleared up for both sides; Removes terrain.",
+	},
+	cleaner5: {
+		name: "Cleaner5",
+		shortDesc: "If this Pokemon is hit by an attack, their side is cleared of hazards, while the opposing side has their screens cleared; Removes terrain.",
 	},
 	seedsower: {
 		name: "Seed Sower",
