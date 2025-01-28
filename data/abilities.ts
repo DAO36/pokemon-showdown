@@ -946,6 +946,70 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 2,
 		num: 251,
 	},
+	cleanera: { // rids users side only really+visually C O P Y P A S T A ['reflect', 'lightscreen', 'auroraveil', 'hologram', 'mist']
+		onPreStart(target) {
+			this.add('-activate', target, 'ability: CleanerA');
+			let success = false; 
+			const removeTarget = [
+				'spikes', 'toxicspikes', 'stealthrock', 'stickyweb', 'gmaxsteelsurge',
+			]; 
+			for (const targetCondition of removeTarget) {
+				if (target.side.removeSideCondition(targetCondition)) { 
+					this.add('-sideend', target.side, this.dex.conditions.get(targetCondition).name);
+					success = true;
+				}
+			} 
+		},	
+		onStart(source) { 	
+			let success = false;
+			const sideConditions = ['reflect', 'lightscreen', 'auroraveil', 'hologram', 'mist'];
+			for (const condition of sideConditions) {
+				if (source.hp && source.side.removeSideCondition(condition)) {
+					this.add('-sideend', source.side, this.dex.conditions.get(condition).name);
+				}
+			}	
+			this.field.clearTerrain(); 
+			return success;  	
+		},
+		flags: {},
+		name: "CleanerA",
+		rating: 2,
+		num: 251,
+	},	
+	er5: { // rids hazards on users sides and screens on foes sides when user is hit by an attacc, really and visuaklly (+leech seed binding and terrain)  
+		onDamagingHitOrder: 1,
+		onDamagingHit(damage, target, source, move) {  
+			this.add('-activate', target, 'ability: Cleaner5');	
+			let success = false; 
+			const removeTarget = [
+				'spikes', 'toxicspikes', 'stealthrock', 'stickyweb', 'gmaxsteelsurge',
+			]; 
+			for (const targetCondition of removeTarget) {
+				if (target.side.removeSideCondition(targetCondition)) { 
+					this.add('-sideend', target.side, this.dex.conditions.get(targetCondition).name);
+					success = true;
+				}
+			} 
+			if (target.hp && target.removeVolatile('leechseed')) {
+				this.add('-end', target, 'Leech Seed');
+			}
+			const sideConditions = ['reflect', 'lightscreen', 'auroraveil', 'hologram', 'mist'];
+			for (const condition of sideConditions) {
+				if (source.hp && source.side.removeSideCondition(condition)) {
+					this.add('-sideend', source.side, this.dex.conditions.get(condition).name);
+				}
+			}
+			if (target.hp && target.volatiles['partiallytrapped']) {
+				target.removeVolatile('partiallytrapped'); 
+	        }
+			this.field.clearTerrain();
+			return success;
+		},
+		flags: {},
+		name: "Cleaner5",
+		rating: 2,
+		num: 251,
+	},
 	yamada: { // combines Mirror Armour + Magic Bounce
 		onTryHitPriority: 1,
 		onTryHit(target, source, move) {
@@ -7116,35 +7180,5 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		name: "Persistent",
 		rating: 3,
 		num: -4,
-	},
-	cleanera: { // rids users side only really+visually C O P Y P A S T A ['reflect', 'lightscreen', 'auroraveil', 'hologram', 'mist']
-		onPreStart(pokemon) {
-			this.add('-activate', pokemon, 'ability: CleanerA');
-			let success = false; 
-			const removeTarget = [
-				'spikes', 'toxicspikes', 'stealthrock', 'stickyweb', 'gmaxsteelsurge',
-			]; 
-			for (const targetCondition of removeTarget) {
-				if (pokemon.side.removeSideCondition(targetCondition)) { 
-					this.add('-sideend', pokemon.side, this.dex.conditions.get(targetCondition).name);
-					success = true;
-				}
-			}
-		},	
-		onStart(target) { 	
-			let success = false;
-			const sideConditions = ['reflect', 'lightscreen', 'auroraveil', 'hologram', 'mist'];
-				for (const condition of sideConditions) {
-				if (target.hp && target.side.removeSideCondition(condition)) {
-						this.add('-sideend', target.side, this.dex.conditions.get(condition).name);
-					}
-				} 	
-			this.field.clearTerrain(); 
-			return success;  	
-		},
-		flags: {},
-		name: "CleanerA",
-		rating: 2,
-		num: 251,
-	},		
+	},	
 };
