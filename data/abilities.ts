@@ -776,7 +776,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 1.5,
 		num: 179,
 	},
-	cleaner5: { // rids hazards on users sides and screens on foes sides when user is hit by an attacc, really and visuaklly (+leech seed binding and terrain) COPY fix the text in chat
+	cleaner5: { // rids hazards on users sides and screens on foes sides when user is hit by an attacc, really and visuaklly (+leech seed binding and terrain)  
 		onDamagingHitOrder: 1,
 		onDamagingHit(damage, target, source, move) {  
 			this.add('-activate', target, 'ability: Cleaner5');	
@@ -938,11 +938,43 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 						this.add('-sideend', pokemon.side, this.dex.conditions.get(condition).name);
 					}
 				}
+				let activated = false;
+				for (const sideCondition of ['reflect', 'lightscreen', 'auroraveil', 'hologram', 'mist']) {
+					for (const side of [pokemon.side, ...pokemon.side.foeSidesWithConditions()]) {
+						if (side.getSideCondition(sideCondition)) {
+							if (!activated) {
+								this.add('-sideend', pokemon.side, this.dex.conditions.get(sideCondition).name);
+								activated = true;
+							}
+							side.removeSideCondition(sideCondition);
+						}
+					} 
+			} 	
 			this.field.clearTerrain(); 
 			return success;
 		},
 		flags: {},
 		name: "Cleaner0",
+		rating: 2,
+		num: 251,
+	},
+	ncleaner: {
+		onStart(pokemon) {
+			let activated = false;
+			for (const sideCondition of ['reflect', 'lightscreen', 'auroraveil']) {
+				for (const side of [pokemon.side, ...pokemon.side.foeSidesWithConditions()]) {
+					if (side.getSideCondition(sideCondition)) {
+						if (!activated) {
+							this.add('-activate', pokemon, 'ability: Screen Cleaner');
+							activated = true;
+						}
+						side.removeSideCondition(sideCondition);
+					}
+				}
+			}
+		},
+		flags: {},
+		name: "Screen Cleaner",
 		rating: 2,
 		num: 251,
 	},
