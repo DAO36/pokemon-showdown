@@ -981,20 +981,32 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		num: 251,
 	},
     leaner: {
-        onStart(pokemon) {
-            let activated = false;
-            for (const sideCondition of ['reflect', 'lightscreen', 'auroraveil']) {
+        onPreStart(pokemon) { 
+			this.add('-activate', pokemon, 'ability: Leaner');
+			let activated = false;
+            for (const sideCondition of ['reflect', 'lightscreen', 'auroraveil', 'hologram', 'mist', 'safeguard']) {
                 for (const side of [...pokemon.side.foeSidesWithConditions()]) {
                     if (side.getSideCondition(sideCondition)) {
-                        if (!activated) {
-                            this.add('-activate', pokemon, 'ability: Leaner');
+                        if (!activated) { 
                             activated = true;
                         }
                         side.removeSideCondition(sideCondition);
                     }
                 }
-            }
-        },
+            } 
+			let success = false; 
+			const removeTarget = [
+				'spikes', 'toxicspikes', 'stealthrock', 'stickyweb', 'gmaxsteelsurge',
+			]; 
+			for (const targetCondition of removeTarget) {
+				if (pokemon.side.removeSideCondition(targetCondition)) { 
+					this.add('-sideend', pokemon.side, this.dex.conditions.get(targetCondition).name);
+					success = true;
+				}
+			} 
+			this.field.clearTerrain(); 
+			return success;  	
+		},
         flags: {},
         name: "Leaner",
         rating: 2,
