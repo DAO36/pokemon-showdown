@@ -939,14 +939,14 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 					}
 				}
 				let activated = false;
-				for (const sideCondition of ['reflect', 'lightscreen', 'auroraveil', 'hologram', 'mist']) {
+				for (const targetCondition of ['reflect', 'lightscreen', 'auroraveil', 'hologram', 'mist']) {
 					for (const side of [pokemon.side, ...pokemon.side.foeSidesWithConditions()]) {
-						if (side.getSideCondition(sideCondition)) {
+						if (side.getSideCondition(targetCondition)) {
 							if (!activated) {
-								this.add('-sideend', pokemon.side, this.dex.conditions.get(sideCondition).name);
+								this.add('-sideend', pokemon.side, this.dex.conditions.get(targetCondition).name);
 								activated = true;
 							}
-							side.removeSideCondition(sideCondition);
+							side.removeSideCondition(targetCondition);
 						}
 					} 
 			} 	
@@ -958,23 +958,37 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 2,
 		num: 251,
 	},
-	ncleaner: {
-		onStart(pokemon) {
-			let activated = false;
-			for (const sideCondition of ['reflect', 'lightscreen', 'auroraveil']) {
-				for (const side of [pokemon.side, ...pokemon.side.foeSidesWithConditions()]) {
-					if (side.getSideCondition(sideCondition)) {
-						if (!activated) {
-							this.add('-activate', pokemon, 'ability: Screen Cleaner');
-							activated = true;
-						}
-						side.removeSideCondition(sideCondition);
-					}
+	ner5: { // rids hazards on users sides and screens on foes sides when user is hit by an attacc, really and visuaklly (+leech seed binding and terrain)  
+		onDamagingHitOrder: 1,
+		onDamagingHit(damage, target, source, move) {  
+			this.add('-activate', target, 'ability: Cleaner5');	
+			let success = false; 
+			const removeTarget = [
+				'spikes', 'toxicspikes', 'stealthrock', 'stickyweb', 'gmaxsteelsurge',
+			]; 
+			for (const targetCondition of removeTarget) {
+				if (target.side.removeSideCondition(targetCondition)) { 
+					this.add('-sideend', target.side, this.dex.conditions.get(targetCondition).name);
+					success = true;
+				}
+			} 
+			if (target.hp && target.removeVolatile('leechseed')) {
+				this.add('-end', target, 'Leech Seed');
+			}
+			const sideConditions = ['reflect', 'lightscreen', 'auroraveil', 'hologram', 'mist'];
+			for (const condition of sideConditions) {
+				if (source.hp && source.side.removeSideCondition(condition)) {
+					this.add('-sideend', source.side, this.dex.conditions.get(condition).name);
 				}
 			}
+			if (target.hp && target.volatiles['partiallytrapped']) {
+				target.removeVolatile('partiallytrapped'); 
+	        }
+			this.field.clearTerrain();
+			return success;
 		},
 		flags: {},
-		name: "Screen Cleaner",
+		name: "Cleaner5",
 		rating: 2,
 		num: 251,
 	},
