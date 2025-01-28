@@ -975,26 +975,6 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 2,
 		num: 251,
 	},
-	encleaner: {
-		onStart(pokemon) {
-			let activated = false;
-			for (const sideCondition of ['reflect', 'lightscreen', 'auroraveil']) {
-				for (const side of [pokemon.side, ...pokemon.side.foeSidesWithConditions()]) {
-					if (side.getSideCondition(sideCondition)) {
-						if (!activated) {
-							this.add('-activate', pokemon, 'ability: Screen Cleaner');
-							activated = true;
-						}
-						side.removeSideCondition(sideCondition);
-					}
-				}
-			}
-		},
-		flags: {},
-		name: "Screen Cleaner",
-		rating: 2,
-		num: 251,
-	},
 	yamada: { // combines Mirror Armour + Magic Bounce
 		onTryHitPriority: 1,
 		onTryHit(target, source, move) {
