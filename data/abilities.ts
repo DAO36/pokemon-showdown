@@ -937,16 +937,6 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 					if (pokemon.hp && pokemon.side.removeSideCondition(condition)) {
 						this.add('-sideend', pokemon.side, this.dex.conditions.get(condition).name);
 					}
-				}
-				const removeTarget = [
-					'reflect', 'lightscreen', 'auroraveil', 'safeguard', 'mist',
-				]; 
-				for (const targetCondition of removeTarget) {
-					if (pokemon.side.removeSideCondition(targetCondition)) { 
-						if (!removeTarget.includes(targetCondition)) continue;
-						this.add('-sideend', pokemon.side, this.dex.conditions.get(targetCondition).name);
-						success = true;
-					}
 				} 
 			this.field.clearTerrain(); 
 			return success;
@@ -1010,6 +1000,37 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 2,
 		num: 251,
 	},
+	cleanupcleanup: {  // successfully clears visually and really all hazards and screens on both sides BUT only when user is hit by an attacc
+		onStart(pokemon) {  
+			this.add('-activate', pokemon, 'ability: CleanerUpCleanUp');
+			let success = false; 
+			const removeTarget = [
+				'reflect', 'lightscreen', 'auroraveil', 'hologram', 'mist',
+			];
+			const removeAll = [
+				'spikes', 'toxicspikes', 'stealthrock', 'stickyweb', 'gmaxsteelsurge',
+			];
+			for (const targetCondition of removeTarget) {
+				if (pokemon.side.removeSideCondition(targetCondition)) {
+					if (!removeAll.includes(targetCondition)) continue; 
+					this.add('-sideend', pokemon.side, this.dex.conditions.get(targetCondition).name);
+					success = true;
+				}
+			}
+			for (const sideCondition of removeAll) {
+				if (pokemon.side.removeSideCondition(sideCondition)) { 
+					this.add('-sideend', pokemon.side, this.dex.conditions.get(sideCondition).name);
+					success = true;
+				}
+			}
+			this.field.clearTerrain();
+			return success;
+		},
+			flags: {},
+			name: "CleanerUpCleanUp",
+			rating: 2,
+			num: 251,
+    },
 	yamada: { // combines Mirror Armour + Magic Bounce
 		onTryHitPriority: 1,
 		onTryHit(target, source, move) {
