@@ -928,7 +928,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 2,
 		num: 251,
 	},
-	cleaner0: { // rids users side only really+visually but not opposing side C O P Y P A S T A ['reflect', 'lightscreen', 'auroraveil', 'hologram', 'mist']
+	cleaner0: { // rids users side only really+visually C O P Y P A S T A ['reflect', 'lightscreen', 'auroraveil', 'hologram', 'mist']
 		onStart(pokemon) {
 			this.add('-activate', pokemon, 'ability: Cleaner0');
 			let success = false; 
@@ -938,6 +938,16 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 						this.add('-sideend', pokemon.side, this.dex.conditions.get(condition).name);
 					}
 				} 
+				const removeTarget = [
+					'reflect', 'lightscreen', 'auroraveil', 'safeguard', 'mist', 'hologram',
+				];
+				for (const targetCondition of removeTarget) {
+					if (pokemon.side.removeSideCondition(targetCondition)) {
+						if (!removeTarget.includes(targetCondition)) continue;
+						this.add('-sideend', pokemon.side, this.dex.conditions.get(targetCondition).name);
+						success = true;
+					}
+				}
 			this.field.clearTerrain(); 
 			return success;
 		},
@@ -946,91 +956,6 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 2,
 		num: 251,
 	},
-	ner5: { // rids hazards on users sides and screens on foes sides when user is hit by an attacc, really and visuaklly (+leech seed binding and terrain)  
-		onDamagingHitOrder: 1,
-		onDamagingHit(damage, target, source, move) {  
-			this.add('-activate', target, 'ability: Cleaner5');	
-			let success = false; 
-			const removeTarget = [
-				'spikes', 'toxicspikes', 'stealthrock', 'stickyweb', 'gmaxsteelsurge',
-			]; 
-			for (const targetCondition of removeTarget) {
-				if (target.side.removeSideCondition(targetCondition)) { 
-					this.add('-sideend', target.side, this.dex.conditions.get(targetCondition).name);
-					success = true;
-				}
-			} 
-			if (target.hp && target.removeVolatile('leechseed')) {
-				this.add('-end', target, 'Leech Seed');
-			}
-			const sideConditions = ['reflect', 'lightscreen', 'auroraveil', 'hologram', 'mist'];
-			for (const condition of sideConditions) {
-				if (source.hp && source.side.removeSideCondition(condition)) {
-					this.add('-sideend', source.side, this.dex.conditions.get(condition).name);
-				}
-			}
-			if (target.hp && target.volatiles['partiallytrapped']) {
-				target.removeVolatile('partiallytrapped'); 
-	        }
-			this.field.clearTerrain();
-			return success;
-		},
-		flags: {},
-		name: "Cleaner5",
-		rating: 2,
-		num: 251,
-	},
-	ncleaner: {
-		onStart(pokemon) {
-			let activated = false;
-			for (const sideCondition of ['reflect', 'lightscreen', 'auroraveil']) {
-				for (const side of [pokemon.side, ...pokemon.side.foeSidesWithConditions()]) {
-					if (side.getSideCondition(sideCondition)) {
-						if (!activated) {
-							this.add('-activate', pokemon, 'ability: Screen Cleaner');
-							activated = true;
-						}
-						side.removeSideCondition(sideCondition);
-					}
-				}
-			}
-		},
-		flags: {},
-		name: "Screen Cleaner",
-		rating: 2,
-		num: 251,
-	},
-	cleanupcleanup: {  // successfully clears visually and really all hazards and screens on both sides BUT only when user is hit by an attacc
-		onStart(pokemon) {  
-			this.add('-activate', pokemon, 'ability: CleanUpCleanUp');
-			let success = false; 
-			const removeTarget = [
-				'reflect', 'lightscreen', 'auroraveil', 'hologram', 'mist',
-			];
-			const removeAll = [
-				'spikes', 'toxicspikes', 'stealthrock', 'stickyweb', 'gmaxsteelsurge',
-			];
-			for (const targetCondition of removeTarget) {
-				if (pokemon.side.removeSideCondition(targetCondition)) {
-					if (!removeAll.includes(targetCondition)) continue; 
-					this.add('-sideend', pokemon.side, this.dex.conditions.get(targetCondition).name);
-					success = true;
-				}
-			}
-			for (const sideCondition of removeAll) {
-				if (pokemon.side.removeSideCondition(sideCondition)) { 
-					this.add('-sideend', pokemon.side, this.dex.conditions.get(sideCondition).name);
-					success = true;
-				}
-			}
-			this.field.clearTerrain();
-			return success;
-		},
-			flags: {},
-			name: "CleanUpCleanUp",
-			rating: 2,
-			num: 251,
-    },
 	yamada: { // combines Mirror Armour + Magic Bounce
 		onTryHitPriority: 1,
 		onTryHit(target, source, move) {
