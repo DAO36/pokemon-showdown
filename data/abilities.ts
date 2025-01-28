@@ -953,8 +953,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
             for (const sideCondition of ['reflect', 'lightscreen', 'auroraveil', 'hologram', 'mist', 'safeguard']) {
                 for (const side of [...pokemon.side.foeSidesWithConditions()]) {
                     if (side.getSideCondition(sideCondition)) {
-                        if (!activated) {
-                            this.add('-activate', pokemon);
+                        if (!activated) { 
                             activated = true;
                         }
                         side.removeSideCondition(sideCondition);
