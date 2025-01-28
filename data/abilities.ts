@@ -953,7 +953,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 				for (const side of [pokemon.side.foeSidesWithConditions()]) {
 					if (pokemon.hp && pokemon.side.removeSideCondition(sideCondition)) {
 						if (!activated) {
-							this.add('-activate', pokemon, 'ability: Screen Cleaner');
+							this.add('-sideend', pokemon.side, this.dex.conditions.get(sideCondition).name);
 							activated = true;
 						} 
 					}
