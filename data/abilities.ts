@@ -790,17 +790,17 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 					success = true;
 				}
 			} 
-			if (source.hp && source.removeVolatile('leechseed')) {
-				this.add('-end', source, 'Leech Seed');
+			if (target.hp && target.removeVolatile('leechseed')) {
+				this.add('-end', target, 'Leech Seed');
 			}
-			const sideConditions = ['reflect', 'lightscreen', 'auroraveil', 'hologram'];
+			const sideConditions = ['reflect', 'lightscreen', 'auroraveil', 'hologram', 'mist'];
 			for (const condition of sideConditions) {
 				if (source.hp && source.side.removeSideCondition(condition)) {
 					this.add('-sideend', source.side, this.dex.conditions.get(condition).name);
 				}
 			}
-			if (source.hp && source.volatiles['partiallytrapped']) {
-				source.removeVolatile('partiallytrapped'); 
+			if (target.hp && target.volatiles['partiallytrapped']) {
+				target.removeVolatile('partiallytrapped'); 
 	        }
 			this.field.clearTerrain();
 			return success;
