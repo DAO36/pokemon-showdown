@@ -603,25 +603,32 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3,
 		num: 290,
 	},
-	piracy: { // reskin of Oppurtunist
-		onFoeAfterBoost(boost, target, source, effect) {
-			if (effect?.name === 'Piracy' || effect?.name === 'Mirror Herb') return;
-			const pokemon = this.effectState.target;
-			const positiveBoosts: Partial<BoostsTable> = {};
+	piracy: { // reskin of Oppurtunist -clearpositiveboost
+		onStart(pokemon) {
+			const target = pokemon
+			if (!target) return;
+
 			let i: BoostID;
-			for (i in boost) {
-				if (boost[i]! > 0) {
-					positiveBoosts[i] = boost[i];
+			for (i in target.boosts) {
+				pokemon.boosts[i] = target.boosts[i];
+			}
+			const volatilesToCopy = ['dragoncheer', 'focusenergy', 'gmaxchistrike', 'laserfocus'];
+			// we need to be sure to remove all the overlapping crit volatiles before trying to add any
+			for (const volatile of volatilesToCopy) pokemon.removeVolatile(volatile);
+			for (const volatile of volatilesToCopy) {
+				if (target.volatiles[volatile]) {
+					pokemon.addVolatile(volatile);
+					if (volatile === 'gmaxchistrike') pokemon.volatiles[volatile].layers = target.volatiles[volatile].layers;
+					if (volatile === 'dragoncheer') pokemon.volatiles[volatile].hasDragonType = target.volatiles[volatile].hasDragonType;
 				}
 			}
-			if (Object.keys(positiveBoosts).length < 1) return;
-			this.boost(positiveBoosts, pokemon);
-			this.add('-clearpositiveboost', target, 'ability: Piracy'); 
+			this.add('-copyboost', pokemon, '[from] ability: Piracy');
+			this.add('-clearpositiveboost', pokemon);
 		},
 		flags: {},
 		name: "Piracy",
-		rating: 3,
-		num: 290,
+		rating: 0,
+		num: 294,
 	},
 	highonasacoco: { // reskin of Poison Heal
 		onDamagePriority: 1,
