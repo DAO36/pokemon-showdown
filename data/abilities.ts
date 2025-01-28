@@ -256,8 +256,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		},
 		onAfterMoveSecondarySelf(source, target, move) {
 			if (source && source !== target && move && move.category !== 'Status' && !source.forceSwitchFlag) {
-				this.damage(source.baseMaxhp / 10, source, source,);
-				this.add('-activate', source, 'ability: I am God');
+				this.damage(source.baseMaxhp / 10, source, source,); 
 			}
 		},
 		flags: {},
@@ -329,20 +328,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 4,
 		num: 176,
 	},
-	vampire2: { // reskin of Water Absorb
-		onSourceTryHeal(damage, target, source, effect) {
-			this.debug("Heal is occurring: " + source + " <- " + target + " :: " + effect.id);
-			const canOoze = ['drain', 'leechseed', 'strengthsap'];
-			if (canOoze.includes(effect.id)) {
-				return this.chainModify([5461, 4096]);
-			}
-		},
-		flags: {breakable: 1},
-		name: "Vampire2",
-		rating: 3.5,
-		num: 11,
-	},
-	vampire: {
+	vampire: { // increases how much hp user recovers when using draining moves
         onTryHealPriority: 1,
         onTryHeal(damage, target, source, effect) {
             return this.chainModify([5461, 4096]);
