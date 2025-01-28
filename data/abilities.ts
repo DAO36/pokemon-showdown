@@ -938,17 +938,11 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 						this.add('-sideend', pokemon.side, this.dex.conditions.get(condition).name);
 					}
 				}
-				let activated = false;
-				for (const targetCondition of ['reflect', 'lightscreen', 'auroraveil', 'hologram', 'mist']) {
-					for (const side of [pokemon.side, ...pokemon.side.foeSidesWithConditions()]) {
-						if (side.getSideCondition(targetCondition)) {
-							if (!activated) {
-								this.add('-sideend', pokemon.side, this.dex.conditions.get(targetCondition).name);
-								activated = true;
-							}
-							side.removeSideCondition(targetCondition);
-						}
-					} 
+				const targetCondition = ['reflect', 'lightscreen', 'auroraveil', 'hologram', 'mist'];
+			    for (const condition of sideConditions) {
+				if (pokemon.hp && pokemon.side.removeSideCondition(condition)) {
+					this.add('-sideend', pokemon.side, this.dex.conditions.get(condition).name);
+				}
 			} 	
 			this.field.clearTerrain(); 
 			return success;
