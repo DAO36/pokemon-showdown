@@ -955,7 +955,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			]; 
 			for (const targetCondition of removeTarget) {
 				if (target.side.removeSideCondition(targetCondition)) { 
-					this.add('-sideend', target.side, this.dex.conditions.get(targetCondition).name);
+					this.add('-activate', target.side, this.dex.conditions.get(targetCondition).name);
 					success = true;
 				}
 			} 
@@ -975,38 +975,25 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		name: "CleanerA",
 		rating: 2,
 		num: 251,
-	},	
-	er5: { // rids hazards on users sides and screens on foes sides when user is hit by an attacc, really and visuaklly (+leech seed binding and terrain)  
-		onDamagingHitOrder: 1,
-		onDamagingHit(damage, target, source, move) {  
-			this.add('-activate', target, 'ability: Cleaner5');	
-			let success = false; 
-			const removeTarget = [
-				'spikes', 'toxicspikes', 'stealthrock', 'stickyweb', 'gmaxsteelsurge',
-			]; 
-			for (const targetCondition of removeTarget) {
-				if (target.side.removeSideCondition(targetCondition)) { 
-					this.add('-sideend', target.side, this.dex.conditions.get(targetCondition).name);
-					success = true;
-				}
-			} 
-			if (target.hp && target.removeVolatile('leechseed')) {
-				this.add('-end', target, 'Leech Seed');
-			}
-			const sideConditions = ['reflect', 'lightscreen', 'auroraveil', 'hologram', 'mist'];
-			for (const condition of sideConditions) {
-				if (source.hp && source.side.removeSideCondition(condition)) {
-					this.add('-sideend', source.side, this.dex.conditions.get(condition).name);
+	},
+	ncleaner: {
+		onPreStart(target) {
+			this.add('-activate', target, 'ability: CleanerA');	
+			let activated = false;
+			for (const sideCondition of ['reflect', 'lightscreen', 'auroraveil']) {
+				for (const side of [target.side, ...target.side.foeSidesWithConditions()]) {
+					if (side.getSideCondition(sideCondition)) {
+						if (!activated) {
+							this.add('-activate', target, 'ability: Screen Cleaner');
+							activated = true;
+						}
+						side.removeSideCondition(sideCondition);
+					}
 				}
 			}
-			if (target.hp && target.volatiles['partiallytrapped']) {
-				target.removeVolatile('partiallytrapped'); 
-	        }
-			this.field.clearTerrain();
-			return success;
 		},
 		flags: {},
-		name: "Cleaner5",
+		name: "Screen Cleaner",
 		rating: 2,
 		num: 251,
 	},
