@@ -616,7 +616,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			}
 			if (Object.keys(positiveBoosts).length < 1) return;
 			this.boost(positiveBoosts, pokemon);
-			this.add('spectralthief', target, 'ability: Piracy');
+			this.add('-clearpositiveboost', target, 'ability: Piracy'); 
 		},
 		flags: {},
 		name: "Piracy",
