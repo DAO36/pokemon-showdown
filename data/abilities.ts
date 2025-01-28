@@ -799,36 +799,33 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 2,
 		num: 251,
 	},
-	ugh: { // any pokemon that attacks the user loses 1/8 of their max hp
-		onDamagingHitOrder: 1,
-		onDamagingHit(damage, target, source, move) {
-			{
-				this.damage(source.baseMaxhp / 8, source, target);
+	date: {
+		onStart(pokemon) {
+			let activated = false;
+			for (const target of pokemon.adjacentFoes()) {
+				if (!activated) {
+					this.add('-ability', pokemon, 'Intimidate', 'boost');
+					activated = true;
+				}
+				if (target.volatiles['substitute']) {
+					this.add('-immune', target);
+				} else {
+					this.boost({atk: -1}, target, pokemon, null, true);
+				}
 			}
 		},
 		flags: {},
-		name: "Baby Dont Hurt Me",
-		rating: 5,
-		num: 24,
+		name: "Intimidate",
+		rating: 3.5,
+		num: 22,
 	},
 	blowaway: { // , 'ability: Dazzling', move, '[of] ' + target 
 		onDamagingHitOrder: 1,
 		onDamagingHit(damage, target, source, move) {  
-			let success = false; 
-			const removeTarget = [
-				'reflect', 'lightscreen', 'auroraveil', 'hologram', 'mist', 'spikes', 'toxicspikes', 'stealthrock', 'stickyweb', 'gmaxsteelsurge',
-			];
+			let success = false;  
 			const removeAll = [
 				'reflect', 'lightscreen', 'auroraveil', 'hologram', 'mist', 'spikes', 'toxicspikes', 'stealthrock', 'stickyweb', 'gmaxsteelsurge',
-			];
-			for (const targetCondition of removeTarget) {
-				if (target.side.removeSideCondition(targetCondition)) {
-					if (!removeAll.includes(targetCondition)) continue;
-					this.add('-activate', target, 'ability: Cleaner');
-					this.add('-sideend', target.side, this.dex.conditions.get(targetCondition).name);
-					success = true;
-				}
-			}
+			]; 
 			for (const sideCondition of removeAll) {
 				if (source.side.removeSideCondition(sideCondition)) {
 					this.add('-activate', target, 'ability: Cleaner');
