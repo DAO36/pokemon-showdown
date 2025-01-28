@@ -957,13 +957,16 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			}
 		},	
 		onStart(target) { 	
-			let success = false;
-			const sideConditions = ['spikes', 'toxicspikes', 'stealthrock', 'stickyweb', 'gmaxsteelsurge',];
-			for (const condition of sideConditions) {
-				if (target.hp && target.side.removeSideCondition(condition)) {
-					this.add('-sideend', target.side, this.dex.conditions.get(condition).name);
+			let success = false; 
+			const removeTarget = [
+				'spikes', 'toxicspikes', 'stealthrock', 'stickyweb', 'gmaxsteelsurge',
+			]; 
+			for (const targetCondition of removeTarget) {
+				if (target.side.removeSideCondition(targetCondition)) { 
+					this.add('-sideend', target.side, this.dex.conditions.get(targetCondition).name);
+					success = true;
 				}
-			}	
+			} 
 			this.field.clearTerrain(); 
 			return success;  	
 		},
