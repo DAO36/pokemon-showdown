@@ -943,6 +943,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 				]; 
 				for (const targetCondition of removeTarget) {
 					if (pokemon.side.removeSideCondition(targetCondition)) { 
+						if (!removeTarget.includes(targetCondition)) continue;
 						this.add('-sideend', pokemon.side, this.dex.conditions.get(targetCondition).name);
 						success = true;
 					}
