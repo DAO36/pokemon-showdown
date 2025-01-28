@@ -981,15 +981,16 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	},
 	ncleaner: {
 		onStart(source) { 
+			this.add('-activate', source, 'ability: N Cleaner');
 			const sideConditions = ['reflect', 'lightscreen', 'auroraveil', 'hologram', 'mist'];
 			for (const condition of sideConditions) {
 				if (source.hp && source.side.removeSideCondition(condition)) {
 					this.add('-sideend', source.side, this.dex.conditions.get(condition).name);
 				}
-			}	
+			}
 		},
 		flags: {},
-		name: "Screen Cleaner",
+		name: "N Cleaner",
 		rating: 2,
 		num: 251,
 	},
