@@ -779,19 +779,19 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	bruh: { 
 		onDamagingHitOrder: 1,
 		onDamagingHit(damage, target, source, move) {  
+			this.add('-activate', target, 'ability: Bruh');	
 			let success = false; 
 			const removeTarget = [
 				'spikes', 'toxicspikes', 'stealthrock', 'stickyweb', 'gmaxsteelsurge',
 			]; 
 			for (const targetCondition of removeTarget) {
 				if (target.side.removeSideCondition(targetCondition)) { 
-					this.add('-activate', target, 'ability: Bruh');
 					this.add('-sideend', target.side, this.dex.conditions.get(targetCondition).name);
 					success = true;
 				}
 			} 
 			if (source.hp && source.removeVolatile('leechseed')) {
-				this.add('-end', source, 'Leech Seed', '[from] ability: Bruh', '[of] ' + source);
+				this.add('-end', source, 'Leech Seed');
 			}
 			const sideConditions = ['reflect', 'lightscreen', 'auroraveil', 'hologram'];
 			for (const condition of sideConditions) {
