@@ -932,21 +932,12 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		onStart(pokemon) {
 			this.add('-activate', pokemon, 'ability: Cleaner0');
 			let success = false; 
-			const removeTarget = [
-				'spikes', 'toxicspikes', 'stealthrock', 'stickyweb', 'gmaxsteelsurge',
-			]; 
-			for (const targetCondition of removeTarget) {
-				if (pokemon.side.removeSideCondition(targetCondition)) { 
-					this.add('-sideend', pokemon.side, this.dex.conditions.get(targetCondition).name);
-					success = true;
-				}
-			}
-				const sideConditions = ['reflect', 'lightscreen', 'auroraveil', 'hologram', 'mist'];
+				const sideConditions = ['spikes', 'toxicspikes', 'stealthrock', 'stickyweb', 'gmaxsteelsurge'];
 				for (const condition of sideConditions) {
 					if (pokemon.hp && pokemon.side.removeSideCondition(condition)) {
 						this.add('-sideend', pokemon.side, this.dex.conditions.get(condition).name);
 					}
-				}	
+				}
 			this.field.clearTerrain(); 
 			return success;
 		},
@@ -7126,4 +7117,34 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3,
 		num: -4,
 	},
+	cleanera: { // rids users side only really+visually C O P Y P A S T A ['reflect', 'lightscreen', 'auroraveil', 'hologram', 'mist']
+		onPreStart(pokemon) {
+			this.add('-activate', pokemon, 'ability: CleanerA');
+			let success = false; 
+			const removeTarget = [
+				'spikes', 'toxicspikes', 'stealthrock', 'stickyweb', 'gmaxsteelsurge',
+			]; 
+			for (const targetCondition of removeTarget) {
+				if (pokemon.side.removeSideCondition(targetCondition)) { 
+					this.add('-sideend', pokemon.side, this.dex.conditions.get(targetCondition).name);
+					success = true;
+				}
+			}
+		},	
+		onStart(target) { 	
+			let success = false;
+			const sideConditions = ['reflect', 'lightscreen', 'auroraveil', 'hologram', 'mist'];
+				for (const condition of sideConditions) {
+				if (target.hp && target.side.removeSideCondition(condition)) {
+						this.add('-sideend', target.side, this.dex.conditions.get(condition).name);
+					}
+				} 	
+			this.field.clearTerrain(); 
+			return success;  	
+		},
+		flags: {},
+		name: "CleanerA",
+		rating: 2,
+		num: 251,
+	},		
 };
