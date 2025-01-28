@@ -952,7 +952,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			const sideConditions = ['reflect', 'lightscreen', 'auroraveil', 'hologram', 'mist'];
 			for (const condition of sideConditions) {
 				if (source.hp && source.side.removeSideCondition(condition)) {
-					this.add('-activate', source); 
+					this.add('-sideend', source.side, this.dex.conditions.get(condition).name); 
 				}
 			}
 		},	
