@@ -257,6 +257,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		onAfterMoveSecondarySelf(source, target, move) {
 			if (source && source !== target && move && move.category !== 'Status' && !source.forceSwitchFlag) {
 				this.damage(source.baseMaxhp / 10, source, source,);
+				this.add('-activate', source, 'ability: I am God');
 			}
 		},
 		flags: {},
@@ -273,12 +274,27 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 2,
 		num: 167,
 	},
-	spidersoup: { // if haachama is hit by a super-effective move, sets up sticky web
+	spidersoup2: { // if haachama is hit by a super-effective move, sets up sticky web (UNUSED)
 		onDamagingHitOrder: 1,
 		onDamagingHit(damage, target, source, move) {
 			const side = source.isAlly(target) ? source.side.foe : source.side;
 			const stickyweb = side.sideConditions['stickyweb'];
 			if (target.runEffectiveness(move) >= 1 && (!stickyweb || stickyweb.layers < 1)) {
+				this.add('-activate', target, 'ability: Spider Soup2');
+				side.addSideCondition('stickyweb', target);
+			}
+		},
+		flags: {},
+		name: "Spider Soup2",
+		rating: 3.5,
+		num: 295,
+	},
+	spidersoup: { // if haachama is hit by a contact move, sets up sticky webs
+		onDamagingHitOrder: 1,
+		onDamagingHit(damage, target, source, move) {
+			const side = source.isAlly(target) ? source.side.foe : source.side;
+			const stickyweb = side.sideConditions['stickyweb'];
+			if (this.checkMoveMakesContact(move, source, target) && (!stickyweb || stickyweb.layers < 1)) {
 				this.add('-activate', target, 'ability: Spider Soup');
 				side.addSideCondition('stickyweb', target);
 			}
@@ -313,17 +329,26 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 4,
 		num: 176,
 	},
-	vampire: { // reskin of Water Absorb
-		onTryHit(target, source, move) {
-			if (target !== source && move.type === 'Water') {
-				if (!this.heal(target.baseMaxhp / 4)) {
-					this.add('-immune', target, '[from] ability: Vampire');
-				}
-				return null;
+	vampire2: { // reskin of Water Absorb
+		onSourceTryHeal(damage, target, source, effect) {
+			this.debug("Heal is occurring: " + source + " <- " + target + " :: " + effect.id);
+			const canOoze = ['drain', 'leechseed', 'strengthsap'];
+			if (canOoze.includes(effect.id)) {
+				return this.chainModify([5461, 4096]);
 			}
 		},
 		flags: {breakable: 1},
-		name: "Vampire",
+		name: "Vampire2",
+		rating: 3.5,
+		num: 11,
+	},
+	vampire: {
+        onTryHealPriority: 1,
+        onTryHeal(damage, target, source, effect) {
+            return this.chainModify([5461, 4096]);
+        },
+        flags: {},
+        name: "Vampire",
 		rating: 3.5,
 		num: 11,
 	},
@@ -891,7 +916,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 2,
 		num: 251,
 	},
-	cleaner: { // upon switch in, clears users side of hazards; clears foes screens; removes terrain
+	cleaner: { // upon switch in, clears users side of hazards; clears foes screens; removes terrain (USING THIS ONE)
         onStart(pokemon) { 
 			this.add('-activate', pokemon, 'ability: Cleaner');
 			let activated = false;

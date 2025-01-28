@@ -2415,9 +2415,13 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 		name: "Sneaky Pebbles",
 		shortDesc: "If this Pokemon is hit by a physical attack, Stealth Rock is set on the opposing side.",
 	},
+	spidersoup2: {
+		name: "Spider Soup2",
+		shortDesc: "If this Pokemon is hit by a super-effective attack, Sticky Web is set on the opposing side.",
+	},
 	spidersoup: {
 		name: "Spider Soup",
-		shortDesc: "If this Pokemon is hit by a super-effective attack, Sticky Web is set on the opposing side.",
+		shortDesc: "If this Pokemon is hit by a move that makes contact, Sticky Web is set on the opposing side.",
 	},
 	firewall: {
 		name: "Firewall",
