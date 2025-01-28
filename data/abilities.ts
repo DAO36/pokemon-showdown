@@ -946,11 +946,11 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 2,
 		num: 251,
 	},
-	cleanera: { // rids users side only really+visually C O P Y P A S T A ['reflect', 'lightscreen', 'auroraveil', 'hologram', 'mist']
+	cleaner: { // rids users side only really+visually C O P Y P A S T A ['reflect', 'lightscreen', 'auroraveil', 'hologram', 'mist']
 		onPreStart(pokemon) { 
-			this.add('-activate', pokemon, 'ability: Cleanera');
+			this.add('-activate', pokemon, 'ability: Cleaner');
 			let activated = false;
-            for (const sideCondition of ['reflect', 'lightscreen', 'auroraveil']) {
+            for (const sideCondition of ['reflect', 'lightscreen', 'auroraveil', 'hologram', 'mist', 'safeguard']) {
                 for (const side of [...pokemon.side.foeSidesWithConditions()]) {
                     if (side.getSideCondition(sideCondition)) {
                         if (!activated) {
@@ -977,7 +977,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			return success;  	
 		},
 		flags: {},
-		name: "CleanerA",
+		name: "Cleaner",
 		rating: 2,
 		num: 251,
 	},
