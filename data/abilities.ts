@@ -938,12 +938,15 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 						this.add('-sideend', pokemon.side, this.dex.conditions.get(condition).name);
 					}
 				}
-				const targetCondition = ['reflect', 'lightscreen', 'auroraveil', 'hologram', 'mist'];
-			    for (const condition of sideConditions) {
-				if (pokemon.hp && pokemon.side.removeSideCondition(condition)) {
-					this.add('-sideend', pokemon.side, this.dex.conditions.get(condition).name);
-				}
-			} 	
+				const removeTarget = [
+					'reflect', 'lightscreen', 'auroraveil', 'safeguard', 'mist',
+				]; 
+				for (const targetCondition of removeTarget) {
+					if (pokemon.side.removeSideCondition(targetCondition)) { 
+						this.add('-sideend', pokemon.side, this.dex.conditions.get(targetCondition).name);
+						success = true;
+					}
+				} 
 			this.field.clearTerrain(); 
 			return success;
 		},
@@ -983,6 +986,26 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		},
 		flags: {},
 		name: "Cleaner5",
+		rating: 2,
+		num: 251,
+	},
+	ncleaner: {
+		onStart(pokemon) {
+			let activated = false;
+			for (const sideCondition of ['reflect', 'lightscreen', 'auroraveil']) {
+				for (const side of [pokemon.side, ...pokemon.side.foeSidesWithConditions()]) {
+					if (side.getSideCondition(sideCondition)) {
+						if (!activated) {
+							this.add('-activate', pokemon, 'ability: Screen Cleaner');
+							activated = true;
+						}
+						side.removeSideCondition(sideCondition);
+					}
+				}
+			}
+		},
+		flags: {},
+		name: "Screen Cleaner",
 		rating: 2,
 		num: 251,
 	},
