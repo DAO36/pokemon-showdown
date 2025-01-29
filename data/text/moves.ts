@@ -3336,6 +3336,11 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		desc: "The user swaps all its stat stage changes with the target.",
 		shortDesc: "Swaps all stat changes with target.",
 	},
+	ahoy: {
+		name: "Ahoy",
+		desc: "The user copies the target's stat changes, and then clears the target's stat chnages.",
+		shortDesc: "Copies target's stats on hit; clears target's stats.",
+	},
 	heatcrash: {
 		name: "Heat Crash",
 		desc: "The power of this move depends on (user's weight / target's weight), rounded down. Power is equal to 120 if the result is 5 or more, 100 if 4, 80 if 3, 60 if 2, and 40 if 1 or less. Damage doubles and no accuracy check is done if the target has used Minimize while active.",
@@ -6977,11 +6982,6 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	strangesteam: {
 		name: "Strange Steam",
-		desc: "Has a 20% chance to confuse the target.",
-		shortDesc: "20% chance to confuse the target.",
-	},
-	ahoy: {
-		name: "Ahoy",
 		desc: "Has a 20% chance to confuse the target.",
 		shortDesc: "20% chance to confuse the target.",
 	},

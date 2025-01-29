@@ -889,14 +889,17 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		pp: 10,
 		priority: 0,
 		flags: {protect: 1, contact: 1, mirror: 1},
-		secondary: {
-			chance: 20,
-			volatileStatus: 'confusion',
+		onHit(target, source) {
+			this.add('-copyboost', source, target);
+		},	
+		onAfterHit(target) { 	 
+		this.add('-clearboost', target);
 		},
+		secondary: null,
 		target: "normal",
 		type: "Water",
 	},
-	yanderestrike: { // pursuit copy
+	yanderestrike: { // pursuit copy 
 		num: 228,
 		accuracy: 100,
 		basePower: 40,
