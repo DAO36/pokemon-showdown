@@ -605,7 +605,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	},
 	piracy: { // reskin of Oppurtunist -clearpositiveboost
 		onPreStart(pokemon) { 
-			const foe = pokemon.allies()[0];
+			const foe = pokemon.foes()[0];
 			if (!foe) return;
 
 			let i: BoostID;
@@ -624,8 +624,8 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			}
 			this.add('-copyboost', pokemon, foe, '[from] ability: Piracy');
 		},
-		onStart(target) {
-			this.add('-clearpositiveboost', target);
+		onStart(foe) {
+			this.add('-clearpositiveboost', foe);
 		},	
 		flags: {},
 		name: "Piracy",
