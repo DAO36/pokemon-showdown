@@ -642,7 +642,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		},
 		onStart(target) { 
 			target.clearBoosts();
-			this.add('-swapboost', target);
+			this.add('-clearboost', target);
 		},
 		flags: {},
 		name: "Piracy",
