@@ -585,8 +585,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		num: 276,
 	},
 	archive: { // WIP IN PROGRESS
-		onStart(target) { 
-			target.clearBoosts();
+		onStart(target) {  
 			this.add('-swapboost', target);
 		},
 		flags: {},
