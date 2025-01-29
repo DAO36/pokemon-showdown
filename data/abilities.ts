@@ -585,18 +585,25 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		num: 276,
 	},
 	piracy2: { // reskin of Oppurtunist
-		onFoeAfterBoost(boost, target, source, effect) {
-			if (effect?.name === 'Piracy2' || effect?.name === 'Mirror Herb') return;
-			const pokemon = this.effectState.target;
-			const positiveBoosts: Partial<BoostsTable> = {};
+		onPreStart(pokemon) {  
+			const foe = pokemon.foes()[0];
+			if (!foe) return;
+
 			let i: BoostID;
-			for (i in boost) {
-				if (boost[i]! > 0) {
-					positiveBoosts[i] = boost[i];
-				}
+			for (i in foe.boosts) {
+				pokemon.boosts[i] = foe.boosts[i];
 			}
-			if (Object.keys(positiveBoosts).length < 1) return;
-			this.boost(positiveBoosts, pokemon);
+			const volatilesToCopy = ['dragoncheer', 'focusenergy', 'gmaxchistrike', 'laserfocus'];
+			// we need to be sure to remove all the overlapping crit volatiles before trying to add any
+			for (const volatile of volatilesToCopy) pokemon.removeVolatile(volatile);
+			for (const volatile of volatilesToCopy) {
+				if (foe.volatiles[volatile]) {
+					pokemon.addVolatile(volatile);
+					if (volatile === 'gmaxchistrike') pokemon.volatiles[volatile].layers = foe.volatiles[volatile].layers;
+					if (volatile === 'dragoncheer') pokemon.volatiles[volatile].hasDragonType = foe.volatiles[volatile].hasDragonType;
+				}
+			} 
+			this.add('-copyboost', pokemon, foe, '[from] ability: Piracy2');
 		},
 		flags: {},
 		name: "Piracy2",
@@ -626,8 +633,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		num: 290,
 	},
 	piracy: { // reskin of Oppurtunist -clearpositiveboost
-		onPreStart(pokemon) { 
-			const positiveBoosts: Partial<BoostsTable> = {};
+		onPreStart(pokemon) {  
 			const foe = pokemon.foes()[0];
 			if (!foe) return;
 
@@ -644,37 +650,19 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 					if (volatile === 'gmaxchistrike') pokemon.volatiles[volatile].layers = foe.volatiles[volatile].layers;
 					if (volatile === 'dragoncheer') pokemon.volatiles[volatile].hasDragonType = foe.volatiles[volatile].hasDragonType;
 				}
-			}
-			if (Object.keys(positiveBoosts).length < 1) return;
-			this.boost(positiveBoosts, pokemon);
+			} 
 			this.add('-copyboost', pokemon, foe, '[from] ability: Piracy');
 		},
-		onStart(foe) {
-			this.add('-clearpositiveboost', foe);
+		onStart(pokemon) {
+			const foe = pokemon.foes()[0];
+			if (!foe) return
+			this.add('-clearpositiveboost', pokemon);
 		},	
 		flags: {},
 		name: "Piracy",
 		rating: 0,
 		num: 294,
-	},
-	race: { 
-		onUpdate(pokemon) { 
-			const possibleTargets = pokemon.adjacentFoes().filter(
-				target => !target.getAbility().flags['notrace'] && target.ability !== 'noability'
-			);
-			if (!possibleTargets.length) return;
-
-			const target = this.sample(possibleTargets);
-			const ability = target.getAbility();
-			if (pokemon.setAbility(ability)) {
-				this.add('-ability', pokemon, ability, '[from] ability: Trace', '[of] ' + target);
-			}
-		},
-		flags: {failroleplay: 1, noreceiver: 1, noentrain: 1, notrace: 1},
-		name: "Trace",
-		rating: 2.5,
-		num: 36,
-	},
+	}, 
 	star: {
 		onStart(pokemon) {
 			const ally = pokemon.allies()[0];

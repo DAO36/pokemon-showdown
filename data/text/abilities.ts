@@ -2560,8 +2560,7 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	vampire: {
 		name: "Vampire",
-		desc: "This Vampire is immune to Water-type moves and drinks them up to restores 1/4 of its maximum HP, rounded down, when hit by a Water-type move.",
-		shortDesc: "This Vampire heals 1/4 of its max HP by drinking Water moves; Water immunity.",
+		shortDesc: "Healing moves heals 33% more HP; Giga Drain, Draining Kiss, etc.",
 	},
 	waterbubble: {
 		name: "Water Bubble",
