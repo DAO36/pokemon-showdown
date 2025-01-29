@@ -62,8 +62,8 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	stellar: {
 		name: "Stellar",
-		desc: "This Comet is not affected by the secondary effect of another Pokemon's attack; Cannot be made to flinch, or be struck by critical hits",
-		shortDesc: "Immune to secondary effects of other's attacks; Immune to flinching and crits.",
+		desc: "This Comet's Attack is raised by 1 stage if she attacks and knocks out another Pokemon. Prevents other Pokemon from lowering this Pokemon's stat stages.",
+		shortDesc: "Atk is raised by 1 if KOs another Pokemon. Stats cannot be lowered by others.",
 	},
 	highspecsrobot: {
 		name: "High Specs Robot",
@@ -199,9 +199,8 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	devildiva: {
 		name: "Devil Diva",
-		desc: "This Devil's Attack is raised by 1 stage if she attacks and knocks out another Pokemon.",
-		shortDesc: "This Devil's Attack is raised by 1 stage if she attacks and KOes another Pokemon.",
-	},
+			shortDesc: "Every move used by or against this Devil will always hit.",
+		},
 	thelegendofpolka: {
 		name: "The Legend of Polka",
 		desc: "This Pokemon's moves of 60 power or less have their power multiplied by 1.5, including Struggle. This effect comes after a move's effect changes its own power.",
@@ -225,10 +224,14 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 		desc: "On switch-in, this Succubus lowers the Special Attack of opposing Pokemon by 1 stage. Pokemon with the Inner Focus, Oblivious, Own Tempo, or Scrappy Abilities and Pokemon behind a substitute are immune.",
 		shortDesc: "On switch-in, this Succubus lowers the Sp. Atk of opponents by 1 stage."
 	},
+	fast: {
+		name: "Steadfast",
+		shortDesc: "If this Pokemon flinches, its Speed is raised by 1 stage.",
+	},
 	samurai: {
 		name: "Samurai",
-		desc: "This Samurai's Attack is raised by 1 stage if she attacks and knocks out another Pokemon.",
-		shortDesc: "This Samurai's Attack is raised by 1 stage if she attacks and KOes another Pokemon.",
+		desc: "This Samurai's Attack is raised by 1 stage if she attacks and knocks out another Pokemon. This Samurai's Attack is raised by 1 stage for each of its stat stages that is lowered by an opposing Pokemon.",
+		shortDesc: "Atk is raised by 1 if KOs another Pokemon; Atk is raised by 1 for each stat that is lowered by foe.",
 	},
 	firewall: {
 		name: "Firewall",
@@ -269,7 +272,8 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	moongoddess: {
 		name: "Moon Goddess",
-		shortDesc: "This Moon Goddess' Special Attack is raised by 1 stage when another Pokemon faints.",
+		desc: "This Moon Goddess is not affected by the secondary effect of another Pokemon's attack; Cannot be made to flinch, or be struck by critical hits",
+		shortDesc: "Immune to secondary effects of other's attacks; Immune to flinching and crits.",
 	},
 	erofi: {
 		name: "Erofi",

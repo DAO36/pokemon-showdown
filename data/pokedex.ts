@@ -19634,7 +19634,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		types: ["Fighting"],
 		gender: "F",
 		baseStats: {hp: 80, atk: 130, def: 90, spa: 110, spd: 80, spe: 110},
-		abilities: {0: "Defiant", 1: "Scrappy", H: "Sharpness", S: "Samurai"},
+		abilities: {0: "Steadfast", 1: "Scrappy", H: "Sharpness", S: "Samurai"},
 		heightm: 1.56,
 		weightkg: 55.5,
 		color: "Green",

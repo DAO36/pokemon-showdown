@@ -193,19 +193,30 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 2.5,
 		num: 270,
 	},
-	stellar: { // reskin of Shield Dust + immunity to flinch/crits [hmm idk about this one, might change]
-		onCriticalHit: false,
-		onTryAddVolatile(status, pokemon) {
-			if (status.id === 'flinch') return null;
+	stellar: { // combines Moxie with Clear Body
+		onSourceAfterFaint(length, target, source, effect) {
+			if (effect && effect.effectType === 'Move') {
+				this.boost({atk: length}, source);
+			}
 		},
-		onModifySecondaries(secondaries) {
-			this.debug('Stellar prevent secondary');
-			return secondaries.filter(effect => !!(effect.self || effect.dustproof));
+		onTryBoost(boost, target, source, effect) {
+			if (source && target === source) return;
+			let showMsg = false;
+			let i: BoostID;
+			for (i in boost) {
+				if (boost[i]! < 0) {
+					delete boost[i];
+					showMsg = true;
+				}
+			}
+			if (showMsg && !(effect as ActiveMove).secondaries && effect.id !== 'octolock') {
+				this.add("-fail", target, "unboost", "[from] ability: Clear Body", "[of] " + target);
+			}
 		},
-		flags: {breakable: 1},
+		flags: {},
 		name: "Stellar",
-		rating: 2,
-		num: 19,
+		rating: 3,
+		num: 128,
 	},
 	highspecsrobot: { // reskin of Surge Surfer
 		onModifySpe(spe) {
@@ -678,11 +689,16 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3,
 		num: 207,
 	},
-	devildiva: { // reskin of Moxie
-		onSourceAfterFaint(length, target, source, effect) {
-			if (effect && effect.effectType === 'Move') {
-				this.boost({atk: length}, source);
+	devildiva: { // reskin of No Guard
+		onAnyInvulnerabilityPriority: 1,
+		onAnyInvulnerability(target, source, move) {
+			if (move && (source === this.effectState.target || target === this.effectState.target)) return 0;
+		},
+		onAnyAccuracy(accuracy, target, source, move) {
+			if (move && (source === this.effectState.target || target === this.effectState.target)) {
+				return true;
 			}
+			return accuracy;
 		},
 		flags: {},
 		name: "Devil Diva",
@@ -769,7 +785,22 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 4,
 		num: 22,
 	},
-	samurai: { // reskin of Moxie
+	samurai: { // combines Moxie with Defiant
+		onAfterEachBoost(boost, target, source, effect) {
+			if (!source || target.isAlly(source)) {
+				return;
+			}
+			let statsLowered = false;
+			let i: BoostID;
+			for (i in boost) {
+				if (boost[i]! < 0) {
+					statsLowered = true;
+				}
+			}
+			if (statsLowered) {
+				this.boost({atk: 1}, target, target, null, false, true);
+			}
+		},
 		onSourceAfterFaint(length, target, source, effect) {
 			if (effect && effect.effectType === 'Move') {
 				this.boost({atk: length}, source);
@@ -1012,15 +1043,19 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 4.5,
 		num: 177,
 	},
-	moongoddess: { // reskin of Soul-Heart [hmm myabe change this one as well ?????]
-		onAnyFaintPriority: 1,
-		onAnyFaint() {
-			this.boost({spa: 1}, this.effectState.target);
+	moongoddess: { // reskin of Shield Dust + immunity to flinch/crits 
+		onCriticalHit: false,
+		onTryAddVolatile(status, pokemon) {
+			if (status.id === 'flinch') return null;
 		},
-		flags: {},
+		onModifySecondaries(secondaries) {
+			this.debug('Moon Goddess prevent secondary');
+			return secondaries.filter(effect => !!(effect.self || effect.dustproof));
+		},
+		flags: {breakable: 1},
 		name: "Moon Goddess",
-		rating: 3.5,
-		num: 220,
+		rating: 2,
+		num: 19,
 	},
 	erofi: { // reskin of Sap Sipper but for Dark type immunity instead of Grass
 		onTryHitPriority: 1,
