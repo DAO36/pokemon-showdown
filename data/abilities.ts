@@ -193,7 +193,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 2.5,
 		num: 270,
 	},
-	stellar: { // reskin of Shield Dust + immunity to flinch/crits
+	stellar: { // reskin of Shield Dust + immunity to flinch/crits [hmm idk about this one, might change]
 		onCriticalHit: false,
 		onTryAddVolatile(status, pokemon) {
 			if (status.id === 'flinch') return null;
@@ -350,7 +350,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3.5,
 		num: 11,
 	},
-	elvishdancing: { // reskin of Synchronize
+	elvishdancing: { // reskin of Synchronize [hmm maybe this one too?]
 		onAfterSetStatus(status, target, source, effect) {
 			if (!source || source === target) return;
 			if (effect && effect.id === 'toxicspikes') return;
@@ -1012,7 +1012,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 4.5,
 		num: 177,
 	},
-	moongoddess: { // reskin of Soul-Heart
+	moongoddess: { // reskin of Soul-Heart [hmm myabe change this one as well ?????]
 		onAnyFaintPriority: 1,
 		onAnyFaint() {
 			this.boost({spa: 1}, this.effectState.target);
@@ -1206,16 +1206,6 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		name: "Death",
 		rating: 4,
 		num: 22,
-	},
-	death2: { // combines Soul-Heart and Moxie (UNUSED)
-		onAnyFaintPriority: 1,
-		onAnyFaint() {
-			this.boost({spa: 1, atk: 1}, this.effectState.target);
-		},
-		flags: {},
-		name: "Death2",
-		rating: 4.5,
-		num: 220,
 	},
 	forbiddenwah: { // reskin of Rough Skin, but only affects Special Moves instead of Contact Moves
 		onDamagingHitOrder: 1,
