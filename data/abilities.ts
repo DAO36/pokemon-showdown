@@ -584,39 +584,9 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3.5,
 		num: 276,
 	},
-	archive: { // combines oppoturnist with costar but for foe [WIP] 
-		onPreStart(pokemon) {  
-			const foe = pokemon.foes()[0];
-			if (!foe) return;
-
-			let i: BoostID;
-			for (i in foe.boosts) {
-				pokemon.boosts[i] = foe.boosts[i];
-			}
-			const volatilesToCopy = ['dragoncheer', 'focusenergy', 'gmaxchistrike', 'laserfocus'];
-			// we need to be sure to remove all the overlapping crit volatiles before trying to add any
-			for (const volatile of volatilesToCopy) pokemon.removeVolatile(volatile);
-			for (const volatile of volatilesToCopy) {
-				if (foe.volatiles[volatile]) {
-					pokemon.addVolatile(volatile);
-					if (volatile === 'gmaxchistrike') pokemon.volatiles[volatile].layers = foe.volatiles[volatile].layers;
-					if (volatile === 'dragoncheer') pokemon.volatiles[volatile].hasDragonType = foe.volatiles[volatile].hasDragonType;
-				}
-			} 
-			this.add('-copyboost', pokemon, foe, '[from] ability: Archive'); 
-		},
-		onFoeAfterBoost(boost, target, source, effect) {
-			if (effect?.name === 'Archive' || effect?.name === 'Mirror Herb') return;
-			const pokemon = this.effectState.target;
-			const positiveBoosts: Partial<BoostsTable> = {};
-			let i: BoostID;
-			for (i in boost) {
-				if (boost[i]! > 0) {
-					positiveBoosts[i] = boost[i];
-				}
-			}
-			if (Object.keys(positiveBoosts).length < 1) return;
-			this.boost(positiveBoosts, pokemon);
+	archive: { // WIP IN PROGRESS
+		onStart(target) {  
+			this.add('spectralthief', target);
 		},
 		flags: {},
 		name: "Archive",
@@ -649,7 +619,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3,
 		num: 290,
 	}, 
-	piracy: { // reskin of Costar but copies foes stats insetad of allies and also clears foes stats {WIP}
+	piracy: { // reskin of Costar but copies foes stats insetad of allies and also clears foes stats {WIP} 
 		onPreStart(pokemon) {  
 			const foe = pokemon.foes()[0];
 			if (!foe) return;
@@ -670,11 +640,9 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			} 
 			this.add('-copyboost', pokemon, foe, '[from] ability: Piracy'); 
 		},
-		onStart(pokemon) {
-			this.add('-clearallboost');
-			for (const side of [...pokemon.side.foes()]) {
-				pokemon.clearBoosts();
-			} 
+		onStart(target) { 
+			target.clearBoosts();
+			this.add('-swapboost', target);
 		},
 		flags: {},
 		name: "Piracy",
@@ -1418,7 +1386,27 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 5,
 		num: -19,		
 	},
-	archivist: { // reskin of Oppurtunist
+	archivist: { // combines Oppurtunist with Costar but copies Foes stats instead of Allys stats
+		onPreStart(pokemon) {  
+			const foe = pokemon.foes()[0];
+			if (!foe) return;
+
+			let i: BoostID;
+			for (i in foe.boosts) {
+				pokemon.boosts[i] = foe.boosts[i];
+			}
+			const volatilesToCopy = ['dragoncheer', 'focusenergy', 'gmaxchistrike', 'laserfocus'];
+			// we need to be sure to remove all the overlapping crit volatiles before trying to add any
+			for (const volatile of volatilesToCopy) pokemon.removeVolatile(volatile);
+			for (const volatile of volatilesToCopy) {
+				if (foe.volatiles[volatile]) {
+					pokemon.addVolatile(volatile);
+					if (volatile === 'gmaxchistrike') pokemon.volatiles[volatile].layers = foe.volatiles[volatile].layers;
+					if (volatile === 'dragoncheer') pokemon.volatiles[volatile].hasDragonType = foe.volatiles[volatile].hasDragonType;
+				}
+			} 
+			this.add('-copyboost', pokemon, foe, '[from] ability: Archivist'); 
+		},
 		onFoeAfterBoost(boost, target, source, effect) {
 			if (effect?.name === 'Archivist' || effect?.name === 'Mirror Herb') return;
 			const pokemon = this.effectState.target;
