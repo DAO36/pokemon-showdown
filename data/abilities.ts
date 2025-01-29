@@ -1376,9 +1376,9 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		num: -19,		
 	},
 	chaos2: { // reskin of Costar but copies foes stats insetad of allies and also clears foes stats   
-		onPreStart(target) {   
-			target.clearBoosts();
-			this.add('-invertboost', target);
+		onPreStart(pokemon) {   
+			pokemon.clearBoosts();
+			this.add('-invertboost', pokemon);
 		},
 		flags: {},
 		name: "Chaos2",
