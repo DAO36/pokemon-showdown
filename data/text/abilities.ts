@@ -10,6 +10,47 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 
 		damage: "  [POKEMON] was <0rRvqt3D...!",
 	},
+	kamikaze: {
+		name: "Kamikaze",
+		desc: "If the user is knocked out by a Pokemon, that Pokemon loses 1/2 of its maximum HP, rounded down. If any active Pokemon has the Damp Ability, this effect is prevented.",
+		shortDesc: "If this Pokemon is KO'e'd, the attacker loses 1/2 its max HP.",
+
+		damage: "  [SOURCE] blew themselves up!",
+	},
+	nuke: {
+		name: "Nuke",
+		desc: "If the user is knocked out by a Pokemon, that Pokemon is OHKO'd.",
+		shortDesc: "If the user is KO'd by a Pokemon, that Pokemon also gets KO'd.",
+
+		damage: "  [POKEMON] got nuked!",
+	},
+	babydonthurtme: {
+		name: "Baby Dont Hurt Me",
+		desc: "Pokemon that attack this Pokemon lose 1/8 of their maximum HP, rounded down.",
+		shortDesc: "Pokemon that attack this Pokemon lose 1/8 of their max HP.",
+
+		damage: "  [POKEMON] was hurt trying to hurt you!",
+	},
+	stockmarketcrash: {
+		name: "Stock Market Crash",
+		shortDesc: "On switch-in, all Pokemon have their stat stages reset to 0.", 
+	},
+	airforce: {
+		name: "Air Force",
+		shortDesc: "On switch-in, this Pokemon summons Tailwind.",
+	},
+	spiky: {
+		name: "Spiky",
+		shortDesc: "If this Pokemon is hit by a physical attack, Spikes are set on the opposing side.",
+	},
+	sneakypebbles: {
+		name: "Sneaky Pebbles",
+		shortDesc: "If this Pokemon is hit by a physical attack, Stealth Rock is set on the opposing side.",
+	},
+	purepower: {
+		name: "Pure Power",
+		shortDesc: "This Pokemon's Special Attack is doubled.",
+	},
 	adaptability: {
 		name: "Adaptability",
 		desc: "This Pokemon's moves that match one of its types have a same-type attack bonus (STAB) of 2 instead of 1.5.",
@@ -30,20 +71,6 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 		shortDesc: "If this Pokemon is KOed with a contact move, that move's user loses 1/4 its max HP.",
 
 		damage: "  [POKEMON] was hurt!",
-	},
-	kamikaze: {
-		name: "Kamikaze",
-		desc: "If the user is knocked out by a Pokemon, that Pokemon loses 1/2 of its maximum HP, rounded down. If any active Pokemon has the Damp Ability, this effect is prevented.",
-		shortDesc: "If this Pokemon is KOed, the attacker loses 1/2 its max HP.",
-
-		damage: "  [SOURCE] blew themselves up!",
-	},
-	nuke: {
-		name: "Nuke",
-		desc: "If the user is knocked out by a Pokemon, that Pokemon is OHKO'd.",
-		shortDesc: "If the user is KO'd by a Pokemon, that Pokemon also gets KO'd.",
-
-		damage: "  [POKEMON] got nuked!",
 	},
 	airlock: {
 		name: "Air Lock",
@@ -476,10 +503,6 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	gravitationalpull: {
 		name: "Gravitational Pull",
 		shortDesc: "On switch-in, this BEEG Astrogirl summons Gravity.",
-	},
-	airforce: {
-		name: "Air Force",
-		shortDesc: "On switch-in, this Pokemon summons Tailwind.",
 	},
 	drought: {
 		name: "Drought",
@@ -1380,10 +1403,6 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 		desc: "On switch-in, this Pirate copies the target's stat changes. Then the target have their stat stages reset to 0.",
 		shortDesc: "Copies stat changes of target on switch-in; Clears target's stat changes.",
 	},
-	stockmarketcrash: {
-		name: "Stock Market Crash",
-		shortDesc: "On switch-in, all Pokemon have their stat stages reset to 0.", 
-	},
 	orichalcumpulse: {
 		name: "Orichalcum Pulse",
 		shortDesc: "On switch-in, summons Sunny Day. During Sunny Day, Attack is 1.3333x.",
@@ -1628,10 +1647,6 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 		desc: "This Diva's sound-based moves have her power multiplied by 1.3. Also iimune to sound based moves and effects",
 		shortDesc: "Immune to sound based moves. Her own sounds have 1.3x power.",
 	},
-	purepower: {
-		name: "Pure Power",
-		shortDesc: "This Pokemon's Special Attack is doubled.",
-	},
 	purifyingsalt: {
 		name: "Purifying Salt",
 		desc: "This Pokemon cannot become affected by a non-volatile status condition or Yawn. If a Pokemon uses a Ghost-type attack against this Pokemon, that Pokemon's offensive stat is halved when calculating the damage to this Pokemon.",
@@ -1776,13 +1791,6 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 		},
 
 		damage: "  [POKEMON] was hurt!",
-	},
-	babydonthurtme: {
-		name: "Baby Dont Hurt Me",
-		desc: "Pokemon that attack this Pokemon lose 1/8 of their maximum HP, rounded down.",
-		shortDesc: "Pokemon that attack this Pokemon lose 1/8 of their max HP.",
-
-		damage: "  [POKEMON] was hurt trying to hurt you!",
 	},
 	forbiddenwah: {
 		name: "Forbidden Wah",
@@ -2411,14 +2419,6 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	toxicdebris: {
 		name: "Toxic Debris",
 		shortDesc: "If this Pokemon is hit by a physical attack, Toxic Spikes are set on the opposing side.",
-	},
-	spiky: {
-		name: "Spiky",
-		shortDesc: "If this Pokemon is hit by a physical attack, Spikes are set on the opposing side.",
-	},
-	sneakypebbles: {
-		name: "Sneaky Pebbles",
-		shortDesc: "If this Pokemon is hit by a physical attack, Stealth Rock is set on the opposing side.",
 	},
 	spidersoup2: {
 		name: "Spider Soup2",
