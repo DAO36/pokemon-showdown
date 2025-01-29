@@ -584,7 +584,47 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3.5,
 		num: 276,
 	},
-	piracy2: { // reskin of Oppurtunist
+	archive: { // combines oppoturnist with costar but for foe [WIP]
+		onFoeAfterBoost(boost, target, source, effect) {
+			if (effect?.name === 'Archive' || effect?.name === 'Mirror Herb') return;
+			const pokemon = this.effectState.target;
+			const positiveBoosts: Partial<BoostsTable> = {};
+			let i: BoostID;
+			for (i in boost) {
+				if (boost[i]! > 0) {
+					positiveBoosts[i] = boost[i];
+				}
+			}
+			if (Object.keys(positiveBoosts).length < 1) return;
+			this.boost(positiveBoosts, pokemon);
+		},
+		onPreStart(pokemon) {  
+			const foe = pokemon.foes()[0];
+			if (!foe) return;
+
+			let i: BoostID;
+			for (i in foe.boosts) {
+				pokemon.boosts[i] = foe.boosts[i];
+			}
+			const volatilesToCopy = ['dragoncheer', 'focusenergy', 'gmaxchistrike', 'laserfocus'];
+			// we need to be sure to remove all the overlapping crit volatiles before trying to add any
+			for (const volatile of volatilesToCopy) pokemon.removeVolatile(volatile);
+			for (const volatile of volatilesToCopy) {
+				if (foe.volatiles[volatile]) {
+					pokemon.addVolatile(volatile);
+					if (volatile === 'gmaxchistrike') pokemon.volatiles[volatile].layers = foe.volatiles[volatile].layers;
+					if (volatile === 'dragoncheer') pokemon.volatiles[volatile].hasDragonType = foe.volatiles[volatile].hasDragonType;
+				}
+			} 
+			this.add('-copyboost', pokemon, foe, '[from] ability: Archive');
+			this.add('-clearnegativeboost', pokemon);
+		},
+		flags: {},
+		name: "Archive",
+		rating: 3,
+		num: 290,
+	},
+	piracy2: { // reskin of Costar but for foe ionstead of ally [SEMI WIP]
 		onPreStart(pokemon) {  
 			const foe = pokemon.foes()[0];
 			if (!foe) return;
@@ -633,7 +673,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3,
 		num: 290,
 	},
-	piracy: { // reskin of Oppurtunist -clearpositiveboost
+	piracy: { // reskin of Costar but copies foes stats insetad of allies and also clears foes stats {WIP}
 		onPreStart(pokemon) {  
 			const foe = pokemon.foes()[0];
 			if (!foe) return;
@@ -656,15 +696,34 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			this.add('-clearnegativeboost', pokemon);
 		},
 		onStart(target) {
-			const foe = target.foes()[0];
-			if (!foe) return
+			target.clearBoosts();
 			this.add('-clearboost', target);
-		},	
+		},
 		flags: {},
 		name: "Piracy",
 		rating: 0,
 		num: 294,
 	}, 
+	aner: {
+		onStart(pokemon) {
+			let activated = false;
+			for (const sideCondition of ['reflect', 'lightscreen', 'auroraveil']) {
+				for (const side of [pokemon.side, ...pokemon.side.foeSidesWithConditions()]) {
+					if (side.getSideCondition(sideCondition)) {
+						if (!activated) {
+							this.add('-activate', pokemon, 'ability: Screen Cleaner');
+							activated = true;
+						}
+						side.removeSideCondition(sideCondition);
+					}
+				}
+			}
+		},
+		flags: {},
+		name: "Screen Cleaner",
+		rating: 2,
+		num: 251,
+	},
 	star: {
 		onStart(pokemon) {
 			const ally = pokemon.allies()[0];
