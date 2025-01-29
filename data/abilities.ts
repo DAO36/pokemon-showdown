@@ -636,13 +636,11 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 					pokemon.addVolatile(volatile);
 					if (volatile === 'gmaxchistrike') pokemon.volatiles[volatile].layers = foe.volatiles[volatile].layers;
 					if (volatile === 'dragoncheer') pokemon.volatiles[volatile].hasDragonType = foe.volatiles[volatile].hasDragonType;
-				}
-			} 
-			this.add('-copyboost', pokemon, foe, '[from] ability: Piracy'); 
-		},
-		onStart(target) { 
-			target.clearBoosts();
-			this.add('-clearboost', target);
+				} 
+			this.add('-copyboost', pokemon, foe, '[from] ability: Piracy');  
+			}
+			foe.clearBoosts();
+			this.add('-clearboost', foe);
 		},
 		flags: {},
 		name: "Piracy",
