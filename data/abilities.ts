@@ -621,6 +621,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	}, 
 	piracy: { // reskin of Costar but copies foes stats insetad of allies and also clears foes stats {WIP} 
 		onPreStart(pokemon) {  
+			this.add('-activate', pokemon, 'ability: Piracy');
 			const foe = pokemon.foes()[0];
 			if (!foe) return;
 
@@ -637,7 +638,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 					if (volatile === 'gmaxchistrike') pokemon.volatiles[volatile].layers = foe.volatiles[volatile].layers;
 					if (volatile === 'dragoncheer') pokemon.volatiles[volatile].hasDragonType = foe.volatiles[volatile].hasDragonType;
 				} 
-			this.add('-copyboost', pokemon, foe, '[from] ability: Piracy');  
+			this.add('-copyboost', pokemon, foe);  
 			}
 			foe.clearBoosts();
 			this.add('-clearboost', foe);
