@@ -603,7 +603,8 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 					if (volatile === 'dragoncheer') pokemon.volatiles[volatile].hasDragonType = foe.volatiles[volatile].hasDragonType;
 				}
 			} 
-			this.add('-copyboost', pokemon, foe, '[from] ability: Piracy2');
+			this.add('-copyboost', pokemon, foe, '[from] ability: Piracy');
+			this.add('-clearnegativeboost', pokemon);
 		},
 		flags: {},
 		name: "Piracy2",
@@ -652,11 +653,12 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 				}
 			} 
 			this.add('-copyboost', pokemon, foe, '[from] ability: Piracy');
+			this.add('-clearnegativeboost', pokemon);
 		},
-		onStart(pokemon) {
-			const foe = pokemon.foes()[0];
+		onStart(target) {
+			const foe = target.foes()[0];
 			if (!foe) return
-			this.add('-clearpositiveboost', pokemon);
+			this.add('-clearboost', target);
 		},	
 		flags: {},
 		name: "Piracy",
