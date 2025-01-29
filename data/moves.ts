@@ -882,7 +882,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	},
 	ahoy: {
 		num: 712,
-		accuracy: 95,
+		accuracy: 90,
 		basePower: 80,
 		category: "Physical",
 		name: "Ahoy",

@@ -88,6 +88,18 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 5,
 		num: 24,
 	},
+	stockmarketcrash: { // clears all stat changes of all pokemon on the field upon switch-in 
+		onStart(pokemon) {
+			this.add('-clearallboost');
+			for (const pokemon of this.getAllPokemon()) {
+				pokemon.clearBoosts();
+			}
+		},
+		flags: {},
+		name: "Stock Market Crash",
+		rating: 0,
+		num: 294,
+	}, 
 	airforce: { // sets up tailwind on switch-in :o
         onStart(source) {
             source.side.addSideCondition('tailwind', source);
@@ -584,42 +596,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3.5,
 		num: 276,
 	},
-	archive: { // WIP IN PROGRESS
-		onStart(target) {  
-			this.add('-swapboost', target);
-		},
-		flags: {},
-		name: "Archive",
-		rating: 3,
-		num: 290,
-	},
-	piracy2: { // reskin of Costar but for foe ionstead of ally [SEMI WIP]
-		onPreStart(pokemon) {  
-			const foe = pokemon.foes()[0];
-			if (!foe) return;
-
-			let i: BoostID;
-			for (i in foe.boosts) {
-				pokemon.boosts[i] = foe.boosts[i];
-			}
-			const volatilesToCopy = ['dragoncheer', 'focusenergy', 'gmaxchistrike', 'laserfocus'];
-			// we need to be sure to remove all the overlapping crit volatiles before trying to add any
-			for (const volatile of volatilesToCopy) pokemon.removeVolatile(volatile);
-			for (const volatile of volatilesToCopy) {
-				if (foe.volatiles[volatile]) {
-					pokemon.addVolatile(volatile);
-					if (volatile === 'gmaxchistrike') pokemon.volatiles[volatile].layers = foe.volatiles[volatile].layers;
-					if (volatile === 'dragoncheer') pokemon.volatiles[volatile].hasDragonType = foe.volatiles[volatile].hasDragonType;
-				}
-			} 
-			this.add('-copyboost', pokemon, foe, '[from] ability: Piracy'); 
-		},
-		flags: {},
-		name: "Piracy2",
-		rating: 3,
-		num: 290,
-	}, 
-	piracy: { // reskin of Costar but copies foes stats insetad of allies and also clears foes stats {WIP} 
+	piracy: { // reskin of Costar but copies foes stats insetad of allies and also clears foes stats   
 		onPreStart(pokemon) {   
 			const foe = pokemon.foes()[0];
 			if (!foe) return;
@@ -648,18 +625,6 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 0,
 		num: 294,
 	},
-	boostedstats: { // clears all stat changes of all pokemon on the field upon switch-in {POTENITAL ABILITY????? 
-		onStart(pokemon) {
-			this.add('-clearallboost');
-			for (const pokemon of this.getAllPokemon()) {
-				pokemon.clearBoosts();
-			}
-		},
-		flags: {},
-		name: "boostedstats",
-		rating: 0,
-		num: 294,
-	}, 
 	highonasacoco: { // reskin of Poison Heal
 		onDamagePriority: 1,
 		onDamage(damage, target, source, effect) {

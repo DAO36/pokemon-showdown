@@ -3338,8 +3338,10 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	ahoy: {
 		name: "Ahoy",
-		desc: "The user copies the target's stat changes, and then clears the target's stat chnages.",
-		shortDesc: "Copies target's stats on hit; clears target's stats.",
+		desc: "The target's stat stages greater than 0 are stolen from it and applied to the user before dealing damage.",
+		shortDesc: "Steals target's boosts before dealing damage.",
+
+		clearBoost: "  [SOURCE] stole the target's boosted stats!",
 	},
 	heatcrash: {
 		name: "Heat Crash",

@@ -1377,7 +1377,12 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	piracy: {
 		name: "Piracy",
-		shortDesc: "When an opposing Pokemon has a stat stage raised, she pirates the effect.",
+		desc: "On switch-in, this Pirate copies the target's stat changes. Then the target have their stat stages reset to 0.",
+		shortDesc: "Copies stat changes of target on switch-in; Clears target's stat changes.",
+	},
+	stockmarketcrash: {
+		name: "Stock Market Crash",
+		shortDesc: "On switch-in, all Pokemon have their stat stages reset to 0.", 
 	},
 	orichalcumpulse: {
 		name: "Orichalcum Pulse",
