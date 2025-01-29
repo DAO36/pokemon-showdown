@@ -892,8 +892,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		onHit(boost, target, source) {
 			this.add('-copyboost', source, target);
 			const pokemon = this.effectState.target;
-			const positiveBoosts: Partial<BoostsTable> = {};
-			let i: BoostID; 
+			const positiveBoosts: Partial<BoostsTable> = {}; 
 			if (Object.keys(positiveBoosts).length < 1) return;
 			this.boost(positiveBoosts, pokemon);
 		},	
