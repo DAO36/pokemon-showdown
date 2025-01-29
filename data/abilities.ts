@@ -622,7 +622,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 					if (volatile === 'dragoncheer') pokemon.volatiles[volatile].hasDragonType = foe.volatiles[volatile].hasDragonType;
 				}
 			}
-			this.add('-copyboost', pokemon, foe, '[from] ability: Star');
+			this.add('-copyboost', pokemon, foe, '[from] ability: Piracy');
 		},
 		onStart(target) {
 			this.add('-clearpositiveboost', target);
