@@ -843,7 +843,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 2,
 		num: 251,
 	},
-	cleaner4: {  // successfully clears visually and really all hazards and screens on both sides BUT only when user is hit by an attacc
+	cleaner4: {  // successfully clears visually and really ALL hazards and screens on both sides BUT only when user is hit by an attacc
 		onDamagingHitOrder: 1,
 		onDamagingHit(damage, target, source, move) {  
 			this.add('-activate', target, 'ability: Cleaner4');
@@ -1079,7 +1079,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		onBasePowerPriority: 23,
 		onBasePower(basePower, attacker, defender, move) {
 			if (move.flags['punch']) {
-				this.debug('Iron Fist boost');
+				this.debug('TonjokQueen boost');
 				return this.chainModify([4915, 4096]);
 			}
 		},
@@ -1317,7 +1317,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			this.field.addPseudoWeather('gravity', pokemon);
 		},
 		name: "Gravitational Pull",
-		rating: 1,
+		rating: 3,
 		num: -19,		
 	},
 	faunasweep: { // reskin of Surge Surfer but for Grass Terrain
