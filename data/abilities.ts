@@ -648,29 +648,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		name: "Piracy2",
 		rating: 3,
 		num: 290,
-	},
-	unist: {
-		onFoeAfterBoost(boost, target, source, effect) {
-			if (effect?.name === 'Opportunist' || effect?.name === 'Mirror Herb') return;
-			const pokemon = this.effectState.target;
-			const positiveBoosts: Partial<BoostsTable> = {};
-			let i: BoostID;
-			for (i in boost) {
-				if (boost[i]! > 0) {
-					positiveBoosts[i] = boost[i];
-				}
-			}
-			if (Object.keys(positiveBoosts).length < 1) return;
-			this.boost(positiveBoosts, pokemon);
-		},
-		onStart(foe) {
-			this.add('-clearpositiveboost', foe);
-		},	
-		flags: {},
-		name: "Opportunist",
-		rating: 3,
-		num: 290,
-	},
+	}, 
 	piracy: { // reskin of Costar but copies foes stats insetad of allies and also clears foes stats {WIP}
 		onPreStart(pokemon) {  
 			const foe = pokemon.foes()[0];
@@ -694,61 +672,27 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		},
 		onStart(pokemon) {
 			this.add('-clearallboost');
-			for (const pokemon of this.getAllPokemon()) {
+			for (const side of [...pokemon.side.foes()]) {
 				pokemon.clearBoosts();
-			}
+			} 
 		},
 		flags: {},
 		name: "Piracy",
 		rating: 0,
 		num: 294,
-	}, 
-	aner: {
-		onStart(pokemon) {
-			let activated = false;
-			for (const sideCondition of ['reflect', 'lightscreen', 'auroraveil']) {
-				for (const side of [pokemon.side, ...pokemon.side.foeSidesWithConditions()]) {
-					if (side.getSideCondition(sideCondition)) {
-						if (!activated) {
-							this.add('-activate', pokemon, 'ability: Screen Cleaner');
-							activated = true;
-						}
-						side.removeSideCondition(sideCondition);
-					}
-				}
-			}
-		},
-		flags: {},
-		name: "Screen Cleaner",
-		rating: 2,
-		num: 251,
 	},
-	star: {
+	boostedstats: { // clears all stat changes of all pokemon on the field upon switch-in {POTENITAL ABILITY????? 
 		onStart(pokemon) {
-			const ally = pokemon.allies()[0];
-			if (!ally) return;
-
-			let i: BoostID;
-			for (i in ally.boosts) {
-				pokemon.boosts[i] = ally.boosts[i];
+			this.add('-clearallboost');
+			for (const pokemon of this.getAllPokemon()) {
+				pokemon.clearBoosts();
 			}
-			const volatilesToCopy = ['dragoncheer', 'focusenergy', 'gmaxchistrike', 'laserfocus'];
-			// we need to be sure to remove all the overlapping crit volatiles before trying to add any
-			for (const volatile of volatilesToCopy) pokemon.removeVolatile(volatile);
-			for (const volatile of volatilesToCopy) {
-				if (ally.volatiles[volatile]) {
-					pokemon.addVolatile(volatile);
-					if (volatile === 'gmaxchistrike') pokemon.volatiles[volatile].layers = ally.volatiles[volatile].layers;
-					if (volatile === 'dragoncheer') pokemon.volatiles[volatile].hasDragonType = ally.volatiles[volatile].hasDragonType;
-				}
-			}
-			this.add('-copyboost', pokemon, ally, '[from] ability: Star');
 		},
 		flags: {},
-		name: "Star",
+		name: "boostedstats",
 		rating: 0,
 		num: 294,
-	},
+	}, 
 	highonasacoco: { // reskin of Poison Heal
 		onDamagePriority: 1,
 		onDamage(damage, target, source, effect) {
