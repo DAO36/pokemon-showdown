@@ -773,8 +773,8 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	},
 	carrotstrike: { // dual wingbeat but grass
 		num: 370,
-		accuracy: 95,
-		basePower: 55,
+		accuracy: true,
+		basePower: 50,
 		category: "Physical",
 		name: "Carrot Strike",
 		pp: 10,
@@ -787,7 +787,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	},
 	painpeko: { // grass close combat
 		num: 370,
-		accuracy: 90,
+		accuracy: 95,
 		basePower: 120,
 		category: "Physical",
 		name: "Pain Peko",
