@@ -604,22 +604,22 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		num: 290,
 	},
 	piracy: { // reskin of Oppurtunist -clearpositiveboost
-		onPreStart(pokemon) { 
+		onPreStart(target) { 
 			let i: BoostID;
-			for (i in pokemon.boosts) {
-				pokemon.boosts[i] = pokemon.boosts[i];
+			for (i in target.boosts) {
+				target.boosts[i] = target.boosts[i];
 			}
 			const volatilesToCopy = ['dragoncheer', 'focusenergy', 'gmaxchistrike', 'laserfocus'];
 			// we need to be sure to remove all the overlapping crit volatiles before trying to add any
-			for (const volatile of volatilesToCopy) pokemon.removeVolatile(volatile);
+			for (const volatile of volatilesToCopy) target.removeVolatile(volatile);
 			for (const volatile of volatilesToCopy) {
-				if (pokemon.volatiles[volatile]) {
-					pokemon.addVolatile(volatile);
-					if (volatile === 'gmaxchistrike') pokemon.volatiles[volatile].layers = pokemon.volatiles[volatile].layers;
-					if (volatile === 'dragoncheer') pokemon.volatiles[volatile].hasDragonType = pokemon.volatiles[volatile].hasDragonType;
+				if (target.volatiles[volatile]) {
+					target.addVolatile(volatile);
+					if (volatile === 'gmaxchistrike') target.volatiles[volatile].layers = target.volatiles[volatile].layers;
+					if (volatile === 'dragoncheer') target.volatiles[volatile].hasDragonType = target.volatiles[volatile].hasDragonType;
 				}
 			}
-			this.add('-copyboost', pokemon, '[from] ability: Piracy');
+			this.add('-copyboost', target, '[from] ability: Piracy');
 		},
 		onStart(target) {
 			this.add('-clearpositiveboost', target);
