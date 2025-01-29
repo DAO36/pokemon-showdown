@@ -604,29 +604,72 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		num: 290,
 	},
 	piracy: { // reskin of Oppurtunist -clearpositiveboost
-		onStart(pokemon) {
-			const target = pokemon
-			if (!target) return;
-
+		onPreStart(pokemon) { 
 			let i: BoostID;
-			for (i in target.boosts) {
-				pokemon.boosts[i] = target.boosts[i];
+			for (i in pokemon.boosts) {
+				pokemon.boosts[i] = pokemon.boosts[i];
 			}
 			const volatilesToCopy = ['dragoncheer', 'focusenergy', 'gmaxchistrike', 'laserfocus'];
 			// we need to be sure to remove all the overlapping crit volatiles before trying to add any
 			for (const volatile of volatilesToCopy) pokemon.removeVolatile(volatile);
 			for (const volatile of volatilesToCopy) {
-				if (target.volatiles[volatile]) {
+				if (pokemon.volatiles[volatile]) {
 					pokemon.addVolatile(volatile);
-					if (volatile === 'gmaxchistrike') pokemon.volatiles[volatile].layers = target.volatiles[volatile].layers;
-					if (volatile === 'dragoncheer') pokemon.volatiles[volatile].hasDragonType = target.volatiles[volatile].hasDragonType;
+					if (volatile === 'gmaxchistrike') pokemon.volatiles[volatile].layers = pokemon.volatiles[volatile].layers;
+					if (volatile === 'dragoncheer') pokemon.volatiles[volatile].hasDragonType = pokemon.volatiles[volatile].hasDragonType;
 				}
 			}
 			this.add('-copyboost', pokemon, '[from] ability: Piracy');
-			this.add('-clearpositiveboost', pokemon);
 		},
+		onStart(target) {
+			this.add('-clearpositiveboost', target);
+		},	
 		flags: {},
 		name: "Piracy",
+		rating: 0,
+		num: 294,
+	},
+	race: { 
+		onUpdate(pokemon) { 
+			const possibleTargets = pokemon.adjacentFoes().filter(
+				target => !target.getAbility().flags['notrace'] && target.ability !== 'noability'
+			);
+			if (!possibleTargets.length) return;
+
+			const target = this.sample(possibleTargets);
+			const ability = target.getAbility();
+			if (pokemon.setAbility(ability)) {
+				this.add('-ability', pokemon, ability, '[from] ability: Trace', '[of] ' + target);
+			}
+		},
+		flags: {failroleplay: 1, noreceiver: 1, noentrain: 1, notrace: 1},
+		name: "Trace",
+		rating: 2.5,
+		num: 36,
+	},
+	star: {
+		onStart(pokemon) {
+			const ally = pokemon.allies()[0];
+			if (!ally) return;
+
+			let i: BoostID;
+			for (i in ally.boosts) {
+				pokemon.boosts[i] = ally.boosts[i];
+			}
+			const volatilesToCopy = ['dragoncheer', 'focusenergy', 'gmaxchistrike', 'laserfocus'];
+			// we need to be sure to remove all the overlapping crit volatiles before trying to add any
+			for (const volatile of volatilesToCopy) pokemon.removeVolatile(volatile);
+			for (const volatile of volatilesToCopy) {
+				if (ally.volatiles[volatile]) {
+					pokemon.addVolatile(volatile);
+					if (volatile === 'gmaxchistrike') pokemon.volatiles[volatile].layers = ally.volatiles[volatile].layers;
+					if (volatile === 'dragoncheer') pokemon.volatiles[volatile].hasDragonType = ally.volatiles[volatile].hasDragonType;
+				}
+			}
+			this.add('-copyboost', pokemon, ally, '[from] ability: Star');
+		},
+		flags: {},
+		name: "Star",
 		rating: 0,
 		num: 294,
 	},
