@@ -584,20 +584,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3.5,
 		num: 276,
 	},
-	archive: { // combines oppoturnist with costar but for foe [WIP]
-		onFoeAfterBoost(boost, target, source, effect) {
-			if (effect?.name === 'Archive' || effect?.name === 'Mirror Herb') return;
-			const pokemon = this.effectState.target;
-			const positiveBoosts: Partial<BoostsTable> = {};
-			let i: BoostID;
-			for (i in boost) {
-				if (boost[i]! > 0) {
-					positiveBoosts[i] = boost[i];
-				}
-			}
-			if (Object.keys(positiveBoosts).length < 1) return;
-			this.boost(positiveBoosts, pokemon);
-		},
+	archive: { // combines oppoturnist with costar but for foe [WIP] 
 		onPreStart(pokemon) {  
 			const foe = pokemon.foes()[0];
 			if (!foe) return;
@@ -616,8 +603,20 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 					if (volatile === 'dragoncheer') pokemon.volatiles[volatile].hasDragonType = foe.volatiles[volatile].hasDragonType;
 				}
 			} 
-			this.add('-copyboost', pokemon, foe, '[from] ability: Archive');
-			this.add('-clearnegativeboost', pokemon);
+			this.add('-copyboost', pokemon, foe, '[from] ability: Archive'); 
+		},
+		onFoeAfterBoost(boost, target, source, effect) {
+			if (effect?.name === 'Archive' || effect?.name === 'Mirror Herb') return;
+			const pokemon = this.effectState.target;
+			const positiveBoosts: Partial<BoostsTable> = {};
+			let i: BoostID;
+			for (i in boost) {
+				if (boost[i]! > 0) {
+					positiveBoosts[i] = boost[i];
+				}
+			}
+			if (Object.keys(positiveBoosts).length < 1) return;
+			this.boost(positiveBoosts, pokemon);
 		},
 		flags: {},
 		name: "Archive",
@@ -643,8 +642,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 					if (volatile === 'dragoncheer') pokemon.volatiles[volatile].hasDragonType = foe.volatiles[volatile].hasDragonType;
 				}
 			} 
-			this.add('-copyboost', pokemon, foe, '[from] ability: Piracy');
-			this.add('-clearnegativeboost', pokemon);
+			this.add('-copyboost', pokemon, foe, '[from] ability: Piracy'); 
 		},
 		flags: {},
 		name: "Piracy2",
@@ -692,13 +690,12 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 					if (volatile === 'dragoncheer') pokemon.volatiles[volatile].hasDragonType = foe.volatiles[volatile].hasDragonType;
 				}
 			} 
-			this.add('-copyboost', pokemon, foe, '[from] ability: Piracy');
-			this.add('-clearnegativeboost', pokemon);
+			this.add('-copyboost', pokemon, foe, '[from] ability: Piracy'); 
 		},
 		onStart(pokemon) {
-			for (const foe of pokemon.adjacentFoes()) {
-				foe.clearBoosts();
-				this.add('-clearboost', foe, '[from] ability: Piracy', '[of] ' + pokemon);
+			this.add('-clearallboost');
+			for (const pokemon of this.getAllPokemon()) {
+				pokemon.clearBoosts();
 			}
 		},
 		flags: {},
