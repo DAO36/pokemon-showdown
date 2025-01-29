@@ -696,7 +696,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			this.add('-clearnegativeboost', pokemon);
 		},
 		onStart(pokemon) {
-			for (const foe of pokemon.adjacentAllies()) {
+			for (const foe of pokemon.adjacentFoes()) {
 				foe.clearBoosts();
 				this.add('-clearboost', foe, '[from] ability: Piracy', '[of] ' + pokemon);
 			}
