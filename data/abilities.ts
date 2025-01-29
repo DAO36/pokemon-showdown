@@ -1375,6 +1375,16 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 5,
 		num: -19,		
 	},
+	chaos2: { // reskin of Costar but copies foes stats insetad of allies and also clears foes stats   
+		onPreStart(target) {   
+			target.clearBoosts();
+			this.add('-clearboost', target);
+		},
+		flags: {},
+		name: "Chaos2",
+		rating: 0,
+		num: 294,
+	},
 	archivist: { // combines Oppurtunist with Costar but copies Foes stats instead of Allys stats
 		onPreStart(pokemon) {  
 			const foe = pokemon.foes()[0];
