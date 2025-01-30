@@ -1359,6 +1359,46 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 				return this.chainModify(2);
 			}
 		},
+		onAllyTryBoost(boost, target, source, effect) {
+			if (source && target === source) return;
+			let showMsg = false;
+			let i: BoostID;
+			for (i in boost) {
+				if (boost[i]! < 0) {
+					delete boost[i];
+					showMsg = true;
+				}
+			}
+			if (showMsg && !(effect as ActiveMove).secondaries) {
+				const effectHolder = this.effectState.target;
+				this.add('-block', target, 'ability: Fauna Sweep', '[of] ' + effectHolder);
+			}
+		},
+		onAllySetStatus(status, target, source, effect) {
+			if (source && target !== source && effect && effect.id !== 'yawn') {
+				this.debug('interrupting setStatus with Fauna Sweep');
+				if (effect.name === 'Synchronize' || (effect.effectType === 'Move' && !effect.secondaries)) {
+					const effectHolder = this.effectState.target;
+					this.add('-block', target, 'ability: Fauna Sweep', '[of] ' + effectHolder);
+				}
+				return null;
+			}
+		},
+		onAllyTryAddVolatile(status, target, source, effect) {
+			if (['attract', 'disable', 'scarylook', 'encore', 'healblock', 'taunt', 'torment'].includes(status.id)) {
+				if (effect.effectType === 'Move') {
+					const effectHolder = this.effectState.target;
+					this.add('-block', target, 'ability: Fauna Sweep', '[of] ' + effectHolder);
+				}
+				return null;
+			} 
+			if (status.id === 'yawn') {
+				this.debug('Fauna Sweep blocking yawn');
+				const effectHolder = this.effectState.target;
+				this.add('-block', target, 'ability: Fauna Sweep', '[of] ' + effectHolder);
+				return null;
+			}
+		},
 		flags: {},
 		name: "Fauna Sweep",
 		rating: 3,

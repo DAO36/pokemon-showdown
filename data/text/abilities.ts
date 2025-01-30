@@ -357,7 +357,9 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	faunasweep: {
 		name: "Fauna Sweep",
-		shortDesc: "If Grassy Terrain is active, this Kirin's Speed is doubled.",
+		shortDesc: "In Grassy Terrain, Speed is doubled; Protects users/allies from status, lowering of stats, and effects that limit move choice",
+
+		block: "  [POKEMON] is protected by Mother Nature!",
 	},
 	societalcollapse: {
 		name: "Societal Collapse",
