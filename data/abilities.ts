@@ -210,7 +210,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 				}
 			}
 			if (showMsg && !(effect as ActiveMove).secondaries && effect.id !== 'octolock') {
-				this.add("-fail", target, "unboost", "[from] ability: Clear Body", "[of] " + target);
+				this.add("-fail", target, "unboost", "[from] ability: Stellar", "[of] " + target);
 			}
 		},
 		flags: {},
@@ -351,13 +351,25 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 4,
 		num: 176,
 	},
-	vampire: { // increases how much hp user recovers when using draining moves
+	vampire2: { // increases how much hp user recovers when using draining moves
         onTryHealPriority: 1,
         onTryHeal(damage, target, source, effect) {
             return this.chainModify([5461, 4096]);
         },
         flags: {},
-        name: "Vampire",
+        name: "Vampire2",
+		rating: 3.5,
+		num: 11,
+	},
+	vampire: { // increases how much hp user recovers when using draining moves
+		onAfterMoveSecondarySelfPriority: -1,
+        onAfterMoveSecondarySelf(pokemon, target, move) {
+            if (move.totalDamage && !pokemon.forceSwitchFlag) {
+                this.heal(move.totalDamage / 4, pokemon);
+			}
+		},		
+        flags: {},
+        name: "Vampire2",
 		rating: 3.5,
 		num: 11,
 	},

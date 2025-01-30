@@ -5,8 +5,8 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	corruption: {
 		name: "Corruption",
-		desc: "...something's not right...",
-		shortDesc: "...something's not right...",
+		desc: "...something's...not right...",
+		shortDesc: "...something's...not right...",
 
 		damage: "  [POKEMON] was <0rRvqt3D...!",
 	},
@@ -111,9 +111,13 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 		transform: "Changed to Haachama!",
 		transformEnd: "Changed to Akai Haato!",
 	},
+	vampire2: {
+		name: "Vampire2",
+		shortDesc: "Healing moves heals 33% more HP (Giga Drain, Draining Kiss, etc).",
+	},
 	vampire: {
 		name: "Vampire",
-		shortDesc: "Healing moves heals 33% more HP (Giga Drain, Draining Kiss, etc).",
+		shortDesc: "This Vampire heals 25% of the damage it deals with direct attacks.",
 	},
 	supernaturalsiren: {
 		name: "Supernatural Siren",
