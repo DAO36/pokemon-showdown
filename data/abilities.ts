@@ -363,6 +363,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	},
 	supernaturalsiren: { // sets up Magic Room on switch-in (effects end prematurely if user/foe with this ability switches in)
 		onStart(pokemon) {
+			this.add('-activate', pokemon, 'ability: Supernatural Siren');
 			this.field.addPseudoWeather('magicroom', pokemon);
 		},
 		flags: {},
@@ -437,6 +438,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	},
 	witchcraft: { // sets up Magic Room on switch-in (effects end prematurely if user/foe with this ability switches in)
 		onStart(pokemon) {
+			this.add('-activate', pokemon, 'ability: Witchcraft');
 			this.field.addPseudoWeather('magicroom', pokemon);
 		},
 		name: "Witchcraft",
@@ -1339,6 +1341,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	},
 	timedilation: { // sets up Trick Room on switch-in (effects end prematurely if user/foe with this ability switches in)
 		onStart(pokemon) {
+			this.add('-activate', pokemon, 'ability: Time Dilation');
 			this.field.addPseudoWeather('trickroom', pokemon);
 		},
 		name: "Time Dilation",
@@ -1347,6 +1350,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	},
 	gravitationalpull: { // sets up Gravity on switch-in (effects end prematurely if user/foe with this ability switches in)
 		onStart(pokemon) {
+			this.add('-activate', pokemon, 'ability: Gravitational Pull');
 			this.field.addPseudoWeather('gravity', pokemon);
 		},
 		name: "Gravitational Pull",
