@@ -369,18 +369,12 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3.5,
 		num: 11,
 	},
-	elvishdancing: { // reskin of Synchronize [hmm maybe this one too?]
-		onAfterSetStatus(status, target, source, effect) {
-			if (!source || source === target) return;
-			if (effect && effect.id === 'toxicspikes') return;
-			if (status.id === 'slp' || status.id === 'frz') return;
-			this.add('-activate', target, 'ability: Elvish Dancing');
-			// Hack to make status-prevention abilities think Synchronize is a status move
-			// and show messages when activating against it.
-			source.trySetStatus(status, target, {status: status.id, id: 'synchronize'} as Effect);
+	supernaturalsiren: { // sets up Magic Room on switch-in (effects end prematurely if user/foe with this ability switches in)
+		onStart(pokemon) {
+			this.field.addPseudoWeather('magicroom', pokemon);
 		},
 		flags: {},
-		name: "Elvish Dancing",
+		name: "Supernatural Siren",
 		rating: 2,
 		num: 28,
 	},
@@ -449,7 +443,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 4.5,
 		num: 144,
 	},
-	witchcraft: { // reskin of Surge Surfer but for Psychic Terrain
+	witchcraft: { // reskin of Surge Surfer but for Psychic Terrain (maybe change this as well?)
 		onModifySpePriority: 6,
 		onModifySpe(pokemon) {
 			if (this.field.isTerrain('psychicterrain')) return this.chainModify(1.5);
@@ -669,7 +663,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3.5,
 		num: 181,
 	},
-	watamelon: { // reskin of Overcoat + immune to crits
+	watamelon: { // reskin of Overcoat + immune to crits + reduced sound damage
 		onCriticalHit: false,
 		onImmunity(type, pokemon) {
 			if (type === 'sandstorm' || type === 'hail' || type === 'powder') return false;
@@ -679,6 +673,12 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			if (move.flags['powder'] && target !== source && this.dex.getImmunity('powder', target)) {
 				this.add('-immune', target, '[from] ability: Watamelon');
 				return null;
+			}
+		},
+		onSourceModifyDamage(damage, source, target, move) {
+			if (move.flags['sound']) {
+				this.debug('Watamelon weaken');
+				return this.chainModify(0.5);
 			}
 		},
 		flags: {breakable: 1},
@@ -1353,7 +1353,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3,
 		num: -19,		
 	},
-	faunasweep: { // reskin of Surge Surfer but for Grass Terrain
+	faunasweep: { // reskin of Surge Surfer but for Grass Terrain (maybe change this one, could be buffed)
 		onModifySpe(spe) {
 			if (this.field.isTerrain('grassyterrain')) {
 				return this.chainModify(2);

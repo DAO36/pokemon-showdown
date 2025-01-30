@@ -119,10 +119,9 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 		name: "Vampire",
 		shortDesc: "Healing moves heals 33% more HP (Giga Drain, Draining Kiss, etc).",
 	},
-	elvishdancing: {
-		name: "Elvish Dancing",
-		desc: "If another Pokemon burns, paralyzes, poisons, or badly poisons this Pokemon, that Pokemon receives the same non-volatile status condition.",
-		shortDesc: "If another Pokemon burns/poisons/paralyzes this Pokemon, it also gets that status.",
+	supernaturalsiren: {
+		name: "Supernatural Siren",
+		shortDesc: "On switch-in, this Elf summons Magic Room.",
 	},
 	apex: {
 		name: "Apex",
@@ -194,8 +193,8 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	watamelon: {
 		name: "Watamelon",
-		desc: "This Sheep is wearing a watermelon that grants her immunity to powder moves, damage from Sandstorm, and the effects of Rage Powder and the Effect Spore Ability. Also cannot be struck by a critical hit.",
-		shortDesc: "This Sheep's watermelon helmet makes her immune to powder moves, Sandstorm damage, and Effect Spore; Immune to critical hits.",
+		desc: "This Sheep is wearing a watermelon that grants her immunity to powder moves, damage from Sandstorm, and the effects of Rage Powder and the Effect Spore Ability. This Pokemon takes halved damage from sound-based moves; Also cannot be struck by a critical hit.",
+		shortDesc: "Immune to powder moves, Sandstorm damage, and Effect Spore; Immune to critical hits and receives 1/2 damage from sound moves.",
 	},
 	sugarrush: {
 		name: "Sugar Rush",
