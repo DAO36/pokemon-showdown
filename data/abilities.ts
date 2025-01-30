@@ -147,7 +147,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 5,
 		num: 74,
 	},
-	seiso: { // reskin of Immunity but for other statuses + immune to flinching
+	seiso: { // reskin of [Immunity] but for other statuses too + immune to flinching <held items cant status either>
 		onTryAddVolatile(status, pokemon) {
 			if (status.id === 'flinch') return null;
 		},
@@ -169,7 +169,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 2,
 		num: 29,
 	},
-	elite: { // reskin of Thermal Exchange, but SpA instead of Atk
+	elite: { // reskin of [Thermal Exchange], but for SpA instead of Atk
 		onDamagingHit(damage, target, source, move) {
 			if (move.type === 'Fire') {
 				this.boost({spa: 2});
@@ -193,7 +193,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 2.5,
 		num: 270,
 	},
-	stellar: { // combines Moxie with Clear Body
+	stellar: { // combines [Moxie] + [Clear Body]
 		onSourceAfterFaint(length, target, source, effect) {
 			if (effect && effect.effectType === 'Move') {
 				this.boost({atk: length}, source);
@@ -218,7 +218,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3,
 		num: 128,
 	},
-	highspecsrobot: { // reskin of Surge Surfer
+	highspecsrobot: { // reskin of [Surge Surfer]
 		onModifySpe(spe) {
 			if (this.field.isTerrain('electricterrain')) {
 				return this.chainModify(2);
@@ -229,7 +229,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3,
 		num: 207,
 	},
-	diva: { // combines Soundproof with Punk Rock
+	diva: { // combines [Soundproof] + [Punk Rock]
 		onBasePowerPriority: 7,
 		onBasePower(basePower, attacker, defender, move) {
 			if (move.flags['sound']) {
@@ -253,7 +253,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 4,
 		num: 29,
 	},
-	fbking: { // reskin of Moxie
+	fbking: { // reskin of [Moxie]
 		onSourceAfterFaint(length, target, source, effect) {
 			if (effect && effect.effectType === 'Move') {
 				this.boost({atk: length}, source);
@@ -264,7 +264,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3,
 		num: 153,
 	},
-	iamgod: { // life orb as an ability but better
+	iamgod: { // life orb as an ability, but better <1.5 boost instead of 1.3>
 		onModifySpAPriority: 5,
 		onModifySpA(spa, pokemon) {
 		 {
@@ -287,7 +287,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 4,
 		num: 94,
 	},
-	haachamacooking: { // reskin of Cheek Pouch (UNUSED)
+	haachamacooking: { // reskin of [Cheek Pouch] <UNUSED>
 		onEatItem(item, pokemon) {
 			this.heal(pokemon.baseMaxhp / 3);
 		},
@@ -296,7 +296,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 2,
 		num: 167,
 	},
-	spidersoup2: { // if haachama is hit by a super-effective move, sets up sticky web (UNUSED)
+	spidersoup2: { // if haachama is hit by a super-effective move, sets up sticky web <UNUSED>
 		onDamagingHitOrder: 1,
 		onDamagingHit(damage, target, source, move) {
 			const side = source.isAlly(target) ? source.side.foe : source.side;
@@ -326,7 +326,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3.5,
 		num: 295,
 	},
-	splitpersonalities: { // reskin of Hunger Switch (UNUSED)
+	splitpersonalities: { // reskin of [Hunger Switch] <UNUSED>
 		onResidualOrder: 29,
 		onResidual(pokemon) {
 			if (pokemon.species.baseSpecies !== 'Akai' || pokemon.terastallized) return;
@@ -338,7 +338,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 2,
 		num: 258,
 	},
-	chamachange: { // reskin of Stance Change
+	chamachange: { // reskin of [Stance Change]
 		onModifyMovePriority: 1,
 		onModifyMove(move, attacker, defender) {
 			if (attacker.species.baseSpecies !== 'AkaiHaato' || attacker.transformed) return;
