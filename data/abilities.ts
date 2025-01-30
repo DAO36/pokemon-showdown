@@ -1369,7 +1369,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3,
 		num: -19,		
 	},
-	faunasweep: { // reskin of Surge Surfer but for Grass Terrain (maybe change this one, could be buffed)
+	faunasweep: { // Flower Veil + Aroma Veil + Surge Surfer but for Grassy Terrain instead of Electric Terrain
 		onModifySpe(spe) {
 			if (this.field.isTerrain('grassyterrain')) {
 				return this.chainModify(2);
@@ -1431,7 +1431,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 2,
 		num: 133,
 	},
-	chaos: {
+	chaos: { // Effect Spore but on crack
 		onDamagingHitOrder: 1,
 		onDamagingHit(damage, target, source, move) {
 			if (move.category === 'Special' || move.category === 'Physical' && !source.status) {
