@@ -1375,6 +1375,55 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 5,
 		num: -19,		
 	},
+	chaos2: {
+		onDamagingHitOrder: 1,
+		onDamagingHit(damage, target, source, move) {
+			if (move.category === 'Special' || move.category === 'Physical' && !source.status) {
+				const r = this.random(100);
+				if (r < 5) {
+					source.setStatus('par', target);
+				} else if (r < 10) {
+					source.setStatus('brn', target);
+				} else if (r < 15) {
+					source.setStatus('tox', target);
+				} else if (r < 20) {
+					source.setStatus('slp', target);
+				} else if (r < 25) {
+					source.setStatus('frz', target);
+				} else if (r < 30) {
+					source.addVolatile('confusion', target);
+				}
+				 
+			}
+		},
+		flags: {},
+		name: "Chaos2",
+		rating: 2,
+		num: 27,
+	},
+	chaos3: {
+		onDamagingHitOrder: 1,
+		onDamagingHit(damage, target, source, move) {
+			if (move.category === 'Special' || move.category === 'Physical' && !source.status) {
+				const r = this.random(100);
+				if (r < 5) {
+					source.setStatus('par', target);
+				} else if (r < 10) {
+					source.setStatus('brn', target);
+				} else if (r < 15) {
+					source.setStatus('tox', target);
+				} else if (r < 20) {
+					source.setStatus('slp', target);
+				} else if (r < 25) {
+					source.setStatus('frz', target);
+				} 
+			}
+		},
+		flags: {},
+		name: "Chaos3",
+		rating: 2,
+		num: 27,
+	},
 	archivist: { // combines Oppurtunist with Costar but copies Foes stats instead of Allys stats
 		onPreStart(pokemon) {  
 			const foe = pokemon.foes()[0];
