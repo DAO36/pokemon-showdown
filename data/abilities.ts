@@ -109,6 +109,14 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
         rating: 5,
         num: 318,
     },
+	shattereddimensions: { // sets up Magic Room on switch-in (effects end prematurely if user/foe with this ability switches in)
+		onStart(pokemon) {
+			this.field.addPseudoWeather('magicroom', pokemon);
+		},
+		name: "Shattered Dimensions",
+		rating: 5,
+		num: -19,		
+	},
 	spiky: { // sets up a layer of spikes when hit by physical move
 		onDamagingHit(damage, target, source, move) {
 			const side = source.isAlly(target) ? source.side.foe : source.side;
@@ -1367,15 +1375,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 2,
 		num: 133,
 	},
-	chaos: { // sets up Magic Room on switch-in (effects end prematurely if user/foe with this ability switches in)
-		onStart(pokemon) {
-			this.field.addPseudoWeather('magicroom', pokemon);
-		},
-		name: "Chaos",
-		rating: 5,
-		num: -19,		
-	},
-	chaos2: {
+	chaos: {
 		onDamagingHitOrder: 1,
 		onDamagingHit(damage, target, source, move) {
 			if (move.category === 'Special' || move.category === 'Physical' && !source.status) {
@@ -1397,11 +1397,11 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			}
 		},
 		flags: {},
-		name: "Chaos2",
+		name: "Chaos",
 		rating: 2,
 		num: 27,
 	},
-	chaos3: {
+	chaos2: { // [UNUSED VARIANT]
 		onDamagingHitOrder: 1,
 		onDamagingHit(damage, target, source, move) {
 			if (move.category === 'Special' || move.category === 'Physical' && !source.status) {
@@ -1423,7 +1423,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			}
 		},
 		flags: {},
-		name: "Chaos3",
+		name: "Chaos2",
 		rating: 2,
 		num: 27,
 	},

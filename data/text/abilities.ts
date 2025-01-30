@@ -39,6 +39,10 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 		name: "Air Force",
 		shortDesc: "On switch-in, this Pokemon summons Tailwind.",
 	},
+	shattereddimensions: {
+		name: "Shattered Dimensions",
+		shortDesc: "On switch-in, this Pokemon summons Magic Room.",
+	},
 	spiky: {
 		name: "Spiky",
 		shortDesc: "If this Pokemon is hit by a physical attack, Spikes are set on the opposing side.",
@@ -363,7 +367,8 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	chaos: {
 		name: "Chaos",
-		shortDesc: "On switch-in, the Harbinger of Chaos summons Magic Room.",
+		desc: "30% chance a Pokemon using an attacking move on this Harbinger of Chaos will be badly poisoned, paralyzed, fall asleep, frozen, burned or confused.",
+		shortDesc: "30% chance of poison/paralysis/sleep/freeze/burn/confusion on others that attack this Rat.",
 	},
 	archivist: {
 		name: "Archivist",
