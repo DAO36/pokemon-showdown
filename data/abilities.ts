@@ -1406,17 +1406,20 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		onDamagingHit(damage, target, source, move) {
 			if (move.category === 'Special' || move.category === 'Physical' && !source.status) {
 				const r = this.random(100);
-				if (r < 5) {
+				if (r < 8) {
 					source.setStatus('par', target);
-				} else if (r < 10) {
+				} else if (r < 16) {
 					source.setStatus('brn', target);
-				} else if (r < 15) {
+				} else if (r < 24) {
 					source.setStatus('tox', target);
-				} else if (r < 20) {
+				} else if (r < 32) {
 					source.setStatus('slp', target);
-				} else if (r < 25) {
+				} else if (r < 40) {
 					source.setStatus('frz', target);
-				} 
+				} else if (r < 48) {
+					source.addVolatile('confusion', target);
+				}
+				 
 			}
 		},
 		flags: {},
