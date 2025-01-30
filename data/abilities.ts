@@ -109,14 +109,6 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
         rating: 5,
         num: 318,
     },
-	shattereddimensions: { // sets up Magic Room on switch-in (effects end prematurely if user/foe with this ability switches in)
-		onStart(pokemon) {
-			this.field.addPseudoWeather('magicroom', pokemon);
-		},
-		name: "Shattered Dimensions",
-		rating: 5,
-		num: -19,		
-	},
 	spiky: { // sets up a layer of spikes when hit by physical move
 		onDamagingHit(damage, target, source, move) {
 			const side = source.isAlly(target) ? source.side.foe : source.side;
@@ -443,13 +435,21 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 4.5,
 		num: 144,
 	},
-	witchcraft: { // reskin of Surge Surfer but for Psychic Terrain (maybe change this as well?)
+	witchcraft: { // sets up Magic Room on switch-in (effects end prematurely if user/foe with this ability switches in)
+		onStart(pokemon) {
+			this.field.addPseudoWeather('magicroom', pokemon);
+		},
+		name: "Witchcraft",
+		rating: 5,
+		num: -19,		
+	},
+	witchcraft2: { // reskin of Surge Surfer but for Psychic Terrain (UNUSED)
 		onModifySpePriority: 6,
 		onModifySpe(pokemon) {
 			if (this.field.isTerrain('psychicterrain')) return this.chainModify(1.5);
 		},
 		flags: {breakable: 1},
-		name: "Witchcraft",
+		name: "Witchcraft2",
 		rating: 1.5,
 		num: 179,
 	},

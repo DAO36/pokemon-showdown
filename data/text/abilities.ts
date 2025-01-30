@@ -39,10 +39,6 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 		name: "Air Force",
 		shortDesc: "On switch-in, this Pokemon summons Tailwind.",
 	},
-	shattereddimensions: {
-		name: "Shattered Dimensions",
-		shortDesc: "On switch-in, this Pokemon summons Magic Room.",
-	},
 	spiky: {
 		name: "Spiky",
 		shortDesc: "If this Pokemon is hit by a physical attack, Spikes are set on the opposing side.",
@@ -136,9 +132,13 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 		name: "Nursery",
 		shortDesc: "This Nurse restores 1/3 of her maximum HP, rounded down, when she switches out.",
 	},
+	witchcraft2: {
+		name: "Witchcraft2",
+		shortDesc: "If Psychic Terrain is active, this Witch's Speed is boosted by 50%.",
+	},
 	witchcraft: {
 		name: "Witchcraft",
-		shortDesc: "If Psychic Terrain is active, this Witch's Speed is boosted by 50%.",
+		shortDesc: "On switch-in, this Pokemon summons Magic Room.",
 	},
 	shubashuba: {
 		name: "Shuba Shuba",
