@@ -1375,63 +1375,6 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 5,
 		num: -19,		
 	},
-	chaos2: { // reskin of Costar but copies foes stats insetad of allies and also clears foes stats   
-		onHit(pokemon) {
-			this.add('-invertboost');
-			for (const pokemon of this.getAllPokemon()) {
-				pokemon.clearBoosts();
-			}
-		},
-		flags: {},
-		name: "Chaos2",
-		rating: 0,
-		num: 294,
-	},
-	chaos3: { // reskin of Costar but copies foes stats insetad of allies and also clears foes stats   
-		onHit(target) {
-			let success = false;
-			let i: BoostID;
-			for (i in target.boosts) {
-				if (target.boosts[i] === 0) continue;
-				target.boosts[i] = -target.boosts[i];
-				success = true;
-			}
-			if (!success) return false;
-			this.add('-invertboost', target, '[from] ability: Chaos3');
-		},
-		flags: {},
-		name: "Chaos3",
-		rating: 0,
-		num: 294,
-	},
-	chaos4: { // reskin of Costar but copies foes stats insetad of allies and also clears foes stats   
-		onHit(pokemon) {
-			let success = false;
-			let i: BoostID;
-			for (i in pokemon.boosts) {
-				if (pokemon.boosts[i] === 0) continue;
-				pokemon.boosts[i] = -pokemon.boosts[i];
-				success = true;
-			}
-			if (!success) return false;
-			this.add('-invertboost', pokemon, '[from] ability: Chaos4');
-		},
-		flags: {},
-		name: "Chaos4",
-		rating: 0,
-		num: 294,
-	},
-	chaos5: { // reskin of Costar but copies foes stats insetad of allies and also clears foes stats   
-		onHit(target) {
-			let success = false; 
-			if (!success) return false;
-			this.add('-invertboost', target, '[from] ability: Chaos5');
-		},
-		flags: {},
-		name: "Chaos5",
-		rating: 0,
-		num: 294,
-	},
 	archivist: { // combines Oppurtunist with Costar but copies Foes stats instead of Allys stats
 		onPreStart(pokemon) {  
 			const foe = pokemon.foes()[0];
