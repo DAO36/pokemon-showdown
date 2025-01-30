@@ -1376,7 +1376,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		num: -19,		
 	},
 	chaos2: { // reskin of Costar but copies foes stats insetad of allies and also clears foes stats   
-		onStart(pokemon) {
+		onHit(pokemon) {
 			this.add('-invertboost');
 			for (const pokemon of this.getAllPokemon()) {
 				pokemon.clearBoosts();
@@ -1388,7 +1388,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		num: 294,
 	},
 	chaos3: { // reskin of Costar but copies foes stats insetad of allies and also clears foes stats   
-		onStart(target) {
+		onHit(target) {
 			let success = false;
 			let i: BoostID;
 			for (i in target.boosts) {
@@ -1405,7 +1405,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		num: 294,
 	},
 	chaos4: { // reskin of Costar but copies foes stats insetad of allies and also clears foes stats   
-		onStart(pokemon) {
+		onHit(pokemon) {
 			let success = false;
 			let i: BoostID;
 			for (i in pokemon.boosts) {
@@ -1422,7 +1422,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		num: 294,
 	},
 	chaos5: { // reskin of Costar but copies foes stats insetad of allies and also clears foes stats   
-		onStart(target) {
+		onHit(target) {
 			let success = false; 
 			if (!success) return false;
 			this.add('-invertboost', target, '[from] ability: Chaos5');
