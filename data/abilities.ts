@@ -439,7 +439,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	witchcraft: { // sets up Magic Room on switch-in (effects end prematurely if user/foe with this ability switches in)
 		onStart(pokemon) {
 			this.add('-activate', pokemon, 'ability: Witchcraft');
-			this.field.addPseudoWeather('magicroom', pokemon);
+			this.field.addPseudoWeather('wonderroom', pokemon);
 		},
 		name: "Witchcraft",
 		rating: 5,
