@@ -232,10 +232,6 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 		desc: "On switch-in, this Succubus lowers the Special Attack of opposing Pokemon by 1 stage. Pokemon with the Inner Focus, Oblivious, Own Tempo, or Scrappy Abilities and Pokemon behind a substitute are immune.",
 		shortDesc: "On switch-in, this Succubus lowers the Sp. Atk of opponents by 1 stage."
 	},
-	fast: {
-		name: "Steadfast",
-		shortDesc: "If this Pokemon flinches, its Speed is raised by 1 stage.",
-	},
 	samurai: {
 		name: "Samurai",
 		desc: "This Samurai's Attack is raised by 1 stage if she attacks and knocks out another Pokemon. This Samurai's Attack is raised by 1 stage for each of its stat stages that is lowered by an opposing Pokemon.",
@@ -251,7 +247,7 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	cleaner: {
 		name: "Cleaner",
-		shortDesc: "On switch-in, user's side is cleared of hazards, while opposing side has their screens cleared; Removes terrain.",
+		shortDesc: "On switch-in, user's side is cleared of hazards, other side has screens cleared; Removes terrain.",
 	},
 	cleaner2: { // [UNUSED]
 		name: "Cleaner2",
@@ -272,7 +268,7 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	yamada: {
 		name: "yamada",
 		desc: "When one of YMD's stat stages would be lowered by another Pokemon, that Pokemon's stat stage is lowered instead. This effect does not happen if this Comet's stat stage was already -6. If the other Pokemon has a substitute, neither Pokemon has its stat stage lowered. This Comet is unaffected by certain non-damaging moves directed at it and will instead use such moves against the original user. Moves reflected in this way are unable to be reflected again by this or Magic Coat's effect. Spikes, Stealth Rock, Sticky Web, and Toxic Spikes can only be reflected once per side, by the leftmost Pokemon under this or Magic Coat's effect. The Lightning Rod and Storm Drain Abilities redirect their respective moves before this Ability takes effect.",
-		shortDesc: "This YMD blocks certain Status moves and stat changes and bounces them back to the user.",
+		shortDesc: "Blocks certain Status moves and stat changes and bounces them back to the target.",
 	},
 	thexo: {
 		name: "The XO",
