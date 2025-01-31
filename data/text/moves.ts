@@ -285,7 +285,7 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	nothingwrong: {
 		name: "Nothing Wrong",
 		desc: "Raises the user's Attack by 2 stages.",
-		shortDesc: "Raises the user's Def by 2.",
+		shortDesc: "Raises the user's Attack by 2.",
 	},
 	ubersheep: {
 		name: "Uber Sheep",
