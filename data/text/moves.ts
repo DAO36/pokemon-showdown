@@ -239,7 +239,7 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	elfarrows: {
 		name: "Elf Arrows",
 		desc: "Hits two to five times. Has a 35% chance to hit two or three times and a 15% chance to hit four or five times. If one of the hits breaks the target's substitute, it will take damage for the remaining hits. If the user has the Skill Link Ability, this move will always hit five times. If the user is holding Loaded Dice, this move will hit 4-5 times. Has a 10% chance to lower the target's Special Atk by 1.",
-		shortDesc: "Hits 2-5 times. 10% chance to lower target's Sp. Atk by 1.",
+		shortDesc: "Hits 2-5 times. 10% chance to lower foe's Sp. Atk by 1.",
 	},
 	bowdance: {
 		name: "Bow Dance",
