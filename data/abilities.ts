@@ -472,7 +472,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	},
 	shubashuba: { // reskin of [Rocky Payload] but for Water
 		onStart(pokemon) {
-			this.add('-activate', pokemon, 'ability: Oni');
+			this.add('-activate', pokemon, 'ability: Shuba Shuba');
 		},
 		onModifyAtkPriority: 5,
 		onModifyAtk(atk, attacker, defender, move) {
