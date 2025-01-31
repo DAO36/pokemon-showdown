@@ -247,7 +247,7 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	cleaner: {
 		name: "Cleaner",
-		shortDesc: "On switch-in, user's side is cleared of hazards, other side has screens cleared; Removes terrain.",
+		shortDesc: "On switch-in, user's side: clears hazards; Other side: screens cleared; Removes terrain.",
 	},
 	cleaner2: { // [UNUSED]
 		name: "Cleaner2",
