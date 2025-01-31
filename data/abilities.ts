@@ -365,8 +365,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		onAfterMoveSecondarySelfPriority: -1,
         onAfterMoveSecondarySelf(pokemon, target, move) {
             if (move.totalDamage && !pokemon.forceSwitchFlag) {
-                this.heal(move.totalDamage / 4, pokemon);
-				this.add('-activate', pokemon, 'ability: Supernatural Siren');
+                this.heal(move.totalDamage / 4, target, target); 
 			}
 		},		
         flags: {},
