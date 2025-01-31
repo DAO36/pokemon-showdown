@@ -556,6 +556,14 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 				delete boost.atk;
 				this.add('-fail', target, 'unboost', 'Attack', '[from] ability: Mio Mama', '[of] ' + target);
 			}
+			if (effect.name === 'Succubus' && boost.spa) {
+				delete boost.spa;
+				this.add('-fail', target, 'unboost', 'Special Attack', '[from] ability: Mio Mama', '[of] ' + target);
+			}
+			if (effect.name === 'Death' && boost.spe) {
+				delete boost.spe;
+				this.add('-fail', target, 'unboost', 'Speed', '[from] ability: Mio Mama', '[of] ' + target);
+			}
 		},
 		flags: {},
 		name: "Mio Mama",
@@ -3765,6 +3773,14 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 				delete boost.atk;
 				this.add('-fail', target, 'unboost', 'Attack', '[from] ability: Inner Focus', '[of] ' + target);
 			}
+			if (effect.name === 'Succubus' && boost.spa) {
+				delete boost.spa;
+				this.add('-fail', target, 'unboost', 'Special Attack', '[from] ability: Inner Focus', '[of] ' + target);
+			}
+			if (effect.name === 'Death' && boost.spe) {
+				delete boost.spe;
+				this.add('-fail', target, 'unboost', 'Speed', '[from] ability: Inner Focus', '[of] ' + target);
+			}
 		},
 		flags: {breakable: 1},
 		name: "Inner Focus",
@@ -4630,6 +4646,14 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 				delete boost.atk;
 				this.add('-fail', target, 'unboost', 'Attack', '[from] ability: Oblivious', '[of] ' + target);
 			}
+			if (effect.name === 'Succubus' && boost.spa) {
+				delete boost.spa;
+				this.add('-fail', target, 'unboost', 'Special Attack', '[from] ability: Oblivious', '[of] ' + target);
+			}
+			if (effect.name === 'Death' && boost.spe) {
+				delete boost.spe;
+				this.add('-fail', target, 'unboost', 'Speed', '[from] ability: Oblivious', '[of] ' + target);
+			}
 		},
 		flags: {breakable: 1},
 		name: "Oblivious",
@@ -4730,6 +4754,14 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			if (effect.name === 'Intimidate' && boost.atk) {
 				delete boost.atk;
 				this.add('-fail', target, 'unboost', 'Attack', '[from] ability: Own Tempo', '[of] ' + target);
+			}
+			if (effect.name === 'Succubus' && boost.spa) {
+				delete boost.spa;
+				this.add('-fail', target, 'unboost', 'Special Attack', '[from] ability: Own Tempo', '[of] ' + target);
+			}
+			if (effect.name === 'Death' && boost.spe) {
+				delete boost.spe;
+				this.add('-fail', target, 'unboost', 'Speed', '[from] ability: Own Tempo', '[of] ' + target);
 			}
 		},
 		flags: {breakable: 1},
@@ -5655,6 +5687,14 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			if (effect.name === 'Intimidate' && boost.atk) {
 				delete boost.atk;
 				this.add('-fail', target, 'unboost', 'Attack', '[from] ability: Scrappy', '[of] ' + target);
+			}
+			if (effect.name === 'Succubus' && boost.spa) {
+				delete boost.spa;
+				this.add('-fail', target, 'unboost', 'Special Attack', '[from] ability: Scrappy', '[of] ' + target);
+			}
+			if (effect.name === 'Death' && boost.spe) {
+				delete boost.spe;
+				this.add('-fail', target, 'unboost', 'Speed', '[from] ability: Scrappy', '[of] ' + target);
 			}
 		},
 		flags: {},
