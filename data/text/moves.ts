@@ -21,7 +21,7 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	tskr: {
 		name: "TSKR",
 		desc: "The user cures its non-volatile status condition. Raises the user's Special Attack by 2 stages.",
-		shortDesc: "Cures user's status, raises Sp. Atk by 2.",
+		shortDesc: "Cures user and her party, raises Sp. Atk by 2.",
 	},
 	sakuraiattack: {
 		name: "Sakurai Attack",
@@ -269,8 +269,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	asacoco: {
 		name: "AsaCoco",
-		desc: "Has a 50% chance to badly poison the target.",
-		shortDesc: "50% chance to badly poison the target.",
+		desc: "Has a 100% chance to badly poison the target.",
+		shortDesc: "100% chance to badly poison the target.",
 	},
 	dragonsmash: {
 		name: "Dragon Smash",
@@ -448,8 +448,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	dahlah: {
 		name: "Dahlah",
-		desc: "Has a 20% chance to flinch the target. If the target lost HP, the user takes recoil damage equal to 33% the HP lost by the target, rounded half up, but not less than 1 HP.",
-		shortDesc: "Has 33% recoil. 20% to flinch target",
+		desc: "Has a 30% chance to flinch the target. If the target lost HP, the user takes recoil damage equal to 33% the HP lost by the target, rounded half up, but not less than 1 HP.",
+		shortDesc: "Has 33% recoil. 30% to flinch target",
 	},
 	rainshaman: {
 		name: "Rain Shaman",
