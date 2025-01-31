@@ -349,7 +349,7 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	mightyphoenix: {
 		name: "Mighty Phoenix",
 		desc: "30% chance a Pokemon making contact with this Pokemon will be burned. This Pokemon is immune to Fire-type moves. The first time it is hit by a Fire-type move, its offensive stat is multiplied by 1.5 while using a Fire-type.",
-	shortDesc: "30% chance to burn Pokemon that make contact. This Pokemon is immune to Fire-type moves.",
+	shortDesc: "30% chance to burn those that make contact. Fire-type immunity.",
 	},
 	yabairys: {
 		name: "YabaIRyS",
@@ -367,7 +367,7 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	faunasweep: {
 		name: "Fauna Sweep",
 		desc: "Mother Nature protects herself and her allies from status effects, lowering of stats, and effects that limit move choice. In Grassy Terrain, Speed is doubled.",
-		shortDesc: "In Grassy Terrain, Speed is doubled; Protects users/allies from status, lowering of stats, and effects that limit move choice.",
+		shortDesc: "Grassy Terrain: x2 speed; Protects party from status, lowering of stats, and effects that limit move choice.",
 
 		block: "  [POKEMON] is protected by Mother Nature!",
 	},
@@ -379,12 +379,12 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	chaos: {
 		name: "Chaos",
 		desc: "30% chance a Pokemon using an attacking move on this Harbinger of Chaos will be badly poisoned, paralyzed, fall asleep, frozen, burned or confused.",
-		shortDesc: "30% chance of poison/paralysis/sleep/freeze/burn/confusion on others that attack this Rat.",
+		shortDesc: "30% chance of PSN/PAR/SLP/FRZ/BRN/Confusion on those that attack this Rat.",
 	},
 	archivist: {
 		name: "Archivist",
 		desc: "Copies stat changes of target on switch-in; If opposing Pokemon has a stat stage raised, this Pokemon copies.",
-		shortDesc: "Copies stat changes of target on switch-in; If opposing Pokemon has a stat stage raised, this Pokemon copies.",
+		shortDesc: "Copies stat changes of target on switch-in; If target has a stat stage raised, user copies.",
 	},
 	rockhard: {
 		name: "Rock Hard",
@@ -422,7 +422,7 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	durable: {
 		name: "Durable",
 		desc: "On switch-in, this Automotan's Defense or Special Defense is raised by 1 stage based on the weaker combined offensive stat of all opposing Pokemon. Defense is raised if their Attack is lower, and Special Defense is raised if their Special Attack is the same or lower.",
-		shortDesc: "On switch-in, Defense or Sp. Def is raised 1 stage based on the foes' weaker Offensive stat.",
+		shortDesc: "On switch-in, Def or SpDef is raised 1 based on foes' weaker Offensive stat.",
 	},
 	bigcatmeansbigtrouble: {
 		name: "Big Cat Means Big Trouble",
