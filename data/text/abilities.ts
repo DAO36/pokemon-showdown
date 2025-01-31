@@ -199,7 +199,7 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	watamelon: {
 		name: "Watamelon",
 		desc: "This Sheep is wearing a watermelon that grants her immunity to powder moves, damage from Sandstorm, and the effects of Rage Powder and the Effect Spore Ability. This Pokemon takes halved damage from sound-based moves; Also cannot be struck by a critical hit.",
-		shortDesc: "Immune to powder moves, Sandstorm damage, and Effect Spore; Immune to critical hits and receives 1/2 damage from sound moves.",
+		shortDesc: "Immune to powder moves, Sandstorm damage, crits and receives 1/2 damage from sound moves.",
 	},
 	sugarrush: {
 		name: "Sugar Rush",
@@ -212,7 +212,7 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	thelegendofpolka: {
 		name: "The Legend of Polka",
 		desc: "This Pokemon's moves of 60 power or less have their power multiplied by 1.5, including Struggle. This effect comes after a move's effect changes its own power.",
-		shortDesc: "This Pokemon's moves of 60 power or less have 1.5x power; multi-hit attacks always hit the maximum number of times.",
+		shortDesc: "Moves of 60 BP or less are 1.5x; multi-hit moves hit the max number of times.",
 	},
 	botanx: {
 		name: "Botan X",
@@ -239,11 +239,11 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	samurai: {
 		name: "Samurai",
 		desc: "This Samurai's Attack is raised by 1 stage if she attacks and knocks out another Pokemon. This Samurai's Attack is raised by 1 stage for each of its stat stages that is lowered by an opposing Pokemon.",
-		shortDesc: "Atk is raised by 1 if KOs another Pokemon; Atk is raised by 1 for each stat that is lowered by foe.",
+		shortDesc: "+1 Atk if KOs a Pokemon; Atk is raised by 1 for each stat that is lowered by foe.",
 	},
 	firewall: {
 		name: "Firewall",
-		shortDesc: "If this Pokemon is hit by a physical attack, Reflect is set up; If special, Light Screen is set up",
+		shortDesc: "If user is hit by a physical attack, Reflect is set up; If special, Light Screen is set up",
 	},
 	madscience: { // [UNUSED]
 		name: "Mad Science",

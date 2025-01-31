@@ -280,7 +280,7 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	gorillagrip: {
 		name: "Gorilla Grip",
 		desc: "Has a 10% chance to lower the foe's Defense by 1 stage. If the target lost HP, the user takes recoil damage equal to 33% the HP lost by the target, rounded half up, but not less than 1 HP.",
-		shortDesc: "Has 33% recoil. 10% to lower Def by 1",
+		shortDesc: "Has 33% recoil. 10% to lower foe's Def by 1",
 	},
 	nothingwrong: {
 		name: "Nothing Wrong",
@@ -295,7 +295,7 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	candycrash: {
 		name: "Candy Crash",
 		desc: "Has a 10% chance to raise the user's Speed by 1 stage .Hits two to five times. Has a 35% chance to hit two or three times and a 15% chance to hit four or five times. If one of the hits breaks the target's substitute, it will take damage for the remaining hits. If the user has the Skill Link Ability, this move will always hit five times. If the user is holding Loaded Dice, this move will hit 4-5 times.",
-		shortDesc: "Hits 2-5 times in one turn. 10% chance to raise Speed by 1",
+		shortDesc: "Hits 2-5 times. 10% chance to raise Speed by 1",
 	},
 	sweetassault: {
 		name: "Sweet Assault",
@@ -310,7 +310,7 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	clowntown: {
 		name: "Clown Town",
 		desc: "Has a 10% chance to confuse the target. Hits thrice. If the first hit breaks the target's substitute, it will take damage for the second and third hits.",
-		shortDesc: "Hits 3 times in one turn, 10% chance to confuse the target.",
+		shortDesc: "Hits 3 times; 10% chance to confuse target.",
 	},
 	polmao: {
 		name: "PoLMAO",
@@ -343,7 +343,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	nenemaxattack: {
 		name: "NeneMAX Attack",
-		shortDesc: "Cannot be selected the turn after it's used. Lower's the user's Speed by 1 stage if it successfully hits the target",
+		desc: "Cannot be selected the turn after it's used. Lower's the user's Speed by 1 stage if it successfully hits the target",
+		shortDesc: "Lowers user's Speed by 1. Can't be used twice in a row.",
 	},
 	succubussong: {
 		name: "Succubus Song",
