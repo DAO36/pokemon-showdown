@@ -344,7 +344,7 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	nenemaxattack: {
 		name: "NeneMAX Attack",
 		desc: "Cannot be selected the turn after it's used. Lower's the user's Speed by 1 stage if it successfully hits the target",
-		shortDesc: "Lowers user's Speed by 1. Can't be used twice in a row.",
+		shortDesc: "Lowers user's SPE by 1. Can't be used twice in a row.",
 	},
 	succubussong: {
 		name: "Succubus Song",
