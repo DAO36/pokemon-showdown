@@ -95996,7 +95996,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			moonlight: ["9M"],
 			sweetkiss: ["9M"],
 			paintbrush: ["9M"],
-			freezeray: ["9M"],
+			alientouch: ["9M"],
         },
 	},	
 	risu: {
