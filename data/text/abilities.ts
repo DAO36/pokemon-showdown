@@ -328,7 +328,7 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	powerofatlantis: {
 		name: "Power of Atlantis",
 		desc: "If Rain is active, this Shark's Attack and Special Attack is multiplied by 1.5 and she gains 1/10 of her maximum HP, rounded down, at the end of each turn. If there's no weather, she loses 1/10 of her maximum HP, rounded down, at the end of each turn, if Sunny Day/Sandstorm, loses 1/8 of her maximum HP per turn instead. These effects are prevented if the Pokemon is holding a Utility Umbrella.",
-		shortDesc: "In Rain, Atk and Sp. Atk is 1.5x; gains 1/10 HP every turn. Loses 1/8 max HP per turn if no weather.",
+		shortDesc: "In Rain, Atk & SpAtk: 1.5x; gains 1/10 HP per turn. No weather: loses 1/8 HP per turn.",
 	},
 	toxicgamer: {
 		name: "Toxic Gamer",
