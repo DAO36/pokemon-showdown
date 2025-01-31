@@ -80,7 +80,7 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	snowdash: {
 		name: "Snow Dash",
 		desc: "Has a 10% chance to freeze the foe .If this attack is not successful, the user loses half of its maximum HP, rounded down, as crash damage. Pokemon with the Magic Guard Ability are unaffected by crash damage.",
-		shortDesc: "User loses 50% max HP if miss. 10% chance to freeze.",
+		shortDesc: "Loses 50% max HP if miss. 10% chance to freeze.",
 
 		damage: "#crash",
 	},
@@ -102,7 +102,7 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	splitpersonality: {
 		name: "Split Personality",
 		desc: "This move combines Fairy in its type effectiveness against the target. Hits twice. If the first hit breaks the target's substitute, it will take damage for the second hit.",
-		shortDesc: "Combines Fairy in its type effectiveness. Hits 2 times in one turn.",
+		shortDesc: "Combines Fairy in its type effectiveness. Hits 2x.",
 	},
 	spidercooking: {
 		name: "Spider Cooking",
@@ -117,7 +117,7 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	redheart: {
 		name: "Red Heart",
 		desc: "The user is protected from most attacks made by other Pokemon during this turn, and Pokemon trying to use special attacks against the user have their Special Attack lowered by 1 stage. Non-damaging moves go through this protection. This move has a 1/X chance of being successful, where X starts at 1 and triples each time this move is successfully used. X resets to 1 if this move fails, if the user's last move used is not Baneful Bunker, Burning Bulwark, Detect, Endure, King's Shield, Max Guard, Obstruct, Protect, Quick Guard, Silk Trap, Spiky Shield, or Wide Guard, or if it was one of those moves and the user's protection was broken. Fails if the user moves last this turn.",
-		shortDesc: "Protects from damaging attacks. If hit by special attack; lowers atatcker's Sp. Atk by 1",
+		shortDesc: "Protects from damaging attacks. If special attack: -1 Sp. Atk.",
 	},
 	fourcoursemeal: {
 		name: "Four Course Meal",

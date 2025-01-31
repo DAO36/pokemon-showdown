@@ -97,7 +97,7 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	spidersoup: {
 		name: "Spider Soup",
-		shortDesc: "If this Pokemon is hit by a move that makes contact, Sticky Web is set on the opposing side.",
+		shortDesc: "If User is hit by a move that makes contact, Sticky Web is set on opposing side.",
 	},
 	splitpersonalities: { // [UNUSED]
 		name: "Split Personalities",
@@ -107,7 +107,7 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	chamachange: {
 		name: "Chama Change",
 		desc: "If Akai Haato, she changes to Haachama before using an attacking move, and changes to Haachama Forme before using Red Heart.",
-		shortDesc: "If Akai Haato, changes to Haachama before attacks and Haachama before Red Heart.",
+		shortDesc: "If Akai Haato, changes to Haachama before attacks and Akai Haato before Red Heart.",
 
 		transform: "Changed to Haachama!",
 		transformEnd: "Changed to Akai Haato!",
@@ -126,8 +126,8 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	apex: {
 		name: "Apex",
-		desc: "When this Pokemon has more than 1/2 its maximum HP and takes damage from an attack bringing it to 1/2 or less of its maximum HP, its Special Attack is raised by 1 stage. This effect applies after all hits from a multi-hit move. This effect is prevented if the move had a secondary effect removed by the Sheer Force Ability.",
-		shortDesc: "This Pokemon's Sp. Atk is raised by 1 when it reaches 1/2 or less of its max HP.",
+		desc: "When this Maid has more than 1/2 its maximum HP and takes damage from an attack bringing it to 1/2 or less of its maximum HP, its Special Attack is raised by 1 stage. This effect applies after all hits from a multi-hit move. This effect is prevented if the move had a secondary effect removed by the Sheer Force Ability.",
+		shortDesc: "This Maid's Sp. Atk is raised by 1 when it reaches 1/2 or less of its max HP.",
 	},
 	oni: {
 		name: "Oni",
