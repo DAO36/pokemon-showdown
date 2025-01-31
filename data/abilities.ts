@@ -1286,6 +1286,9 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		num: 24,
 	},
 	mightyphoenix: { // combines [Flame Body] + [Flash Fire]
+		onStart(pokemon) {
+			this.add('-activate', pokemon, 'ability: Mighty Phoenix');
+		},
 		onDamagingHit(damage, target, source, move) {
 			if (this.checkMoveMakesContact(move, source, target)) {
 				if (this.randomChance(3, 10)) {
