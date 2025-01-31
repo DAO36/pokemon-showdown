@@ -111,14 +111,13 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	},
 	lavabucket: {
 		num: 370,
-		accuracy: 85,
+		accuracy: 75,
 		basePower: 120,
 		category: "Special",
 		name: "Lava Bucket",
 		pp: 5,
 		priority: 0,
-		flags: {protect: 1, mirror: 1, metronome: 1},
-		recoil: [33, 100],
+		flags: {protect: 1, mirror: 1, metronome: 1}, 
 		secondary: {
 			chance: 100,
 			status: 'brn',
