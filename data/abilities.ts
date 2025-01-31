@@ -153,7 +153,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		},
 		onUpdate(pokemon) {
 			if (pokemon.status === 'psn' || pokemon.status === 'tox' || pokemon.status === 'par' || pokemon.status === 'slp' || pokemon.status === 'brn' || pokemon.status === 'frz') {
-				this.add('-activate', pokemon, 'ability: Immunity');
+				this.add('-activate', pokemon, 'ability: Seiso');
 				pokemon.cureStatus();
 			}
 		},
