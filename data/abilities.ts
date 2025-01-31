@@ -1184,7 +1184,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		onWeather(target, source, effect) {
 			if (target.hasItem('utilityumbrella')) return;
 			if (effect.id === 'sandstorm') {
-				this.heal(target.baseMaxhp / 12);
+				this.heal(target.baseMaxhp / 10);
 			}
 		},
 		onBasePowerPriority: 21,
