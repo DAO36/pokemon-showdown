@@ -30,7 +30,7 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	lavabucket: {
 		name: "Lava Bucket",
 		desc: "Has a 100% chance to burn the target. Hits adjacent foes. User gets burned and if the target lost HP, the user takes recoil damage equal to 33% the HP lost by the target, rounded half up, but not less than 1 HP.",
-		shortDesc: "100% chance to burn the target. Hits adjacent foes. User gets burned and gets 33% recoil damage.",
+		shortDesc: "100% chance to burn target. Hits adjacent foes. User gets burned and gets 33% recoil damage.",
 
 		start: "  [SOURCE] dropped lava everywhere! Atsui!",
 	},

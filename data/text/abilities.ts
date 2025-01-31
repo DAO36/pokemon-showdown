@@ -53,12 +53,13 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	seiso: {
 		name: "Seiso",
-		shortDesc: "This Seiso idol cannot be poisoned, paralyzed, burned, frozen, or put to sleep; Cannot be made to flinch.",
+		desc: "This Seiso idol cannot be poisoned, paralyzed, burned, frozen, or put to sleep; Cannot be made to flinch.",
+		shortDesc: "Immune to status effects; Cannot be made to flinch.",
 	},
 	elite: {
 		name: "Elite",
 		desc: "This Pokemon's Special Attack is raised 2 stage after it is damaged by a Fire-type move. This Pokemon cannot be burned. Gaining this Ability while burned cures it.",
-		shortDesc: "This Pokemon's Sp. Atk is raised by 2 when damaged by Fire moves; can't be burned.",
+		shortDesc: "User's Sp. Atk is raised by 2 when damaged by Fire moves; can't be burned.",
 	},
 	stellar: {
 		name: "Stellar",
