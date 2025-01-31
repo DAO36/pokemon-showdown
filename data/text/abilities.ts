@@ -295,7 +295,7 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	tonjokqueen: {
 		name: "TonjokQueen",
-		shortDesc: "This Queen of Tonjoks has her punch-based attacks have 1.2x power; Sucker Punch is not boosted. Immune to punching-based moves."
+		shortDesc: "Punch-based attacks have 1.2x power; Immune to punching-based moves."
 	},
 	bluntblade: {
 		name: "Blunt Blade",

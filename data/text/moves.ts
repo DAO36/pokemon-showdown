@@ -428,7 +428,7 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	peacockattack: {
 		name: "Peacock Attack",
 		desc: "Has a 10% chance to raise the user's Special Attack by 1 stage.",
-		shortDesc: "10% chance to raise the user's Special Attack by 1.",
+		shortDesc: "10% chance to raise user's Special Attack by 1.",
 	},
 	keris: {
 		name: "Keris",
