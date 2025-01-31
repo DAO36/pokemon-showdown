@@ -422,7 +422,7 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	durable: {
 		name: "Durable",
 		desc: "On switch-in, this Automotan's Defense or Special Defense is raised by 1 stage based on the weaker combined offensive stat of all opposing Pokemon. Defense is raised if their Attack is lower, and Special Defense is raised if their Special Attack is the same or lower.",
-		shortDesc: "On switch-in, Def or SpDef is raised 1 based on foes' weaker Offensive stat.",
+		shortDesc: "On switch-in, Def or SpDef is raised by 1 based on foes' weaker Offensive stat.",
 	},
 	bigcatmeansbigtrouble: {
 		name: "Big Cat Means Big Trouble",
