@@ -311,11 +311,12 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	grindstone: {
 		name: "Grindstone",
-		shortDesc: "If Sandstorm is active, this Blacksmith restores 1/12 of its maximum HP per turn. This Pokemon's Ground/Rock/Steel attacks do 1.3x in Sandstorm.",
+		desc: "If Sandstorm is active, this Blacksmith restores 1/10 of its maximum HP per turn. This Pokemon's Ground/Rock/Steel attacks do 1.3x in Sandstorm.",
+		shortDesc: "In Sandstorm, user restores 1/10 HP per turn; Ground/Rock/Steel attacks do 1.3x damage.",
 	},
 	wethair: {
 		name: "Wet Hair",
-		shortDesc: "Pokemon making contact with this Rain Shaman have their Accuracy lowered by 1 stage.",
+		shortDesc: "Making contact with this Pokemon has Accuracy lowered by 1 stage.",
 	},
 	powerofatlantis: {
 		name: "Power of Atlantis",
