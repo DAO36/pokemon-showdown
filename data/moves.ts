@@ -615,7 +615,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		pp: 5,
 		priority: 0,
 		flags: {snatch: 1, heal: 1, metronome: 1, switches: 1},
-		slotCondition: 'Wish',
+		slotCondition: 'Nursing',
 		condition: {
 			onStart(pokemon, source) {
 				this.effectState.hp = source.maxhp / 2;
@@ -627,13 +627,13 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 			onResidualOrder: 4,
 			onResidual(side: any) {
 				if (this.getOverflowedTurnCount() <= this.effectState.startingTurn) return;
-				side.removeSlotCondition(this.getAtSlot(this.effectState.sourceSlot), 'wish');
+				side.removeSlotCondition(this.getAtSlot(this.effectState.sourceSlot), 'nursing');
 			},
 			onEnd(target) {
 				if (target && !target.fainted) {
 					const damage = this.heal(this.effectState.hp, target, target);
 					if (damage) {
-						this.add('-heal', target, target.getHealth, '[from] move: Wish', '[wisher] ' + this.effectState.source.name);
+						this.add('-heal', target, target.getHealth, '[from] move: Nursing', '[wisher] ' + this.effectState.source.name);
 					}
 				}
 			},
