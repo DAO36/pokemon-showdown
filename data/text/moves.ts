@@ -166,7 +166,7 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	nursing: {
 		name: "Nursing",
 		desc: "User switches out. At the end of the next turn, the Pokemon at the user's position has 1/2 of its maximum HP restored to it, rounded down. Fails if this move is already in effect for the user's position.",
-		shortDesc: "Switches out; Next turn, heals 50% of the patient's max HP.",
+		shortDesc: "Switches; Next turn, heals 50% of the patient's max HP.",
 
 		heal: "  [NICKNAME]'s was nursed back to health!",
 		switchOut: "#uturn",
