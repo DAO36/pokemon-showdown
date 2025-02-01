@@ -219,7 +219,7 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	botanx: {
 		name: "Botan X",
-		shortDesc: "This Lion's moves have her accuracy multiplied by 1.3. thanks to her goggles",
+		shortDesc: "This Lion's moves have her accuracy multiplied by 1.3 thanks to her goggles",
 	},
 	frozensake: {
 		name: "Frozen Sake",

@@ -93700,7 +93700,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			darkestlariat: ["9M"],
 			sakuraiattack: ["9M"],
 			lavabucket: ["9M"],
-			eliteidol: ["9M"],	
+			elitemiko: ["9M"],	
 			rest: ["9M"],			
         },
 	},
@@ -96435,6 +96435,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			babydolleyes: ["9M"],
 			charm: ["9M"],
 			rainshaman: ["9M"],
+			tsunami: ["9M"],
         },
 	},	
 	gura: {

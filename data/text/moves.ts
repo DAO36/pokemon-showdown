@@ -166,8 +166,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	nursing: {
 		name: "Nursing",
 		desc: "User switches out. At the end of the next turn, the Pokemon at the user's position has 1/2 of its maximum HP restored to it, rounded down. Fails if this move is already in effect for the user's position.",
-		shortDesc: "Switches; Next turn, heals 50% of the patient's max HP.",
-
+		shortDesc: "Switches; Next turn, heals 50% of patient's HP.",
+ 
 		heal: "  [NICKNAME]'s was nursed back to health!",
 		switchOut: "#uturn",
 	},
@@ -428,12 +428,12 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	peacockattack: {
 		name: "Peacock Attack",
 		desc: "Has a 10% chance to raise the user's Special Attack by 1 stage.",
-		shortDesc: "10% chance to raise user's Special Attack by 1.",
+		shortDesc: "10% chance to raise user's Sp. Atk by 1.",
 	},
 	keris: {
 		name: "Keris",
 		desc: "Has a 10% chance to raise the user's Special Defense by 1 stage.",
-		shortDesc: "10% chance to raise the user's Sp. Def by 1.",
+		shortDesc: "10% chance to raise the user's Sp.Def by 1.",
 	},
 	spyshot: {
 		name: "Spy Shot",
@@ -459,6 +459,11 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 
 		// TODO needs to be implemented
 		activate: "  [POKEMON] is a brat!",
+	},
+	tsunami: {
+		name: "Tsunami",
+		desc: "Has a 10% chance to lower target's Speed by 1 stage. If the weather is Primordial Sea or Rain Dance, this move does not check accuracy. If the weather is Desolate Land or Sunny Day, this move's accuracy is 50%. If this move is used against a Pokemon holding Utility Umbrella, this move's accuracy remains at 70%.",
+		shortDesc: "10% chance to lower Speed by 1. Can't miss in Rain.",
 	},
 	trident: {
 		name: "Trident",
