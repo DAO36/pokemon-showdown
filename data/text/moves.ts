@@ -9,14 +9,14 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		desc: "Hits adjacent foes. No additional effect.",
 		shortDesc: "No additional effect. Hits adjacent foes.",
 
-		start: "  [SOURCE] gives an idol performance!",
+		activate: "  [SOURCE] gives an idol performance!",
 	},
 	ankimoattack: {
 		name: "Ankimo Attack",
 		desc: "Has a 10% chance to raise the user's Attack by 1 stage.",
 		shortDesc: "10% chance to raise the user's Attack by 1.",
 
-		start: "  Ankimo assists in the attack!",
+		activate: "  Ankimo assists in the attack!",
 	},
 	tskr: {
 		name: "TSKR",
@@ -32,14 +32,14 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		desc: "Has a 100% chance to burn the target. Hits adjacent foes. User gets burned and if the target lost HP, the user takes recoil damage equal to 33% the HP lost by the target, rounded half up, but not less than 1 HP.",
 		shortDesc: "100% chance to burn target. Hits adjacent foes. User gets burned and gets 33% recoil damage.",
 
-		start: "  [SOURCE] dropped lava everywhere! Atsui!",
+		activate: "  [SOURCE] dropped lava everywhere! Atsui!",
 	},
 	elitemiko: {
 		name: "Elite Miko",
 		desc: "Raises the user's Attack by 2 stages.",
 		shortDesc: "Raises the user's Attack by 2.",
 
-		start: "  [SOURCE] becomes elite!",
+		activate: "  [SOURCE] becomes elite!",
 	},
 	suicopath: {
 		name: "Suicopath",
@@ -65,7 +65,7 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		desc: "Raises the user's Special Attack and Defense by 1 stage.",
 		shortDesc: "Raises the user's Sp. Atk and Def by 1.",
 
-		start: "  [SOURCE] is now high specs robot!",
+		activate: "  [SOURCE] is now high specs robot!",
 	},
 	divasong: {
 		name: "Diva Song",
