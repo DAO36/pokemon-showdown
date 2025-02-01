@@ -183,7 +183,9 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	yandere: {
 		name: "Yandere",
 		desc: "This Pokemon prevents other Pokemon from using pivot moves, whether they deal damage (U-Turn, Volt Switch, Flip Turn, etc.) or are a status (Teleport, Baton Pass, Chilly Reception, etc.).",
-		shortDesc: "User prevents opposing Pokemon from using pivot moves (U-Turn, Teleport, etc)."
+		shortDesc: "User prevents opposing Pokemon from using pivot moves (U-Turn, Teleport, etc).",
+
+		block: "  [SOURCE] cannot use [MOVE]!",
 	},
 	elvishflare: {
 		name: "Elvish Flare",
@@ -359,7 +361,7 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 		desc: "30% chance a Pokemon making contact with this Pokemon will be burned. This Pokemon is immune to Fire-type moves. The first time it is hit by a Fire-type move, its offensive stat is multiplied by 1.5 while using a Fire-type.",
 	shortDesc: "30% chance to burn those that make contact. Fire-type immunity.",
 
-	start: "  [POKEMON] the Part-Time Warrior is here!",
+	    start: "  [POKEMON] the Part-Time Warrior is here!",
 	},
 	yabairys: {
 		name: "YabaIRyS",
