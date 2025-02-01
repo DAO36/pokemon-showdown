@@ -118,8 +118,9 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		pp: 5,
 		priority: 0,
 		flags: {protect: 1, mirror: 1, metronome: 1}, 
-		self: { 
-			status: 'brn',
+		onHit(target, source, move) {
+			const result = target.setStatus('brn', source, move);
+			if (!result) return result;
 		},
 		secondary: {
 			chance: 100,
@@ -2362,6 +2363,38 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		target: "normal",
 		type: "Rock",
 		contestType: "Cool",
+	},
+	haboob: {
+		num: 542,
+		accuracy: 70,
+		basePower: 110,
+		category: "Special",
+		name: "Haboob",
+		pp: 10,
+		priority: 0,
+		flags: {protect: 1, mirror: 1, distance: 1, wind: 1},
+		onModifyMove(move, pokemon, target) {
+			switch (target?.effectiveWeather()) {
+			case 'sandstorm':
+				move.accuracy = true;
+				break;
+			case 'sunnyday':
+			case 'desolateland':
+			case 'raindance':
+			case 'primordialsea':	
+				move.accuracy = 50;
+				break;
+			}
+		},
+		secondary: {
+			chance: 30,
+			boosts: {
+				accuracy: -1,
+			},
+		},
+		target: "allAdjacentFoes",
+		type: "Rock",
+		contestType: "Tough",
 	},
 	underworldmusic: {
 		num: 370,

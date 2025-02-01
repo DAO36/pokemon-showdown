@@ -7,16 +7,12 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	idolsong: {
 		name: "Idol Song",
 		desc: "Hits adjacent foes. No additional effect.",
-		shortDesc: "No additional effect. Hits adjacent foes.",
-
-		activate: "  [SOURCE] gives an idol performance!",
+		shortDesc: "No additional effect. Hits adjacent foes.", 
 	},
 	ankimoattack: {
 		name: "Ankimo Attack",
 		desc: "Has a 10% chance to raise the user's Attack by 1 stage.",
-		shortDesc: "10% chance to raise the user's Attack by 1.",
-
-		activate: "  Ankimo assists in the attack!",
+		shortDesc: "10% chance to raise the user's Attack by 1.", 
 	},
 	tskr: {
 		name: "TSKR",
@@ -627,6 +623,11 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		name: "Biboo Blade",
 		desc: "Has a high chance to land a critical hit. If this move is successful, it sets up spikes on the opposing side of the field, damaging each opposing Pokemon that switches in, unless it is a Flying-type Pokemon or has the Levitate Ability. A maximum of three layers may be set, and opponents lose 1/8 of their maximum HP with one layer, 1/6 of their maximum HP with two layers, and 1/4 of their maximum HP with three layers, all rounded down. Can be removed from the opposing side if any Pokemon uses Tidy Up, or if any opposing Pokemon uses Mortal Spin, Rapid Spin, or Defog successfully, or is hit by Defog.",
 		shortDesc: "Sets a layer of Spikes on opposing side. High crit ratio",
+	},
+	haboob: {
+		name: "Haboob",
+		desc: "Has a 30% chance to lower target's Accuracy by 1 stage. If the weather is Sandstorm, this move does not check accuracy. If the weather is Primordial Sea, Rain Dance, Desolate Land, or Sunny Day, this move's accuracy is 50%. If this move is used against a Pokemon holding Utility Umbrella, this move's accuracy remains at 70%.",
+		shortDesc: "30% to lower Acc by 1. Can't miss in Sandstorm.",
 	},
 	underworldmusic: {
 		name: "Underworld Music",

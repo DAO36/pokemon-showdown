@@ -97739,6 +97739,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			bibooblade: ["9M"],
 			swordsdance: ["9M"],
 			sacredsword: ["9M"],
+			haboob: ["9M"],
         },
 	},	
 	pebble: {
