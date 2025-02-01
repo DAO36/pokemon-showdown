@@ -97360,6 +97360,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			crunch: ["9M"],
 			timetogo: ["9M"],
 			timeflies: ["9M"],
+			timeisup: ["9M"],
         },
 	},	
 	mumei: {

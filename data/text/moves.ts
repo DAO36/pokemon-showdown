@@ -624,8 +624,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	naturesnurture: {
 		name: "Nature's Nurture",
-		desc: "Each Pokemon on the user's side restores 1/4 of its maximum HP, rounded half up.",
-		shortDesc: "Heals the user and its allies by 1/4 their max HP.",
+		desc: "Each Pokemon on the user's side restores 1/2 of its maximum HP, rounded half up.",
+		shortDesc: "Heals the user and its allies by 1/2 their max HP.",
 	},
 	clockstrikes: {
 		name: "Clock Strikes",
@@ -649,8 +649,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		desc: "Has a 30% chance to lower the target's Speed by 1 stage. Hits adjacent Pokemon.",
 		shortDesc: "30% to lower Speed by 1. Hits adjacent Foes.",
 	},
-	esight: {
-		name: "Future Sight",
+	timeisup: {
+		name: "Time is Up",
 		desc: "This always hits the target and bypasses substitute. Deals damage two turns after this move is used. At the end of that turn, the damage is calculated at that time and dealt to the Pokemon at the position the target had when the move was used. If the user is no longer active at the time, damage is calculated based on the user's natural Special Attack stat, types, and level, with no boosts from its held item or Ability. Fails if this move or Doom Desire is already in effect for the target's position.",
 		shortDesc: "Hits two turns after being used. Never misses.",
 
