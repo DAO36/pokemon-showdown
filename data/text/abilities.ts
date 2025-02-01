@@ -384,7 +384,7 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	archivist: {
 		name: "Archivist",
 		desc: "Copies stat changes of target on switch-in; If opposing Pokemon has a stat stage raised, this Pokemon copies.",
-		shortDesc: "Copies stat changes of target on switch-in; If target has a stat stage raised, user copies.",
+		shortDesc: "Copies stat changes of target on switch-in; If target has stat stage raised, user copies.",
 	},
 	rockhard: {
 		name: "Rock Hard",
