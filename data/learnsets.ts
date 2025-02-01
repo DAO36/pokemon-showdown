@@ -93888,7 +93888,6 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			rest: ["9M"],
 			honeclaws: ["9M"],
 			konkon: ["9M"],
-			snowdash: ["9M"],
 			freezeray: ["9M"],
 			icesword: ["9M"],
         },
@@ -93933,6 +93932,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			snowscape: ["9M"],
 			nastyplot: ["9M"],
 			honeclaws: ["9M"],
+			snowdash: ["9M"],
         },
 	},
 	kurokami: {
@@ -96986,6 +96986,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			memento: ["9M"],
 			phoenixblade: ["9M"],
 			phoenixshield: ["9M"],
+			phoenixwind: ["9M"],
         },
 	},	
 	froggywawa: {
