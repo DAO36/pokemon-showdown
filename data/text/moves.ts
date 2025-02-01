@@ -182,6 +182,11 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		desc: "Raises the user's Attack by 2 stages.",
 		shortDesc: "Raises the user's Atk by 2.",
 	},
+	magickick: {
+		name: "High Jump Kick",
+		desc: "If this attack is not successful, the user loses half of its maximum HP, rounded down, as crash damage. Pokemon with the Magic Guard Ability are unaffected by crash damage.",
+		shortDesc: "User is hurt by 50% of its max HP if it misses.",
+	},
 	duckasmr: {
 		name: "Duck ASMR",
 		desc: "Has a 10% chance to confuse the target.",
@@ -191,6 +196,11 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		name: "Duck Dance",
 		desc: "Raises the user's Attack and Speed by 1 stage.",
 		shortDesc: "Raises the user's Attack and Speed by 1.",
+	},
+	quackattack: {
+		name: "Quack Attack",
+		desc: "Lowers the user's Defense and Special Defense by 1 stage.",
+		shortDesc: "Lowers the user's Defense and Sp. Def by 1.",
 	},
 	oozorapolice: {
 		name: "Oozora Police",
@@ -367,6 +377,11 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		desc: "Raises the user's Attack by 2 stages and accuracy by 1 stage.",
 		shortDesc: "Raises the user's Attack by 2 and Accuracy by 1.",
 	},
+	falconwhip: {
+		name: "Falcon Whip",
+		desc: "Has a 30% chance to confuse the target.",
+		shortDesc: "30% chance to confuse target.",
+	},
 	samuraistrikes: {
 		name: "Samurai Strikes",
 		desc: "Hits two to six times. Has a 35% chance to hit two or three times and a 15% chance to hit four or six times. If one of the hits breaks the target's substitute, it will take damage for the remaining hits. If the user has the Skill Link Ability, this move will always hit six times. If the user is holding Loaded Dice, this move will hit 4-6 times.",
@@ -483,8 +498,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	ameway: {
 		name: "Ame Way",
-		desc: "Raises the user's Attack by 2 stages and Accuracy by 1 stage.",
-		shortDesc: "Raises the user's Atk by 2 Accuracy by 1.",
+		desc: "Raises the user's Attack by 2 stages.",
+		shortDesc: "Raises the user's Attack by 2.",
 	},
 	timetravel: {
 		name: "Time Travel",
@@ -540,6 +555,11 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		desc: "Has a 30% chance to burn the target.",
 		shortDesc: "30% chance to burn the target.",
 	},
+	phoenixwind: {
+		name: "Phoenix Wind",
+		desc: "Has a 30% chance to burn the target. Hits adjacent Pokemon.",
+		shortDesc: "30% chance to burn. Hits adjacent Foes.",
+	},
 	hopesoda: {
 		name: "Hope Soda",
 		desc: "Raises the user's Attack by 2 stages.",
@@ -557,6 +577,11 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 
 		damage: "#crash",
 	},
+	songofhope: {
+		name: "Song of Hope",
+		desc: "Has a 10% chance to raise the user's Attack, Defense, Special Attack, Special Defense, and Speed by 1 stage.",
+		shortDesc: "10% chance to raise all stats by 1 (not acc/eva).",
+	},
 	wormhole: {
 		name: "Wormhole",
 		desc: "This move always hits. Usually goes first.",
@@ -564,13 +589,18 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	supernova: {
 		name: "Supernova",
-		desc: "If the target lost HP, the user takes recoil damage equal to 33% the HP lost by the target, rounded half up, but not less than 1 HP.",
-		shortDesc: "Has 33% recoil.",
+		desc: "Hits adjacent Pokemon. If the target lost HP, the user takes recoil damage equal to 33% the HP lost by the target, rounded half up, but not less than 1 HP.",
+		shortDesc: "Has 33% recoil. Hits adjacent Pokemon.",
 	},
 	bigbang: {
 		name: "Big Bang",
-		desc: "Sana faints after using this move, even if this move fails for having no target. This move is prevented from executing if any active Pokemon has the Damp Ability.",
+		desc: "Sana faints after using this move, even if this move fails for having no target. This move is prevented from executing if any active Pokemon has the Damp Ability. Hits adjacent Pokemon.",
 		shortDesc: "Hits adjacent Pokemon. The user faints.",
+	},
+	blackhole: {
+		name: "Black Hole",
+		desc: "Prevents the target from switching out. The target can still switch out if it is holding Shed Shell or uses Baton Pass, Flip Turn, Parting Shot, Teleport, U-turn, or Volt Switch. If the target leaves the field using Baton Pass, the replacement will remain trapped. The effect ends if the user leaves the field. Has a 100% chance to lower the target's Speed by 1 stage.",
+		shortDesc: "Prevents foe from switching. 100% to lower Speed by 1.",
 	},
 	mothernature: {
 		name: "Mother Nature",
@@ -587,6 +617,11 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		desc: "If the target lost HP, the user takes recoil damage equal to 33% the HP lost by the target, rounded half up, but not less than 1 HP.",
 		shortDesc: "Has 33% recoil.",
 	},
+	naturesnurture: {
+		name: "Nature's Nurture",
+		desc: "Each Pokemon on the user's side restores 1/4 of its maximum HP, rounded half up.",
+		shortDesc: "Heals the user and its allies by 1/4 their max HP.",
+	},
 	clockstrikes: {
 		name: "Clock Strikes",
 		desc: "Hits twice. If the first hit breaks the target's substitute, it will take damage for the second hit.",
@@ -597,12 +632,25 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		desc: "No additional effect.",
 		shortDesc: "Almost always goes first.",
 	},
-	timetogo: {
+	timetogo: { // <UNUSED>
 		name: "Time to Go",
 		desc: "If this move is successful and the user has not fainted, the user switches out even if it is trapped and is replaced immediately by a selected party member. The user does not switch out if there are no unfainted party members, or if the target switched out using an Eject Button or through the effect of the Emergency Exit or Wimp Out Abilities. Almost always goes first.",
 		shortDesc: "Switches out after damaging target. Goes first.",
 
 		switchOut: "#uturn",
+	},
+	sandsoftime: {
+		name: "Sands of Time",
+		desc: "Has a 30% chance to lower the target's Speed by 1 stage. Hits adjacent Pokemon.",
+		shortDesc: "30% to lower Speed by 1. Hits adjacent Foes.",
+	},
+	esight: {
+		name: "Future Sight",
+		desc: "This always hits the target and bypasses substitute. Deals damage two turns after this move is used. At the end of that turn, the damage is calculated at that time and dealt to the Pokemon at the position the target had when the move was used. If the user is no longer active at the time, damage is calculated based on the user's natural Special Attack stat, types, and level, with no boosts from its held item or Ability. Fails if this move or Doom Desire is already in effect for the target's position.",
+		shortDesc: "Hits two turns after being used. Never misses.",
+
+		start: "  [POKEMON] is time traveling!",
+		activate: "  Time's Up, [TARGET]!",
 	},
 	moomers: {
 		name: "Moomers",

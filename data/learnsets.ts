@@ -93890,6 +93890,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			konkon: ["9M"],
 			snowdash: ["9M"],
 			freezeray: ["9M"],
+			icesword: ["9M"],
         },
 	},
 	fubuzilla: {
@@ -94463,6 +94464,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			grudge: ["9M"],
 			witchattack: ["9M"],
 			magiconion: ["9M"],
+			magickick: ["9M"],
         },
 	},
 	subaru: {
@@ -94525,6 +94527,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			duckasmr: ["9M"],
 			duckdance: ["9M"],
 			oozorapolice: ["9M"],
+			quackattack: ["9M"],
         },
 	},		
 	korone: {
@@ -95041,6 +95044,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			trick: ["9M"],
 			haze: ["9M"],
 			mist: ["9M"],
+			snipeshot: ["9M"],
 			aquacutter: ["9M"],
 			sweetkiss: ["9M"],
 			charm: ["9M"],
@@ -95807,6 +95811,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			honeclaws: ["9M"],
 			nastyplot: ["9M"],
 			focusshades: ["9M"],
+			falconwhip: ["9M"],
         },
 	},	
 	chloe: {
@@ -95852,6 +95857,8 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			recycle: ["9M"],
 			tidyup: ["9M"],
 			courtchange: ["9M"],
+			slackoff: ["9M"],
+			swordsdance: ["9M"],
 			lightscreen: ["9M"],
 			reflect: ["9M"],
 			trick: ["9M"],
@@ -97078,6 +97085,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			hopesoda: ["9M"],
 			hopeful: ["9M"],
 			hopeless: ["9M"],
+			songofhope: ["9M"],
         },
 	},	
 	sana: {
@@ -97120,6 +97128,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			wormhole: ["9M"],
 			bigbang: ["9M"],
 			supernova: ["9M"],
+			blackhole: ["9M"],
         },
 	},	
 	sanabeeg: {
@@ -97220,6 +97229,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			mothernature: ["9M"],
 			natureswrath: ["9M"],
 			gamerkirin: ["9M"],
+			naturesnurture: ["9M"],
         },
 	},	
 	kronii: {
@@ -97259,9 +97269,12 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			scorchingsands: ["9M"],
 			headsmash: ["9M"],
 			ancientpower: ["9M"],
+			rockslide: ["9M"],
 			xscissor: ["9M"],
 			nightslash: ["9M"],
 			darkpulse: ["9M"],
+			stoneedge: ["9M"],
+			powergem: ["9M"],
 			lashout: ["9M"],
 			playrough: ["9M"],
 			alluringvoice: ["9M"],
@@ -97292,7 +97305,8 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			uturn: ["9M"],
 			clockstrikes: ["9M"],
 			timeflies: ["9M"],
-			timetogo: ["9M"],
+			sandsoftime: ["9M"],
+			timesup: ["9M"],
         },
 	},	
 	kroniiboros: {

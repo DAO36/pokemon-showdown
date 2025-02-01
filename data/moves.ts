@@ -18,7 +18,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Electric",
 		contestType: "Cool",
 	},
-	idolsong: {
+	idolsong: { // FAIRY [HYPER VOICE] but better
 		num: 370,
 		accuracy: 95,
 		basePower: 100,
@@ -32,7 +32,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Fairy",
 		contestType: "Cute",
 	},
-	ankimoattack: {
+	ankimoattack: { // a much better [PLAY ROUGH]
 		num: 370,
 		accuracy: 100,
 		basePower: 100,
@@ -53,7 +53,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Fairy",
 		contestType: "Cute",
 	},
-	tskr2: {
+	tskr2: { // reskin of [TAKE HEART]
 		num: 370,
 		accuracy: true,
 		basePower: 0,
@@ -71,7 +71,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Fairy",
 		contestType: "Beautiful",
 	},
-	tskr: {
+	tskr: { // combines [NASTY PLOT] + [HEAL BELL]
 		num: 370,
 		accuracy: true,
 		basePower: 0,
@@ -95,7 +95,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Fairy",
 		contestType: "Beautiful",
 	},
-	sakuraiattack: {
+	sakuraiattack: { // reskin of [LEAF STORM] but better
 		num: 370,
 		accuracy: 95,
 		basePower: 110,
@@ -109,7 +109,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Grass",
 		contestType: "Cute",
 	},
-	lavabucket: {
+	lavabucket: { // should burn user too
 		num: 370,
 		accuracy: 75,
 		basePower: 120,
@@ -130,7 +130,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Fire",
 		contestType: "Tough",
 	},
-	elitemiko: { // swords dance reskin
+	elitemiko: { // reskin of [SWORDS DANCE]
 		num: 370,
 		accuracy: true,
 		basePower: 0,
@@ -147,7 +147,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Psychic",
 		contestType: "Cool",
 	},
-	axeattack: { 
+	axeattack: { // slicing
 		num: 38,
 		accuracy: 100,
 		basePower: 80,
@@ -162,7 +162,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Rock",
 		contestType: "Tough",
 	},
-	suicopath: { // dark type close combat
+	suicopath: { // DARK type reskin of [CLOSE COMBAT]
 		num: 370,
 		accuracy: 95,
 		basePower: 120,
@@ -182,7 +182,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Dark",
 		contestType: "Tough",
 	},
-	cometslam: { // ice type double-edge
+	cometslam: { // reskin of [DOUBLE-EDGE] but ICE
 		num: 370,
 		accuracy: 95,
 		basePower: 120,
@@ -200,7 +200,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Ice",
 		contestType: "Beautiful",
 	},
-	highspecs: {
+	highspecs: { // flash cannon but better
 		num: 370,
 		accuracy: 90,
 		basePower: 110,
@@ -213,7 +213,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Steel",
 		contestType: "Cool",
 	},
-	laserbeam: {
+	laserbeam: { // thunder but better
 		num: 370,
 		accuracy: 90,
 		basePower: 120,
@@ -230,7 +230,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Electric",
 		contestType: "Tough",
 	},
-	upgradepc: {
+	upgradepc: { // maybe acc too
 		num: 370,
 		accuracy: true,
 		basePower: 0,
@@ -248,7 +248,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Electric",
 		contestType: "Clever",
 	},
-	divasong: {
+	divasong: { // FAIRY [HYPER VOICE] but better
 		num: 370,
 		accuracy: 90,
 		basePower: 110,
@@ -262,7 +262,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Fairy",
 		contestType: "Beautiful",
 	},
-	divadance: { // swords dance reskin
+	divadance: { // FAIRY reskin of [SWORDS DANCE]
 		num: 14,
 		accuracy: true,
 		basePower: 0,
@@ -279,7 +279,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Fairy",
 		contestType: "Beautiful",
 	},
-	snowdash: { // ice type high jump kick <UNUSED>
+	snowdash: { // ice type [high jump kick] <UNUSED>
 		num: 370,
 		accuracy: 90,
 		basePower: 120,
@@ -710,6 +710,24 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Grass",
 		contestType: "Clever",
 	},
+	magickick: {
+		num: 136,
+		accuracy: 90,
+		basePower: 130,
+		category: "Physical",
+		name: "Magic Kick",
+		pp: 10,
+		priority: 0,
+		flags: {contact: 1, protect: 1, mirror: 1, gravity: 1, metronome: 1},
+		hasCrashDamage: true,
+		onMoveFail(target, source, move) {
+			this.damage(source.baseMaxhp / 2, source, source, this.dex.conditions.get('High Jump Kick'));
+		},
+		secondary: null,
+		target: "normal",
+		type: "Psychic",
+		contestType: "Cool",
+	},
 	duckasmr: {
 		num: 370,
 		accuracy: 95,
@@ -758,6 +776,26 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		target: "normal",
 		type: "Fighting",
 		contestType: "Cool",
+	},
+	quackattack: {
+		num: 370,
+		accuracy: 95,
+		basePower: 120,
+		category: "Physical",
+		name: "Quack Attack",
+		pp: 5,
+		priority: 0,
+		flags: {contact: 1, protect: 1, mirror: 1, wind: 1},
+		self: {
+			boosts: {
+				def: -1,
+				spd: -1,
+			},
+		},
+		secondary: null,
+		target: "normal",
+		type: "Water",
+		contestType: "Tough",
 	},
 	boxingdoggo: {
 		num: 370,
@@ -942,7 +980,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		name: "Ahoy",
 		pp: 10,
 		priority: 0,
-		flags: {contact: 1, protect: 1, mirror: 1, bypasssub: 1},
+		flags: {contact: 1, protect: 1, mirror: 1, bypasssub: 1, slicing: 1},
 		stealsBoosts: true,
 		// Boost stealing implemented in scripts.js
 		secondary: null,
@@ -1258,8 +1296,8 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	},
 	wamywater: {
 		num: 370,
-		accuracy: 90,
-		basePower: 80,
+		accuracy: 100,
+		basePower: 70,
 		category: "Special",
 		name: "Wamy Water",
 		pp: 10,
@@ -1389,6 +1427,23 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		},
 		secondary: null,
 		target: "self",
+		type: "Flying",
+		contestType: "Cute",
+	},
+	falconwhip: {
+		num: 680,
+		accuracy: 95,
+		basePower: 95,
+		category: "Physical",
+		name: "Falcon Whip",
+		pp: 15,
+		priority: 0,
+		flags: {protect: 1, mirror: 1, metronome: 1},
+		secondary: {
+			chance: 30,
+			volatileStatus: 'confusion',
+		},
+		target: "normal",
 		type: "Flying",
 		contestType: "Cute",
 	},
@@ -1858,8 +1913,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		priority: 0,
 		flags: {snatch: 1, metronome: 1},
 		boosts: {
-			atk: 2,
-			accuracy: 1,
+			atk: 2, 
 		},
 		secondary: null,
 		target: "self",
@@ -2065,6 +2119,23 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Fire",
 		contestType: "Beautiful",
 	},
+	phoenixwind: {
+		num: 53,
+		accuracy: 100,
+		basePower: 80,
+		category: "Special",
+		name: "Phoenix Wind",
+		pp: 15,
+		priority: 0,
+		flags: {protect: 1, mirror: 1, wind: 1},
+		secondary: {
+			chance: 30,
+			status: 'brn',
+		},
+		target: "allAdjacentFoes",
+		type: "Flying",
+		contestType: "Beautiful",
+	},
 	hopesoda: { // reskin of swords dance
 		num: 370,
 		accuracy: true,
@@ -2131,6 +2202,31 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Dark",
 		contestType: "Cool",
 	},
+	songofhope: {
+		num: 444,
+		accuracy: 100,
+		basePower: 70,
+		category: "Special",
+		name: "Song of Hope",
+		pp: 10,
+		priority: 0,
+		flags: {protect: 1, mirror: 1, sound: 1},
+		secondary: {
+			chance: 10,
+			self: {
+				boosts: {
+					atk: 1,
+					def: 1,
+					spa: 1,
+					spd: 1,
+					spe: 1,
+				},
+			},
+		},
+		target: "normal",
+		type: "Rock",
+		contestType: "Tough",
+	},
 	wormhole: { // quick attack but it is Psychic and special
 		num: 370,
 		accuracy: true,
@@ -2175,10 +2271,32 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Psychic",
 		contestType: "Beautiful",
 	},
+	blackhole: {
+		num: 662,
+		accuracy: 90,
+		basePower: 110,
+		category: "Special",
+		name: "Black Hole",
+		pp: 10,
+		priority: 0,
+		flags: {protect: 1, mirror: 1, metronome: 1},
+		secondary: {
+			chance: 100,
+			onHit(target, source, move) {
+				if (source.isActive) target.addVolatile('trapped', source, move, 'trapper');
+			},
+			boosts: {
+				spe: -1,
+			},
+		},
+		target: "any",
+		type: "Psychic",
+		contestType: "Tough",
+	},
 	mothernature: { // heals user and their teammates of status 
 		num: 370,
 		accuracy: 100,
-		basePower: 80,
+		basePower: 85,
 		category: "Special",
 		name: "Mother Nature",
 		pp: 10,
@@ -2239,6 +2357,20 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Grass",
 		contestType: "Tough",
 	},
+	naturesnurture: {
+		num: 791,
+		accuracy: true,
+		basePower: 0,
+		category: "Status",
+		name: "Nature's Nurture",
+		pp: 5,
+		priority: 0,
+		flags: {snatch: 1, heal: 1, bypasssub: 1},
+		heal: [1, 2],
+		secondary: null,
+		target: "allies",
+		type: "Grass",
+	},
 	clockstrikes: { // steal type dual wingbeat
 		num: 370,
 		accuracy: 100,
@@ -2268,7 +2400,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Psychic",
 		contestType: "Cool",
 	},
-	timetogo: { // pivot move (with priority)
+	timetogo: { // pivot move (with priority) <UNUSED>
 		num: 370,
 		accuracy: 100,
 		basePower: 50,
@@ -2281,6 +2413,60 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		secondary: null,
 		target: "any",
 		type: "Psychic",
+	},
+	sandsoftime: {
+		num: 157,
+		accuracy: 100,
+		basePower: 80,
+		category: "Special",
+		name: "Sands of Time",
+		pp: 10,
+		priority: 0,
+		flags: {protect: 1, mirror: 1, metronome: 1},
+		secondary: {
+			chance: 30,
+			boosts: {
+				spe: -1,
+			},
+		},
+		target: "allAdjacentFoes",
+		type: "Rock",
+		contestType: "Tough",
+	},
+	timeisup: {
+		num: 248,
+		accuracy: true,
+		basePower: 120,
+		category: "Special",
+		name: "Time is Up",
+		pp: 5,
+		priority: 0,
+		flags: {allyanim: 1, metronome: 1, futuremove: 1, bypasssub: 1},
+		onTry(source, target) {
+			if (!target.side.addSlotCondition(target, 'futuremove')) return false;
+			Object.assign(target.side.slotConditions[target.position]['futuremove'], {
+				move: 'timeisup',
+				source: source,
+				moveData: {
+					id: 'timeisup',
+					name: "Time is Up",
+					accuracy: 100,
+					basePower: 120,
+					category: "Special",
+					priority: 0,
+					flags: {allyanim: 1, metronome: 1, futuremove: 1},
+					ignoreImmunity: false,
+					effectType: 'Move',
+					type: 'Steel',
+				},
+			});
+			this.add('-start', source, 'move: Time is Up');
+			return this.NOT_FAIL;
+		},
+		secondary: null,
+		target: "any",
+		type: "Steel",
+		contestType: "Clever",
 	},
 	moomers: { // bird type close combat
 		num: 370,
