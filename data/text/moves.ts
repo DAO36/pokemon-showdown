@@ -78,7 +78,7 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		desc: "Raises the user's Attack by 2 stages.",
 		shortDesc: "Raises the user's Attack by 2.",
 	},
-	snowdash: {
+	snowdash: { // <UNUSED>
 		name: "Snow Dash",
 		desc: "Has a 10% chance to freeze the foe .If this attack is not successful, the user loses half of its maximum HP, rounded down, as crash damage. Pokemon with the Magic Guard Ability are unaffected by crash damage.",
 		shortDesc: "Loses 50% max HP if miss. 10% chance to freeze.",
@@ -89,6 +89,11 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		name: "Kon Kon",
 		desc: "Raises the user's Special Attack, and Speed by 1 stage.",
 		shortDesc: "Raises the user's SpAtk and Speed by 1.",
+	},
+	icesword: {
+		name: "Ice Sword",
+		desc: "Has a 10% chance to freeze the target. Has a higher chance for a critical hit.",
+		shortDesc: "10% chance to freeze target. High crit ratio.",
 	},
 	godlyattack: {
 		name: "Godly Attack",
