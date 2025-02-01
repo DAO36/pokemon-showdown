@@ -134,6 +134,8 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	oni: {
 		name: "Oni",
 		shortDesc: "This Oni's offensive stat is multiplied by 1.5 while using a Fire-type attack.",
+
+		start: "  [POKEMON] is channeling Oni energy!",
 	},
 	nursery: {
 		name: "Nursery",
@@ -150,6 +152,8 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	shubashuba: {
 		name: "Shuba Shuba",
 		shortDesc: "This Duck's offensive stat is multiplied by 1.5 while using a Water-type attack.",
+
+		start: "  [POKEMON] embracing her inner Duck!",
 	},
 	doog: {
 		name: "Doog",
@@ -189,6 +193,8 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 		name: "Piracy",
 		desc: "On switch-in, this Pirate copies the target's stat changes. Then the target have their stat stages reset to 0.",
 		shortDesc: "Copies stat changes of target on switch-in; Clears target's stat changes.",
+
+		start: "  [POKEMON] is ready to plunder your booty!",
 	},
 	highonasacoco: {
 		name: "High on Asacoco",
@@ -253,6 +259,8 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 		name: "Cleaner",
 		desc: "On switch-in, this Orca will clear up hazards on her side (Stealth Rock, Spikes, Toxic Spikes, Sticky Web, etc.) as well as clear the opponent's side of any screens set up (Reflect, Light Screen, Aurora Veil, etc.).",
 		shortDesc: "Switch-in: User's side: Clears hazards; Other side: Clears screens; Removes terrain.",
+
+		start: "  [POKEMON] is ready to clean up the scene!",
 	},
 	cleaner2: { // [UNUSED]
 		name: "Cleaner2",
@@ -350,6 +358,8 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 		name: "Mighty Phoenix",
 		desc: "30% chance a Pokemon making contact with this Pokemon will be burned. This Pokemon is immune to Fire-type moves. The first time it is hit by a Fire-type move, its offensive stat is multiplied by 1.5 while using a Fire-type.",
 	shortDesc: "30% chance to burn those that make contact. Fire-type immunity.",
+
+	start: "  [POKEMON] the Part-Time Warrior is here!",
 	},
 	yabairys: {
 		name: "YabaIRyS",
@@ -390,6 +400,8 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 		name: "Rock Hard",
 		desc: "This Rock receives 1/2 damage from contact moves, but 50% more damage from Steel type moves.",
 		shortDesc: "This Rock takes 1/2 damage from contact moves, 1.5x damage from Steel moves.",
+
+		start: "  [POKEMON] is rock hard!",
 	},
 	underworlddiva: {
 		name: "Underworld Diva",

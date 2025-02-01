@@ -691,10 +691,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3.5,
 		num: 181,
 	},
-	watamelon: { // reskin of [Overcoat] + immune to crits + reduced sound damage
-		onStart(pokemon) {
-			this.add('-activate', pokemon, 'ability: Watamelon');
-		},
+	watamelon: { // reskin of [Overcoat] + immune to crits + reduced sound damage 
 		onCriticalHit: false,
 		onImmunity(type, pokemon) {
 			if (type === 'sandstorm' || type === 'hail' || type === 'powder') return false;
