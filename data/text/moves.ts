@@ -42,6 +42,11 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		desc: "Lowers the user's Defense and Special Defense by 1 stage.",
 		shortDesc: "Lowers the user's Defense and Sp. Def by 1.",
 	},
+	axeattack: {
+		name: "Axe Attack",
+		desc: "Has a higher chance for a critical hit.",
+		shortDesc: "High critical hit ratio.",
+	},
 	cometslam: {
 		name: "Comet Slam",
 		desc: "Has a 10% chance to freeze the target.",

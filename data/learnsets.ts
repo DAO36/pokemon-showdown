@@ -93755,6 +93755,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			suicopath: ["9M"],
 			cometslam: ["9M"],
 			freezeray: ["9M"],
+			axeattack: ["9M"],
         },
 	},
 	roboco: {
@@ -94990,7 +94991,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			calmmind: ["9M"],
 			arrowassault: ["9M"],
 			elfarrows: ["9M"],
-			bowdance: ["9M"],
+			gundance: ["9M"],
         },
 	},
 	marine: {
@@ -95040,6 +95041,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			trick: ["9M"],
 			haze: ["9M"],
 			mist: ["9M"],
+			aquacutter: ["9M"],
 			sweetkiss: ["9M"],
 			charm: ["9M"],
 			ahoy: ["9M"],

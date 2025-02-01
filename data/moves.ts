@@ -147,7 +147,22 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Psychic",
 		contestType: "Cool",
 	},
-	suicopath: { // rock type close combat
+	axeattack: { 
+		num: 38,
+		accuracy: 100,
+		basePower: 80,
+		category: "Physical",
+		name: "Axe Attack",
+		pp: 10,
+		priority: 0,
+		flags: {contact: 1, protect: 1, mirror: 1, slicing: 1},
+		critRatio: 2,
+		secondary: null,
+		target: "normal",
+		type: "Rock",
+		contestType: "Tough",
+	},
+	suicopath: { // dark type close combat
 		num: 370,
 		accuracy: 95,
 		basePower: 120,
@@ -155,7 +170,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		name: "Suicopath",
 		pp: 5,
 		priority: 0,
-		flags: {contact: 1, protect: 1, mirror: 1, slicing: 1},
+		flags: {contact: 1, protect: 1, mirror: 1},
 		self: {
 			boosts: {
 				def: -1,
@@ -164,7 +179,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		},
 		secondary: null,
 		target: "normal",
-		type: "Rock",
+		type: "Dark",
 		contestType: "Tough",
 	},
 	cometslam: { // ice type double-edge
@@ -264,7 +279,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Fairy",
 		contestType: "Beautiful",
 	},
-	snowdash: { // ice type high jump kick
+	snowdash: { // ice type high jump kick <UNUSED>
 		num: 370,
 		accuracy: 90,
 		basePower: 120,
@@ -281,6 +296,21 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 			chance: 10,
 			status: 'frz',
 		},
+		target: "normal",
+		type: "Ice",
+		contestType: "Cool",
+	},
+	icesword: {
+		num: 348,
+		accuracy: 100,
+		basePower: 70,
+		category: "Physical",
+		name: "Leaf Blade",
+		pp: 10,
+		priority: 0,
+		flags: {contact: 1, protect: 1, mirror: 1, metronome: 1, slicing: 1},
+		critRatio: 2,
+		secondary: null,
 		target: "normal",
 		type: "Ice",
 		contestType: "Cool",
@@ -864,7 +894,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 			status: 'brn',
 		},
 		target: "any",
-		type: "Fighting",
+		type: "Fire",
 		contestType: "Cool",
 	},
 	elfarrows: { // bullet seed but fairy
@@ -887,12 +917,12 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Fairy",
 		contestType: "Cool",
 	},
-	bowdance: { // swords dance
+	gundance: { // swords dance
 		num: 370,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
-		name: "Bow Dance",
+		name: "Gun Dance",
 		pp: 20,
 		priority: 0,
 		flags: {snatch: 1, dance: 1, metronome: 1},
@@ -1055,7 +1085,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	},
 	gorillagrip: { // fairy double-edge
 		num: 370,
-		accuracy: 95,
+		accuracy: 90,
 		basePower: 120,
 		category: "Physical",
 		name: "Gorilla Grip",

@@ -636,7 +636,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 2.5,
 		num: 219,
 	},
-	elvishflare: { // reskin of [Rocky Payload] but for Fire
+	elvishflare: { // reskin of [Rocky Payload] but for Fire <UNUSED>
 		onModifyAtkPriority: 5,
 		onModifyAtk(atk, attacker, defender, move) {
 			if (move.type === 'Fire') {
@@ -651,10 +651,45 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 				return this.chainModify(1.5);
 			}
 		},
+		onTryBoost(boost, target, source, effect) {
+			if (effect.name === 'Intimidate' && boost.atk) {
+				delete boost.atk;
+				this.add('-fail', target, 'unboost', 'Attack', '[from] ability: Scrappy', '[of] ' + target);
+			}
+			if (effect.name === 'Succubus' && boost.spa) {
+				delete boost.spa;
+				this.add('-fail', target, 'unboost', 'Special Attack', '[from] ability: Scrappy', '[of] ' + target);
+			}
+			if (effect.name === 'Death' && boost.spe) {
+				delete boost.spe;
+				this.add('-fail', target, 'unboost', 'Speed', '[from] ability: Scrappy', '[of] ' + target);
+			}
+		},
 		flags: {},
 		name: "Elvish Flare",
 		rating: 3.5,
 		num: 276,
+	},
+	elfgunner: { // reskin of [Keen Eye] + immune to flinching
+		onTryAddVolatile(status, pokemon) {
+			if (status.id === 'flinch') return null;
+		},
+		onTryBoost(boost, target, source, effect) {
+			if (source && target === source) return;
+			if (boost.accuracy && boost.accuracy < 0) {
+				delete boost.accuracy;
+				if (!(effect as ActiveMove).secondaries) {
+					this.add("-fail", target, "unboost", "accuracy", "[from] ability: Elf Gunner", "[of] " + target);
+				}
+			}
+		},
+		onModifyMove(move) {
+			move.ignoreEvasion = true;
+		},
+		flags: {breakable: 1},
+		name: "Elf Gunner",
+		rating: 0.5,
+		num: 51,
 	},
 	piracy: { // reskin of [Costar] but copies foes stats insetad of allies and also clears foes stats   
 		onPreStart(pokemon) {   

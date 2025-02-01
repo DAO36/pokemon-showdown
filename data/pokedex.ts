@@ -19247,10 +19247,10 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 	flare: {
 		num: 722,
 		name: "Flare",
-		types: ["Fairy", "Fighting"],
+		types: ["Fire", "Fairy"],
 		gender: "F",
 		baseStats: {hp: 85, atk: 125, def: 80, spa: 120, spd: 115, spe: 75},
-		abilities: {0: "Long Reach", 1: "Skill Link", H: "Flash Fire", S: "Elvish Flare"},
+		abilities: {0: "Sniper", 1: "Skill Link", H: "Flash Fire", S: "Elf Gunner"},
 		heightm: 1.58,
 		weightkg: 55.5,
 		color: "Brown",

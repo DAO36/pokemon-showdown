@@ -191,6 +191,11 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 		name: "Elvish Flare",
 		shortDesc: "This Elf's offensive stat is multiplied by 1.5 while using a Fire-type attack.",
 	},
+	elfgunner: {
+		name: "Elf Gunner",
+		desc: "Prevents other Pokemon from lowering this Pokemon's accuracy stat stage. This Pokemon ignores a target's evasiveness stat stage.",
+		shortDesc: "Accuracy can't be lowered; ignores evasiveness; Immune to flinching.",
+	},
 	piracy: {
 		name: "Piracy",
 		desc: "On switch-in, this Pirate copies the target's stat changes. Then the target have their stat stages reset to 0.",
