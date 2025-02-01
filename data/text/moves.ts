@@ -547,7 +547,7 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	hopeless: {
 		name: "Hopeless",
 		desc: "Lowers the user's Defense and Special Defense by 1 stage. If this attack is not successful, the user loses half of its maximum HP, rounded down, as crash damage. Pokemon with the Magic Guard Ability are unaffected by crash damage.",
-		shortDesc: "Lowers the user's Def and Sp. Def by 1. User loses 50% max HP if miss.",
+		shortDesc: "Lowers user's Def/SpDef by 1. Loses 50% HP if miss.",
 
 		damage: "#crash",
 	},
@@ -594,7 +594,7 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	timetogo: {
 		name: "Time to Go",
 		desc: "If this move is successful and the user has not fainted, the user switches out even if it is trapped and is replaced immediately by a selected party member. The user does not switch out if there are no unfainted party members, or if the target switched out using an Eject Button or through the effect of the Emergency Exit or Wimp Out Abilities. Almost always goes first.",
-		shortDesc: "User switches out after damaging the target. Almost always goes first.",
+		shortDesc: "Switches out after damaging target. Goes first.",
 
 		switchOut: "#uturn",
 	},
@@ -664,8 +664,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	energyblade: {
 		name: "Energy Blade",
-		desc: "Has a 10% chance to paralyze the target.",
-		shortDesc: "10% chance to paralyze the target.",
+		desc: "Has a 10% chance to paralyze the target. Has a high critical hit ratio.",
+		shortDesc: "10% chance to paralyze target. High crit ratio.",
 	},
 	windup: {
 		name: "Wind Up",
@@ -675,7 +675,7 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	godeyes: {
 		name: "God Eyes",
 		desc: "Bypasses subs and protection without breaking it. Never Misses. Has a 10% chance to raise the user's Accuracy by 1 stage. This move's type effectiveness against Ghost is changed to be neutrally effective no matter what this move's type is.",
-		shortDesc: "Can hit Ghost types. 10% chance to raise Accuracy by 1. Bypasses subs and protection.",
+		shortDesc: "Hits Ghost types. Bypasses subs & protect. 10% to +1 Acc.",
 	},
 	mamamia: {
 		name: "Mama Mia",
