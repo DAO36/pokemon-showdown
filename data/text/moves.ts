@@ -463,7 +463,7 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	tsunami: {
 		name: "Tsunami",
 		desc: "Has a 10% chance to lower target's Speed by 1 stage. If the weather is Primordial Sea or Rain Dance, this move does not check accuracy. If the weather is Desolate Land or Sunny Day, this move's accuracy is 50%. If this move is used against a Pokemon holding Utility Umbrella, this move's accuracy remains at 70%.",
-		shortDesc: "10% chance to lower Speed by 1. Can't miss in Rain.",
+		shortDesc: "10% to lower Speed by 1. Can't miss in Rain.",
 	},
 	trident: {
 		name: "Trident",
