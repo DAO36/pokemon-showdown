@@ -97306,7 +97306,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			clockstrikes: ["9M"],
 			timeflies: ["9M"],
 			sandsoftime: ["9M"],
-			timesup: ["9M"],
+			timeisup: ["9M"],
         },
 	},	
 	kroniiboros: {
