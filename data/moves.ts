@@ -2532,22 +2532,22 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Rock",
 		contestType: "Tough",
 	},
-	timeisup: {
+	blastfromthepast: {
 		num: 248,
 		accuracy: true,
 		basePower: 120,
 		category: "Special",
-		name: "Time is Up",
+		name: "Blast from the Past",
 		pp: 5,
 		priority: 0,
 		flags: {allyanim: 1, metronome: 1, futuremove: 1, bypasssub: 1},
 		onTry(source, target) {
 			if (!target.side.addSlotCondition(target, 'futuremove')) return false;
 			Object.assign(target.side.slotConditions[target.position]['futuremove'], {
-				move: 'timeisup',
+				move: 'blastfromthepast',
 				source: source,
 				moveData: {
-					id: 'timeisup',
+					id: 'blastfromthepast',
 					name: "Time is Up",
 					accuracy: 100,
 					basePower: 120,
