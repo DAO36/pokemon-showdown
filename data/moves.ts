@@ -2548,7 +2548,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 				source: source,
 				moveData: {
 					id: 'blastfromthepast',
-					name: "Time is Up",
+					name: "Blast from the Past",
 					accuracy: 100,
 					basePower: 120,
 					category: "Special",
@@ -2559,7 +2559,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 					type: 'Steel',
 				},
 			});
-			this.add('-start', source, 'move: Time is Up');
+			this.add('-start', source, 'move: Blast from the Past');
 			return this.NOT_FAIL;
 		},
 		secondary: null,
