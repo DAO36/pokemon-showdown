@@ -1209,9 +1209,9 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		priority: 0,
 		flags: {snatch: 1, heal: 1, bite: 1},
 		heal: [1, 2],
-		onHit(pokemon) {
-			if (['psn', 'tox', 'par', 'brn', 'slp', 'frz'].includes(pokemon.status)) return false;
-			pokemon.cureStatus();
+		onHit(source) {
+			if (['psn', 'tox', 'par', 'brn', 'slp', 'frz'].includes(source.status)) return false;
+			source.cureStatus();
 		},
 		secondary: null,
 		target: "self",
