@@ -655,7 +655,7 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		shortDesc: "Hits two turns after being used. Never misses.",
 
 		start: "  [POKEMON] is time traveling!",
-		activate: "  Time's Up, [TARGET]!",
+		activate: "  [TARGET] is being attacked from past times!",
 	},
 	moomers: {
 		name: "Moomers",
