@@ -68,6 +68,11 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 
 		activate: "  [SOURCE] is now high specs robot!",
 	},
+	reboot: {
+		name: "Reboot",
+		desc: "The target restores 1/2 of its maximum HP, rounded half up. If the terrain is Electric Terrain, the target instead restores 2/3 of its maximum HP, rounded half down.",
+		shortDesc: "Heals the user by a terrain-dependent amount.",
+	},
 	divasong: {
 		name: "Diva Song",
 		desc: "No additional effect.",
@@ -269,6 +274,11 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 
 		clearBoost: "  [SOURCE] stole the target's boosted stats!",
 	},
+	forever17: {
+		name: "Forever 17",
+		desc: "The user restores 1/2 of its maximum HP, rounded half up.",
+		shortDesc: "Heals the user by 50% of its max HP.",
+	},
 	yanderestrike: {
 		name: "Yandere Strike",
 		desc: "If an opposing Pokemon switches out this turn, this move hits that Pokemon before it leaves the field, even if it was not the original target. If the user moves after an opponent using Flip Turn, Parting Shot, Teleport, U-turn, or Volt Switch, but not Baton Pass, it will hit that opponent before it leaves the field. Power doubles and no accuracy check is done if the user hits an opponent switching out, and the user's turn is over; if an opponent faints from this, the replacement Pokemon does not become active until the end of the turn.",
@@ -305,8 +315,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	ubersheep: {
 		name: "Uber Sheep",
-		desc: "The user restores 1/2 of its maximum HP, rounded half up.",
-		shortDesc: "Heals the user by 50% of its max HP.",
+		desc: "The user restores 1/2 of its maximum HP, rounded half up. Removes any status effect that the user is inflicted with.",
+		shortDesc: "Heals the user by 50% of max HP. Cures status",
 	},
 	candycrash: {
 		name: "Candy Crash",
@@ -361,6 +371,11 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		name: "NeneMAX Attack",
 		desc: "Cannot be selected the turn after it's used. Lower's the user's Speed by 1 stage if it successfully hits the target",
 		shortDesc: "Lowers user's SPE by 1. Can't be used twice in a row.",
+	},
+	husbandhelp: {
+		name: "Husband Help",
+		desc: "Raises the user's Attack by 2 stages.",
+		shortDesc: "Raises the user's Attack by 2.",
 	},
 	succubussong: {
 		name: "Succubus Song",
@@ -485,6 +500,11 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		name: "Tsunami",
 		desc: "Has a 10% chance to lower target's Speed by 1 stage. If the weather is Primordial Sea or Rain Dance, this move does not check accuracy. If the weather is Desolate Land or Sunny Day, this move's accuracy is 50%. If this move is used against a Pokemon holding Utility Umbrella, this move's accuracy remains at 70%.",
 		shortDesc: "10% to lower Speed by 1. Can't miss in Rain.",
+	},
+	waterhealing: {
+		name: "Water Healing",
+		desc: "The user restores 1/2 of its maximum HP if Delta Stream or no weather conditions are in effect or if the user is holding Utility Umbrella, 2/3 of its maximum HP if the weather is Primordial Sea or Rain Dance and 1/4 of its maximum HP if the weather is Desolate Land, Sunny Day, Sandstorm, or Snow, all rounded half down.",
+		shortDesc: "Heals the user by a weather-dependent amount.",	
 	},
 	trident: {
 		name: "Trident",
@@ -733,8 +753,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	windup: {
 		name: "Wind Up",
-		desc: "The user restores 1/2 of its maximum HP, rounded half up.",
-		shortDesc: "Heals the user by 50% of its max HP.",
+		desc: "The target restores 1/2 of its maximum HP, rounded half up. If the terrain is Electric Terrain, the target instead restores 2/3 of its maximum HP, rounded half down.",
+		shortDesc: "Heals the user by a terrain-dependent amount.",
 	},
 	godeyes: {
 		name: "God Eyes",

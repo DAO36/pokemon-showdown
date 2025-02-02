@@ -119,8 +119,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		priority: 0,
 		flags: {protect: 1, mirror: 1, metronome: 1}, 
 		onHit(target, source, move) {
-			const result = target.setStatus('brn', source, move);
-			if (!result) return result;
+			const result = target.setStatus('brn', source, move); 
 		},
 		secondary: {
 			chance: 100,
@@ -247,6 +246,29 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		target: "self",
 		type: "Electric",
 		contestType: "Clever",
+	},
+	reboot: {
+		num: 666,
+		accuracy: true,
+		basePower: 0,
+		category: "Status",
+		name: "Reboot",
+		pp: 5,
+		priority: 0,
+		flags: {snatch: 1, heal: 1},
+		onHit(target, source) {
+			let success = false;
+			if (this.field.isTerrain('electricterrain')) {
+				success = !!this.heal(this.modify(target.baseMaxhp, 0.667));
+			} else {
+				success = !!this.heal(Math.ceil(target.baseMaxhp * 0.5));
+			}
+			return success;
+		},
+		secondary: null,
+		target: "self",
+		type: "Electric",
+		contestType: "Beautiful",
 	},
 	divasong: { // FAIRY [HYPER VOICE] but better
 		num: 370,
@@ -680,7 +702,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	witchattack: { // leaf storm but psychic
 		num: 434,
 		accuracy: 90,
-		basePower: 120,
+		basePower: 130,
 		category: "Special",
 		name: "Witch Attack",
 		pp: 5,
@@ -991,6 +1013,21 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Water",
 		contestType: "Cool",
 	},
+	forever17: {
+		num: 105,
+		accuracy: true,
+		basePower: 0,
+		category: "Status",
+		name: "Forever 17",
+		pp: 5,
+		priority: 0,
+		flags: {snatch: 1, heal: 1, metronome: 1},
+		heal: [1, 2],
+		secondary: null,
+		target: "self",
+		type: "Dark",
+		contestType: "Clever",
+	},
 	yanderestrike: { // pursuit copy 
 		num: 228,
 		accuracy: 100,
@@ -1171,6 +1208,10 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		priority: 0,
 		flags: {snatch: 1, heal: 1, bite: 1},
 		heal: [1, 2],
+		onHit(pokemon) {
+			if (['psn', 'tox', 'par', 'brn', 'slp', 'frz'].includes(pokemon.status)) return false;
+			pokemon.cureStatus();
+		},
 		secondary: null,
 		target: "self",
 		type: "Normal",
@@ -1352,6 +1393,23 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		secondary: null,
 		target: "normal",
 		type: "Fairy",
+	},
+	husbandhelp: {
+		num: 14,
+		accuracy: true,
+		basePower: 0,
+		category: "Status",
+		name: "Husband Help",
+		pp: 20,
+		priority: 0,
+		flags: {snatch: 1, metronome: 1},
+		boosts: {
+			atk: 2,
+		},
+		secondary: null,
+		target: "self",
+		type: "Fairy",
+		contestType: "Beautiful",
 	},
 	succubussong: { // made with Contray in mind
 		num: 370,
@@ -1844,6 +1902,43 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		target: "allAdjacentFoes",
 		type: "Water",
 		contestType: "Tough",
+	},
+	waterhealing: {
+		num: 235,
+		accuracy: true,
+		basePower: 0,
+		category: "Status",
+		name: "Water Healing",
+		pp: 5,
+		priority: 0,
+		flags: {snatch: 1, heal: 1, metronome: 1},
+		onHit(pokemon) {
+			let factor = 0.5;
+			switch (pokemon.effectiveWeather()) {
+			case 'raindance':
+			case 'primordialsea':
+				factor = 0.667;
+				break;
+			case 'sandstorm':
+			case 'hail':
+			case 'snow':
+			case 'sunnyday':
+			case 'desolateland':	
+				factor = 0.25;
+				break;
+			}
+			const success = !!this.heal(this.modify(pokemon.maxhp, factor));
+			if (!success) {
+				this.add('-fail', pokemon, 'heal');
+				return this.NOT_FAIL;
+			}
+			return success;
+		},
+		secondary: null,
+		target: "self",
+		type: "Water",
+		zMove: {effect: 'clearnegativeboost'},
+		contestType: "Clever",
 	},
 	trident: { // does not miss in rain
 		num: 370,
@@ -2778,20 +2873,28 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Electric",
 		contestType: "Cool",
 	},
-	windup: { // healing move
-		num: 370,
+	windup: {
+		num: 666,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
 		name: "Wind Up",
 		pp: 5,
 		priority: 0,
-		flags: {snatch: 1, heal: 1, sound: 1},
-		heal: [1, 2],
+		flags: {snatch: 1, heal: 1},
+		onHit(target, source) {
+			let success = false;
+			if (this.field.isTerrain('electricterrain')) {
+				success = !!this.heal(this.modify(target.baseMaxhp, 0.667));
+			} else {
+				success = !!this.heal(Math.ceil(target.baseMaxhp * 0.5));
+			}
+			return success;
+		},
 		secondary: null,
 		target: "self",
 		type: "Electric",
-		contestType: "Clever",
+		contestType: "Beautiful",
 	},
 	godeyes: { // a normal type move that can hit ghost types
 		num: 573,
