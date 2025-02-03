@@ -119,7 +119,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		priority: 0,
 		flags: {protect: 1, mirror: 1, metronome: 1},
 		onHit(source) {
-			const result = source.setStatus('brn', source);
+			source.trySetStatus('brn', source);
 		},
 		secondary: {
 			chance: 100,
