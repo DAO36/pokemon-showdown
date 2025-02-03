@@ -19799,7 +19799,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		weightkg: 55.5,
 		color: "Purple",
 		eggGroups: ["Human-Like"],
-		requiredAbility: "Hoshinova",
+		requiredAbility: "Moon Mania",
 		battleOnly: "Moona-Hoshinova",
 	},
 	iofi: {
