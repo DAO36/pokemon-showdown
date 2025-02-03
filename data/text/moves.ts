@@ -330,8 +330,13 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	clowntown: {
 		name: "Clown Town",
-		desc: "Has a 10% chance to confuse the target. Hits thrice. If the first hit breaks the target's substitute, it will take damage for the second and third hits.",
-		shortDesc: "Hits 3 times; 10% chance to confuse target.",
+		desc: "Has a 30% chance to confuse the target. Hits three times. Power increases to 40 for the second hit and 60 for the third. This move checks accuracy for each hit, and the attack ends if the target avoids a hit. If one of the hits breaks the target's substitute, it will take damage for the remaining hits. If the user has the Skill Link Ability, this move will always hit three times.",
+		shortDesc: "30% to confuse. Hits x3 each can miss, but power rises.",
+	},
+	pleaxel: {
+		name: "Triple Axel",
+		desc: "Hits three times. Power increases to 40 for the second hit and 60 for the third. This move checks accuracy for each hit, and the attack ends if the target avoids a hit. If one of the hits breaks the target's substitute, it will take damage for the remaining hits. If the user has the Skill Link Ability, this move will always hit three times.",
+		shortDesc: "Hits 3 times. Each hit can miss, but power rises.",
 	},
 	polmao: {
 		name: "PoLMAO",
@@ -468,13 +473,13 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	peacockattack: {
 		name: "Peacock Attack",
-		desc: "Has a 10% chance to raise the user's Special Attack by 1 stage.",
+		desc: "Has a 10% chance to raise the user's Special Attack by 1 stage. Has a higher chance for a critical hit.",
 		shortDesc: "10% chance to raise user's Sp. Atk by 1.",
 	},
 	keris: {
 		name: "Keris",
-		desc: "Has a 10% chance to raise the user's Special Defense by 1 stage.",
-		shortDesc: "10% chance to raise the user's Sp.Def by 1.",
+		desc: "Has a 10% chance to raise the user's Special Defense by 1 stage. ",
+		shortDesc: "10% to raise user's Sp.Def by 1. High crit ratio.",
 	},
 	spyshot: {
 		name: "Spy Shot",
@@ -689,13 +694,13 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	chaosstrike: {
 		name: "Chaos Strike",
-		desc: "Has a 50% to inflict confusion on the target. If the target lost HP, the user takes recoil damage equal to 33% the HP lost by the target, rounded half up, but not less than 1 HP.",
-		shortDesc: "50% to confuse. 33% recoil.",
+		desc: "Has a 30% to inflict confusion on the target. If the target lost HP, the user takes recoil damage equal to 33% the HP lost by the target, rounded half up, but not less than 1 HP.",
+		shortDesc: "30% to confuse. 33% recoil.",
 	},
 	forbiddenknowledge: {
 		name: "Forbidden Knowledge",
-		desc: "Has a 30% chance to paralyze the target. This attack never misses.",
-		shortDesc: "30% chance to paralyze the target. Never misses.",
+		desc: "Has a 25% chance to paralyze the target. This attack never misses.",
+		shortDesc: "25% chance to paralyze the target. Never misses.",
 	},
 	bejeweled: {
 		name: "Bejeweled",
