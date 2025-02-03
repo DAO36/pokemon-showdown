@@ -428,8 +428,13 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	moonstrike: {
 		name: "Moonstrike",
-		desc: "Has a 10% chance to raise the user's Special Defense by 1 stage.",
-		shortDesc: "10% chance to raise the user's SpDef by 1.",
+		desc: "Has a 20% chance to lower the target's Special Attack by 1 stage.",
+		shortDesc: "20% chance to lower the target's Sp. Atk by 1.",
+	},
+	eclipse: {
+		name: "Eclipse",
+		desc: "Has a 20% chance to lower the target's Attack by 1 stage.",
+		shortDesc: "20% chance to lower the target's Atk by 1.",
 	},
 	lunarshield: {
 		name: "Lunar Shield",

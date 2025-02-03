@@ -95879,6 +95879,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			torment: ["9M"],
 			moonstrike: ["9M"],
 			lunarshield: ["9M"],
+			eclipse: ["9M"],
         },
 	},	
 	hoshinovamoona: {
@@ -95927,6 +95928,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			torment: ["9M"],
 			moonstrike: ["9M"],
 			lunarshield: ["9M"],
+			eclipse: ["9M"],
         },
 	},	
 	moonah: {
@@ -95975,6 +95977,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			torment: ["9M"],
 			moonstrike: ["9M"],
 			lunarshield: ["9M"],
+			eclipse: ["9M"],
         },
 	},	
 	iofi: {

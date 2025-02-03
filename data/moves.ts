@@ -1599,15 +1599,32 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		priority: 0,
 		flags: {protect: 1, mirror: 1, slicing: 1, metronome: 1},
 		secondary: {
-			chance: 10,
-			self: {
-				boosts: {
-					spd: 1,
-				},
+			chance: 20,
+			boosts: {
+				spa: -1,
 			},
 		},
 		target: "normal",
 		type: "Psychic",
+		contestType: "Cool",
+	},
+	eclipse: {
+		num: 370,
+		accuracy: 100,
+		basePower: 100,
+		category: "Physical",
+		name: "Eclipse",
+		pp: 5,
+		priority: 0,
+		flags: {protect: 1, mirror: 1, slicing: 1, metronome: 1},
+		secondary: {
+			chance: 20,
+			boosts: {
+				atk: -1,
+			},
+		},
+		target: "normal",
+		type: "Dark",
 		contestType: "Cool",
 	},
 	lunarshield: { // king's shield but for SpAtk

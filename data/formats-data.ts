@@ -6117,7 +6117,7 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		doublesTier: "(DUU)",
 		natDexTier: "UU",
 	},
-	moonahoshinova: {
+	moonahhoshinova: {
         tier: "OU",
         doublesTier: "(DUU)",
         natDexTier: "UU",	
