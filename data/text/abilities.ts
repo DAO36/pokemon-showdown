@@ -167,7 +167,7 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	miomama: {
 		name: "Mio Mama",
-		desc: "This Wolf can hit Dark types with Psychic-type moves. This Wolf is immune to the effect of the Intimidate Ability.",
+		desc: "This Wolf can hit Dark types with Psychic-type moves. This Wolf is immune to the effect of the Intimidate/Succubus/Death Abilities.",
 		shortDesc: "Psychic moves hit Dark. Immune to Intimidate.",
 	},
 	warcriminal: {
@@ -194,7 +194,7 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	elfgunner: {
 		name: "Elf Gunner",
 		desc: "Prevents other Pokemon from lowering this Pokemon's accuracy stat stage. This Pokemon ignores a target's evasiveness stat stage.",
-		shortDesc: "Accuracy can't be lowered; ignores evasiveness; Immune to flinching.",
+		shortDesc: "Multi-hit attacks hit max number of times. Ignores accuracy/evasiveness checks.",
 	},
 	piracy: {
 		name: "Piracy",
@@ -232,7 +232,8 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	botanx: {
 		name: "Botan X",
-		shortDesc: "This Lion's moves have her accuracy multiplied by 1.3 thanks to her goggles",
+		desc: "This Lion's moves have her accuracy multiplied by 1.3 thanks to her goggles. Prevents other Pokemon from lowering this Lion's accuracy stat stage. This Lion ignores a target's evasiveness stat stage.",
+		shortDesc: "Accuracy multiplied by 1.3. Ignores accuracy/evasiveness checks.",
 	},
 	frozensake: {
 		name: "Frozen Sake",

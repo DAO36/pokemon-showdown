@@ -463,63 +463,6 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		target: "normal",
 		type: "Fairy",
 	},
-	redheart: { // king's shield but for SpAtk
-		num: 588,
-		accuracy: true,
-		basePower: 0,
-		category: "Status",
-		name: "Red Heart",
-		pp: 10,
-		priority: 4,
-		flags: {noassist: 1, failcopycat: 1, failinstruct: 1},
-		stallingMove: true,
-		volatileStatus: 'redheart',
-		onPrepareHit(pokemon) {
-			return !!this.queue.willAct() && this.runEvent('StallMove', pokemon);
-		},
-		onHit(pokemon) {
-			pokemon.addVolatile('stall');
-		},
-		condition: {
-			duration: 1,
-			onStart(target) {
-				this.add('-singleturn', target, 'Protect');
-			},
-			onTryHitPriority: 3,
-			onTryHit(target, source, move) {
-				if (!move.flags['protect'] || move.category === 'Status') {
-					if (['gmaxoneblow', 'gmaxrapidflow'].includes(move.id)) return;
-					if (move.isZ || move.isMax) target.getMoveHitData(move).zBrokeProtect = true;
-					return;
-				}
-				if (move.smartTarget) {
-					move.smartTarget = false;
-				} else {
-					this.add('-activate', target, 'move: Protect');
-				}
-				const lockedmove = source.getVolatile('lockedmove');
-				if (lockedmove) {
-					// Outrage counter is reset
-					if (source.volatiles['lockedmove'].duration === 2) {
-						delete source.volatiles['lockedmove'];
-					}
-				}
-				if (move.category === 'Special') {
-					this.boost({spa: -1}, source, target, this.dex.getActiveMove("Red Heart"));
-				}
-				return this.NOT_FAIL;
-			},
-			onHit(target, source, move) {
-				if (move.isZOrMaxPowered && move.category === 'Special') {
-					this.boost({spa: -1}, source, target, this.dex.getActiveMove("Red Heart"));
-				}
-			},
-		},
-		secondary: null,
-		target: "self",
-		type: "Fairy",
-		contestType: "Cute",
-	},
 	fourcoursemeal: { //swords dance reskin
 		num: 370,
 		accuracy: true,
@@ -1602,7 +1545,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	cleanup: { // rapid spin combined with u-turn
 		num: 370,
 		accuracy: 100,
-		basePower: 50,
+		basePower: 60,
 		category: "Physical",
 		name: "Clean Up",
 		pp: 10,
@@ -1666,6 +1609,63 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		target: "normal",
 		type: "Psychic",
 		contestType: "Cool",
+	},
+	lunarshield: { // king's shield but for SpAtk
+		num: 588,
+		accuracy: true,
+		basePower: 0,
+		category: "Status",
+		name: "Lunar Shield",
+		pp: 10,
+		priority: 4,
+		flags: {noassist: 1, failcopycat: 1, failinstruct: 1},
+		stallingMove: true,
+		volatileStatus: 'lunarshield',
+		onPrepareHit(pokemon) {
+			return !!this.queue.willAct() && this.runEvent('StallMove', pokemon);
+		},
+		onHit(pokemon) {
+			pokemon.addVolatile('stall');
+		},
+		condition: {
+			duration: 1,
+			onStart(target) {
+				this.add('-singleturn', target, 'Protect');
+			},
+			onTryHitPriority: 3,
+			onTryHit(target, source, move) {
+				if (!move.flags['protect'] || move.category === 'Status') {
+					if (['gmaxoneblow', 'gmaxrapidflow'].includes(move.id)) return;
+					if (move.isZ || move.isMax) target.getMoveHitData(move).zBrokeProtect = true;
+					return;
+				}
+				if (move.smartTarget) {
+					move.smartTarget = false;
+				} else {
+					this.add('-activate', target, 'move: Protect');
+				}
+				const lockedmove = source.getVolatile('lockedmove');
+				if (lockedmove) {
+					// Outrage counter is reset
+					if (source.volatiles['lockedmove'].duration === 2) {
+						delete source.volatiles['lockedmove'];
+					}
+				}
+				if (move.category === 'Special') {
+					this.boost({spa: -1}, source, target, this.dex.getActiveMove("Lunar Shield"));
+				}
+				return this.NOT_FAIL;
+			},
+			onHit(target, source, move) {
+				if (move.isZOrMaxPowered && move.category === 'Special') {
+					this.boost({spa: -1}, source, target, this.dex.getActiveMove("Lunar Shield"));
+				}
+			},
+		},
+		secondary: null,
+		target: "self",
+		type: "Psychic",
+		contestType: "Cute",
 	},
 	alientouch: { // a Psychic type move that can hit Dark types
 		num: 370,
@@ -2536,7 +2536,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		num: 248,
 		accuracy: true,
 		basePower: 120,
-		category: "Special",
+		category: "Physical",
 		name: "Blast from the Past",
 		pp: 5,
 		priority: 0,

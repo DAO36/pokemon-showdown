@@ -338,18 +338,41 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 2,
 		num: 258,
 	},
-	chamachange: { // reskin of [Stance Change]
-		onModifyMovePriority: 1,
-		onModifyMove(move, attacker, defender) {
-			if (attacker.species.baseSpecies !== 'AkaiHaato' || attacker.transformed) return;
-			if (move.category === 'Status' && move.id !== 'redheart') return;
-			const targetForme = (move.id === 'redheart' ? 'AkaiHaato' : 'AkaiHaato-Haachama');
-			if (attacker.species.name !== targetForme) attacker.formeChange(targetForme);
+	chamachange: {
+		onResidualOrder: 29,
+		onResidual(pokemon) {
+			if (pokemon.baseSpecies.baseSpecies !== 'AkaiHaato' || pokemon.transformed) {
+				return;
+			}
+			if (pokemon.hp <= pokemon.maxhp / 2 && !['Haachama'].includes(pokemon.species.forme)) {
+				pokemon.addVolatile('chamachange');
+			} else if (pokemon.hp > pokemon.maxhp / 2 && ['Haachama'].includes(pokemon.species.forme)) {
+				pokemon.addVolatile('chamachange'); // in case of base Darmanitan-Zen
+				pokemon.removeVolatile('chamachange');
+			}
+		},
+		onEnd(pokemon) {
+			if (!pokemon.volatiles['chamachange'] || !pokemon.hp) return;
+			pokemon.transformed = false;
+			delete pokemon.volatiles['chamachange'];
+			if (pokemon.species.baseSpecies === 'AkaiHaato' && pokemon.species.battleOnly) {
+				pokemon.formeChange(pokemon.species.battleOnly as string, this.effect, false, '0', '[silent]');
+			}
+		},
+		condition: {
+			onStart(pokemon) { 
+					if (pokemon.species.id !== 'akaihaatohaachama') pokemon.formeChange('AkaiHaato-Haachama'); 
+			},
+			onEnd(pokemon) {
+				if (['Haachama'].includes(pokemon.species.forme)) {
+					pokemon.formeChange(pokemon.species.battleOnly as string);
+				}
+			},
 		},
 		flags: {failroleplay: 1, noreceiver: 1, noentrain: 1, notrace: 1, failskillswap: 1, cantsuppress: 1},
 		name: "Chama Change",
-		rating: 4,
-		num: 176,
+		rating: 0,
+		num: 161,
 	},
 	vampire2: { // increases how much hp user recovers when using draining moves
         onTryHealPriority: 1,
@@ -670,9 +693,15 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3.5,
 		num: 276,
 	},
-	elfgunner: { // reskin of [Keen Eye] + immune to flinching
-		onTryAddVolatile(status, pokemon) {
-			if (status.id === 'flinch') return null;
+	elfgunner: { // combines [KEEN EYE] + [SKILL LINK]
+		onModifyMove(move) {
+			if (move.multihit && Array.isArray(move.multihit) && move.multihit.length) {
+				move.multihit = move.multihit[1];
+			}
+			if (move.multiaccuracy) {
+				delete move.multiaccuracy;
+			}
+			move.ignoreEvasion = true;
 		},
 		onTryBoost(boost, target, source, effect) {
 			if (source && target === source) return;
@@ -683,13 +712,10 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 				}
 			}
 		},
-		onModifyMove(move) {
-			move.ignoreEvasion = true;
-		},
-		flags: {breakable: 1},
+		flags: {},
 		name: "Elf Gunner",
-		rating: 0.5,
-		num: 51,
+		rating: 3,
+		num: 92,
 	},
 	piracy: { // reskin of [Costar] but copies foes stats insetad of allies and also clears foes stats   
 		onPreStart(pokemon) {   
@@ -818,12 +844,27 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3.5,
 		num: 101,
 	},
-	botanx: { // reskin of [Compound Eyes]
+	botanx: { // combines of [Compound Eyes] + [Keen Eye]
 		onSourceModifyAccuracyPriority: -1,
 		onSourceModifyAccuracy(accuracy) {
 			if (typeof accuracy !== 'number') return;
-			this.debug('compoundeyes - enhancing accuracy');
+			this.debug('botanx - enhancing accuracy');
 			return this.chainModify([5325, 4096]);
+		},
+		onTryAddVolatile(status, pokemon) {
+			if (status.id === 'flinch') return null;
+		},
+		onTryBoost(boost, target, source, effect) {
+			if (source && target === source) return;
+			if (boost.accuracy && boost.accuracy < 0) {
+				delete boost.accuracy;
+				if (!(effect as ActiveMove).secondaries) {
+					this.add("-fail", target, "unboost", "accuracy", "[from] ability: Botan X", "[of] " + target);
+				}
+			}
+		},
+		onModifyMove(move) {
+			move.ignoreEvasion = true;
 		},
 		flags: {},
 		name: "Botan X",
@@ -1146,6 +1187,19 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		name: "Moon Goddess",
 		rating: 2,
 		num: 19,
+	},
+	hoshinova: { // reskin of [Stance Change]
+		onModifyMovePriority: 1,
+		onModifyMove(move, attacker, defender) {
+			if (attacker.species.baseSpecies !== 'MoonaH' || attacker.transformed) return;
+			if (move.category === 'Status' && move.id !== 'redheart') return;
+			const targetForme = (move.id === 'redheart' ? 'MoonaH' : 'Moona-Hoshinova');
+			if (attacker.species.name !== targetForme) attacker.formeChange(targetForme);
+		},
+		flags: {failroleplay: 1, noreceiver: 1, noentrain: 1, notrace: 1, failskillswap: 1, cantsuppress: 1},
+		name: "Hoshinova",
+		rating: 4,
+		num: 176,
 	},
 	erofi: { // reskin of [Sap Sipper] but for Dark type immunity instead of Grass
 		onTryHitPriority: 1,

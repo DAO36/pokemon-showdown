@@ -125,11 +125,6 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		desc: "Has a 10% chance to flinch the foe. If the user is Akai in Idol Mode, this move is Fairy type and Special. If she is in Haachama Mode, this move is Dark type and Physical. This move cannot be used successfully unless the user's current form, while considering Transform, is Akai or Haato Mode.",
 		shortDesc: "Akai: Fairy; Haato: Dark; 10% to flinch",
 	},
-	redheart: {
-		name: "Red Heart",
-		desc: "The user is protected from most attacks made by other Pokemon during this turn, and Pokemon trying to use special attacks against the user have their Special Attack lowered by 1 stage. Non-damaging moves go through this protection. This move has a 1/X chance of being successful, where X starts at 1 and triples each time this move is successfully used. X resets to 1 if this move fails, if the user's last move used is not Baneful Bunker, Burning Bulwark, Detect, Endure, King's Shield, Max Guard, Obstruct, Protect, Quick Guard, Silk Trap, Spiky Shield, or Wide Guard, or if it was one of those moves and the user's protection was broken. Fails if the user moves last this turn.",
-		shortDesc: "Protects. If foe uses special attack: -1 Sp. Atk.",
-	},
 	fourcoursemeal: {
 		name: "Four Course Meal",
 		desc: "Raises the user's Attack by 2 stages.",
@@ -435,6 +430,11 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		name: "Moonstrike",
 		desc: "Has a 10% chance to raise the user's Special Defense by 1 stage.",
 		shortDesc: "10% chance to raise the user's SpDef by 1.",
+	},
+	lunarshield: {
+		name: "Lunar Shield",
+		desc: "The user is protected from most attacks made by other Pokemon during this turn, and Pokemon trying to use special attacks against the user have their Special Attack lowered by 1 stage. Non-damaging moves go through this protection. This move has a 1/X chance of being successful, where X starts at 1 and triples each time this move is successfully used. X resets to 1 if this move fails, if the user's last move used is not Baneful Bunker, Burning Bulwark, Detect, Endure, King's Shield, Max Guard, Obstruct, Protect, Quick Guard, Silk Trap, Spiky Shield, or Wide Guard, or if it was one of those moves and the user's protection was broken. Fails if the user moves last this turn.",
+		shortDesc: "Protects. If foe uses special attack: -1 Sp. Atk.",
 	},
 	alientouch: {
 		name: "Alien Touch",
