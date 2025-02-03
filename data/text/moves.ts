@@ -728,7 +728,7 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	fuwamocomorning: {
 		name: "FuwaMoco Morning",
-		desc: "If the user is Mococo, this move is Dark type. If the user is a Fuwawa, this move is Fairy type. This move cannot be used successfully unless the user's current form, while considering Transform, is Fuwawa or Mococo.",
+		desc: "If the user is Mococo, this move is Dark type. If the user is Fuwawa, this move is Fairy type. This move cannot be used successfully unless the user's current form, while considering Transform, is Fuwawa or Mococo.",
 		shortDesc: "Mococo: Dark; Fuwawa: Fairy.",
 	},
 	songofjustice: {
