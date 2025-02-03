@@ -117,10 +117,10 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		name: "Lava Bucket",
 		pp: 5,
 		priority: 0,
-		flags: {protect: 1, mirror: 1, metronome: 1}, 
-		self: {
-			chance: 100,
-			status: 'brn',
+		flags: {protect: 1, mirror: 1, metronome: 1},
+		onHit(target, source, move) {
+			const result = target.setStatus('brn', source, move);
+			if (!result) return result;
 		},
 		secondary: {
 			chance: 100,
@@ -1117,9 +1117,8 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		priority: 0,
 		flags: {snatch: 1, heal: 1, bite: 1},
 		heal: [1, 2],
-		onHit(source) {
-			if (['psn', 'tox', 'par', 'brn', 'slp', 'frz'].includes(source.status)) return false;
-			source.cureStatus();
+		onHit(pokemon) {
+			pokemon.cureStatus() 
 		},
 		secondary: null,
 		target: "self",
