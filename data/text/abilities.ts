@@ -100,18 +100,13 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 		desc: "If the User is hit by a move that makes contact, Sticky Web is set up on the opposing side.",
 		shortDesc: "If User is hit by a move that makes contact, Sticky Web is set on opposing side.",
 	},
-	splitpersonalities: { // [UNUSED]
-		name: "Split Personalities",
-		desc: "If this is Akai, she changes formes between her Idol Mode and Haachama Mode at the end of each turn.",
-		shortDesc: "If Akai, it changes between Idol and Haachama Mode at the end of each turn.",
-	},
 	chamachange: {
 		name: "Chama Change",
-		desc: "If Akai Haato, she changes to Haachama before using an attacking move, and changes to Akai Haato Forme before using the move Red Heart.",
-		shortDesc: "If Akai Haato, changes to Haachama before attacks and Akai Haato before Red Heart.",
+		desc: "If User is Akai Haato, she changes to Haachama if she has 1/2 or less of her maximum HP at the end of a turn. If Akai Haato's HP is above 1/2 of her maximum HP at the end of a turn, she changes back to Idol Mode.",
+		shortDesc: "At end of turn, changes Mode to Haachama if > 1/2 max HP, else Akai Haato.",
 
-		transform: "Changed to Haachama!",
-		transformEnd: "Changed to Akai Haato!",
+		transform: "Haachama took over!",
+		transformEnd: "Akai Haato took over!",
 	},
 	vampire2: {
 		name: "Vampire2",
@@ -299,6 +294,14 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 		name: "Moon Goddess",
 		desc: "This Moon Goddess is not affected by the secondary effect of another Pokemon's attack; Cannot be made to flinch, or be struck by critical hits",
 		shortDesc: "Immune to secondary effects of other's attacks; Immune to flinching and crits.",
+	},
+	hoshinova: {
+		name: "Hoshinova",
+		desc: "If Moona, she changes to Hoshinova before using an attacking move, and changes to Moona Forme before using the move Lunar Shield.",
+		shortDesc: "If Moona, changes to Hoshinova before attacks and Moona before Lunar Shield.",
+
+		transform: "Changed to Hoshinova!",
+		transformEnd: "Changed to Moona!",
 	},
 	erofi: {
 		name: "Erofi",
