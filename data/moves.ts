@@ -428,41 +428,6 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Bug",
 		contestType: "Cool",
 	},
-	alterego: { // not rly relevant
-		num: 783,
-		accuracy: 100,
-		basePower: 90,
-		category: "Special",
-		name: "Alter Ego",
-		pp: 15,
-		priority: 0,
-		flags: {protect: 1, mirror: 1},
-		secondary: {
-			chance: 10,
-			volatileStatus: 'flinch',
-		},
-		onTry(source) {
-			if (source.species.baseSpecies === 'Akai') {
-				return;
-			}
-			this.attrLastMove('[still]');
-			this.add('-fail', source, 'move: Alter Ego');
-			this.hint("Only Akai or Haachama can use this move.");
-			return null;
-		},
-		onModifyType(move, pokemon) {
-			if (pokemon.species.name === 'AkaiTwo') {
-				move.category = 'Physical';
-			}	
-			if (pokemon.species.name === 'AkaiTwo') {	
-				move.type = 'Dark';
-			} else {
-				move.type = 'Fairy';
-			}
-		},
-		target: "normal",
-		type: "Fairy",
-	},
 	fourcoursemeal: { //swords dance reskin
 		num: 370,
 		accuracy: true,
