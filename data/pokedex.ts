@@ -19787,7 +19787,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		otherFormes: ["MoonaH-Hoshinova"],
 		formeOrder: ["MoonaH", "MoonaH-Hoshinova"],
 	},
-	moonahoshinova: {
+	moonahhoshinova: {
 		num: 800,
 		name: "MoonaH-Hoshinova",
 		baseSpecies: "MoonaH",
