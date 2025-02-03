@@ -5767,16 +5767,6 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
         doublesTier: "(DUU)",
         natDexTier: "OU",
 	},
-	akaih: {
-		tier: "OU",
-		doublesTier: "(DUU)",
-		natDexTier: "OU",
-	},
-	akaitwo: {
-		tier: "OU",
-		doublesTier: "(DUU)",
-		natDexTier: "OU",
-	},
 	akaihaato: {
 		tier: "OU",
 		doublesTier: "(DUU)",
@@ -6117,10 +6107,20 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
         doublesTier: "(DUU)",
         natDexTier: "Uber",	
 	},
-	hoshinova: {
+	hoshinovamoona: {
         tier: "Uber",
         doublesTier: "(DUber)",
         natDexTier: "Uber",	
+	},
+	moonah: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "UU",
+	},
+	moonahoshinova: {
+        tier: "OU",
+        doublesTier: "(DUU)",
+        natDexTier: "UU",	
 	},
 	iofi: {
 		tier: "OU",
