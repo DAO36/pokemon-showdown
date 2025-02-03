@@ -295,8 +295,8 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 		desc: "This Moon Goddess is not affected by the secondary effect of another Pokemon's attack; Cannot be made to flinch, or be struck by critical hits",
 		shortDesc: "Immune to secondary effects of other's attacks; Immune to flinching and crits.",
 	},
-	hoshinova: {
-		name: "Hoshinova",
+	moonmania: {
+		name: "Moon Mania",
 		desc: "If Moona, she changes to Hoshinova before using an attacking move, and changes to Moona Forme before using the move Lunar Shield.",
 		shortDesc: "If Moona, changes to Hoshinova before attacks and Moona before Lunar Shield.",
 

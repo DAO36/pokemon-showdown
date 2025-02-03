@@ -1188,7 +1188,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 2,
 		num: 19,
 	},
-	hoshinova: { // reskin of [Stance Change]
+	moonmania: { // reskin of [Stance Change]
 		onModifyMovePriority: 1,
 		onModifyMove(move, attacker, defender) {
 			if (attacker.species.baseSpecies !== 'MoonaH' || attacker.transformed) return;
@@ -1197,7 +1197,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			if (attacker.species.name !== targetForme) attacker.formeChange(targetForme);
 		},
 		flags: {failroleplay: 1, noreceiver: 1, noentrain: 1, notrace: 1, failskillswap: 1, cantsuppress: 1},
-		name: "Hoshinova",
+		name: "Moon Mania",
 		rating: 4,
 		num: 176,
 	},
