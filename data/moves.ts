@@ -118,12 +118,12 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		pp: 5,
 		priority: 0,
 		flags: {protect: 1, mirror: 1, metronome: 1},
-		onTry(pokemon) {
-			pokemon.trySetStatus('brn', pokemon);
-		},
+		status: 'brn',
 		secondary: {
 			chance: 100,
-			status: 'brn',
+			self: {
+		    status: 'brn',
+			} 
 		},
 		target: "allAdjacentFoes",
 		type: "Fire",
