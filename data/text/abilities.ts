@@ -72,8 +72,8 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	diva: {
 		name: "Diva",
-		desc: "This Diva's sound-based moves have her power multiplied by 1.3; Immune to sound based moves and effects",
-		shortDesc: "Immune to sound based moves. Her own sounds have 1.3x power.",
+		desc: "This Diva's sound-based moves have their power multiplied by 1.3; Immune to Sound-type moves and has her Special Attack raised by 1 stage when hit by a Sound-based move.",
+		shortDesc: "Sound moves have 1.3x power. +1 Sp.Atk if hit by Sound move; Sound immunity.",
 	},
 	fbking: {
 		name: "FBKing",
@@ -369,14 +369,14 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	mightyphoenix: {
 		name: "Mighty Phoenix",
 		desc: "30% chance a Pokemon making contact with this Phoenix will be burned. This Phoenix is immune to Fire-type moves. The first time she is hit by a Fire-type move, her offensive stat is multiplied by 1.5 while using a Fire-type.",
-	shortDesc: "30% chance to burn those that make contact. Fire-type immunity.",
+	    shortDesc: "30% chance to burn those that make contact. Fire-type immunity.",
 
 	    start: "  [POKEMON] the Part-Time Warrior is here!",
 	},
 	yabairys: {
 		name: "YabaIRyS",
-		desc: "This Nephelim's sound-based moves have their power multiplied by 1.3; Prevents other Pokemon from lowering this Nephelim's stat stages.",
-		shortDesc: "Sound moves have 1.3x power. User's stats cannot be lowered.",
+		desc: "This Nephelim's sound-based moves have her power multiplied by 1.3; This Nephelim's offensive stat is multiplied by 1.5 while using a Rock-type attacking move.",
+		shortDesc: "Sound-based moves have 1.3x power; Rock-type moves have 1.5x power.",
 	},
 	timedilation: {
 		name: "Time Dilation",
@@ -417,8 +417,8 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	underworlddiva: {
 		name: "Underworld Diva",
-		desc: "This Raven is immune to Sound-type moves and has her Special Attack raised by 1 stage when hit by a Sound-based move.",
-		shortDesc: "Sp.Atk is raised by 1 if hit by a Sound move; Sound immunity.",
+		desc: "This Raven is immune to Sound-type moves and has her Attack raised by 2 stages when hit by a Sound-based move.",
+		shortDesc: "Attack is raised by 2 if hit by a Sound move; Sound immunity.",
 	},
 	thefuzzyone: {
 		name: "The Fuzzy One",

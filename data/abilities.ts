@@ -229,17 +229,12 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3,
 		num: 207,
 	},
-	diva: { // combines [Soundproof] + [Punk Rock]
-		onBasePowerPriority: 7,
-		onBasePower(basePower, attacker, defender, move) {
-			if (move.flags['sound']) {
-				this.debug('Diva boost');
-				return this.chainModify([5325, 4096]);
-			}
-		},
+	diva: { // combines [Soundproof] + [Punk Rock] 
 		onTryHit(target, source, move) {
 			if (target !== source && move.flags['sound']) {
-				this.add('-immune', target, '[from] ability: Diva');
+				if (!this.boost({spa: 1})) {
+					this.add('-immune', target, '[from] ability: Diva');
+				}
 				return null;
 			}
 		},
@@ -248,10 +243,17 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 				this.add('-immune', this.effectState.target, '[from] ability: Diva');
 			}
 		},
+		onBasePowerPriority: 7,
+		onBasePower(basePower, attacker, defender, move) {
+			if (move.flags['sound']) {
+				this.debug('Diva boost');
+				return this.chainModify([5325, 4096]);
+			}
+		},
 		flags: {breakable: 1},
 		name: "Diva",
-		rating: 4,
-		num: 29,
+		rating: 3.5,
+		num: 271,
 	},
 	fbking: { // reskin of [Moxie]
 		onSourceAfterFaint(length, target, source, effect) {
@@ -1424,21 +1426,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 4,
 		num: 18,
 	},
-	yabairys: { // combines [Clear Body] + [Punk Rock] (but without the sound immunity)
-		onTryBoost(boost, target, source, effect) {
-			if (source && target === source) return;
-			let showMsg = false;
-			let i: BoostID;
-			for (i in boost) {
-				if (boost[i]! < 0) {
-					delete boost[i];
-					showMsg = true;
-				}
-			}
-			if (showMsg && !(effect as ActiveMove).secondaries && effect.id !== 'octolock') {
-				this.add("-fail", target, "unboost", "[from] ability: YabaIRyS", "[of] " + target);
-			}
-		},
+	yabairys: { // combines [Rocky Payload] + [Punk Rock]
 		onBasePowerPriority: 7,
 		onBasePower(basePower, attacker, defender, move) {
 			if (move.flags['sound']) {
@@ -1446,10 +1434,24 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 				return this.chainModify([5325, 4096]);
 			}
 		},
+		onModifyAtkPriority: 5,
+		onModifyAtk(atk, attacker, defender, move) {
+			if (move.type === 'Rock') {
+				this.debug('Rocky Payload boost');
+				return this.chainModify(1.5);
+			}
+		},
+		onModifySpAPriority: 5,
+		onModifySpA(atk, attacker, defender, move) {
+			if (move.type === 'Rock') {
+				this.debug('Rocky Payload boost');
+				return this.chainModify(1.5);
+			}
+		},
 		flags: {breakable: 1},
 		name: "YabaIRyS",
-		rating: 3.5,
-		num: 271,
+		rating: 4,
+		num: 29,
 	},
 	timedilation: { // sets up Trick Room on switch-in (effects end prematurely if user/foe with this ability switches in)
 		onStart(pokemon) {
@@ -1637,10 +1639,10 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3.5,
 		num: 218,
 	},
-	underworlddiva: { // if hit by Sound type move, boosts SpA by 1; Sound type immunity
+	underworlddiva: { // if hit by Sound type move, boosts Atk by 2; Sound type immunity
 		onTryHit(target, source, move) {
 			if (target !== source && move.flags['sound']) {
-				if (!this.boost({spa: 1})) {
+				if (!this.boost({atk: 2})) {
 					this.add('-immune', target, '[from] ability: Underworld Diva');
 				}
 				return null;
