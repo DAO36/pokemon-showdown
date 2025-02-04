@@ -1169,7 +1169,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		name: "Daredevil",
 		pp: 5,
 		priority: 0,
-		flags: {contact: 1, protect: 1, mirror: 1, metronome: 1},
+		flags: {bullet: 1, protect: 1, mirror: 1, metronome: 1},
 		self: {
 			boosts: {
 				atk: -1,
@@ -2095,7 +2095,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		priority: 0,
 		flags: {snatch: 1, sound: 1},
 		boosts: {
-			spa: 2,
+			atk: 2,
 		},
 		secondary: null,
 		target: "self",

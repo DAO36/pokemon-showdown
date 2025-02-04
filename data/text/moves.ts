@@ -567,8 +567,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	wah: {
 		name: "Wah",
-		desc: "Raises the user's Special Attack by 2 stages.",
-		shortDesc: "Raises the user's Sp. Atk by 2.",
+		desc: "Raises the user's Attack by 2 stages.",
+		shortDesc: "Raises the user's Atk by 2.",
 	},
 	tentaclesstrike: {
 		name: "Tentacles Strike",
