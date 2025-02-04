@@ -640,25 +640,6 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3,
 		num: 171,
 	},
-	zling: {
-		onFoeTryMove(target, source, move) {
-			const targetAllExceptions = ['perishsong', 'flowershield', 'rototiller'];
-			if (move.target === 'foeSide' || (move.target === 'all' && !targetAllExceptions.includes(move.id))) {
-				return;
-			}
-
-			const dazzlingHolder = this.effectState.target;
-			if ((source.isAlly(dazzlingHolder) || move.target === 'all') && move.priority > 0.1) {
-				this.attrLastMove('[still]');
-				this.add('cant', dazzlingHolder, 'ability: Dazzling', move, '[of] ' + target);
-				return false;
-			}
-		},
-		flags: {breakable: 1},
-		name: "Dazzling",
-		rating: 2.5,
-		num: 219,
-	},
 	elvishflare: { // reskin of [Rocky Payload] but for Fire <UNUSED>
 		onModifyAtkPriority: 5,
 		onModifyAtk(atk, attacker, defender, move) {
@@ -805,21 +786,15 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3,
 		num: 207,
 	},
-	devildiva: { // reskin of [No Guard]
-		onAnyInvulnerabilityPriority: 1,
-		onAnyInvulnerability(target, source, move) {
-			if (move && (source === this.effectState.target || target === this.effectState.target)) return 0;
-		},
-		onAnyAccuracy(accuracy, target, source, move) {
-			if (move && (source === this.effectState.target || target === this.effectState.target)) {
-				return true;
-			}
-			return accuracy;
+	tmt: {
+		onModifyMove(move) {
+			move.infiltrates = true;
+			if (move.category === 'Physical' || move.category === 'Special' || move.category === 'Status') delete move.flags['protect'];
 		},
 		flags: {},
-		name: "Devil Diva",
-		rating: 3,
-		num: 153,
+		name: "TMT",
+		rating: 2.5,
+		num: 151,
 	},
 	thelegendofpolka: { // combines [Skill Link] + [Techncician]
 		onBasePowerPriority: 30,

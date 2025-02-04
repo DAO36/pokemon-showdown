@@ -216,10 +216,11 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 		name: "Sugar Rush",
 		shortDesc: "If Misty Terrain is active, the Speed of the baby is doubled.",
 	},
-	devildiva: {
-		name: "Devil Diva",
-			shortDesc: "Every move used by or against this Devil will always hit.",
-		},
+	tmt: {
+		name: "TMT",
+		desc: "This Devil's moves ignore substitutes and the opposing side's Reflect, Light Screen, Safeguard, Mist, and Aurora Veil. This Devil's attacking moves ignore the target's protection, except Max Guard.",
+		shortDesc: "User's moves ignore target's protection, substitutes and screens.",
+	},
 	thelegendofpolka: {
 		name: "The Legend of Polka",
 		desc: "This Pokemon's moves of 60 power or less have their power multiplied by 1.5, including Struggle. This effect comes after a move's effect changes its own power; Multi-hit attacks always hit the maximum number of times. Triple Kick and Triple Axel do not check accuracy for the second and third hits.",
