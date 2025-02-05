@@ -1483,6 +1483,15 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		num: 207,
 	},
 	mothernature: { // combines [Flower Veil] + [Aroma Veil]  
+		onStart(pokemon) {
+			this.add('-activate', pokemon, 'move: Mother Nature');
+			let success = false;
+			const allies = [...pokemon.side.pokemon, ...pokemon.side.allySide?.pokemon || []];
+			for (const ally of allies) { 
+				if (ally.cureStatus()) success = true;
+			}
+			return success;
+		},
 		onAllyTryBoost(boost, target, source, effect) {
 			if (source && target === source) return;
 			let showMsg = false;

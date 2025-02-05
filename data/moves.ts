@@ -2409,17 +2409,6 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		pp: 10,
 		priority: 0,
 		flags: {protect: 1, mirror: 1, heal: 1, sound: 1, bypasssub: 1},
-		self: {
-			onHit(pokemon, source, move) {
-				this.add('-activate', source, 'move: Aromatherapy');
-				for (const ally of source.side.pokemon) {
-					if (ally !== source && (ally.volatiles['substitute'] && !move.infiltrates)) {
-						continue;
-					}
-					ally.cureStatus();
-				}
-			},
-		},
 		secondary: {
 			chance: 10,
 			self: {
@@ -2472,37 +2461,20 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		name: "Golden Apple",
 		pp: 5,
 		priority: 0,
-		flags: {snatch: 1, heal: 1},
-		onHit(pokemon) {
+		flags: {snatch: 1, heal: 1}, 
+		onHit(target, source) {
 			let success = false;
-			if (this.field.isTerrain('grassyterrain')){ 
-			const success = !!this.heal(this.modify(pokemon.maxhp, 0.66));
+			if (this.field.isTerrain('grassyterrain')) {
+				success = !!this.heal(this.modify(target.baseMaxhp, 0.65));
 			} else {
-				success = !!this.heal(Math.ceil(pokemon.baseMaxhp * 0.33));
+				success = !!this.heal(Math.ceil(target.baseMaxhp * 0.5));
 			}
-			return pokemon.cureStatus() || success;
+			return success;
 		},
 		secondary: null,
 		target: "allies",
 		type: "Grass",
 		contestType: "Beautiful",
-	},
-	lehealing: {
-		num: 816,
-		accuracy: true,
-		basePower: 0,
-		category: "Status",
-		name: "Jungle Healing",
-		pp: 10,
-		priority: 0,
-		flags: {heal: 1, bypasssub: 1, allyanim: 1},
-		onHit(pokemon) {
-			const success = !!this.heal(this.modify(pokemon.maxhp, 0.25));
-			return pokemon.cureStatus() || success;
-		},
-		secondary: null,
-		target: "allies",
-		type: "Grass",
 	},
 	clockstrikes: { // steal type dual wingbeat
 		num: 370,

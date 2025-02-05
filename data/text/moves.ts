@@ -637,8 +637,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	naturalasmr: {
 		name: "Natural ASMR",
-		desc: "Every Pokemon in this Kirin's party is cured of their non-volatile status condition. Hits adjacent foes.",
-		shortDesc: "Cures the user's party of all status conditions.",
+		desc: "Has a 10% chance to raise this Kirin's Special Defense by 1 stage. Hits adjacent foes.",
+		shortDesc: "10% to raise user's Special Defense by 1.",
 	},
 	gamerkirin: {
 		name: "Gamer Kirin",
@@ -652,8 +652,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	goldenapple: {
 		name: "Golden Apple",
-		desc: "Each Pokemon on this Kirin's side restores 1/3 of their maximum HP, rounded half up. This Kirin and her party are cured of any status effects.",
-		shortDesc: "Cures party of status & heals by terrain-dependent amount.",
+		desc: "This Kirin restores 1/2 of her maximum HP, rounded half up. If the terrain is Grassy Terrain, this Kirin instead restores 2/3 of her maximum HP, rounded half down.",
+		shortDesc: "Heals the user by a terrain-dependent amount.", 
 	},
 	clockstrikes: {
 		name: "Clock Strikes",
