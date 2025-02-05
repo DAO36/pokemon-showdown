@@ -2473,18 +2473,16 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		pp: 5,
 		priority: 0,
 		flags: {snatch: 1, heal: 1},
-		onTry(pokemon) { 
-			return pokemon.cureStatus()  
-		},
-		onHit(target, source) {
+		onHit(pokemon) {
 			let success = false;
-			if (this.field.isTerrain('grassyterrain')) {
-				success = !!this.heal(this.modify(target.baseMaxhp, 0.667));
+			if (this.field.isTerrain('grassyterrain')){ 
+			const success = !!this.heal(this.modify(pokemon.maxhp, 0.66));
+			return pokemon.cureStatus() || success;
 			} else {
-				success = !!this.heal(Math.ceil(target.baseMaxhp * 0.33));
+				success = !!this.heal(Math.ceil(pokemon.baseMaxhp * 0.33));
 			}
 			return success;
-		}, 
+		},
 		secondary: null,
 		target: "allies",
 		type: "Grass",
