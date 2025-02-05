@@ -1471,12 +1471,18 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3,
 		num: -19,		
 	},
-	faunasweep: { // [Flower Veil] + [Aroma Veil] + [Surge Surfer] but for Grassy Terrain instead of Electric Terrain
+	faunasweep: { // reskin of [Surge Surfer] but for Grassy Terrain instead of Electric Terrain
 		onModifySpe(spe) {
 			if (this.field.isTerrain('grassyterrain')) {
 				return this.chainModify(2);
 			}
 		},
+		flags: {},
+		name: "Fauna Sweep",
+		rating: 3,
+		num: 207,
+	},
+	mothernature: { // combines [Flower Veil] + [Aroma Veil]  
 		onAllyTryBoost(boost, target, source, effect) {
 			if (source && target === source) return;
 			let showMsg = false;
@@ -1489,15 +1495,15 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			}
 			if (showMsg && !(effect as ActiveMove).secondaries) {
 				const effectHolder = this.effectState.target;
-				this.add('-block', target, 'ability: Fauna Sweep', '[of] ' + effectHolder);
+				this.add('-block', target, 'ability: Mother Nature', '[of] ' + effectHolder);
 			}
 		},
 		onAllySetStatus(status, target, source, effect) {
 			if (source && target !== source && effect && effect.id !== 'yawn') {
-				this.debug('interrupting setStatus with Fauna Sweep');
+				this.debug('interrupting setStatus with Mother Nature');
 				if (effect.name === 'Synchronize' || (effect.effectType === 'Move' && !effect.secondaries)) {
 					const effectHolder = this.effectState.target;
-					this.add('-block', target, 'ability: Fauna Sweep', '[of] ' + effectHolder);
+					this.add('-block', target, 'ability: Mother Nature', '[of] ' + effectHolder);
 				}
 				return null;
 			}
@@ -1506,19 +1512,19 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			if (['attract', 'disable', 'scarylook', 'encore', 'healblock', 'taunt', 'torment'].includes(status.id)) {
 				if (effect.effectType === 'Move') {
 					const effectHolder = this.effectState.target;
-					this.add('-block', target, 'ability: Fauna Sweep', '[of] ' + effectHolder);
+					this.add('-block', target, 'ability: Mother Nature', '[of] ' + effectHolder);
 				}
 				return null;
 			} 
 			if (status.id === 'yawn') {
-				this.debug('Fauna Sweep blocking yawn');
+				this.debug('Mother Nature blocking yawn');
 				const effectHolder = this.effectState.target;
-				this.add('-block', target, 'ability: Fauna Sweep', '[of] ' + effectHolder);
+				this.add('-block', target, 'ability: Mother Nature', '[of] ' + effectHolder);
 				return null;
 			}
 		},
 		flags: {},
-		name: "Fauna Sweep",
+		name: "Mother Nature",
 		rating: 3,
 		num: 207,
 	},

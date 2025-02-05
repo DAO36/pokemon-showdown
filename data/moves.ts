@@ -2400,15 +2400,15 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Dark",
 		contestType: "Tough",
 	},
-	mothernature: { // heals user and their teammates of status 
+	naturalasmr: { // heals user and their teammates of status 
 		num: 370,
 		accuracy: 100,
-		basePower: 80,
+		basePower: 90,
 		category: "Special",
-		name: "Mother Nature",
+		name: "Natural ASMR",
 		pp: 10,
 		priority: 0,
-		flags: {protect: 1, mirror: 1, heal: 1},
+		flags: {protect: 1, mirror: 1, heal: 1, sound: 1, bypasssub: 1},
 		self: {
 			onHit(pokemon, source, move) {
 				this.add('-activate', source, 'move: Aromatherapy');
@@ -2428,7 +2428,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 				},
 			},
 		},
-		target: "normal",
+		target: "allAdjacentFoes",
 		type: "Grass",
 		contestType: "Clever",
 	},
@@ -2449,12 +2449,12 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Grass",
 		contestType: "Beautiful",
 	},
-	natureswrath: { // grass type doubleedge but better
+	nemu: { // grass type doubleedge but better
 		num: 38,
 		accuracy: 100,
 		basePower: 130,
 		category: "Physical",
-		name: "Nature's Wrath",
+		name: "Nemu",
 		pp: 10,
 		priority: 0,
 		flags: {contact: 1, protect: 1, mirror: 1},
@@ -2464,12 +2464,12 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Grass",
 		contestType: "Tough",
 	},
-	naturesnurture: {
+	goldenapple: {
 		num: 791,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
-		name: "Nature's Nurture",
+		name: "Golden Apple",
 		pp: 5,
 		priority: 0,
 		flags: {snatch: 1, heal: 1, bypasssub: 1},
@@ -2922,14 +2922,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 			}
 		},
 		tracksTarget: true,
-		secondary: {
-			chance: 10,
-			self: {
-				boosts: {
-					accuracy: 1,
-				},
-			},
-		},
+		secondary: null,
 		target: "normal",
 		type: "Normal",
 		contestType: "Beautiful",

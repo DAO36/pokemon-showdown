@@ -97250,10 +97250,10 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			sandstorm: ["9M"],
 			snowscape: ["9M"],
 			hail: ["9M"],
-			mothernature: ["9M"],
-			natureswrath: ["9M"],
+			naturalasmr: ["9M"],
+			nemu: ["9M"],
 			gamerkirin: ["9M"],
-			naturesnurture: ["9M"],
+			goldenapple: ["9M"],
         },
 	},	
 	kronii: {

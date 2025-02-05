@@ -348,7 +348,7 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	powerofatlantis: {
 		name: "Power of Atlantis",
 		desc: "If Rain is active, this Shark's Attack and Special Attack is multiplied by 1.5 and she gains 1/10 of her maximum HP, rounded down, at the end of each turn. If there's no weather, she loses 1/10 of her maximum HP, rounded down, at the end of each turn, if Sunny Day/Sandstorm, loses 1/8 of her maximum HP per turn instead. These effects are prevented if the Pokemon is holding a Utility Umbrella.",
-		shortDesc: "Rain: Atk & SpAtk: 1.5x; gains 1/10 HP per turn. Else: loses 1/8 HP per turn.",
+		shortDesc: "In rain Atk & SpAtk: 1.5x; gains 1/10 HP per turn. Else: loses 1/8 HP per turn.",
 	},
 	toxicgamer: {
 		name: "Toxic Gamer",
@@ -388,15 +388,19 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	faunasweep: {
 		name: "Fauna Sweep",
-		desc: "Mother Nature protects herself and her allies from status effects, lowering of stats, and effects that limit move choice. In Grassy Terrain, this Kirin's Speed is doubled.",
-		shortDesc: "Grassy Terrain: x2 speed; Protects party from status, lowering of stats, effects that limit move choice.",
+		shortDesc: "If Grassy Terrain is active, this Pokemon's Speed is doubled.",
+	},
+	mothernature: {
+		name: "Mother Nature",
+		desc: "Mother Nature protects herself and her allies from status effects, lowering of stats, and effects that limit move choice.",
+		shortDesc: "Protects party from status, lowering of stats, effects that limit move choice.",
 
 		block: "  [POKEMON] is protected by Mother Nature!",
 	},
 	societalcollapse: {
 		name: "Societal Collapse",
 		desc: "If a Special Attacking move hits this Owl, her Special Defense is lowered by 1 stage and her Speed is raised by 2 stages.",
-		shortDesc: "If hit by a special attack, Sp.Def is lowered by 1, Speed is raised by 2.",
+		shortDesc: "If hit by a special attack, Special Defense is lowered by 1, Speed is raised by 2.",
 	},
 	chaos: {
 		name: "Chaos",
@@ -441,12 +445,12 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	chaser: {
 		name: "Chaser",
 		desc: "This Gremlin's Speed is raised by 1 stage if it attacks and knocks out another Pokemon.",
-		shortDesc: "Speed is raised by 1 stage if she attacks and KOs a Pokemon.",
+		shortDesc: "Speed is raised by 1 stage if user attacks and KOs a Pokemon.",
 	},
 	durable: {
 		name: "Durable",
 		desc: "On switch-in, this Automotan's Defense or Special Defense is raised by 1 stage based on the weaker combined offensive stat of all opposing Pokemon. Physical Defense is raised ny 1 if their Physical Attack is higher, and Special Defense is raised by 1 if their Special Attack is the same or higher.",
-		shortDesc: "On switch-in, Def or SpDef raises +1 based on foes' weaker Offensive stat.",
+		shortDesc: "On switch-in, Def or SpDef raises by 1 based on foes' weaker Offensive stat.",
 	},
 	bigcatmeansbigtrouble: {
 		name: "Big Cat Means Big Trouble",

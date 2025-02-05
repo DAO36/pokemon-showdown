@@ -517,7 +517,7 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	trident: {
 		name: "Trident",
 		desc: "Has a higher chance for a critical hit. This move can hit a target using Bounce, Fly, or Dive. If the weather is Primordial Sea or Rain Dance, this move does not check accuracy. If the weather is Desolate Land or Sunny Day, this move's accuracy is 50%. If this move is used against a Pokemon holding Utility Umbrella, this move's accuracy remains at 80%.",
-		shortDesc: "High critical hit ratio. Does not miss in Rain",
+		shortDesc: "High critical hit ratio. Does not miss in Rain.",
 	},
 	sharkattack: {
 		name: "Shark Attack",
@@ -576,7 +576,7 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	aochan: {
 		name: "AO Chan",
 		desc: "This attack never misses.",
-		shortDesc: "Never misses.",
+		shortDesc: "This attack never misses.",
 	},
 	phoenixshield: {
 		name: "Phoenix Shield",
@@ -591,7 +591,7 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	phoenixwind: {
 		name: "Phoenix Wind",
 		desc: "Has a 30% chance to burn the target. Hits adjacent Pokemon.",
-		shortDesc: "30% chance to burn foes. Hits adjacent Foes.",
+		shortDesc: "30% chance to burn target. Hits adjacent Foes.",
 	},
 	hopesoda: {
 		name: "Hope Soda",
@@ -606,7 +606,7 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	hopeless: {
 		name: "Hopeless",
 		desc: "Lowers the Nephelim's Defense and Special Defense by 1 stage. If this attack is not successful, the Nephelim loses half of her maximum HP, rounded down, as crash damage. Pokemon with the Magic Guard Ability are unaffected by crash damage.",
-		shortDesc: "Lowers user's Def/SpDef by 1. Loses 50% HP if miss.",
+		shortDesc: "Lowers Def & SpDef by 1. Loses 50% HP if miss.",
 
 		damage: "#crash",
 	},
@@ -633,11 +633,11 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	blackhole: {
 		name: "Black Hole",
 		desc: "Prevents the target from switching out. The target can still switch out if it is holding Shed Shell or uses Baton Pass, Flip Turn, Parting Shot, Teleport, U-turn, or Volt Switch. If the target leaves the field using Baton Pass, the replacement will remain trapped. The effect ends if the user leaves the field. Has a 100% chance to lower the target's Speed by 1 stage.",
-		shortDesc: "Prevents foe from switching. 100% to lower Speed by 1.",
+		shortDesc: "Keeps foe from switching. 100% to lower Speed by 1.",
 	},
-	mothernature: {
-		name: "Mother Nature",
-		desc: "Every Pokemon in this Kirin's party is cured of their non-volatile status condition.",
+	naturalasmr: {
+		name: "Natural ASMR",
+		desc: "Every Pokemon in this Kirin's party is cured of their non-volatile status condition. Hits adjacent foes.",
 		shortDesc: "Cures the user's party of all status conditions.",
 	},
 	gamerkirin: {
@@ -645,13 +645,13 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		desc: "Raises this Kirin's Attack by 2 stages.",
 		shortDesc: "Raises the user's Attack by 2.",
 	},
-	natureswrath: {
-		name: "Nature's Wrath",
+	nemu: {
+		name: "Nemu",
 		desc: "If the target lost HP, the Kirin takes recoil damage equal to 33% the HP lost by the target, rounded half up, but not less than 1 HP.",
 		shortDesc: "Has 33% recoil.",
 	},
-	naturesnurture: {
-		name: "Nature's Nurture",
+	goldenapple: {
+		name: "Golden Apple",
 		desc: "Each Pokemon on this Kirin's side restores 1/2 of its maximum HP, rounded half up.",
 		shortDesc: "Heals the user and its allies by 1/2 their max HP.",
 	},
@@ -693,7 +693,7 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	chaosstrike: {
 		name: "Chaos Strike",
 		desc: "Has a 30% to inflict confusion on the target. If the target lost HP, the Rat takes recoil damage equal to 33% the HP lost by the target, rounded half up, but not less than 1 HP.",
-		shortDesc: "30% to confuse foe. 33% recoil.",
+		shortDesc: "30% to confuse target. 33% recoil.",
 	},
 	forbiddenknowledge: {
 		name: "Forbidden Knowledge",
@@ -767,7 +767,7 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	godeyes: {
 		name: "God Eyes",
 		desc: "Bypasses subs and protection without breaking it. Never Misses. Has a 10% chance to raise the Cat's Accuracy by 1 stage. This move's type effectiveness against Ghost is changed to be neutrally effective no matter what this move's type is.",
-		shortDesc: "Hits Ghost types. Bypasses subs/protect. 10% to +1 Acc.",
+		shortDesc: "Hits Ghost types. Bypasses subs/protect.",
 	},
 	mamamia: {
 		name: "Mama Mia",
