@@ -693,7 +693,7 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	chaosstrike: {
 		name: "Chaos Strike",
 		desc: "Has a 30% to inflict confusion on the target. If the target lost HP, the Rat takes recoil damage equal to 33% the HP lost by the target, rounded half up, but not less than 1 HP.",
-		shortDesc: "30% to confuse target. 33% recoil.",
+		shortDesc: "30% to BRN/PSN/PAR/FRZ/SLP target. ",
 	},
 	forbiddenknowledge: {
 		name: "Forbidden Knowledge",
