@@ -298,12 +298,12 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	dragonsmash: {
 		name: "Dragon Smash",
 		desc: "If the target lost HP, the user takes recoil damage equal to 1/3 the HP lost by the target, rounded half up, but not less than 1 HP.",
-		shortDesc: "Has 1/3 recoil.",
+		shortDesc: "Has 33% recoil.",
 	},
 	gorillagrip: {
 		name: "Gorilla Grip",
 		desc: "Has a 10% chance to lower the foe's Defense by 1 stage. If the target lost HP, the user takes recoil damage equal to 33% the HP lost by the target, rounded half up, but not less than 1 HP.",
-		shortDesc: "1/3 recoil. 10% chance to lower foe's Def by 1",
+		shortDesc: "33% recoil. 10% chance to lower foe's Def by 1",
 	},
 	nothingwrong: {
 		name: "Nothing Wrong",
@@ -328,7 +328,7 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	daredevil: {
 		name: "Daredevil",
 		desc: "Lowers this Devil's Attack by 1 stage, while it increases her Speed by 1 stage.",
-		shortDesc: "Lowers Atk by 1; Raises Speed by 1.",
+		shortDesc: "Lowers Attack by 1; Raises Speed by 1.",
 	},
 	clowntown: {
 		name: "Clown Town",
@@ -387,7 +387,7 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	ymd: {
 		name: "YMD",
 		desc: "Has a 20% to raise the YMD's Special Defense by 1 stage. If the target lost HP, the user takes recoil damage equal to 33% the HP lost by the target, rounded half up, but not less than 1 HP.",
-		shortDesc: "1/3 recoil. 20% to raise user's Sp.Def by 1",
+		shortDesc: "33% recoil. 20% to raise user's Sp.Def by 1",
 	},
 	focusshades: {
 		name: "Focus Shades",
@@ -412,7 +412,7 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	hologram: {
 		name: "Hologram",
 		desc: "For 5 turns, the Coyote and her party members are protected from status moves from other Pokemon. Lasts for 8 turns if the user is holding Light Clay. Fails if the effect is already active on the user's side.",
-		shortDesc: "For 5 turns, protects user's party from status moves from other Pokemon",
+		shortDesc: "5 turns: protects user's party from status moves from other Pokemon",
 
 		start: "  [TEAM] summoned a hologram!",
 		end: "  [TEAM] is no longer protected!",
@@ -421,7 +421,7 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	madscientist: {
 		name: "Mad Scientist",
 		desc: "Lowers this Coyote's Special Attack by 2 stages. If the target lost HP, the Coyote takes recoil damage equal to 1/3 the HP lost by the target, rounded half up, but not less than 1 HP.",
-		shortDesc: "Has 1/3 recoil. Lowers user's Sp.Atk by 2.",
+		shortDesc: "Has 33% recoil. Lowers user's Sp.Atk by 2.",
 	},
 	cleanup: {
 		name: "Clean Up",
@@ -481,7 +481,7 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	spyshot: {
 		name: "Spy Shot",
 		desc: "Bypasses subs and protection without breaking it. Never Misses. High critical hit ratio.",
-		shortDesc: "Bypasses subs/protection; High crit ratio; Never Misses.",
+		shortDesc: "Bypasses subs/protect; High crit ratio; Never Misses.",
 	},
 	nopressure: {
 		name: "No Pressure",
