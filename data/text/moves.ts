@@ -627,8 +627,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	bigbang: {
 		name: "Big Bang",
-		desc: "Sana faints after using this move, even if this move fails for having no target. This move is prevented from executing if any active Pokemon has the Damp Ability. Hits adjacent Pokemon.",
-		shortDesc: "Hits adjacent Pokemon. User faints.",
+		desc: "Sana faints after using this move, even if this move fails for having no target. This move is prevented from executing if any active Pokemon has the Damp Ability. Hits adjacent Pokemon. This moves bypasses substitute and ignores protection.",
+		shortDesc: "User faints. Bypasses sub/protect. Hits adjacent Pokemon.",
 	},
 	blackhole: {
 		name: "Black Hole",
