@@ -2605,8 +2605,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		onModifyMove(move, pokemon, target) {
 			const rand = this.random(10);
 			if (rand < 4) {
-				move.basePower = 80;
-				move.infiltrates = true;
+				move.basePower = 80; 
 			} else if (rand < 7) {
 				move.basePower = 100;
 			} else if (rand < 9) {
@@ -2618,7 +2617,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		secondary: {
 			chance: 30,
 			onHit(target, source) {
-				const result = this.random(5);
+				const result = this.random(6);
 				if (result === 0) {
 					target.trySetStatus('brn', source);
 				} else if (result === 1) {
@@ -2626,12 +2625,70 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 				} else if (result === 2) {
 					target.trySetStatus('tox', source);
 				} else if (result === 3) {
-					target.trySetStatus('frz', source);
-				} else {
+					target.trySetStatus('slp', source);
+				} else if (result === 4) {
 					target.trySetStatus('psn', source);
+				} else {
+					target.trySetStatus('frz', source);
 				}
 			},
 		},
+		target: "normal",
+		type: "Dark",
+		contestType: "Cute",
+	},
+	test1: {
+		num: 217,
+		accuracy: 100,
+		basePower: 80,
+		category: "Physical",
+		name: "test1",
+		pp: 30,
+		priority: 0,
+		flags: {protect: 1, mirror: 1, metronome: 1},
+		secondary: null,
+		target: "normal",
+		type: "Dark",
+		contestType: "Cute",
+	},
+	test2: {
+		num: 217,
+		accuracy: 100,
+		basePower: 100,
+		category: "Physical",
+		name: "test2",
+		pp: 30,
+		priority: 0,
+		flags: {protect: 1, mirror: 1, metronome: 1},
+		secondary: null,
+		target: "normal",
+		type: "Dark",
+		contestType: "Cute",
+	},
+	test3: {
+		num: 217,
+		accuracy: 100,
+		basePower: 120,
+		category: "Physical",
+		name: "test3",
+		pp: 30,
+		priority: 0,
+		flags: {protect: 1, mirror: 1, metronome: 1},
+		secondary: null,
+		target: "normal",
+		type: "Dark",
+		contestType: "Cute",
+	},
+	test4: {
+		num: 217,
+		accuracy: 100,
+		basePower: 150,
+		category: "Physical",
+		name: "test4",
+		pp: 30,
+		priority: 0,
+		flags: {protect: 1, mirror: 1, metronome: 1},
+		secondary: null,
 		target: "normal",
 		type: "Dark",
 		contestType: "Cute",
