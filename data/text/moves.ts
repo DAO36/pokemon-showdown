@@ -11,13 +11,13 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	ankimoattack: {
 		name: "Ankimo Attack",
-		desc: "Has a 10% chance to raise the user's Attack by 1 stage.",
+		desc: "Has a 10% chance to raise this Idol's Attack by 1 stage.",
 		shortDesc: "10% chance to raise the user's Attack by 1.", 
 	},
 	tskr: {
 		name: "TSKR",
-		desc: "The user cures its non-volatile status condition. Raises the user's Special Attack by 2 stages.",
-		shortDesc: "Cures user and her party, raises Sp. Atk by 2.",
+		desc: "This Idol cures her non-volatile status condition. Raises the Idol's Special Attack by 2 stages.",
+		shortDesc: "Cures user and her party; raises Sp.Atk by 2.",
 	},
 	sakuraiattack: {
 		name: "Sakurai Attack",
@@ -25,22 +25,22 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	lavabucket: {
 		name: "Lava Bucket",
-		desc: "Has a 100% chance to burn the target. Hits adjacent foes. User gets burned and if the target lost HP, the user takes recoil damage equal to 33% the HP lost by the target, rounded half up, but not less than 1 HP.",
-		shortDesc: "100% chance to burn target. Hits adjacent foes. User gets burned and gets 33% recoil damage.",
+		desc: "Has a 100% chance to burn the target. Hits adjacent foes. User gets burned as well.",
+		shortDesc: "Burns target. Hits adjacent foes. User gets burned too.",
 
 		activate: "  [SOURCE] dropped lava everywhere! Atsui!",
 	},
 	elitemiko: {
 		name: "Elite Miko",
-		desc: "Raises the user's Attack by 2 stages.",
+		desc: "Raises the Shrine Maiden's Attack by 2 stages.",
 		shortDesc: "Raises the user's Attack by 2.",
 
 		activate: "  [SOURCE] becomes elite!",
 	},
 	suicopath: {
 		name: "Suicopath",
-		desc: "Lowers the user's Defense and Special Defense by 1 stage.",
-		shortDesc: "Lowers the user's Defense and Sp. Def by 1.",
+		desc: "Lowers the Comet's Defense and Special Defense by 1 stage.",
+		shortDesc: "Lowers user's Defense & Sp.Def by 1.",
 	},
 	axeattack: {
 		name: "Axe Attack",
@@ -49,28 +49,29 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	cometslam: {
 		name: "Comet Slam",
-		desc: "Has a 10% chance to freeze the target.",
-		shortDesc: "10% chance to freeze the target.",
+		desc: "Has a 10% chance to freeze the target. If the target lost HP, the Comet takes recoil damage equal to 33% the HP lost by the target, rounded half up, but not less than 1 HP.",
+		shortDesc: "10% chance to freeze target. 33% recoil.",
 	},
 	highspecs: {
 		name: "High Specs",
-		shortDesc: "No additional effect.",
-	},
-	laserbeam: {
-		name: "Laser Beam",
 		desc: "Has a 10% chance to paralyze the target.",
 		shortDesc: "10% chance to paralyze the target.",
 	},
+	laserbeam: {
+		name: "Laser Beam",
+		desc: "Has a 10% chance to paralyze the target. If Electric Terrain is active, and the user is grounded, this move does not miss.",
+		shortDesc: "10% to paralyze. Can't miss in Electric Terrain",
+	},
 	upgradepc: {
 		name: "Upgrade PC",
-		desc: "Raises the user's Special Attack and Defense by 1 stage.",
-		shortDesc: "Raises the user's Sp. Atk and Def by 1.",
+		desc: "Raises the Robot's Special Attack and Defense by 1 stage.",
+		shortDesc: "Raises user's Special Attack & Defense by 1.",
 
 		activate: "  [SOURCE] is now high specs robot!",
 	},
 	reboot: {
 		name: "Reboot",
-		desc: "The target restores 1/2 of its maximum HP, rounded half up. If the terrain is Electric Terrain, the target instead restores 2/3 of its maximum HP, rounded half down.",
+		desc: "This Robot restores 1/2 of her maximum HP, rounded half up. If the terrain is Electric Terrain, this Robot instead restores 2/3 of her maximum HP, rounded half down.",
 		shortDesc: "Heals the user by a terrain-dependent amount.",
 	},
 	divasong: {
@@ -80,7 +81,7 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	divadance: {
 		name: "Diva Dance",
-		desc: "Raises the user's Attack by 2 stages.",
+		desc: "Raises this Diva's Attack by 2 stages.",
 		shortDesc: "Raises the user's Attack by 2.",
 	},
 	snowdash: { // <UNUSED>
@@ -93,7 +94,7 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	konkon: {
 		name: "Kon Kon",
 		desc: "Raises the user's Special Attack, and Speed by 1 stage.",
-		shortDesc: "Raises the user's SpAtk and Speed by 1.",
+		shortDesc: "Raises user's Special Attack & Speed by 1.",
 	},
 	icesword: {
 		name: "Ice Sword",
@@ -108,12 +109,12 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	iamgodok: {
 		name: "I am God OK",
 		desc: "Raises the user's Attack, Speed, and Accuracy all by 1 stage.",
-		shortDesc: "Raises the user's Atk, Speed, and Acc by 1.",
+		shortDesc: "Raises Attack, Speed, and Accuracy by 1.",
 	},
 	splitpersonality: {
 		name: "Split Personality",
 		desc: "This move combines Fairy in its type effectiveness against the target. Hits twice. If the first hit breaks the target's substitute, it will take damage for the second hit.",
-		shortDesc: "Combines Fairy in its type effectiveness. Hits 2x.",
+		shortDesc: "Combines Fairy in type effectiveness. Hits 2x.",
 	},
 	spidercooking: {
 		name: "Spider Cooking",
@@ -123,7 +124,7 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	alterego: { // [UNUSED]
 		name: "Alter Ego",
 		desc: "Has a 10% chance to flinch the foe. If the user is Akai in Idol Mode, this move is Fairy type and Special. If she is in Haachama Mode, this move is Dark type and Physical. This move cannot be used successfully unless the user's current form, while considering Transform, is Akai or Haato Mode.",
-		shortDesc: "Akai: Fairy; Haato: Dark; 10% to flinch",
+		shortDesc: "Akai: Fairy; Haato: Dark; 10% to flinch foe.",
 	},
 	fourcoursemeal: {
 		name: "Four Course Meal",
@@ -132,17 +133,18 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	kapu: {
 		name: "Kapu",
-		desc: "The user recovers 1/2 the HP lost by the target, rounded half up.",
-		shortDesc: "User recovers 50% of the damage dealt.",
+		desc: "This Vampire recovers 1/2 the HP lost by the target, rounded half up.",
+		shortDesc: "Recovers 50% of the damage dealt.",
 	},
 	banpire: {
 		name: "Banpire",
-		desc: "Raises the user's Attack by 2 stages.",
+		desc: "Raises this Vampire's Attack by 2 stages.",
 		shortDesc: "Raises the user's Attack by 2.",
 	},
 	elfdance: {
 		name: "Elf Dance",
-		shortDesc: "No additional effect.",
+		desc: "Has a 10% chance to raise this Elf's Special Defense by 1 stage.",
+		shortDesc: "10% chance to raise user's Sp.Def by 1.", 
 	},
 	twintails: {
 		name: "Twin Tails",
@@ -156,18 +158,18 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	gamermaid: {
 		name: "Gamer Maid",
-		desc: "Raises the user's Attack by 2 stages.",
+		desc: "Raises this Maid's Attack by 2 stages.",
 		shortDesc: "Raises the user's Attack by 2.",
 	},
 	dualblades: {
 		name: "Dual Blades",
 		desc: "Hits twice. If the first hit breaks the target's substitute, it will take damage for the second hit. Has a higher chance for a critical hit.",
-		shortDesc: "Hits 2 times in one turn. High critical hit ratio",
+		shortDesc: "Hits 2 times in one turn. High crit ratio",
 	},
 	underworldslash: {
 		name: "Underworld Slash",
 		desc: "Has a higher chance for a critical hit. Has a 20% chance to burn the foe.",
-		shortDesc: "High critical hit ratio. 20% chance to burn.",
+		shortDesc: "High crit ratio. 20% chance to burn target.",
 	},
 	nursing: {
 		name: "Nursing",
@@ -179,43 +181,43 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	witchattack: {
 		name: "Witch Attack",
-		desc: "Lowers the user's Special Attack by 2 stages.",
-		shortDesc: "Lowers the user's Sp. Atk by 2.",
+		desc: "Lowers this witch's Special Attack by 2 stages.",
+		shortDesc: "Lowers user's Special Attack by 2.",
 	},
 	magiconion: {
 		name: "Magic Onion",
-		desc: "Raises the user's Attack by 2 stages.",
-		shortDesc: "Raises the user's Atk by 2.",
+		desc: "Raises this witch's Attack by 2 stages.",
+		shortDesc: "Raises the user's Attack by 2.",
 	},
 	magickick: {
 		name: "High Jump Kick",
-		desc: "If this attack is not successful, the user loses half of its maximum HP, rounded down, as crash damage. Pokemon with the Magic Guard Ability are unaffected by crash damage.",
+		desc: "If this attack is not successful, this witch loses half of her maximum HP, rounded down, as crash damage. Pokemon with the Magic Guard Ability are unaffected by crash damage.",
 		shortDesc: "User is hurt by 50% of its max HP if it misses.",
 	},
 	duckasmr: {
 		name: "Duck ASMR",
-		desc: "Has a 10% chance to confuse the target.",
-		shortDesc: "10% to confuse target. Hits adjacent foes.",
+		desc: "Has a 10% chance to confuse the target. Hits adjacent foes.",
+		shortDesc: "10% to confuse foes. Hits adjacent foes.",
 	},
 	duckdance: {
 		name: "Duck Dance",
-		desc: "Raises the user's Attack and Speed by 1 stage.",
-		shortDesc: "Raises the user's Attack and Speed by 1.",
+		desc: "Raises this duck's Attack and Speed by 1 stage.",
+		shortDesc: "Raises user's Attack and Speed by 1.",
 	},
 	quackattack: {
 		name: "Quack Attack",
-		desc: "Lowers the user's Defense and Special Defense by 1 stage.",
+		desc: "Lowers this Duck's Defense and Special Defense by 1 stage.",
 		shortDesc: "Lowers the user's Defense and Sp. Def by 1.",
 	},
 	oozorapolice: {
 		name: "Oozora Police",
 		desc: "If both the user and the target have not fainted, the target is forced to switch out and be replaced with a random unfainted ally. This effect fails if the target is under the effect of Ingrain, has the Suction Cups Ability, or this move hit a substitute.",
-		shortDesc: "Forces the target to switch to a random ally.",
+		shortDesc: "Forces target to switch to a random ally.",
 	},
 	boxingdoggo: {
 		name: "Boxing Doggo",
-		desc: "Has a 10% chance to raise the user's Defense by 1 stage.",
-		shortDesc: "10% chance to raise the user's Defense by 1.",
+		desc: "Has a 10% chance to raise this Dog's Defense by 1 stage.",
+		shortDesc: "10% chance to raise user's Defense by 1.",
 	},
 	yubiyubi: {
 		name: "Yubi Yubi",
@@ -224,7 +226,7 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	moguyummy: {
 		name: "Mogu Yummy",
-		desc: "The user recovers 1/2 the HP lost by the target, rounded half up. If Big Root is held by the user, the HP recovered is 1.3x normal, rounded half down.",
+		desc: "This Cat recovers 1/2 the HP lost by the target, rounded half up. If Big Root is held by the user, the HP recovered is 1.3x normal, rounded half down.",
 		shortDesc: "User recovers 50% of the damage dealt.",
 	},
 	tarotattack: {
@@ -239,13 +241,13 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	painpeko: {
 		name: "Pain Peko",
-		desc: "Lowers the user's Defense and Special Defense by 1 stage.",
-		shortDesc: "Lowers the user's Defense and Sp. Def by 1.",
+		desc: "Lowers this Rabbit's Defense and Special Defense by 1 stage.",
+		shortDesc: "Lowers user's Defense and Sp.Def by 1.",
 	},
 	clubsmash: {
 		name: "Club Smash",
 		desc: "Has a 10% chance to lower the target's Attack by 1 stage. If the target lost HP, the user takes recoil damage equal to 33% the HP lost by the target, rounded half up, but not less than 1 HP.",
-		shortDesc: "Has 33% recoil. 10% chance to lower Atk by 1.",
+		shortDesc: "33% recoil. 10% chance to lower foe's Atk by 1.",
 	},
 	arrowassault: {
 		name: "Arrow Assault",
@@ -259,7 +261,7 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	gundance: {
 		name: "Gun Dance",
-		desc: "Raises the user's Attack by 2 stages.",
+		desc: "Raises this Elf's Attack by 2 stages.",
 		shortDesc: "Raises the user's Attack by 2.",
 	},
 	ahoy: {
@@ -267,11 +269,11 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		desc: "The target's stat stages greater than 0 are stolen from it and applied to the user before dealing damage.",
 		shortDesc: "Steals target's boosts before dealing damage.",
 
-		clearBoost: "  [SOURCE] stole the target's boosted stats!",
+		clearBoost: "  [SOURCE] plundered the target's boosted stats!",
 	},
 	forever17: {
 		name: "Forever 17",
-		desc: "The user restores 1/2 of its maximum HP, rounded half up.",
+		desc: "The Pirate restores 1/2 of her maximum HP, rounded half up.",
 		shortDesc: "Heals the user by 50% of its max HP.",
 	},
 	yanderestrike: {
@@ -301,31 +303,31 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	gorillagrip: {
 		name: "Gorilla Grip",
 		desc: "Has a 10% chance to lower the foe's Defense by 1 stage. If the target lost HP, the user takes recoil damage equal to 33% the HP lost by the target, rounded half up, but not less than 1 HP.",
-		shortDesc: "Has 33% recoil. 10% to lower foe's Def by 1",
+		shortDesc: "1/3 recoil. 10% chance to lower foe's Def by 1",
 	},
 	nothingwrong: {
 		name: "Nothing Wrong",
-		desc: "Raises the user's Attack by 2 stages.",
+		desc: "Raises this Sheep's Attack by 2 stages.",
 		shortDesc: "Raises the user's Attack by 2.",
 	},
 	ubersheep: {
 		name: "Uber Sheep",
-		desc: "The user restores 1/2 of its maximum HP, rounded half up. Removes any status effect that the user is inflicted with.",
-		shortDesc: "Heals the user by 50% of max HP. Cures status",
+		desc: "This Sheep restores 1/2 of her maximum HP, rounded half up. Removes any status effect that the Sheep is inflicted with.",
+		shortDesc: "Heals user by 50% of max HP. Cures status",
 	},
 	candycrash: {
 		name: "Candy Crash",
-		desc: "Has a 10% chance to raise the user's Speed by 1 stage .Hits two to five times. Has a 35% chance to hit two or three times and a 15% chance to hit four or five times. If one of the hits breaks the target's substitute, it will take damage for the remaining hits. If the user has the Skill Link Ability, this move will always hit five times. If the user is holding Loaded Dice, this move will hit 4-5 times.",
-		shortDesc: "Hits 2-5 times. 10% chance to raise Speed by 1",
+		desc: "Has a 10% chance to raise this baby's Speed by 1 stage. Hits two to five times. Has a 35% chance to hit two or three times and a 15% chance to hit four or five times. If one of the hits breaks the target's substitute, it will take damage for the remaining hits. If the user has the Skill Link Ability, this move will always hit five times. If the user is holding Loaded Dice, this move will hit 4-5 times.",
+		shortDesc: "Hits 2-5 times. 10% chance to raise user's Speed by 1",
 	},
 	sweetassault: {
 		name: "Sweet Assault",
-		desc: "The user recovers 1/2 the HP lost by the target, rounded half up.",
+		desc: "This baby recovers 1/2 the HP lost by the target, rounded half up.",
 		shortDesc: "User recovers 50% of the damage dealt.",
 	},
 	daredevil: {
 		name: "Daredevil",
-		desc: "Lowers the user's Attack by 1 stage, Increases the user's Speed by 1 stage.",
+		desc: "Lowers this Devil's Attack by 1 stage, while it increases her Speed by 1 stage.",
 		shortDesc: "Lowers Atk by 1; Raises Speed by 1.",
 	},
 	clowntown: {
@@ -333,14 +335,9 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		desc: "Has a 30% chance to confuse the target. Hits three times. Power increases to 40 for the second hit and 60 for the third. This move checks accuracy for each hit, and the attack ends if the target avoids a hit. If one of the hits breaks the target's substitute, it will take damage for the remaining hits. If the user has the Skill Link Ability, this move will always hit three times.",
 		shortDesc: "30% to confuse. Hits x3 each can miss, but power rises.",
 	},
-	pleaxel: {
-		name: "Triple Axel",
-		desc: "Hits three times. Power increases to 40 for the second hit and 60 for the third. This move checks accuracy for each hit, and the attack ends if the target avoids a hit. If one of the hits breaks the target's substitute, it will take damage for the remaining hits. If the user has the Skill Link Ability, this move will always hit three times.",
-		shortDesc: "Hits 3 times. Each hit can miss, but power rises.",
-	},
 	polmao: {
 		name: "PoLMAO",
-		desc: "If this move is successful and the user has not fainted, the user switches out even if it is trapped and is replaced immediately by a selected party member. The user does not switch out if there are no unfainted party members, or if the target switched out using an Eject Button or through the effect of the Emergency Exit or Wimp Out Abilities.",
+		desc: "If this move is successful and the Fennec has not fainted, the user switches out even if it is trapped and is replaced immediately by a selected party member. The user does not switch out if there are no unfainted party members, or if the target switched out using an Eject Button or through the effect of the Emergency Exit or Wimp Out Abilities.",
 		shortDesc: "User switches out after damaging the target.",
 
 		switchOut: "#uturn",
@@ -352,7 +349,7 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	lalion: {
 		name: "Lalion",
-		desc: "Raises the user's Attack by 2 stages.",
+		desc: "Raises this Lion's Attack by 2 stages.",
 		shortDesc: "Raises the user's Attack by 2.",
 	},
 	wamywater: {
@@ -362,7 +359,7 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	sake: {
 		name: "Sake",
-		desc: "Raises the user's Attack by 12 stages in exchange for the user losing 1/2 of its maximum HP, rounded down. Fails if the user would faint or if its Attack stat stage is 6.",
+		desc: "Raises this Elf's Attack by 12 stages in exchange for the user losing 1/2 of its maximum HP, rounded down. Fails if the user would faint or if its Attack stat stage is 6.",
 		shortDesc: "User loses 50% max HP. Maximizes Attack.",
 
 		boost: "  [POKEMON] drunkenly cut its own HP and maximized its Attack!",
@@ -370,32 +367,32 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	nenemaxattack: {
 		name: "NeneMAX Attack",
 		desc: "Cannot be selected the turn after it's used. Lower's the user's Speed by 1 stage if it successfully hits the target",
-		shortDesc: "Lowers user's SPE by 1. Can't be used twice in a row.",
+		shortDesc: "Lowers user's Speed by 1. Can't be used twice ina row.",
 	},
 	husbandhelp: {
 		name: "Husband Help",
-		desc: "Raises the user's Attack by 2 stages.",
+		desc: "Raises this Seal's Attack by 2 stages.",
 		shortDesc: "Raises the user's Attack by 2.",
 	},
 	succubussong: {
 		name: "Succubus Song",
-		desc: "Hits adjacent foes. Lowers the user's Special Attack by 1 stage; Increases the user's Special Defense by 1 stage.",
-		shortDesc: "Lowers Sp. Atk by 1; Raises Sp. Def by 1. Hits adjacent foes.",
+		desc: "Hits adjacent foes. Lowers this Succubus's Special Attack by 1 stage; Increases her's Special Defense by 1 stage.",
+		shortDesc: "Lowers Sp.Atk by 1; Raises Sp.Def by 1. Hits adjacent foes.", // if it doesnt fit try "User's Sp.Atk -1; User's Sp.Def +1. Hits adjacent foes." 
 	},
 	succubusstrike: {
 		name: "Succubus Strike",
-		desc: "Lowers the user's Attack by 1 stage; Raises the user's Defense by 1 stage.",
+		desc: "Lowers this Succubus's Attack by 1 stage; Raises her Defense by 1 stage.",
 		shortDesc: "Lowers Atk by 1; raises Def by 1.",
 	},
 	ymd: {
 		name: "YMD",
-		desc: "Has a 20% to raise the user's Special Defense by 1 stage. If the target lost HP, the user takes recoil damage equal to 33% the HP lost by the target, rounded half up, but not less than 1 HP.",
-		shortDesc: "Has 33% recoil. 20% to raise Sp. Def by 1",
+		desc: "Has a 20% to raise the YMD's Special Defense by 1 stage. If the target lost HP, the user takes recoil damage equal to 33% the HP lost by the target, rounded half up, but not less than 1 HP.",
+		shortDesc: "1/3 recoil. 20% to raise user's Sp.Def by 1",
 	},
 	focusshades: {
 		name: "Focus Shades",
-		desc: "Raises the user's Attack by 2 stages and accuracy by 1 stage.",
-		shortDesc: "Raises the user's Attack by 2 and Accuracy by 1.",
+		desc: "Raises this Falcon's Attack by 2 stages and accuracy by 1 stage.",
+		shortDesc: "Raises user's Attack by 2 and Accuracy by 1.",
 	},
 	falconwhip: {
 		name: "Falcon Whip",
@@ -409,12 +406,12 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	koyolabo: {
 		name: "Koyo Labo",
-		desc: "Raises the user's Attack by 2 stages.",
+		desc: "Raises this Coyote's Attack by 2 stages.",
 		shortDesc: "Raises the user's Attack by 2.",
 	},
 	hologram: {
 		name: "Hologram",
-		desc: "For 5 turns, the user and its party members are protected from status moves from other Pokemon. Lasts for 8 turns if the user is holding Light Clay. Fails if the effect is already active on the user's side.",
+		desc: "For 5 turns, the Coyote and her party members are protected from status moves from other Pokemon. Lasts for 8 turns if the user is holding Light Clay. Fails if the effect is already active on the user's side.",
 		shortDesc: "For 5 turns, protects user's party from status moves from other Pokemon",
 
 		start: "  [TEAM] summoned a hologram!",
@@ -423,23 +420,23 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	madscientist: {
 		name: "Mad Scientist",
-		desc: "Lowers the user's Special Attack by 2 stages. If the target lost HP, the user takes recoil damage equal to 1/3 the HP lost by the target, rounded half up, but not less than 1 HP.",
-		shortDesc: "Has 1/3 recoil. Lowers the user's Sp. Atk by 2.",
+		desc: "Lowers this Coyote's Special Attack by 2 stages. If the target lost HP, the Coyote takes recoil damage equal to 1/3 the HP lost by the target, rounded half up, but not less than 1 HP.",
+		shortDesc: "Has 1/3 recoil. Lowers user's Sp.Atk by 2.",
 	},
 	cleanup: {
 		name: "Clean Up",
-		desc: "If this move is successful and the user has not fainted, the effects of Leech Seed and binding moves end for the user, and all hazards are removed from the user's side of the field. The user then switches out even if it is trapped and is replaced immediately by a selected party member.",
-		shortDesc: "Clears hazards/bind/Leech Seed. Switches out after damaging the target.",
+		desc: "If this move is successful and the Orca has not fainted, the effects of Leech Seed and binding moves end for the Orca, and all hazards are removed from the Orca's side of the field. The Orca then switches out even if she is trapped and is replaced immediately by a selected party member.",
+		shortDesc: "Clears hazards/bind/Leech Seed. Switches after damaging target.",
 	},
 	moonstrike: {
 		name: "Moonstrike",
 		desc: "Has a 20% chance to lower the target's Special Attack by 1 stage.",
-		shortDesc: "20% chance to lower the target's Sp. Atk by 1.",
+		shortDesc: "20% chance to lower target's Sp.Atk by 1.",
 	},
 	eclipse: {
 		name: "Eclipse",
 		desc: "Has a 20% chance to lower the target's Attack by 1 stage.",
-		shortDesc: "20% chance to lower the target's Atk by 1.",
+		shortDesc: "20% chance to lower target's Atk by 1.",
 	},
 	lunarshield: {
 		name: "Lunar Shield",
@@ -463,7 +460,7 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	zombiestrike: {
 		name: "Zombie Strike",
-		desc: "If the target lost HP, the user takes recoil damage equal to 33% the HP lost by the target, rounded half up, but not less than 1 HP.",
+		desc: "If the target lost HP, the Zombie takes recoil damage equal to 33% the HP lost by the target, rounded half up, but not less than 1 HP.",
 		shortDesc: "Has 33% recoil.",
 	},
 	tonjok: {
@@ -473,34 +470,35 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	peacockattack: {
 		name: "Peacock Attack",
-		desc: "Has a 10% chance to raise the user's Special Attack by 1 stage. Has a higher chance for a critical hit.",
-		shortDesc: "10% chance to raise user's Sp. Atk by 1.",
+		desc: "Has a 20% chance to raise this Peafowl's Special Defense by 1 stage.",
+		shortDesc: "20% chance to raise user's Sp.Def by 1.",
 	},
 	keris: {
 		name: "Keris",
-		desc: "Has a 10% chance to raise the user's Special Defense by 1 stage. ",
+		desc: "Has a 10% chance to raise this Keris' Special Defense by 1 stage. Has a high critical hit ratio.",
 		shortDesc: "10% to raise user's Sp.Def by 1. High crit ratio.",
 	},
 	spyshot: {
 		name: "Spy Shot",
-		shortDesc: "Bypasses subs and protection without breaking it. Never Misses. High critical hit ratio.",
+		desc: "Bypasses subs and protection without breaking it. Never Misses. High critical hit ratio.",
+		shortDesc: "Bypasses subs/protection; High crit ratio; Never Misses.",
 	},
 	nopressure: {
 		name: "No Pressure",
-		desc: "Lowers the target's Defense and Special Defense by 1 stage. If this move is successful, the user switches out even if it is trapped and is replaced immediately by a selected party member. The user does not switch out if the target's Defense and Special Defense stat stages were both unchanged, or if there are no unfainted party members.",
-		shortDesc: "Lowers target's Def, Sp. Def by 1. User switches.",
+		desc: "Lowers the target's Defense and Special Defense by 1 stage. If this move is successful, this Blacksmith switches out even if she is trapped and is replaced immediately by a selected party member. The user does not switch out if the target's Defense and Special Defense stat stages were both unchanged, or if there are no unfainted party members.",
+		shortDesc: "Lowers target's Def & Sp.Def by 1. User switches.",
 
 		heal: "#memento",
 		switchOut: "#uturn",
 	},
 	dahlah: {
 		name: "Dahlah",
-		desc: "Has a 30% chance to flinch the target. If the target lost HP, the user takes recoil damage equal to 33% the HP lost by the target, rounded half up, but not less than 1 HP.",
-		shortDesc: "Has 33% recoil. 30% to flinch target",
+		desc: "Has a 30% chance to flinch the target. If the target lost HP, this Blacksmith takes recoil damage equal to 33% the HP lost by the target, rounded half up, but not less than 1 HP.",
+		shortDesc: "Has 33% recoil. 30% to flinch foe",
 	},
 	rainshaman: {
 		name: "Rain Shaman",
-		desc: "For 5 turns, the weather becomes Rain. The user switches out even if it is trapped and is replaced immediately by a selected party member. The user does not switch out if there are no unfainted party members.",
+		desc: "For 5 turns, the weather becomes Rain. This Rain Shaman switches out even if she is trapped and is replaced immediately by a selected party member. The user does not switch out if there are no unfainted party members.",
 		shortDesc: "Starts Rain. User switches out.",
 
 		// TODO needs to be implemented
@@ -508,44 +506,44 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	tsunami: {
 		name: "Tsunami",
-		desc: "Has a 10% chance to lower target's Speed by 1 stage. If the weather is Primordial Sea or Rain Dance, this move does not check accuracy. If the weather is Desolate Land or Sunny Day, this move's accuracy is 50%. If this move is used against a Pokemon holding Utility Umbrella, this move's accuracy remains at 70%.",
-		shortDesc: "10% to lower Speed by 1. Can't miss in Rain.",
+		desc: "Has a 10% chance to lower target's Speed by 1 stage. If the weather is Primordial Sea or Rain Dance, this move does not check accuracy. If the weather is Desolate Land or Sunny Day, this move's accuracy is 50%. If this move is used against a Pokemon holding Utility Umbrella, this move's accuracy remains at 70%. This move can hit a target using Dive.",
+		shortDesc: "10% to lower foe's Speed by 1. Rain: can't miss.",
 	},
 	waterhealing: {
 		name: "Water Healing",
-		desc: "The user restores 1/2 of its maximum HP if Delta Stream or no weather conditions are in effect or if the user is holding Utility Umbrella, 2/3 of its maximum HP if the weather is Primordial Sea or Rain Dance and 1/4 of its maximum HP if the weather is Desolate Land, Sunny Day, Sandstorm, or Snow, all rounded half down.",
+		desc: "The Rain Shaman restores 1/2 of her maximum HP if Delta Stream or no weather conditions are in effect or if the user is holding Utility Umbrella, 2/3 of its maximum HP if the weather is Primordial Sea or Rain Dance and 1/4 of its maximum HP if the weather is Desolate Land, Sunny Day, Sandstorm, or Snow, all rounded half down.",
 		shortDesc: "Heals the user by a weather-dependent amount.",	
 	},
 	trident: {
 		name: "Trident",
-		desc: "Has a higher chance for a critical hit. This move can hit a target using Bounce, Fly, or Sky Drop, or is under the effect of Sky Drop. If the weather is Primordial Sea or Rain Dance, this move does not check accuracy. If the weather is Desolate Land or Sunny Day, this move's accuracy is 50%. If this move is used against a Pokemon holding Utility Umbrella, this move's accuracy remains at 80%.",
+		desc: "Has a higher chance for a critical hit. This move can hit a target using Bounce, Fly, or Dive. If the weather is Primordial Sea or Rain Dance, this move does not check accuracy. If the weather is Desolate Land or Sunny Day, this move's accuracy is 50%. If this move is used against a Pokemon holding Utility Umbrella, this move's accuracy remains at 80%.",
 		shortDesc: "High critical hit ratio. Does not miss in Rain",
 	},
 	sharkattack: {
 		name: "Shark Attack",
-		desc: "No additional effect.",
-		shortDesc: "No additional effect.",
+		desc: "Has a 10% chance to lower the target's Defense by 1 stage.",
+		shortDesc: "10% chance to lower target's Defense by 1.",
 	},
 	gawrrage: {
 		name: "Gawr Rage",
-		desc: "Lowers the user's Defense and Special Defense by 1 stage.",
+		desc: "Lowers this Shark's Defense and Special Defense by 1 stage.",
 		shortDesc: "Lowers the user's Defense and Sp. Def by 1.",
 	},
 	ameway: {
 		name: "Ame Way",
-		desc: "Raises the user's Attack by 2 stages.",
+		desc: "Raises this Detective's Attack by 2 stages.",
 		shortDesc: "Raises the user's Attack by 2.",
 	},
 	timetravel: {
 		name: "Time Travel",
-		desc: "Usually goes first. If this move is successful and the user has not fainted, the user switches out even if it is trapped and is replaced immediately by a selected party member. The user does not switch out if there are no unfainted party members, or if the target switched out using an Eject Button or through the effect of the Emergency Exit or Wimp Out Abilities. This attack never misses.",
-		shortDesc: "Switches user out. Goes first. Never misses.",
+		desc: "If this move is successful and the Detective has not fainted, the Detective switches out even if she is trapped and is replaced immediately by a selected party member. The Detective does not switch out if there are no unfainted party members, or if the target switched out using an Eject Button or through the effect of the Emergency Exit or Wimp Out Abilities. This attack never misses.",
+		shortDesc: "Switches user out. Never misses.",
 
 		switchOut: "#uturn",
 	},
 	groundpound: {
 		name: "Ground Pound",
-		desc: "If this attack is not successful, the user loses half of its maximum HP, rounded down, as crash damage. Pokemon with the Magic Guard Ability are unaffected by crash damage.",
+		desc: "If this attack is not successful, the Detective loses half of her maximum HP, rounded down, as crash damage. Pokemon with the Magic Guard Ability are unaffected by crash damage.",
 		shortDesc: "User loses 50% max HP if miss.",
 
 		damage: "#crash",
@@ -557,18 +555,18 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	grimrapper: {
 		name: "Grim Rapper",
-		desc: "No additional effect.",
-		shortDesc: "No additional effect. Hits adjacent foes.",
+		desc: "Has a 30% chance to make the target flinch. Hits adjacent foes.",
+		shortDesc: "30% chance to make foes flinch. Hits adjacent foes.",
 	},
 	tako: {
 		name: "Tako",
 		desc: "Has a 25% chance to lower the target's accuracy by 1 stage.",
-		shortDesc: "25% chance to lower the target's accuracy by 1.",
+		shortDesc: "25% chance to lower target's accuracy by 1.",
 	},
 	wah: {
 		name: "Wah",
-		desc: "Raises the user's Attack by 2 stages.",
-		shortDesc: "Raises the user's Atk by 2.",
+		desc: "Raises this Tako's Attack by 2 stages.",
+		shortDesc: "Raises the user's Attack by 2.",
 	},
 	tentaclesstrike: {
 		name: "Tentacles Strike",
@@ -582,7 +580,7 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	phoenixshield: {
 		name: "Phoenix Shield",
-		desc: "The user is protected from most attacks made by other Pokemon during this turn, and Pokemon trying to make contact with the user become burned. Non-damaging moves go through this protection. This move has a 1/X chance of being successful, where X starts at 1 and triples each time this move is successfully used. X resets to 1 if this move fails, if the user's last move used is not Baneful Bunker, Burning Bulwark, Detect, Endure, King's Shield, Max Guard, Obstruct, Protect, Quick Guard, Silk Trap, Spiky Shield, or Wide Guard, or if it was one of those moves and the user's protection was broken. Fails if the user moves last this turn.",
+		desc: "This Phoenix is protected from most attacks made by other Pokemon during this turn, and Pokemon trying to make contact with this Phoenix become burned. Non-damaging moves go through this protection. This move has a 1/X chance of being successful, where X starts at 1 and triples each time this move is successfully used. X resets to 1 if this move fails, if the Phoenix's last move used is not Baneful Bunker, Burning Bulwark, Detect, Endure, King's Shield, Max Guard, Obstruct, Protect, Quick Guard, Silk Trap, Spiky Shield, or Wide Guard, or if it was one of those moves and the user's protection was broken. Fails if the Phoenix moves last this turn.",
 		shortDesc: "Protects from damaging attacks. Contact: burn.",
 	},
 	phoenixblade: {
@@ -593,28 +591,28 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	phoenixwind: {
 		name: "Phoenix Wind",
 		desc: "Has a 30% chance to burn the target. Hits adjacent Pokemon.",
-		shortDesc: "30% chance to burn. Hits adjacent Foes.",
+		shortDesc: "30% chance to burn foes. Hits adjacent Foes.",
 	},
 	hopesoda: {
 		name: "Hope Soda",
-		desc: "Raises the user's Attack by 2 stages.",
+		desc: "Raises this Nephelim's Attack by 2 stages.",
 		shortDesc: "Raises the user's Attack by 2.",
 	},
 	hopeful: {
 		name: "Hopeful",
-		desc: "Every Pokemon in the user's party is cured of its non-volatile status condition.",
+		desc: "Every Pokemon in this Nephelim's party is cured of their non-volatile status condition.",
 		shortDesc: "Cures the user's party of all status conditions.",
 	},
 	hopeless: {
 		name: "Hopeless",
-		desc: "Lowers the user's Defense and Special Defense by 1 stage. If this attack is not successful, the user loses half of its maximum HP, rounded down, as crash damage. Pokemon with the Magic Guard Ability are unaffected by crash damage.",
+		desc: "Lowers the Nephelim's Defense and Special Defense by 1 stage. If this attack is not successful, the Nephelim loses half of her maximum HP, rounded down, as crash damage. Pokemon with the Magic Guard Ability are unaffected by crash damage.",
 		shortDesc: "Lowers user's Def/SpDef by 1. Loses 50% HP if miss.",
 
 		damage: "#crash",
 	},
 	songofhope: {
 		name: "Song of Hope",
-		desc: "Has a 10% chance to raise the user's Attack, Defense, Special Attack, Special Defense, and Speed by 1 stage.",
+		desc: "Has a 10% chance to raise this Nephelim's Attack, Defense, Special Attack, Special Defense, and Speed by 1 stage.",
 		shortDesc: "10% chance to raise all stats by 1 (not acc/eva).",
 	},
 	wormhole: {
@@ -624,13 +622,13 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	supernova: {
 		name: "Supernova",
-		desc: "Hits adjacent Pokemon. If the target lost HP, the user takes recoil damage equal to 33% the HP lost by the target, rounded half up, but not less than 1 HP.",
+		desc: "Hits adjacent Pokemon. If the target lost HP, this Astro Girl takes recoil damage equal to 33% the HP lost by the target, rounded half up, but not less than 1 HP.",
 		shortDesc: "Has 33% recoil. Hits adjacent Pokemon.",
 	},
 	bigbang: {
 		name: "Big Bang",
 		desc: "Sana faints after using this move, even if this move fails for having no target. This move is prevented from executing if any active Pokemon has the Damp Ability. Hits adjacent Pokemon.",
-		shortDesc: "Hits adjacent Pokemon. The user faints.",
+		shortDesc: "Hits adjacent Pokemon. User faints.",
 	},
 	blackhole: {
 		name: "Black Hole",
@@ -639,22 +637,22 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	mothernature: {
 		name: "Mother Nature",
-		desc: "Every Pokemon in the user's party is cured of its non-volatile status condition.",
+		desc: "Every Pokemon in this Kirin's party is cured of their non-volatile status condition.",
 		shortDesc: "Cures the user's party of all status conditions.",
 	},
 	gamerkirin: {
 		name: "Gamer Kirin",
-		desc: "Raises the user's Attack by 2 stages.",
+		desc: "Raises this Kirin's Attack by 2 stages.",
 		shortDesc: "Raises the user's Attack by 2.",
 	},
 	natureswrath: {
 		name: "Nature's Wrath",
-		desc: "If the target lost HP, the user takes recoil damage equal to 33% the HP lost by the target, rounded half up, but not less than 1 HP.",
+		desc: "If the target lost HP, the Kirin takes recoil damage equal to 33% the HP lost by the target, rounded half up, but not less than 1 HP.",
 		shortDesc: "Has 33% recoil.",
 	},
 	naturesnurture: {
 		name: "Nature's Nurture",
-		desc: "Each Pokemon on the user's side restores 1/2 of its maximum HP, rounded half up.",
+		desc: "Each Pokemon on this Kirin's side restores 1/2 of its maximum HP, rounded half up.",
 		shortDesc: "Heals the user and its allies by 1/2 their max HP.",
 	},
 	clockstrikes: {
@@ -664,7 +662,7 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	timeflies: {
 		name: "Time Flies",
-		desc: "No additional effect.",
+		desc: "No additional effect. Almost always goes first.",
 		shortDesc: "Almost always goes first.",
 	},
 	timetogo: { // <UNUSED>
@@ -677,50 +675,50 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	sandsoftime: {
 		name: "Sands of Time",
 		desc: "Has a 30% chance to lower the target's Speed by 1 stage. Hits adjacent Pokemon.",
-		shortDesc: "30% to lower Speed by 1. Hits adjacent Foes.",
+		shortDesc: "30% to lower foe's Speed by 1. Hits adjacent Foes.",
 	},
 	blastfromthepast: {
 		name: "Blast from the Past",
-		desc: "This always hits the target and bypasses substitute. Deals damage two turns after this move is used. At the end of that turn, the damage is calculated at that time and dealt to the Pokemon at the position the target had when the move was used. If the user is no longer active at the time, damage is calculated based on the user's natural Special Attack stat, types, and level, with no boosts from its held item or Ability. Fails if this move or Doom Desire is already in effect for the target's position.",
-		shortDesc: "Hits two turns after being used. Never misses.",
+		desc: "This always hits the target and bypasses substitute. Deals damage two turns after this move is used. At the end of that turn, the damage is calculated at that time and dealt to the Pokemon at the position the target had when the move was used. If the Warden of Time is no longer active at the time, damage is calculated based on the user's natural Special Attack stat, types, and level, with no boosts from its held item or Ability. Fails if this move, Teleport, or Doom Desire is already in effect for the target's position.",
+		shortDesc: "Hits 2 turns after being used. Never misses.",
 
 		start: "  [POKEMON] is time traveling!",
 		activate: "  [TARGET] is being attacked from past times!",
 	},
 	moomers: {
 		name: "Moomers",
-		desc: "Lowers the user's Defense and Special Defense by 1 stage.",
-		shortDesc: "Lowers the user's Defense and Sp. Def by 1.",
+		desc: "Lowers the Owl's Defense and Special Defense by 1 stage.",
+		shortDesc: "Lowers user's Defense and Sp.Def by 1.",
 	},
 	chaosstrike: {
 		name: "Chaos Strike",
-		desc: "Has a 30% to inflict confusion on the target. If the target lost HP, the user takes recoil damage equal to 33% the HP lost by the target, rounded half up, but not less than 1 HP.",
-		shortDesc: "30% to confuse. 33% recoil.",
+		desc: "Has a 30% to inflict confusion on the target. If the target lost HP, the Rat takes recoil damage equal to 33% the HP lost by the target, rounded half up, but not less than 1 HP.",
+		shortDesc: "30% to confuse foe. 33% recoil.",
 	},
 	forbiddenknowledge: {
 		name: "Forbidden Knowledge",
 		desc: "Has a 25% chance to paralyze the target. This attack never misses.",
-		shortDesc: "25% chance to paralyze the target. Never misses.",
+		shortDesc: "25% chance to paralyze the foe. Never misses.",
 	},
 	bejeweled: {
 		name: "Bejeweled",
-		desc: "Has a high chance to land a critical hit. If this move is successful, it sets up stealth rock on the opposing side of the field, damaging each opposing Pokemon that switches in, unless it is a Flying-type Pokemon or has the Levitate Ability. A maximum of three layers may be set, and opponents lose 1/8 of their maximum HP with one layer, 1/6 of their maximum HP with two layers, and 1/4 of their maximum HP with three layers, all rounded down. Can be removed from the opposing side if any Pokemon uses Tidy Up, or if any opposing Pokemon uses Mortal Spin, Rapid Spin, or Defog successfully, or is hit by Defog.",
-		shortDesc: "Sets stealth rock on opposing side. High crit ratio",
+		desc: "Has a high chance to land a critical hit. If this move is successful, it sets up stealth rock on the opposing side of the field, damaging each opposing Pokemon that switches in, foes lose 1/32, 1/16, 1/8, 1/4, or 1/2 of their maximum HP, rounded down, based on their weakness to the Rock type; 0.25x, 0.5x, neutral, 2x, or 4x, respectively. Can be removed from the opposing side if any Pokemon uses Tidy Up, or if any opposing Pokemon uses Mortal Spin, Rapid Spin, Clean Up, or Defog successfully, or is hit by Defog.",
+		shortDesc: "Sets Stealth Rock on opposing side. High crit ratio",
 	},
 	bibooblade: {
 		name: "Biboo Blade",
-		desc: "Has a high chance to land a critical hit. If this move is successful, it sets up spikes on the opposing side of the field, damaging each opposing Pokemon that switches in, unless it is a Flying-type Pokemon or has the Levitate Ability. A maximum of three layers may be set, and opponents lose 1/8 of their maximum HP with one layer, 1/6 of their maximum HP with two layers, and 1/4 of their maximum HP with three layers, all rounded down. Can be removed from the opposing side if any Pokemon uses Tidy Up, or if any opposing Pokemon uses Mortal Spin, Rapid Spin, or Defog successfully, or is hit by Defog.",
+		desc: "Has a high chance to land a critical hit. If this move is successful, it sets up spikes on the opposing side of the field, damaging each opposing Pokemon that switches in, unless it is a Flying-type Pokemon or has the Levitate Ability. A maximum of three layers may be set, and opponents lose 1/8 of their maximum HP with one layer, 1/6 of their maximum HP with two layers, and 1/4 of their maximum HP with three layers, all rounded down. Can be removed from the opposing side if any Pokemon uses Tidy Up, or if any opposing Pokemon uses Mortal Spin, Rapid Spin, Clean Up, or Defog successfully, or is hit by Defog.",
 		shortDesc: "Sets a layer of Spikes on opposing side. High crit ratio",
 	},
 	haboob: {
 		name: "Haboob",
-		desc: "Has a 30% chance to lower target's Accuracy by 1 stage. If the weather is Sandstorm, this move does not check accuracy. If the weather is Primordial Sea, Rain Dance, Desolate Land, or Sunny Day, this move's accuracy is 50%. If this move is used against a Pokemon holding Utility Umbrella, this move's accuracy remains at 70%.",
+		desc: "Has a 30% chance to lower target's Accuracy by 1 stage. If the weather is Sandstorm, this move does not check accuracy. If the weather is Primordial Sea, Rain Dance, Desolate Land, or Sunny Day, this move's accuracy is 50%. If this move is used against a Pokemon holding Utility Umbrella, this move's accuracy remains at 70%. This move can hit a target using Bounce, Fly, or Dig.",
 		shortDesc: "30% to lower Acc by 1. Can't miss in Sandstorm.",
 	},
 	underworldmusic: {
 		name: "Underworld Music",
-		desc: "Has a 10% chance to lower the target's Attack by 1 stage.",
-		shortDesc: "10% to lower target's SpA by 1. Hits adjacent foes.",
+		desc: "Has a 30% chance to make the target flinch. Hits adjacent foes.",
+		shortDesc: "30% to flinch target. Hits adjacent foes.",
 	},
 	divafork: {
 		name: "Diva Fork",
@@ -738,8 +736,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	songofjustice: {
 		name: "Song of Justice",
-		desc: "Has a 10% chance to raise the user's Special Defense by 1 stage.",
-		shortDesc: "10% to raise SpDef by 1. Hits adjacent foes.",
+		desc: "Has a 10% chance to raise the user's Special Defense by 1 stage. Hits adjacent foes.",
+		shortDesc: "10% to raise Sp.Def by 1. Hits adjacent foes.",
 	},
 	swordofjustice: {
 		name: "Sword of Justice",
@@ -763,17 +761,17 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	windup: {
 		name: "Wind Up",
-		desc: "The target restores 1/2 of its maximum HP, rounded half up. If the terrain is Electric Terrain, the target instead restores 2/3 of its maximum HP, rounded half down.",
-		shortDesc: "Heals the user by a terrain-dependent amount.",
+		desc: "This Automotan restores 1/2 of her maximum HP, rounded half up. If the terrain is Electric Terrain, this Automotan instead restores 2/3 of her maximum HP, rounded half down.",
+		shortDesc: "Heals user by a terrain-dependent amount.",
 	},
 	godeyes: {
 		name: "God Eyes",
-		desc: "Bypasses subs and protection without breaking it. Never Misses. Has a 10% chance to raise the user's Accuracy by 1 stage. This move's type effectiveness against Ghost is changed to be neutrally effective no matter what this move's type is.",
-		shortDesc: "Hits Ghost types. Bypasses subs & protect. 10% to +1 Acc.",
+		desc: "Bypasses subs and protection without breaking it. Never Misses. Has a 10% chance to raise the Cat's Accuracy by 1 stage. This move's type effectiveness against Ghost is changed to be neutrally effective no matter what this move's type is.",
+		shortDesc: "Hits Ghost types. Bypasses subs/protect. 10% to +1 Acc.",
 	},
 	mamamia: {
 		name: "Mama Mia",
-		desc: "The user recovers 1/2 the HP lost by the target, rounded half up.",
+		desc: "The Cat recovers 1/2 the HP lost by the target, rounded half up.",
 		shortDesc: "User recovers 50% of the damage dealt.",
 	},
 	absorb: {

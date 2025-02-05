@@ -120,10 +120,8 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		flags: {protect: 1, mirror: 1, metronome: 1},
 		status: 'brn',
 		secondary: {
-			chance: 100,
-			self: {
-		    status: 'brn',
-			} 
+			chance: 100, 
+		    status: 'brn', 
 		},
 		target: "allAdjacentFoes",
 		type: "Fire",
@@ -183,7 +181,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	},
 	cometslam: { // reskin of [DOUBLE-EDGE] but ICE
 		num: 370,
-		accuracy: 95,
+		accuracy: 90,
 		basePower: 120,
 		category: "Physical",
 		name: "Comet Slam",
@@ -208,19 +206,28 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		pp: 5,
 		priority: 0,
 		flags: {protect: 1, mirror: 1, metronome: 1},
+		secondary: {
+			chance: 10,
+			status: 'par',
+		},
 		target: "normal",
 		type: "Steel",
 		contestType: "Cool",
 	},
 	laserbeam: { // thunder but better
 		num: 370,
-		accuracy: 90,
+		accuracy: 70,
 		basePower: 120,
 		category: "Special",
 		name: "Laser Beam",
 		pp: 5,
 		priority: 0,
 		flags: {protect: 1, mirror: 1, metronome: 1},
+		onModifyMove(move, pokemon, target) {
+			if (this.field.isTerrain('electricterrain') && pokemon.isGrounded()) { 
+				move.accuracy = true; 
+			}
+		},
 		secondary: {
 			chance: 10,
 			status: 'par',
@@ -485,7 +492,14 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		pp: 10,
 		priority: 0,
 		flags: {contact: 1, protect: 1, mirror: 1, dance: 1},
-		secondary: null,
+		secondary: {
+			chance: 10,
+			self: {
+				boosts: {
+					spd: 1,
+				},
+			},
+		},
 		target: "normal",
 		type: "Fairy",
 		contestType: "Cute",
@@ -1755,10 +1769,10 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		priority: 0,
 		flags: {protect: 1, mirror: 1, wind: 1, distance: 1},
 		secondary: {
-			chance: 10,
+			chance: 20,
 			self: {
 				boosts: {
-					spa: 1,
+					spd: 1,
 				},
 			},
 		},
@@ -1963,7 +1977,12 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		pp: 10,
 		priority: 0,
 		flags: {contact: 1, protect: 1, mirror: 1, metronome: 1, bite: 1},
-		secondary: null,
+		secondary: {
+			chance: 10,
+			boosts: {
+				def: -1,
+			},
+		},
 		target: "normal",
 		type: "Water",
 		contestType: "Tough",
@@ -2061,7 +2080,10 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		pp: 10,
 		priority: 0,
 		flags: {protect: 1, mirror: 1, sound: 1, bypasssub: 1, distance: 1},
-		secondary: null,
+		secondary: {
+			chance: 30,
+			volatileStatus: 'flinch',
+		},
 		target: "allAdjacentFoes",
 		type: "Ghost",
 		contestType: "Cool",
@@ -2131,7 +2153,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Psychic",
 		contestType: "Cool",
 	},
-	phoenixshield: { // burning bulwark copy
+	phoenixshield: { // burning bulwark copy [[[SEE IF YOU MAKE IT SO STATUS GET BLOCKED]]]
 		num: 370,
 		accuracy: true,
 		basePower: 0,
@@ -2707,10 +2729,8 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		priority: 0,
 		flags: {protect: 1, mirror: 1, sound: 1, bypasssub: 1, metronome: 1},
 		secondary: {
-			chance: 10,
-			boosts: {
-				spa: -1,
-			},
+			chance: 30,
+			volatileStatus: 'flinch',
 		},
 		target: "allAdjacentFoes",
 		type: "Dark",
@@ -4762,7 +4782,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		condition: {
 			duration: 2,
 			onInvulnerability(target, source, move) {
-				if (['gust', 'twister', 'skyuppercut', 'thunder', 'hurricane', 'smackdown', 'thousandarrows'].includes(move.id)) {
+				if (['gust', 'twister', 'skyuppercut', 'thunder', 'hurricane', 'smackdown', 'haboob', 'trident', 'thousandarrows'].includes(move.id)) {
 					return;
 				}
 				return false;
@@ -6714,7 +6734,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 				if (type === 'sandstorm' || type === 'hail') return false;
 			},
 			onInvulnerability(target, source, move) {
-				if (['earthquake', 'magnitude'].includes(move.id)) {
+				if (['earthquake', 'haboob', 'magnitude'].includes(move.id)) {
 					return;
 				}
 				return false;
@@ -6889,13 +6909,13 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 				if (type === 'sandstorm' || type === 'hail') return false;
 			},
 			onInvulnerability(target, source, move) {
-				if (['surf', 'whirlpool'].includes(move.id)) {
+				if (['surf', 'trident', 'tsunami', 'whirlpool'].includes(move.id)) {
 					return;
 				}
 				return false;
 			},
 			onSourceModifyDamage(damage, source, target, move) {
-				if (move.id === 'surf' || move.id === 'whirlpool') {
+				if (move.id === 'surf' || move.id === 'whirlpool' || move.id === 'trident' || move.id === 'tsunami') {
 					return this.chainModify(2);
 				}
 			},
@@ -9103,7 +9123,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		condition: {
 			duration: 2,
 			onInvulnerability(target, source, move) {
-				if (['gust', 'twister', 'skyuppercut', 'thunder', 'hurricane', 'smackdown', 'thousandarrows'].includes(move.id)) {
+				if (['gust', 'twister', 'skyuppercut', 'thunder', 'hurricane', 'smackdown', 'haboob', 'trident', 'thousandarrows'].includes(move.id)) {
 					return;
 				}
 				return false;
