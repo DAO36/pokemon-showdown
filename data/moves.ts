@@ -2477,11 +2477,10 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 			let success = false;
 			if (this.field.isTerrain('grassyterrain')){ 
 			const success = !!this.heal(this.modify(pokemon.maxhp, 0.66));
-			return pokemon.cureStatus() || success;
 			} else {
 				success = !!this.heal(Math.ceil(pokemon.baseMaxhp * 0.33));
 			}
-			return success;
+			return success && pokemon.cureStatus() || success;
 		},
 		secondary: null,
 		target: "allies",
