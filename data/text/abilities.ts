@@ -348,7 +348,7 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	powerofatlantis: {
 		name: "Power of Atlantis",
 		desc: "If Rain is active, this Shark's Attack and Special Attack is multiplied by 1.5 and she gains 1/10 of her maximum HP, rounded down, at the end of each turn. If there's no weather, she loses 1/10 of her maximum HP, rounded down, at the end of each turn, if Sunny Day/Sandstorm, loses 1/8 of her maximum HP per turn instead. These effects are prevented if the Pokemon is holding a Utility Umbrella.",
-		shortDesc: "In rain Atk & SpAtk: 1.5x; gains 1/10 HP per turn. Else: loses 1/8 HP per turn.",
+		shortDesc: "In rain - Atk & SpAtk: 1.5x; Gains 1/10 HP per turn. Else: loses 1/8 HP per turn.",
 	},
 	toxicgamer: {
 		name: "Toxic Gamer",
@@ -393,7 +393,7 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	mothernature: {
 		name: "Mother Nature",
 		desc: "Mother Nature protects herself and her allies from status effects, lowering of stats, and effects that limit move choice.",
-		shortDesc: "Protects party from status, lowering of stats, effects that limit move choice.",
+		shortDesc: "Protects party from status, lowering of stats, & effects that limit move choice.",
 
 		block: "  [POKEMON] is protected by Mother Nature!",
 	},

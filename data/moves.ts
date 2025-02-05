@@ -2465,18 +2465,30 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		contestType: "Tough",
 	},
 	goldenapple: {
-		num: 791,
+		num: 420,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
 		name: "Golden Apple",
 		pp: 5,
 		priority: 0,
-		flags: {snatch: 1, heal: 1, bypasssub: 1},
-		heal: [1, 2],
+		flags: {snatch: 1, heal: 1},
+		onTry(target, source) {
+			let success = false;
+			if (this.field.isTerrain('grassyterrain')) {
+				success = !!this.heal(this.modify(target.baseMaxhp, 0.667));
+			} else {
+				success = !!this.heal(Math.ceil(target.baseMaxhp * 0.334));
+			}
+			return success;
+		},
+		onHit(pokemon) { 
+			return pokemon.cureStatus()  
+		}, 
 		secondary: null,
 		target: "allies",
 		type: "Grass",
+		contestType: "Beautiful",
 	},
 	clockstrikes: { // steal type dual wingbeat
 		num: 370,

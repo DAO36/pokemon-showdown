@@ -652,8 +652,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	goldenapple: {
 		name: "Golden Apple",
-		desc: "Each Pokemon on this Kirin's side restores 1/2 of its maximum HP, rounded half up.",
-		shortDesc: "Heals the user and its allies by 1/2 their max HP.",
+		desc: "Each Pokemon on this Kirin's side restores 1/3 of their maximum HP, rounded half up. This Kirin and her party are cured of any status effects.",
+		shortDesc: "Cures party of status & heals by terrain-dependent amount.",
 	},
 	clockstrikes: {
 		name: "Clock Strikes",
