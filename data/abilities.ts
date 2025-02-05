@@ -398,13 +398,13 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3.5,
 		num: 11,
 	},
-	supernaturalsiren: { // sets up Magic Room on switch-in (effects end prematurely if user/foe with this ability switches in)
+	sirendance: { // sets up Magic Room on switch-in (effects end prematurely if user/foe with this ability switches in)
 		onStart(pokemon) {
-			this.add('-activate', pokemon, 'ability: Supernatural Siren');
+			this.add('-activate', pokemon, 'ability: Siren Dance');
 			this.field.addPseudoWeather('magicroom', pokemon);
 		},
 		flags: {},
-		name: "Supernatural Siren",
+		name: "Siren Dance",
 		rating: 2,
 		num: 28,
 	},

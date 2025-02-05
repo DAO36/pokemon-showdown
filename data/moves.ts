@@ -280,7 +280,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	divasong: { // FAIRY [HYPER VOICE] but better
 		num: 370,
 		accuracy: 90,
-		basePower: 110,
+		basePower: 100,
 		category: "Special",
 		name: "Diva Song",
 		pp: 10,

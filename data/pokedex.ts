@@ -18847,7 +18847,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		types: ["Fairy", "Grass"],
 		gender: "F",
 		baseStats: {hp: 100, atk: 110, def: 95, spa: 120, spd: 115, spe: 60},
-		abilities: {0: "Synchronize", 1: "Dancer", H: "Magic Guard", S: "Supernatural Siren"},
+		abilities: {0: "Synchronize", 1: "Dancer", H: "Magic Guard", S: "Siren Dance"},
 		heightm: 1.62,
 		weightkg: 55.5,
 		color: "Yellow",

@@ -104,7 +104,7 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	godlyattack: {
 		name: "Godly Attack",
 		desc: "If the target lost HP, the user takes recoil damage equal to 1/2 the HP lost by the target, rounded half up, but not less than 1 HP.",
-		shortDesc: "Has 1/2 recoil.",
+		shortDesc: "Has 50% recoil.",
 	},
 	iamgodok: {
 		name: "I am God OK",
@@ -114,7 +114,7 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	splitpersonality: {
 		name: "Split Personality",
 		desc: "This move combines Fairy in its type effectiveness against the target. Hits twice. If the first hit breaks the target's substitute, it will take damage for the second hit.",
-		shortDesc: "Combines Fairy in type effectiveness. Hits 2x.",
+		shortDesc: "Combines Fairy in type effectiveness. Hits 2 times.",
 	},
 	spidercooking: {
 		name: "Spider Cooking",
@@ -164,12 +164,12 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	dualblades: {
 		name: "Dual Blades",
 		desc: "Hits twice. If the first hit breaks the target's substitute, it will take damage for the second hit. Has a higher chance for a critical hit.",
-		shortDesc: "Hits 2 times in one turn. High crit ratio",
+		shortDesc: "Hits 2 times in one turn. High crit ratio.",
 	},
 	underworldslash: {
 		name: "Underworld Slash",
 		desc: "Has a higher chance for a critical hit. Has a 20% chance to burn the foe.",
-		shortDesc: "High crit ratio. 20% chance to burn target.",
+		shortDesc: "20% chance to burn target. High crit ratio.",
 	},
 	nursing: {
 		name: "Nursing",
@@ -252,12 +252,12 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	arrowassault: {
 		name: "Arrow Assault",
 		desc: "Has a 10% chance to burn the target. Hits two to five times. Has a 35% chance to hit two or three times and a 15% chance to hit four or five times. If one of the hits breaks the target's substitute, it will take damage for the remaining hits. If the user has the Skill Link Ability, this move will always hit five times. If the user is holding Loaded Dice, this move will hit 4-5 times.",
-		shortDesc: "Hits 2-5 times in one turn. 10% chance to burn",
+		shortDesc: "Hits 2-5 times in one turn. 10% chance to burn.",
 	},
 	elfarrows: {
 		name: "Elf Arrows",
 		desc: "Hits two to five times. Has a 35% chance to hit two or three times and a 15% chance to hit four or five times. If one of the hits breaks the target's substitute, it will take damage for the remaining hits. If the user has the Skill Link Ability, this move will always hit five times. If the user is holding Loaded Dice, this move will hit 4-5 times. Has a 10% chance to lower the target's Special Atk by 1.",
-		shortDesc: "Hits 2-5 times. 10% chance to lower foe's Sp. Atk by 1.",
+		shortDesc: "Hits 2-5 times. 10% to lower foe's Sp. Atk by 1.",
 	},
 	gundance: {
 		name: "Gun Dance",

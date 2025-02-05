@@ -64,7 +64,7 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	stellar: {
 		name: "Stellar",
 		desc: "This Comet's Attack is raised by 1 stage if she attacks and knocks out another Pokemon. Prevents other Pokemon from lowering this Comet's stat stages.",
-		shortDesc: "Atk is raised by 1 if KOs another Pokemon. Stats cannot be lowered by others.",
+		shortDesc: "Attack is raised by 1 if user KOs a Pokemon. Stats can't be lowered by others.",
 	},
 	highspecsrobot: {
 		name: "High Specs Robot",
@@ -98,7 +98,7 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	spidersoup: {
 		name: "Spider Soup",
 		desc: "If this Master Chef is hit by a move that makes contact, Sticky Web is set up on the opposing side.",
-		shortDesc: "If User is hit by a move that makes contact, Sticky Web is set on opposing side.",
+		shortDesc: "If user is hit by a move that makes contact, Sticky Web is set on opposing side.",
 	},
 	chamachange: {
 		name: "Chama Change",
@@ -117,8 +117,8 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 		desc: "All moves that directly attack another Pokemon will heal this Vampire 25% of the damage dealt to the opponent.",
 		shortDesc: "This Vampire heals 25% of the damage it deals with direct attacks.",
 	},
-	supernaturalsiren: {
-		name: "Supernatural Siren",
+	sirendance: {
+		name: "Siren Dance",
 		shortDesc: "On switch-in, this Elf summons Magic Room.",
 	},
 	apex: {
@@ -158,17 +158,17 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	mogumogu: {
 		name: "Mogu Mogu",
 		desc: "This Cat is immune to Grass-type moves and restores 1/4 of her maximum HP, rounded down, when hit by a Grass-type move.",
-		shortDesc: "Heals 1/4 of max HP when hit by Grass moves; Grass immunity.",
+		shortDesc: "Heals 1/4 of max HP when hit by Grass type moves; Grass immunity.",
 	},
 	miomama: {
 		name: "Mio Mama",
 		desc: "This Wolf can hit Dark types with Psychic-type moves. This Wolf is immune to the effect of the Intimidate/Succubus/Death Abilities.",
-		shortDesc: "Psychic moves hit Dark. Immune to Intimidate.",
+		shortDesc: "Psychic type moves can hit Dark types. Immune to Intimidate/Succubus/Death.",
 	},
 	warcriminal: {
 		name: "War Criminal",
 		desc: "When this War Criminal has more than 1/2 of her maximum HP and takes damage bringing her to 1/2 or less of her maximum HP, she immediately switches out to a chosen ally. This effect applies after all hits from a multi-hit move. This effect is prevented if the move had a secondary effect removed by the Sheer Force Ability. This effect applies to both direct and indirect damage, except Curse and Substitute on use, Belly Drum, Pain Split, and confusion damage.",
-		shortDesc: "This Rabbit switches out when HP reaches 1/2 or less of her maximum HP.",
+		shortDesc: "This Rabbit switches out when her HP reaches 1/2 or less of her maximum HP.",
 	},
 	muscleknight: {
 		name: "Muscle Knight",
