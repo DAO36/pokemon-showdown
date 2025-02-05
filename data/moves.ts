@@ -2480,12 +2480,29 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 			} else {
 				success = !!this.heal(Math.ceil(pokemon.baseMaxhp * 0.33));
 			}
-			return success && pokemon.cureStatus()
+			return pokemon.cureStatus() || success;
 		},
 		secondary: null,
 		target: "allies",
 		type: "Grass",
 		contestType: "Beautiful",
+	},
+	lehealing: {
+		num: 816,
+		accuracy: true,
+		basePower: 0,
+		category: "Status",
+		name: "Jungle Healing",
+		pp: 10,
+		priority: 0,
+		flags: {heal: 1, bypasssub: 1, allyanim: 1},
+		onHit(pokemon) {
+			const success = !!this.heal(this.modify(pokemon.maxhp, 0.25));
+			return pokemon.cureStatus() || success;
+		},
+		secondary: null,
+		target: "allies",
+		type: "Grass",
 	},
 	clockstrikes: { // steal type dual wingbeat
 		num: 370,
