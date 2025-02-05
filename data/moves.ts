@@ -2593,23 +2593,48 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Flying",
 		contestType: "Tough",
 	},
-	chaosstrike: { // dark double-edge
-		num: 370,
+	chaosstrike: {
+		num: 217,
 		accuracy: 90,
-		basePower: 120,
+		basePower: 0,
 		category: "Physical",
 		name: "Chaos Strike",
-		pp: 5,
+		pp: 15,
 		priority: 0,
-		flags: {contact: 1, protect: 1, mirror: 1, gravity: 1},
-		recoil: [33, 100],
+		flags: {protect: 1, mirror: 1, metronome: 1},
+		onModifyMove(move, pokemon, target) {
+			const rand = this.random(10);
+			if (rand < 4) {
+				move.basePower = 80;
+				move.infiltrates = true;
+			} else if (rand < 7) {
+				move.basePower = 100;
+			} else if (rand < 9) {
+				move.basePower = 120;
+			} else {
+				move.basePower = 150;
+			}
+		},
 		secondary: {
 			chance: 30,
-			volatileStatus: 'confusion',
+			onHit(target, source) {
+				const result = this.random(5);
+				if (result === 0) {
+					target.trySetStatus('brn', source);
+				} else if (result === 1) {
+					target.trySetStatus('par', source);
+				} else if (result === 2) {
+					target.trySetStatus('tox', source);
+				} else if (result === 3) {
+					target.trySetStatus('frz', source);
+				} else {
+					target.trySetStatus('psn', source);
+				}
+			},
 		},
 		target: "normal",
 		type: "Dark",
-		contestType: "Tough",
+		contestType: "Cute",
 	},
 	forbiddenknowledge: {
 		num: 370,
