@@ -392,8 +392,8 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	mothernature: {
 		name: "Mother Nature",
-		desc: "Mother Nature protects herself and her allies from status effects, lowering of stats, and effects that limit move choice.",
-		shortDesc: "Protects party from status, lowering of stats, & effects that limit move choice.",
+		desc: "On switch-in, all Pokemon in this Kirin's party are cured of any status effects they may have. Mother Nature protects herself and her allies from status effects, lowering of stats, and effects that limit move choice.",
+		shortDesc: "On switch-in, heals party of statuses. Protects party from certain status & effects.",
 
 		block: "  [POKEMON] is protected by Mother Nature!",
 	},
