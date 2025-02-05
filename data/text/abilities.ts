@@ -98,7 +98,7 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	spidersoup: {
 		name: "Spider Soup",
 		desc: "If this Master Chef is hit by a move that makes contact, Sticky Web is set up on the opposing side.",
-		shortDesc: "If user is hit by a move that makes contact, Sticky Web is set on opposing side.",
+		shortDesc: "If user is hit by a move that makes contact, Sticky Web is set on the opposing side.",
 	},
 	chamachange: {
 		name: "Chama Change",
@@ -285,7 +285,7 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	yamada: {
 		name: "yamada",
 		desc: "When one of YMD's stat stages would be lowered by another Pokemon, that Pokemon's stat stage is lowered instead. This effect does not happen if YMD's stat stage was already -6. If the other Pokemon has a substitute, neither Pokemon has its stat stage lowered. YMD is unaffected by certain non-damaging moves directed at it and will instead use such moves against the original user. Moves reflected in this way are unable to be reflected again by this or Magic Coat's effect. Spikes, Stealth Rock, Sticky Web, and Toxic Spikes can only be reflected once per side, by the leftmost Pokemon under this or Magic Coat's effect. The Lightning Rod and Storm Drain Abilities redirect their respective moves before this Ability takes effect.",
-		shortDesc: "Blocks certain Status moves & stat changes, & bounces them back to target.",
+		shortDesc: "Blocks certain Status moves & stat changes, & bounces them back to the target.",
 	},
 	thexo: {
 		name: "The XO",
@@ -321,7 +321,7 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	tonjokqueen: {
 		name: "TonjokQueen",
 		desc: "This Peafowl's punch-based attacks have her power multiplied by 1.2. Sucker Punch is not boosted. Immune to punching-based attacks.",
-		shortDesc: "Punch-based attacks have 1.2x power; Immune to punching moves."
+		shortDesc: "User's punch-based attacks have 1.2x power; Immune to punching moves."
 	},
 	bluntblade: {
 		name: "Blunt Blade",
@@ -338,12 +338,12 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	grindstone: {
 		name: "Grindstone",
 		desc: "If Sandstorm is active, this Blacksmith restores 1/10 of her maximum HP per turn. This Blacksmith's Ground/Rock/Steel attacks do 1.3x in Sandstorm.",
-		shortDesc: "Sandstorm: gains 1/10 HP per turn; Ground/Rock/Steel attacks do 1.3x damage.",
+		shortDesc: "In sandstorm: gains 1/10 HP per turn; Ground/Rock/Steel attacks do 1.3x damage.",
 	},
 	wethair: {
 		name: "Wet Hair",
 		desc: "Pokemon making contact with this Rain Shaman have their Accuracy lowered by 1 stage.",
-		shortDesc: "Making contact with this user has Accuracy lowered by 1 stage.",
+		shortDesc: "Pokemon making contact with this Rain Shaman has their Accuracy lowered by 1 stage.",
 	},
 	powerofatlantis: {
 		name: "Power of Atlantis",
