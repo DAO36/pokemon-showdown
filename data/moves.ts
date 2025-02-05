@@ -2480,7 +2480,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 			} else {
 				success = !!this.heal(Math.ceil(pokemon.baseMaxhp * 0.33));
 			}
-			return pokemon.cureStatus() && success;
+			return success && pokemon.cureStatus()
 		},
 		secondary: null,
 		target: "allies",
