@@ -268,6 +268,13 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		desc: "Has a 10% chance to lower the target's Attack by 1 stage. If the target lost HP, the user takes recoil damage equal to 33% the HP lost by the target, rounded half up, but not less than 1 HP.",
 		shortDesc: "33% recoil. 10% chance to lower foe's Atk by 1.",
 	},
+	knightfist: {
+		name: "Knight Fist",
+		desc: "If this attack does not miss, the effects of Reflect, Light Screen, Mist, Hologram, and Aurora Veil end for the target's side of the field before damage is calculated.",
+		shortDesc: "Destroys screens.",
+
+		activate: "  [POKEMON] shattered [TEAM]'s protections!",
+	},
 	arrowassault: {
 		name: "Arrow Assault",
 		desc: "Has a 10% chance to burn the target. Hits five times. This move checks accuracy for each hit, and the attack ends if the target avoids a hit. If one of the hits breaks the target's substitute, it will take damage for the remaining hits. If the user has the Skill Link Ability, this move will always hit ten time.",
@@ -289,6 +296,11 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		shortDesc: "Steals target's boosts before dealing damage.",
 
 		clearBoost: "  [SOURCE] plundered the target's boosted stats!",
+	},
+	imhorny: {
+		name: "I'm Horny",
+		desc: "Target becomes infatuated. This effect does not happen for a target if both it and the user are the same gender, if either is genderless, or if the target is already infatuated.",
+		shortDesc: "Infatuates if opposite gender. 30% to confuse.",
 	},
 	forever17: {
 		name: "Forever 17",
@@ -314,8 +326,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		desc: "Has a 100% chance to badly poison the target.",
 		shortDesc: "100% chance to badly poison the target.",
 	},
-	dragonsmash: {
-		name: "Dragon Smash",
+	gmmf: {
+		name: "GMMF",
 		desc: "If the target lost HP, the user takes recoil damage equal to 1/3 the HP lost by the target, rounded half up, but not less than 1 HP.",
 		shortDesc: "Has 33% recoil.",
 	},
@@ -323,6 +335,11 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		name: "Gorilla Grip",
 		desc: "Has a 10% chance to lower the foe's Defense by 1 stage. If the target lost HP, the user takes recoil damage equal to 33% the HP lost by the target, rounded half up, but not less than 1 HP.",
 		shortDesc: "33% recoil. 10% chance to lower foe's Def by 1",
+	},
+	starshuriken: {
+		name: "Star Shuriken",
+		desc: "Hits five times. This move checks accuracy for each hit, and the attack ends if the target avoids a hit. If one of the hits breaks the target's substitute, it will take damage for the remaining hits. If the user has the Skill Link Ability, this move will always hit ten time.",
+		shortDesc: "Hits 5 times. Each hit can miss",
 	},
 	nothingwrong: {
 		name: "Nothing Wrong",
@@ -333,6 +350,11 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		name: "Uber Sheep",
 		desc: "This Sheep restores 1/2 of her maximum HP, rounded half up. Removes any status effect that the Sheep is inflicted with.",
 		shortDesc: "Heals user by 50% of max HP. Cures status",
+	},
+	staticslam: {
+		name: "Static Slam",
+		desc: "Damage is calculated using this Sheep's Defense stat as her Attack, including stat stage changes. Other effects that modify the Attack stat are used as normal.",
+		shortDesc: "Uses user's Def stat as Atk in damage calculation.",
 	},
 	candycrash: {
 		name: "Candy Crash",
@@ -567,6 +589,11 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 
 		damage: "#crash",
 	},
+	bubbablast: {
+		name: "Bubba Blast",
+		desc: "Has a 30% chance to poison the target. Hits two to five times. Has a 35% chance to hit two or three times and a 15% chance to hit four or five times. If one of the hits breaks the target's substitute, it will take damage for the remaining hits. If the user has the Skill Link Ability, this move will always hit five times. If the user is holding Loaded Dice, this move will hit 4-5 times.",
+		shortDesc: "30% to poison target. Hits 2-5 times in a turn.",
+	},
 	scythe: {
 		name: "Scythe",
 		desc: "Has a higher chance for a critical hit. Never misses.",
@@ -706,8 +733,13 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	moomers: {
 		name: "Moomers",
-		desc: "Lowers the Owl's Defense and Special Defense by 1 stage.",
-		shortDesc: "Lowers user's Defense and Sp.Def by 1.",
+		desc: "Has a 30% chance to make the target flinch.",
+		shortDesc: "30% chance to make the target flinch.",
+	},
+	owlblade: {
+		name: "Owl Blade",
+		desc: "Has a higher chance for a critical hit.",
+		shortDesc: "High critical hit ratio.",
 	},
 	chaosstrike: {
 		name: "Chaos Strike",

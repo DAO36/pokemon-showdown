@@ -953,6 +953,28 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Steel",
 		contestType: "Tough",
 	},
+	knightfist: {
+		num: 370,
+		accuracy: 100,
+		basePower: 80,
+		category: "Physical",
+		name: "Knight Fist",
+		pp: 10,
+		priority: 0,
+		flags: {contact: 1, protect: 1, mirror: 1, punch: 1},
+		onTryHit(pokemon) {
+			// will shatter screens through sub, before you hit
+			pokemon.side.removeSideCondition('reflect');
+			pokemon.side.removeSideCondition('lightscreen');
+			pokemon.side.removeSideCondition('hologram');
+			pokemon.side.removeSideCondition('auroraveil');
+			pokemon.side.removeSideCondition('mist');
+		},
+		secondary: null,
+		target: "normal",
+		type: "Steel",
+		contestType: "Cool",
+	},
 	arrowassault: { // bullet seed but fighting
 		num: 370,
 		accuracy: 90,
@@ -1025,6 +1047,30 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		target: "normal",
 		type: "Water",
 		contestType: "Cool",
+	},
+	imhorny: {
+		num: 69,
+		accuracy: 90,
+		basePower: 100,
+		category: "Special",
+		name: "I'm Horny",
+		pp: 10,
+		priority: 0,
+		flags: {pulse: 1, protect: 1, mirror: 1},
+		self: {
+			onHit(source) {
+				for (const pokemon of source.foes()) {
+					pokemon.addVolatile('attract');
+				}
+			},
+		},
+		secondary: {
+			chance: 30,
+			volatileStatus: 'confusion',
+		},
+		target: "normal",
+		type: "Water",
+		contestType: "Cute",
 	},
 	forever17: {
 		num: 105,
@@ -1159,12 +1205,12 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Poison",
 		contestType: "Tough",
 	},
-	dragonsmash: { // dragon double-edge
+	gmmf: { // dragon double-edge
 		num: 370,
 		accuracy: 100,
 		basePower: 120,
 		category: "Physical",
-		name: "Dragon Smash",
+		name: "GMMF",
 		pp: 10,
 		priority: 0,
 		flags: {contact: 1, protect: 1, mirror: 1, gravity: 1},
@@ -1193,6 +1239,21 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		target: "normal",
 		type: "Fairy",
 		contestType: "Tough",
+	},
+	starshuriken: {
+		num: 860,
+		accuracy: 90,
+		basePower: 25,
+		category: "Special",
+		name: "Population Bomb",
+		pp: 15,
+		priority: 0,
+		flags: {contact: 1, protect: 1, mirror: 1, slicing: 1},
+		multihit: 5,
+		multiaccuracy: true,
+		secondary: null,
+		target: "normal",
+		type: "Fairy",
 	},
 	nothingwrong: { // swords dance reskin
 		num: 370,
@@ -1228,6 +1289,24 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		target: "self",
 		type: "Normal",
 		contestType: "Cute",
+	},
+	staticslam: {
+		num: 34,
+		accuracy: 100,
+		basePower: 100,
+		category: "Physical",
+		name: "Static Slam",
+		pp: 10,
+		priority: 0,
+		flags: {contact: 1, protect: 1, mirror: 1, gravity: 1},
+		overrideOffensiveStat: 'def',
+		secondary: {
+			chance: 10,
+			status: 'par',
+		},
+		target: "normal",
+		type: "Electric",
+		contestType: "Tough",
 	},
 	candycrash: { // bullet seed but fairy
 		num: 370,
@@ -2150,6 +2229,24 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Ground",
 		contestType: "Cool",
 	},
+	bubbablast: {
+		num: 331,
+		accuracy: 95,
+		basePower: 25,
+		category: "Physical",
+		name: "Bubba Blast",
+		pp: 25,
+		priority: 0,
+		flags: {protect: 1, mirror: 1, metronome: 1, bullet: 1},
+		multihit: [2, 5],
+		secondary: {
+			chance: 30,
+			status: 'psn',
+		},
+		target: "normal",
+		type: "Poison",
+		contestType: "Cool",
+	},
 	scythe: {
 		num: 370,
 		accuracy: true,
@@ -2668,25 +2765,37 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Steel",
 		contestType: "Clever",
 	},
-	moomers: { // bird type close combat
+	moomers: { // uuh
 		num: 370,
 		accuracy: 90,
-		basePower: 120,
+		basePower: 100,
 		category: "Physical",
 		name: "Moomers",
 		pp: 5,
 		priority: 0,
-		flags: {contact: 1, protect: 1, mirror: 1, slicing: 1},
-		self: {
-			boosts: {
-				def: -1,
-				spd: -1,
-			},
+		flags: {protect: 1, mirror: 1, wind: 1},
+		secondary: {
+			chance: 30,
+			volatileStatus: 'flinch',
 		},
+		target: "normal",
+		type: "Dark",
+		contestType: "Tough",
+	},
+	owlblade: { // flying type [Leaf Blade]
+		num: 348,
+		accuracy: 100,
+		basePower: 75,
+		category: "Physical",
+		name: "Owl Blade",
+		pp: 15,
+		priority: 0,
+		flags: {contact: 1, protect: 1, mirror: 1, wind: 1, slicing: 1},
+		critRatio: 2,
 		secondary: null,
 		target: "normal",
 		type: "Flying",
-		contestType: "Tough",
+		contestType: "Cool",
 	},
 	chaosstrike: { // reskin of [Present] but on crack
 		num: 217,
