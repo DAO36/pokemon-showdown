@@ -1,5 +1,7 @@
 // List of flags and their descriptions can be found in sim/dex-moves.ts
 
+import { transformSync } from 'esbuild';
+
 export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	"10000000voltthunderbolt": {
 		num: 719,
@@ -143,6 +145,24 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		target: "self",
 		type: "Psychic",
 		contestType: "Cool",
+	},
+	faq: {
+		num: 583,
+		accuracy: 100,
+		basePower: 100,
+		category: "Physical",
+		name: "FAQ",
+		pp: 10,
+		priority: 0,
+		flags: {contact: 1, protect: 1, mirror: 1},
+		onHit(target) {
+			target.clearBoosts();
+			this.add('-clearboost', target);
+		},
+		secondary: null,
+		target: "normal",
+		type: "Fairy",
+		contestType: "Cute",
 	},
 	axeattack: { // slicing
 		num: 38,

@@ -37,6 +37,10 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 
 		activate: "  [SOURCE] becomes elite!",
 	},
+	faq: {
+		name: "FAQ",
+		shortDesc: "Resets all of the target's stat stages to 0.",
+	},
 	suicopath: {
 		name: "Suicopath",
 		desc: "Lowers the Comet's Defense and Special Defense by 1 stage.",

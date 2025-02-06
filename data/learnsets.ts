@@ -93658,6 +93658,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			sakuraiattack: ["9M"],
 			lavabucket: ["9M"],
 			elitemiko: ["9M"],
+			faq: ["9M"],
         },
 	},
 	mikoelite: {
@@ -93705,7 +93706,8 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			sakuraiattack: ["9M"],
 			lavabucket: ["9M"],
 			elitemiko: ["9M"],	
-			rest: ["9M"],			
+			rest: ["9M"],
+			faq: ["9M"],
         },
 	},
 	suisei: {
