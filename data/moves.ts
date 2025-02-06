@@ -179,7 +179,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Rock",
 		contestType: "Tough",
 	},
-	suicopath: { // DARK type reskin of [CLOSE COMBAT]
+	suicopath: { // DARK type reskin of [DOUBLE EDGE]
 		num: 370,
 		accuracy: 90,
 		basePower: 110,
@@ -188,12 +188,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		pp: 5,
 		priority: 0,
 		flags: {contact: 1, protect: 1, mirror: 1, slicing: 1},
-		self: {
-			boosts: {
-				def: -1,
-				spd: -1,
-			},
-		},
+		recoil: [33, 100],
 		secondary: null,
 		target: "normal",
 		type: "Dark",
@@ -474,7 +469,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	kapu: { // crunch but it heals
 		num: 370,
 		accuracy: 100,
-		basePower: 75,
+		basePower: 80,
 		category: "Physical",
 		name: "Kapu",
 		pp: 10,
@@ -483,7 +478,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		drain: [1, 2],
 		secondary: null,
 		target: "normal",
-		type: "Dark",
+		type: "Flying",
 		contestType: "Cute",
 	},
 	banpire: { // swords dance reskin
@@ -604,6 +599,26 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Fire",
 		contestType: "Cool",
 	},
+	onionslaught: {
+		num: 370,
+		accuracy: 90,
+		basePower: 120,
+		category: "Physical",
+		name: "Oni Onslaught",
+		pp: 5,
+		priority: 0,
+		flags: {contact: 1, protect: 1, mirror: 1},
+		self: {
+			boosts: {
+				def: -1,
+				spd: -1,
+			},
+		},
+		secondary: null,
+		target: "normal",
+		type: "Dark",
+		contestType: "Tough",
+	},
 	nursing: { // wish combined with teleport
 		num: 370,
 		accuracy: true,
@@ -641,6 +656,23 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		target: "self",
 		type: "Fairy",
 		contestType: "Cute",
+	},
+	firstaid: {
+		num: 816,
+		accuracy: true,
+		basePower: 0,
+		category: "Status",
+		name: "First Aid",
+		pp: 5,
+		priority: 0,
+		flags: {heal: 1, bypasssub: 1, allyanim: 1},
+		onHit(pokemon) {
+			const success = !!this.heal(this.modify(pokemon.maxhp, 0.5));
+			return pokemon.cureStatus() || success;
+		},
+		secondary: null,
+		target: "allies",
+		type: "Fairy",
 	},
 	witchattack: { // leaf storm but psychic
 		num: 434,
@@ -802,6 +834,23 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Normal",
 		contestType: "Cool",
 	},
+	bark: {
+		num: 304,
+		accuracy: 100,
+		basePower: 100,
+		category: "Special",
+		name: "Hyper Voice",
+		pp: 10,
+		priority: 0,
+		flags: {protect: 1, mirror: 1, sound: 1, bypasssub: 1, bite: 1},
+		secondary: {
+			chance: 30,
+			volatileStatus: 'flinch',
+		},
+		target: "allAdjacentFoes",
+		type: "Normal",
+		contestType: "Cool",
+	},
 	moguyummy: {
 		num: 370,
 		accuracy: 100,
@@ -831,6 +880,23 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		secondary: null,
 		target: "any",
 		type: "Psychic",
+		contestType: "Cool",
+	},
+	hatotaurushelp: {
+		num: 722,
+		accuracy: 100,
+		basePower: 120,
+		category: "Special",
+		name: "Hatotaurus Help",
+		pp: 5,
+		priority: 0,
+		flags: {protect: 1, mirror: 1, wind: 1},
+		onModifyMove(move, pokemon) {
+			if (pokemon.getStat('atk', false, true) > pokemon.getStat('spa', false, true)) move.category = 'Physical';
+		},
+		secondary: null,
+		target: "normal",
+		type: "Flying",
 		contestType: "Cool",
 	},
 	carrotstrike: { // dual wingbeat but grass

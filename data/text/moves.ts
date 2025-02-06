@@ -43,8 +43,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	suicopath: {
 		name: "Suicopath",
-		desc: "Lowers the Comet's Defense and Special Defense by 1 stage.",
-		shortDesc: "Lowers user's Defense & Sp.Def by 1.",
+		desc: "If this Comet lost HP, she takes recoil damage equal to 1/3 the HP lost by the target, rounded half up, but not less than 1 HP.",
+		shortDesc: "Has 33% recoil",
 	},
 	axeattack: {
 		name: "Axe Attack",
@@ -183,6 +183,11 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		heal: "  [NICKNAME]'s was nursed back to health!",
 		switchOut: "#uturn",
 	},
+	firstaid: {
+		name: "First Aid",
+		desc: "Each Pokemon on this Nurse's side restores 1/2 of their maximum HP, rounded half up, and has their status condition cured.",
+		shortDesc: "User and allies: healed 1/2 max HP, status cured.",
+	},
 	witchattack: {
 		name: "Witch Attack",
 		desc: "Lowers this witch's Special Attack by 2 stages.",
@@ -228,6 +233,11 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		desc: "Hits five times. This move checks accuracy for each hit, and the attack ends if the target avoids a hit. If one of the hits breaks the target's substitute, it will take damage for the remaining hits. If the user has the Skill Link Ability, this move will always hit ten time.",
 		shortDesc: "Hits 5 times. Each hit can miss",
 	},
+	bark: {
+		name: "Bark",
+		desc: "Has a 30% chance to make the target flinch. Hits adjacent foes.",
+		shortDesc: "30% chance to make targets flinch.",
+	},
 	moguyummy: {
 		name: "Mogu Yummy",
 		desc: "This Cat recovers 1/2 the HP lost by the target, rounded half up. If Big Root is held by the user, the HP recovered is 1.3x normal, rounded half down.",
@@ -237,6 +247,11 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		name: "Tarot Attack",
 		desc: "Hits five times. This move checks accuracy for each hit, and the attack ends if the target avoids a hit. If one of the hits breaks the target's substitute, it will take damage for the remaining hits. If the user has the Skill Link Ability, this move will always hit ten time.",
 		shortDesc: "Hits 5 times. Each hit can miss.",
+	},
+	hatotaurushelp: {
+		name: "Hatotaurus Help",
+		desc: "This move becomes a physical attack if this Wolf's Attack is greater than her Special Attack, including stat stage changes.",
+		shortDesc: "Physical if user's Atk > Sp. Atk.",
 	},
 	carrotstrike: {
 		name: "Carrot Strike",

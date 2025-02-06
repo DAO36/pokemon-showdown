@@ -94323,6 +94323,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			willowisp: ["9M"],
 			dualblades: ["9M"],
 			underworldslash: ["9M"],
+			onionslaught: ["9M"],
         },
 	},
 	choco: {
@@ -94375,6 +94376,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			healingwish: ["9M"],
 			healpulse: ["9M"],
 			nursing: ["9M"],
+			firstaid: ["9M"],
         },
 	},
 	shion: {
@@ -94546,6 +94548,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			torment: ["9M"],
 			boxingdoggo: ["9M"],
 			yubiyubi: ["9M"],
+			bark: ["9M"],
         },
 	},	
 	mio: {
@@ -94601,6 +94604,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			grassyterrain: ["9M"],
 			honeclaws: ["9M"],
 			tarotattack: ["9M"],
+			hatotaurushelp: ["9M"]
         },
 	},
 	hatotaurus: {
