@@ -157,8 +157,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	apexmaid: {
 		name: "Apex Maid",
-		desc: "Hits five times. This move checks accuracy for each hit, and the attack ends if the target avoids a hit. If one of the hits breaks the target's substitute, it will take damage for the remaining hits. If the user has the Skill Link Ability, this move will always hit ten time.",
-		shortDesc: "Hits 5 times. Each hit can miss",
+		desc: "Hits two to five times. Has a 35% chance to hit two or three times and a 15% chance to hit four or five times. If one of the hits breaks the target's substitute, it will take damage for the remaining hits. If the user has the Skill Link Ability, this move will always hit five times. If the user is holding Loaded Dice, this move will hit 4-5 times.",
+		shortDesc: "Hits 2-5 times in one turn.",
 	},
 	gamermaid: {
 		name: "Gamer Maid",
@@ -230,8 +230,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	yubiyubi: {
 		name: "Yubi Yubi",
-		desc: "Hits five times. This move checks accuracy for each hit, and the attack ends if the target avoids a hit. If one of the hits breaks the target's substitute, it will take damage for the remaining hits. If the user has the Skill Link Ability, this move will always hit ten time.",
-		shortDesc: "Hits 5 times. Each hit can miss",
+		desc: "Hits two to five times. Has a 35% chance to hit two or three times and a 15% chance to hit four or five times. If one of the hits breaks the target's substitute, it will take damage for the remaining hits. If the user has the Skill Link Ability, this move will always hit five times. If the user is holding Loaded Dice, this move will hit 4-5 times.",
+		shortDesc: "Hits 2-5 times in one turn.",
 	},
 	bark: {
 		name: "Bark",
@@ -245,8 +245,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	tarotattack: {
 		name: "Tarot Attack",
-		desc: "Hits five times. This move checks accuracy for each hit, and the attack ends if the target avoids a hit. If one of the hits breaks the target's substitute, it will take damage for the remaining hits. If the user has the Skill Link Ability, this move will always hit ten time.",
-		shortDesc: "Hits 5 times. Each hit can miss.",
+		desc: "Hits two to five times. Has a 35% chance to hit two or three times and a 15% chance to hit four or five times. If one of the hits breaks the target's substitute, it will take damage for the remaining hits. If the user has the Skill Link Ability, this move will always hit five times. If the user is holding Loaded Dice, this move will hit 4-5 times.",
+		shortDesc: "Hits 2-5 times in one turn.",
 	},
 	hatotaurushelp: {
 		name: "Hatotaurus Help",
@@ -277,13 +277,13 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	arrowassault: {
 		name: "Arrow Assault",
-		desc: "Has a 10% chance to burn the target. Hits five times. This move checks accuracy for each hit, and the attack ends if the target avoids a hit. If one of the hits breaks the target's substitute, it will take damage for the remaining hits. If the user has the Skill Link Ability, this move will always hit ten time.",
-		shortDesc: "10% chance to burn. Hits 5 times. Each hit can miss.",
+		desc: "Has a 10% chance to burn the target. Hits two to five times. Has a 35% chance to hit two or three times and a 15% chance to hit four or five times. If one of the hits breaks the target's substitute, it will take damage for the remaining hits. If the user has the Skill Link Ability, this move will always hit five times. If the user is holding Loaded Dice, this move will hit 4-5 times.",
+		shortDesc: "10% chance to burn foe. Hits 2-5 times in one turn.",
 	},
 	elfarrows: {
 		name: "Elf Arrows",
-		desc: "Has a 10% chance to lower the target's Special Atk by 1. Hits five times. This move checks accuracy for each hit, and the attack ends if the target avoids a hit. If one of the hits breaks the target's substitute, it will take damage for the remaining hits. If the user has the Skill Link Ability, this move will always hit ten time.",
-		shortDesc: "10% lower Sp.Atk by 1. Hits 5 times. Each hit can miss",
+		desc: "Has a 10% chance to lower the target's Special Attack by 1 stage. Hits two to five times. Has a 35% chance to hit two or three times and a 15% chance to hit four or five times. If one of the hits breaks the target's substitute, it will take damage for the remaining hits. If the user has the Skill Link Ability, this move will always hit five times. If the user is holding Loaded Dice, this move will hit 4-5 times.",
+		shortDesc: "10% to lower foe's Sp.Atk by 1. Hits 2-5 times in one turn.",
 	},
 	gundance: {
 		name: "Gun Dance",
@@ -338,8 +338,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	starshuriken: {
 		name: "Star Shuriken",
-		desc: "Hits five times. This move checks accuracy for each hit, and the attack ends if the target avoids a hit. If one of the hits breaks the target's substitute, it will take damage for the remaining hits. If the user has the Skill Link Ability, this move will always hit ten time.",
-		shortDesc: "Hits 5 times. Each hit can miss",
+		desc: "Hits twice. If the first hit breaks the target's substitute, it will take damage for the second hit.",
+		shortDesc: "Hits 2 times in one turn.",
 	},
 	nothingwrong: {
 		name: "Nothing Wrong",
@@ -358,9 +358,9 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	candycrash: {
 		name: "Candy Crash",
-		desc: "Has a 10% chance to raise this baby's Speed by 1 stage. Hits five times. This move checks accuracy for each hit, and the attack ends if the target avoids a hit. If one of the hits breaks the target's substitute, it will take damage for the remaining hits. If the user has the Skill Link Ability, this move will always hit ten time.",
-		shortDesc: "10% raise user's Speed by 1. Hits 5 times. Each hit can miss.",
-	},
+		desc: "Has a 10% chance to raise this baby's Speed by 1 stage. Hits two to five times. Has a 35% chance to hit two or three times and a 15% chance to hit four or five times. If one of the hits breaks the target's substitute, it will take damage for the remaining hits. If the user has the Skill Link Ability, this move will always hit five times. If the user is holding Loaded Dice, this move will hit 4-5 times.",
+		shortDesc: "10% raise user's Speed by 1. Hits 2-5 times in one turn.",
+	}, 
 	sweetassault: {
 		name: "Sweet Assault",
 		desc: "This baby recovers 1/2 the HP lost by the target, rounded half up.",
@@ -383,10 +383,10 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 
 		switchOut: "#uturn",
 	},
-	gunfire: {
-		name: "Gunfire",
-		desc: "Hits eight times. This move checks accuracy for each hit, and the attack ends if the target avoids a hit. If one of the hits breaks the target's substitute, it will take damage for the remaining hits. If the user has the Skill Link Ability, this move will always hit ten time.",
-		shortDesc: "Hits 8 times. Each hit can miss",
+	ssrb: {
+		name: "SSRB",
+		desc: "Hits ten times. This move checks accuracy for each hit, and the attack ends if the target avoids a hit. If one of the hits breaks the target's substitute, it will take damage for the remaining hits. If the user has the Skill Link Ability, this move will always hit ten time.",
+		shortDesc: "Hits 10 times. Each hit can miss",
 	},
 	lalion: {
 		name: "Lalion",
@@ -442,8 +442,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	samuraistrikes: {
 		name: "Samurai Strikes",
-		desc: "Hits six times. This move checks accuracy for each hit, and the attack ends if the target avoids a hit. If one of the hits breaks the target's substitute, it will take damage for the remaining hits. If the user has the Skill Link Ability, this move will always hit ten time.",
-		shortDesc: "Hits 6 times. Each hit can miss.",
+		desc: "Hits ten times. This move checks accuracy for each hit, and the attack ends if the target avoids a hit. If one of the hits breaks the target's substitute, it will take damage for the remaining hits. If the user has the Skill Link Ability, this move will always hit ten time.",
+		shortDesc: "Hits 10 times. Each hit can miss.",
 	},
 	koyolabo: {
 		name: "Koyo Labo",
@@ -748,8 +748,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	rolldice: {
 		name: "Roll Dice",
-		desc: "The power of this move varies; 17% chance to roll a 1 for 25 base power, 17% chance to roll a 2 for 50 base power, 17% chance to roll a 3 for 75 base power, 17% chance to roll a 4 for 100 base power, 16% chance to roll a 5 for 125 base power, 16% chance to roll a 6 for 150 base power.",
-		shortDesc: "Power varies, depending on the dice roll.",
+		desc: "Has a 30% chance to confuse the target. The power of this move varies; 17% chance to roll a 1 for 25 base power, 17% chance to roll a 2 for 50 base power, 17% chance to roll a 3 for 75 base power, 17% chance to roll a 4 for 100 base power, 16% chance to roll a 5 for 125 base power, 16% chance to roll a 6 for 150 base power.",
+		shortDesc: "Power varies. 30% chance to confuse target. ",
 
 		activate: "  Rolled a [NUMBER]!",
 	},

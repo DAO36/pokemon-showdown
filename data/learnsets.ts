@@ -95423,7 +95423,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			agility: ["9M"],
 			calmmind: ["9M"],
 			honeclaws: ["9M"],
-			gunfire: ["9M"],
+			ssrb: ["9M"],
 			lalion: ["9M"],
         },
 	},	
