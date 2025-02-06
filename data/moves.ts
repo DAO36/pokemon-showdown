@@ -598,7 +598,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Fire",
 		contestType: "Cool",
 	},
-	onionslaught: {
+	onionslaught: { // dank type [Close Combat]
 		num: 370,
 		accuracy: 90,
 		basePower: 120,
@@ -837,7 +837,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		accuracy: 100,
 		basePower: 100,
 		category: "Special",
-		name: "Hyper Voice",
+		name: "Bark",
 		pp: 10,
 		priority: 0,
 		flags: {protect: 1, mirror: 1, sound: 1, bypasssub: 1, bite: 1},

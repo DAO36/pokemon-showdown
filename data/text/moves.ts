@@ -175,6 +175,11 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		desc: "Has a higher chance for a critical hit. Has a 20% chance to burn the foe.",
 		shortDesc: "20% chance to burn target. High crit ratio.",
 	},
+	onionslaught: {
+		name: "Oni Onslaught",
+		desc: "Lowers the user's Defense and Special Defense by 1 stage.",
+		shortDesc: "Lowers the user's Defense and Sp. Def by 1.",
+	},
 	nursing: {
 		name: "Nursing",
 		desc: "User switches out. At the end of the next turn, the Pokemon at the user's position has 1/2 of its maximum HP restored to it, rounded down. Fails if this move is already in effect for the user's position.",
@@ -186,7 +191,7 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	firstaid: {
 		name: "First Aid",
 		desc: "Each Pokemon on this Nurse's side restores 1/2 of their maximum HP, rounded half up, and has their status condition cured.",
-		shortDesc: "User and allies: healed 1/2 max HP, status cured.",
+		shortDesc: "User and allies: heal 1/2 max HP, cures status.",
 	},
 	witchattack: {
 		name: "Witch Attack",
