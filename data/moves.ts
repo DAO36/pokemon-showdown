@@ -520,14 +520,15 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	},
 	apexmaid: { // bullet seed but fairy
 		num: 370,
-		accuracy: 100,
+		accuracy: 90,
 		basePower: 25,
 		category: "Physical",
 		name: "Apex Maid",
-		pp: 20,
+		pp: 10,
 		priority: 0,
 		flags: {protect: 1, mirror: 1, bullet: 1},
-		multihit: [2, 5],
+		multihit: 5,
+		multiaccuracy: true,
 		secondary: null,
 		target: "normal",
 		type: "Fairy",
@@ -767,14 +768,15 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	},
 	yubiyubi: { // normal type bullet seed
 		num: 370,
-		accuracy: 95,
+		accuracy: 90,
 		basePower: 30,
 		category: "Physical",
 		name: "Yubi Yubi",
-		pp: 15,
+		pp: 10,
 		priority: 0,
 		flags: {protect: 1, mirror: 1, punch: 1},
-		multihit: [2, 5],
+		multihit: 5,
+		multiaccuracy: true,
 		secondary: null,
 		target: "normal",
 		type: "Normal",
@@ -797,14 +799,15 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	},
 	tarotattack: { // bullet seed but psychic
 		num: 370,
-		accuracy: 100,
+		accuracy: 95,
 		basePower: 30,
 		category: "Physical",
 		name: "Tarot Attack",
 		pp: 15,
 		priority: 0,
 		flags: {protect: 1, mirror: 1, distance: 1, slicing: 1},
-		multihit: [2, 5],
+		multihit: 5,
+		multiaccuracy: true,
 		secondary: null,
 		target: "any",
 		type: "Psychic",
@@ -866,14 +869,15 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	},
 	arrowassault: { // bullet seed but fighting
 		num: 370,
-		accuracy: 95,
+		accuracy: 90,
 		basePower: 25,
 		category: "Physical",
 		name: "Arrow Assault",
 		pp: 10,
 		priority: 0,
 		flags: {protect: 1, mirror: 1, distance: 1, bullet: 1},
-		multihit: [2, 5],
+		multihit: 5,
+		multiaccuracy: true,
 		secondary: {
 			chance: 10,
 			status: 'brn',
@@ -884,14 +888,15 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	},
 	elfarrows: { // bullet seed but fairy
 		num: 370,
-		accuracy: 95,
+		accuracy: 90,
 		basePower: 25,
 		category: "Physical",
 		name: "Elf Arrows",
 		pp: 10,
 		priority: 0,
 		flags: {protect: 1, mirror: 1, distance: 1, bullet: 1},
-		multihit: [2, 5],
+		multihit: 5,
+		multiaccuracy: true,
 		secondary: {
 			chance: 10,
 			boosts: {
@@ -1140,14 +1145,15 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	},
 	candycrash: { // bullet seed but fairy
 		num: 370,
-		accuracy: 100,
+		accuracy: 95,
 		basePower: 30,
 		category: "Physical",
 		name: "Candy Crash",
 		pp: 20,
 		priority: 0,
 		flags: {protect: 1, mirror: 1, bullet: 1},
-		multihit: [2, 5],
+		multihit: 5,
+		multiaccuracy: true,
 		secondary: {
 			chance: 10,
 			self: {
@@ -1234,14 +1240,15 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	},
 	gunfire: { // fighting bullet seed on crack
 		num: 370,
-		accuracy: 100,
-		basePower: 15,
+		accuracy: 90,
+		basePower: 20,
 		category: "Physical",
 		name: "Gunfire",
 		pp: 10,
 		priority: 0,
 		flags: {protect: 1, mirror: 1, bullet: 1},
-		multihit: [3, 8],
+		multihit: 8,
+		multiaccuracy: true,
 		secondary: null,
 		target: "normal",
 		type: "Fighting",
@@ -1436,14 +1443,15 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	},
 	samuraistrikes: { // better bullet seed but this time it is fighting type
 		num: 370,
-		accuracy: 100,
+		accuracy: 95,
 		basePower: 25,
 		category: "Physical",
 		name: "Samurai Strikes",
 		pp: 30,
 		priority: 0,
 		flags: {protect: 1, mirror: 1, contact: 1, slicing: 1},
-		multihit: [2, 6],
+		multihit: 6,
+		multiaccuracy: true,
 		secondary: null,
 		target: "normal",
 		type: "Fighting",
@@ -2133,7 +2141,8 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		pp: 20,
 		priority: 0,
 		flags: {protect: 1, mirror: 1, contact: 1},
-		multihit: [2, 8],
+		multihit: 8,
+		multiaccuracy: true,
 		secondary: null,
 		target: "normal",
 		type: "Water",
@@ -2593,7 +2602,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Flying",
 		contestType: "Tough",
 	},
-	chaosstrike: {
+	chaosstrike: { // reskin of [Present] but on crack
 		num: 217,
 		accuracy: 90,
 		basePower: 0,
@@ -2601,17 +2610,18 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		name: "Chaos Strike",
 		pp: 15,
 		priority: 0,
-		flags: {protect: 1, mirror: 1, metronome: 1},
+		flags: {protect: 1, mirror: 1, bite: 1, contact: 1},
 		onModifyMove(move, pokemon, target) {
 			const rand = this.random(10);
-			if (rand < 4) {
-				move.basePower = 80; 
-			} else if (rand < 7) {
-				move.basePower = 100;
+			if (rand < 1) {
+				move.heal = [1, 4];
+				move.infiltrates = true; // 10% to heal dafoe 25% of their max hp
+			} else if (rand < 6) {
+				move.basePower = 60; // 50% to do 60BP damage
 			} else if (rand < 9) {
-				move.basePower = 120;
+				move.basePower = 90; // 30% to do 90BP damage
 			} else {
-				move.basePower = 150;
+				move.basePower = 150; // 10% to do 150BP damage
 			}
 		},
 		secondary: {
@@ -2636,6 +2646,77 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		target: "normal",
 		type: "Dark",
 		contestType: "Cute",
+	},
+	rolldice: {
+		num: 860,
+		accuracy: 90,
+		basePower: 0,
+		category: "Physical",
+		name: "Roll Dice",
+		pp: 15,
+		priority: 0,
+		flags: {contact: 1, protect: 1, mirror: 1, bullet: 1},
+		onModifyMove(move, pokemon) {
+			const i = this.random(100);
+			if (i < 17) {
+				move.rolldice = 1;
+				move.basePower = 25;
+			} else if (i < 34) {
+				move.rolldice = 2;
+				move.basePower = 50;
+			} else if (i < 51) {
+				move.rolldice = 3;
+				move.basePower = 75;
+			} else if (i < 68) {
+				move.rolldice = 4;
+				move.basePower = 100;
+			} else if (i < 84) {
+				move.rolldice = 5;
+				move.basePower = 125;
+			} else {
+				move.rolldice = 6;
+				move.basePower = 150;
+			}
+		},
+		onUseMoveMessage(pokemon, target, move) {
+			this.add('-activate', pokemon, 'move: Roll Dice', move.rolldice);
+		},
+		secondary: null,
+		target: "normal",
+		type: "Dark",
+		contestType: "Cute",
+	},
+	ratattack: {
+		num: 399,
+		accuracy: 90,
+		basePower: 90,
+		category: "Special",
+		name: "Rat Attack",
+		pp: 10,
+		priority: 0,
+		flags: {protect: 1, mirror: 1, bite: 1, contact: 1},
+		secondary: {
+			chance: 30,
+			onHit(target, source) {
+				const result = this.random(6);
+				if (result === 0) {
+					target.trySetStatus('brn', source);
+				} else if (result === 1) {
+					target.trySetStatus('par', source);
+				} else if (result === 2) {
+					target.trySetStatus('tox', source);
+				} else if (result === 3) {
+					target.trySetStatus('slp', source);
+				} else if (result === 4) {
+					target.trySetStatus('psn', source);
+				} else {
+					target.trySetStatus('frz', source);
+				}
+			},
+		},
+		target: "normal",
+		type: "Dark",
+		contestType: "Cool",
 	},
 	forbiddenknowledge: {
 		num: 370,
