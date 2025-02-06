@@ -697,8 +697,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	rolldice: {
 		name: "Roll Dice",
-		desc: "The power of this move varies; 17% chance to roll a 1 for 25 base power, 17% chance to roll a 2 for 50BP, 17% chance to roll a 3 for 75BP, 17% chance to roll a 4 for 100BP, 16% chance to roll a 5 for 125BP, 16% chance to roll a 6 for 150BP.",
-		shortDesc: "Power varies, depending on dice roll.",
+		desc: "The power of this move varies; 17% chance to roll a 1 for 25 base power, 17% chance to roll a 2 for 50 base power, 17% chance to roll a 3 for 75 base power, 17% chance to roll a 4 for 100 base power, 16% chance to roll a 5 for 125 base power, 16% chance to roll a 6 for 150 base power.",
+		shortDesc: "Power varies, depending on the dice roll.",
 
 		activate: "  Rolled a [NUMBER]!",
 	},

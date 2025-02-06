@@ -331,6 +331,7 @@ export interface ActiveMove extends MutableMove {
 	isExternal?: boolean;
 	lastHit?: boolean;
 	magnitude?: number;
+	rolldice?: number;
 	negateSecondary?: boolean;
 	pranksterBoosted?: boolean;
 	selfDropped?: boolean;
