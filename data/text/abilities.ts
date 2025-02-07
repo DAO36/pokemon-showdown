@@ -228,8 +228,8 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	botanx: {
 		name: "Botan X",
-		desc: "This Lion's bullet-based attacks have their power multiplied by 1.5.",
-		shortDesc: "This Lion's bullet-based attacks have 1.5x power.",
+		desc: "This Lion's bullet-based attacks have their power multiplied by 1.5. This Lion is also immune to bullet moves.",
+		shortDesc: "Bullet-based attacks have 1.5x power. Immune to bullet moves.",
 	},
 	frozensake: {
 		name: "Frozen Sake",

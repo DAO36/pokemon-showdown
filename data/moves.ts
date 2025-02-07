@@ -1399,7 +1399,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	ssrb: { // fighting bullet seed on crack
 		num: 370,
 		accuracy: 80,
-		basePower: 20,
+		basePower: 15,
 		category: "Physical",
 		name: "SSRB",
 		pp: 10,

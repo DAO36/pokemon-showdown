@@ -833,6 +833,12 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 				return this.chainModify(1.5);
 			}
 		},
+		onTryHit(pokemon, target, move) {
+			if (move.flags['bullet']) {
+				this.add('-immune', pokemon, '[from] ability: Botan X');
+				return null;
+			}
+		},
 		flags: {},
 		name: "Botan X",
 		rating: 3,
