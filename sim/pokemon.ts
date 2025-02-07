@@ -1660,7 +1660,8 @@ export class Pokemon {
 				this.battle.debug('immune to status');
 				if ((sourceEffect as Move)?.status) {
 					this.battle.add('-immune', this);
-				} 
+				}
+				return false;
 			}
 		}
 		if (!ignoreImmunities && status.id &&
@@ -1670,7 +1671,8 @@ export class Pokemon {
 				this.battle.debug('immune to status');
 				if ((sourceEffect as Move)?.status) {
 					this.battle.add('-immune', this);
-				} 
+				}
+				return true;
 			}
 		}
 		if (!ignoreImmunities && status.id &&
@@ -1681,7 +1683,7 @@ export class Pokemon {
 				if ((sourceEffect as Move)?.status) {
 					this.battle.add('-immune', this);
 				}
-				return false;
+				return true;
 			}
 		}
 		const prevStatus = this.status;
