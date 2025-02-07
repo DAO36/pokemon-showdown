@@ -110,8 +110,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		desc: "If the target lost HP, the user takes recoil damage equal to 1/2 the HP lost by the target, rounded half up, but not less than 1 HP.",
 		shortDesc: "Has 50% recoil.",
 	},
-	iamgodok: {
-		name: "I am God OK",
+	imgodok: {
+		name: "I'm God OK",
 		desc: "Raises the user's Attack, Speed, and Accuracy all by 1 stage.",
 		shortDesc: "Raises Attack, Speed, and Accuracy by 1.",
 	},
@@ -519,8 +519,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		desc: "Has a 20% chance to raise this Peafowl's Special Defense by 1 stage.",
 		shortDesc: "20% chance to raise user's Sp.Def by 1.",
 	},
-	keris: {
-		name: "Keris",
+	kerisslash: {
+		name: "Keris Slash",
 		desc: "Has a 10% chance to raise this Keris' Special Defense by 1 stage. Has a high critical hit ratio.",
 		shortDesc: "10% to raise user's Sp.Def by 1. High crit ratio.",
 	},

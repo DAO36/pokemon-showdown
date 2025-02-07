@@ -53,8 +53,8 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	seiso: {
 		name: "Seiso",
-		desc: "This Seiso idol cannot be poisoned, paralyzed, burned, frozen, or put to sleep; Cannot be made to flinch.",
-		shortDesc: "Immune to status effects; Cannot be made to flinch.",
+		desc: "This Seiso idol cannot be poisoned, paralyzed, burned, frozen, or put to sleep; Prevents other Pokemon from lowering this Idol's stat stages. Cannot be made to flinch.",
+		shortDesc: "Immune to status effects; Stats can't be lowered by others. Cannot flinch.",
 	},
 	elite: {
 		name: "Elite",
@@ -63,8 +63,8 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	stellar: {
 		name: "Stellar",
-		desc: "This Comet's Attack is raised by 1 stage if she attacks and knocks out another Pokemon. Prevents other Pokemon from lowering this Comet's stat stages.",
-		shortDesc: "Attack is raised by 1 if user KOs a Pokemon. Stats can't be lowered by others.",
+		desc: "On switch-in, all Pokemon have their stat stages reset to 0. This Comet's Attack is raised by 1 stage if she attacks and knocks out another Pokemon. Prevents other Pokemon from lowering this Comet's stat stages. Non-damaging moves that check accuracy have their accuracy changed to 50% when used against this Pokemon. This effect comes before other effects that modify accuracy.",
+		shortDesc: "ATK +1 if user KOs a Foe. Switch-in: all Pokemon have stat stages reset to 0.",
 	},
 	highspecsrobot: {
 		name: "High Specs Robot",
@@ -172,8 +172,8 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	muscleknight: {
 		name: "Muscle Knight",
-		desc: "This Knight's punch-based attacks have her power multiplied by 1.2. Sucker Punch is not boosted.",
-		shortDesc: "Punch-based attacks have 1.2x power. Sucker Punch is not boosted.",
+		desc: "This Knight's punch-based attacks have her power multiplied by 1.5. Sucker Punch is not boosted.",
+		shortDesc: "Punch-based attacks have 1.5x power. Sucker Punch is not boosted.",
 	},
 	yandere: {
 		name: "Yandere",
@@ -221,15 +221,15 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 		desc: "This Devil's moves ignore substitutes and the opposing side's Reflect, Light Screen, Safeguard, Mist, and Aurora Veil. This Devil's moves also ignore the target's protection, except Max Guard.",
 		shortDesc: "User's moves ignore target's protection, substitutes and screens.",
 	},
-	thelegendofpolka: {
-		name: "The Legend of Polka",
+	legendofpolka: {
+		name: "Legend of Polka",
 		desc: "This Fennec's moves of 60 power or less have their power multiplied by 1.5, including Struggle. This effect comes after a move's effect changes its own power; Multi-hit attacks always hit the maximum number of times. Triple Kick and Triple Axel do not check accuracy for the second and third hits.",
 		shortDesc: "Moves of 60 BP or less are 1.5x; multi-hit moves hit the max number of times.",
 	},
 	botanx: {
 		name: "Botan X",
-		desc: "This Lion's moves have her accuracy multiplied by 1.3 thanks to her goggles. Prevents other Pokemon from lowering this Lion's accuracy stat stage. This Lion ignores a target's evasiveness stat stage.",
-		shortDesc: "Accuracy multiplied by 1.3. Ignores accuracy/evasiveness checks.",
+		desc: "This Lion's bullet-based attacks have their power multiplied by 1.5.",
+		shortDesc: "This Lion's bullet-based attacks have 1.5x power.",
 	},
 	frozensake: {
 		name: "Frozen Sake",
@@ -320,13 +320,13 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	tonjokqueen: {
 		name: "TonjokQueen",
-		desc: "This Peafowl's punch-based attacks have her power multiplied by 1.2. Sucker Punch is not boosted. Immune to punching-based attacks.",
-		shortDesc: "User's punch-based attacks have 1.2x power; Immune to punching moves."
+		desc: "This Peafowl's punch-based attacks have +1 priority. Sucker Punch is not affected. If this Peafowl is hit by a punch-based attack, her Attack stat is raised by 2 stages; Immune to punching-based attacks.",
+		shortDesc: "User's punch-based moves have +1 priority; Immune to punching moves."
 	},
-	bluntblade: {
-		name: "Blunt Blade",
-		desc: "Pokemon making contact with this Keris lose 1/8 of their maximum HP, rounded down.",
-		shortDesc: "Pokemon making contact with this Keris lose 1/8 of their max HP.",
+	keris: {
+		name: "Keris",
+		desc: "Pokemon using Physical attacks against this Keris loses 1/10 of their maximum HP, rounded down. Immune to slicing-based moves.",
+		shortDesc: "Foes using Special Attacks on user lose 1/10 HP. Immune to slicing-based moves.",
 
 		damage: "#roughskin",
 	},
@@ -350,9 +350,10 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 		desc: "If Rain is active, this Shark's Attack and Special Attack is multiplied by 1.5 and she gains 1/10 of her maximum HP, rounded down, at the end of each turn. If there's no weather, she loses 1/10 of her maximum HP, rounded down, at the end of each turn, if Sunny Day/Sandstorm, loses 1/8 of her maximum HP per turn instead. These effects are prevented if the Pokemon is holding a Utility Umbrella.",
 		shortDesc: "In rain - Atk & SpAtk: 1.5x; Gains 1/10 HP per turn. Else: loses 1/8 HP per turn.",
 	},
-	toxicgamer: {
-		name: "Toxic Gamer",
-		shortDesc: "This Detective's attacks are critical hits if the target is poisoned.",
+	detective: {
+		name: "Detective",
+		desc: "This Detective can hit Steel types with her Poison-type moves. This Detective can poison or badly poison a Pokemon regardless of its typing.",
+		shortDesc: "Poison moves hit Steel. User can poison any Pokemon regardless of typing.",
 	},
 	death: {
 		name: "Death",
@@ -368,8 +369,8 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	mightyphoenix: {
 		name: "Mighty Phoenix",
-		desc: "30% chance a Pokemon making contact with this Phoenix will be burned. This Phoenix is immune to Fire-type moves. The first time she is hit by a Fire-type move, her offensive stat is multiplied by 1.5 while using a Fire-type.",
-	    shortDesc: "30% chance to burn those that make contact. Fire-type immunity.",
+		desc: "30% chance a Pokemon making contact with this Phoenix will be burned. This Phoenix is immune to Fire-type moves. The first time she is hit by a Fire-type move, her offensive stat is multiplied by 1.5 while using a Fire-type. This Phoenix can burn a Pokemon regardless of its typing.",
+	    shortDesc: "Contact: 30% to burn. Fire-type immunity. Can burn Pokemon regardless of typing.",
 
 	    start: "  [POKEMON] the Part-Time Warrior is here!",
 	},
@@ -392,7 +393,7 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	mothernature: {
 		name: "Mother Nature",
-		desc: "On switch-in, all Pokemon in this Kirin's party are cured of any status effects they may have. Mother Nature protects herself and her allies from status effects, lowering of stats, and effects that limit move choice.",
+		desc: "On switch-in, all Pokemon in this Kirin's party are cured of any status effects they may have. This Kirin also protects herself and her allies from status effects, lowering of stats, and effects that prevent usage of healing moves.",
 		shortDesc: "On switch-in, heals party of statuses. Protects party from certain status & effects.",
 
 		block: "  [POKEMON] is protected by Mother Nature!",

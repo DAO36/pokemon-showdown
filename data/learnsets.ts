@@ -94032,7 +94032,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			charm: ["9M"],
 			sweetkiss: ["9M"],
 			godlyattack: ["9M"],
-			iamgodok: ["9M"],
+			imgodok: ["9M"],
         },
 	},
 	haachama: {
@@ -96321,7 +96321,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			calmmind: ["9M"],
 			nastyplot: ["9M"],
 			torment: ["9M"],
-			keris: ["9M"],
+			kerisslash: ["9M"],
         },
 	},	
 	zeta: {

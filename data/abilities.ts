@@ -147,7 +147,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 5,
 		num: 74,
 	},
-	seiso: { // reskin of [Immunity] but for other statuses too + immune to flinching <held items cant status either>
+	seiso: { // combines [Clear Body] + [Immunity] but for other statuses too + immune to flinching <held items cant status either>
 		onTryAddVolatile(status, pokemon) {
 			if (status.id === 'flinch') return null;
 		},
@@ -163,6 +163,20 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 				this.add('-immune', target, '[from] ability: Seiso');
 			}
 			return false;
+		},
+		onTryBoost(boost, target, source, effect) {
+			if (source && target === source) return;
+			let showMsg = false;
+			let i: BoostID;
+			for (i in boost) {
+				if (boost[i]! < 0) {
+					delete boost[i];
+					showMsg = true;
+				}
+			}
+			if (showMsg && !(effect as ActiveMove).secondaries && effect.id !== 'octolock') {
+				this.add("-fail", target, "unboost", "[from] ability: Seiso", "[of] " + target);
+			}
 		},
 		flags: {breakable: 1},
 		name: "Seiso",
@@ -193,24 +207,16 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 2.5,
 		num: 270,
 	},
-	stellar: { // combines [Moxie] + [Clear Body]
+	stellar: { // combines [Moxie] + [Curious Medicine] but better
+		onStart(pokemon) {
+			this.add('-clearallboost');
+			for (const pokemon of this.getAllPokemon()) {
+				pokemon.clearBoosts();
+			}
+		},
 		onSourceAfterFaint(length, target, source, effect) {
 			if (effect && effect.effectType === 'Move') {
 				this.boost({atk: length}, source);
-			}
-		},
-		onTryBoost(boost, target, source, effect) {
-			if (source && target === source) return;
-			let showMsg = false;
-			let i: BoostID;
-			for (i in boost) {
-				if (boost[i]! < 0) {
-					delete boost[i];
-					showMsg = true;
-				}
-			}
-			if (showMsg && !(effect as ActiveMove).secondaries && effect.id !== 'octolock') {
-				this.add("-fail", target, "unboost", "[from] ability: Stellar", "[of] " + target);
 			}
 		},
 		flags: {},
@@ -611,12 +617,11 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 1.5,
 		num: 194,
 	},
-	muscleknight: { // reskin of [Iron Fist]
-		onBasePowerPriority: 23,
+	muscleknight: { // reskin of [Iron Fist] but even better
+		onBasePowerPriority: 19,
 		onBasePower(basePower, attacker, defender, move) {
 			if (move.flags['punch']) {
-				this.debug('Muscle Knight boost');
-				return this.chainModify([4915, 4096]);
+				return this.chainModify(1.5);
 			}
 		},
 		flags: {},
@@ -788,7 +793,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3,
 		num: 207,
 	},
-	tmt: {
+	tmt: { // combines [Infiltrator] + [Unseen Fist] but better!
 		onModifyMove(move) {
 			move.infiltrates = true;
 			if (move.category === 'Physical' || move.category === 'Special' || move.category === 'Status') delete move.flags['protect'];
@@ -798,13 +803,13 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 2.5,
 		num: 151,
 	},
-	thelegendofpolka: { // combines [Skill Link] + [Techncician]
+	legendofpolka: { // combines [Skill Link] + [Techncician]
 		onBasePowerPriority: 30,
 		onBasePower(basePower, attacker, defender, move) {
 			const basePowerAfterMultiplier = this.modify(basePower, this.event.modifier);
 			this.debug('Base Power: ' + basePowerAfterMultiplier);
 			if (basePowerAfterMultiplier <= 60) {
-				this.debug('The Legend of Polka boost');
+				this.debug('Legend of Polka boost');
 				return this.chainModify(1.5);
 			}
 		},
@@ -817,26 +822,35 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			}
 		},
 		flags: {},
-		name: "The Legend of Polka",
+		name: "Legend of Polka",
 		rating: 3.5,
 		num: 101,
 	},
-	botanx: { // combines of [Compound Eyes] + [Keen Eye]
+	botanx: { // reskin of [Iron Fist] but bullets instead of fisting 
+		onBasePowerPriority: 19,
+		onBasePower(basePower, attacker, defender, move) {
+			if (move.flags['bullet']) {
+				return this.chainModify(1.5);
+			}
+		},
+		flags: {},
+		name: "Botan X",
+		rating: 3,
+		num: 14,
+	},
+	botanx2: { // combines [Compound Eyes] + [Keen Eye] <UNUSED>
 		onSourceModifyAccuracyPriority: -1,
 		onSourceModifyAccuracy(accuracy) {
 			if (typeof accuracy !== 'number') return;
-			this.debug('botanx - enhancing accuracy');
+			this.debug('botanx2 - enhancing accuracy');
 			return this.chainModify([5325, 4096]);
-		},
-		onTryAddVolatile(status, pokemon) {
-			if (status.id === 'flinch') return null;
 		},
 		onTryBoost(boost, target, source, effect) {
 			if (source && target === source) return;
 			if (boost.accuracy && boost.accuracy < 0) {
 				delete boost.accuracy;
 				if (!(effect as ActiveMove).secondaries) {
-					this.add("-fail", target, "unboost", "accuracy", "[from] ability: Botan X", "[of] " + target);
+					this.add("-fail", target, "unboost", "accuracy", "[from] ability: Botan X2", "[of] " + target);
 				}
 			}
 		},
@@ -844,7 +858,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			move.ignoreEvasion = true;
 		},
 		flags: {},
-		name: "Botan X",
+		name: "Botan X2",
 		rating: 3,
 		num: 14,
 	},
@@ -1220,10 +1234,15 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 2,
 		num: 133,
 	},
-	tonjokqueen: { // grants immunity from punching moves + boost punches
+	tonjokqueen: { // grants immunity from punching moves + priority for punches
+		onModifyPriority(priority, pokemon, target, move) {
+			if (move.flags['punch']) return priority + 1;
+		},
 		onTryHit(target, source, move) {
 			if (target !== source && move.flags['punch']) {
-				this.add('-immune', target, '[from] ability: TonjokQueen');
+				if (!this.boost({atk: 2})) {
+					this.add('-immune', target, '[from] ability: TonjokQueen');
+				}
 				return null;
 			}
 		},
@@ -1232,27 +1251,31 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 				this.add('-immune', this.effectState.target, '[from] ability: TonjokQueen');
 			}
 		},
-		onBasePowerPriority: 23,
-		onBasePower(basePower, attacker, defender, move) {
-			if (move.flags['punch']) {
-				this.debug('TonjokQueen boost');
-				return this.chainModify([4915, 4096]);
-			}
-		},
 		flags: {breakable: 1},
 		name: "TonjokQueen",
 		rating: 3,
 		num: 43,
 	},
-	bluntblade: { // reskin of [Iron Barbs]
+	keris: { // reskin of [Iron Barbs]
 		onDamagingHitOrder: 1,
 		onDamagingHit(damage, target, source, move) {
-			if (this.checkMoveMakesContact(move, source, target, true)) {
-				this.damage(source.baseMaxhp / 8, source, target);
+			if (move.category === 'Physical') {
+				this.damage(source.baseMaxhp / 10, source, target);
+			}
+		},
+		onTryHit(target, source, move) {
+			if (target !== source && move.flags['slicing']) {
+				this.add('-immune', target, '[from] ability: Keris');
+				return null;
+			}
+		},
+		onAllyTryHitSide(target, source, move) {
+			if (move.flags['slicing']) {
+				this.add('-immune', this.effectState.target, '[from] ability: Keris');
 			}
 		},
 		flags: {},
-		name: "Blunt Blade",
+		name: "Keris",
 		rating: 2.5,
 		num: 160,
 	},
@@ -1334,14 +1357,18 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 4.5,
 		num: 87,
 	},
-	toxicgamer: { // reskin of Merciless
-		onModifyCritRatio(critRatio, source, target) {
-			if (target && ['psn', 'tox'].includes(target.status)) return 5;
+	detective: { // reskin of [Corrosion] + [Scrappy] but for Poison > Steel
+		onModifyMovePriority: -5,
+		onModifyMove(move) {
+			if (!move.ignoreImmunity) move.ignoreImmunity = {};
+			if (move.ignoreImmunity !== true) {
+				move.ignoreImmunity['Poison'] = true;
+			}
 		},
 		flags: {},
-		name: "Toxic Gamer",
-		rating: 1.5,
-		num: 196,
+		name: "Detective",
+		rating: 3,
+		num: 113,
 	},
 	death: { // reskin of [Intimidate] but for Speed instead of Attack
 		onStart(pokemon) {
@@ -1375,7 +1402,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 4.5,
 		num: 24,
 	},
-	mightyphoenix: { // combines [Flame Body] + [Flash Fire]
+	mightyphoenix: { // combines [Flame Body] + [Flash Fire] + [Corrosion] but for fire insetad of poison
 		onStart(pokemon) {
 			this.add('-activate', pokemon, 'ability: Mighty Phoenix');
 		},
@@ -1518,7 +1545,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			}
 		},
 		onAllyTryAddVolatile(status, target, source, effect) {
-			if (['attract', 'disable', 'scarylook', 'encore', 'healblock', 'taunt', 'torment'].includes(status.id)) {
+			if (['healblock'].includes(status.id)) {
 				if (effect.effectType === 'Move') {
 					const effectHolder = this.effectState.target;
 					this.add('-block', target, 'ability: Mother Nature', '[of] ' + effectHolder);

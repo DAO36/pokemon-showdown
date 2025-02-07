@@ -395,12 +395,12 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Normal",
 		contestType: "Tough",
 	},
-	iamgodok: {
+	imgodok: {
 		num: 370,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
-		name: "I am God OK",
+		name: "I'm God OK",
 		pp: 5,
 		priority: 0,
 		flags: {snatch: 1, dance: 1},
@@ -1945,12 +1945,12 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Flying",
 		contestType: "Cool",
 	},
-	keris: {
+	kerisslash: {
 		num: 370,
 		accuracy: 100,
 		basePower: 80,
 		category: "Physical",
-		name: "Keris",
+		name: "Keris Slash",
 		pp: 10,
 		priority: 0,
 		flags: {contact: 1, protect: 1, mirror: 1, slicing: 1},
