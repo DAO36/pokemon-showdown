@@ -1654,7 +1654,7 @@ export class Pokemon {
 		}
 
 		if (!ignoreImmunities && status.id &&
-				!(source?.hasAbility('corrosion') && ('detective') && ['tox', 'psn'].includes(status.id))) {
+				!(source?.hasAbility('corrosion', 'detective') && ['tox', 'psn'].includes(status.id))) {
 			// the game currently never ignores immunities
 			if (!this.runStatusImmunity(status.id === 'tox' ? 'psn' : status.id)) {
 				this.battle.debug('immune to status');
@@ -1878,7 +1878,7 @@ export class Pokemon {
 		return this.battle.dex.abilities.getByID(this.ability);
 	}
 
-	hasAbility(ability: string | string[]) {
+	hasAbility(ability: string | string[], p0?: string) {
 		if (Array.isArray(ability)) {
 			if (!ability.map(toID).includes(this.ability)) return false;
 		} else {
