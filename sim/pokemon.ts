@@ -1654,7 +1654,7 @@ export class Pokemon {
 		}
 
 		if (!ignoreImmunities && status.id &&
-				!(source?.hasAbility('corrosion') && ['tox', 'psn'].includes(status.id))) {
+				!(source?.hasAbility('corrosion') && ('detective') && ['tox', 'psn'].includes(status.id))) {
 			// the game currently never ignores immunities
 			if (!this.runStatusImmunity(status.id === 'tox' ? 'psn' : status.id)) {
 				this.battle.debug('immune to status');
@@ -1663,29 +1663,7 @@ export class Pokemon {
 				}
 				return false;
 			}
-		}
-		if (!ignoreImmunities && status.id &&
-				!(source?.hasAbility('detective') && ['tox', 'psn'].includes(status.id))) {
-			// the game currently never ignores immunities
-			if (!this.runStatusImmunity(status.id === 'tox' ? 'psn' : status.id)) {
-				this.battle.debug('immune to status');
-				if ((sourceEffect as Move)?.status) {
-					this.battle.add('-immune', this);
-				}
-				return true;
-			}
-		}
-		if (!ignoreImmunities && status.id &&
-				!(source?.hasAbility('mightyphoenix') && ['brn'].includes(status.id))) {
-			// the game currently never ignores immunities
-			if (!this.runStatusImmunity(status.id === 'brn' ? 'brn' : status.id)) {
-				this.battle.debug('immune to status');
-				if ((sourceEffect as Move)?.status) {
-					this.battle.add('-immune', this);
-				}
-				return true;
-			}
-		}
+		} 
 		const prevStatus = this.status;
 		const prevStatusState = this.statusState;
 		if (status.id) {
