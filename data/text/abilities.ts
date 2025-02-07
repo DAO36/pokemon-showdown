@@ -64,7 +64,7 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	stellar: {
 		name: "Stellar",
 		desc: "On switch-in, all Pokemon have their stat stages reset to 0. This Comet's Attack is raised by 1 stage if she attacks and knocks out another Pokemon. Prevents other Pokemon from lowering this Comet's stat stages. Non-damaging moves that check accuracy have their accuracy changed to 50% when used against this Pokemon. This effect comes before other effects that modify accuracy.",
-		shortDesc: "ATK +1 if user KOs a Foe. Switch-in: all Pokemon have stat stages reset to 0.",
+		shortDesc: "ATK +1 if user KOs a Foe. On switch-in, all Pokemon have stat stages reset to 0.",
 	},
 	highspecsrobot: {
 		name: "High Specs Robot",
