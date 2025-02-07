@@ -1664,7 +1664,7 @@ export class Pokemon {
 				return false;
 			}
 		}
-		if (!ignoreImmunities && status.id &&
+		else if (!ignoreImmunities && status.id &&
 				!(source?.hasAbility('detective') && ['tox', 'psn'].includes(status.id))) {
 			// the game currently never ignores immunities
 			if (!this.runStatusImmunity(status.id === 'tox' ? 'psn' : status.id)) {
@@ -1675,7 +1675,7 @@ export class Pokemon {
 				return false;
 			}
 		}
-		if (!ignoreImmunities && status.id &&
+		else if (!ignoreImmunities && status.id &&
 				!(source?.hasAbility('mightyphoenix') && ['brn'].includes(status.id))) {
 			// the game currently never ignores immunities
 			if (!this.runStatusImmunity(status.id === 'brn' ? 'brn' : status.id)) {
