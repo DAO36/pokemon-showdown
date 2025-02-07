@@ -326,7 +326,7 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	keris: {
 		name: "Keris",
 		desc: "Pokemon using Physical attacks against this Keris loses 1/10 of their maximum HP, rounded down. Immune to slicing-based moves.",
-		shortDesc: "Foes using Special Attacks on user lose 1/10 HP. Immune to slicing-based moves.",
+		shortDesc: "Foes using Physical Attacks on user lose 1/10 HP. Immune to slicing-based moves.",
 
 		damage: "#roughskin",
 	},
