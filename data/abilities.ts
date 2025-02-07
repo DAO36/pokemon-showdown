@@ -1363,7 +1363,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 4.5,
 		num: 87,
 	},
-	detective: { // reskin of [Corrosion] + [Scrappy] but for Poison > Steel
+	detective: { // reskin of [Scrappy] but for Poison > Steel
 		onModifyMovePriority: -5,
 		onModifyMove(move) {
 			if (!move.ignoreImmunity) move.ignoreImmunity = {};
@@ -1408,7 +1408,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 4.5,
 		num: 24,
 	},
-	mightyphoenix: { // combines [Flame Body] + [Flash Fire] + [Corrosion] but for fire insetad of poison
+	mightyphoenix: { // combines [Flame Body] + [Flash Fire]
 		onStart(pokemon) {
 			this.add('-activate', pokemon, 'ability: Mighty Phoenix');
 		},

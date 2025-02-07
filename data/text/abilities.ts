@@ -352,8 +352,7 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	detective: {
 		name: "Detective",
-		desc: "This Detective can hit Steel types with her Poison-type moves. This Detective can poison or badly poison a Pokemon regardless of its typing.",
-		shortDesc: "Poison moves hit Steel. User can poison any Pokemon regardless of typing.",
+		shortDesc: "This Detective can hit Steel type Pokemon with her Poison-type moves.",
 	},
 	death: {
 		name: "Death",
@@ -369,8 +368,8 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	mightyphoenix: {
 		name: "Mighty Phoenix",
-		desc: "30% chance a Pokemon making contact with this Phoenix will be burned. This Phoenix is immune to Fire-type moves. The first time she is hit by a Fire-type move, her offensive stat is multiplied by 1.5 while using a Fire-type. This Phoenix can burn a Pokemon regardless of its typing.",
-	    shortDesc: "Contact: 30% to burn. Fire-type immunity. Can burn Pokemon regardless of typing.",
+		desc: "30% chance a Pokemon making contact with this Phoenix will be burned. This Phoenix is immune to Fire-type moves. The first time she is hit by a Fire-type move, her offensive stat is multiplied by 1.5 while using a Fire-type.",
+	    shortDesc: "Contact with user has 30% chance to burn. Fire-type immunity.",
 
 	    start: "  [POKEMON] the Part-Time Warrior is here!",
 	},
