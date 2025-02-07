@@ -209,7 +209,8 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	},
 	stellar: { // combines [Moxie] + [Curious Medicine] but better this.add('-activate', pokemon, 'ability: Shuba Shuba'); 
 		onStart(pokemon) {
-			this.add('-clearboost', '[from] ability: Curious Medicine', '[of] ' + pokemon);
+			this.add('-activate', pokemon, 'ability: Stellar');
+			this.add('-clearallboost');
 			for (const pokemon of this.getAllPokemon()) {
 				pokemon.clearBoosts();
 			}
