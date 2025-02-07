@@ -1660,22 +1660,20 @@ export class Pokemon {
 				this.battle.debug('immune to status');
 				if ((sourceEffect as Move)?.status) {
 					this.battle.add('-immune', this);
-				}
-				return false;
+				} 
 			}
 		}
-		else if (!ignoreImmunities && status.id &&
+		if (!ignoreImmunities && status.id &&
 				!(source?.hasAbility('detective') && ['tox', 'psn'].includes(status.id))) {
 			// the game currently never ignores immunities
 			if (!this.runStatusImmunity(status.id === 'tox' ? 'psn' : status.id)) {
 				this.battle.debug('immune to status');
 				if ((sourceEffect as Move)?.status) {
 					this.battle.add('-immune', this);
-				}
-				return false;
+				} 
 			}
 		}
-		else if (!ignoreImmunities && status.id &&
+		if (!ignoreImmunities && status.id &&
 				!(source?.hasAbility('mightyphoenix') && ['brn'].includes(status.id))) {
 			// the game currently never ignores immunities
 			if (!this.runStatusImmunity(status.id === 'brn' ? 'brn' : status.id)) {
