@@ -601,7 +601,13 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 5,
 		num: 113,
 	},
-	warcriminal: { // reskin of [Emergency Exit]/[Wimp Out]
+	warcriminal: { // reskin of [Emergency Exit]/[Wimp Out] + [Aftermath] but even better!!
+		onDamagingHitOrder: 1,
+		onDamagingHit(damage, target, source, move) {
+			if (!target.hp) {
+				this.damage(source.baseMaxhp / 2, source, target);
+			}
+		},
 		onEmergencyExit(target) {
 			if (!this.canSwitch(target.side) || target.forceSwitchFlag || target.switchFlag) return;
 			for (const side of this.sides) {

@@ -167,8 +167,10 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	warcriminal: {
 		name: "War Criminal",
-		desc: "When this War Criminal has more than 1/2 of her maximum HP and takes damage bringing her to 1/2 or less of her maximum HP, she immediately switches out to a chosen ally. This effect applies after all hits from a multi-hit move. This effect is prevented if the move had a secondary effect removed by the Sheer Force Ability. This effect applies to both direct and indirect damage, except Curse and Substitute on use, Belly Drum, Pain Split, and confusion damage.",
-		shortDesc: "This Rabbit switches out when her HP reaches 1/2 or less of her maximum HP.",
+		desc: "When this War Criminal has more than 1/2 of her maximum HP and takes damage bringing her to 1/2 or less of her maximum HP, she immediately switches out to a chosen ally. This effect applies after all hits from a multi-hit move. This effect is prevented if the move had a secondary effect removed by the Sheer Force Ability. This effect applies to both direct and indirect damage, except Curse and Substitute on use, Belly Drum, Pain Split, and confusion damage. If this Rabbit is knocked out by a Pokemon, that Pokemon loses 1/2 of its maximum HP, rounded down. If any active Pokemon has the Damp Ability, this effect is prevented.",
+		shortDesc: "User switches if HP reaches 1/2 HP or less. If KO'd, attacker loses 1/2 max HP.",
+
+		damage: "  [SOURCE] blew herself up!",
 	},
 	muscleknight: {
 		name: "Muscle Knight",
