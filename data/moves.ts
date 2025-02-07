@@ -1406,6 +1406,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		priority: 0,
 		flags: {protect: 1, mirror: 1, bullet: 1},
 		multihit: 10,
+		multiaccuracy: true,
 		secondary: null,
 		target: "normal",
 		type: "Fighting",
