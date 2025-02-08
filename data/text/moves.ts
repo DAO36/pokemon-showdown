@@ -360,8 +360,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	staticslam: {
 		name: "Static Slam",
-		desc: "Damage is calculated using this Sheep's Defense stat as her Attack, including stat stage changes. Other effects that modify the Attack stat are used as normal.",
-		shortDesc: "Uses user's Def stat as Atk in damage calculation.",
+		desc: "Has a 30% chance to paralyze the target. Damage is calculated using this Sheep's Defense stat as her Attack, including stat stage changes. Other effects that modify the Attack stat are used as normal.",
+		shortDesc: "User uses Def as Atk in damage calc. 30% to paralyze foe.",
 	},
 	candycrash: {
 		name: "Candy Crash",
