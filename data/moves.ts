@@ -2801,7 +2801,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Flying",
 		contestType: "Cool",
 	},
-	chaosstrike: { // reskin of [Present] but on crack
+	chaosstrike: { // reskin of [Present] but on crack <UNUSED>
 		num: 217,
 		accuracy: 90,
 		basePower: 0,
@@ -3218,7 +3218,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		name: "Big Cat Means Big Trouble",
 		pp: 10,
 		priority: 0,
-		flags: {bypasssub: 1, mirror: 1, contact: 1},
+		flags: {bypasssub: 1, mirror: 1, distance: 1},
 		ignoreImmunity: true,
 		onEffectiveness(typeMod, target, type, move) {
 			if (move.type !== 'Normal') return;
@@ -3230,7 +3230,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		},
 		tracksTarget: true,
 		secondary: null,
-		target: "normal",
+		target: "any",
 		type: "Normal",
 		contestType: "Beautiful",
 	},

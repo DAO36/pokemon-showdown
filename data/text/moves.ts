@@ -750,9 +750,9 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	chaosstrike: {
 		name: "Chaos Strike",
-		desc: "Has a 30% to inflict confusion on the target. If the target lost HP, the Rat takes recoil damage equal to 33% the HP lost by the target, rounded half up, but not less than 1 HP.",
+		desc: "Has a 30% chance to either Burn, Paralyze, Freeze, Poison, Badly Poison, or put the target to sleep. If this move is successful, it deals damage or heals the target. 40% chance for 40 power, 30% chance for 80 power, 10% chance for 120 power, and 20% chance to heal the target by 1/4 of its maximum HP, rounded down.",
 		shortDesc: "30% to BRN/PSN/PAR/FRZ/SLP target. ",
-	},
+	}, 
 	rolldice: {
 		name: "Roll Dice",
 		desc: "Has a 30% chance to confuse the target. The power of this move varies; 17% chance to roll a 1 for 25 base power, 17% chance to roll a 2 for 50 base power, 17% chance to roll a 3 for 75 base power, 17% chance to roll a 4 for 100 base power, 16% chance to roll a 5 for 125 base power, 16% chance to roll a 6 for 150 base power.",

@@ -438,8 +438,8 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	underworlddiva: {
 		name: "Underworld Diva",
-		desc: "This Raven is immune to Sound-type moves and has her Attack raised by 2 stages when hit by a Sound-based move.",
-		shortDesc: "Attack is raised by 2 if hit by a Sound move; Sound immunity.",
+		desc: "This Raven is immune to Sound-type moves and has her Attack raised by 1 stage when hit by a Sound-based move.",
+		shortDesc: "Attack is raised by 1 if hit by a Sound move; Sound immunity.",
 	},
 	thefuzzyone: {
 		name: "The Fuzzy One",
