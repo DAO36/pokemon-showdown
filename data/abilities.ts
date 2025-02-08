@@ -76,7 +76,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3.5,
 		num: 106,
 	},
-	reversereverse: { // SUCCESS
+	reversereverse: { // Red Card item but as an ability
 		onAfterMoveSecondary(target, source, move) {
 			if (source && source !== target && source.hp && target.hp && move && move.category !== 'Status') {
 				if (!source.isActive || !this.canSwitch(source.side) || source.forceSwitchFlag || target.forceSwitchFlag) {
@@ -95,7 +95,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 5,
 		num: 24,
 	},
-	gtfo: { // works but pls get the ability name to work pls
+	gtfo: { // SUCCESS! this ability forces the foe to switch if they hurt the user when their HP is half or less
 		onAfterMoveSecondary(target, source, move) {
 			if (target.hp <= target.maxhp / 2) {
 				if (!source.isActive || !this.canSwitch(source.side) || source.forceSwitchFlag || target.forceSwitchFlag) {
@@ -154,7 +154,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 5,
 		num: 24,
 	},
-	impatient: { // SUCCESS
+	impatient: { // SUCCESS! if the user uses moves that takes 2 turns, they take 1 turn instead (Power Herb)
 		onChargeMove(pokemon, target, move) {
 			if (pokemon.hasAbility('impatient')) {
 				this.debug('power herb - remove charge turn for ' + move.id);
@@ -181,7 +181,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			}
 			if (activate && pokemon.hasAbility('downbad')) {
 				pokemon.setBoost(boosts);
-				this.add('-clearnegativeboost', pokemon, 'ability: Down Bad'); 
+				this.add('-clearnegativeboost', pokemon, '[Down Bad]'); 
 			}
 		},
 		flags: {},
