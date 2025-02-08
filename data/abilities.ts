@@ -76,16 +76,16 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3.5,
 		num: 106,
 	},
-	reversereverse: { // bruh this didnt work
+	reversereverse: { // SUCCESS
 		onAfterMoveSecondary(target, source, move) {
 			if (source && source !== target && source.hp && target.hp && move && move.category !== 'Status') {
 				if (!source.isActive || !this.canSwitch(source.side) || source.forceSwitchFlag || target.forceSwitchFlag) {
-					return;
+					return; 
 				}
 				// The item is used up even against a pokemon with Ingrain or that otherwise can't be forced out
 				if (target.hasAbility('reversereverse')) {
 					if (this.runEvent('DragOut', source, target, move)) {
-						source.forceSwitchFlag = true;
+						source.forceSwitchFlag = true; 
 					}
 				}
 			}
@@ -95,7 +95,39 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 5,
 		num: 24,
 	},
-	immabounce: { // this didnt work bruh
+	gtfo: { // ???
+		onAfterMoveSecondary(target, source, move) {
+			if (target.hp <= target.maxhp / 2) {
+				if (!source.isActive || !this.canSwitch(source.side) || source.forceSwitchFlag || target.forceSwitchFlag) {
+					return; 
+				}
+				// The item is used up even against a pokemon with Ingrain or that otherwise can't be forced out
+				if (target.hasAbility('gtfo')) {
+					if (this.runEvent('DragOut', source, target, move)) {
+						source.forceSwitchFlag = true; 
+					}
+				}
+			}
+		},
+		flags: {},
+		name: "GTFO",
+		rating: 5,
+		num: 24,
+	}, 
+	survivalist: { // works (maybe works a little TOO much) mf literally is unkillable
+		onDamagePriority: -40,
+		onDamage(damage, target, source, effect) {
+			if (this.randomChance(1, 1) && damage >= target.hp && effect && effect.effectType === 'Move') {
+				this.add("-activate", target, '[from] ability: Survivalist');
+				return target.hp - 1;
+			}
+		},
+		flags: {},
+		name: "Survivalist",
+		rating: 5,
+		num: 24,
+	},
+	immabounce: { // this didnt work bruh wtf
 		onAfterBoost(boost, target, source, effect) {
 			if (this.activeMove?.id === 'partingshot') return;
 			let eject = false;
@@ -106,12 +138,13 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 				}
 			}
 			if (eject) {
-				if (source.hp) {
-					if (!this.canSwitch(source.side)) return;
-					if (source.volatiles['commanding'] || source.volatiles['commanded']) return;
-					for (const source of this.getAllActive()) {
-						if (source.switchFlag === true) return;
-					} 
+				if (target.hp) {
+					if (!this.canSwitch(target.side)) return;
+					if (target.volatiles['commanding'] || target.volatiles['commanded']) return;
+					for (const pokemon of this.getAllActive()) {
+						if (pokemon.switchFlag === true) return;
+					}
+					if (target.hasAbility('immabounce')) target.switchFlag = true;
 				}
 			}
 		},
@@ -120,20 +153,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 5,
 		num: 24,
 	},
-	survivalist: { // works (maybe works a little TOO much)
-		onDamagePriority: -40,
-		onDamage(damage, target, source, effect) {
-			if (this.randomChance(1, 1) && damage >= target.hp && effect && effect.effectType === 'Move') {
-				this.add("-activate", target, "Survivalist");
-				return target.hp - 1;
-			}
-		},
-		flags: {},
-		name: "Survivalist",
-		rating: 5,
-		num: 24,
-	},
-	impatient: { // ???
+	impatient: { // SUCCESS
 		onChargeMove(pokemon, target, move) {
 			if (pokemon.hasAbility('impatient')) {
 				this.debug('power herb - remove charge turn for ' + move.id);
@@ -147,7 +167,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 5,
 		num: 24,
 	}, 
-	downbad: { // this didsnt do jack diddly squat
+	downbad: { // SUCCESS
 		onUpdate(pokemon) {
 			let activate = false;
 			const boosts: SparseBoostsTable = {};
@@ -160,7 +180,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			}
 			if (activate && pokemon.hasAbility('downbad')) {
 				pokemon.setBoost(boosts);
-				this.add('-clearnegativeboost', pokemon, '[silent]');
+				this.add('-clearnegativeboost', pokemon, '[from] ability: Down Bad');
 			}
 		},
 		flags: {},
