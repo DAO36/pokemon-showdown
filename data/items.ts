@@ -121,7 +121,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		onResidualOrder: 5,
 		onResidualSubOrder: 4,
 		onResidual(pokemon) {
-			this.heal(pokemon.baseMaxhp / 8);
+			this.heal(pokemon.baseMaxhp / 4);
 		},
 		num: 234,
 		gen: 2,

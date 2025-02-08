@@ -245,9 +245,11 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	moguyummy: {
 		name: "Mogu Yummy",
-		desc: "This Cat recovers 1/2 the HP lost by the target, rounded half up. If Big Root is held by the user, the HP recovered is 1.3x normal, rounded half down.",
-		shortDesc: "User recovers 50% of the damage dealt.",
-	},
+		desc: "This Cat recovers 1/2 the HP lost by the target, rounded half up. If Big Root is held by the user, the HP recovered is 1.3x normal, rounded half down. If this move is successful and the user has not fainted, it steals the target's held Berry if it is holding one and eats it immediately, gaining its effects even if the user's item is being ignored. Items lost to this move cannot be regained with Recycle or the Harvest Ability.",
+		shortDesc: "Heals 50% of damage dealt; Steals & eats target's Berry.",
+
+		removeItem: "  [SOURCE] stole and ate [POKEMON]'s [ITEM]!",
+	}, 
 	tarotattack: {
 		name: "Tarot Attack",
 		desc: "Hits two to five times. Has a 35% chance to hit two or three times and a 15% chance to hit four or five times. If one of the hits breaks the target's substitute, it will take damage for the remaining hits. If the user has the Skill Link Ability, this move will always hit five times. If the user is holding Loaded Dice, this move will hit 4-5 times.",

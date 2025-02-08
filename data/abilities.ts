@@ -76,6 +76,138 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3.5,
 		num: 106,
 	},
+	reversereverse: { // 
+		onDamagingHitOrder: 1,
+		onDamagingHit(damage, target, source, move) {
+			if (source && source !== target && source.hp && target.hp && move && move.category !== 'Status') {
+				if (!source.isActive || !this.canSwitch(source.side) || source.forceSwitchFlag || target.forceSwitchFlag) {
+					return;
+				} 
+			}
+		},
+		flags: {},
+		name: "Reverse Reverse",
+		rating: 5,
+		num: 24,
+	},
+	immabounce: { // 
+		onAfterBoost(boost, target, source, effect) {
+			if (this.activeMove?.id === 'partingshot') return;
+			let eject = false;
+			let i: BoostID;
+			for (i in boost) {
+				if (boost[i]! < 0) {
+					eject = true;
+				}
+			}
+			if (eject) {
+				if (target.hp) {
+					if (!this.canSwitch(target.side)) return;
+					if (target.volatiles['commanding'] || target.volatiles['commanded']) return;
+					for (const pokemon of this.getAllActive()) {
+						if (pokemon.switchFlag === true) return;
+					} 
+				}
+			}
+		},
+		flags: {},
+		name: "Imma Bounce",
+		rating: 5,
+		num: 24,
+	},
+	survivalist: { // 
+		onDamagePriority: -40,
+		onDamage(damage, target, source, effect) {
+			if (this.randomChance(1, 1) && damage >= target.hp && effect && effect.effectType === 'Move') {
+				this.add("-activate", target, "Survivalist");
+				return target.hp - 1;
+			}
+		},
+		flags: {},
+		name: "Survivalist",
+		rating: 5,
+		num: 24,
+	},
+	impatient: { // 
+		onChargeMove(pokemon, target, move) {
+			if (pokemon.useItem()) {
+				this.debug('power herb - remove charge turn for ' + move.id);
+				this.attrLastMove('[still]');
+				this.addMove('-anim', pokemon, move.name, target);
+				return false; // skip charge turn
+			}
+		},
+		flags: {},
+		name: "Impatient",
+		rating: 5,
+		num: 24,
+	},
+	theresistance: { // 
+		onUpdate(pokemon) {
+			if (pokemon.hp <= pokemon.maxhp / 2) {
+				pokemon.hasAbility('theresistance');
+			} 
+			const stats: BoostID[] = [];
+			let stat: BoostID;
+			for (stat in pokemon.boosts) {
+				if (stat !== 'accuracy' && stat !== 'evasion' && pokemon.boosts[stat] < 6) {
+					stats.push(stat);
+				}
+			}
+			if (stats.length) {
+				const randomStat = this.sample(stats);
+				const boost: SparseBoostsTable = {};
+				boost[randomStat] = 2;
+				this.boost(boost);
+			}
+		},
+		flags: {},
+		name: "The Resistance",
+		rating: 5,
+		num: 24,
+	},
+	weatherman: { // 
+		onStart(pokemon) {
+			if (!pokemon.ignoringItem()) return;
+			if (['sunnyday', 'raindance', 'desolateland', 'primordialsea'].includes(this.field.effectiveWeather())) {
+				this.runEvent('WeatherChange', pokemon, pokemon, this.effect);
+			}
+		},
+		onUpdate(pokemon) {
+			if (!this.effectState.inactive) return;
+			this.effectState.inactive = false;
+			if (['sunnyday', 'raindance', 'desolateland', 'primordialsea'].includes(this.field.effectiveWeather())) {
+				this.runEvent('WeatherChange', pokemon, pokemon, this.effect);
+			}
+		},
+		onEnd(pokemon) {
+			if (['sunnyday', 'raindance', 'desolateland', 'primordialsea'].includes(this.field.effectiveWeather())) {
+				this.runEvent('WeatherChange', pokemon, pokemon, this.effect);
+			}
+			this.effectState.inactive = true;
+		},
+		flags: {},
+		name: "Weatherman",
+		rating: 5,
+		num: 24,
+	},
+	downbad: { // 
+		onUpdate(pokemon) {
+			let activate = false;
+			const boosts: SparseBoostsTable = {};
+			let i: BoostID;
+			for (i in pokemon.boosts) {
+				if (pokemon.boosts[i] < 0) {
+					activate = true;
+					boosts[i] = 0;
+				}
+			} 
+		},
+		flags: {},
+		name: "Down Bad",
+		rating: 5,
+		num: 24,
+	},
 	babydonthurtme: { // any pokemon that attacks the user loses 1/8 of their max hp
 		onDamagingHitOrder: 1,
 		onDamagingHit(damage, target, source, move) {

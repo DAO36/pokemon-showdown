@@ -1251,7 +1251,7 @@ export const ItemsText: {[id: IDEntry]: ItemText} = {
 	},
 	junkfood: {
 		name: "Junk Food",
-		shortDesc: "At the end of every turn, holder restores 1/8 of its max HP.",
+		shortDesc: "At the end of every turn, holder restores 1/4 of its max HP.",
 
 		heal: "  [POKEMON] is gourging on McRonald's!",
 	},

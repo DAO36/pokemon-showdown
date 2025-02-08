@@ -2109,7 +2109,7 @@ export class Pokemon {
 		case 'raindance':
 		case 'desolateland':
 		case 'primordialsea':
-			if (this.hasItem('utilityumbrella')) return '';
+			if (this.hasItem('utilityumbrella')) return ''; if (this.hasAbility('weatherman')) return '';
 		}
 		return weather;
 	}
