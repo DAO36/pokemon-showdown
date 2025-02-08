@@ -179,13 +179,13 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 					boosts[i] = 0;
 				}
 			}
-			if (activate && pokemon.hasAbility('downbad')) {
+			if (activate) {
 				pokemon.setBoost(boosts);
-				this.add('-clearnegativeboost', pokemon, '[Down Bad]'); 
+				this.add('-clearnegativeboost', pokemon, '[from] ability: Curious Medicine');
 			}
 		},
 		flags: {},
-		name: "Down Bad",
+		name: "Down Bad", // this.add('-clearboost', ally, '[from] ability: Curious Medicine', '[of] ' + pokemon);
 		rating: 5,
 		num: 24,
 	},
