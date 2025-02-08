@@ -77,7 +77,6 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		num: 106,
 	},
 	reversereverse: { // SUCCESS
-		onDamagePriority: 1,
 		onAfterMoveSecondary(target, source, move) {
 			if (source && source !== target && source.hp && target.hp && move && move.category !== 'Status') {
 				if (!source.isActive || !this.canSwitch(source.side) || source.forceSwitchFlag || target.forceSwitchFlag) {
