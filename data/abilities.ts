@@ -95,7 +95,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 5,
 		num: 24,
 	},
-	gtfo: { // SUCCESS! this ability forces the foe to switch if they hurt the user when their HP is half or less
+	gtfo: { // Sreskin of [Emergency Exit]/[Wimp Out] + [RED CARD] as an ability
 		onAfterMoveSecondary(target, source, move) {
 			if (target.hp <= target.maxhp / 2) {
 				if (!source.isActive || !this.canSwitch(source.side) || source.forceSwitchFlag || target.forceSwitchFlag) {
@@ -109,6 +109,15 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 					}
 				}
 			}
+		},
+		onEmergencyExit(target) {
+			if (!this.canSwitch(target.side) || target.forceSwitchFlag || target.switchFlag) return;
+			for (const side of this.sides) {
+				for (const active of side.active) {
+					active.switchFlag = false;
+				}
+			}
+			target.switchFlag = true; 
 		},
 		flags: {},
 		name: "GTFO",
@@ -171,10 +180,10 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 5,
 		num: 24,
 	}, 
-	downbad: { // SUCCESS! if the user's stats are lowered bc of a move it uses, the lowered stats are reset back to zer0
+	stayingup: { // SUCCESS! if the user's stats are lowered bc of a move it uses, the lowered stats are reset back to zer0
 		onUpdate(pokemon) {
 			let activate = false;
-			const boosts: SparseBoostsTable = {}; // this.add('-ability', pokemon, ability, '[from] ability: Trace', '[of] ' + target);
+			const boosts: SparseBoostsTable = {};  
 			let i: BoostID;
 			for (i in pokemon.boosts) {
 				if (pokemon.boosts[i] < 0) {
@@ -184,12 +193,12 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			}
 			if (activate) {
 				pokemon.setBoost(boosts);  
-				this.add('-activate', pokemon, 'ability: Down Bad');
+				this.add('-activate', pokemon, 'ability: Staying Up');
 			    this.add('-clearnegativeboost', pokemon);
 			}
 		},
 		flags: {},
-		name: "Down Bad", // this.add('-clearboost', ally, '[from] ability: Curious Medicine', '[of] ' + pokemon);
+		name: "Staying Up", 
 		rating: 5,
 		num: 24,
 	}, 
@@ -719,6 +728,32 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 5,
 		num: 113,
 	},
+	pekopeko: { // [Effect Spore] but on crack
+		onDamagingHitOrder: 1,
+		onDamagingHit(damage, target, source, move) {
+			if (move.category === 'Special' || move.category === 'Physical' && !source.status) {
+				const r = this.random(100);
+				if (r < 5) {
+					source.setStatus('par', target);
+				} else if (r < 10) {
+					source.setStatus('brn', target);
+				} else if (r < 15) {
+					source.setStatus('tox', target);
+				} else if (r < 20) {
+					source.setStatus('slp', target);
+				} else if (r < 25) {
+					source.setStatus('frz', target);
+				} else if (r < 30) {
+					source.addVolatile('confusion', target);
+				}
+				 
+			}
+		},
+		flags: {},
+		name: "Peko Peko",
+		rating: 2,
+		num: 27,
+	},
 	warcriminal: { // reskin of [Emergency Exit]/[Wimp Out] + [Aftermath] but even better!!
 		onDamagingHitOrder: 1,
 		onDamagingHit(damage, target, source, move) {
@@ -741,35 +776,6 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 1.5,
 		num: 194,
 	},
-	pekopeko: { // Sreskin of [Emergency Exit]/[Wimp Out] + [RED CARD] as an ability
-		onAfterMoveSecondary(target, source, move) {
-			if (target.hp <= target.maxhp / 2) {
-				if (!source.isActive || !this.canSwitch(source.side) || source.forceSwitchFlag || target.forceSwitchFlag) {
-					return; 
-				}
-				// The item is used up even against a pokemon with Ingrain or that otherwise can't be forced out
-				if (target.hasAbility('pekopeko')) {
-					if (this.runEvent('DragOut', source, target, move)) {
-						source.forceSwitchFlag = true; 
-						this.add('-activate', target, 'ability: Peko Peko');
-					}
-				}
-			}
-		},
-		onEmergencyExit(target) {
-			if (!this.canSwitch(target.side) || target.forceSwitchFlag || target.switchFlag) return;
-			for (const side of this.sides) {
-				for (const active of side.active) {
-					active.switchFlag = false;
-				}
-			}
-			target.switchFlag = true; 
-		},
-		flags: {},
-		name: "Peko Peko",
-		rating: 5,
-		num: 24,
-	}, 
 	muscleknight: { // reskin of [Iron Fist] but even better
 		onBasePowerPriority: 19,
 		onBasePower(basePower, attacker, defender, move) {
@@ -1734,32 +1740,6 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 2,
 		num: 133,
 	},
-	chaos: { // [Effect Spore] but on crack
-		onDamagingHitOrder: 1,
-		onDamagingHit(damage, target, source, move) {
-			if (move.category === 'Special' || move.category === 'Physical' && !source.status) {
-				const r = this.random(100);
-				if (r < 5) {
-					source.setStatus('par', target);
-				} else if (r < 10) {
-					source.setStatus('brn', target);
-				} else if (r < 15) {
-					source.setStatus('tox', target);
-				} else if (r < 20) {
-					source.setStatus('slp', target);
-				} else if (r < 25) {
-					source.setStatus('frz', target);
-				} else if (r < 30) {
-					source.addVolatile('confusion', target);
-				}
-				 
-			}
-		},
-		flags: {},
-		name: "Chaos",
-		rating: 2,
-		num: 27,
-	},
 	chaos2: { // <UNUSED VARIANT>
 		onDamagingHitOrder: 1,
 		onDamagingHit(damage, target, source, move) {
@@ -1786,6 +1766,26 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 2,
 		num: 27,
 	},
+	chaos: { // [Red Card ITEM] but as an ability
+		onAfterMoveSecondary(target, source, move) {
+			if (target.hp <= target.maxhp / 2) {
+				if (!source.isActive || !this.canSwitch(source.side) || source.forceSwitchFlag || target.forceSwitchFlag) {
+					return; 
+				}
+				// The item is used up even against a pokemon with Ingrain or that otherwise can't be forced out
+				if (target.hasAbility('chaos')) {
+					if (this.runEvent('DragOut', source, target, move)) {
+						source.forceSwitchFlag = true; 
+						this.add('-activate', target, 'ability: Chaos');
+					}
+				}
+			}
+		},
+		flags: {},
+		name: "Chaos",
+		rating: 5,
+		num: 24,
+	}, 
 	archivist: { // combines [Oppurtunist] with [Costar] but copies Foes stats instead of Allys stats
 		onPreStart(pokemon) {  
 			const foe = pokemon.foes()[0];

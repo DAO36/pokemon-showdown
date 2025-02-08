@@ -24,6 +24,16 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 
 		damage: "  [POKEMON] got nuked!",
 	},
+	impatient: {
+		name: "Power Herb",
+		desc: "If the user uses a two-turn move, it will complete in one turn instead (except Sky Drop). If the user uses a move that require recharging after (Hyper Beam, Giga Impact, etc.), user is not affected by the recharge status.",
+		shortDesc: "2-turn moves complete in 1 turn. Unaffected by recharge.",
+	},
+	whiteherb: {
+		name: "White Herb",
+		desc: "Restores all lowered stat stages to 0 when one is less than 0, whether as a result of an opposing Pokemon (Parting Shot, Intimidate, etc.) or a self-inflicted reason (Close Combat, Draco Meteor, etc.).",
+		shortDesc: "Restores all lowered stat stages to 0 when one is less than 0.",
+	},
 	babydonthurtme: {
 		name: "Baby Dont Hurt Me",
 		desc: "Pokemon that attack this Pokemon lose 1/8 of their maximum HP, rounded down.",
@@ -171,6 +181,11 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 		shortDesc: "User switches if HP reaches 1/2 HP or less. If KO'd, attacker loses 1/2 max HP.",
 
 		damage: "  [SOURCE] blew herself up!",
+	},
+	pekopeko: {
+		name: "Peko Peko",
+		desc: "30% chance a Pokemon using an attacking move on this War Criminal will be badly poisoned, paralyzed, fall asleep, frozen, burned or confused.",
+		shortDesc: "30% chance to PSN/PAR/SLP/FRZ/BRN/Confuse those that attack this Rabbit.",
 	},
 	muscleknight: {
 		name: "Muscle Knight",
@@ -405,9 +420,9 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 		shortDesc: "If hit by a special attack, Special Defense is lowered by 1, Speed is raised by 2.",
 	},
 	chaos: {
-		name: "Chaos",
-		desc: "30% chance a Pokemon using an attacking move on this Harbinger of Chaos will be badly poisoned, paralyzed, fall asleep, frozen, burned or confused.",
-		shortDesc: "30% chance of PSN/PAR/SLP/FRZ/BRN/Confusion on those that attack this Rat.",
+		name: "Red Card",
+		desc: "If this Rat survives a hit, and her HP is at half of her maximum HP or less, the attacker is forced to switch to a random ally.",
+		shortDesc: "If user survives a hit and at <50% HP, attacker is forced to switch to random ally.",
 	},
 	archivist: {
 		name: "Archivist",
