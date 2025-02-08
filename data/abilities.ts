@@ -171,7 +171,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 5,
 		num: 24,
 	}, 
-	downbad: { // get the ability name pop-up to work pls
+	downbad: { // SUCCESS! if the user's stats are lowered bc of a move it uses, the lowered stats are reset back to zer0
 		onUpdate(pokemon) {
 			let activate = false;
 			const boosts: SparseBoostsTable = {}; // this.add('-ability', pokemon, ability, '[from] ability: Trace', '[of] ' + target);
@@ -748,18 +748,12 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 					return; 
 				}
 				// The item is used up even against a pokemon with Ingrain or that otherwise can't be forced out
-				if (target.hasAbility('gtfo')) {
+				if (target.hasAbility('pekopeko')) {
 					if (this.runEvent('DragOut', source, target, move)) {
 						source.forceSwitchFlag = true; 
 						this.add('-activate', target, 'ability: Peko Peko');
 					}
 				}
-			}
-		},
-		onDamagingHitOrder: 1,
-		onDamagingHit(damage, target, source, move) {
-			if (!target.hp) {
-				this.damage(source.baseMaxhp / 2, source, target);
 			}
 		},
 		onEmergencyExit(target) {
