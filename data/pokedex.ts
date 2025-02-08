@@ -18563,7 +18563,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		types: ["Fairy", "Grass"],
 		gender: "F",
 		baseStats: {hp: 80, atk: 130, def: 90, spa: 155, spd: 175, spe: 70},
-		abilities: {0: "Magic Bounce"},
+		abilities: {0: "Flash Fire"},
 		heightm: 1.52,
 		weightkg: 55.5,
 		color: "Pink",

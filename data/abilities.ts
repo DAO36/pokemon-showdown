@@ -741,7 +741,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 1.5,
 		num: 194,
 	},
-	pekopeko: { // SUCCESS! this ability forces the foe to switch if they hurt the user when their HP is half or less
+	pekopeko: { // Sreskin of [Emergency Exit]/[Wimp Out] + [RED CARD] as an ability
 		onAfterMoveSecondary(target, source, move) {
 			if (target.hp <= target.maxhp / 2) {
 				if (!source.isActive || !this.canSwitch(source.side) || source.forceSwitchFlag || target.forceSwitchFlag) {
@@ -763,8 +763,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 					active.switchFlag = false;
 				}
 			}
-			target.switchFlag = true;
-			this.add('-activate', target, 'ability: Peko Peko');
+			target.switchFlag = true; 
 		},
 		flags: {},
 		name: "Peko Peko",
