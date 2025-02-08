@@ -1306,7 +1306,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		flags: {contact: 1, protect: 1, mirror: 1, gravity: 1},
 		overrideOffensiveStat: 'def',
 		secondary: {
-			chance: 10,
+			chance: 30,
 			status: 'par',
 		},
 		target: "normal",
