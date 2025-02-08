@@ -99,12 +99,13 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		onAfterMoveSecondary(target, source, move) {
 			if (target.hp <= target.maxhp / 2) {
 				if (!source.isActive || !this.canSwitch(source.side) || source.forceSwitchFlag || target.forceSwitchFlag) {
-					this.add('-activate', target, 'ability: GTFO'); 
+					return; 
 				}
 				// The item is used up even against a pokemon with Ingrain or that otherwise can't be forced out
 				if (target.hasAbility('gtfo')) {
 					if (this.runEvent('DragOut', source, target, move)) {
 						source.forceSwitchFlag = true; 
+						this.add('-activate', target, 'ability: Down Bad');
 					}
 				}
 			}
@@ -180,8 +181,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			}
 			if (activate && pokemon.hasAbility('downbad')) {
 				pokemon.setBoost(boosts);
-				this.add('-activate', pokemon, 'ability: Down Bad');
-				this.add('-clearnegativeboost');
+				this.add('-clearnegativeboost', '-activate', pokemon, 'ability: Down Bad'); 
 			}
 		},
 		flags: {},
