@@ -155,6 +155,9 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		num: 24,
 	},
 	impatient: { // SUCCESS! if the user uses moves that takes 2 turns, they take 1 turn instead (Power Herb)
+		onTryAddVolatile(status, pokemon) {
+			if (status.id === 'mustrecharge') return null;
+		},
 		onChargeMove(pokemon, target, move) {
 			if (pokemon.hasAbility('impatient')) {
 				this.debug('power herb - remove charge turn for ' + move.id);
@@ -180,8 +183,8 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 				}
 			}
 			if (activate) {
-				pokemon.setBoost(boosts);
-				this.add('-clearnegativeboost', pokemon, '[Down Bad]');
+				pokemon.setBoost(boosts);  
+				this.add('-activate', pokemon, 'ability: Down Bad', '-clearnegativeboost'); 
 			}
 		},
 		flags: {},
@@ -320,7 +323,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 2.5,
 		num: 270,
 	},
-	stellar: { // combines [Moxie] + [Curious Medicine] but better this.add('-activate', pokemon, 'ability: Shuba Shuba'); 
+	stellar: { // combines [Moxie] + [Curious Medicine] but better
 		onStart(pokemon) {
 			this.add('-activate', pokemon, 'ability: Stellar');
 			this.add('-clearallboost');
