@@ -77,6 +77,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		num: 106,
 	},
 	reversereverse: { // SUCCESS
+		onDamagePriority: 1,
 		onAfterMoveSecondary(target, source, move) {
 			if (source && source !== target && source.hp && target.hp && move && move.category !== 'Status') {
 				if (!source.isActive || !this.canSwitch(source.side) || source.forceSwitchFlag || target.forceSwitchFlag) {
@@ -95,7 +96,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 5,
 		num: 24,
 	},
-	gtfo: { // ???
+	gtfo: { // works but pls get the ability name to work pls
 		onAfterMoveSecondary(target, source, move) {
 			if (target.hp <= target.maxhp / 2) {
 				if (!source.isActive || !this.canSwitch(source.side) || source.forceSwitchFlag || target.forceSwitchFlag) {
@@ -118,7 +119,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		onDamagePriority: -40,
 		onDamage(damage, target, source, effect) {
 			if (this.randomChance(1, 1) && damage >= target.hp && effect && effect.effectType === 'Move') {
-				this.add("-activate", target, '[from] ability: Survivalist');
+				this.add("-activate", target, 'ability: Survivalist'); 
 				return target.hp - 1;
 			}
 		},
@@ -127,7 +128,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 5,
 		num: 24,
 	},
-	immabounce: { // this didnt work bruh wtf
+	immabounce: { // works but get the ability popup name to work poor favor
 		onAfterBoost(boost, target, source, effect) {
 			if (this.activeMove?.id === 'partingshot') return;
 			let eject = false;
@@ -167,7 +168,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 5,
 		num: 24,
 	}, 
-	downbad: { // SUCCESS
+	downbad: { // get the ability name pop-up to work pls
 		onUpdate(pokemon) {
 			let activate = false;
 			const boosts: SparseBoostsTable = {};
@@ -180,7 +181,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			}
 			if (activate && pokemon.hasAbility('downbad')) {
 				pokemon.setBoost(boosts);
-				this.add('-clearnegativeboost', pokemon, '[from] ability: Down Bad');
+				this.add('-clearnegativeboost', pokemon, 'ability: Down Bad');
 			}
 		},
 		flags: {},
