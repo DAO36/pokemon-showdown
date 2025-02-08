@@ -469,11 +469,10 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 		desc: "On switch-in, this Automotan's Defense or Special Defense is raised by 1 stage based on the weaker combined offensive stat of all opposing Pokemon. Physical Defense is raised ny 1 if their Physical Attack is higher, and Special Defense is raised by 1 if their Special Attack is the same or higher.",
 		shortDesc: "On switch-in, Def or SpDef raises by 1 based on foes' weaker Offensive stat.",
 	},
-	bigcatmeansbigtrouble: {
-		name: "Big Cat Means Big Trouble",
-		desc: "This Cat's bite-based attacks have her power multiplied by 1.5.",
-		shortDesc: "Bite-based attacks have 1.5x power.",
-	},
+	godeyes: {
+		name: "God Eyes",
+		shortDesc: "Every move used by this Big Cat will always hit and never miss.",
+	}, 
 	adaptability: {
 		name: "Adaptability",
 		desc: "This Pokemon's moves that match one of its types have a same-type attack bonus (STAB) of 2 instead of 1.5.",

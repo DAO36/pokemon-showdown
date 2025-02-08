@@ -3210,12 +3210,12 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Electric",
 		contestType: "Beautiful",
 	},
-	godeyes: { // a normal type move that can hit ghost types
+	bigcatmeansbigtrouble: { // a normal type move that can hit ghost types
 		num: 573,
 		accuracy: true,
 		basePower: 70,
 		category: "Physical",
-		name: "God Eyes",
+		name: "Big Cat Means Big Trouble",
 		pp: 10,
 		priority: 0,
 		flags: {bypasssub: 1, mirror: 1, contact: 1},
@@ -3234,12 +3234,12 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Normal",
 		contestType: "Beautiful",
 	},
-	mamamia: { // normal type crunch but it heals
+	chattinichomp: { // normal type crunch but it heals
 		num: 370,
 		accuracy: 100,
 		basePower: 80,
 		category: "Physical",
-		name: "Mama Mia",
+		name: "Chattini Chomp",
 		pp: 10,
 		priority: 0,
 		flags: {contact: 1, protect: 1, mirror: 1, heal: 1, bite: 1},

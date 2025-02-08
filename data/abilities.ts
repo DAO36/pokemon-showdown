@@ -1967,17 +1967,21 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3.5,
 		num: 88,
 	},
-	bigcatmeansbigtrouble: { // reskin of [Strong Jaw]
-		onBasePowerPriority: 19,
-		onBasePower(basePower, attacker, defender, move) {
-			if (move.flags['bite']) {
-				return this.chainModify(1.5);
+	godeyes: {
+		onAnyInvulnerabilityPriority: 1,
+		onAnyInvulnerability(target, source, move) {
+			if (move && (source === this.effectState.target)) return 0;
+		},
+		onAnyAccuracy(accuracy, target, source, move) {
+			if (move && (source === this.effectState.target)) {
+				return true;
 			}
+			return accuracy;
 		},
 		flags: {},
-		name: "Big Cat Means Big Trouble",
-		rating: 3.5,
-		num: 173,
+		name: "God Eyes",
+		rating: 4,
+		num: 99,
 	},
 	adaptability: {
 		onModifySTAB(stab, source, target, move) {
