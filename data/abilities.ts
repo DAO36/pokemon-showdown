@@ -105,7 +105,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 				if (target.hasAbility('gtfo')) {
 					if (this.runEvent('DragOut', source, target, move)) {
 						source.forceSwitchFlag = true; 
-						this.add('-activate', target, 'ability: Down Bad');
+						this.add('-activate', target, 'ability: GTFO');
 					}
 				}
 			}
@@ -181,7 +181,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			}
 			if (activate && pokemon.hasAbility('downbad')) {
 				pokemon.setBoost(boosts);
-				this.add('-clearnegativeboost', '-activate', pokemon, 'ability: Down Bad'); 
+				this.add('-clearnegativeboost', pokemon, 'ability: Down Bad'); 
 			}
 		},
 		flags: {},
