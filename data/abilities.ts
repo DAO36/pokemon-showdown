@@ -76,13 +76,18 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3.5,
 		num: 106,
 	},
-	reversereverse: { // 
-		onDamagingHitOrder: 1,
-		onDamagingHit(damage, target, source, move) {
+	reversereverse: { // bruh this didnt work
+		onAfterMoveSecondary(target, source, move) {
 			if (source && source !== target && source.hp && target.hp && move && move.category !== 'Status') {
 				if (!source.isActive || !this.canSwitch(source.side) || source.forceSwitchFlag || target.forceSwitchFlag) {
 					return;
-				} 
+				}
+				// The item is used up even against a pokemon with Ingrain or that otherwise can't be forced out
+				if (target.hasAbility('reversereverse')) {
+					if (this.runEvent('DragOut', source, target, move)) {
+						source.forceSwitchFlag = true;
+					}
+				}
 			}
 		},
 		flags: {},
@@ -90,7 +95,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 5,
 		num: 24,
 	},
-	immabounce: { // 
+	immabounce: { // this didnt work bruh
 		onAfterBoost(boost, target, source, effect) {
 			if (this.activeMove?.id === 'partingshot') return;
 			let eject = false;
@@ -101,11 +106,11 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 				}
 			}
 			if (eject) {
-				if (target.hp) {
-					if (!this.canSwitch(target.side)) return;
-					if (target.volatiles['commanding'] || target.volatiles['commanded']) return;
-					for (const pokemon of this.getAllActive()) {
-						if (pokemon.switchFlag === true) return;
+				if (source.hp) {
+					if (!this.canSwitch(source.side)) return;
+					if (source.volatiles['commanding'] || source.volatiles['commanded']) return;
+					for (const source of this.getAllActive()) {
+						if (source.switchFlag === true) return;
 					} 
 				}
 			}
@@ -115,7 +120,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 5,
 		num: 24,
 	},
-	survivalist: { // 
+	survivalist: { // works (maybe works a little TOO much)
 		onDamagePriority: -40,
 		onDamage(damage, target, source, effect) {
 			if (this.randomChance(1, 1) && damage >= target.hp && effect && effect.effectType === 'Move') {
@@ -128,9 +133,9 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 5,
 		num: 24,
 	},
-	impatient: { // 
+	impatient: { // ???
 		onChargeMove(pokemon, target, move) {
-			if (pokemon.useItem()) {
+			if (pokemon.hasAbility('impatient')) {
 				this.debug('power herb - remove charge turn for ' + move.id);
 				this.attrLastMove('[still]');
 				this.addMove('-anim', pokemon, move.name, target);
@@ -141,57 +146,8 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		name: "Impatient",
 		rating: 5,
 		num: 24,
-	},
-	theresistance: { // 
-		onUpdate(pokemon) {
-			if (pokemon.hp <= pokemon.maxhp / 2) {
-				pokemon.hasAbility('theresistance');
-			} 
-			const stats: BoostID[] = [];
-			let stat: BoostID;
-			for (stat in pokemon.boosts) {
-				if (stat !== 'accuracy' && stat !== 'evasion' && pokemon.boosts[stat] < 6) {
-					stats.push(stat);
-				}
-			}
-			if (stats.length) {
-				const randomStat = this.sample(stats);
-				const boost: SparseBoostsTable = {};
-				boost[randomStat] = 2;
-				this.boost(boost);
-			}
-		},
-		flags: {},
-		name: "The Resistance",
-		rating: 5,
-		num: 24,
-	},
-	weatherman: { // 
-		onStart(pokemon) {
-			if (!pokemon.ignoringItem()) return;
-			if (['sunnyday', 'raindance', 'desolateland', 'primordialsea'].includes(this.field.effectiveWeather())) {
-				this.runEvent('WeatherChange', pokemon, pokemon, this.effect);
-			}
-		},
-		onUpdate(pokemon) {
-			if (!this.effectState.inactive) return;
-			this.effectState.inactive = false;
-			if (['sunnyday', 'raindance', 'desolateland', 'primordialsea'].includes(this.field.effectiveWeather())) {
-				this.runEvent('WeatherChange', pokemon, pokemon, this.effect);
-			}
-		},
-		onEnd(pokemon) {
-			if (['sunnyday', 'raindance', 'desolateland', 'primordialsea'].includes(this.field.effectiveWeather())) {
-				this.runEvent('WeatherChange', pokemon, pokemon, this.effect);
-			}
-			this.effectState.inactive = true;
-		},
-		flags: {},
-		name: "Weatherman",
-		rating: 5,
-		num: 24,
-	},
-	downbad: { // 
+	}, 
+	downbad: { // this didsnt do jack diddly squat
 		onUpdate(pokemon) {
 			let activate = false;
 			const boosts: SparseBoostsTable = {};
@@ -201,7 +157,11 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 					activate = true;
 					boosts[i] = 0;
 				}
-			} 
+			}
+			if (activate && pokemon.hasAbility('downbad')) {
+				pokemon.setBoost(boosts);
+				this.add('-clearnegativeboost', pokemon, '[silent]');
+			}
 		},
 		flags: {},
 		name: "Down Bad",
