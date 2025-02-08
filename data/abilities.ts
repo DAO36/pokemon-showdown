@@ -184,7 +184,8 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			}
 			if (activate) {
 				pokemon.setBoost(boosts);  
-				this.add('-activate', pokemon, 'ability: Down Bad', '-clearnegativeboost'); 
+				this.add('-activate', pokemon, 'ability: Down Bad');
+			    this.add('-clearnegativeboost', pokemon);
 			}
 		},
 		flags: {},
@@ -740,6 +741,42 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 1.5,
 		num: 194,
 	},
+	pekopeko: { // SUCCESS! this ability forces the foe to switch if they hurt the user when their HP is half or less
+		onAfterMoveSecondary(target, source, move) {
+			if (target.hp <= target.maxhp / 2) {
+				if (!source.isActive || !this.canSwitch(source.side) || source.forceSwitchFlag || target.forceSwitchFlag) {
+					return; 
+				}
+				// The item is used up even against a pokemon with Ingrain or that otherwise can't be forced out
+				if (target.hasAbility('gtfo')) {
+					if (this.runEvent('DragOut', source, target, move)) {
+						source.forceSwitchFlag = true; 
+						this.add('-activate', target, 'ability: Peko Peko');
+					}
+				}
+			}
+		},
+		onDamagingHitOrder: 1,
+		onDamagingHit(damage, target, source, move) {
+			if (!target.hp) {
+				this.damage(source.baseMaxhp / 2, source, target);
+			}
+		},
+		onEmergencyExit(target) {
+			if (!this.canSwitch(target.side) || target.forceSwitchFlag || target.switchFlag) return;
+			for (const side of this.sides) {
+				for (const active of side.active) {
+					active.switchFlag = false;
+				}
+			}
+			target.switchFlag = true;
+			this.add('-activate', target, 'ability: Peko Peko');
+		},
+		flags: {},
+		name: "Peko Peko",
+		rating: 5,
+		num: 24,
+	}, 
 	muscleknight: { // reskin of [Iron Fist] but even better
 		onBasePowerPriority: 19,
 		onBasePower(basePower, attacker, defender, move) {
