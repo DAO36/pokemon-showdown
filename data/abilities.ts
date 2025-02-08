@@ -171,7 +171,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	downbad: { // get the ability name pop-up to work pls
 		onUpdate(pokemon) {
 			let activate = false;
-			const boosts: SparseBoostsTable = {};
+			const boosts: SparseBoostsTable = {}; // this.add('-ability', pokemon, ability, '[from] ability: Trace', '[of] ' + target);
 			let i: BoostID;
 			for (i in pokemon.boosts) {
 				if (pokemon.boosts[i] < 0) {
@@ -181,14 +181,14 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			}
 			if (activate) {
 				pokemon.setBoost(boosts);
-				this.add('-clearnegativeboost', pokemon);
+				this.add('-clearnegativeboost', pokemon, '[Down Bad]');
 			}
 		},
 		flags: {},
 		name: "Down Bad", // this.add('-clearboost', ally, '[from] ability: Curious Medicine', '[of] ' + pokemon);
 		rating: 5,
 		num: 24,
-	},
+	}, 
 	babydonthurtme: { // any pokemon that attacks the user loses 1/8 of their max hp
 		onDamagingHitOrder: 1,
 		onDamagingHit(damage, target, source, move) {
