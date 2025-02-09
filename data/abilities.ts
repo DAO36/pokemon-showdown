@@ -1481,7 +1481,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	},
 	blacksmith: { // a 
 		onTryHit(target, source, move) {
-			if (target !== source && move.type === 'Grass') {
+			if (target !== source && move.type === 'Ground') {
 				if (!this.heal(target.baseMaxhp / 4, target, target)) {
 					this.add('-immune', target, '[from] ability: Blacksmith');
 				}
