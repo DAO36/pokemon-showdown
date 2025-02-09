@@ -2270,7 +2270,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		target: "normal",
 		type: "Psychic",
 	},
-	timetravel: {
+	timetravel: { // reskin of [Shadow Force]
 		num: 800,
 		accuracy: 90,
 		basePower: 130,
@@ -2316,7 +2316,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Ground",
 		contestType: "Cool",
 	},
-	groundpound: {
+	groundpound: { 
 		num: 19,
 		accuracy: 90,
 		basePower: 140,
@@ -2358,7 +2358,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Ground",
 		contestType: "Clever",
 	},
-	bubbabite: {
+	bubbabite: { // Poison type [Crunch]
 		num: 331,
 		accuracy: 95,
 		basePower: 95,
@@ -2375,7 +2375,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Poison",
 		contestType: "Cool",
 	},
-	gamerrage: {
+	gamerrage: { // poison type [Hyper Beam]
 		num: 416,
 		accuracy: 90,
 		basePower: 140,
@@ -2395,13 +2395,13 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Poison",
 		contestType: "Tough",
 	},
-	interdimensionaldetective: {
+	interdimensionaldetective: { // psychic type [Meteor Beam]
 		num: 800,
 		accuracy: 90,
 		basePower: 130,
 		category: "Physical",
 		name: "Interdimensional Detective",
-		pp: 10,
+		pp: 5,
 		priority: 0,
 		flags: {charge: 1, protect: 1, mirror: 1, bullet: 1, distance: 1},
 		onTryMove(attacker, defender, move) {
