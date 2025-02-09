@@ -2757,11 +2757,9 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		name: "Black Hole",
 		pp: 5,
 		priority: 0,
-		flags: {protect: 1, mirror: 1, pulse: 1}, 
-		onModifyMove(move, pokemon, target) {
-			if (this.field.getPseudoWeather('gravity')) { 
-				move.accuracy = 80; 
-			}
+		flags: {protect: 1, mirror: 1, pulse: 1},
+		onModifyMove(move) {
+			if (this.field.getPseudoWeather('gravity')) move.accuracy = 48;
 		},
 		secondary: {
 			chance: 100,
@@ -11560,7 +11558,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 					if (applies) this.add('-activate', pokemon, 'move: Gravity');
 				}
 			},
-			onModifyAccuracy(accuracy) {
+			onModifyAccuracy(accuracy) {  
 				if (typeof accuracy !== 'number') return;
 				return this.chainModify([6840, 4096]);
 			},
