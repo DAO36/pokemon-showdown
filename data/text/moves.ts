@@ -599,8 +599,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 
 		switchOut: "#uturn",
 	},
-	timetravel: {
-		name: "Time Travel",
+	timetravelingdetective: {
+		name: "Time Traveling Detective",
 		desc: "This attack charges on the first turn and executes on the second. Raises this Time Traveling Detective's Attack by 1 stage on the first turn. If this Detective is holding a Power Herb, the move completes in one turn.",
 		shortDesc: "Raises user's Attack by 1 on turn 1. Hits turn 2.",
 
@@ -618,6 +618,11 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		desc: "Has a 10% chance to badly poison the target.",
 		shortDesc: "10% chance to badly poison the target.",
 	}, 
+	gamerrage: {
+		name: "Gamer Rage",
+		desc: "If this move is successful, this Toxic Gamer must recharge on the following turn and cannot select a move. Has a 10% chance to badly poison the target.",
+		shortDesc: "User can't move next turn. 10% to badly poison target.", 
+	},
 	scythe: {
 		name: "Scythe",
 		desc: "Has a higher chance for a critical hit. Never misses.",
