@@ -100,6 +100,18 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		desc: "Raises the user's Special Attack, and Speed by 1 stage.",
 		shortDesc: "Raises user's Special Attack & Speed by 1.",
 	},
+	kurokamistrike: {
+		name: "Kurokami Strike",
+		desc: "Lowers the user's Defense and Special Defense by 1 stage.",
+		shortDesc: "Lowers the user's Defense and Sp. Def by 1.",
+	},
+	fubuzillabeam: {
+		name: "Fubuzilla Beam",
+		desc: "This attack charges on the first turn and executes on the second. Power is halved if the weather is Primordial Sea, Rain Dance, Desolate Land, Sunny Day, or Sandstorm and the user is not holding Utility Umbrella. If the user is holding a Power Herb or the weather is Snow/Hail, the move completes in one turn. If the user is holding Utility Umbrella and the weather is Snow/Hail, the move still requires a turn to charge.",
+		shortDesc: "Charges turn 1. Hits turn 2. No charge in snow.", 
+
+		prepare: "  [POKEMON] is charging up!",
+	},
 	icesword: {
 		name: "Ice Sword",
 		desc: "Has a 10% chance to freeze the target. Has a higher chance for a critical hit.",
@@ -579,8 +591,15 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	sharkattack: {
 		name: "Shark Attack",
-		desc: "Has a 10% chance to lower the target's Defense by 1 stage.",
+		desc: "Has a 10% chance to lower the target's Defense by 1 stage. This move can hit a target using Dive.I f the weather is Primordial Sea or Rain Dance, this move does not check accuracy. If the weather is Desolate Land or Sunny Day, this move's accuracy is 50%.",
 		shortDesc: "10% chance to lower target's Defense by 1.",
+	},
+	atlantisstrike: {
+		name: "Atlantis Strike",
+		desc: "This attack charges on the first turn and executes on the second. Power is halved if the weather is Desolate Land, Sunny Day, Sandstorm, or Snow and the user is not holding Utility Umbrella. If the user is holding a Power Herb or the weather is Primordial Sea or Rain Dance, the move completes in one turn. If the user is holding Utility Umbrella and the weather is Primordial Sea or Rain Dance, the move still requires a turn to charge.",
+		shortDesc: "Charges turn 1. Hits turn 2. No charge in rain.", 
+
+		prepare: "  [POKEMON] is channeling the Power of Atlantis!",
 	},
 	gawrrage: {
 		name: "Gawr Rage",
@@ -612,6 +631,20 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		shortDesc: "Raises user's Attack by 1 on turn 1. Hits turn 2.",
 
 		prepare: "[POKEMON] is gathering interdimensional energy!",
+	},
+	timeshatteringpunch: {
+		name: "Time Shattering Punch",
+		desc: "This attack charges on the first turn and executes on the second. Raises this Detective's Attack by 1 stage on the first turn. If the Detective is holding a Power Herb, the move completes in one turn.",
+		shortDesc: "Raises user's Attack by 1 on turn 1. Hits turn 2.",
+
+		prepare: "[POKEMON] is getting swole!",
+	},
+	hivemind: {
+		name: "Hive Mind",
+		desc: "This attack charges on the first turn and executes on the second. If the Detective is holding a Power Herb, the move completes in one turn.",
+		shortDesc: "Charges on turn 1. Hits turn 2.",
+
+		prepare: "[POKEMON] is calling the Hive!",
 	},
 	groundpound: {
 		name: "Ground Pound",
@@ -749,11 +782,11 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	timetogo: { // <UNUSED>
 		name: "Time to Go",
-		desc: "If this move is successful and the user has not fainted, the user switches out even if it is trapped and is replaced immediately by a selected party member. The user does not switch out if there are no unfainted party members, or if the target switched out using an Eject Button or through the effect of the Emergency Exit or Wimp Out Abilities. Almost always goes first.",
-		shortDesc: "Switches out after damaging target. Goes first.",
+		desc: "If this move is successful and the user has not fainted, the user switches out even if it is trapped and is replaced immediately by a selected party member. The user does not switch out if there are no unfainted party members, or if the target switched out using an Eject Button or through the effect of the Emergency Exit or Wimp Out Abilities. If this move is successful, the effect of Trick Room begins.",
+		shortDesc: "Switches after damaging target. Starts Trick Room.",
 
 		switchOut: "#uturn",
-	},
+	}, 
 	sandsoftime: {
 		name: "Sands of Time",
 		desc: "Has a 30% chance to lower the target's Speed by 1 stage. Hits adjacent Pokemon.",
@@ -767,10 +800,15 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		start: "  [POKEMON] is time traveling!",
 		activate: "  [TARGET] is being attacked from past times!",
 	},
+	borosblast: {
+		name: "Boros Blast",
+		desc: "This move becomes a physical attack if this Boros's Attack is greater than his Special Attack, including stat stage changes. Power is doubled during Trick Room's effect.",
+		shortDesc: "Physical if Atk > Sp.Atk. Trick Room: 2x power.",
+	}, 
 	moomers: {
 		name: "Moomers",
-		desc: "Has a 30% chance to make the target flinch.",
-		shortDesc: "30% chance to make the target flinch.",
+		desc: "Has a 30% chance to paralyze the target and a 30% chance to make it flinch.",
+		shortDesc: "30% chance to paralyze. 30% chance to flinch.",
 	},
 	owlblade: {
 		name: "Owl Blade",

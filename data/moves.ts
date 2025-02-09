@@ -381,6 +381,63 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Grass",
 		contestType: "Cool",
 	},
+	kurokamistrike: {
+		num: 370,
+		accuracy: 90,
+		basePower: 120,
+		category: "Physical",
+		name: "Kurokami Strike",
+		pp: 5,
+		priority: 0,
+		flags: {contact: 1, protect: 1, mirror: 1, slicing: 1},
+		self: {
+			boosts: {
+				def: -1,
+				spd: -1,
+			},
+		},
+		secondary: null,
+		target: "normal",
+		type: "Ice",
+		contestType: "Tough",
+	},
+	fubuzillabeam: {
+		num: 76,
+		accuracy: 90,
+		basePower: 120,
+		category: "Special",
+		name: "Fubuzilla Beam",
+		pp: 10,
+		priority: 0,
+		flags: {charge: 1, protect: 1, mirror: 1, metronome: 1, nosleeptalk: 1, failinstruct: 1},
+		onTryMove(attacker, defender, move) {
+			if (attacker.removeVolatile(move.id)) {
+				return;
+			}
+			this.add('-prepare', attacker, move.name);
+			if (['snow', 'hail'].includes(attacker.effectiveWeather())) {
+				this.attrLastMove('[still]');
+				this.addMove('-anim', attacker, move.name, defender);
+				return;
+			}
+			if (!this.runEvent('ChargeMove', attacker, defender, move)) {
+				return;
+			}
+			attacker.addVolatile('twoturnmove', defender);
+			return null;
+		},
+		onBasePower(basePower, pokemon, target) {
+			const weakWeathers = ['raindance', 'primordialsea', 'sandstorm', 'desolateland', 'sunnyday'];
+			if (weakWeathers.includes(pokemon.effectiveWeather())) {
+				this.debug('weakened by weather');
+				return this.chainModify(0.5);
+			}
+		},
+		secondary: null,
+		target: "normal",
+		type: "Ice",
+		contestType: "Cool",
+	},
 	godlyattack: {
 		num: 370,
 		accuracy: 85,
@@ -2208,6 +2265,18 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		pp: 10,
 		priority: 0,
 		flags: {contact: 1, protect: 1, mirror: 1, bite: 1},
+		onModifyMove(move, pokemon, target) {
+			switch (target?.effectiveWeather()) {
+			case 'raindance':
+			case 'primordialsea':
+				move.accuracy = true;
+				break;
+			case 'sunnyday':
+			case 'desolateland':
+				move.accuracy = 50;
+				break;
+			}
+		}, 
 		secondary: {
 			chance: 10,
 			boosts: {
@@ -2217,6 +2286,43 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		target: "normal",
 		type: "Water",
 		contestType: "Tough",
+	},
+	atlantisstrike: {
+		num: 76,
+		accuracy: 90,
+		basePower: 120,
+		category: "Special",
+		name: "Atlantis Strike",
+		pp: 10,
+		priority: 0,
+		flags: {charge: 1, protect: 1, mirror: 1, metronome: 1, nosleeptalk: 1, failinstruct: 1},
+		onTryMove(attacker, defender, move) {
+			if (attacker.removeVolatile(move.id)) {
+				return;
+			}
+			this.add('-prepare', attacker, move.name);
+			if (['raindance', 'primordialsea'].includes(attacker.effectiveWeather())) { 
+				this.attrLastMove('[still]');
+				this.addMove('-anim', attacker, move.name, defender);
+				return;
+			}
+			if (!this.runEvent('ChargeMove', attacker, defender, move)) {
+				return;
+			}
+			attacker.addVolatile('twoturnmove', defender);
+			return null;
+		},
+		onBasePower(basePower, pokemon, target) {
+			const weakWeathers = ['sunnyday', 'desolateland', 'sandstorm', 'hail', 'snow'];
+			if (weakWeathers.includes(pokemon.effectiveWeather())) {
+				this.debug('weakened by weather');
+				return this.chainModify(0.5);
+			}
+		},
+		secondary: null,
+		target: "normal",
+		type: "Water",
+		contestType: "Cool",
 	},
 	gawrrage: { // water close combat but better
 		num: 370,
@@ -2419,10 +2525,60 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		target: "any",
 		type: "Psychic",
 	},
+	timeshatteringpunch: { // psychic type [Meteor Beam]
+		num: 800,
+		accuracy: 90,
+		basePower: 130,
+		category: "Physical",
+		name: "Time Shattering Punch",
+		pp: 5,
+		priority: 0,
+		flags: {charge: 1, protect: 1, mirror: 1, punch: 1, contact: 1},
+		onTryMove(attacker, defender, move) {
+			if (attacker.removeVolatile(move.id)) {
+				return;
+			}
+			this.add('-prepare', attacker, move.name);
+			this.boost({atk: 1}, attacker, attacker, move);
+			if (!this.runEvent('ChargeMove', attacker, defender, move)) {
+				return;
+			}
+			attacker.addVolatile('twoturnmove', defender);
+			return null;
+		},
+		secondary: null,
+		target: "normal",
+		type: "Fighting",
+	},
+	hivemind: {
+		num: 63,
+		accuracy: 90,
+		basePower: 140,
+		category: "Physical",
+		name: "Hive Mind",
+		pp: 5,
+		priority: 0,
+		flags: {charge: 1, protect: 1, mirror: 1, wind: 1, contact: 1},
+		onTryMove(attacker, defender, move) {
+			if (attacker.removeVolatile(move.id)) {
+				return;
+			}
+			this.add('-prepare', attacker, move.name); 
+			if (!this.runEvent('ChargeMove', attacker, defender, move)) {
+				return;
+			}
+			attacker.addVolatile('twoturnmove', defender);
+			return null;
+		},
+		secondary: null,
+		target: "normal",
+		type: "Bug",
+		contestType: "Cool",
+	},
 	scythe: {
 		num: 370,
 		accuracy: true,
-		basePower: 70,
+		basePower: 80,
 		category: "Physical",
 		name: "Scythe",
 		pp: 10,
@@ -2884,17 +3040,20 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Psychic",
 		contestType: "Cool",
 	},
-	timetogo: { // pivot move (with priority) <UNUSED>
+	timetogo: { // pivot move (with trick room) 
 		num: 370,
 		accuracy: 100,
-		basePower: 50,
-		category: "Physical",
+		basePower: 60,
+		category: "Special",
 		name: "Time to Go",
 		pp: 10,
-		priority: 1,
+		priority: 0,
 		flags: {protect: 1, mirror: 1, distance: 1, switches: 1},
 		selfSwitch: true,
 		secondary: null,
+		self: {
+			pseudoWeather: 'trickroom',
+		},
 		target: "any",
 		type: "Psychic",
 	},
@@ -2952,23 +3111,50 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Steel",
 		contestType: "Clever",
 	},
+	borosblast: {
+		num: 406,
+		accuracy: 100,
+		basePower: 100,
+		onBasePower(basePower) {
+			if (this.field.getPseudoWeather('trickroom')) {
+				return this.chainModify(2);
+			}
+		},
+		category: "Special",
+		name: "Boros Blast",
+		pp: 5,
+		priority: 0,
+		flags: {protect: 1, mirror: 1, pulse: 1},
+		onModifyMove(move, pokemon) {
+			if (pokemon.getStat('atk', false, true) > pokemon.getStat('spa', false, true)) move.category = 'Physical';
+		},
+		secondary: null, 
+		target: "normal",
+		type: "Dragon",
+		contestType: "Cute",
+	}, 
 	moomers: { // uuh
 		num: 370,
-		accuracy: 90,
-		basePower: 100,
+		accuracy: 75,
+		basePower: 120,
 		category: "Physical",
 		name: "Moomers",
 		pp: 5,
 		priority: 0,
 		flags: {protect: 1, mirror: 1, wind: 1},
-		secondary: {
-			chance: 30,
-			volatileStatus: 'flinch',
-		},
+		secondaries: [
+			{
+				chance: 30,
+				status: 'par',
+			}, {
+				chance: 30,
+				volatileStatus: 'flinch',
+			},
+		],
 		target: "normal",
 		type: "Dark",
 		contestType: "Tough",
-	},
+	}, 
 	owlblade: { // flying type [Leaf Blade]
 		num: 348,
 		accuracy: 100,
@@ -3243,7 +3429,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	},
 	twinstrikes: { // dark dual wing-beat
 		num: 370,
-		accuracy: 95,
+		accuracy: 100,
 		basePower: 40,
 		category: "Physical",
 		name: "Twin Strikes",
@@ -7392,13 +7578,13 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 				if (type === 'sandstorm' || type === 'hail') return false;
 			},
 			onInvulnerability(target, source, move) {
-				if (['surf', 'trident', 'tsunami', 'whirlpool'].includes(move.id)) {
+				if (['surf', 'sharkattack', 'trident', 'tsunami', 'whirlpool'].includes(move.id)) {
 					return;
 				}
 				return false;
 			},
 			onSourceModifyDamage(damage, source, target, move) {
-				if (move.id === 'surf' || move.id === 'whirlpool' || move.id === 'trident' || move.id === 'tsunami') {
+				if (move.id === 'surf' || move.id === 'sharkattack' || move.id === 'whirlpool' || move.id === 'trident' || move.id === 'tsunami') {
 					return this.chainModify(2);
 				}
 			},
