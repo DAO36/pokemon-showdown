@@ -362,11 +362,6 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 		desc: "This Blacksmith is immune to Ground-type moves and restores 1/4 of her maximum HP, rounded down, when hit by a Ground-type move. If a Pokemon uses a Fire-type attack against this Blacksmith, that Pokemon's offensive stat is halved when calculating the damage to the Blacksmith; cannot be burned, gaining this Ability while burned cures it. This Blacksmith's Attack is raised 1 stage after it is damaged by a Rock-type move and Defense is raised 1 stage after it is damaged by a Steel-type move.",
 		shortDesc: "Hit by Rock: +1 Atk, Steel: +1 Def. Ground immunity. Fire damage is 1/2; can't burn.",
 	}, 
-	lexchange: {
-		name: "Thermal Exchange",
-		desc: "This Pokemon's Attack is raised 1 stage after it is damaged by a Fire-type move. This Pokemon cannot be burned. Gaining this Ability while burned cures it.",
-		shortDesc: "This Pokemon's Attack is raised by 1 when damaged by Fire moves; can't be burned.",
-	}, 
 	wethair: {
 		name: "Wet Hair",
 		desc: "Pokemon making contact with this Rain Shaman have their Accuracy lowered by 1 stage.",
@@ -377,9 +372,10 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 		desc: "If Rain is active, this Shark's Attack and Special Attack is multiplied by 1.5 and she gains 1/10 of her maximum HP, rounded down, at the end of each turn. If there's no weather, she loses 1/10 of her maximum HP, rounded down, at the end of each turn, if Sunny Day/Sandstorm, loses 1/8 of her maximum HP per turn instead. These effects are prevented if the Pokemon is holding a Utility Umbrella.",
 		shortDesc: "In rain - Atk & SpAtk: 1.5x; Gains 1/10 HP per turn. Else: loses 1/8 HP per turn.",
 	},
-	detective: {
-		name: "Detective",
-		shortDesc: "This Detective can hit Steel type Pokemon with her Poison-type moves.",
+	ameway: {
+		name: "AmeWay",
+		desc: "If this Time Traveling Detective uses a two-turn move, it will complete in one turn instead (except Sky Drop). If this Detective uses a move that require recharging after (Hyper Beam, Giga Impact, etc.), she is not affected by the recharge status.",
+		shortDesc: "2-turn moves complete in 1 turn. Moves with recharge doesn't make user recharge.",
 	},
 	death: {
 		name: "Death",

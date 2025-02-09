@@ -2239,7 +2239,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Water",
 		contestType: "Tough",
 	},
-	ameway: { // reskin of Swords Dance
+	ameway2: { // reskin of Swords Dance
 		num: 370,
 		accuracy: true,
 		basePower: 0,
@@ -2256,12 +2256,12 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Psychic",
 		contestType: "Clever",
 	},
-	timetravel: { // pivot move
+	timetravel2: { // pivot move
 		num: 370,
 		accuracy: true,
 		basePower: 60,
 		category: "Physical",
-		name: "Time Travel",
+		name: "Time Travel2",
 		pp: 15,
 		priority: 0,
 		flags: {protect: 1, mirror: 1, pulse: 1, switches: 1},
@@ -2270,12 +2270,37 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		target: "normal",
 		type: "Psychic",
 	},
-	groundpound: {
+	timetravelingdetective: {
+		num: 800,
+		accuracy: 90,
+		basePower: 130,
+		category: "Physical",
+		name: "Time Traveling Detective",
+		pp: 10,
+		priority: 0,
+		flags: {charge: 1, protect: 1, mirror: 1, metronome: 1},
+		onTryMove(attacker, defender, move) {
+			if (attacker.removeVolatile(move.id)) {
+				return;
+			}
+			this.add('-prepare', attacker, move.name);
+			this.boost({atk: 1}, attacker, attacker, move);
+			if (!this.runEvent('ChargeMove', attacker, defender, move)) {
+				return;
+			}
+			attacker.addVolatile('twoturnmove', defender);
+			return null;
+		},
+		secondary: null,
+		target: "normal",
+		type: "Psychic",
+	},
+	groundpound2: {
 		num: 370,
 		accuracy: 80,
 		basePower: 150,
 		category: "Physical",
-		name: "Ground Pound",
+		name: "Ground Pound2",
 		pp: 5,
 		priority: 0,
 		flags: {contact: 1, protect: 1, mirror: 1, gravity: 1},
@@ -2288,23 +2313,84 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Ground",
 		contestType: "Cool",
 	},
-	bubbablast: {
+	groundpound: {
+		num: 19,
+		accuracy: 90,
+		basePower: 140,
+		category: "Physical",
+		name: "Ground Pound",
+		pp: 10,
+		priority: 0,
+		flags: {
+			contact: 1, charge: 1, protect: 1, mirror: 1, gravity: 1, distance: 1,
+			metronome: 1, nosleeptalk: 1, noassist: 1, failinstruct: 1,
+		},
+		onTryMove(attacker, defender, move) {
+			if (attacker.removeVolatile(move.id)) {
+				return;
+			}
+			this.add('-prepare', attacker, move.name);
+			if (!this.runEvent('ChargeMove', attacker, defender, move)) {
+				return;
+			}
+			attacker.addVolatile('twoturnmove', defender);
+			return null;
+		},
+		condition: {
+			duration: 2,
+			onInvulnerability(target, source, move) {
+				if (['gust', 'twister', 'skyuppercut', 'thunder', 'hurricane', 'smackdown', 'haboob', 'trident', 'thousandarrows'].includes(move.id)) {
+					return;
+				}
+				return false;
+			},
+			onSourceModifyDamage(damage, source, target, move) {
+				if (move.id === 'gust' || move.id === 'twister') {
+					return this.chainModify(2);
+				}
+			},
+		},
+		secondary: null,
+		target: "any",
+		type: "Ground",
+		contestType: "Clever",
+	},
+	bubbabite: {
 		num: 331,
 		accuracy: 95,
-		basePower: 25,
+		basePower: 95,
 		category: "Physical",
-		name: "Bubba Blast",
-		pp: 25,
+		name: "Bubba Bite",
+		pp: 10,
 		priority: 0,
-		flags: {protect: 1, mirror: 1, metronome: 1, bullet: 1},
-		multihit: [2, 5],
+		flags: {protect: 1, mirror: 1, contact: 1, bite: 1}, 
 		secondary: {
-			chance: 30,
-			status: 'psn',
+			chance: 10,
+			status: 'tox',
 		},
 		target: "normal",
 		type: "Poison",
 		contestType: "Cool",
+	},
+	gamerrage: {
+		num: 416,
+		accuracy: 90,
+		basePower: 140,
+		category: "Special",
+		name: "Gamer Rage",
+		pp: 5,
+		priority: 0,
+		flags: {recharge: 1, protect: 1, mirror: 1, sound: 1, bypasssub: 1},
+		self: {
+			volatileStatus: 'mustrecharge',
+		},
+		secondary: {
+			chance: 10,
+			status: 'tox',
+		},
+		target: "normal",
+		type: "Poison",
+		contestType: "Tough",
 	},
 	scythe: {
 		num: 370,

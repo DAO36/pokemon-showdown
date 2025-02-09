@@ -20129,7 +20129,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		types: ["Psychic", "Poison"],
 		gender: "F",
 		baseStats: {hp: 80, atk: 125, def: 80, spa: 120, spd: 90, spe: 105},
-		abilities: {0: "Anger Point", 1: "Sniper", H: "Poison Point", S: "Detective"},
+		abilities: {0: "Anger Point", 1: "Sniper", H: "Poison Point", S: "AmeWay"},
 		heightm: 1.5,
 		weightkg: 55.5,
 		color: "Yellow",

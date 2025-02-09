@@ -1479,7 +1479,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3,
 		num: 44,
 	},
-	blacksmith: { // a 
+	blacksmith: { // [Heatproof] + [Earth Eater] + [Water Veil] + [Thermal Exchange] but for Steel and Rock type instead of Fire
 		onTryHit(target, source, move) {
 			if (target !== source && move.type === 'Ground') {
 				if (!this.heal(target.baseMaxhp / 4, target, target)) {
@@ -1571,19 +1571,23 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 4.5,
 		num: 87,
 	},
-	detective: { // reskin of [Scrappy] but for Poison > Steel
-		onModifyMovePriority: -5,
-		onModifyMove(move) {
-			if (!move.ignoreImmunity) move.ignoreImmunity = {};
-			if (move.ignoreImmunity !== true) {
-				move.ignoreImmunity['Poison'] = true;
+	ameway: { // [Power Herb ITEM] but as an ability; skips recharging as well
+		onTryAddVolatile(status, pokemon) {
+			if (status.id === 'mustrecharge') return null;
+		},
+		onChargeMove(pokemon, target, move) {
+			if (pokemon.hasAbility('ameway')) {
+				this.debug('power herb - remove charge turn for ' + move.id);
+				this.attrLastMove('[still]');
+				this.addMove('-anim', pokemon, move.name, target);
+				return false; // skip charge turn
 			}
 		},
 		flags: {},
-		name: "Detective",
-		rating: 3,
-		num: 113,
-	},
+		name: "AmeWay",
+		rating: 5,
+		num: 24,
+	}, 
 	death: { // reskin of [Intimidate] but for Speed instead of Attack
 		onStart(pokemon) {
 			let activated = false;
