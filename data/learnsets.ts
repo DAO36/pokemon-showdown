@@ -96398,7 +96398,9 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			wideguard: ["9M"],
 			shoreup: ["9M"],
 			nopressure: ["9M"],
-			dahlah: ["9M"],
+			pickaxe: ["9M"],
+			grindstone: ["9M"],
+			goriela: ["9M"],
         },
 	},	
 	ckia: {

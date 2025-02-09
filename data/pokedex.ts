@@ -20006,7 +20006,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		types: ["Steel"],
 		gender: "F",
 		baseStats: {hp: 120, atk: 125, def: 150, spa: 80, spd: 80, spe: 45},
-		abilities: {0: "Pressure", 1: "Tinted Lens", H: "Super Luck", S: "Grindstone"},
+		abilities: {0: "Pressure", 1: "Tinted Lens", H: "Super Luck", S: "Blacksmith"},
 		heightm: 1.73,
 		weightkg: 55.5,
 		color: "Yellow",

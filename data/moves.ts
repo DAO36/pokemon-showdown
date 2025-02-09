@@ -119,7 +119,8 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		name: "Lava Bucket",
 		pp: 5,
 		priority: 0,
-		flags: {protect: 1, mirror: 1},
+		flags: {protect: 1, mirror: 1, defrost: 1},
+		thawsTarget: true,
 		status: 'brn',
 		secondary: {
 			chance: 100, 
@@ -588,7 +589,8 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		name: "Underworld Slash",
 		pp: 15,
 		priority: 0,
-		flags: {protect: 1, mirror: 1, contact: 1, slicing: 1},
+		flags: {protect: 1, mirror: 1, contact: 1, slicing: 1, defrost: 1},
+		thawsTarget: true,
 		critRatio: 2,
 		secondary: {
 			chance: 20,
@@ -991,7 +993,8 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		name: "Arrow Assault",
 		pp: 10,
 		priority: 0,
-		flags: {protect: 1, mirror: 1, distance: 1, bullet: 1},
+		flags: {protect: 1, mirror: 1, distance: 1, bullet: 1, defrost: 1},
+		thawsTarget: true,
 		multihit: [2, 5],
 		secondary: {
 			chance: 10,
@@ -2015,23 +2018,76 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Steel",
 		contestType: "Cool",
 	},
-	dahlah: { // steel double-edge
+	pickaxe: { // a
+		num: 370,
+		accuracy: 100,
+		basePower: 70,
+		category: "Physical",
+		name: "Pickaxe",
+		pp: 10,
+		priority: 0,
+		flags: {contact: 1, protect: 1, mirror: 1, slicing: 1},
+		basePowerCallback(source, target, move) {
+			if (this.field.isWeather('sandstorm')) {
+				if (!source.isAlly(target)) this.hint(`${move.name}'s BP doubled on target.`);
+				return move.basePower * 2;
+			}
+			return move.basePower;
+		},
+		onEffectiveness(typeMod, target, type) {
+			if (type === 'Ground') return 1;
+		},
+		critRatio: 2,
+		secondary: null,
+		target: "normal",
+		type: "Steel",
+		contestType: "Cool",
+	}, 
+	grindstone: {
+		num: 659,
+		accuracy: true,
+		basePower: 0,
+		category: "Status",
+		name: "Grindstone",
+		pp: 5,
+		priority: 0,
+		flags: {snatch: 1, heal: 1, slicing: 1},
+		onHit(pokemon) {
+			let factor = 0.5;
+			if (this.field.isWeather('sandstorm')) {
+				factor = 0.667;
+			}
+			const success = !!this.heal(this.modify(pokemon.maxhp, factor));
+			if (!success) {
+				this.add('-fail', pokemon, 'heal');
+				return this.NOT_FAIL;
+			}
+			return success;
+		},
+		secondary: null,
+		target: "self",
+		type: "Rock",
+		contestType: "Cute",
+	},
+	goriela: {
 		num: 370,
 		accuracy: 90,
 		basePower: 120,
 		category: "Physical",
-		name: "Dahlah",
+		name: "Goriela",
 		pp: 5,
 		priority: 0,
-		flags: {contact: 1, protect: 1, mirror: 1, slicing: 1},
-		recoil: [33, 100],
-		secondary: {
-			chance: 30,
-			volatileStatus: 'flinch',
+		flags: {contact: 1, protect: 1, mirror: 1, punch: 1},
+		self: {
+			boosts: {
+				def: -1,
+				spd: -1,
+			},
 		},
+		secondary: null,
 		target: "normal",
 		type: "Steel",
-		contestType: "Tough",
+		contestType: "Cool",
 	},
 	rainshaman: { // chilly reception but is for rain
 		num: 370,
@@ -2413,7 +2469,8 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		name: "Phoenix Blade",
 		pp: 10,
 		priority: 0,
-		flags: {protect: 1, mirror: 1, contact: 1, slicing: 1},
+		flags: {protect: 1, mirror: 1, contact: 1, slicing: 1, defrost: 1},
+		thawsTarget: true,
 		secondary: {
 			chance: 30,
 			status: 'brn',
@@ -2430,7 +2487,8 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		name: "Phoenix Wind",
 		pp: 15,
 		priority: 0,
-		flags: {protect: 1, mirror: 1, wind: 1},
+		flags: {protect: 1, mirror: 1, wind: 1, defrost: 1},
+		thawsTarget: true,
 		secondary: {
 			chance: 30,
 			status: 'brn',

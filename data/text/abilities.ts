@@ -352,11 +352,21 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 		desc: "This Spy's type changes to match the type of the move she is about to use. This effect comes after all effects that change a move's type.",
 		shortDesc: "User's type changes to the type of the move it is using.",
 	},
-	grindstone: {
-		name: "Grindstone",
+	graondstone: {
+		name: "Graondstone",
 		desc: "If Sandstorm is active, this Blacksmith restores 1/10 of her maximum HP per turn. This Blacksmith's Ground/Rock/Steel attacks do 1.3x in Sandstorm.",
 		shortDesc: "In sandstorm: gains 1/10 HP per turn; Ground/Rock/Steel attacks do 1.3x damage.",
 	},
+	grindstone: {
+		name: "Grindstone",
+		desc: "This Blacksmith is immune to Ground-type moves and restores 1/4 of her maximum HP, rounded down, when hit by a Ground-type move. If a Pokemon uses a Fire-type attack against this Blacksmith, that Pokemon's offensive stat is halved when calculating the damage to the Blacksmith; cannot be burned, gaining this Ability while burned cures it. This Blacksmith's Attack is raised 1 stage after it is damaged by a Rock-type move and Defense is raised 1 stage after it is damaged by a Steel-type move.",
+		shortDesc: "Hit by Rock: +1 Atk, Steel: +1 Def. Ground immunity. Fire damage is 1/2; can't burn.",
+	}, 
+	lexchange: {
+		name: "Thermal Exchange",
+		desc: "This Pokemon's Attack is raised 1 stage after it is damaged by a Fire-type move. This Pokemon cannot be burned. Gaining this Ability while burned cures it.",
+		shortDesc: "This Pokemon's Attack is raised by 1 when damaged by Fire moves; can't be burned.",
+	}, 
 	wethair: {
 		name: "Wet Hair",
 		desc: "Pokemon making contact with this Rain Shaman have their Accuracy lowered by 1 stage.",

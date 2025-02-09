@@ -1458,7 +1458,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
         name: "Undercover Agent",
         num: 236
 	},
-	grindstone: { // combines [Sand Force] + [Rain Dish] (but Sandstorm instead of Rain)
+	graondstone: { // combines [Sand Force] + [Rain Dish] (but Sandstorm instead of Rain)
 		onWeather(target, source, effect) {
 			if (target.hasItem('utilityumbrella')) return;
 			if (effect.id === 'sandstorm') {
@@ -1469,15 +1469,64 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		onBasePower(basePower, attacker, defender, move) {
 			if (this.field.isWeather('sandstorm')) {
 				if (move.type === 'Rock' || move.type === 'Ground' || move.type === 'Steel') {
-					this.debug('Grindstone boost');
+					this.debug('Graondstone boost');
 					return this.chainModify([5325, 4096]);
 				}
 			}
 		},
 		flags: {},
-		name: "Grindstone",
+		name: "Graondstone",
 		rating: 3,
 		num: 44,
+	},
+	blacksmith: { // a 
+		onTryHit(target, source, move) {
+			if (target !== source && move.type === 'Ground') {
+				if (!this.heal(target.baseMaxhp / 4)) {
+					this.add('-immune', target, '[from] ability: Blacksmith');
+				}
+				return null;
+			}
+		},
+		onSourceModifyAtkPriority: 6,
+		onSourceModifyAtk(atk, attacker, defender, move) {
+			if (move.type === 'Fire') {
+				this.debug('Blacksmith Atk weaken');
+				return this.chainModify(0.5);
+			}
+		},
+		onSourceModifySpAPriority: 5,
+		onSourceModifySpA(atk, attacker, defender, move) {
+			if (move.type === 'Fire') {
+				this.debug('Blacksmith SpA weaken');
+				return this.chainModify(0.5);
+			}
+		},
+		onDamagingHit(damage, target, source, move) {
+			if (move.type === 'Steel') {
+				this.boost({def: 1});
+			}
+			if (move.type === 'Rock') {
+				this.boost({atk: 1});
+			}
+		},
+		onUpdate(pokemon) {
+			if (pokemon.status === 'brn') {
+				this.add('-activate', pokemon, 'ability: Blacksmith');
+				pokemon.cureStatus();
+			}
+		},
+		onSetStatus(status, target, source, effect) {
+			if (status.id !== 'brn') return;
+			if ((effect as Move)?.status) {
+				this.add('-immune', target, '[from] ability: Blacksmith');
+			}
+			return false;
+		},
+		flags: {breakable: 1},
+		name: "Blacksmith",
+		rating: 2,
+		num: 85,
 	},
 	wethair: { // reskin of [Tangled Hair] but lowers accuracy instead of speed
 		onDamagingHit(damage, target, source, move) {
@@ -1768,7 +1817,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	},
 	chaos: { // [Red Card ITEM] but as an ability
 		onAfterMoveSecondary(target, source, move) {
-			if (move.category === 'Special' || move.category === 'Physical' || move.category === 'Status' && move.category !== 'Status') {
+			if (source && source !== target && source.hp && target.hp && move && move.category !== 'Status') {
 				if (this.randomChance(5, 10)) { 
 				source.forceSwitchFlag || target.forceSwitchFlag; {
 					return; 
