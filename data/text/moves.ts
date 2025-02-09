@@ -538,11 +538,21 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 
 		heal: "#memento",
 		switchOut: "#uturn",
+	}, 
+	pickaxe: {
+		name: "Pickaxe",
+		desc: "If the current weather is Sandstorm, this move's power is doubled. This move's type effectiveness against Ground is changed to be super effective no matter what this move's type is. Has a higher chance for a critical hit.",
+		shortDesc: "2x power in Sandstorm. Super effective on Ground. High crit ratio.",
 	},
-	dahlah: {
-		name: "Dahlah",
-		desc: "Has a 30% chance to flinch the target. If the target lost HP, this Blacksmith takes recoil damage equal to 33% the HP lost by the target, rounded half up, but not less than 1 HP.",
-		shortDesc: "Has 33% recoil. 30% to flinch foe",
+	grindstone: {
+		name: "Grindstone",
+		desc: "This Blacksmith restores 1/2 of her maximum HP, rounded half down. If the weather is Sandstorm, the user instead restores 2/3 of its maximum HP, rounded half down.",
+		shortDesc: "User restores 1/2 of her max HP; 2/3 in Sandstorm.",
+	},
+	goriela: {
+		name: "Goriela",
+		desc: "Lowers the Blacksmith's Defense and Special Defense both by 1 stage.",
+		shortDesc: "Lowers the user's Defense and Sp. Def by 1.",
 	},
 	rainshaman: {
 		name: "Rain Shaman",

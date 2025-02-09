@@ -357,8 +357,8 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 		desc: "If Sandstorm is active, this Blacksmith restores 1/10 of her maximum HP per turn. This Blacksmith's Ground/Rock/Steel attacks do 1.3x in Sandstorm.",
 		shortDesc: "In sandstorm: gains 1/10 HP per turn; Ground/Rock/Steel attacks do 1.3x damage.",
 	},
-	grindstone: {
-		name: "Grindstone",
+	blacksmith: {
+		name: "Blacksmith",
 		desc: "This Blacksmith is immune to Ground-type moves and restores 1/4 of her maximum HP, rounded down, when hit by a Ground-type move. If a Pokemon uses a Fire-type attack against this Blacksmith, that Pokemon's offensive stat is halved when calculating the damage to the Blacksmith; cannot be burned, gaining this Ability while burned cures it. This Blacksmith's Attack is raised 1 stage after it is damaged by a Rock-type move and Defense is raised 1 stage after it is damaged by a Steel-type move.",
 		shortDesc: "Hit by Rock: +1 Atk, Steel: +1 Def. Ground immunity. Fire damage is 1/2; can't burn.",
 	}, 
