@@ -1801,10 +1801,11 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	chaos: { // [Red Card ITEM] but as an ability
 		onAfterMoveSecondary(target, source, move) {
 			if (move.category === 'Special' || move.category === 'Physical' && !source.status) {
-				if (this.randomChance(3, 10))
+				if (this.randomChance(3, 10)) { 
 				if (!source.isActive || !this.canSwitch(source.side) || source.forceSwitchFlag || target.forceSwitchFlag) {
 					return; 
 				}
+			}	
 				// The item is used up even against a pokemon with Ingrain or that otherwise can't be forced out
 				if (target.hasAbility('chaos')) {
 					if (this.runEvent('DragOut', source, target, move)) {
