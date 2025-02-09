@@ -425,7 +425,7 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	succubussong: {
 		name: "Succubus Song",
 		desc: "Hits adjacent foes. Lowers this Succubus's Special Attack by 1 stage; Increases her's Special Defense by 1 stage.",
-		shortDesc: "Lowers Sp.Atk by 1; Raises Sp.Def by 1. Hits adjacent foes.", // if it doesnt fit try "User's Sp.Atk -1; User's Sp.Def +1. Hits adjacent foes." 
+		shortDesc: "Lowers Sp.Atk by 1; Raises Sp.Def by 1. Hits adjacent foes.", 
 	},
 	succubusstrike: {
 		name: "Succubus Strike",
@@ -574,8 +574,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	trident: {
 		name: "Trident",
-		desc: "Has a higher chance for a critical hit. This move can hit a target using Bounce, Fly, or Dive. If the weather is Primordial Sea or Rain Dance, this move does not check accuracy. If the weather is Desolate Land or Sunny Day, this move's accuracy is 50%. If this move is used against a Pokemon holding Utility Umbrella, this move's accuracy remains at 80%.",
-		shortDesc: "High critical hit ratio. Does not miss in Rain.",
+		desc: "This move can hit a target using Bounce, Fly, or Dive. If the weather is Primordial Sea or Rain Dance, this move does not check accuracy. If the weather is Desolate Land or Sunny Day, this move's accuracy is 50%. If this move is used against a Pokemon holding Utility Umbrella, this move's accuracy remains at 80%.",
+		shortDesc: "Does not miss in Rain.",
 	},
 	sharkattack: {
 		name: "Shark Attack",
@@ -628,7 +628,7 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	gamerrage: {
 		name: "Gamer Rage",
 		desc: "If this move is successful, this Toxic Gamer must recharge on the following turn and cannot select a move. Has a 10% chance to badly poison the target.",
-		shortDesc: "User can't move next turn. 10% to badly poison target.", 
+		shortDesc: "Cannot move next turn. 10% to badly poison target.", 
 	},
 	scythe: {
 		name: "Scythe",
@@ -714,9 +714,9 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	blackhole: {
 		name: "Black Hole",
-		desc: "Prevents the target from switching out. The target can still switch out if it is holding Shed Shell or uses Baton Pass, Flip Turn, Parting Shot, Teleport, U-turn, or Volt Switch. If the target leaves the field using Baton Pass, the replacement will remain trapped. The effect ends if the user leaves the field. Has a 100% chance to lower the target's Speed by 1 stage.",
-		shortDesc: "Keeps foe from switching. 100% to lower Speed by 1.",
-	},
+		desc: "Hits adjacent Pokemon. Prevents the targets from switching out. The targets can still switch out if it is holding Shed Shell or uses Baton Pass, Flip Turn, Parting Shot, Teleport, U-turn, or Volt Switch. If the target leaves the field using Baton Pass, the replacement will remain trapped. The effect ends if the user leaves the field. Has a 100% chance to lower the target's Speed by 1 stage. Power is multiplied by 1.5 during Gravity's effect.",
+		shortDesc: "Prevents switching. Lowers Speed by 1. In Gravity: 1.5x power.",
+	}, 
 	naturalasmr: {
 		name: "Natural ASMR",
 		desc: "Has a 10% chance to raise this Kirin's Special Defense by 1 stage. Hits adjacent foes.",

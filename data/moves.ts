@@ -2175,8 +2175,8 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	},
 	trident: { // does not miss in rain
 		num: 370,
-		accuracy: 80,
-		basePower: 110,
+		accuracy: 70,
+		basePower: 120,
 		category: "Physical",
 		name: "Trident",
 		pp: 5,
@@ -2193,8 +2193,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 				move.accuracy = 50;
 				break;
 			}
-		},
-		critRatio: 2,
+		}, 
 		secondary: null,
 		target: "normal",
 		type: "Water",
@@ -2719,7 +2718,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		num: 38,
 		accuracy: 100,
 		basePower: 130,
-		category: "Physical",
+		category: "Special",
 		name: "Supernova",
 		pp: 15,
 		priority: 0,
@@ -2747,13 +2746,23 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	},
 	blackhole: {
 		num: 662,
-		accuracy: 90,
+		accuracy: 80,
 		basePower: 120,
-		category: "Special",
+		onBasePower(basePower) {
+			if (this.field.getPseudoWeather('gravity')) {
+				return this.chainModify(1.5);
+			}
+		},
+		category: "Physical",
 		name: "Black Hole",
 		pp: 5,
 		priority: 0,
-		flags: {protect: 1, mirror: 1, gravity: 1, distance: 1},
+		flags: {protect: 1, mirror: 1, pulse: 1},
+		onModifyMove(move, pokemon, target) {
+			if (this.field.getPseudoWeather('gravity')) { 
+				move.accuracy = 50; 
+			}
+		},
 		secondary: {
 			chance: 100,
 			onHit(target, source, move) {
@@ -2763,10 +2772,10 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 				spe: -1,
 			},
 		},
-		target: "any",
-		type: "Dark",
+		target: "allAdjacentFoes",
+		type: "Psychic",
 		contestType: "Tough",
-	},
+	}, 
 	naturalasmr: { // heals user and their teammates of status 
 		num: 370,
 		accuracy: 100,
