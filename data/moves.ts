@@ -2239,7 +2239,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Water",
 		contestType: "Tough",
 	},
-	ameway2: { // reskin of Swords Dance
+	ameway2: { // reskin of Swords Dance <UNUSED>
 		num: 370,
 		accuracy: true,
 		basePower: 0,
@@ -2256,7 +2256,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Psychic",
 		contestType: "Clever",
 	},
-	timetravel2: { // pivot move
+	timetravel2: { // pivot move <UNUSED>
 		num: 370,
 		accuracy: true,
 		basePower: 60,
@@ -2270,32 +2270,35 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		target: "normal",
 		type: "Psychic",
 	},
-	timetravelingdetective: {
+	timetravel: {
 		num: 800,
 		accuracy: 90,
 		basePower: 130,
-		category: "Physical",
-		name: "Time Traveling Detective",
-		pp: 10,
+		category: "Special",
+		name: "Time Travel",
+		pp: 5,
 		priority: 0,
-		flags: {charge: 1, protect: 1, mirror: 1, metronome: 1},
+		flags: {charge: 1, protect: 1, mirror: 1, contact: 1, distance: 1},
 		onTryMove(attacker, defender, move) {
 			if (attacker.removeVolatile(move.id)) {
 				return;
 			}
-			this.add('-prepare', attacker, move.name);
-			this.boost({atk: 1}, attacker, attacker, move);
+			this.add('-prepare', attacker, move.name); 
 			if (!this.runEvent('ChargeMove', attacker, defender, move)) {
 				return;
 			}
 			attacker.addVolatile('twoturnmove', defender);
 			return null;
 		},
+		condition: {
+			duration: 2,
+			onInvulnerability: false,
+		},
 		secondary: null,
-		target: "normal",
+		target: "any",
 		type: "Psychic",
-	},
-	groundpound2: {
+	}, 
+	groundpound2: { //  <UNUSED>
 		num: 370,
 		accuracy: 80,
 		basePower: 150,
@@ -2319,7 +2322,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		basePower: 140,
 		category: "Physical",
 		name: "Ground Pound",
-		pp: 10,
+		pp: 5,
 		priority: 0,
 		flags: {
 			contact: 1, charge: 1, protect: 1, mirror: 1, gravity: 1, distance: 1,
@@ -2391,6 +2394,31 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		target: "normal",
 		type: "Poison",
 		contestType: "Tough",
+	},
+	interdimensionaldetective: {
+		num: 800,
+		accuracy: 90,
+		basePower: 130,
+		category: "Physical",
+		name: "Interdimensional Detective",
+		pp: 10,
+		priority: 0,
+		flags: {charge: 1, protect: 1, mirror: 1, bullet: 1, distance: 1},
+		onTryMove(attacker, defender, move) {
+			if (attacker.removeVolatile(move.id)) {
+				return;
+			}
+			this.add('-prepare', attacker, move.name);
+			this.boost({atk: 1}, attacker, attacker, move);
+			if (!this.runEvent('ChargeMove', attacker, defender, move)) {
+				return;
+			}
+			attacker.addVolatile('twoturnmove', defender);
+			return null;
+		},
+		secondary: null,
+		target: "any",
+		type: "Psychic",
 	},
 	scythe: {
 		num: 370,

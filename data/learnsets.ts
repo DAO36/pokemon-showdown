@@ -96708,10 +96708,10 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			hyperbeam: ["9M"],
 			hydrocannon: ["9M"],
 			rockwrecker: ["9M"],
-			timetravelingdetective: ["9M"],
-			groundpound: ["9M"],
+			timetravel: ["9M"], 
 			bubbabite: ["9M"],
 			gamerrage: ["9M"],
+			interdimensionaldetective: ["9M"],
         },
 	},	
 	amesmol: {

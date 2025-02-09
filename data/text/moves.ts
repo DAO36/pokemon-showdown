@@ -599,12 +599,19 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 
 		switchOut: "#uturn",
 	},
-	timetravelingdetective: {
-		name: "Time Traveling Detective",
-		desc: "This attack charges on the first turn and executes on the second. Raises this Time Traveling Detective's Attack by 1 stage on the first turn. If this Detective is holding a Power Herb, the move completes in one turn.",
+	timetravel: {
+		name: "Time Travel",
+		desc: "This attack charges on the first turn and executes on the second. On the first turn, this Detective avoids all attacks. If the Detective is holding a Power Herb, the move completes in one turn.",
+		shortDesc: "Disappears turn 1. Hits turn 2.",
+
+		prepare: "[POKEMON] is tampering with the timeline!",
+	}, 
+	interdimensionaldetective: {
+		name: "Interdimensional Detective",
+		desc: "This attack charges on the first turn and executes on the second. Raises this Detective's Attack by 1 stage on the first turn. If the Detective is holding a Power Herb, the move completes in one turn.",
 		shortDesc: "Raises user's Attack by 1 on turn 1. Hits turn 2.",
 
-		prepare: "[POKEMON] is tampering with time!",
+		prepare: "[POKEMON] is gathering interdimensional energy!",
 	},
 	groundpound: {
 		name: "Ground Pound",
