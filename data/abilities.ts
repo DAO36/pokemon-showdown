@@ -1770,7 +1770,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		onAfterMoveSecondary(target, source, move) {
 			if (move.category === 'Special' || move.category === 'Physical' || move.category === 'Status') {
 				if (this.randomChance(5, 10)) { 
-				source.forceSwitchFlag || target.forceSwitchFlag; {
+				source.forceSwitchFlag; {
 					return; 
 				}
 			}	
