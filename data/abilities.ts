@@ -1711,46 +1711,10 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		onStart(pokemon) {
 			this.add('-activate', pokemon, 'ability: Gravitational Pull');
 			this.field.addPseudoWeather('gravity', pokemon);
-		},
-		onSourceModifyAccuracyPriority: -1,
-		onSourceModifyAccuracy(accuracy, target, source, move) {
-			if (this.field.getPseudoWeather('gravity') && (move.id === 'blackhole')) {
-				return this.chainModify([3277, 4096]);
-			}
-		},
+		}, 
 		name: "Gravitational Pull",
 		rating: 3,
 		num: -19,		
-	},
-	stle: { 
-		onSourceModifyAccuracyPriority: -1,
-		onSourceModifyAccuracy(accuracy, target, source, move) {
-			if (this.field.getPseudoWeather('gravity') && (move.id === 'blackhole')) {
-				return this.chainModify([3277, 4096]);
-			}
-		},
-		flags: {},
-		name: "Hustle",
-		rating: 3.5,
-		num: 55,
-	},
-	ere: { // blocks pivot moves like U-Turn/Volt Switch/Flip Turn and status like Teleport/Parting Shot/Baton Pass/Chilly Reception etc.
-		onFoeTryMove(pokemon, target, move) {
-			const yandereHolder = this.effectState.target;
-			if (move.id === 'teleport' || move.id === 'batonpass') {
-				this.attrLastMove('[still]');
-				this.add('cant', yandereHolder, 'ability: Yandere', move, '[of] ' + target);
-				return false;
-			}
-			if (move.flags['switches']) {
-				this.add('cant', yandereHolder, 'ability: Yandere', move, '[of] ' + pokemon);
-				return false;
-			} 
-		},
-		flags: {breakable: 1},
-		name: "Yandere",
-		rating: 3,
-		num: 171,
 	},
 	faunasweep: { // reskin of [Surge Surfer] but for Grassy Terrain instead of Electric Terrain
 		onModifySpe(spe) {
