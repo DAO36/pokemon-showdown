@@ -1768,9 +1768,9 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	},
 	chaos: { // [Red Card ITEM] but as an ability
 		onAfterMoveSecondary(target, source, move) {
-			if (move.category === 'Special' || move.category === 'Physical' || move.category === 'Status') {
+			if (move.category === 'Special' || move.category === 'Physical' || move.category === 'Status' && move.category !== 'Status') {
 				if (this.randomChance(5, 10)) { 
-				source.forceSwitchFlag; {
+				source.forceSwitchFlag || target.forceSwitchFlag; {
 					return; 
 				}
 			}	
