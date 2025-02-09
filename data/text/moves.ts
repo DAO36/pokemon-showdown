@@ -541,8 +541,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	}, 
 	pickaxe: {
 		name: "Pickaxe",
-		desc: "If the current weather is Sandstorm, this move's power is doubled. This move's type effectiveness against Ground is changed to be super effective no matter what this move's type is. Has a higher chance for a critical hit.",
-		shortDesc: "2x power in Sandstorm. Super effective on Ground. High crit ratio.",
+		desc: "If the current weather is Sandstorm, this move's power is doubled. This move's type effectiveness against Ground is changed to be super effective no matter what this move's type is.",
+		shortDesc: "2x power in Sandstorm. Super effective on Ground.",
 	},
 	grindstone: {
 		name: "Grindstone",

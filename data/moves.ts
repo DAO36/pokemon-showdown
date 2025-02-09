@@ -2036,8 +2036,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		},
 		onEffectiveness(typeMod, target, type) {
 			if (type === 'Ground') return 1;
-		},
-		critRatio: 2,
+		}, 
 		secondary: null,
 		target: "normal",
 		type: "Steel",
