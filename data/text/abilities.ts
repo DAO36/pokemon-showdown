@@ -420,9 +420,9 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 		shortDesc: "If hit by a special attack, Special Defense is lowered by 1, Speed is raised by 2.",
 	},
 	chaos: {
-		name: "Red Card",
-		desc: "If this Rat survives a hit, and her HP is at half of her maximum HP or less, the attacker is forced to switch to a random ally.",
-		shortDesc: "If user survives a hit and at <50% HP, attacker is forced to switch to random ally.",
+		name: "Chaos",
+		desc: "If a Pokemon uses a damaging move on this Rat, and she survives the hit, there is a 50% chance the attacker is then forced to switch to a random ally.",
+		shortDesc: "50% chance those who attack this Rat are forced to switch to a random ally.",
 	},
 	archivist: {
 		name: "Archivist",

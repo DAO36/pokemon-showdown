@@ -1766,42 +1766,10 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 2,
 		num: 27,
 	},
-	everse: { // Red Card item but as an ability
-		onAfterMoveSecondary(target, source, move) {
-			if (source && source !== target && source.hp && target.hp && move && move.category !== 'Status') {
-				if (!source.isActive || !this.canSwitch(source.side) || source.forceSwitchFlag || target.forceSwitchFlag) {
-					return; 
-				}
-				// The item is used up even against a pokemon with Ingrain or that otherwise can't be forced out
-				if (target.hasAbility('reversereverse')) {
-					if (this.runEvent('DragOut', source, target, move)) {
-						source.forceSwitchFlag = true; 
-					}
-				}
-			}
-		},
-		flags: {},
-		name: "Reverse Reverse",
-		rating: 5,
-		num: 24,
-	},
-	atic: {
-		onDamagingHit(damage, target, source, move) {
-			if (this.checkMoveMakesContact(move, source, target)) {
-				if (this.randomChance(3, 10)) {
-					source.trySetStatus('par', target);
-				}
-			}
-		},
-		flags: {},
-		name: "Static",
-		rating: 2,
-		num: 9,
-	},
 	chaos: { // [Red Card ITEM] but as an ability
 		onAfterMoveSecondary(target, source, move) {
-			if (move.category === 'Special' || move.category === 'Physical' && !source.status) {
-				if (this.randomChance(6, 10)) { 
+			if (move.category === 'Special' || move.category === 'Physical' || move.category === 'Status') {
+				if (this.randomChance(5, 10)) { 
 				source.forceSwitchFlag || target.forceSwitchFlag; {
 					return; 
 				}
