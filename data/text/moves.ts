@@ -714,7 +714,7 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	blackhole: {
 		name: "Black Hole",
-		desc: "Hits adjacent Pokemon. Prevents the targets from switching out. The targets can still switch out if it is holding Shed Shell or uses Baton Pass, Flip Turn, Parting Shot, Teleport, U-turn, or Volt Switch. If the target leaves the field using Baton Pass, the replacement will remain trapped. The effect ends if the user leaves the field. Has a 100% chance to lower the target's Speed by 1 stage. Power is multiplied by 1.5 during Gravity's effect.",
+		desc: "Hits adjacent Pokemon. Prevents the targets from switching out. The targets can still switch out if it is holding Shed Shell or uses Baton Pass, Flip Turn, Parting Shot, Teleport, U-turn, or Volt Switch. If the target leaves the field using Baton Pass, the replacement will remain trapped. The effect ends if the user leaves the field. Has a 100% chance to lower the target's Speed by 1 stage. Power is multiplied by 1.5 during Gravity's effect. The accuracy of this move is unaffected by Gravity.",
 		shortDesc: "Prevents switching; -1 Speed. Gravity: 1.5x power.",
 	}, 
 	naturalasmr: {
@@ -744,8 +744,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	timeflies: {
 		name: "Time Flies",
-		desc: "No additional effect. Almost always goes first.",
-		shortDesc: "Almost always goes first.",
+		desc: "Almost always goes first. Power is multiplied by 1.5 during Trick Room's effect.",
+		shortDesc: "Trick Room: 1.5x power. Almost always goes first.",
 	},
 	timetogo: { // <UNUSED>
 		name: "Time to Go",

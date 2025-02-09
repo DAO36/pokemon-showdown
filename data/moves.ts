@@ -2853,7 +2853,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	clockstrikes: { // steal type dual wingbeat
 		num: 370,
 		accuracy: 100,
-		basePower: 50,
+		basePower: 50, 
 		category: "Physical",
 		name: "Clock Strikes",
 		pp: 5,
@@ -2869,6 +2869,11 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		num: 370,
 		accuracy: 100,
 		basePower: 50,
+		onBasePower(basePower) {
+			if (this.field.getPseudoWeather('trickroom')) {
+				return this.chainModify(1.5);
+			}
+		},
 		category: "Physical",
 		name: "Time Flies",
 		pp: 10,
