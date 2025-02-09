@@ -2757,12 +2757,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		name: "Black Hole",
 		pp: 5,
 		priority: 0,
-		flags: {protect: 1, mirror: 1, pulse: 1},
-		onModifyMove(move, pokemon, target) {
-			if (this.field.getPseudoWeather('gravity') && pokemon.isGrounded()) { 
-				move.accuracy = 50; 
-			}
-		},
+		flags: {protect: 1, mirror: 1, pulse: 1}, 
 		secondary: {
 			chance: 100,
 			onHit(target, source, move) {
