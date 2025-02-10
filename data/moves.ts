@@ -1846,7 +1846,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Dark",
 		contestType: "Cool",
 	},
-	lunarshield: { // king's shield but for SpAtk
+	lunarshield: {
 		num: 588,
 		accuracy: true,
 		basePower: 0,
@@ -1887,22 +1887,22 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 						delete source.volatiles['lockedmove'];
 					}
 				}
-				if (move.category === 'Special') {
+				if (this.checkMoveMakesContact(move, source, target)) {
 					this.boost({spa: -1}, source, target, this.dex.getActiveMove("Lunar Shield"));
 				}
 				return this.NOT_FAIL;
 			},
 			onHit(target, source, move) {
-				if (move.isZOrMaxPowered && move.category === 'Special') {
+				if (move.isZOrMaxPowered && this.checkMoveMakesContact(move, source, target)) {
 					this.boost({spa: -1}, source, target, this.dex.getActiveMove("Lunar Shield"));
 				}
 			},
 		},
 		secondary: null,
 		target: "self",
-		type: "Psychic",
-		contestType: "Cute",
-	}, 
+		type: "Psychic", 
+		contestType: "Cool",
+	},
 	alienassault: { // a Psychic type move that can hit Dark types
 		num: 370,
 		accuracy: 90,
