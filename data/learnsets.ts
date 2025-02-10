@@ -94760,6 +94760,8 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			charm: ["9M"],
 			carrotstrike: ["9M"],
 			painpeko: ["9M"],
+			tnt: ["9M"],
+			carrottrap: ["9M"],
         },
 	},		
 	pekorawarcriminal: {

@@ -258,7 +258,7 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	moguyummy: {
 		name: "Mogu Yummy",
 		desc: "This Cat recovers 1/2 the HP lost by the target, rounded half up. If Big Root is held by the user, the HP recovered is 1.3x normal, rounded half down. If this move is successful and the user has not fainted, it steals the target's held Berry if it is holding one and eats it immediately, gaining its effects even if the user's item is being ignored. Items lost to this move cannot be regained with Recycle or the Harvest Ability.",
-		shortDesc: "Heals 50% of damage dealt; Steals & eats target's Berry.",
+		shortDesc: "Heals 50% damage dealt; Steals & eats target's Berry.",
 
 		removeItem: "  [SOURCE] stole and ate [POKEMON]'s [ITEM]!",
 	}, 
@@ -282,6 +282,20 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		desc: "Lowers this Rabbit's Defense and Special Defense by 1 stage.",
 		shortDesc: "Lowers user's Defense and Sp.Def by 1.",
 	},
+	tnt: {
+		name: "TNT",
+		desc: "Hits adjacent foes. If this Rabbit lost HP, she takes recoil damage equal to 1/3 the HP lost by the target, rounded half up, but not less than 1 HP.",
+		shortDesc: "Has 33% recoil. Hits adjacent foes.",
+	}, 
+	icspikes: {
+		name: "Toxic Spikes",
+		desc: "Sets up a hazard on the opposing side of the field, inflicting Leech Seed on opposing Pokemon that switches in, unless it is using Heavy-Duty Boots. Can be removed from the opposing side if any Pokemon uses Tidy Up, or if any opposing Pokemon uses Clean Up, Mortal Spin, Rapid Spin, or Defog successfully, is hit by Defog, or a Grass-type Pokemon switches in. Safeguard prevents the opposing party from being leech seeded on switch-in, but a substitute does not.",
+		shortDesc: "Hurts foes on switch-in. Factors Grass weakness.", 
+
+		start: "  A diabolical trap has been set up for [TEAM]!",
+		end: "  The carrot trap disappeared from around [TEAM]!",
+		damage: "  The carrot trap has gotten [POKEMON]!",
+	}, 
 	macesmash: {
 		name: "Mace Smash",
 		desc: "If this attack does not miss, the effects of Reflect, Light Screen, Mist, Hologram, and Aurora Veil end for the target's side of the field before damage is calculated. If this move is successful, it breaks through the target's Baneful Bunker, Detect, King's Shield, Protect, or Spiky Shield for this turn, allowing other Pokemon to attack the target normally. If the target's side is protected by Crafty Shield, Mat Block, Quick Guard, or Wide Guard, that protection is also broken for this turn and other Pokemon may attack the target's side normally.",
