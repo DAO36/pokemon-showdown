@@ -93579,6 +93579,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 	sora: {
 		learnset: {
 			dazzlinggleam: ["9M"],
+			hyperbeam: ["9M"],
 			alluringvoice: ["9M"],
 			playrough: ["9M"],
 			boomburst: ["9M"],
@@ -93615,12 +93616,15 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 	miko: {
 		learnset: {
 			dazzlinggleam: ["9M"],
+			hyperbeam: ["9M"],
+			gigaimpact: ["9M"],
 			playrough: ["9M"],
 			petaldance: ["9M"],
 			energyball: ["9M"],
 			petalblizzard: ["9M"],
 			leafstorm: ["9M"],
 			hypervoice: ["9M"],
+			solarbeam: ["9M"],
 			fakeout: ["9M"],
 			facade: ["9M"],
 			protect: ["9M"],
@@ -93713,6 +93717,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 	suisei: {
 		learnset: {
 			icehammer: ["9M"],
+			gigaimpact: ["9M"],
 			iciclespear: ["9M"],
 			tripleaxel: ["9M"],
 			icebeam: ["9M"],
@@ -93773,6 +93778,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			ironhead: ["9M"],
 			geargrind: ["9M"],
 			paraboliccharge: ["9M"],
+			solarbeam: ["9M"],
 			fly: ["9M"],
 			zapcannon: ["9M"],
 			voltswitch: ["9M"],
@@ -94858,7 +94864,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			swordsdance: ["9M"],
 			calmmind: ["9M"],
 			wideguard: ["9M"],
-			clubsmash: ["9M"],
+			macesmash: ["9M"],
 			knightfist: ["9M"],
         },
 	},		
@@ -96014,6 +96020,9 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			meteormash: ["9M"],
 			moonblast: ["9M"],
 			dazzlinggleam: ["9M"],
+			lightscreen: ["9M"],
+			reflect: ["9M"],
+			mist: ["9M"],
 			drainingkiss: ["9M"],
 			playrough: ["9M"],
 			agility: ["9M"],
@@ -96035,7 +96044,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			moonlight: ["9M"],
 			sweetkiss: ["9M"],
 			paintbrush: ["9M"],
-			alientouch: ["9M"],
+			alienassault: ["9M"],
         },
 	},	
 	risu: {
@@ -96437,7 +96446,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			nopressure: ["9M"],
 			pickaxe: ["9M"],
 			grindstone: ["9M"],
-			goriela: ["9M"],
+			pickiaxe: ["9M"],
         },
 	},	
 	kobo: {

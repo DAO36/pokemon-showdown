@@ -242,8 +242,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	boxingdoggo: {
 		name: "Boxing Doggo",
-		desc: "Has a 10% chance to raise this Dog's Defense by 1 stage.",
-		shortDesc: "10% chance to raise user's Defense by 1.",
+		desc: "If the target lost HP, this Dog takes recoil damage equal to 33% the HP lost by the target, rounded half up, but not less than 1 HP.",
+		shortDesc: "Has 33% recoil.",
 	},
 	yubiyubi: {
 		name: "Yubi Yubi",
@@ -282,17 +282,17 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		desc: "Lowers this Rabbit's Defense and Special Defense by 1 stage.",
 		shortDesc: "Lowers user's Defense and Sp.Def by 1.",
 	},
-	clubsmash: {
-		name: "Club Smash",
-		desc: "Has a 10% chance to lower the target's Attack by 1 stage. If the target lost HP, the user takes recoil damage equal to 33% the HP lost by the target, rounded half up, but not less than 1 HP.",
-		shortDesc: "33% recoil. 10% chance to lower foe's Atk by 1.",
-	},
-	knightfist: {
-		name: "Knight Fist",
-		desc: "If this attack does not miss, the effects of Reflect, Light Screen, Mist, Hologram, and Aurora Veil end for the target's side of the field before damage is calculated.",
-		shortDesc: "Destroys screens.",
+	macesmash: {
+		name: "Mace Smash",
+		desc: "If this attack does not miss, the effects of Reflect, Light Screen, Mist, Hologram, and Aurora Veil end for the target's side of the field before damage is calculated. If this move is successful, it breaks through the target's Baneful Bunker, Detect, King's Shield, Protect, or Spiky Shield for this turn, allowing other Pokemon to attack the target normally. If the target's side is protected by Crafty Shield, Mat Block, Quick Guard, or Wide Guard, that protection is also broken for this turn and other Pokemon may attack the target's side normally.",
+		shortDesc: "Breaks protection and destroys screens.",
 
 		activate: "  [POKEMON] shattered [TEAM]'s protections!",
+	}, 
+	knightfist: {
+		name: "Knight Fist",
+		desc: "Ignores the target's stat stage changes.",
+		shortDesc: "Ignores the target's stat stage changes.",
 	},
 	arrowassault: {
 		name: "Arrow Assault",
@@ -414,15 +414,15 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	wamywater: {
 		name: "Wamy Water",
-		desc: "Has a 30% chance to freeze the target.",
-		shortDesc: "30% chance to freeze the target.",
-	},
+		desc: "Has a 30% chance to freeze the target. If the current weather is Snow, this move's power is doubled.",
+		shortDesc: "30% chance to freeze target. 2x power in Snow.",
+	}, 
 	sake: {
 		name: "Sake",
-		desc: "Raises this Elf's Attack by 12 stages in exchange for the user losing 1/2 of its maximum HP, rounded down. Fails if the user would faint or if its Attack stat stage is 6.",
-		shortDesc: "User loses 50% max HP. Maximizes Attack.",
+		desc: "Raises this Elf's Special Attack by 12 stages in exchange for the user losing 1/2 of its maximum HP, rounded down. Fails if the user would faint or if its Special Attack stat stage is 6.",
+		shortDesc: "User loses 50% HP. Maximizes Speial Attack.",
 
-		boost: "  [POKEMON] drunkenly cut its own HP and maximized its Attack!",
+		boost: "  [POKEMON] has gotten drunk!",
 	},
 	nenemaxattack: {
 		name: "NeneMAX Attack",
@@ -503,8 +503,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		desc: "The user is protected from most attacks made by other Pokemon during this turn, and Pokemon trying to use special attacks against the user have their Special Attack lowered by 1 stage. Non-damaging moves go through this protection. This move has a 1/X chance of being successful, where X starts at 1 and triples each time this move is successfully used. X resets to 1 if this move fails, if the user's last move used is not Baneful Bunker, Burning Bulwark, Detect, Endure, King's Shield, Max Guard, Obstruct, Protect, Quick Guard, Silk Trap, Spiky Shield, or Wide Guard, or if it was one of those moves and the user's protection was broken. Fails if the user moves last this turn.",
 		shortDesc: "Protects. If foe uses special attack: -1 Sp. Atk.",
 	},
-	alientouch: {
-		name: "Alien Touch",
+	alienassault: {
+		name: "Alien Assault",
 		desc: "This move's type effectiveness against Dark is changed to be neutrally effective no matter what this move's type is.",
 		shortDesc: "Psychic type move that can hit Dark types.",
 	},
@@ -550,11 +550,16 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 
 		heal: "#memento",
 		switchOut: "#uturn",
-	}, 
+	},
 	pickaxe: {
 		name: "Pickaxe",
-		desc: "If the current weather is Sandstorm, this move's power is doubled. This move's type effectiveness against Ground is changed to be super effective no matter what this move's type is.",
-		shortDesc: "2x power in Sandstorm. Super effective on Ground.",
+		desc: "This move's type effectiveness against Ground and Steel is changed to be super effective no matter what this move's type is.",
+		shortDesc: "Super effective on Ground and Steel.",
+	}, 
+	pickiaxe: {
+		name: "PiCKIAxe",
+		desc: "If the current weather is Sandstorm, this move's power is doubled.",
+		shortDesc: "Double power in Sandstorm.",
 	},
 	grindstone: {
 		name: "Grindstone",
@@ -591,7 +596,7 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	sharkattack: {
 		name: "Shark Attack",
-		desc: "Has a 10% chance to lower the target's Defense by 1 stage. This move can hit a target using Dive.I f the weather is Primordial Sea or Rain Dance, this move does not check accuracy. If the weather is Desolate Land or Sunny Day, this move's accuracy is 50%.",
+		desc: "Has a 10% chance to lower the target's Defense by 1 stage. This move can hit a target using Dive.I f the weather is Primordial Sea or Rain Dance, this move does not check accuracy. If the weather is Desolate Land or Sunny Day, this move's accuracy is 50%. Power is halved if the weather is Desolate Land, Sunny Day, or Sandstorm and the user is not holding Utility Umbrella.",
 		shortDesc: "10% chance to lower target's Defense by 1.",
 	},
 	atlantisstrike: {
@@ -752,9 +757,9 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	}, 
 	naturalasmr: {
 		name: "Natural ASMR",
-		desc: "Has a 10% chance to raise this Kirin's Special Defense by 1 stage. Hits adjacent foes.",
-		shortDesc: "10% to raise user's Special Defense by 1.",
-	},
+		desc: "Every Pokemon in this Nephelim's party is cured of their non-volatile status condition. Hits adjacent foes.",
+		shortDesc: "Cures the user's party of all status conditions.",
+	}, 
 	gamerkirin: {
 		name: "Gamer Kirin",
 		desc: "Raises this Kirin's Attack by 2 stages.",
