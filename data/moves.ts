@@ -126,6 +126,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		    status: 'brn', 
 		},
 		self: { 
+			chance: 100,
 		    status: 'brn', 
 		},
 		target: "allAdjacentFoes",
