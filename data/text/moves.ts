@@ -17,7 +17,7 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	tskr: {
 		name: "TSKR",
 		desc: "This Idol cures her non-volatile status condition. Raises the Idol's Special Attack by 2 stages.",
-		shortDesc: "Cures user and her party; raises Sp.Atk by 2.",
+		shortDesc: "Cures user and her party; Raises Sp.Atk by 2.",
 	},
 	sakuraiattack: {
 		name: "Sakurai Attack",
@@ -26,7 +26,7 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	lavabucket: {
 		name: "Lava Bucket",
 		desc: "Has a 100% chance to burn the target. Hits adjacent foes. User gets burned as well.",
-		shortDesc: "Burns target. Hits adjacent foes. User gets burned too.",
+		shortDesc: "100% chance to burn the target and user.",
 
 		activate: "  [SOURCE] dropped lava everywhere! Atsui!",
 	},
@@ -172,8 +172,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		desc: "Hits two to five times. Has a 35% chance to hit two or three times and a 15% chance to hit four or five times. If one of the hits breaks the target's substitute, it will take damage for the remaining hits. If the user has the Skill Link Ability, this move will always hit five times. If the user is holding Loaded Dice, this move will hit 4-5 times.",
 		shortDesc: "Hits 2-5 times in one turn.",
 	},
-	gamermaid: {
-		name: "Gamer Maid",
+	onyan: {
+		name: "Onyan",
 		desc: "Raises this Maid's Attack by 2 stages.",
 		shortDesc: "Raises the user's Attack by 2.",
 	},
@@ -210,8 +210,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		desc: "Lowers this witch's Special Attack by 2 stages.",
 		shortDesc: "Lowers user's Special Attack by 2.",
 	},
-	magiconion: {
-		name: "Magic Onion",
+	arcanegarlic: {
+		name: "Arcane Garlic",
 		desc: "Raises this witch's Attack by 2 stages.",
 		shortDesc: "Raises the user's Attack by 2.",
 	},

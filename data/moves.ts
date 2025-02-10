@@ -351,7 +351,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	icesword: {
 		num: 348,
 		accuracy: 100,
-		basePower: 75,
+		basePower: 80,
 		category: "Physical",
 		name: "Ice Sword",
 		pp: 10,
@@ -609,12 +609,12 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Fairy",
 		contestType: "Cool",
 	},
-	gamermaid: { // swords dance reskin
+	onyan: { // swords dance reskin
 		num: 370,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
-		name: "Gamer Maid",
+		name: "Onyan",
 		pp: 20,
 		priority: 0,
 		flags: {snatch: 1},
@@ -754,12 +754,12 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Psychic",
 		contestType: "Beautiful",
 	},
-	magiconion: { // swords dance reskin
+	arcanegarlic: { // swords dance reskin
 		num: 370,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
-		name: "Magic Onion",
+		name: "Arcane Garlic",
 		pp: 20,
 		priority: 0,
 		flags: {snatch: 1},

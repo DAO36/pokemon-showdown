@@ -94287,7 +94287,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			mist: ["9M"],
 			haze: ["9M"],
 			apexmaid: ["9M"],
-			gamermaid: ["9M"],
+			onyan: ["9M"],
         },
 	},
 	ayame: {
@@ -94430,7 +94430,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			spite: ["9M"],
 			grudge: ["9M"],
 			witchattack: ["9M"],
-			magiconion: ["9M"],
+			arcanegarlic: ["9M"],
 			magickick: ["9M"],
         },
 	},

@@ -134,7 +134,7 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	apex: {
 		name: "Apex",
 		desc: "When this Maid has more than 1/2 of her maximum HP and takes damage from an attack bringing her to 1/2 or less of her maximum HP, her Special Attack is raised by 1 stage. This effect applies after all hits from a multi-hit move. This effect is prevented if the move had a secondary effect removed by the Sheer Force Ability.",
-		shortDesc: "Special Attack is raised by 1 when it reaches 1/2 or less of max HP.",
+		shortDesc: "Special Attack is raised by 1 when she reaches 1/2 or less of her max HP.",
 	},
 	oni: {
 		name: "Oni",
