@@ -1496,7 +1496,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	wamywater: {
 		num: 370,
 		accuracy: 100,
-		basePower: 50, 
+		basePower: 60, 
 		category: "Special",
 		name: "Wamy Water",
 		pp: 10,
@@ -2197,7 +2197,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 				move.accuracy = true;
 				break;
 			case 'sunnyday':
-			case 'desolateland':
+			case 'desolateland': 
 				move.accuracy = 50;
 				break;
 			}
@@ -2266,6 +2266,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 				break;
 			case 'sunnyday':
 			case 'desolateland':
+			case 'sandstorm':	
 				move.accuracy = 50;
 				break;
 			}
@@ -2292,6 +2293,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 				break;
 			case 'sunnyday':
 			case 'desolateland':
+			case 'sandstorm':	
 				move.accuracy = 50;
 				break;
 			}
@@ -2339,7 +2341,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 			return null;
 		},
 		onBasePower(basePower, pokemon, target) {
-			const weakWeathers = ['sunnyday', 'desolateland', 'sandstorm', 'hail', 'snow'];
+			const weakWeathers = ['sunnyday', 'desolateland', 'sandstorm'];
 			if (weakWeathers.includes(pokemon.effectiveWeather())) {
 				this.debug('weakened by weather');
 				return this.chainModify(0.5);

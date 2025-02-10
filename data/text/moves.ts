@@ -420,7 +420,7 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	sake: {
 		name: "Sake",
 		desc: "Raises this Elf's Special Attack by 12 stages in exchange for the user losing 1/2 of its maximum HP, rounded down. Fails if the user would faint or if its Special Attack stat stage is 6.",
-		shortDesc: "User loses 50% HP. Maximizes Speial Attack.",
+		shortDesc: "User loses 50% HP. Maximizes Speical Attack.",
 
 		boost: "  [POKEMON] has gotten drunk!",
 	},
@@ -554,7 +554,7 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	pickaxe: {
 		name: "Pickaxe",
 		desc: "Has a 30% chance to lower the target's Defense by 1 stage. This move's type effectiveness against Ground and Steel is changed to be super effective no matter what this move's type is.",
-		shortDesc: "2x effective on Ground & Steel. 30% to lower Def by 1.",
+		shortDesc: "2x effective on Ground/Steel. 30% to lower Def by 1.",
 	},
 	pickiaxe: {
 		name: "PiCKIAxe",
