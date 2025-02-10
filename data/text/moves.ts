@@ -288,7 +288,7 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		shortDesc: "Breaks protection and destroys screens.",
 
 		activate: "  [POKEMON] shattered [TEAM]'s protections!",
-	}, 
+	},  
 	knightfist: {
 		name: "Knight Fist",
 		desc: "Ignores the target's stat stage changes.",
@@ -553,9 +553,9 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	pickaxe: {
 		name: "Pickaxe",
-		desc: "This move's type effectiveness against Ground and Steel is changed to be super effective no matter what this move's type is.",
-		shortDesc: "Super effective on Ground and Steel.",
-	}, 
+		desc: "Has a 30% chance to lower the target's Defense by 1 stage. This move's type effectiveness against Ground and Steel is changed to be super effective no matter what this move's type is.",
+		shortDesc: "2x effective on Ground & Steel. 30% to lower Def by 1.",
+	},
 	pickiaxe: {
 		name: "PiCKIAxe",
 		desc: "If the current weather is Sandstorm, this move's power is doubled.",

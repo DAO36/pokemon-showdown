@@ -1015,12 +1015,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 			pokemon.side.removeSideCondition('mist');
 		},
 		breaksProtect: true,
-		secondary: {
-			chance: 100,
-			boosts: {
-				def: -1,
-			},
-		},
+		secondary: null,
 		target: "normal",
 		type: "Steel",
 		contestType: "Tough",
@@ -1907,7 +1902,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		target: "self",
 		type: "Psychic",
 		contestType: "Cute",
-	},
+	}, 
 	alienassault: { // a Psychic type move that can hit Dark types
 		num: 370,
 		accuracy: 90,
@@ -2092,7 +2087,12 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		onEffectiveness(typeMod, target, type) {
 			if (type === 'Ground' || type === 'Steel') return 1;
 		},  
-		secondary: null,
+		secondary: {
+			chance: 30,
+			boosts: {
+				def: -1,
+			},
+		},
 		target: "normal",
 		type: "Steel",
 		contestType: "Cool",
