@@ -289,12 +289,12 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	}, 
 	carrottrap: {
 		name: "Carrot Trap",
-		desc: "Sets up a hazard on the opposing side of the field, damaging each opposing Pokemon that switches in and inflicting Leech Seed on opposing Pokemon that switches in, unless it is using Heavy-Duty Boots. Can be removed from the opposing side if any Pokemon uses Tidy Up, or if any opposing Pokemon uses Clean Up, Mortal Spin, Rapid Spin, or Defog successfully, is hit by Defog, or a Grass-type Pokemon switches in. Safeguard prevents the opposing party from being leech seeded on switch-in, but a substitute does not.",
-		shortDesc: "Hurts foes on switch-in & inflicts leech seed.", 
+		desc: "Sets up a hazard on the opposing side of the field, damaging each opposing Pokemon that switches in, foes lose 1/32, 1/16, 1/8, 1/4, or 1/2 of their maximum HP, rounded down, based on their weakness to the Grass type; 0.25x, 0.5x, neutral, 2x, or 4x, respectively. No damage is taken if the opposing Pokemon are using Heavy-Duty Boots. This also inflicts Leech Seed on any opposing Pokemon that switches in, unless they are using Heavy-Duty Boots. Can be removed from the opposing side if any Pokemon uses Tidy Up, or if any opposing Pokemon uses Clean Up, Mortal Spin, Rapid Spin, or Defog successfully, is hit by Defog, or a Grass-type Pokemon switches in. Safeguard prevents the opposing party from being leech seeded on switch-in, but a substitute does not.",
+		shortDesc: "Hurts foes on switch-in & inflicts leech seed on them.", 
 
 		start: "  A diabolical trap has been set up for [TEAM]!",
-		end: "  The carrot trap disappeared from around [TEAM]!",
-		damage: "  The carrot trap has gotten [POKEMON]!",
+		end: "  The trap has been disarmed!",
+		damage: "  The trap has been activated by [POKEMON]!",
 	}, 
 	macesmash: {
 		name: "Mace Smash",
