@@ -96546,6 +96546,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			dragondance: ["9M"],
 			nastyplot: ["9M"],
 			taunt: ["9M"],
+			rapidspin: ["9M"],
 			babydolleyes: ["9M"],
 			trident: ["9M"],
 			sharkattack: ["9M"],
