@@ -1028,13 +1028,13 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 				this.add('-sidestart', side, 'move: Carrot Trap');
 			},
 			onEntryHazard(pokemon) {
-				if (pokemon.hasItem('heavydutyboots')) return;
+				if (pokemon.hasItem('heavydutyboots') || pokemon.hasType('Grass')) return;
 				const typeMod = this.clampIntRange(pokemon.runEffectiveness(this.dex.getActiveMove('carrottrap')), -6, 6);
 				this.damage(pokemon.maxhp * Math.pow(2, typeMod) / 8);
 				if (pokemon.hasType('Grass')) {
 					this.add('-sideend', pokemon.side, 'move: Carrot Trap', '[of] ' + pokemon);
 					pokemon.side.removeSideCondition('carrottrap');
-				} else if (pokemon.hasItem('heavydutyboots')) {
+				} else if (pokemon.hasItem('heavydutyboots') || pokemon.hasType('Grass')) {
 					return;
 				} else if (this.effectState.layers = 1) {
 					pokemon.addVolatile('leechseed', pokemon.side.foe.active[0]);
