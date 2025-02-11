@@ -1043,7 +1043,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		},
 		secondary: null,
 		target: "foeSide",
-		type: "Ground", 
+		type: "Grass", 
 		contestType: "Clever",
 	},
 	chseed: {

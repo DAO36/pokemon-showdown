@@ -287,10 +287,10 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		desc: "Hits adjacent foes. If this Rabbit lost HP, she takes recoil damage equal to 1/3 the HP lost by the target, rounded half up, but not less than 1 HP.",
 		shortDesc: "Has 33% recoil. Hits adjacent foes.",
 	}, 
-	icspikes: {
-		name: "Toxic Spikes",
-		desc: "Sets up a hazard on the opposing side of the field, inflicting Leech Seed on opposing Pokemon that switches in, unless it is using Heavy-Duty Boots. Can be removed from the opposing side if any Pokemon uses Tidy Up, or if any opposing Pokemon uses Clean Up, Mortal Spin, Rapid Spin, or Defog successfully, is hit by Defog, or a Grass-type Pokemon switches in. Safeguard prevents the opposing party from being leech seeded on switch-in, but a substitute does not.",
-		shortDesc: "Hurts foes on switch-in. Factors Grass weakness.", 
+	carrottrap: {
+		name: "Carrot Trap",
+		desc: "Sets up a hazard on the opposing side of the field, damaging each opposing Pokemon that switches in and inflicting Leech Seed on opposing Pokemon that switches in, unless it is using Heavy-Duty Boots. Can be removed from the opposing side if any Pokemon uses Tidy Up, or if any opposing Pokemon uses Clean Up, Mortal Spin, Rapid Spin, or Defog successfully, is hit by Defog, or a Grass-type Pokemon switches in. Safeguard prevents the opposing party from being leech seeded on switch-in, but a substitute does not.",
+		shortDesc: "Hurts foes on switch-in & inflicts leech seed.", 
 
 		start: "  A diabolical trap has been set up for [TEAM]!",
 		end: "  The carrot trap disappeared from around [TEAM]!",
