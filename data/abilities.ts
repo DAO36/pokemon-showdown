@@ -1258,7 +1258,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
             } 
 			let success = false; 
 			const removeTarget = [
-				'spikes', 'toxicspikes', 'stealthrock', 'stickyweb', 'gmaxsteelsurge',
+				'spikes', 'toxicspikes', 'stealthrock', 'stickyweb', 'gmaxsteelsurge', 'carrottrap',
 			]; 
 			for (const targetCondition of removeTarget) {
 				if (pokemon.side.removeSideCondition(targetCondition)) { 
