@@ -1027,10 +1027,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 			onSideStart(side) {
 				this.add('-sidestart', side, 'move: Carrot Trap');
 			},
-			onEntryHazard(pokemon) {
-				if (pokemon.hasItem('heavydutyboots')) return;
-				const typeMod = this.clampIntRange(pokemon.runEffectiveness(this.dex.getActiveMove('carrottrap')), -6, 6);
-				this.damage(pokemon.maxhp * Math.pow(2, typeMod) / 8); 	
+			onEntryHazard(pokemon) { 	
 				if (pokemon.hasType('Grass')) {
 					this.add('-sideend', pokemon.side, 'move: Carrot Trap', '[of] ' + pokemon);
 					pokemon.side.removeSideCondition('carrottrap');
@@ -1039,13 +1036,39 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 				} else if (this.effectState.layers = 1) {
 					pokemon.addVolatile('leechseed', pokemon.side.foe.active[0]);
 				} 
+				if (pokemon.hasItem('heavydutyboots')) return;
+				const typeMod = this.clampIntRange(pokemon.runEffectiveness(this.dex.getActiveMove('carrottrap')), -6, 6);
+				this.damage(pokemon.maxhp * Math.pow(2, typeMod) / 8); 
 			},
 		},
 		secondary: null,
 		target: "foeSide",
 		type: "Grass", 
 		contestType: "Clever",
-	},    
+	}, 
+	kes: {
+		num: 191,
+		accuracy: true,
+		basePower: 0,
+		category: "Status",
+		name: "Spikes",
+		pp: 20,
+		priority: 0,
+		flags: {reflectable: 1, nonsky: 1, metronome: 1, mustpressure: 1},
+		sideCondition: 'spikes',
+		condition: { 
+			onEntryHazard(pokemon) {
+				if (!pokemon.isGrounded() || pokemon.hasItem('heavydutyboots')) return;
+				const damageAmounts = [0, 3, 4, 6]; // 1/8, 1/6, 1/4
+				this.damage(damageAmounts[this.effectState.layers] * pokemon.maxhp / 24);
+			},
+		},
+		secondary: null,
+		target: "foeSide",
+		type: "Ground",
+		zMove: {boost: {def: 1}},
+		contestType: "Clever",
+	},
 	macesmash: { // steel type feint
 		num: 38,
 		accuracy: 90,
