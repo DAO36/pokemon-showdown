@@ -1577,7 +1577,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		basePowerCallback(source, target, move) {
 			if (this.field.isWeather('snow')) {
 				if (!source.isAlly(target)) this.hint(`${move.name}'s BP doubled on target.`);
-				return move.basePower * 2;
+				return move.basePower * 1.5;
 			}
 			return move.basePower;
 		},
@@ -3546,22 +3546,25 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		target: "normal",
 		type: "Dark",
 	},
-	fuwamocomorning: { // only learned by the FuwaMoco fusion; Aura Wheel copy
+	baubau: { // only learned by the FuwaMoco fusion; Aura Wheel copy
 		num: 783,
 		accuracy: 100,
 		basePower: 100,
 		category: "Physical",
-		name: "FuwaMoco Morning",
+		name: "Bau Bau",
 		pp: 10,
 		priority: 0,
 		flags: {protect: 1, contact: 1},
+		onModifyMove(move, pokemon) {
+			if (pokemon.getStat('spa', false, true) > pokemon.getStat('atk', false, true)) move.category = 'Special';
+		},
 		secondary: null,
 		onTry(source) {
 			if (source.species.baseSpecies === 'FuwaMoco') {
 				return;
 			}
 			this.attrLastMove('[still]');
-			this.add('-fail', source, 'move: FuwaMoco Morning');
+			this.add('-fail', source, 'move: Bau Bau');
 			this.hint("Only a Pokemon whose form is FuwaMoco or FuwaMoco-Wawa can use this move.");
 			return null;
 		},

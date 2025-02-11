@@ -270,7 +270,7 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	firewall: {
 		name: "Firewall",
 		desc: "If this Coyote is hit by a physical attack, she sets up Reflect right after being hit. If hit by a special attack, she sets up Light Screen right after being hit",
-		shortDesc: "If hit by a physical attack, Reflect is set up; If special, Light Screen is set up",
+		shortDesc: "If hit by a physical attack, Reflect is set up; If special, Light Screen is set up.",
 	},
 	madscience: { // [UNUSED]
 		name: "Mad Science",
@@ -311,7 +311,7 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	moongoddess: {
 		name: "Moon Goddess",
 		desc: "This Moon Goddess is not affected by the secondary effect of another Pokemon's attack; Cannot be made to flinch, or be struck by critical hits",
-		shortDesc: "Immune to secondary effects of attacks; Immune to flinching and crits.",
+		shortDesc: "Immune to secondary effects of attacks; Immune to flinching and critical hits.",
 	},
 	moonmania: {
 		name: "Moon Mania",
@@ -324,7 +324,7 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	erofi: {
 		name: "Erofi",
 		desc: "This Alien is immune to Dark-type moves and has her Attack raised by 1 stage when hit by a Dark-type move.",
-		shortDesc: "Attack is raised 1 stage if hit by a Dark type move; Dark immunity.",
+		shortDesc: "Attack is raised by 1 stage if user is hit by a Dark type move; Dark immunity.",
 	},
 	nnn: {
 		name: "NNN",
@@ -347,8 +347,8 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 
 		damage: "#roughskin",
 	},
-	undercoveragent: {
-		name: "Undercover Agent",
+	secretagent: {
+		name: "Secret Agent",
 		desc: "This Spy's type changes to match the type of the move she is about to use. This effect comes after all effects that change a move's type.",
 		shortDesc: "User's type changes to the type of the move it is using.",
 	},
@@ -455,8 +455,8 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 		name: "The Fluffy One",
 		shortDesc: "Pokemon making contact with this Dog have their Attack lowered by 1 stage.",
 	},
-	baubau: {
-		name: "Bau Bau",
+	fwmc: {
+		name: "FWMC",
 		desc: "If the user is FuwaMoco, changes formes between Mococo and Fuwawa at the end of each turn.",
 		shortDesc: "If FuwaMoco, changes between Mococo and Fuwawa at the end of each turn.",
 	},

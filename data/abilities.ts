@@ -1444,18 +1444,18 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 2.5,
 		num: 160,
 	},
-	undercoveragent: { // reskin of [Protean] pre-nerf
+	secretagent: { // reskin of [Protean] pre-nerf
         onPrepareHit(source, target, move) {
             if (move.hasBounced || move.flags['futuremove'] || move.sourceEffect === 'snatch') return;
             const type = move.type;
             if (type && type !== '???' && source.getTypes().join() !== type) {
                 if (!source.setType(type)) return;
-                this.add('-start', source, 'typechange', type, '[from] ability: Undercover Agent');
+                this.add('-start', source, 'typechange', type, '[from] ability: Secret Agent');
             }
         },
         onSwitchIn() {},
         rating: 5,
-        name: "Undercover Agent",
+        name: "Secret Agent",
         num: 236
 	},
 	graondstone: { // combines [Sand Force] + [Rain Dish] (but Sandstorm instead of Rain)
@@ -1938,7 +1938,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 2.5,
 		num: 183,
 	},
-	baubau: { // reskin of [Hunger Switch] but it is Dark > Fairy > Dark instead of Electric > Dark > Electric
+	fwmc: { // reskin of [Hunger Switch] but it is Dark > Fairy > Dark instead of Electric > Dark > Electric
 		onResidualOrder: 29,
 		onResidual(pokemon) {
 			if (pokemon.species.baseSpecies !== 'FuwaMoco' || pokemon.terastallized) return;
@@ -1946,7 +1946,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			pokemon.formeChange(targetForme);
 		},
 		flags: {failroleplay: 1, noreceiver: 1, noentrain: 1, notrace: 1, failskillswap: 1, notransform: 1},
-		name: "Bau Bau",
+		name: "FWMC",
 		rating: 1,
 		num: 258,
 	},

@@ -98062,7 +98062,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			nastyplot: ["9M"],
 			drainpunch: ["9M"],
 			moonlight: ["9M"],
-			fuwamocomorning: ["9M"],
+			baubau: ["9M"],
         },
 	},	
 	elizabeth: {

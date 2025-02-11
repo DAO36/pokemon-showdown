@@ -382,7 +382,7 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	ubersheep: {
 		name: "Uber Sheep",
 		desc: "This Sheep restores 1/2 of her maximum HP, rounded half up. Removes any status effect that the Sheep is inflicted with.",
-		shortDesc: "Heals user by 50% of max HP. Cures status",
+		shortDesc: "Heals user by 50% of max HP. Cures status.",
 	},
 	staticslam: {
 		name: "Static Slam",
@@ -419,7 +419,7 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	ssrb: {
 		name: "SSRB",
 		desc: "Hits ten times. This move checks accuracy for each hit, and the attack ends if the target avoids a hit. If one of the hits breaks the target's substitute, it will take damage for the remaining hits. If the user has the Skill Link Ability, this move will always hit ten time.",
-		shortDesc: "Hits 10 times. Each hit can miss",
+		shortDesc: "Hits 10 times. Each hit can miss.",
 	},
 	lalion: {
 		name: "Lalion",
@@ -429,7 +429,7 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	wamywater: {
 		name: "Wamy Water",
 		desc: "Has a 30% chance to freeze the target. If the current weather is Snow, this move's power is doubled.",
-		shortDesc: "30% chance to freeze target. 2x power in Snow.",
+		shortDesc: "30% chance to freeze foe. 1.5x power in Snow.",
 	}, 
 	sake: {
 		name: "Sake",
@@ -486,7 +486,7 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	hologram: {
 		name: "Hologram",
 		desc: "For 5 turns, the Coyote and her party members are protected from status moves from other Pokemon. Lasts for 8 turns if the user is holding Light Clay. Fails if the effect is already active on the user's side.",
-		shortDesc: "5 turns: protects user's party from status moves from other Pokemon",
+		shortDesc: "5 turns: protects party from status moves from other Pokemon",
 
 		start: "  [TEAM] summoned a hologram!",
 		end: "  [TEAM] is no longer protected!",
@@ -500,7 +500,7 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	cleanup: {
 		name: "Clean Up",
 		desc: "If this move is successful and the Orca has not fainted, the effects of Leech Seed and binding moves end for the Orca, and all hazards are removed from the Orca's side of the field. The Orca then switches out even if she is trapped and is replaced immediately by a selected party member.",
-		shortDesc: "Clears hazards/bind/Leech Seed. Switches after damaging target.",
+		shortDesc: "Clears hazards/bind/Leech Seed. Switches after.",
 	},
 	moonstrike: {
 		name: "Moonstrike",
@@ -864,7 +864,7 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	bibooblade: {
 		name: "Biboo Blade",
 		desc: "Has a high chance to land a critical hit. If this move is successful, it sets up spikes on the opposing side of the field, damaging each opposing Pokemon that switches in, unless it is a Flying-type Pokemon or has the Levitate Ability. A maximum of three layers may be set, and opponents lose 1/8 of their maximum HP with one layer, 1/6 of their maximum HP with two layers, and 1/4 of their maximum HP with three layers, all rounded down. Can be removed from the opposing side if any Pokemon uses Tidy Up, or if any opposing Pokemon uses Mortal Spin, Rapid Spin, Clean Up, or Defog successfully, or is hit by Defog.",
-		shortDesc: "Sets a layer of Spikes on opposing side. High crit ratio",
+		shortDesc: "Sets a layer of Spikes on opposing side. High crit ratio.",
 	},
 	haboob: {
 		name: "Haboob",
@@ -885,11 +885,11 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		desc: "Has a higher chance for a critical hit. Hits twice. If the first hit breaks the target's substitute, it will take damage for the second hit.",
 		shortDesc: "Hits 2 times in one turn. High crit ratio.",
 	},
-	fuwamocomorning: {
-		name: "FuwaMoco Morning",
-		desc: "If the user is Mococo, this move is Dark type. If the user is Fuwawa, this move is Fairy type. This move cannot be used successfully unless the user's current form, while considering Transform, is Fuwawa or Mococo.",
-		shortDesc: "Mococo: Dark; Fuwawa: Fairy.",
-	},
+	baubau: {
+		name: "Bau Bau",
+		desc: "If the user is Mococo, this move is Dark type. If the user is Fuwawa, this move is Fairy type. This move becomes a special attack if the user's Special Attack is greater than its Attack, including stat stage changes. This move cannot be used successfully unless the user's current form, while considering Transform, is Fuwawa or Mococo.",
+		shortDesc: "Mococo: Dark; Fuwawa: Fairy. Special if Sp.Atk > Atk.",
+	}, 
 	songofjustice: {
 		name: "Song of Justice",
 		desc: "Has a 10% chance to raise the user's Special Defense by 1 stage. Hits adjacent foes.",
