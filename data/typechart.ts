@@ -227,8 +227,7 @@ export const TypeChart: import('../sim/dex-data').TypeDataTable = {
 	},
 	grass: {
 		damageTaken: {
-			powder: 3,
-			carrottrap: 3,
+			powder: 3, 
 			Bug: 1,
 			Dark: 0,
 			Dragon: 0,
