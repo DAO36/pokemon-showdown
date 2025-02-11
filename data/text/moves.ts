@@ -294,7 +294,7 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 
 		start: "  A diabolical trap has been set up for [TEAM]!",
 		end: "  The trap has been disarmed!",
-		damage: "  The trap has been activated by [POKEMON]!",
+		damage: "  The trap has been activated!",
 	}, 
 	macesmash: {
 		name: "Mace Smash",
