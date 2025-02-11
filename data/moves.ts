@@ -1036,7 +1036,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 				} else if (this.effectState.layers = 1) {
 					pokemon.addVolatile('leechseed', pokemon.side.foe.active[0]);
 				} 
-				if (pokemon.hasItem('heavydutyboots')) return;
+				if (pokemon.hasItem('heavydutyboots') || pokemon.hasType('Grass')) return;
 				const typeMod = this.clampIntRange(pokemon.runEffectiveness(this.dex.getActiveMove('carrottrap')), -6, 6);
 				this.damage(pokemon.maxhp * Math.pow(2, typeMod) / 8); 
 			},
