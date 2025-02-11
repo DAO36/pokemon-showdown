@@ -902,9 +902,11 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	fisted: {
 		name: "Fisted",
-		desc: "Hits twice. If the first hit breaks the target's substitute, it will take damage for the second hit.",
-		shortDesc: "Hits 2 times in one turn.",
-	},
+		desc: "Hits twice. If the first hit breaks the target's substitute, it will take damage for the second hit. If this attack does not miss, the effects of Reflect, Light Screen, Mist, Hologram, and Aurora Veil end for the target's side of the field before damage is calculated. If this move is successful, it breaks through the target's Baneful Bunker, Detect, King's Shield, Protect, or Spiky Shield for this turn, allowing other Pokemon to attack the target normally. If the target's side is protected by Crafty Shield, Mat Block, Quick Guard, or Wide Guard, that protection is also broken for this turn and other Pokemon may attack the target's side normally.",
+		shortDesc: "Breaks protection and destroys screens. Hits 2x.",
+
+		activate: "  [POKEMON] shattered [TEAM]'s protections!",
+	},  
 	automotanassault: {
 		name: "Automotan Assault",
 		desc: "Has a higher chance for a critical hit.",
