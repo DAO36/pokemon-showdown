@@ -1027,7 +1027,8 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 			onSideStart(side) {
 				this.add('-sidestart', side, 'move: Carrot Trap');
 			},
-			onEntryHazard(pokemon) { 
+			onEntryHazard(pokemon) {
+				if (pokemon.hasItem('heavydutyboots')) return;
 				const typeMod = this.clampIntRange(pokemon.runEffectiveness(this.dex.getActiveMove('carrottrap')), -6, 6);
 				this.damage(pokemon.maxhp * Math.pow(2, typeMod) / 8);
 				if (pokemon.hasType('Grass')) {
