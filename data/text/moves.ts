@@ -428,7 +428,7 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	wamywater: {
 		name: "Wamy Water",
-		desc: "Has a 30% chance to freeze the target. If the current weather is Snow, this move's power is doubled.",
+		desc: "Has a 30% chance to freeze the target. If the current weather is Snow, this move's power is boosted by 50%.",
 		shortDesc: "30% chance to freeze foe. 1.5x power in Snow.",
 	}, 
 	sake: {
@@ -486,7 +486,7 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	hologram: {
 		name: "Hologram",
 		desc: "For 5 turns, the Coyote and her party members are protected from status moves from other Pokemon. Lasts for 8 turns if the user is holding Light Clay. Fails if the effect is already active on the user's side.",
-		shortDesc: "5 turns: protects party from status moves from other Pokemon",
+		shortDesc: "5 turns: protects from status moves from other Pokemon",
 
 		start: "  [TEAM] summoned a hologram!",
 		end: "  [TEAM] is no longer protected!",
