@@ -852,8 +852,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		num: 92,
 	},
 	piracy: { // reskin of [Costar] but copies foes stats insetad of allies and also clears foes stats 
-		onPreStart(pokemon) {   
-			if (!this.effectState.switchingIn) return;
+		onPreStart(pokemon) { 
 			const target = pokemon.side.foe.active[pokemon.side.active.length - 1 - pokemon.position]
 			const foe = pokemon.adjacentFoes()[0]; 
 			if (!foe) return;
