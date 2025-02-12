@@ -851,14 +851,10 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3,
 		num: 92,
 	},
-	piracy: { // reskin of [Costar] but copies foes stats insetad of allies and also clears foes stats 
-		onSwitchIn(pokemon) {
-			this.effectState.switchingIn = true;
-		},
+	piracy: { // reskin of [Costar] but copies foes stats insetad of allies and also clears foes stats  
 		onPreStart(pokemon) { 
-			if (!this.effectState.switchingIn) return;
-			const target = pokemon.side.foe.active[pokemon.side.active.length - 1 - pokemon.position]
-			const foe = pokemon.adjacentFoes()[0]; 
+			const foe = pokemon.side.foe.active[pokemon.side.active.length - 1 - pokemon.position]
+			const adjacentFoe = pokemon.adjacentFoes()[0]; 
 			if (!foe) return;
 
 			let i: BoostID;
@@ -873,8 +869,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 					pokemon.addVolatile(volatile);
 					if (volatile === 'gmaxchistrike') pokemon.volatiles[volatile].layers = foe.volatiles[volatile].layers;
 					if (volatile === 'dragoncheer') pokemon.volatiles[volatile].hasDragonType = foe.volatiles[volatile].hasDragonType;
-				} 
-				this.effectState.switchingIn = false;
+				}  
 			}	
 				this.add('-copyboost', pokemon, foe, '[from] ability: Piracy');  
 			 
