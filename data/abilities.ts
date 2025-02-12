@@ -853,33 +853,65 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	},
 	piracy: { // reskin of [Costar] but copies foes stats insetad of allies and also clears foes stats   
 		onPreStart(pokemon) {   
-			const foe = pokemon.adjacentFoes()[0];
-			if (!foe) return;
+			const adjacentFoes = pokemon.adjacentFoes()[0];
+			if (!adjacentFoes) return;
 
 			let i: BoostID;
-			for (i in foe.boosts) {
-				pokemon.boosts[i] = foe.boosts[i];
+			for (i in adjacentFoes.boosts) {
+				pokemon.boosts[i] = adjacentFoes.boosts[i];
 			}
 			const volatilesToCopy = ['dragoncheer', 'focusenergy', 'gmaxchistrike', 'laserfocus'];
 			// we need to be sure to remove all the overlapping crit volatiles before trying to add any
 			for (const volatile of volatilesToCopy) pokemon.removeVolatile(volatile);
 			for (const volatile of volatilesToCopy) {
-				if (foe.volatiles[volatile]) {
+				if (adjacentFoes.volatiles[volatile]) {
 					pokemon.addVolatile(volatile);
-					if (volatile === 'gmaxchistrike') pokemon.volatiles[volatile].layers = foe.volatiles[volatile].layers;
-					if (volatile === 'dragoncheer') pokemon.volatiles[volatile].hasDragonType = foe.volatiles[volatile].hasDragonType;
+					if (volatile === 'gmaxchistrike') pokemon.volatiles[volatile].layers = adjacentFoes.volatiles[volatile].layers;
+					if (volatile === 'dragoncheer') pokemon.volatiles[volatile].hasDragonType = adjacentFoes.volatiles[volatile].hasDragonType;
 				} 
 			}	
-				this.add('-copyboost', pokemon, foe, '[from] ability: Piracy');  
+				this.add('-copyboost', pokemon, adjacentFoes, '[from] ability: Piracy');  
 			 
-			foe.clearBoosts();
-			this.add('-clearboost', foe);
+			adjacentFoes.clearBoosts();
+			this.add('-clearboost', adjacentFoes);
 		},
 		flags: {},
 		name: "Piracy",
 		rating: 0,
 		num: 294,
 	}, 
+	ace: {
+		onStart(pokemon) {
+			// n.b. only affects Hackmons
+			// interaction with No Ability is complicated: https://www.smogon.com/forums/threads/pokemon-sun-moon-battle-mechanics-research.3586701/page-76#post-7790209
+			if (pokemon.adjacentFoes().some(foeActive => foeActive.ability === 'noability')) {
+				this.effectState.gaveUp = true;
+			}
+			// interaction with Ability Shield is similar to No Ability
+			if (pokemon.hasItem('Ability Shield')) {
+				this.add('-block', pokemon, 'item: Ability Shield');
+				this.effectState.gaveUp = true;
+			}
+		},
+		onUpdate(pokemon) {
+			if (!pokemon.isStarted || this.effectState.gaveUp) return;
+
+			const possibleTargets = pokemon.adjacentFoes().filter(
+				target => !target.getAbility().flags['notrace'] && target.ability !== 'noability'
+			);
+			if (!possibleTargets.length) return;
+
+			const target = this.sample(possibleTargets);
+			const ability = target.getAbility();
+			if (pokemon.setAbility(ability)) {
+				this.add('-ability', pokemon, ability, '[from] ability: Trace', '[of] ' + target);
+			}
+		},
+		flags: {failroleplay: 1, noreceiver: 1, noentrain: 1, notrace: 1},
+		name: "Trace",
+		rating: 2.5,
+		num: 36,
+	},
 	highonasacoco: { // reskin of [Poison Heal]
 		onDamagePriority: 1,
 		onDamage(damage, target, source, effect) {
