@@ -853,27 +853,27 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	},
 	piracy: { // reskin of [Costar] but copies foes stats insetad of allies and also clears foes stats   
 		onPreStart(pokemon) {   
-			const target = pokemon.adjacentFoes()[0];
-			if (!target) return;
+			const PokemonSlot = pokemon.adjacentFoes()[0];
+			if (!PokemonSlot) return;
 
 			let i: BoostID;
-			for (i in target.boosts) {
-				pokemon.boosts[i] = target.boosts[i];
+			for (i in PokemonSlot.boosts) {
+				pokemon.boosts[i] = PokemonSlot.boosts[i];
 			}
 			const volatilesToCopy = ['dragoncheer', 'focusenergy', 'gmaxchistrike', 'laserfocus'];
 			// we need to be sure to remove all the overlapping crit volatiles before trying to add any
 			for (const volatile of volatilesToCopy) pokemon.removeVolatile(volatile);
 			for (const volatile of volatilesToCopy) {
-				if (target.volatiles[volatile]) {
+				if (PokemonSlot.volatiles[volatile]) {
 					pokemon.addVolatile(volatile);
-					if (volatile === 'gmaxchistrike') pokemon.volatiles[volatile].layers = target.volatiles[volatile].layers;
-					if (volatile === 'dragoncheer') pokemon.volatiles[volatile].hasDragonType = target.volatiles[volatile].hasDragonType;
+					if (volatile === 'gmaxchistrike') pokemon.volatiles[volatile].layers = PokemonSlot.volatiles[volatile].layers;
+					if (volatile === 'dragoncheer') pokemon.volatiles[volatile].hasDragonType = PokemonSlot.volatiles[volatile].hasDragonType;
 				} 
 			}	
-				this.add('-copyboost', pokemon, target, '[from] ability: Piracy');  
+				this.add('-copyboost', pokemon, PokemonSlot, '[from] ability: Piracy');  
 			 
-				target.clearBoosts();
-			this.add('-clearboost', target);
+				PokemonSlot.clearBoosts();
+			this.add('-clearboost', PokemonSlot);
 		},
 		flags: {},
 		name: "Piracy",
@@ -1392,7 +1392,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		},
 		onTryHit(target, source, move) {
 			if (target !== source && move.flags['punch']) {
-				if (!this.boost({atk: 2})) {
+				if (!this.boost({atk: 1})) {
 					this.add('-immune', target, '[from] ability: TonjokQueen');
 				}
 				return null;

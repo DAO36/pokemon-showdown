@@ -337,7 +337,7 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	tonjokqueen: {
 		name: "TonjokQueen",
-		desc: "This Peafowl's punch-based attacks have +1 priority. Sucker Punch is not affected. If this Peafowl is hit by a punch-based attack, her Attack stat is raised by 2 stages; Immune to punching-based attacks.",
+		desc: "This Peafowl's punch-based attacks have +1 priority. Sucker Punch is not affected. If this Peafowl is hit by a punch-based attack, her Attack stat is raised by 1 stage; Immune to punching-based attacks.",
 		shortDesc: "User's punch-based moves have +1 priority; Immune to punching moves."
 	},
 	keris: {
