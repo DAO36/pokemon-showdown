@@ -880,24 +880,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		name: "Piracy",
 		rating: 0,
 		num: 294,
-	},
-	poster: {
-		onSwitchIn(pokemon) {
-			this.effectState.switchingIn = true;
-		},
-		onStart(pokemon) { 
-			if (!this.effectState.switchingIn) return; 
-			const target = pokemon.side.foe.active[pokemon.side.foe.active.length - 1 - pokemon.position];
-			if (target) {
-				pokemon.transformInto(target, this.dex.abilities.get('imposter'));
-			}
-			this.effectState.switchingIn = false;
-		},
-		flags: {failroleplay: 1, noreceiver: 1, noentrain: 1, notrace: 1},
-		name: "Imposter",
-		rating: 5,
-		num: 150,
-	},
+	}, 
 	highonasacoco: { // reskin of [Poison Heal]
 		onDamagePriority: 1,
 		onDamage(damage, target, source, effect) {
@@ -1848,7 +1831,8 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	}, 
 	archivist: { // combines [Oppurtunist] with [Costar] but copies Foes stats instead of Allys stats
 		onPreStart(pokemon) {  
-			const foe = pokemon.foes()[0];
+			const foe = pokemon.side.foe.active[pokemon.side.active.length - 1 - pokemon.position]
+			const adjacentFoe = pokemon.adjacentFoes()[0]; 
 			if (!foe) return;
 
 			let i: BoostID;
@@ -1884,7 +1868,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		name: "Archivist",
 		rating: 3,
 		num: 290,
-	},
+	}, 
 	rockhard: { // reskin of [Fluffy], but instead of Fire being omitted, it is Steel
 		onStart(pokemon) {
 			this.add('-activate', pokemon, 'ability: Rock Hard');
