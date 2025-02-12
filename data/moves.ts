@@ -121,14 +121,14 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		priority: 0,
 		flags: {protect: 1, mirror: 1, defrost: 1},
 		thawsTarget: true, 
-		onHit(target, source, move) {
-			const result = target.setStatus('brn', source, move);
-			if (!result) return result; 
-		},
 		secondary: {
 			chance: 100, 
 		    status: 'brn', 
-		}, 
+		},
+		self: { 
+			chance: 100,
+		    status: 'brn', 
+		},
 		target: "allAdjacentFoes",
 		type: "Fire",
 		contestType: "Tough",
