@@ -1874,6 +1874,10 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			this.add('-activate', pokemon, 'ability: Rock Hard');
 		},
 		onSourceModifyDamage(damage, source, target, move) {
+			if (target.hp >= target.maxhp) {
+				this.debug('Multiscale weaken');
+				return this.chainModify(0.5);
+			}
 			let mod = 1;
 			if (move.type === 'Steel') mod *= 2;
 			if (move.flags['contact']) mod /= 2;
@@ -1883,6 +1887,18 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		name: "Rock Hard",
 		rating: 3.5,
 		num: 218,
+	},
+	iscale: {
+		onSourceModifyDamage(damage, source, target, move) {
+			if (target.hp >= target.maxhp) {
+				this.debug('Multiscale weaken');
+				return this.chainModify(0.5);
+			}
+		},
+		flags: {breakable: 1},
+		name: "Multiscale",
+		rating: 3.5,
+		num: 136,
 	},
 	underworlddiva: { // if hit by Sound type move, boosts Atk by 1; Sound type immunity
 		onTryHit(target, source, move) {
