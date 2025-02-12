@@ -853,7 +853,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	},
 	piracy: { // reskin of [Costar] but copies foes stats insetad of allies and also clears foes stats   
 		onPreStart(pokemon) {   
-			const adjacentFoe = pokemon.adjacentFoes()[0];
+			const adjacentFoe = pokemon.foes()[0];
 			if (!adjacentFoe) return;
 
 			let i: BoostID;
@@ -872,7 +872,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			}	
 				this.add('-copyboost', pokemon, adjacentFoe, '[from] ability: Piracy');  
 			 
-			adjacentFoe.clearBoosts();
+				adjacentFoe.clearBoosts();
 			this.add('-clearboost', adjacentFoe);
 		},
 		flags: {},
