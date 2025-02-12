@@ -853,7 +853,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	},
 	piracy: { // reskin of [Costar] but copies foes stats insetad of allies and also clears foes stats   
 		onPreStart(pokemon) {   
-			const foe = pokemon.foes()[0];
+			const foe = pokemon.adjacentFoes()[0];
 			if (!foe) return;
 
 			let i: BoostID;
@@ -879,7 +879,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		name: "Piracy",
 		rating: 0,
 		num: 294,
-	},
+	}, 
 	highonasacoco: { // reskin of [Poison Heal]
 		onDamagePriority: 1,
 		onDamage(damage, target, source, effect) {
