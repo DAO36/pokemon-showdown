@@ -855,8 +855,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		onSwitchIn(pokemon) {
 			this.effectState.switchingIn = true;
 		},
-		onPreStart(pokemon) {   
-			if (!this.effectState.switchingIn) return;
+		onPreStart(pokemon) {
 			const target = pokemon.side.foe.active[pokemon.side.active.length - 1 - pokemon.position]
 			const foe = pokemon.adjacentFoes()[0]; 
 			if (!foe) return;
