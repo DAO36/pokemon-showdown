@@ -665,18 +665,7 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	bulletproof: {
 		name: "Bulletproof",
 		shortDesc: "This Pokemon is immune to bullet moves.",
-	},
-	nouturn2: {
-		name: "No U-Turn2",
-		shortDesc: "This Pokemon is immune to switching moves.",
-	},
-	nouturn: {
-		name: "No U-Turn",
-		desc: "Switching moves used by opposing Pokemon targeting this Pokemon or its allies are prevented from having an effect.",
-		shortDesc: "This Pokemon and its allies are protected from opposing switching moves, such as U=Turn/Flip Turn/etc.",
-
-		block: "#damp",
-	},
+	}, 
 	cheekpouch: {
 		name: "Cheek Pouch",
 		desc: "If this Pokemon eats a held Berry, it restores 1/3 of its maximum HP, rounded down, in addition to the Berry's effect. This effect can also activate after the effects of Bug Bite, Fling, Pluck, Stuff Cheeks, and Teatime if the eaten Berry had an effect on this Pokemon.",

@@ -853,53 +853,33 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	},
 	piracy: { // reskin of [Costar] but copies foes stats insetad of allies and also clears foes stats   
 		onPreStart(pokemon) {   
-			const choosableTargets = pokemon.adjacentFoes()[0];
-			if (!choosableTargets) return;
+			const adjacentFoe = pokemon.adjacentFoes()[0];
+			if (!adjacentFoe) return;
 
 			let i: BoostID;
-			for (i in choosableTargets.boosts) {
-				pokemon.boosts[i] = choosableTargets.boosts[i];
+			for (i in adjacentFoe.boosts) {
+				pokemon.boosts[i] = adjacentFoe.boosts[i];
 			}
 			const volatilesToCopy = ['dragoncheer', 'focusenergy', 'gmaxchistrike', 'laserfocus'];
 			// we need to be sure to remove all the overlapping crit volatiles before trying to add any
 			for (const volatile of volatilesToCopy) pokemon.removeVolatile(volatile);
 			for (const volatile of volatilesToCopy) {
-				if (choosableTargets.volatiles[volatile]) {
+				if (adjacentFoe.volatiles[volatile]) {
 					pokemon.addVolatile(volatile);
-					if (volatile === 'gmaxchistrike') pokemon.volatiles[volatile].layers = choosableTargets.volatiles[volatile].layers;
-					if (volatile === 'dragoncheer') pokemon.volatiles[volatile].hasDragonType = choosableTargets.volatiles[volatile].hasDragonType;
+					if (volatile === 'gmaxchistrike') pokemon.volatiles[volatile].layers = adjacentFoe.volatiles[volatile].layers;
+					if (volatile === 'dragoncheer') pokemon.volatiles[volatile].hasDragonType = adjacentFoe.volatiles[volatile].hasDragonType;
 				} 
 			}	
-				this.add('-copyboost', pokemon, choosableTargets, '[from] ability: Piracy');  
+				this.add('-copyboost', pokemon, adjacentFoe, '[from] ability: Piracy');  
 			 
-			choosableTargets.clearBoosts();
-			this.add('-clearboost', choosableTargets);
+			adjacentFoe.clearBoosts();
+			this.add('-clearboost', adjacentFoe);
 		},
 		flags: {},
 		name: "Piracy",
 		rating: 0,
 		num: 294,
 	}, 
-	ace: { 
-		onUpdate(pokemon) {
-			if (!pokemon.isStarted) return;
-
-			const possibleTargets = pokemon.adjacentFoes().filter(
-				target => !target.getAbility().flags['notrace'] && target.ability !== 'noability'
-			);
-			if (!possibleTargets.length) return;
-
-			const target = this.sample(possibleTargets);
-			const ability = target.getAbility();
-			if (pokemon.setAbility(ability)) {
-				this.add('-ability', pokemon, ability, '[from] ability: Trace', '[of] ' + target);
-			}
-		},
-		flags: {failroleplay: 1, noreceiver: 1, noentrain: 1, notrace: 1},
-		name: "Trace",
-		rating: 2.5,
-		num: 36,
-	},
 	highonasacoco: { // reskin of [Poison Heal]
 		onDamagePriority: 1,
 		onDamage(damage, target, source, effect) {
