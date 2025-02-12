@@ -314,20 +314,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			if (move.type === 'Fire') {
 				this.boost({spa: 2});
 			}
-		},
-		onUpdate(pokemon) {
-			if (pokemon.status === 'brn') {
-				this.add('-activate', pokemon, 'ability: Elite');
-				pokemon.cureStatus();
-			}
-		},
-		onSetStatus(status, target, source, effect) {
-			if (status.id !== 'brn') return;
-			if ((effect as Move)?.status) {
-				this.add('-immune', target, '[from] ability: Elite');
-			}
-			return false;
-		},
+		},  
 		flags: {breakable: 1},
 		name: "Elite",
 		rating: 2.5,

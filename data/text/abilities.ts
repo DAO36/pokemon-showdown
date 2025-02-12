@@ -68,8 +68,8 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	elite: {
 		name: "Elite",
-		desc: "This Shrine Maiden has her Special Attack raised by 2 stages after she is damaged by a Fire-type move. She cannot be burned. Gaining this Ability while burned cures her.",
-		shortDesc: "Special Attack is raised by 2 when damaged by Fire moves; can't be burned.",
+		desc: "This Shrine Maiden has her Special Attack raised by 2 stages after she is damaged by a Fire-type move.",
+		shortDesc: "Special Attack is raised by 2 when damaged by Fire moves.",
 	},
 	stellar: {
 		name: "Stellar",

@@ -25,8 +25,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	lavabucket: {
 		name: "Lava Bucket",
-		desc: "Has a 100% chance to burn the target. Hits adjacent foes. User gets burned as well.",
-		shortDesc: "100% chance to burn the target and user.",
+		desc: "Has a 100% chance to burn the target and the user. Hits all adjacent Pokemon.",
+		shortDesc: "100% chance to burn the targets & user.",
 
 		activate: "  [SOURCE] dropped lava everywhere! Atsui!",
 	},

@@ -111,15 +111,16 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Grass",
 		contestType: "Cute",
 	},
-	lavabucket: { // should burn user too
+	lavabucket: { // bruns user too
 		num: 370,
-		accuracy: 75,
-		basePower: 120,
+		accuracy: 80,
+		basePower: 140,
 		category: "Special",
 		name: "Lava Bucket",
 		pp: 5,
 		priority: 0,
 		flags: {protect: 1, mirror: 1, defrost: 1},
+		recoil: [33, 100],
 		thawsTarget: true, 
 		secondary: {
 			chance: 100, 
@@ -129,7 +130,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 			chance: 100,
 		    status: 'brn', 
 		},
-		target: "allAdjacentFoes",
+		target: "allAdjacent",
 		type: "Fire",
 		contestType: "Tough",
 	},
