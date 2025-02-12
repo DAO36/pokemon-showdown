@@ -859,17 +859,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			let i: BoostID;
 			for (i in possibleTargets.boosts) {
 				pokemon.boosts[i] = possibleTargets.boosts[i];
-			}
-			const volatilesToCopy = ['dragoncheer', 'focusenergy', 'gmaxchistrike', 'laserfocus'];
-			// we need to be sure to remove all the overlapping crit volatiles before trying to add any
-			for (const volatile of volatilesToCopy) pokemon.removeVolatile(volatile);
-			for (const volatile of volatilesToCopy) {
-				if (possibleTargets.volatiles[volatile]) {
-					pokemon.addVolatile(volatile);
-					if (volatile === 'gmaxchistrike') pokemon.volatiles[volatile].layers = possibleTargets.volatiles[volatile].layers;
-					if (volatile === 'dragoncheer') pokemon.volatiles[volatile].hasDragonType = possibleTargets.volatiles[volatile].hasDragonType;
-				} 
-			}	
+			} 
 				this.add('-copyboost', pokemon, possibleTargets, '[from] ability: Piracy');  
 			 
 			possibleTargets.clearBoosts();
@@ -882,7 +872,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	}, 
 	ace: { 
 		onUpdate(pokemon) {
-			if (!pokemon.isStarted || this.effectState.gaveUp) return;
+			if (!pokemon.isStarted) return;
 
 			const possibleTargets = pokemon.adjacentFoes().filter(
 				target => !target.getAbility().flags['notrace'] && target.ability !== 'noability'
