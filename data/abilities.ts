@@ -853,46 +853,34 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	},
 	piracy: { // reskin of [Costar] but copies foes stats insetad of allies and also clears foes stats   
 		onPreStart(pokemon) {   
-			const adjacentFoes = pokemon.adjacentFoes()[0];
-			if (!adjacentFoes) return;
+			const possibleTargets = pokemon.adjacentFoes()[0];
+			if (!possibleTargets) return;
 
 			let i: BoostID;
-			for (i in adjacentFoes.boosts) {
-				pokemon.boosts[i] = adjacentFoes.boosts[i];
+			for (i in possibleTargets.boosts) {
+				pokemon.boosts[i] = possibleTargets.boosts[i];
 			}
 			const volatilesToCopy = ['dragoncheer', 'focusenergy', 'gmaxchistrike', 'laserfocus'];
 			// we need to be sure to remove all the overlapping crit volatiles before trying to add any
 			for (const volatile of volatilesToCopy) pokemon.removeVolatile(volatile);
 			for (const volatile of volatilesToCopy) {
-				if (adjacentFoes.volatiles[volatile]) {
+				if (possibleTargets.volatiles[volatile]) {
 					pokemon.addVolatile(volatile);
-					if (volatile === 'gmaxchistrike') pokemon.volatiles[volatile].layers = adjacentFoes.volatiles[volatile].layers;
-					if (volatile === 'dragoncheer') pokemon.volatiles[volatile].hasDragonType = adjacentFoes.volatiles[volatile].hasDragonType;
+					if (volatile === 'gmaxchistrike') pokemon.volatiles[volatile].layers = possibleTargets.volatiles[volatile].layers;
+					if (volatile === 'dragoncheer') pokemon.volatiles[volatile].hasDragonType = possibleTargets.volatiles[volatile].hasDragonType;
 				} 
 			}	
-				this.add('-copyboost', pokemon, adjacentFoes, '[from] ability: Piracy');  
+				this.add('-copyboost', pokemon, possibleTargets, '[from] ability: Piracy');  
 			 
-			adjacentFoes.clearBoosts();
-			this.add('-clearboost', adjacentFoes);
+			possibleTargets.clearBoosts();
+			this.add('-clearboost', possibleTargets);
 		},
 		flags: {},
 		name: "Piracy",
 		rating: 0,
 		num: 294,
 	}, 
-	ace: {
-		onStart(pokemon) {
-			// n.b. only affects Hackmons
-			// interaction with No Ability is complicated: https://www.smogon.com/forums/threads/pokemon-sun-moon-battle-mechanics-research.3586701/page-76#post-7790209
-			if (pokemon.adjacentFoes().some(foeActive => foeActive.ability === 'noability')) {
-				this.effectState.gaveUp = true;
-			}
-			// interaction with Ability Shield is similar to No Ability
-			if (pokemon.hasItem('Ability Shield')) {
-				this.add('-block', pokemon, 'item: Ability Shield');
-				this.effectState.gaveUp = true;
-			}
-		},
+	ace: { 
 		onUpdate(pokemon) {
 			if (!pokemon.isStarted || this.effectState.gaveUp) return;
 
