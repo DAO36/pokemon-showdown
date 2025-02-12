@@ -853,27 +853,27 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	},
 	piracy: { // reskin of [Costar] but copies foes stats insetad of allies and also clears foes stats   
 		onPreStart(pokemon) {   
-			const isAdjacent = pokemon.adjacentFoes()[0];
-			if (!isAdjacent) return;
+			const opposite = pokemon.foes()[0];
+			if (!opposite) return;
 
 			let i: BoostID;
-			for (i in isAdjacent.boosts) {
-				pokemon.boosts[i] = isAdjacent.boosts[i];
+			for (i in opposite.boosts) {
+				pokemon.boosts[i] = opposite.boosts[i];
 			}
 			const volatilesToCopy = ['dragoncheer', 'focusenergy', 'gmaxchistrike', 'laserfocus'];
 			// we need to be sure to remove all the overlapping crit volatiles before trying to add any
 			for (const volatile of volatilesToCopy) pokemon.removeVolatile(volatile);
 			for (const volatile of volatilesToCopy) {
-				if (isAdjacent.volatiles[volatile]) {
+				if (opposite.volatiles[volatile]) {
 					pokemon.addVolatile(volatile);
-					if (volatile === 'gmaxchistrike') pokemon.volatiles[volatile].layers = isAdjacent.volatiles[volatile].layers;
-					if (volatile === 'dragoncheer') pokemon.volatiles[volatile].hasDragonType = isAdjacent.volatiles[volatile].hasDragonType;
+					if (volatile === 'gmaxchistrike') pokemon.volatiles[volatile].layers = opposite.volatiles[volatile].layers;
+					if (volatile === 'dragoncheer') pokemon.volatiles[volatile].hasDragonType = opposite.volatiles[volatile].hasDragonType;
 				} 
 			}	
-				this.add('-copyboost', pokemon, isAdjacent, '[from] ability: Piracy');  
+				this.add('-copyboost', pokemon, opposite, '[from] ability: Piracy');  
 			 
-				isAdjacent.clearBoosts();
-			this.add('-clearboost', isAdjacent);
+				opposite.clearBoosts();
+			this.add('-clearboost', opposite);
 		},
 		flags: {},
 		name: "Piracy",
