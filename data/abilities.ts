@@ -853,7 +853,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	},
 	piracy: { // reskin of [Costar] but copies foes stats insetad of allies and also clears foes stats   
 		onPreStart(pokemon) {   
-			const isAdjacent = pokemon.foes()[0];
+			const isAdjacent = pokemon.adjacentFoes()[0];
 			if (!isAdjacent) return;
 
 			let i: BoostID;
