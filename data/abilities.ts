@@ -852,34 +852,56 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		num: 92,
 	},
 	piracy: { // reskin of [Costar] but copies foes stats insetad of allies and also clears foes stats   
-		onPreStart(pokemon) {     
-			pokemon.side.foe.active[pokemon.side.active.length - 1 - pokemon.position] = pokemon.adjacentFoes()[0]; 
-			if (!pokemon) return;
+		onSwitchIn(pokemon) {
+			this.effectState.switchingIn = true;
+		},
+		onPreStart(pokemon) {   
+			if (!this.effectState.switchingIn) return;
+			const target = pokemon.side.foe.active[pokemon.side.active.length - 1 - pokemon.position]
+			const foe = pokemon.adjacentFoes()[0]; 
+			if (!foe) return;
 
 			let i: BoostID;
-			for (i in pokemon.boosts) {
-				pokemon.boosts[i] = pokemon.boosts[i];
+			for (i in foe.boosts) {
+				pokemon.boosts[i] = foe.boosts[i];
 			}
 			const volatilesToCopy = ['dragoncheer', 'focusenergy', 'gmaxchistrike', 'laserfocus'];
 			// we need to be sure to remove all the overlapping crit volatiles before trying to add any
 			for (const volatile of volatilesToCopy) pokemon.removeVolatile(volatile);
 			for (const volatile of volatilesToCopy) {
-				if (pokemon.volatiles[volatile]) {
+				if (foe.volatiles[volatile]) {
 					pokemon.addVolatile(volatile);
-					if (volatile === 'gmaxchistrike') pokemon.volatiles[volatile].layers = pokemon.volatiles[volatile].layers;
-					if (volatile === 'dragoncheer') pokemon.volatiles[volatile].hasDragonType = pokemon.volatiles[volatile].hasDragonType;
+					if (volatile === 'gmaxchistrike') pokemon.volatiles[volatile].layers = foe.volatiles[volatile].layers;
+					if (volatile === 'dragoncheer') pokemon.volatiles[volatile].hasDragonType = foe.volatiles[volatile].hasDragonType;
 				} 
 			}	
-				this.add('-copyboost', pokemon, pokemon, '[from] ability: Piracy');  
+				this.add('-copyboost', pokemon, foe, '[from] ability: Piracy');  
 			 
-				pokemon.clearBoosts();
-			this.add('-clearboost', pokemon);
+				foe.clearBoosts();
+			this.add('-clearboost', foe);
 		},
 		flags: {},
 		name: "Piracy",
 		rating: 0,
 		num: 294,
-	}, 
+	},
+	poster: {
+		onSwitchIn(pokemon) {
+			this.effectState.switchingIn = true;
+		},
+		onStart(pokemon) { 
+			if (!this.effectState.switchingIn) return; 
+			const target = pokemon.side.foe.active[pokemon.side.foe.active.length - 1 - pokemon.position];
+			if (target) {
+				pokemon.transformInto(target, this.dex.abilities.get('imposter'));
+			}
+			this.effectState.switchingIn = false;
+		},
+		flags: {failroleplay: 1, noreceiver: 1, noentrain: 1, notrace: 1},
+		name: "Imposter",
+		rating: 5,
+		num: 150,
+	},
 	highonasacoco: { // reskin of [Poison Heal]
 		onDamagePriority: 1,
 		onDamage(damage, target, source, effect) {
