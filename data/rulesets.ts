@@ -2514,7 +2514,7 @@ export const Rulesets: import('../sim/dex-formats').FormatDataTable = {
 							name: "Future Sight",
 							accuracy: 100,
 							basePower: 120,
-							category: "Physical",
+							category: "Special",
 							priority: 0,
 							flags: {futuremove: 1},
 							ignoreImmunity: false,
@@ -2526,6 +2526,31 @@ export const Rulesets: import('../sim/dex-formats').FormatDataTable = {
 					return this.NOT_FAIL;
 				};
 				break;
+			}	
+			case 'blastfromthepast': {
+				move.onTry = function (source, subtarget) {
+					if (!subtarget.side.addSlotCondition(subtarget, 'futuremove')) return false;
+					Object.assign(subtarget.side.slotConditions[subtarget.position]['futuremove'], {
+						duration: 3,
+						move: 'blastfromthepast',
+						source: source,
+						moveData: {
+							id: 'blastfromthepast',
+							name: "Blast from the Past",
+							accuracy: true,
+							basePower: 120,
+							category: "Physical",
+							priority: 0,
+							flags: {futuremove: 1},
+							ignoreImmunity: false,
+							effectType: 'Move',
+							type: 'Steel',
+						},
+					});
+					this.add('-start', source, 'move: Blast from the Past');
+					return this.NOT_FAIL;
+				};
+				break;	
 			}
 			// Moves with dynamic categories will always be physical if not special-cased
 			case 'lightthatburnsthesky':
