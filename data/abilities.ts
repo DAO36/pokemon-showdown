@@ -1259,11 +1259,35 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			this.field.clearTerrain(); 
 			return success;  	
 		},
+		suppressWeather: true,
         flags: {},
         name: "Cleaner",
         rating: 2,
         num: 251,
     },
+	dnine: {
+		onSwitchIn(pokemon) {
+			this.effectState.switchingIn = true;
+		},
+		onStart(pokemon) {
+			// Cloud Nine does not activate when Skill Swapped or when Neutralizing Gas leaves the field
+			pokemon.abilityState.ending = false; // Clear the ending flag
+			if (this.effectState.switchingIn) {
+				this.add('-ability', pokemon, 'Cloud Nine');
+				this.effectState.switchingIn = false;
+			}
+			this.eachEvent('WeatherChange', this.effect);
+		},
+		onEnd(pokemon) {
+			pokemon.abilityState.ending = true;
+			this.eachEvent('WeatherChange', this.effect);
+		},
+		suppressWeather: true,
+		flags: {},
+		name: "Cloud Nine",
+		rating: 1.5,
+		num: 13,
+	},
 	yamada: { // combines [Mirror Armour] + [Magic Bounce]
 		onTryHitPriority: 1,
 		onTryHit(target, source, move) {
