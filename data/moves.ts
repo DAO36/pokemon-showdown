@@ -83,8 +83,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		priority: 0,
 		flags: {snatch: 1, heal: 1},
 		onHit(pokemon, source, move) {
-			const success = !!this.boost({spa: 2});
-			this.add('-activate', source, 'move: Aromatherapy');
+			const success = !!this.boost({spa: 2}); 
 				for (const ally of source.side.pokemon) {
 					if (ally !== source && (ally.volatiles['substitute'] && !move.infiltrates)) {
 						continue;
@@ -2895,8 +2894,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		priority: 0,
 		flags: {protect: 1, pulse: 1, mirror: 1, heal: 1},
 		self: {
-			onHit(pokemon, source, move) {
-				this.add('-activate', source, 'move: Aromatherapy');
+			onHit(pokemon, source, move) { 
 				for (const ally of source.side.pokemon) {
 					if (ally !== source && (ally.volatiles['substitute'] && !move.infiltrates)) {
 						continue;
