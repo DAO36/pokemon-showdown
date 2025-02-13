@@ -278,7 +278,7 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	cleaner: {
 		name: "Cleaner",
-		desc: "On switch-in, this Orca will clear up hazards on her side (Stealth Rock, Spikes, Toxic Spikes, Sticky Web, etc.) as well as clear the opponent's side of any screens set up (Reflect, Light Screen, Aurora Veil, etc.).",
+		desc: "On switch-in, this Orca will clear up hazards on her side (Stealth Rock, Spikes, Toxic Spikes, Sticky Web, etc.) as well as clear the opponent's side of any screens set up (Reflect, Light Screen, Aurora Veil, etc.). The effects of Gravity and Trick Room, if active, are removed upon switch-in. If Tailwind is active on the opponent's side, it is also cleared up on switch-in.",
 		shortDesc: "Switch-in: User's side: rids hazards; Other side: rids screens; Removes terrain.",
 
 		start: "  [POKEMON] is ready to clean up the scene!",
