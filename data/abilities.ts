@@ -240,7 +240,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		onDamagingHit(damage, target, source, move) {
 			const side = source.isAlly(target) ? source.side : source.side.foe;
 			const tailwind = side.sideConditions['tailwind'];
-			if (move.category === 'Physical' || move.category === 'Special' && (!tailwind)) {
+			if (move.category === 'Physical' || move.category === 'Special' && (!tailwind || tailwind.layers < 1)) {
 				this.add('-activate', target, 'ability: HoloHawk');
 				side.addSideCondition('tailwind', target);
 			}
