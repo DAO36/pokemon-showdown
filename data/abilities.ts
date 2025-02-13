@@ -321,10 +321,10 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		num: 270,
 	},
 	stellar: { // combines [Moxie] + [Curious Medicine] but better
-		onStart(pokemon) {
-			this.add('-activate', pokemon, 'ability: Stellar');
+		onStart(pokemon) { 
 			for (const foe of pokemon.adjacentFoes()) {
-				foe.clearBoosts(); 
+				foe.clearBoosts();
+				this.add('-clearboost', '[from] ability: Stellar', '[of] ' + pokemon);
 			}
 		},
 		onSourceAfterFaint(length, target, source, effect) {
