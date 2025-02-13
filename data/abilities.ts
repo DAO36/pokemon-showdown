@@ -1315,12 +1315,12 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			const side = source.side;
 			const tailwind = side.sideConditions['tailwind'];
 			if (move.category === 'Physical' && (!tailwind || tailwind.layers < 1)) {
-				this.add('-activate', target, 'ability: HoloHawk');
-				side.addSideCondition('tailwind', target);
+				this.add('-activate', source, 'ability: HoloHawk');
+				side.addSideCondition('tailwind', source);
 			} 
 			if (move.category === 'Special' && (!tailwind || tailwind.layers < 1)) {
-				this.add('-activate', target, 'ability: HoloHawk');
-				side.addSideCondition('tailwind', target);
+				this.add('-activate', source, 'ability: HoloHawk');
+				side.addSideCondition('tailwind', source);
 			}
 		},
 		flags: {breakable: 1},
