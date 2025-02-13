@@ -3191,6 +3191,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		pp: 5,
 		priority: 0,
 		flags: {allyanim: 1, pulse: 1, futuremove: 1, bypasssub: 1},
+		ignoreImmunity: true,
 		onTry(source, target) {
 			if (!target.side.addSlotCondition(target, 'futuremove')) return false;
 			Object.assign(target.side.slotConditions[target.position]['futuremove'], {
@@ -3199,11 +3200,11 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 				moveData: {
 					id: 'blastfromthepast',
 					name: "Blast from the Past",
-					accuracy: 100,
+					accuracy: true,
 					basePower: 120,
-					category: "Special",
+					category: "Physical",
 					priority: 0,
-					flags: {allyanim: 1, metronome: 1, futuremove: 1},
+					flags: {allyanim: 1, pulse: 1, futuremove: 1, bypasssub: 1},
 					ignoreImmunity: false,
 					effectType: 'Move',
 					type: 'Steel',
@@ -3216,7 +3217,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		target: "any",
 		type: "Steel",
 		contestType: "Clever",
-	},
+	}, 
 	borosblast: {
 		num: 406,
 		accuracy: 100,
