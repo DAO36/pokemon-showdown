@@ -1234,7 +1234,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
         onStart(pokemon) { 
 			this.add('-activate', pokemon, 'ability: Cleaner');
 			let activated = false;
-            for (const sideCondition of ['reflect', 'lightscreen', 'auroraveil', 'hologram', 'mist', 'safeguard']) {
+            for (const sideCondition of ['reflect', 'lightscreen', 'auroraveil', 'hologram', 'mist', 'safeguard', 'tailwind']) {
                 for (const side of [...pokemon.side.foeSidesWithConditions()]) {
                     if (side.getSideCondition(sideCondition)) {
                         if (!activated) { 
@@ -1311,16 +1311,16 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	},
 	holohawk: { // reskin of [Toxic Debris] but instead of seeting up toxic waste on foes side, set up tailwind on user side
 		onDamagingHitOrder: 1,
-		onDamagingHit(damage, pokemon, source, move) {
-			const side = source.isAlly(pokemon) ? source.side : source.side.foe;
+		onDamagingHit(damage, target, source, move) {
+			const side = source.isAlly(target) ? source.side : source.side.foe;
 			const tailwind = side.sideConditions['tailwind'];
 			if (move.category === 'Physical' && (!tailwind || tailwind.layers < 1)) {
-				this.add('-activate', pokemon, 'ability: HoloHawk');
-				side.addSideCondition('tailwind', pokemon);
+				this.add('-activate', target, 'ability: HoloHawk');
+				side.addSideCondition('tailwind', target);
 			} 
 			if (move.category === 'Special' && (!tailwind || tailwind.layers < 1)) {
-				this.add('-activate', pokemon, 'ability: HoloHawk');
-				side.addSideCondition('tailwind', pokemon);
+				this.add('-activate', target, 'ability: HoloHawk');
+				side.addSideCondition('tailwind', target);
 			}
 		},
 		flags: {breakable: 1},
