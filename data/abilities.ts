@@ -1316,18 +1316,18 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			const tailwind = side.sideConditions['tailwind'];
 			if (move.category === 'Physical' && (!tailwind || tailwind.layers < 1)) {
 				this.add('-activate', target, 'ability: HoloHawk');
-				side.addSideCondition('tailwind', target);
+				source.side.addSideCondition('tailwind', source);
 			} 
 			if (move.category === 'Special' && (!tailwind || tailwind.layers < 1)) {
 				this.add('-activate', target, 'ability: HoloHawk');
-				side.addSideCondition('tailwind', target);
+				source.side.addSideCondition('tailwind', source);
 			}
 		},
 		flags: {breakable: 1},
 		name: "HoloHawk",
 		rating: 4,
 		num: 295,
-	},
+	}, 
 	thexo: { // reskin of [Gale Wings] pre-nerf, but for Flying type Status moves only <UNUSED>
 		onModifyPriority(priority, pokemon, target, move) {
 			if (move.type === 'Flying' && move.category === 'Status') return priority + 1;
