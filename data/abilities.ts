@@ -1416,7 +1416,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		onDamagingHit(damage, target, source, move) {
 			this.field.setTerrain('grassyterrain');
 		},
-		flags: {},
+		flags: {breakable: 1},
 		name: "NNN",
 		rating: 2.5,
 		num: 269,
@@ -1427,7 +1427,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 				this.boost({def: -1, spe: 2}, target, target);
 			}
 		},
-		flags: {},
+		flags: {breakable: 1},
 		name: "Zombie",
 		rating: 2,
 		num: 133,
@@ -1821,7 +1821,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 				this.boost({spd: -1, spe: 2}, target, target);
 			}
 		},
-		flags: {},
+		flags: {breakable: 1},
 		name: "Societal Collapse",
 		rating: 2,
 		num: 133,
