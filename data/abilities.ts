@@ -333,7 +333,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 				this.boost({atk: length}, source);
 			}
 		},
-		flags: {},
+		flags: {breakable: 1},
 		name: "Stellar",
 		rating: 3,
 		num: 128,
@@ -404,7 +404,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 				this.damage(source.baseMaxhp / 10, source, source,); 
 			}
 		},
-		flags: {},
+		flags: {breakable: 1, noentrain: 1, failskillswap: 1},
 		name: "I am God",
 		rating: 4,
 		num: 94,
@@ -443,7 +443,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 				side.addSideCondition('stickyweb', target);
 			}
 		},
-		flags: {},
+		flags: {breakable: 1},
 		name: "Spider Soup",
 		rating: 3.5,
 		num: 295,
@@ -460,7 +460,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 2,
 		num: 258,
 	},
-	chamachange: {
+	chamachange: { // reSkin of [Zen Mode]
 		onResidualOrder: 29,
 		onResidual(pokemon) {
 			if (pokemon.baseSpecies.baseSpecies !== 'AkaiHaato' || pokemon.transformed) {
@@ -513,7 +513,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
                 this.heal(move.totalDamage / 4, pokemon, pokemon); 
 			}
 		},		
-        flags: {},
+        flags: {breakable: 1},
         name: "Vampire",
 		rating: 3.5,
 		num: 11,
@@ -601,6 +601,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			this.add('-activate', pokemon, 'ability: Witchcraft');
 			this.field.addPseudoWeather('wonderroom', pokemon);
 		},
+		flags: {},
 		name: "Witchcraft",
 		rating: 5,
 		num: -19,		
@@ -710,7 +711,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 				this.add('-fail', target, 'unboost', 'Speed', '[from] ability: Mio Mama', '[of] ' + target);
 			}
 		},
-		flags: {},
+		flags: {breakable: 1},
 		name: "Mio Mama",
 		rating: 5,
 		num: 113,
@@ -736,7 +737,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 				 
 			}
 		},
-		flags: {},
+		flags: {breakable: 1},
 		name: "Peko Peko",
 		rating: 2,
 		num: 27,
@@ -770,7 +771,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 				return this.chainModify(1.5);
 			}
 		},
-		flags: {},
+		flags: {breakable: 1},
 		name: "Muscle Knight",
 		rating: 3,
 		num: 89,
@@ -876,7 +877,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 				foe.clearBoosts();
 			this.add('-clearboost', foe);
 		},
-		flags: {},
+		flags: {breakable: 1},
 		name: "Piracy",
 		rating: 0,
 		num: 294,
@@ -945,7 +946,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			move.infiltrates = true;
 			if (move.category === 'Physical' || move.category === 'Special' || move.category === 'Status') delete move.flags['protect'];
 		},
-		flags: {},
+		flags: {breakable: 1},
 		name: "TMT",
 		rating: 2.5,
 		num: 151,
@@ -968,7 +969,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 				delete move.multiaccuracy;
 			}
 		},
-		flags: {},
+		flags: {breakable: 1},
 		name: "Legend of Polka",
 		rating: 3.5,
 		num: 101,
@@ -986,7 +987,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 				return null;
 			}
 		},
-		flags: {},
+		flags: {breakable: 1},
 		name: "Botan X",
 		rating: 3,
 		num: 14,
@@ -1023,7 +1024,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 				}
 			}
 		},
-		flags: {},
+		flags: {breakable: 1},
 		name: "Frozen Sake",
 		rating: 4,
 		num: 49,
@@ -1055,7 +1056,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 				}
 			}
 		},
-		flags: {},
+		flags: {breakable: 1},
 		name: "Succubus",
 		rating: 4,
 		num: 22,
@@ -1081,7 +1082,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 				this.boost({atk: length}, source);
 			}
 		},
-		flags: {},
+		flags: {breakable: 1},
 		name: "Samurai",
 		rating: 3,
 		num: 153,
@@ -1100,7 +1101,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 				side.addSideCondition('lightscreen', target);
 			}
 		},
-		flags: {},
+		flags: {breakable: 1},
 		name: "Firewall",
 		rating: 3.5,
 		num: 295,
@@ -1427,7 +1428,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 				this.add('-immune', this.effectState.target, '[from] ability: Keris');
 			}
 		},
-		flags: {},
+		flags: {breakable: 1},
 		name: "Keris",
 		rating: 2.5,
 		num: 160,
@@ -1523,7 +1524,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 				this.boost({accuracy: -1}, source, target, null, true);
 			}
 		},
-		flags: {},
+		flags: {breakable: 1},
 		name: "Wet Hair",
 		rating: 3.5,
 		num: 221,
@@ -1591,7 +1592,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 				}
 			}
 		},
-		flags: {},
+		flags: {breakable: 1},
 		name: "Death",
 		rating: 4,
 		num: 22,
@@ -1603,7 +1604,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 				this.damage(source.baseMaxhp / 10, source, target);
 			}
 		},
-		flags: {},
+		flags: {breakable: 1},
 		name: "Forbidden Wah",
 		rating: 4.5,
 		num: 24,
@@ -1765,7 +1766,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 				return null;
 			}
 		},
-		flags: {},
+		flags: {breakable: 1},
 		name: "Mother Nature",
 		rating: 3,
 		num: 207,
@@ -1824,7 +1825,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 				}
 			}
 		},
-		flags: {},
+		flags: {breakable: 1},
 		name: "Chaos",
 		rating: 5,
 		num: 24,
@@ -1864,7 +1865,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			if (Object.keys(positiveBoosts).length < 1) return;
 			this.boost(positiveBoosts, pokemon);
 		},
-		flags: {},
+		flags: {breakable: 1},
 		name: "Archivist",
 		rating: 3,
 		num: 290,
@@ -1887,19 +1888,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		name: "Rock Hard",
 		rating: 3.5,
 		num: 218,
-	},
-	iscale: {
-		onSourceModifyDamage(damage, source, target, move) {
-			if (target.hp >= target.maxhp) {
-				this.debug('Multiscale weaken');
-				return this.chainModify(0.5);
-			}
-		},
-		flags: {breakable: 1},
-		name: "Multiscale",
-		rating: 3.5,
-		num: 136,
-	},
+	}, 
 	underworlddiva: { // if hit by Sound type move, boosts Atk by 1; Sound type immunity
 		onTryHit(target, source, move) {
 			if (target !== source && move.flags['sound']) {
@@ -1926,7 +1915,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 				this.boost({def: -1}, source, target, null, true);
 			}
 		},
-		flags: {},
+		flags: {breakable: 1},
 		name: "The Fuzzy One",
 		rating: 3.5,
 		num: 183,
@@ -1938,7 +1927,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 				this.boost({atk: -1}, source, target, null, true);
 			}
 		},
-		flags: {},
+		flags: {breakable: 1},
 		name: "The Fluffy One",
 		rating: 2.5,
 		num: 183,
@@ -1950,7 +1939,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			const targetForme = pokemon.species.name === 'FuwaMoco' ? 'FuwaMoco-Wawa' : 'FuwaMoco';
 			pokemon.formeChange(targetForme);
 		},
-		flags: {failroleplay: 1, noreceiver: 1, noentrain: 1, notrace: 1, failskillswap: 1, notransform: 1},
+		flags: {failroleplay: 1, noreceiver: 1, noentrain: 1, notrace: 1, failskillswap: 1, notransform: 1, cantsuppress: 1},
 		name: "FWMC",
 		rating: 1,
 		num: 258,
@@ -2038,7 +2027,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			}
 			return accuracy;
 		},
-		flags: {},
+		flags: {breakable: 1},
 		name: "God Eyes",
 		rating: 4,
 		num: 99,
