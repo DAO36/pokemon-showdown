@@ -303,16 +303,25 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 2.5,
 		num: 270,
 	},
-	stellar: { // combines [Moxie] + [Curious Medicine] but better
+	stellar: { // combines [Clear Body] + [Curious Medicine] but better as it targets foes only
 		onStart(pokemon) {
 			for (const foe of pokemon.adjacentFoes()) {
 				foe.clearBoosts();
 				this.add('-clearboost', foe, '[from] ability: Stellar', '[of] ' + pokemon);
 			}
 		},
-		onSourceAfterFaint(length, target, source, effect) {
-			if (effect && effect.effectType === 'Move') {
-				this.boost({atk: length}, source);
+		onTryBoost(boost, target, source, effect) {
+			if (source && target === source) return;
+			let showMsg = false;
+			let i: BoostID;
+			for (i in boost) {
+				if (boost[i]! < 0) {
+					delete boost[i];
+					showMsg = true;
+				}
+			}
+			if (showMsg && !(effect as ActiveMove).secondaries && effect.id !== 'octolock') {
+				this.add("-fail", target, "unboost", "[from] ability: Stellar", "[of] " + target);
 			}
 		},
 		flags: {breakable: 1},
@@ -320,7 +329,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3,
 		num: 128,
 	}, 
-	highspecsrobot: { // reskin of [Surge Surfer]
+	highspecsrobot: { // exact copy of [Surge Surfer]
 		onModifySpe(spe) {
 			if (this.field.isTerrain('electricterrain')) {
 				return this.chainModify(2);
@@ -357,10 +366,10 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3.5,
 		num: 271,
 	},
-	fbking: { // reskin of [Moxie]
+	fbking: { // combines [Moxie] + [Soul-Heart]
 		onSourceAfterFaint(length, target, source, effect) {
 			if (effect && effect.effectType === 'Move') {
-				this.boost({atk: length}, source);
+				this.boost({atk: length, spa: length}, source);
 			}
 		},
 		flags: {},
@@ -368,7 +377,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3,
 		num: 153,
 	},
-	iamgod: { // life orb as an ability, but better <1.5 boost instead of 1.3>
+	iamgod: { // [Life Orb (ITEM)] as an ability, but better <1.5 boost instead of 1.3>
 		onModifySpAPriority: 5,
 		onModifySpA(spa, pokemon) {
 		 {
@@ -391,7 +400,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 4,
 		num: 94,
 	},
-	haachamacooking: { // reskin of [Cheek Pouch] <UNUSED>
+	haachamacooking: { // reskin of [Cheek Pouch] <<<UNUSED>>>
 		onEatItem(item, pokemon) {
 			this.heal(pokemon.baseMaxhp / 3);
 		},
@@ -400,7 +409,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 2,
 		num: 167,
 	},
-	spidersoup2: { // if haachama is hit by a super-effective move, sets up sticky web <UNUSED>
+	spidersoup2: { // if haachama is hit by a super-effective move, sets up sticky web <<<UNUSED>>>
 		onDamagingHitOrder: 1,
 		onDamagingHit(damage, target, source, move) {
 			const side = source.isAlly(target) ? source.side.foe : source.side;
@@ -415,7 +424,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3.5,
 		num: 295,
 	},
-	spidersoup: { // if haachama is hit by a contact move, sets up sticky webs
+	spidersoup: { // reskin of [Toxic Debris] but for sticky webs instead of toxic waste
 		onDamagingHitOrder: 1,
 		onDamagingHit(damage, target, source, move) {
 			const side = source.isAlly(target) ? source.side.foe : source.side;
@@ -430,7 +439,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3.5,
 		num: 295,
 	},
-	splitpersonalities: { // reskin of [Hunger Switch] <UNUSED>
+	splitpersonalities: { // reskin of [Hunger Switch] <<<UNUSED>>>
 		onResidualOrder: 29,
 		onResidual(pokemon) {
 			if (pokemon.species.baseSpecies !== 'Akai' || pokemon.terastallized) return;
@@ -478,17 +487,17 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 0,
 		num: 161,
 	},
-	vampire2: { // increases how much hp user recovers when using draining moves
+	vampire2: { // increases how much hp user recovers when using draining moves <<<UNUSED>>>
         onTryHealPriority: 1,
         onTryHeal(damage, target, source, effect) {
             return this.chainModify([5461, 4096]);
         },
-        flags: {},
+        flags: {breakable: 1},
         name: "Vampire2",
 		rating: 3.5,
 		num: 11,
 	},
-	vampire: { // increases how much hp user recovers when using draining moves
+	vampire: { // every attacking move heals user by how much damage dealt, even if it is non-healing move
 		onAfterMoveSecondarySelfPriority: -1,
         onAfterMoveSecondarySelf(pokemon, target, move) {
             if (move.totalDamage && !pokemon.forceSwitchFlag) {
@@ -500,7 +509,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3.5,
 		num: 11,
 	},
-	sirendance: { // sets up Magic Room on switch-in (effects end prematurely if user/foe with this ability switches in)
+	sirendance: { // sets up Magic Room on switch-in 
 		onStart(pokemon) {
 			this.add('-activate', pokemon, 'ability: Siren Dance');
 			this.field.addPseudoWeather('magicroom', pokemon);
@@ -510,7 +519,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 2,
 		num: 28,
 	},
-	apex: { // reskin of [Berserk]
+	apex: { // exact copy of [Berserk]
 		onDamage(damage, target, source, effect) {
 			if (
 				effect.effectType === "Move" &&
@@ -569,7 +578,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3.5,
 		num: 276,
 	},
-	nursery: { // reskin of [Regenerator]
+	nursery: { // exact copy of [Regenerator]
 		onSwitchOut(pokemon) {
 			pokemon.heal(pokemon.baseMaxhp / 3);
 		},
@@ -578,7 +587,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 4.5,
 		num: 144,
 	},
-	witchcraft: { // sets up Magic Room on switch-in (effects end prematurely if user/foe with this ability switches in)
+	witchcraft: { // sets up Magic Room on switch-in 
 		onStart(pokemon) {
 			this.add('-activate', pokemon, 'ability: Witchcraft');
 			this.field.addPseudoWeather('wonderroom', pokemon);
@@ -588,7 +597,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 5,
 		num: -19,		
 	},
-	witchcraft2: { // reskin of [Surge Surfer] but for Psychic Terrain <UNUSED>
+	witchcraft2: { // reskin of [Surge Surfer] but for Psychic Terrain <<<UNUSED>>>
 		onModifySpePriority: 6,
 		onModifySpe(pokemon) {
 			if (this.field.isTerrain('psychicterrain')) return this.chainModify(1.5);
@@ -698,33 +707,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 5,
 		num: 113,
 	},
-	pekopeko: { // [Effect Spore] but on crack
-		onDamagingHitOrder: 1,
-		onDamagingHit(damage, target, source, move) {
-			if (move.category === 'Special' || move.category === 'Physical' && !source.status) {
-				const r = this.random(100);
-				if (r < 5) {
-					source.setStatus('par', target);
-				} else if (r < 10) {
-					source.setStatus('brn', target);
-				} else if (r < 15) {
-					source.setStatus('tox', target);
-				} else if (r < 20) {
-					source.setStatus('slp', target);
-				} else if (r < 25) {
-					source.setStatus('frz', target);
-				} else if (r < 30) {
-					source.addVolatile('confusion', target);
-				}
-				 
-			}
-		},
-		flags: {breakable: 1},
-		name: "Peko Peko",
-		rating: 2,
-		num: 27,
-	},
-	warcriminal: { // reskin of [Emergency Exit]/[Wimp Out] + [Aftermath] but even better!!
+	warcriminal: { // reskin of [Emergency Exit]/[Wimp Out] + [Aftermath] but even better!! <<<UNUSED>>>
 		onDamagingHitOrder: 1,
 		onDamagingHit(damage, target, source, move) {
 			if (!target.hp) {
@@ -746,17 +729,61 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 1.5,
 		num: 194,
 	},
-	muscleknight: { // reskin of [Iron Fist] but even better
-		onBasePowerPriority: 19,
-		onBasePower(basePower, attacker, defender, move) {
-			if (move.flags['punch']) {
-				return this.chainModify(1.5);
+	pekopeko: { // reskin of [Effect Spore] but on crack
+		onDamagingHitOrder: 1,
+		onDamagingHit(damage, target, source, move) {
+			if (move.category === 'Special' || move.category === 'Physical' && !source.status) {
+				const r = this.random(100);
+				if (r < 5) {
+					source.setStatus('psn', target);
+				} else if (r < 10) {
+					source.setStatus('brn', target);
+				} else if (r < 15) {
+					source.setStatus('par', target);
+				} else if (r < 20) {
+					source.setStatus('slp', target);
+				} else if (r < 25) {
+					source.setStatus('tox', target);
+				} else if (r < 30) {
+					source.setStatus('frz', target);
+				}
+				 
 			}
 		},
 		flags: {breakable: 1},
-		name: "Muscle Knight",
-		rating: 3,
-		num: 89,
+		name: "Peko Peko",
+		rating: 2,
+		num: 27,
+	},
+	piracy: { // reskin of [Costar] but copies foes stats insetad of allies and also clears foes stats  
+		onPreStart(pokemon) { 
+			const foe = pokemon.side.foe.active[pokemon.side.active.length - 1 - pokemon.position]
+			const adjacentFoe = pokemon.adjacentFoes()[0]; 
+			if (!foe) return;
+
+			let i: BoostID;
+			for (i in foe.boosts) {
+				pokemon.boosts[i] = foe.boosts[i];
+			}
+			const volatilesToCopy = ['dragoncheer', 'focusenergy', 'gmaxchistrike', 'laserfocus'];
+			// we need to be sure to remove all the overlapping crit volatiles before trying to add any
+			for (const volatile of volatilesToCopy) pokemon.removeVolatile(volatile);
+			for (const volatile of volatilesToCopy) {
+				if (foe.volatiles[volatile]) {
+					pokemon.addVolatile(volatile);
+					if (volatile === 'gmaxchistrike') pokemon.volatiles[volatile].layers = foe.volatiles[volatile].layers;
+					if (volatile === 'dragoncheer') pokemon.volatiles[volatile].hasDragonType = foe.volatiles[volatile].hasDragonType;
+				}  
+			}	
+				this.add('-copyboost', pokemon, foe, '[from] ability: Piracy');  
+			 
+				foe.clearBoosts();
+			this.add('-clearboost', foe);
+		},
+		flags: {breakable: 1},
+		name: "Piracy",
+		rating: 0,
+		num: 294,
 	},
 	yandere: { // blocks pivot moves like U-Turn/Volt Switch/Flip Turn and status like Teleport/Parting Shot/Baton Pass/Chilly Reception etc.
 		onFoeTryMove(pokemon, target, move) {
@@ -776,7 +803,43 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3,
 		num: 171,
 	},
-	elvishflare: { // reskin of [Rocky Payload] but for Fire <UNUSED>
+	muscleknight: { // exact copy of [Iron Fist] but even better!
+		onBasePowerPriority: 19,
+		onBasePower(basePower, attacker, defender, move) {
+			if (move.flags['punch']) {
+				return this.chainModify(1.5);
+			}
+		},
+		flags: {breakable: 1},
+		name: "Muscle Knight",
+		rating: 3,
+		num: 89,
+	},
+	elfgunner: { // combines [KEEN EYE] + [SKILL LINK]
+		onModifyMove(move) {
+			if (move.multihit && Array.isArray(move.multihit) && move.multihit.length) {
+				move.multihit = move.multihit[1];
+			}
+			if (move.multiaccuracy) {
+				delete move.multiaccuracy;
+			}
+			move.ignoreEvasion = true;
+		},
+		onTryBoost(boost, target, source, effect) {
+			if (source && target === source) return;
+			if (boost.accuracy && boost.accuracy < 0) {
+				delete boost.accuracy;
+				if (!(effect as ActiveMove).secondaries) {
+					this.add("-fail", target, "unboost", "accuracy", "[from] ability: Elf Gunner", "[of] " + target);
+				}
+			}
+		},
+		flags: {},
+		name: "Elf Gunner",
+		rating: 3,
+		num: 92,
+	},
+	elvishflare: { // reskin of [Rocky Payload] but for Fire <<<UNUSED>>>
 		onModifyAtkPriority: 5,
 		onModifyAtk(atk, attacker, defender, move) {
 			if (move.type === 'Fire') {
@@ -810,61 +873,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3.5,
 		num: 276,
 	},
-	elfgunner: { // combines [KEEN EYE] + [SKILL LINK]
-		onModifyMove(move) {
-			if (move.multihit && Array.isArray(move.multihit) && move.multihit.length) {
-				move.multihit = move.multihit[1];
-			}
-			if (move.multiaccuracy) {
-				delete move.multiaccuracy;
-			}
-			move.ignoreEvasion = true;
-		},
-		onTryBoost(boost, target, source, effect) {
-			if (source && target === source) return;
-			if (boost.accuracy && boost.accuracy < 0) {
-				delete boost.accuracy;
-				if (!(effect as ActiveMove).secondaries) {
-					this.add("-fail", target, "unboost", "accuracy", "[from] ability: Elf Gunner", "[of] " + target);
-				}
-			}
-		},
-		flags: {},
-		name: "Elf Gunner",
-		rating: 3,
-		num: 92,
-	},
-	piracy: { // reskin of [Costar] but copies foes stats insetad of allies and also clears foes stats  
-		onPreStart(pokemon) { 
-			const foe = pokemon.side.foe.active[pokemon.side.active.length - 1 - pokemon.position]
-			const adjacentFoe = pokemon.adjacentFoes()[0]; 
-			if (!foe) return;
-
-			let i: BoostID;
-			for (i in foe.boosts) {
-				pokemon.boosts[i] = foe.boosts[i];
-			}
-			const volatilesToCopy = ['dragoncheer', 'focusenergy', 'gmaxchistrike', 'laserfocus'];
-			// we need to be sure to remove all the overlapping crit volatiles before trying to add any
-			for (const volatile of volatilesToCopy) pokemon.removeVolatile(volatile);
-			for (const volatile of volatilesToCopy) {
-				if (foe.volatiles[volatile]) {
-					pokemon.addVolatile(volatile);
-					if (volatile === 'gmaxchistrike') pokemon.volatiles[volatile].layers = foe.volatiles[volatile].layers;
-					if (volatile === 'dragoncheer') pokemon.volatiles[volatile].hasDragonType = foe.volatiles[volatile].hasDragonType;
-				}  
-			}	
-				this.add('-copyboost', pokemon, foe, '[from] ability: Piracy');  
-			 
-				foe.clearBoosts();
-			this.add('-clearboost', foe);
-		},
-		flags: {breakable: 1},
-		name: "Piracy",
-		rating: 0,
-		num: 294,
-	}, 
-	highonasacoco: { // reskin of [Poison Heal]
+	highonasacoco: { // exact copy of [Poison Heal]
 		onDamagePriority: 1,
 		onDamage(damage, target, source, effect) {
 			if (effect.id === 'psn' || effect.id === 'tox') {
@@ -877,7 +886,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 4,
 		num: 90,
 	},
-	pptgrip: { // reskin of [Tough Claws]
+	pptgrip: { // exact copy of [Tough Claws]
 		onBasePowerPriority: 21,
 		onBasePower(basePower, attacker, defender, move) {
 			if (move.flags['contact']) {
@@ -933,48 +942,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 2.5,
 		num: 151,
 	},
-	legendofpolka: { // combines [Skill Link] + [Techncician]
-		onBasePowerPriority: 30,
-		onBasePower(basePower, attacker, defender, move) {
-			const basePowerAfterMultiplier = this.modify(basePower, this.event.modifier);
-			this.debug('Base Power: ' + basePowerAfterMultiplier);
-			if (basePowerAfterMultiplier <= 60) {
-				this.debug('Legend of Polka boost');
-				return this.chainModify(1.5);
-			}
-		},
-		onModifyMove(move) {
-			if (move.multihit && Array.isArray(move.multihit) && move.multihit.length) {
-				move.multihit = move.multihit[1];
-			}
-			if (move.multiaccuracy) {
-				delete move.multiaccuracy;
-			}
-		},
-		flags: {breakable: 1},
-		name: "Legend of Polka",
-		rating: 3.5,
-		num: 101,
-	},
-	botanx: { // reskin of [Iron Fist] but bullets instead of fisting 
-		onBasePowerPriority: 19,
-		onBasePower(basePower, attacker, defender, move) {
-			if (move.flags['bullet']) {
-				return this.chainModify(1.5);
-			}
-		},
-		onTryHit(pokemon, target, move) {
-			if (move.flags['bullet']) {
-				this.add('-immune', pokemon, '[from] ability: Botan X');
-				return null;
-			}
-		},
-		flags: {breakable: 1},
-		name: "Botan X",
-		rating: 3,
-		num: 14,
-	},
-	botanx2: { // combines [Compound Eyes] + [Keen Eye] <UNUSED>
+	botanx2: { // combines [Compound Eyes] + [Keen Eye] <<<UNUSED>>>
 		onSourceModifyAccuracyPriority: -1,
 		onSourceModifyAccuracy(accuracy) {
 			if (typeof accuracy !== 'number') return;
@@ -998,7 +966,48 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3,
 		num: 14,
 	},
-	frozensake: { // reskin of [Flame Body]/[Static] but for Freeze instead of Paralyze
+	botanx: { // combines [Bulletproof] + [Iron Fist] but bullets instead of fisting 
+		onBasePowerPriority: 19,
+		onBasePower(basePower, attacker, defender, move) {
+			if (move.flags['bullet']) {
+				return this.chainModify(1.5);
+			}
+		},
+		onTryHit(pokemon, target, move) {
+			if (move.flags['bullet']) {
+				this.add('-immune', pokemon, '[from] ability: Botan X');
+				return null;
+			}
+		},
+		flags: {breakable: 1},
+		name: "Botan X",
+		rating: 3,
+		num: 14,
+	},
+	legendofpolka: { // combines [Skill Link] + [Techncician]
+		onBasePowerPriority: 30,
+		onBasePower(basePower, attacker, defender, move) {
+			const basePowerAfterMultiplier = this.modify(basePower, this.event.modifier);
+			this.debug('Base Power: ' + basePowerAfterMultiplier);
+			if (basePowerAfterMultiplier <= 60) {
+				this.debug('Legend of Polka boost');
+				return this.chainModify(1.5);
+			}
+		},
+		onModifyMove(move) {
+			if (move.multihit && Array.isArray(move.multihit) && move.multihit.length) {
+				move.multihit = move.multihit[1];
+			}
+			if (move.multiaccuracy) {
+				delete move.multiaccuracy;
+			}
+		},
+		flags: {breakable: 1},
+		name: "Legend of Polka",
+		rating: 3.5,
+		num: 101,
+	},
+	frozensake: { // reskin of [Flame Body]/[Static] but for Freeze instead of Burn/Paralyze
 		onDamagingHit(damage, target, source, move) {
 			if (this.checkMoveMakesContact(move, source, target)) {
 				if (this.randomChance(2, 10)) {
@@ -1011,7 +1020,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 4,
 		num: 49,
 	},
-	supernenechi: { // reskin of [Beast Boost]
+	supernenechi: { // exact copy of [Beast Boost]
 		onSourceAfterFaint(length, target, source, effect) {
 			if (effect && effect.effectType === 'Move') {
 				const bestStat = source.getBestStat(true, true);
@@ -1022,6 +1031,183 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		name: "Super Nenechi",
 		rating: 3.5,
 		num: 224,
+	},
+	cleaner5: { // <<<UNUSED>>> rids hazards on users sides and screens on foes sides BUT only when user is hit by an attacc, really/visually (+leech seed binding and terrain)
+		onDamagingHitOrder: 1,
+		onDamagingHit(damage, target, source, move) {  
+			this.add('-activate', target, 'ability: Cleaner5');	
+			let success = false; 
+			const removeTarget = [
+				'spikes', 'toxicspikes', 'stealthrock', 'stickyweb', 'gmaxsteelsurge',
+			]; 
+			for (const targetCondition of removeTarget) {
+				if (target.side.removeSideCondition(targetCondition)) { 
+					this.add('-sideend', target.side, this.dex.conditions.get(targetCondition).name);
+					success = true;
+				}
+			} 
+			if (target.hp && target.removeVolatile('leechseed')) {
+				this.add('-end', target, 'Leech Seed');
+			}
+			const sideConditions = ['reflect', 'lightscreen', 'auroraveil', 'hologram', 'mist', 'safeguard'];
+			for (const condition of sideConditions) {
+				if (source.hp && source.side.removeSideCondition(condition)) {
+					this.add('-sideend', source.side, this.dex.conditions.get(condition).name);
+				}
+			}
+			if (target.hp && target.volatiles['partiallytrapped']) {
+				target.removeVolatile('partiallytrapped'); 
+	        }
+			this.field.clearTerrain();
+			return success;
+		},
+		flags: {},
+		name: "Cleaner5",
+		rating: 2,
+		num: 251,
+	},
+	cleaner4: {  // <<<<UNUSED>>>> successfully clears visually and really ALL hazards and screens on both sides BUT only when user is hit by an attacc
+		onDamagingHitOrder: 1,
+		onDamagingHit(damage, target, source, move) {  
+			this.add('-activate', target, 'ability: Cleaner4');
+			let success = false; 
+			const removeTarget = [
+				'reflect', 'lightscreen', 'auroraveil', 'hologram', 'mist', 'spikes', 'toxicspikes', 'stealthrock', 'stickyweb', 'gmaxsteelsurge',
+			];
+			const removeAll = [
+				'reflect', 'lightscreen', 'auroraveil', 'hologram', 'mist', 'spikes', 'toxicspikes', 'stealthrock', 'stickyweb', 'gmaxsteelsurge',
+			];
+			for (const targetCondition of removeTarget) {
+				if (target.side.removeSideCondition(targetCondition)) {
+					if (!removeAll.includes(targetCondition)) continue; 
+					this.add('-sideend', target.side, this.dex.conditions.get(targetCondition).name);
+					success = true;
+				}
+			}
+			for (const sideCondition of removeAll) {
+				if (source.side.removeSideCondition(sideCondition)) { 
+					this.add('-sideend', source.side, this.dex.conditions.get(sideCondition).name);
+					success = true;
+				}
+			}
+			this.field.clearTerrain();
+			return success;
+		},
+			flags: {},
+			name: "Cleaner4",
+			rating: 2,
+			num: 251,
+    },
+	cleaner3: { // <<<<UNUSED>>>> rids users side only really+visually
+		onStart(pokemon) {
+			this.add('-activate', pokemon, 'ability: Cleaner3');
+			let success = false; 
+				const sideConditions = ['spikes', 'toxicspikes', 'stealthrock', 'stickyweb', 'gmaxsteelsurge'];
+				for (const condition of sideConditions) {
+					if (pokemon.hp && pokemon.side.removeSideCondition(condition)) {
+						this.add('-sideend', pokemon.side, this.dex.conditions.get(condition).name);
+					}
+				}
+			this.field.clearTerrain(); 
+			return success;
+		},
+		flags: {},
+		name: "Cleaner3",
+		rating: 2,
+		num: 251,
+	},
+	cleaner2: { // <<<<UNUSED>>>> {{{FATAL ERROR}}} actually rids all hazards, visually only screens of all sides but only hazards on user side; opposite side still shows
+		onStart(pokemon) {
+			this.add('-activate', pokemon, 'ability: Cleaner2');
+			let success = false;
+			const removeAll = [
+				'reflect', 'lightscreen', 'auroraveil', 'hologram', 'mist', 'spikes', 'toxicspikes', 'stealthrock', 'stickyweb', 'gmaxsteelsurge',
+			];
+			for (const remove of removeAll)  
+				if (pokemon.side.removeSideCondition(remove))  
+					if (!success)   
+					this.add('-sideend', pokemon.side, this.dex.conditions.get(remove).name,);
+					success = true; 
+				for (const sideCondition of ['reflect', 'lightscreen', 'auroraveil', 'hologram', 'mist', 'spikes', 'toxicspikes', 'stealthrock', 'stickyweb', 'gmaxsteelsurge']) {
+					for (const side of [pokemon.side, ...pokemon.side.foeSidesWithConditions()]) {
+						if (side.getSideCondition(sideCondition)) {
+							if (!success) { 
+								this.add('-sideend', pokemon.side, this.dex.conditions.get(sideCondition).name,);
+								success = true;
+							}
+							side.removeSideCondition(sideCondition);
+						}
+					}
+				}
+			this.field.clearTerrain();  
+			return success;
+		},
+		flags: {},
+		name: "Cleaner2",
+		rating: 2,
+		num: 251,
+	},
+	cleaner: { // upon switch in, clears users side of hazards; clears foes screens; removes terrain 
+        onStart(pokemon) { 
+			this.add('-activate', pokemon, 'ability: Cleaner');
+			let activated = false;
+            for (const sideCondition of ['reflect', 'lightscreen', 'auroraveil', 'hologram', 'mist', 'safeguard', 'tailwind']) {
+                for (const side of [...pokemon.side.foeSidesWithConditions()]) {
+                    if (side.getSideCondition(sideCondition)) {
+                        if (!activated) { 
+                            activated = true;
+                        }
+                        side.removeSideCondition(sideCondition);
+                    }
+                }
+            } 
+			let success = false; 
+			const removeTarget = [
+				'spikes', 'toxicspikes', 'stealthrock', 'stickyweb', 'gmaxsteelsurge', 'carrottrap',
+			]; 
+			for (const targetCondition of removeTarget) {
+				if (pokemon.side.removeSideCondition(targetCondition)) { 
+					this.add('-sideend', pokemon.side, this.dex.conditions.get(targetCondition).name);
+					success = true;
+				}
+			}
+			this.field.removePseudoWeather('trickroom');
+			this.field.removePseudoWeather('gravity'); 
+			this.field.clearTerrain(); 
+			return success;  	
+		}, 
+        flags: {},
+        name: "Cleaner",
+        rating: 2,
+        num: 251,
+    },
+	holohawk: { // reskin of [Toxic Debris] but instead of seeting up toxic waste on foes side, set up tailwind on user side
+		onDamagingHitOrder: 1,
+		onDamagingHit(damage, target, source, move) {
+			const side = source.isAlly(target) ? source.side : source.side.foe;
+			const tailwind = side.sideConditions['tailwind'];
+			if (move.category === 'Physical' && (!tailwind || tailwind.layers < 1)) {
+				this.add('-activate', target, 'ability: HoloHawk');
+				side.addSideCondition('tailwind', target);
+			} 
+			if (move.category === 'Special' && (!tailwind || tailwind.layers < 1)) {
+				this.add('-activate', target, 'ability: HoloHawk');
+				side.addSideCondition('tailwind', target);
+			}
+		},
+		flags: {breakable: 1},
+		name: "HoloHawk",
+		rating: 4,
+		num: 295,
+	},  
+	thexo: { // reskin of [Gale Wings] pre-nerf, but for Flying type Status moves only <<<UNUSED>>>
+		onModifyPriority(priority, pokemon, target, move) {
+			if (move.type === 'Flying' && move.category === 'Status') return priority + 1;
+		},
+		flags: {},
+		name: "The XO",
+		rating: 4.5,
+		num: 177,
 	},
 	succubus: { // reskin of [Intimidate] but for Special Attack instead of Physical Attack
 		onStart(pokemon) {
@@ -1088,7 +1274,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3.5,
 		num: 295,
 	},
-	madscience: { // reskin of [Surge Surfer] but for Psychic Terrain and SpDef instead of Speed <UNUSED>
+	madscience: { // reskin of [Surge Surfer] but for Psychic Terrain and SpDef instead of Speed <<<UNUSED>>>
 		onModifySpDPriority: 6,
 		onModifySpD(pokemon) {
 			if (this.field.isTerrain('psychicterrain')) return this.chainModify(1.5);
@@ -1098,155 +1284,6 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 1.5,
 		num: 179,
 	},
-	cleaner5: { // <UNUSED> rids hazards on users sides and screens on foes sides BUT only when user is hit by an attacc, really/visually (+leech seed binding and terrain)
-		onDamagingHitOrder: 1,
-		onDamagingHit(damage, target, source, move) {  
-			this.add('-activate', target, 'ability: Cleaner5');	
-			let success = false; 
-			const removeTarget = [
-				'spikes', 'toxicspikes', 'stealthrock', 'stickyweb', 'gmaxsteelsurge',
-			]; 
-			for (const targetCondition of removeTarget) {
-				if (target.side.removeSideCondition(targetCondition)) { 
-					this.add('-sideend', target.side, this.dex.conditions.get(targetCondition).name);
-					success = true;
-				}
-			} 
-			if (target.hp && target.removeVolatile('leechseed')) {
-				this.add('-end', target, 'Leech Seed');
-			}
-			const sideConditions = ['reflect', 'lightscreen', 'auroraveil', 'hologram', 'mist', 'safeguard'];
-			for (const condition of sideConditions) {
-				if (source.hp && source.side.removeSideCondition(condition)) {
-					this.add('-sideend', source.side, this.dex.conditions.get(condition).name);
-				}
-			}
-			if (target.hp && target.volatiles['partiallytrapped']) {
-				target.removeVolatile('partiallytrapped'); 
-	        }
-			this.field.clearTerrain();
-			return success;
-		},
-		flags: {},
-		name: "Cleaner5",
-		rating: 2,
-		num: 251,
-	},
-	cleaner4: {  // <UNUSED> successfully clears visually and really ALL hazards and screens on both sides BUT only when user is hit by an attacc
-		onDamagingHitOrder: 1,
-		onDamagingHit(damage, target, source, move) {  
-			this.add('-activate', target, 'ability: Cleaner4');
-			let success = false; 
-			const removeTarget = [
-				'reflect', 'lightscreen', 'auroraveil', 'hologram', 'mist', 'spikes', 'toxicspikes', 'stealthrock', 'stickyweb', 'gmaxsteelsurge',
-			];
-			const removeAll = [
-				'reflect', 'lightscreen', 'auroraveil', 'hologram', 'mist', 'spikes', 'toxicspikes', 'stealthrock', 'stickyweb', 'gmaxsteelsurge',
-			];
-			for (const targetCondition of removeTarget) {
-				if (target.side.removeSideCondition(targetCondition)) {
-					if (!removeAll.includes(targetCondition)) continue; 
-					this.add('-sideend', target.side, this.dex.conditions.get(targetCondition).name);
-					success = true;
-				}
-			}
-			for (const sideCondition of removeAll) {
-				if (source.side.removeSideCondition(sideCondition)) { 
-					this.add('-sideend', source.side, this.dex.conditions.get(sideCondition).name);
-					success = true;
-				}
-			}
-			this.field.clearTerrain();
-			return success;
-		},
-			flags: {},
-			name: "Cleaner4",
-			rating: 2,
-			num: 251,
-    },
-	cleaner3: { // <UNUSED> rids users side only really+visually
-		onStart(pokemon) {
-			this.add('-activate', pokemon, 'ability: Cleaner3');
-			let success = false; 
-				const sideConditions = ['spikes', 'toxicspikes', 'stealthrock', 'stickyweb', 'gmaxsteelsurge'];
-				for (const condition of sideConditions) {
-					if (pokemon.hp && pokemon.side.removeSideCondition(condition)) {
-						this.add('-sideend', pokemon.side, this.dex.conditions.get(condition).name);
-					}
-				}
-			this.field.clearTerrain(); 
-			return success;
-		},
-		flags: {},
-		name: "Cleaner3",
-		rating: 2,
-		num: 251,
-	},
-	cleaner2: { // <UNUSED> {ERROR} actually rids all hazards, visually only screens of all sides but only hazards on user side; opposite side still shows
-		onStart(pokemon) {
-			this.add('-activate', pokemon, 'ability: Cleaner2');
-			let success = false;
-			const removeAll = [
-				'reflect', 'lightscreen', 'auroraveil', 'hologram', 'mist', 'spikes', 'toxicspikes', 'stealthrock', 'stickyweb', 'gmaxsteelsurge',
-			];
-			for (const remove of removeAll)  
-				if (pokemon.side.removeSideCondition(remove))  
-					if (!success)   
-					this.add('-sideend', pokemon.side, this.dex.conditions.get(remove).name,);
-					success = true; 
-				for (const sideCondition of ['reflect', 'lightscreen', 'auroraveil', 'hologram', 'mist', 'spikes', 'toxicspikes', 'stealthrock', 'stickyweb', 'gmaxsteelsurge']) {
-					for (const side of [pokemon.side, ...pokemon.side.foeSidesWithConditions()]) {
-						if (side.getSideCondition(sideCondition)) {
-							if (!success) { 
-								this.add('-sideend', pokemon.side, this.dex.conditions.get(sideCondition).name,);
-								success = true;
-							}
-							side.removeSideCondition(sideCondition);
-						}
-					}
-				}
-			this.field.clearTerrain();  
-			return success;
-		},
-		flags: {},
-		name: "Cleaner2",
-		rating: 2,
-		num: 251,
-	},
-	cleaner: { // upon switch in, clears users side of hazards; clears foes screens; removes terrain 
-        onStart(pokemon) { 
-			this.add('-activate', pokemon, 'ability: Cleaner');
-			let activated = false;
-            for (const sideCondition of ['reflect', 'lightscreen', 'auroraveil', 'hologram', 'mist', 'safeguard', 'tailwind']) {
-                for (const side of [...pokemon.side.foeSidesWithConditions()]) {
-                    if (side.getSideCondition(sideCondition)) {
-                        if (!activated) { 
-                            activated = true;
-                        }
-                        side.removeSideCondition(sideCondition);
-                    }
-                }
-            } 
-			let success = false; 
-			const removeTarget = [
-				'spikes', 'toxicspikes', 'stealthrock', 'stickyweb', 'gmaxsteelsurge', 'carrottrap',
-			]; 
-			for (const targetCondition of removeTarget) {
-				if (pokemon.side.removeSideCondition(targetCondition)) { 
-					this.add('-sideend', pokemon.side, this.dex.conditions.get(targetCondition).name);
-					success = true;
-				}
-			}
-			this.field.removePseudoWeather('trickroom');
-			this.field.removePseudoWeather('gravity'); 
-			this.field.clearTerrain(); 
-			return success;  	
-		}, 
-        flags: {},
-        name: "Cleaner",
-        rating: 2,
-        num: 251,
-    },
 	yamada: { // combines [Mirror Armour] + [Magic Bounce]
 		onTryHitPriority: 1,
 		onTryHit(target, source, move) {
@@ -1293,34 +1330,6 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		name: "Yamada",
 		rating: 2,
 		num: 240,
-	},
-	holohawk: { // reskin of [Toxic Debris] but instead of seeting up toxic waste on foes side, set up tailwind on user side
-		onDamagingHitOrder: 1,
-		onDamagingHit(damage, target, source, move) {
-			const side = source.isAlly(target) ? source.side : source.side.foe;
-			const tailwind = side.sideConditions['tailwind'];
-			if (move.category === 'Physical' && (!tailwind || tailwind.layers < 1)) {
-				this.add('-activate', target, 'ability: HoloHawk');
-				side.addSideCondition('tailwind', target);
-			} 
-			if (move.category === 'Special' && (!tailwind || tailwind.layers < 1)) {
-				this.add('-activate', target, 'ability: HoloHawk');
-				side.addSideCondition('tailwind', target);
-			}
-		},
-		flags: {breakable: 1},
-		name: "HoloHawk",
-		rating: 4,
-		num: 295,
-	},  
-	thexo: { // reskin of [Gale Wings] pre-nerf, but for Flying type Status moves only <UNUSED>
-		onModifyPriority(priority, pokemon, target, move) {
-			if (move.type === 'Flying' && move.category === 'Status') return priority + 1;
-		},
-		flags: {},
-		name: "The XO",
-		rating: 4.5,
-		num: 177,
 	},
 	moongoddess: { // reskin of [Shield Dust] + immunity to flinch/crits 
 		onCriticalHit: false,
@@ -1370,7 +1379,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 5,
 		num: 157,
 	},
-	nnn: { // reskin of [Seed Sower]
+	nnn: { // exact copy of [Seed Sower]
 		onDamagingHitOrder: 1,
 		onDamagingHit(damage, target, source, move) {
 			this.field.setTerrain('grassyterrain');
@@ -1380,7 +1389,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 2.5,
 		num: 269,
 	},
-	zombie: { // reskin of [Weak Armour]
+	zombie: { // exact copy of [Weak Armour]
 		onDamagingHit(damage, target, source, move) {
 			if (move.category === 'Physical') {
 				this.boost({def: -1, spe: 2}, target, target);
@@ -1391,7 +1400,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 2,
 		num: 133,
 	},
-	tonjokqueen: { // grants immunity from punching moves + priority for punches
+	tonjokqueen: { // reskin of [Bulletproof] but for punches + priority for punches
 		onModifyPriority(priority, pokemon, target, move) {
 			if (move.flags['punch']) return priority + 1;
 		},
@@ -1413,7 +1422,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3,
 		num: 43,
 	},
-	keris: { // reskin of [Iron Barbs]
+	keris: { // reskin of [Iron Barbs] but better + immunity to slice'n'dice moves
 		onDamagingHitOrder: 1,
 		onDamagingHit(damage, target, source, move) {
 			if (move.category === 'Physical') {
@@ -1436,7 +1445,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 2.5,
 		num: 160,
 	},
-	secretagent: { // reskin of [Protean] pre-nerf
+	secretagent: { // exact copy of [Protean] pre-nerf
         onPrepareHit(source, target, move) {
             if (move.hasBounced || move.flags['futuremove'] || move.sourceEffect === 'snatch') return;
             const type = move.type;
@@ -1450,7 +1459,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
         name: "Secret Agent",
         num: 236
 	},
-	graondstone: { // combines [Sand Force] + [Rain Dish] (but Sandstorm instead of Rain)
+	graondstone: { // combines [Sand Force] + [Rain Dish] (but Sandstorm instead of Rain) <<<UNUSED>>>
 		onWeather(target, source, effect) {
 			if (target.hasItem('utilityumbrella')) return;
 			if (effect.id === 'sandstorm') {
@@ -1471,10 +1480,10 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3,
 		num: 44,
 	},
-	blacksmith: { // [Heatproof] + [Earth Eater] + [Water Veil] + [Thermal Exchange] but for Steel and Rock type instead of Fire
+	blacksmith: { // [Heatproof] + [Earth Eater] + [Water Veil] + [Thermal Exchange] but for Steel=>DEF + Rock=>ATK instead of Fire=>ATK
 		onTryHit(target, source, move) {
 			if (target !== source && move.type === 'Ground') {
-				if (!this.heal(target.baseMaxhp / 4, target, target)) {
+				if (!this.heal(target.baseMaxhp / 5, target, target)) {
 					this.add('-immune', target, '[from] ability: Blacksmith');
 				}
 				return null;
@@ -1563,7 +1572,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 4.5,
 		num: 87,
 	},
-	ameway: { // [Power Herb ITEM] but as an ability; skips recharging as well
+	ameway: { // [Power Herb (ITEM)] but as an ability; skips recharging as well
 		onTryAddVolatile(status, pokemon) {
 			if (status.id === 'mustrecharge') return null;
 		},
@@ -1612,9 +1621,9 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 4.5,
 		num: 24,
 	},
-	mightyphoenix: { // combines [Flame Body] + [Flash Fire]
+	phoenix: { // combines [Flame Body] + [Flash Fire]
 		onStart(pokemon) {
-			this.add('-activate', pokemon, 'ability: Mighty Phoenix');
+			this.add('-activate', pokemon, 'ability: Phoenix');
 		},
 		onDamagingHit(damage, target, source, move) {
 			if (this.checkMoveMakesContact(move, source, target)) {
@@ -1626,44 +1635,44 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		onTryHit(target, source, move) {
 			if (target !== source && move.type === 'Fire') {
 				move.accuracy = true;
-				if (!target.addVolatile('mightyphoenix')) {
-					this.add('-immune', target, '[from] ability: Mighty Phoenix');
+				if (!target.addVolatile('phoenix')) {
+					this.add('-immune', target, '[from] ability: Phoenix');
 				}
 				return null;
 			}
 		},
 		onEnd(pokemon) {
-			pokemon.removeVolatile('mightyphoenix');
+			pokemon.removeVolatile('phoenix');
 		},
 		condition: {
 			noCopy: true, // doesn't get copied by Baton Pass
 			onStart(target) {
-				this.add('-start', target, 'ability: Mighty Phoenix');
+				this.add('-start', target, 'ability: Phoenix');
 			},
 			onModifyAtkPriority: 5,
 			onModifyAtk(atk, attacker, defender, move) {
-				if (move.type === 'Fire' && attacker.hasAbility('mightyphoenix')) {
-					this.debug('Mighty Phoenix boost');
+				if (move.type === 'Fire' && attacker.hasAbility('phoenix')) {
+					this.debug('Phoenix boost');
 					return this.chainModify(1.5);
 				}
 			},
 			onModifySpAPriority: 5,
 			onModifySpA(atk, attacker, defender, move) {
-				if (move.type === 'Fire' && attacker.hasAbility('mightyphoenix')) {
+				if (move.type === 'Fire' && attacker.hasAbility('phoenix')) {
 					this.debug('Flash Fire boost');
 					return this.chainModify(1.5);
 				}
 			},
 			onEnd(target) {
-				this.add('-end', target, 'ability: Mighty Phoenix', '[silent]');
+				this.add('-end', target, 'ability: Phoenix', '[silent]');
 			},
 		},
 		flags: {breakable: 1},
-		name: "Mighty Phoenix",
+		name: "Phoenix",
 		rating: 4,
 		num: 18,
 	},
-	yabairys: { // combines [Rocky Payload] + [Punk Rock]
+	yabairys: { // combines [Rocky Payload] + [Punk Rock] minus the sound resistance
 		onBasePowerPriority: 7,
 		onBasePower(basePower, attacker, defender, move) {
 			if (move.flags['sound']) {
@@ -1699,7 +1708,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 5,
 		num: -19,		
 	},
-	gravitationalpull: { // sets up Gravity on switch-in (effects end prematurely if user/foe with this ability switches in)
+	gravitationalpull: { // sets up Gravity on switch-in  
 		onStart(pokemon) {
 			this.add('-activate', pokemon, 'ability: Gravitational Pull');
 			this.field.addPseudoWeather('gravity', pokemon);
@@ -1708,7 +1717,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3,
 		num: -19,		
 	},
-	faunasweep: { // reskin of [Surge Surfer] but for Grassy Terrain instead of Electric Terrain
+	faunasweep: { // reskin of [Surge Surfer] but for Grassy Terrain instead of Electric Terrain <<<UNUSED>>>
 		onModifySpe(spe) {
 			if (this.field.isTerrain('grassyterrain')) {
 				return this.chainModify(2);
@@ -1774,7 +1783,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3,
 		num: 207,
 	},
-	societalcollapse: { // reskin of [Weak Armour] but for SpDef < Special Moves instead of Def < Contact Moves
+	societalcollapse: { // reskin of [Weak Armour] but for SpDef <= Special Moves instead of Def <= Contact Moves
 		onDamagingHit(damage, target, source, move) {
 			if (move.category === 'Special') {
 				this.boost({spd: -1, spe: 2}, target, target);
@@ -1785,7 +1794,28 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 2,
 		num: 133,
 	},
-	chaos2: { // <UNUSED VARIANT>
+	chaos: { // [Red Card (ITEM)] but as an ability
+		onAfterMoveSecondary(target, source, move) {
+			if (source && source !== target && source.hp && target.hp && move && move.category !== 'Status') {
+				if (this.randomChance(5, 10)) { 
+				source.forceSwitchFlag || target.forceSwitchFlag; {
+					return; 
+				}
+			} 
+				if (target.hasAbility('chaos')) {
+					if (this.runEvent('DragOut', source, target, move)) {
+						source.forceSwitchFlag = true; 
+						this.add('-activate', target, 'ability: Chaos');
+					}
+				}
+			}
+		},
+		flags: {breakable: 1},
+		name: "Chaos",
+		rating: 5,
+		num: 24,
+	}, 
+	chaos2: { // <<<UNUSED VARIANT>>>
 		onDamagingHitOrder: 1,
 		onDamagingHit(damage, target, source, move) {
 			if (move.category === 'Special' || move.category === 'Physical' && !source.status) {
@@ -1810,30 +1840,8 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		name: "Chaos2",
 		rating: 2,
 		num: 27,
-	},
-	chaos: { // [Red Card ITEM] but as an ability
-		onAfterMoveSecondary(target, source, move) {
-			if (source && source !== target && source.hp && target.hp && move && move.category !== 'Status') {
-				if (this.randomChance(5, 10)) { 
-				source.forceSwitchFlag || target.forceSwitchFlag; {
-					return; 
-				}
-			}	
-				// The item is used up even against a pokemon with Ingrain or that otherwise can't be forced out
-				if (target.hasAbility('chaos')) {
-					if (this.runEvent('DragOut', source, target, move)) {
-						source.forceSwitchFlag = true; 
-						this.add('-activate', target, 'ability: Chaos');
-					}
-				}
-			}
-		},
-		flags: {breakable: 1},
-		name: "Chaos",
-		rating: 5,
-		num: 24,
 	}, 
-	archivist: { // combines [Oppurtunist] with [Costar] but copies Foes stats instead of Allys stats
+	archiver: { // combines [Oppurtunist] + [Costar] but copies Foes stats instead of Allys stats
 		onPreStart(pokemon) {  
 			const foe = pokemon.side.foe.active[pokemon.side.active.length - 1 - pokemon.position]
 			const adjacentFoe = pokemon.adjacentFoes()[0]; 
@@ -1853,10 +1861,10 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 					if (volatile === 'dragoncheer') pokemon.volatiles[volatile].hasDragonType = foe.volatiles[volatile].hasDragonType;
 				}
 			} 
-			this.add('-copyboost', pokemon, foe, '[from] ability: Archivist'); 
+			this.add('-copyboost', pokemon, foe, '[from] ability: Archiver'); 
 		},
 		onFoeAfterBoost(boost, target, source, effect) {
-			if (effect?.name === 'Archivist' || effect?.name === 'Mirror Herb') return;
+			if (effect?.name === 'Archiver' || effect?.name === 'Mirror Herb') return;
 			const pokemon = this.effectState.target;
 			const positiveBoosts: Partial<BoostsTable> = {};
 			let i: BoostID;
@@ -1869,11 +1877,11 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			this.boost(positiveBoosts, pokemon);
 		},
 		flags: {breakable: 1},
-		name: "Archivist",
+		name: "Archiver",
 		rating: 3,
 		num: 290,
 	}, 
-	rockhard: { // reskin of [Fluffy], but instead of Fire being omitted, it is Steel
+	rockhard: { // combines [Multiscale] + [Fluffy] but instead of Fire being omitted, it is Steel
 		onStart(pokemon) {
 			this.add('-activate', pokemon, 'ability: Rock Hard');
 		},
@@ -1911,7 +1919,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 2.5,
 		num: 43,
 	},
-	thefuzzyone: { // reskin of [Tangled Hair] but lowers Def instead of Spe
+	thefuzzyone: { // reskin of [Tangled Hair] but lowers Def instead of Speed
 		onDamagingHit(damage, target, source, move) {
 			if (this.checkMoveMakesContact(move, source, target, true)) {
 				this.add('-ability', target, 'The Fuzzy One');
@@ -1923,7 +1931,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3.5,
 		num: 183,
 	},
-	thefluffyone: { // reskin of [Tangled Hair] but lowers Atk instead of Spe
+	thefluffyone: { // reskin of [Tangled Hair] but lowers Atk instead of Speed
 		onDamagingHit(damage, target, source, move) {
 			if (this.checkMoveMakesContact(move, source, target, true)) {
 				this.add('-ability', target, 'The Fluffy One');
@@ -1959,7 +1967,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 1.5,
 		num: 204,
 	},
-	chaser: { // reskin of [Moxie] but for Speed instead of ATK
+	chaser: { // reskin of [Moxie] but for Speed instead of Attacc
 		onSourceAfterFaint(length, target, source, effect) {
 			if (effect && effect.effectType === 'Move') {
 				this.boost({spe: length}, source);
@@ -1969,36 +1977,6 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		name: "Chaser",
 		rating: 3,
 		num: 153,
-	},
-	chaser2: { // reskin of [Defiant] but for Speed instead of Atk <UNUSED>
-		onAfterEachBoost(boost, target, source, effect) {
-			if (!source || target.isAlly(source)) {
-				return;
-			}
-			let statsLowered = false;
-			let i: BoostID;
-			for (i in boost) {
-				if (boost[i]! < 0) {
-					statsLowered = true;
-				}
-			}
-			if (statsLowered) {
-				this.boost({spe: 2}, target, target, null, false, true);
-			}
-		},
-		flags: {},
-		name: "Chaser2",
-		rating: 3,
-		num: 128,
-	},
-	durable2: { // reskin of [Stamina] <UNUSED>
-		onDamagingHit(damage, target, source, effect) {
-			this.boost({def: 1});
-		},
-		flags: {},
-		name: "Durable2",
-		rating: 4,
-		num: 192,
 	},
 	durable: { // reskin of [Download] except its for DEF/SDEF instead of ATK/SATK
 		onStart(pokemon) {
@@ -2019,7 +1997,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3.5,
 		num: 88,
 	},
-	godeyes: {
+	godeyes: { // reskin of [No Guard] but better >:)
 		onAnyInvulnerabilityPriority: 1,
 		onAnyInvulnerability(target, source, move) {
 			if (move && (source === this.effectState.target)) return 0;
