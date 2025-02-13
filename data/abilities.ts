@@ -241,7 +241,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			const side = source.isAlly(target) ? source.side.foe : source.side;
 			const tailwind = side.sideConditions['tailwind'];
 			if (move.category === 'Physical' || move.category === 'Special' && (!tailwind)) {
-				this.add('-activate', target, 'ability: HoloHawk');
+				this.add('-activate', source, 'ability: HoloHawk');
 				side.addSideCondition('tailwind', source);
 			}
 		},
