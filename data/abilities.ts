@@ -1253,7 +1253,9 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 					this.add('-sideend', pokemon.side, this.dex.conditions.get(targetCondition).name);
 					success = true;
 				}
-			} 
+			}
+			this.field.removePseudoWeather('trickroom');
+			this.field.removePseudoWeather('gravity'); 
 			this.field.clearTerrain(); 
 			return success;  	
 		},
