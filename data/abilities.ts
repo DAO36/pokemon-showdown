@@ -234,26 +234,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
         name: "Air Force",
         rating: 5,
         num: 318,
-    },
-	holohawk: { // 
-		onDamagingHitOrder: 1,
-		onDamagingHit(damage, target, source, move) {
-			const side = source.isAlly(target) ? source.side : source.side.foe;
-			const tailwind = side.sideConditions['tailwind'];
-			if (move.category === 'Physical' && (!tailwind || tailwind.layers < 1)) {
-				this.add('-activate', target, 'ability: HoloHawk');
-				side.addSideCondition('tailwind', target);
-			} 
-			if (move.category === 'Special' && (!tailwind || tailwind.layers < 1)) {
-				this.add('-activate', target, 'ability: HoloHawk');
-				side.addSideCondition('tailwind', target);
-			}
-		},
-		flags: {breakable: 1},
-		name: "HoloHawk",
-		rating: 3.5,
-		num: 295,
-	}, 
+    },  
 	spiky: { // sets up a layer of spikes when hit by physical move
 		onDamagingHit(damage, target, source, move) {
 			const side = source.isAlly(target) ? source.side.foe : source.side;
@@ -1328,7 +1309,26 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 2,
 		num: 240,
 	},
-	thexo: { // reskin of [Gale Wings] pre-nerf, but for Flying type Status moves only
+	holohawk: { // reskin of [Toxic Debris] but instead of seeting up toxic waste on foes side, set up tailwind on user side
+		onDamagingHitOrder: 1,
+		onDamagingHit(damage, target, source, move) {
+			const side = source.isAlly(target) ? source.side : source.side.foe;
+			const tailwind = side.sideConditions['tailwind'];
+			if (move.category === 'Physical' && (!tailwind || tailwind.layers < 1)) {
+				this.add('-activate', target, 'ability: HoloHawk');
+				side.addSideCondition('tailwind', target);
+			} 
+			if (move.category === 'Special' && (!tailwind || tailwind.layers < 1)) {
+				this.add('-activate', target, 'ability: HoloHawk');
+				side.addSideCondition('tailwind', target);
+			}
+		},
+		flags: {breakable: 1},
+		name: "HoloHawk",
+		rating: 4,
+		num: 295,
+	},
+	thexo: { // reskin of [Gale Wings] pre-nerf, but for Flying type Status moves only <UNUSED>
 		onModifyPriority(priority, pokemon, target, move) {
 			if (move.type === 'Flying' && move.category === 'Status') return priority + 1;
 		},

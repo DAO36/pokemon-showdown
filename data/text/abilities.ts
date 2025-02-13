@@ -304,7 +304,12 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 		desc: "When one of YMD's stat stages would be lowered by another Pokemon, that Pokemon's stat stage is lowered instead. This effect does not happen if YMD's stat stage was already -6. If the other Pokemon has a substitute, neither Pokemon has its stat stage lowered. YMD is unaffected by certain non-damaging moves directed at it and will instead use such moves against the original user. Moves reflected in this way are unable to be reflected again by this or Magic Coat's effect. Spikes, Stealth Rock, Sticky Web, and Toxic Spikes can only be reflected once per side, by the leftmost Pokemon under this or Magic Coat's effect. The Lightning Rod and Storm Drain Abilities redirect their respective moves before this Ability takes effect.",
 		shortDesc: "Blocks certain Status moves & stat changes, & bounces them back to the target.",
 	},
-	thexo: {
+	holohawk: {
+		name: "HoloHawk",
+		desc: "If this Hawk is hit by a damaging move, she sets up Tailwind on her side right after being hit.",
+		shortDesc: "If hit by an attack, Tailwind is set up for 4 turns.",
+	},
+	thexo: { // [UNUSED]
 		name: "The XO",
 		shortDesc: "This Falcon has her Flying-type status moves have +1 priority.",
 	},
