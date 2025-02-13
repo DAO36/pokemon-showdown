@@ -1312,22 +1312,41 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	holohawk: { // reskin of [Toxic Debris] but instead of seeting up toxic waste on foes side, set up tailwind on user side
 		onDamagingHitOrder: 1,
 		onDamagingHit(damage, target, source, move) {
-			const side = source.isAlly(target) ? source.side : source.side.foe;
+			const side = source.side;
 			const tailwind = side.sideConditions['tailwind'];
 			if (move.category === 'Physical' && (!tailwind || tailwind.layers < 1)) {
 				this.add('-activate', target, 'ability: HoloHawk');
-				source.side.addSideCondition('tailwind');
+				side.addSideCondition('tailwind', target);
 			} 
 			if (move.category === 'Special' && (!tailwind || tailwind.layers < 1)) {
 				this.add('-activate', target, 'ability: HoloHawk');
-				source.side.addSideCondition('tailwind');
+				side.addSideCondition('tailwind', target);
 			}
 		},
 		flags: {breakable: 1},
 		name: "HoloHawk",
 		rating: 4,
 		num: 295,
-	}, 
+	},
+	ewall: { // if hit by physical move, sets up reflect; if hit by special move, sets up light screen
+		onDamagingHit(damage, target, source, move) {
+			const side = source.isAlly(target) ? source.side : source.side.foe;
+			const reflect = side.sideConditions['reflect'];
+			const lightscreen = side.sideConditions['lightscreen'];
+			if (move.category === 'Physical' && (!reflect || reflect.layers < 1)) {
+				this.add('-activate', target, 'ability: Firewall');
+				side.addSideCondition('reflect', target);
+			} 
+			if (move.category === 'Special' && (!lightscreen || lightscreen.layers < 1)) {
+				this.add('-activate', target, 'ability: Firewall');
+				side.addSideCondition('lightscreen', target);
+			}
+		},
+		flags: {breakable: 1},
+		name: "Firewall",
+		rating: 3.5,
+		num: 295,
+	},
 	thexo: { // reskin of [Gale Wings] pre-nerf, but for Flying type Status moves only <UNUSED>
 		onModifyPriority(priority, pokemon, target, move) {
 			if (move.type === 'Flying' && move.category === 'Status') return priority + 1;
