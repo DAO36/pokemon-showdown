@@ -1875,7 +1875,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		},
 		onSourceModifyDamage(damage, source, target, move) {
 			if (target.hp >= target.maxhp) {
-				this.debug('Multiscale weaken');
+				this.debug('Rock Hard weaken');
 				return this.chainModify(0.5);
 			}
 			let mod = 1;
