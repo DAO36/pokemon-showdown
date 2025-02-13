@@ -238,7 +238,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	holohawk: { // 
 		onDamagingHitOrder: 1,
 		onDamagingHit(damage, target, source, move) {
-			const side = source.isAlly(target) ? source.side.foe : source.side;
+			const side = source.isAlly(target) ? source.side : source.side.foe;
 			const tailwind = side.sideConditions['tailwind'];
 			if (move.category === 'Physical' || move.category === 'Special' && (!tailwind)) {
 				this.add('-activate', target, 'ability: HoloHawk');
@@ -249,7 +249,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		name: "HoloHawk",
 		rating: 3.5,
 		num: 295,
-	},
+	}, 
 	spiky: { // sets up a layer of spikes when hit by physical move
 		onDamagingHit(damage, target, source, move) {
 			const side = source.isAlly(target) ? source.side.foe : source.side;
