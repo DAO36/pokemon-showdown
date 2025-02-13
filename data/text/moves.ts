@@ -786,9 +786,9 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	goldenapple: {
 		name: "Golden Apple",
-		desc: "This Kirin restores 1/2 of her maximum HP, rounded half up. If the terrain is Grassy Terrain, this Kirin instead restores 2/3 of her maximum HP, rounded half down.",
-		shortDesc: "Heals the user by a terrain-dependent amount.", 
-	},
+		desc: "Each Pokemon on this Kirin's side restores 1/2 of their maximum HP, rounded half up, and has their status condition cured. If the terrain is Grassy Terrain, this Kirin and her Ally instead restores 2/3 of their maximum HP, rounded half down.",
+		shortDesc: "User & allies: healed 1/2 max HP, status cured.", 
+	}, 
 	clockstrikes: {
 		name: "Clock Strikes",
 		desc: "Hits twice. If the first hit breaks the target's substitute, it will take damage for the second hit.",

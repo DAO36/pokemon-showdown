@@ -3097,7 +3097,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		name: "Golden Apple",
 		pp: 5,
 		priority: 0,
-		flags: {snatch: 1, heal: 1}, 
+		flags: {heal: 1, bypasssub: 1, allyanim: 1}, 
 		onHit(target, source) {
 			let success = false;
 			if (this.field.isTerrain('grassyterrain')) {
@@ -3107,11 +3107,21 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 			}
 			return success;
 		},
+		self: {
+			onHit(pokemon, source, move) { 
+				for (const ally of source.side.pokemon) {
+					if (ally !== source && (ally.volatiles['substitute'] && !move.infiltrates)) {
+						continue;
+					}
+					ally.cureStatus();
+				}
+			},
+		},
 		secondary: null,
 		target: "allies",
 		type: "Grass",
 		contestType: "Beautiful",
-	},
+	}, 
 	clockstrikes: { // steal type dual wingbeat
 		num: 370,
 		accuracy: 100,
