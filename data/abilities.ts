@@ -321,10 +321,10 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		num: 270,
 	},
 	stellar: { // combines [Moxie] + [Curious Medicine] but better
-		onStart(pokemon) { 
+		onStart(pokemon) {
 			for (const foe of pokemon.adjacentFoes()) {
 				foe.clearBoosts();
-				this.add('-clearboost', '[from] ability: Stellar', '[of] ' + pokemon);
+				this.add('-clearboost', foe, '[from] ability: Stellar', '[of] ' + pokemon);
 			}
 		},
 		onSourceAfterFaint(length, target, source, effect) {
@@ -336,19 +336,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		name: "Stellar",
 		rating: 3,
 		num: 128,
-	},
-	usmedicine: {
-		onStart(pokemon) {
-			for (const foe of pokemon.adjacentFoes()) {
-				foe.clearBoosts();
-				this.add('-clearboost', foe, '[from] ability: Stellar', '[of] ' + pokemon);
-			}
-		},
-		flags: {},
-		name: "Stellar",
-		rating: 0,
-		num: 261,
-	},
+	}, 
 	highspecsrobot: { // reskin of [Surge Surfer]
 		onModifySpe(spe) {
 			if (this.field.isTerrain('electricterrain')) {
