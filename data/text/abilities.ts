@@ -23,12 +23,7 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 		shortDesc: "If the user is KO'd by a Pokemon, that Pokemon also gets KO'd.",
 
 		damage: "  [POKEMON] got nuked!",
-	},
-	impatient: {
-		name: "Power Herb",
-		desc: "If the user uses a two-turn move, it will complete in one turn instead (except Sky Drop). If the user uses a move that require recharging after (Hyper Beam, Giga Impact, etc.), user is not affected by the recharge status.",
-		shortDesc: "2-turn moves complete in 1 turn. Unaffected by recharge.",
-	},
+	}, 
 	whiteherb: {
 		name: "White Herb",
 		desc: "Restores all lowered stat stages to 0 when one is less than 0, whether as a result of an opposing Pokemon (Parting Shot, Intimidate, etc.) or a self-inflicted reason (Close Combat, Draco Meteor, etc.).",
@@ -278,7 +273,7 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	cleaner: {
 		name: "Cleaner",
-		desc: "On switch-in, this Orca will clear up hazards on her side (Stealth Rock, Spikes, Toxic Spikes, Sticky Web, etc.) as well as clear the opponent's side of any screens set up (Reflect, Light Screen, Aurora Veil, etc.). The effects of Gravity and Trick Room, if active, are removed upon switch-in. If Tailwind is active on the opponent's side, it is also cleared up on switch-in.",
+		desc: "On switch-in, this Orca will clear up hazards on her side (Stealth Rock, Spikes, Toxic Spikes, Sticky Web, etc.) as well as clear the opponent's side of any screens set up (Reflect, Light Screen, Aurora Veil, etc.). The effects of Gravity, Trick Room and Terrain, if active, are removed upon switch-in. If Tailwind is active on the opponent's side, it is also cleared up on switch-in.",
 		shortDesc: "Switch-in: User's side: rids hazards; Other side: rids screens; Removes terrain.",
 
 		start: "  [POKEMON] is ready to clean up the scene!",

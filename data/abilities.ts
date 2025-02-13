@@ -102,10 +102,10 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 					return; 
 				}
 				// The item is used up even against a pokemon with Ingrain or that otherwise can't be forced out
-				if (target.hasAbility('chaos')) {
+				if (target.hasAbility('gtfo')) {
 					if (this.runEvent('DragOut', source, target, move)) {
 						source.forceSwitchFlag = true; 
-						this.add('-activate', target, 'ability: Chaos');
+						this.add('-activate', target, 'ability: GTFO');
 					}
 				}
 			}
@@ -160,23 +160,6 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		},
 		flags: {},
 		name: "Imma Bounce",
-		rating: 5,
-		num: 24,
-	},
-	impatient: { // SUCCESS! if the user uses moves that takes 2 turns, they take 1 turn instead (Power Herb)
-		onTryAddVolatile(status, pokemon) {
-			if (status.id === 'mustrecharge') return null;
-		},
-		onChargeMove(pokemon, target, move) {
-			if (pokemon.hasAbility('impatient')) {
-				this.debug('power herb - remove charge turn for ' + move.id);
-				this.attrLastMove('[still]');
-				this.addMove('-anim', pokemon, move.name, target);
-				return false; // skip charge turn
-			}
-		},
-		flags: {},
-		name: "Impatient",
 		rating: 5,
 		num: 24,
 	}, 
