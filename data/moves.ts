@@ -3192,7 +3192,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	},
 	blastfromthepast: {
 		num: 248,
-		accuracy: true,
+		accuracy: 100,
 		basePower: 120,
 		category: "Physical",
 		name: "Blast from the Past",
@@ -3208,7 +3208,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 				moveData: {
 					id: 'blastfromthepast',
 					name: "Blast from the Past",
-					accuracy: true,
+					accuracy: 100,
 					basePower: 120,
 					category: "Physical",
 					priority: 0,
