@@ -336,8 +336,8 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			}
 		},
 		onWeather(target, source, effect) { 
-			if (this.field.isTerrain('electricterrain')) {
-				this.heal(target.baseMaxhp / 10);
+			if (effect.id === 'electricterrain') {
+				this.heal(target.baseMaxhp / 10); 
 			}
 		},
 		flags: {},
