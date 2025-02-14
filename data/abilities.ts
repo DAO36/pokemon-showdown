@@ -331,15 +331,20 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	}, 
 	highspecsrobot: { // exact copy of [Surge Surfer]
 		onModifySpe(spe) {
-			if (this.field.isTerrain('electricterrain')) {
+			if (this.field.isTerrain('electricterrain')) { 
 				return this.chainModify(2);
+			}
+		},
+		onTerrainChange(target, source, effect) { 
+			if (this.field.isTerrain('electricterrain')) {
+				this.heal(target.baseMaxhp / 10);
 			}
 		},
 		flags: {},
 		name: "High Specs Robot",
 		rating: 3,
 		num: 207,
-	},
+	}, 
 	diva: { // combines [Soundproof] + [Punk Rock] 
 		onTryHit(target, source, move) {
 			if (target !== source && move.flags['sound']) {
