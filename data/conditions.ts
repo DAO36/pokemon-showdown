@@ -374,17 +374,16 @@ export const Conditions: import('../sim/dex-conditions').ConditionDataTable = {
 	futuremove: {
 		// this is a slot condition
 		name: 'futuremove',
-		onStart(target) {
-			this.effectState.targetSlot = target.getSlot();
+		onStart() {
 			this.effectState.endingTurn = (this.turn - 1) + 2;
 			if (this.effectState.endingTurn >= 254) {
 				this.hint(`In Gen 8+, Future attacks will never resolve when used on the 255th turn or later.`);
 			}
 		},
 		onResidualOrder: 3,
-		onResidual(target: Pokemon) {
+		onResidual(side: any) {
 			if (this.getOverflowedTurnCount() < this.effectState.endingTurn) return;
-			target.side.removeSlotCondition(this.getAtSlot(this.effectState.sourceSlot), 'futuremove');
+			side.removeSlotCondition(this.getAtSlot(this.effectState.sourceSlot), 'futuremove');
 		},
 		onEnd(target) {
 			const data = this.effectState;
