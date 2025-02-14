@@ -118,7 +118,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		name: "Lava Bucket",
 		pp: 5,
 		priority: 0,
-		flags: {protect: 1, mirror: 1, defrost: 1},
+		flags: {protect: 1, mirror: 1, defrost: 1, nonsky: 1},
 		recoil: [33, 100],
 		thawsTarget: true, 
 		secondary: {
@@ -588,7 +588,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		name: "Twin Tails",
 		pp: 10,
 		priority: 0,
-		flags: {protect: 1, mirror: 1, distance: 1, gravity: 1},
+		flags: {protect: 1, mirror: 1, distance: 1, gravity: 1, noparentalbond: 1},
 		multihit: 2,
 		smartTarget: true,
 		secondary: null,
@@ -972,7 +972,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		name: "Carrot Strike",
 		pp: 10,
 		priority: 0,
-		flags: {protect: 1, mirror: 1, bullet: 1},
+		flags: {protect: 1, mirror: 1, bullet: 1, noparentalbond: 1},
 		multihit: 2,
 		smartTarget: true,
 		secondary: null,
@@ -1048,29 +1048,6 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Grass", 
 		contestType: "Clever",
 	}, 
-	kes: {
-		num: 191,
-		accuracy: true,
-		basePower: 0,
-		category: "Status",
-		name: "Spikes",
-		pp: 20,
-		priority: 0,
-		flags: {reflectable: 1, nonsky: 1, metronome: 1, mustpressure: 1},
-		sideCondition: 'spikes',
-		condition: { 
-			onEntryHazard(pokemon) {
-				if (!pokemon.isGrounded() || pokemon.hasItem('heavydutyboots')) return;
-				const damageAmounts = [0, 3, 4, 6]; // 1/8, 1/6, 1/4
-				this.damage(damageAmounts[this.effectState.layers] * pokemon.maxhp / 24);
-			},
-		},
-		secondary: null,
-		target: "foeSide",
-		type: "Ground",
-		zMove: {boost: {def: 1}},
-		contestType: "Clever",
-	},
 	macesmash: { // steel type feint
 		num: 38,
 		accuracy: 90,
@@ -1430,7 +1407,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		name: "Static Slam",
 		pp: 10,
 		priority: 0,
-		flags: {contact: 1, protect: 1, mirror: 1, gravity: 1},
+		flags: {contact: 1, protect: 1, mirror: 1, gravity: 1, nonsky: 1},
 		overrideOffensiveStat: 'def',
 		secondary: {
 			chance: 30,
@@ -2008,7 +1985,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		name: "Paint Brush",
 		pp: 10,
 		priority: 0,
-		flags: {protect: 1, reflectable: 1, mirror: 1, allyanim: 1, contact: 1},
+		flags: {protect: 1, mirror: 1, allyanim: 1, contact: 1},
 		onTryHit(target) {
 			if (target.getAbility().flags['cantsuppress'] || target.ability === 'color change' || target.ability === 'truant') {
 				return false;
@@ -2513,7 +2490,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		name: "Ground Pound2",
 		pp: 5,
 		priority: 0,
-		flags: {contact: 1, protect: 1, mirror: 1, gravity: 1},
+		flags: {contact: 1, protect: 1, mirror: 1, gravity: 1, nonsky: 1},
 		hasCrashDamage: true,
 		onMoveFail(target, source, move) {
 			this.damage(source.baseMaxhp / 2, source, source, this.dex.conditions.get('High Jump Kick'));
@@ -2533,7 +2510,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		priority: 0,
 		flags: {
 			contact: 1, charge: 1, protect: 1, mirror: 1, gravity: 1, distance: 1,
-			metronome: 1, nosleeptalk: 1, noassist: 1, failinstruct: 1,
+			nonsky: 1, nosleeptalk: 1, noassist: 1, failinstruct: 1,
 		},
 		onTryMove(attacker, defender, move) {
 			if (attacker.removeVolatile(move.id)) {
@@ -2590,7 +2567,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		name: "Gamer Rage",
 		pp: 5,
 		priority: 0,
-		flags: {recharge: 1, protect: 1, mirror: 1, sound: 1, bypasssub: 1},
+		flags: {recharge: 1, protect: 1, mirror: 1, sound: 1, bypasssub: 1, nosleeptalk: 1, failinstruct: 1},
 		self: {
 			volatileStatus: 'mustrecharge',
 		},
@@ -2610,7 +2587,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		name: "Interdimensional Detective",
 		pp: 5,
 		priority: 0,
-		flags: {charge: 1, protect: 1, mirror: 1, bullet: 1, distance: 1},
+		flags: {charge: 1, protect: 1, mirror: 1, bullet: 1, distance: 1, nosleeptalk: 1, failinstruct: 1},
 		onTryMove(attacker, defender, move) {
 			if (attacker.removeVolatile(move.id)) {
 				return;
@@ -2635,7 +2612,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		name: "Time Shattering Punch",
 		pp: 5,
 		priority: 0,
-		flags: {charge: 1, protect: 1, mirror: 1, punch: 1, contact: 1},
+		flags: {charge: 1, protect: 1, mirror: 1, punch: 1, contact: 1, nosleeptalk: 1, failinstruct: 1},
 		onTryMove(attacker, defender, move) {
 			if (attacker.removeVolatile(move.id)) {
 				return;
@@ -2660,7 +2637,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		name: "Hive Mind",
 		pp: 5,
 		priority: 0,
-		flags: {charge: 1, protect: 1, mirror: 1, wind: 1, contact: 1},
+		flags: {charge: 1, protect: 1, mirror: 1, wind: 1, contact: 1, nosleeptalk: 1, failinstruct: 1},
 		onTryMove(attacker, defender, move) {
 			if (attacker.removeVolatile(move.id)) {
 				return;
