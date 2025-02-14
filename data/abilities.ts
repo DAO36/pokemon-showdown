@@ -335,7 +335,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 				return this.chainModify(2);
 			}
 		},
-		onSourceTerrain(pokemon) { 
+		onAnyTerrain(pokemon) { 
 			if (this.field.isTerrain('electricterrain')) {
 				this.heal(pokemon.baseMaxhp / 10);
 			}
