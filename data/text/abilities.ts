@@ -73,8 +73,9 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	highspecsrobot: {
 		name: "High Specs Robot",
-		shortDesc: "If Electric Terrain is active, the Speed of this Robot is doubled.",
-	},
+		desc: "If Electric Terrain is active, the Speed of this Robot is doubled, and heals 1/10 of its max HP each turn.",
+		shortDesc: "In Electric Terrain, 2x Speed and heals 1/10 HP each turn.", 
+	}, 
 	diva: {
 		name: "Diva",
 		desc: "This Diva's sound-based moves have her power multiplied by 1.3. Her Special Attack raised by 1 stage when she is hit by a Sound-based move; Immune to Sound-type moves",
@@ -137,9 +138,10 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 
 		start: "  [POKEMON] is channeling Oni energy!",
 	},
-	nursery: {
-		name: "Nursery",
-		shortDesc: "This Nurse restores 1/3 of her maximum HP, rounded down, when she switches out.",
+	nurse: {
+		name: "Nurse",
+		desc: "On switch-in, all Pokemon in this Kirin's party are cured of any status effects they may have. This Nurse restores 1/3 of her maximum HP, rounded down, when she switches out.",
+		shortDesc: "Switch-in: party is cured of status. User restores 1/3 HP when switching out.",
 	},
 	witchcraft2: { // [UNUSED]
 		name: "Witchcraft2",
@@ -415,8 +417,8 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	mothernature: {
 		name: "Mother Nature",
-		desc: "On switch-in, all Pokemon in this Kirin's party are cured of any status effects they may have. This Kirin also protects herself and her allies from status effects, lowering of stats, and effects that prevent usage of healing moves.",
-		shortDesc: "On switch-in, heals party of statuses. Protects party from certain status & effects.",
+		desc: "This Kirin protects herself and her allies from status effects, lowering of stats, and effects that prevent usage of healing moves.",
+		shortDesc: "Protects party from status effects & lowering of stats from other Pokemon.",
 
 		block: "  [POKEMON] is protected by Mother Nature!",
 	},

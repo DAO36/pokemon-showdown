@@ -18934,7 +18934,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		types: ["Fairy", "Dark"],
 		gender: "F",
 		baseStats: {hp: 130, atk: 105, def: 120, spa: 105, spd: 90, spe: 50},
-		abilities: {0: "Healer", 1: "Natural Cure", H: "Hospitality", S: "Nursery"},
+		abilities: {0: "Healer", 1: "Natural Cure", H: "Levitate", S: "Nurse"},
 		heightm: 1.65,
 		weightkg: 55.5,
 		color: "Yellow",

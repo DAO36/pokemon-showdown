@@ -329,7 +329,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3,
 		num: 128,
 	}, 
-	highspecsrobot: { // exact copy of [Surge Surfer]
+	highspecsrobot: { // reskin of [Surge Surfer] + [Rain Dish] except for Electricity Terrain insteads of Rain Dancing
 		onModifySpe(spe) {
 			if (this.field.isTerrain('electricterrain')) { 
 				return this.chainModify(2);
@@ -583,7 +583,21 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3.5,
 		num: 276,
 	},
-	nursery: { // exact copy of [Regenerator]
+	nurse: { // reskin of [Regenerator] + [Hospitality] + heals party on switc in
+		onPreStart(pokemon) {
+			this.add('-activate', pokemon, 'ability: Nurse');
+			let success = false;
+			const allies = [...pokemon.side.pokemon, ...pokemon.side.allySide?.pokemon || []];
+			for (const ally of allies) { 
+				if (ally.cureStatus()) success = true;
+			}
+			return success;
+		},
+		onStart(pokemon) {
+			for (const ally of pokemon.adjacentAllies()) {
+				this.heal(ally.baseMaxhp / 4, ally, pokemon);
+			}
+		},
 		onSwitchOut(pokemon) {
 			pokemon.heal(pokemon.baseMaxhp / 3);
 		},
@@ -1733,16 +1747,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3,
 		num: 207,
 	},
-	mothernature: { // combines [Flower Veil] + [Aroma Veil]  
-		onStart(pokemon) {
-			this.add('-activate', pokemon, 'ability: Mother Nature');
-			let success = false;
-			const allies = [...pokemon.side.pokemon, ...pokemon.side.allySide?.pokemon || []];
-			for (const ally of allies) { 
-				if (ally.cureStatus()) success = true;
-			}
-			return success;
-		},
+	mothernature: { // combines [Flower Veil] + [Aroma Veil] 
 		onAllyTryBoost(boost, target, source, effect) {
 			if (source && target === source) return;
 			let showMsg = false;
