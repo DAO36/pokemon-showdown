@@ -753,9 +753,9 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		},
 		onHit(pokemon, source, move) {
 			if (source.isAlly(pokemon)) {
-				if (!this.heal(Math.floor(pokemon.baseMaxhp * 0.5))) { 
-					return pokemon.cureStatus();
+				if (!this.heal(Math.floor(pokemon.baseMaxhp * 0.5))) {
 				}
+				if (pokemon.status === 'par' || 'psn' || 'tox' || 'frz' || 'slp' || 'brn') pokemon.cureStatus();
 			}
 		},
 		secondary: {

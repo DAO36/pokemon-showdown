@@ -73,8 +73,8 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	highspecsrobot: {
 		name: "High Specs Robot",
-		desc: "If Electric Terrain is active, the Speed of this Robot is doubled, and heals 1/10 of its max HP each turn.",
-		shortDesc: "In Electric Terrain, 2x Speed and heals 1/10 HP each turn.", 
+		desc: "If Electric Terrain is active, the Speed of this Robot is doubled, and heals 1/10 of her max HP at the end of each turn.",
+		shortDesc: "If Electric Terrain is active, user's speed is 2x & heals 1/10 max HP each turn.", 
 	}, 
 	diva: {
 		name: "Diva",
