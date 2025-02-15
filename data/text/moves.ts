@@ -118,13 +118,15 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	godlyattack: {
 		name: "Godly Attack",
-		desc: "If the target lost HP, the user takes recoil damage equal to 1/2 the HP lost by the target, rounded half up, but not less than 1 HP.",
-		shortDesc: "Has 50% recoil.",
-	},
+		desc: "If the target lost HP, the user takes recoil damage equal to 1/3 the HP lost by the target, rounded half up, but not less than 1 HP. If this attack does not miss, the effects of Reflect, Light Screen, Mist, Hologram, and Aurora Veil end for the target's side of the field before damage is calculated. If this move is successful, it breaks through the target's Baneful Bunker, Detect, King's Shield, Protect, or Spiky Shield for this turn, allowing other Pokemon to attack the target normally. If the target's side is protected by Crafty Shield, Mat Block, Quick Guard, or Wide Guard, that protection is also broken for this turn and other Pokemon may also attack the target's side normally.",
+		shortDesc: "Breaks protection & destroys screens. 33% recoil.", 
+
+		activate: "  [POKEMON] shattered [TEAM]'s protections!",
+	}, 
 	imgodok: {
 		name: "I'm God OK",
-		desc: "Raises the user's Attack, Speed, and Accuracy all by 1 stage.",
-		shortDesc: "Raises Attack, Speed, and Accuracy by 1.",
+		desc: "Raises the user's Attack and Speed each by 1 stage.",
+		shortDesc: "Raises Attack & Speed by 1.",
 	},
 	splitpersonality: {
 		name: "Split Personality",
@@ -336,8 +338,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	imhorny: {
 		name: "I'm Horny",
-		desc: "Target becomes infatuated. This effect does not happen for a target if both it and the user are the same gender, if either is genderless, or if the target is already infatuated. If the target is the same gender as the user, 30% chance to be confused instead.",
-		shortDesc: "Infatuates if opposite gender. Else, 30% to confuse.",
+		desc: "Target becomes infatuated. This effect does not happen for a target if both it and the user are the same gender, if either is genderless, or if the target is already infatuated. If the target is the same gender as the user, 50% chance to be confused instead.",
+		shortDesc: "Infatuates if opposite gender. Else, 50% to confuse.",
 	},
 	forever17: {
 		name: "Forever 17",
@@ -906,8 +908,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	fisted: {
 		name: "Fisted",
-		desc: "Hits twice. If the first hit breaks the target's substitute, it will take damage for the second hit. If this attack does not miss, the effects of Reflect, Light Screen, Mist, Hologram, and Aurora Veil end for the target's side of the field before damage is calculated. If this move is successful, it breaks through the target's Baneful Bunker, Detect, King's Shield, Protect, or Spiky Shield for this turn, allowing other Pokemon to attack the target normally. If the target's side is protected by Crafty Shield, Mat Block, Quick Guard, or Wide Guard, that protection is also broken for this turn and other Pokemon may attack the target's side normally.",
-		shortDesc: "Breaks protection and destroys screens. Hits 2x.",
+		desc: "Hits twice. If the first hit breaks the target's substitute, it will take damage for the second hit. If this move is successful, it breaks through the target's Baneful Bunker, Detect, King's Shield, Protect, or Spiky Shield for this turn, allowing other Pokemon to attack the target normally. If the target's side is protected by Crafty Shield, Mat Block, Quick Guard, or Wide Guard, that protection is also broken for this turn and other Pokemon may attack the target's side normally.",
+		shortDesc: "Breaks protection. Hits twice in one turn.",
 
 		activate: "  [POKEMON] shattered [TEAM]'s protections!",
 	},  

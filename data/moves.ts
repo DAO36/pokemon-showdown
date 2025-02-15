@@ -455,13 +455,22 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		name: "Godly Attack",
 		pp: 5,
 		priority: 0,
-		flags: {contact: 1, protect: 1, mirror: 1},
+		flags: {contact: 1, mirror: 1},
+		onTryHit(pokemon) {
+			// will shatter screens through sub, before you hit
+			pokemon.side.removeSideCondition('reflect');
+			pokemon.side.removeSideCondition('lightscreen');
+			pokemon.side.removeSideCondition('hologram');
+			pokemon.side.removeSideCondition('auroraveil');
+			pokemon.side.removeSideCondition('mist');
+		},
+		breaksProtect: true,
 		recoil: [33, 100],
 		secondary: null,
 		target: "normal",
 		type: "Normal",
 		contestType: "Tough",
-	},
+	}, 
 	imgodok: {
 		num: 370,
 		accuracy: true,
@@ -473,8 +482,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		flags: {snatch: 1, dance: 1},
 		boosts: {
 			atk: 1,
-			spe: 1,
-			accuracy: 1,
+			spe: 1, 
 		},
 		secondary: null,
 		target: "self",
@@ -575,7 +583,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		priority: 0,
 		flags: {contact: 1, protect: 1, mirror: 1, dance: 1},
 		secondary: {
-			chance: 10,
+			chance: 20,
 			self: {
 				boosts: {
 					spd: 1,
@@ -836,7 +844,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		priority: 0,
 		flags: {protect: 1, mirror: 1, sound: 1, bypasssub: 1},
 		secondary: {
-			chance: 10,
+			chance: 20,
 			volatileStatus: 'confusion',
 		},
 		target: "allAdjacentFoes",
@@ -1213,7 +1221,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		secondary: { 
 			onHit(target, source, move) {
 				if (target.gender === 'F' && source.gender === 'F') {
-					if (this.randomChance(1, 3))
+					if (this.randomChance(1, 2))
 					target.addVolatile('confusion', source, move);
 				}
 			},
@@ -3653,14 +3661,6 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		pp: 5,
 		priority: 0,
 		flags: {contact: 1, mirror: 1, punch: 1},
-		onTryHit(pokemon) {
-			// will shatter screens through sub, before you hit
-			pokemon.side.removeSideCondition('reflect');
-			pokemon.side.removeSideCondition('lightscreen');
-			pokemon.side.removeSideCondition('hologram');
-			pokemon.side.removeSideCondition('auroraveil');
-			pokemon.side.removeSideCondition('mist');
-		},
 		breaksProtect: true,
 		multihit: 2,
 		secondary: null,
