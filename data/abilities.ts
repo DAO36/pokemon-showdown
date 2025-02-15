@@ -583,11 +583,11 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3.5,
 		num: 276,
 	},
-	nurse: { // this.add('-end', target, 'ability: Phoenix', '[silent]');
-		onPreStart(pokemon) {
-			this.add('-activate', pokemon, 'ability: Nurse');
+	nurse: { // this.add('-activate', pokemon, 'ability: Nurse', '[silent]');
+		onPreStart(pokemon) { 
 			let success = false;
 			const allies = [...pokemon.side.pokemon, ...pokemon.side.allySide?.pokemon || []];
+			this.add('-activate', pokemon, 'ability: Nurse');
 			for (const ally of allies) { 
 				if (ally.cureStatus()) success = true;
 			} 
@@ -595,8 +595,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		},
 		onStart(pokemon) {
 			for (const ally of pokemon.adjacentAllies()) {
-				this.heal(ally.baseMaxhp / 5, ally, pokemon);
-				this.add('-activate', pokemon, 'ability: Nurse', '[silent]');
+				this.heal(ally.baseMaxhp / 5, ally, pokemon); 
 			}
 		},
 		onSwitchOut(pokemon) {
