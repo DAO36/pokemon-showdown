@@ -598,44 +598,43 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			for (const ally of pokemon.adjacentAllies()) {
 				this.heal(ally.baseMaxhp / 4, ally, pokemon);
 			}
+		}, 
+		onAllySetStatus(status, target, source, effect) {
+			if (source && target !== source && effect && effect.id !== 'yawn') {
+				this.debug('interrupting setStatus with Nurse');
+				if (effect.name === 'Synchronize' || (effect.effectType === 'Move' && !effect.secondaries)) {
+					const effectHolder = this.effectState.target;
+					this.add('-block', target, 'ability: Nurse', '[of] ' + effectHolder);
+				}
+				return null;
+			}
+		},
+		onAllyTryAddVolatile(status, target, source, effect) {
+			if (['healblock'].includes(status.id)) {
+				if (effect.effectType === 'Move') {
+					const effectHolder = this.effectState.target;
+					this.add('-block', target, 'ability: Nurse', '[of] ' + effectHolder);
+				}
+				return null;
+			} 
+			if (status.id === 'yawn') {
+				this.debug('Nurse blocking yawn');
+				const effectHolder = this.effectState.target;
+				this.add('-block', target, 'ability: Nurse', '[of] ' + effectHolder);
+				return null;
+			}
 		},
 		onSwitchOut(pokemon) {
 			pokemon.heal(pokemon.baseMaxhp / 3);
 		}, 
-		onResidual(pokemon) {
-			let success = false;
-			const allies = [...pokemon.side.pokemon, ...pokemon.side.allySide?.pokemon || []];
-			for (const ally of allies) {
-				if (ally.status) {
-					this.add('-activate', pokemon, 'ability: Nurse');
-					ally.cureStatus();
-				}
-			}
-		},
 		flags: {},
 		name: "Nurse",
 		rating: 4.5,
 		num: 144,
-	},
-	aler: {
-		onResidualOrder: 5,
-		onResidualSubOrder: 3,
-		onResidual(pokemon) {
-			for (const allyActive of pokemon.adjacentAllies()) {
-				if (allyActive.status && this.randomChance(3, 10)) {
-					this.add('-activate', pokemon, 'ability: Healer');
-					allyActive.cureStatus();
-				}
-			}
-		},
-		flags: {},
-		name: "Healer",
-		rating: 0,
-		num: 131,
-	},
-	rse: { // reskin of [Regenerator] + [Hospitality] + heals party on switc in 
+	}, 
+	nurse2: { // reskin of [Regenerator] + [Hospitality] + heals party on switc in 
 		onPreStart(pokemon) {
-			this.add('-activate', pokemon, 'ability: Nurse');
+			this.add('-activate', pokemon, 'ability: Nurse2');
 			let success = false;
 			const allies = [...pokemon.side.pokemon, ...pokemon.side.allySide?.pokemon || []];
 			for (const ally of allies) { 
@@ -652,7 +651,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			pokemon.heal(pokemon.baseMaxhp / 3);
 		},
 		flags: {},
-		name: "Nurse",
+		name: "Nurse2",
 		rating: 4.5,
 		num: 144,
 	},
@@ -1812,37 +1811,20 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 				const effectHolder = this.effectState.target;
 				this.add('-block', target, 'ability: Mother Nature', '[of] ' + effectHolder);
 			}
-		},
-		onAllySetStatus(status, target, source, effect) {
-			if (source && target !== source && effect && effect.id !== 'yawn') {
-				this.debug('interrupting setStatus with Mother Nature');
-				if (effect.name === 'Synchronize' || (effect.effectType === 'Move' && !effect.secondaries)) {
-					const effectHolder = this.effectState.target;
-					this.add('-block', target, 'ability: Mother Nature', '[of] ' + effectHolder);
+		},  
+		onResidual(pokemon) {
+			for (const allyActive of pokemon.adjacentAllies()) {
+				if (allyActive.status) {
+					this.add('-activate', pokemon, 'ability: Mother Nature');
+					allyActive.cureStatus();
 				}
-				return null;
-			}
-		},
-		onAllyTryAddVolatile(status, target, source, effect) {
-			if (['healblock'].includes(status.id)) {
-				if (effect.effectType === 'Move') {
-					const effectHolder = this.effectState.target;
-					this.add('-block', target, 'ability: Mother Nature', '[of] ' + effectHolder);
-				}
-				return null;
-			} 
-			if (status.id === 'yawn') {
-				this.debug('Mother Nature blocking yawn');
-				const effectHolder = this.effectState.target;
-				this.add('-block', target, 'ability: Mother Nature', '[of] ' + effectHolder);
-				return null;
 			}
 		},
 		flags: {breakable: 1},
 		name: "Mother Nature",
 		rating: 3,
 		num: 207,
-	},
+	}, 
 	societalcollapse: { // reskin of [Weak Armour] but for SpDef <= Special Moves instead of Def <= Contact Moves
 		onDamagingHit(damage, target, source, move) {
 			if (move.category === 'Special') {

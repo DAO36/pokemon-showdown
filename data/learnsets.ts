@@ -94383,7 +94383,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			healingwish: ["9M"],
 			healpulse: ["9M"],
 			nursing: ["9M"],
-			firstaid: ["9M"],
+			syringestrike: ["9M"],
         },
 	},
 	shion: {

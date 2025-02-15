@@ -719,7 +719,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Fairy",
 		contestType: "Cute",
 	},
-	firstaid: {
+	firstaid: { // <<<UNUSED>>>
 		num: 816,
 		accuracy: true,
 		basePower: 0,
@@ -735,6 +735,36 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		secondary: null,
 		target: "allies",
 		type: "Fairy",
+	},
+	syringestrike: {
+		num: 676,
+		accuracy: 100,
+		basePower: 100,
+		category: "Physical",
+		name: "Syringe Strike",
+		pp: 10,
+		priority: 0,
+		flags: {protect: 1, mirror: 1, allyanim: 1, heal: 1, slicing: 1},
+		onTryHit(target, source, move) {
+			if (source.isAlly(target)) {
+				move.basePower = 0;
+				move.infiltrates = true;
+			}
+		},
+		onHit(pokemon, source, move) {
+			if (source.isAlly(pokemon)) {
+				if (!this.heal(Math.floor(pokemon.baseMaxhp * 0.5))) { 
+					return pokemon.cureStatus();
+				}
+			}
+		},
+		secondary: {
+			chance: 100,
+			status: 'psn',
+		},
+		target: "normal",
+		type: "Fairy",
+		contestType: "Cute",
 	},
 	witchattack: { // leaf storm but psychic
 		num: 434,

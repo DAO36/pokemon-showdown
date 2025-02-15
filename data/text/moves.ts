@@ -200,10 +200,15 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		heal: "  [NICKNAME]'s was nursed back to health!",
 		switchOut: "#uturn",
 	},
-	firstaid: {
+	firstaid: { // [UNUSED]
 		name: "First Aid",
 		desc: "Each Pokemon on this Nurse's side restores 1/3 of their maximum HP, rounded half up, and has their status condition cured.",
 		shortDesc: "User and allies: heal 1/3 max HP, cures status.",
+	},
+	syringestrike: {
+		name: "Syringe Strike",
+		desc: "If the target is an ally, this move restores 1/2 of its maximum HP, rounded down, instead of dealing damage, as well as curing it of any status effects.",
+		shortDesc: "If target is ally, heals 50% HP & cures status.",
 	},
 	witchattack: {
 		name: "Witch Attack",
