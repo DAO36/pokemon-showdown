@@ -584,20 +584,17 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		num: 276,
 	},
 	nurse: { // this.add('-activate', pokemon, 'ability: Nurse', '[silent]');
-		onPreStart(pokemon) { 
-			let success = false;
-			const allies = [...pokemon.side.pokemon, ...pokemon.side.allySide?.pokemon || []]; 
-			for (const ally of allies) { 
-				if (ally.cureStatus()) success = true; 
-			} 
-			this.add('-activate', pokemon, 'ability: Nurse');
-			return success;
-		}, 
-		onStart(pokemon) {
+		onStart(pokemon) {  
 			for (const ally of pokemon.adjacentAllies()) {
 				this.heal(ally.baseMaxhp / 5, ally, pokemon); 
 			}
-		},
+			let success = false;
+			const allies = [...pokemon.side.pokemon, ...pokemon.side.allySide?.pokemon || []]; 
+			for (const ally of allies) { 
+				this.add('-activate', pokemon, 'ability: Nurse'); if (ally.cureStatus()) success = true; 
+			} 
+			return success;
+		}, 
 		onSwitchOut(pokemon) {
 			pokemon.heal(pokemon.baseMaxhp / 3);
 		},
@@ -618,11 +615,11 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		},
 		onStart(pokemon) {
 			for (const ally of pokemon.adjacentAllies()) {
-				this.heal(ally.baseMaxhp / 5, ally, pokemon);
+				this.heal(ally.baseMaxhp / 4, ally, pokemon);
 			}
 		},
 		onSwitchOut(pokemon) {
-			pokemon.heal(pokemon.baseMaxhp / 3);
+			pokemon.heal(pokemon.baseMaxhp / 4);
 		},
 		flags: {},
 		name: "Nurse",
