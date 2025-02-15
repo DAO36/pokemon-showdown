@@ -583,7 +583,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3.5,
 		num: 276,
 	},
-	nurse: { // this.add('-activate', pokemon, 'ability: Nurse');
+	nurse: { // reskin of [Hospitality] + [Regenerator] + [Flower Veil] but for all types + cures Party upon switch-in 
 		onPreStart(pokemon) {
 			this.add('-activate', pokemon, 'ability: Nurse');
 			let success = false;
@@ -626,20 +626,21 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		onSwitchOut(pokemon) {
 			pokemon.heal(pokemon.baseMaxhp / 3);
 		}, 
-		flags: {},
+		flags: {breakable: 1},
 		name: "Nurse",
 		rating: 4.5,
 		num: 144,
 	}, 
-	nurse2: { // reskin of [Regenerator] + [Hospitality] + heals party on switc in 
+	nurse2: { // <<<UNUSED>>> 
 		onPreStart(pokemon) {
-			this.add('-activate', pokemon, 'ability: Nurse2');
+			this.add('-activate', pokemon, 'ability: Nurse');
 			let success = false;
 			const allies = [...pokemon.side.pokemon, ...pokemon.side.allySide?.pokemon || []];
-			for (const ally of allies) { 
-				if (ally.cureStatus()) success = true;
-			} 
-			return success;
+			for (const ally of allies) {
+				if (ally.status) { 
+					ally.cureStatus();
+				}
+			}
 		},
 		onStart(pokemon) {
 			for (const ally of pokemon.adjacentAllies()) {
@@ -1795,7 +1796,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3,
 		num: 207,
 	},
-	mothernature: { // combines [Flower Veil] + [Aroma Veil] 
+	mothernature: { // combines [Aroma Veil] + [Healer] but 100% chance to heal status end of evey turn 
 		onAllyTryBoost(boost, target, source, effect) {
 			if (source && target === source) return;
 			let showMsg = false;

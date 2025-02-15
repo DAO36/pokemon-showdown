@@ -140,7 +140,7 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	nurse: {
 		name: "Nurse",
-		desc: "On switch-in, this Nurse restores 1/4 of her ally's maximum HP, rounded down, and all Pokemon in this Nurse's party are cured of any status effects they may have. Pokemon on this Nurse's side cannot have have a non-volatile status condition inflicted on them by other Pokemon. This Nurse restores 1/3 of her maximum HP, rounded down, when she switches out.",
+		desc: "On switch-in, this Nurse restores 1/4 of her ally's maximum HP, rounded down, as well as having all Pokemon in this Nurse's party cured of any status effects they may have. Pokemon on this Nurse's side cannot have have a non-volatile status condition inflicted on them by other Pokemon. This Nurse restores 1/3 of her maximum HP, rounded down, when she switches out.",
 		shortDesc: "Switch-in: heals allies by 1/4 HP & prevents status. Heals 1/3 HP when switching out.", 
 
 		heal: "  [POKEMON] was nursed back to health by [SOURCE]!",
@@ -419,7 +419,7 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	mothernature: {
 		name: "Mother Nature",
-		desc: "This Kirin protects herself and her allies from lowering of stats from other Pokemon. This Kirin and her ally has their non-volatile status condition cured at the end of each turn.",
+		desc: "This Kirin protects herself and her allies from the lowering of stats from other Pokemon. This Kirin and her ally has their non-volatile status condition cured at the end of each turn.",
 		shortDesc: "Protects party from lowering of stats. Party are cured of status at end of turn.",
 
 		block: "  [POKEMON] is protected by Mother Nature!",
