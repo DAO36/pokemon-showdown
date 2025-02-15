@@ -602,7 +602,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			pokemon.heal(pokemon.baseMaxhp / 3);
 		},
 		flags: {},
-		name: "Nursery",
+		name: "Nurse",
 		rating: 4.5,
 		num: 144,
 	},
