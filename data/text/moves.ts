@@ -19,8 +19,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		desc: "This Idol cures her non-volatile status condition. Raises the Idol's Special Attack by 2 stages.",
 		shortDesc: "Cures user and her party; Raises Sp.Atk by 2.",
 	},
-	sakuraiattack: {
-		name: "Sakurai Attack",
+	sakuraattack: {
+		name: "Sakura Attack",
 		shortDesc: "No additional effect. Hits adjacent foes.",
 	},
 	lavabucket: {
@@ -48,8 +48,7 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	axeattack: {
 		name: "Axe Attack",
-		desc: "Has a higher chance for a critical hit.",
-		shortDesc: "High critical hit ratio.",
+		shortDesc: "No additional effect.",
 	},
 	cometslam: {
 		name: "Comet Slam",
@@ -80,9 +79,9 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	divasong: {
 		name: "Diva Song",
-		desc: "No additional effect.",
-		shortDesc: "No additional effect.",
-	},
+		desc: "If the current terrain is Misty Terrain and the target is grounded, this move's power is doubled.",
+		shortDesc: "2x power if target is grounded in Misty Terrain.",
+	}, 
 	divadance: {
 		name: "Diva Dance",
 		desc: "Raises this Diva's Attack by 2 stages.",
