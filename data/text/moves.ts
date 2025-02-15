@@ -202,8 +202,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	firstaid: {
 		name: "First Aid",
-		desc: "Each Pokemon on this Nurse's side restores 1/2 of their maximum HP, rounded half up, and has their status condition cured.",
-		shortDesc: "User and allies: heal 1/2 max HP, cures status.",
+		desc: "Each Pokemon on this Nurse's side restores 1/3 of their maximum HP, rounded half up, and has their status condition cured.",
+		shortDesc: "User and allies: heal 1/3 max HP, cures status.",
 	},
 	witchattack: {
 		name: "Witch Attack",
