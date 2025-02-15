@@ -584,13 +584,15 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		num: 276,
 	},
 	nurse: { // this.add('-activate', pokemon, 'ability: Nurse');
-		onPreStart(pokemon) { 
-			let success = false;
-			const allies = [...pokemon.side.pokemon, ...pokemon.side.allySide?.pokemon || []];
-			for (const ally of pokemon.adjacentAllies()) {
-				ally.cureStatus, this.add('-activate', pokemon, 'ability: Nurse');
-			} 
-			return success;
+		onResidualOrder: 5,
+		onResidualSubOrder: 3,
+		onResidual(pokemon) {
+			for (const allyActive of pokemon.adjacentAllies()) {
+				if (allyActive.status) {
+					this.add('-activate', pokemon, 'ability: Nurse');
+					allyActive.cureStatus();
+				}
+			}
 		},
 		onStart(pokemon) {
 			for (const ally of pokemon.adjacentAllies()) {
@@ -604,6 +606,22 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		name: "Nurse",
 		rating: 4.5,
 		num: 144,
+	},
+	aler: {
+		onResidualOrder: 5,
+		onResidualSubOrder: 3,
+		onResidual(pokemon) {
+			for (const allyActive of pokemon.adjacentAllies()) {
+				if (allyActive.status && this.randomChance(3, 10)) {
+					this.add('-activate', pokemon, 'ability: Healer');
+					allyActive.cureStatus();
+				}
+			}
+		},
+		flags: {},
+		name: "Healer",
+		rating: 0,
+		num: 131,
 	},
 	rse: { // reskin of [Regenerator] + [Hospitality] + heals party on switc in 
 		onPreStart(pokemon) {
