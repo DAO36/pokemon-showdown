@@ -584,9 +584,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		num: 276,
 	},
 	nurse: { // this.add('-activate', pokemon, 'ability: Nurse');
-		onResidualOrder: 5,
-		onResidualSubOrder: 3,
-		onResidual(pokemon) {
+		onPreStart(pokemon) {
 			for (const allyActive of pokemon.adjacentAllies()) {
 				if (allyActive.status) {
 					this.add('-activate', pokemon, 'ability: Nurse');
