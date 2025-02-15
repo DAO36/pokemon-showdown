@@ -412,8 +412,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	clowntown: {
 		name: "Clown Town",
-		desc: "Has a 30% chance to confuse the target. Hits three times. Power increases to 40 for the second hit and 60 for the third. This move checks accuracy for each hit, and the attack ends if the target avoids a hit. If one of the hits breaks the target's substitute, it will take damage for the remaining hits. If the user has the Skill Link Ability, this move will always hit three times.",
-		shortDesc: "30% to confuse. Hits x3 each can miss, but power rises.",
+		desc: "Has a 10% chance to confuse the target. Hits three times. Power increases to 40 for the second hit and 60 for the third. This move checks accuracy for each hit, and the attack ends if the target avoids a hit. If one of the hits breaks the target's substitute, it will take damage for the remaining hits. If the user has the Skill Link Ability, this move will always hit three times.",
+		shortDesc: "10% to confuse. Hits x3 each can miss, but power rises.",
 	},
 	polmao: {
 		name: "PoLMAO",
@@ -476,8 +476,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	falconwhip: {
 		name: "Falcon Whip",
-		desc: "Has a 30% chance to confuse the target.",
-		shortDesc: "30% chance to confuse target.",
+		desc: "Has a 10% chance to confuse the target.",
+		shortDesc: "10% chance to confuse target.",
 	},
 	samuraistrikes: {
 		name: "Samurai Strikes",
