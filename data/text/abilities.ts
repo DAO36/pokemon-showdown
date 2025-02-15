@@ -141,9 +141,9 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	nurse: {
 		name: "Nurse",
 		desc: "On switch-in, this Pokemon restores 1/4 of its ally's maximum HP, rounded down, and all Pokemon in this Nurse's party are cured of any status effects they may have. This Nurse restores 1/3 of her maximum HP, rounded down, when she switches out.",
-		shortDesc: "Switch-in: heals allies by 1/4 HP & cures party of status. Restores 1/3 HP when switching out.", 
+		shortDesc: "Switch-in: heals allies by 1/4 HP & cures party of status. Heals 1/3 HP when switching out.", 
 
-		heal: "  [POKEMON] were nursed back to health by [SOURCE]!",
+		heal: "  [POKEMON] was nursed back to health by [SOURCE]!",
 	},
 	witchcraft2: { // [UNUSED]
 		name: "Witchcraft2",
