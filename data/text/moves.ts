@@ -337,8 +337,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	imhorny: {
 		name: "I'm Horny",
-		desc: "Target becomes infatuated. This effect does not happen for a target if both it and the user are the same gender, if either is genderless, or if the target is already infatuated.",
-		shortDesc: "Infatuates if opposite gender. 30% to confuse.",
+		desc: "Target becomes infatuated. This effect does not happen for a target if both it and the user are the same gender, if either is genderless, or if the target is already infatuated. If the target is the same gender as the user, 30% chance to be confused",
+		shortDesc: "Infatuates if opposite gender. Else, 30% to confuse.",
 	},
 	forever17: {
 		name: "Forever 17",

@@ -1204,8 +1204,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 				}
 			},
 		},
-		secondary: {
-			chance: 100,
+		secondary: { 
 			onHit(target, source, move) {
 				if (target.gender === 'F' && source.gender === 'F') {
 					if (this.randomChance(1, 3))
