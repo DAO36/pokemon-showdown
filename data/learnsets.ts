@@ -94886,7 +94886,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			calmmind: ["9M"],
 			wideguard: ["9M"],
 			macesmash: ["9M"],
-			knightfist: ["9M"],
+			knightmuscles: ["9M"],
         },
 	},		
 	rushia: {

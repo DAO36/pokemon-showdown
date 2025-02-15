@@ -129,8 +129,8 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	apex: {
 		name: "Apex",
-		desc: "When this Maid has more than 1/2 of her maximum HP and takes damage from an attack bringing her to 1/2 or less of her maximum HP, her Special Attack is raised by 1 stage. This effect applies after all hits from a multi-hit move. This effect is prevented if the move had a secondary effect removed by the Sheer Force Ability.",
-		shortDesc: "Special Attack is raised by 1 when she reaches 1/2 or less of her max HP.",
+		desc: "When this Maid has more than 1/2 of her maximum HP and takes damage from an attack bringing her to 1/2 or less of her maximum HP, her Attack and Special Attack are both raised by 1 stage each. This effect applies after all hits from a multi-hit move. This effect is prevented if the move had a secondary effect removed by the Sheer Force Ability.",
+		shortDesc: "If HP reaches 1/2 or less, user's Atk and Sp.Atk are both raised by 1.",
 	},
 	oni: {
 		name: "Oni",
@@ -186,11 +186,11 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 		desc: "30% chance a Pokemon using an attacking move on this War Criminal will either be poisoned, badly poisoned, paralyzed, frozen, burned or put to sleep.",
 		shortDesc: "30% chance to either PSN/BRN/PAR/SLP/TOX/FRZ those that attack this Rabbit.",
 	},
-	muscleknight: {
-		name: "Muscle Knight",
-		desc: "This Knight's punch-based attacks have her power multiplied by 1.5. Sucker Punch is not boosted.",
-		shortDesc: "Punch-based attacks have 1.5x power. Sucker Punch is not boosted.",
-	},
+	holyknight: {
+		name: "Holy Knight",
+		desc: "This Knight's punch-based attacks have her power multiplied by 1.2. Sucker Punch is not boosted. If this Knight has a non-volatile status condition, her Special Defense is multiplied by 1.5.",
+		shortDesc: "Punch moves are 1.2x power. If under a status condition, SpDef is multiplied by 1.5.",
+	}, 
 	yandere: {
 		name: "Yandere",
 		desc: "This Necromancer prevents opposing Pokemon from using pivot moves, whether they deal damage (U-Turn, Volt Switch, Flip Turn, etc.) or are a status move (Teleport, Baton Pass, Chilly Reception, etc.).",

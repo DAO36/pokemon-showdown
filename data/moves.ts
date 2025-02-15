@@ -1101,12 +1101,12 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Steel",
 		contestType: "Tough",
 	}, 
-	knightfist: {
+	knightmuscles: {
 		num: 370,
 		accuracy: 100,
 		basePower: 80,
 		category: "Physical",
-		name: "Knight Fist",
+		name: "Knight Muscles",
 		pp: 10,
 		priority: 0,
 		flags: {contact: 1, protect: 1, mirror: 1, punch: 1},

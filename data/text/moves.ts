@@ -308,8 +308,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 
 		activate: "  [POKEMON] shattered [TEAM]'s protections!",
 	},  
-	knightfist: {
-		name: "Knight Fist",
+	knightmuscles: {
+		name: "Knight Muscles",
 		desc: "Ignores the target's stat stage changes.",
 		shortDesc: "Ignores the target's stat stage changes.",
 	},

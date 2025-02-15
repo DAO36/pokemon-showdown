@@ -19161,7 +19161,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		types: ["Fighting", "Steel"],
 		gender: "F",
 		baseStats: {hp: 110, atk: 135, def: 145, spa: 80, spd: 90, spe: 40},
-		abilities: {0: "Battle Armor", 1: "Mold Breaker", H: "Defiant", S: "Muscle Knight"},
+		abilities: {0: "Battle Armor", 1: "Mold Breaker", H: "Defiant", S: "Holy Knight"},
 		heightm: 1.58,
 		weightkg: 55.5,
 		color: "Gray",

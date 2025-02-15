@@ -524,7 +524,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 2,
 		num: 28,
 	},
-	apex: { // exact copy of [Berserk]
+	apex: { // reskin of [Berserk] but boosts Physical Attack as well
 		onDamage(damage, target, source, effect) {
 			if (
 				effect.effectType === "Move" &&
@@ -552,7 +552,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			if (!lastAttackedBy) return;
 			const damage = move.multihit && !move.smartTarget ? move.totalDamage : lastAttackedBy.damage;
 			if (target.hp <= target.maxhp / 2 && target.hp + damage > target.maxhp / 2) {
-				this.boost({spa: 1}, target, target);
+				this.boost({spa: 1, atk: 1}, target, target);
 			}
 		},
 		flags: {},
@@ -871,18 +871,24 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3,
 		num: 171,
 	},
-	muscleknight: { // exact copy of [Iron Fist] but even better!
+	muscleknight: { // combines [Iron Fist] + [Marvel Scale] but for Special Defense instead of regular defense
 		onBasePowerPriority: 19,
 		onBasePower(basePower, attacker, defender, move) {
 			if (move.flags['punch']) {
+				return this.chainModify(1.2);
+			}
+		},
+		onModifySpDPriority: 6,
+		onModifySpD(spd, pokemon) {
+			if (pokemon.status) {
 				return this.chainModify(1.5);
 			}
 		},
 		flags: {breakable: 1},
 		name: "Muscle Knight",
-		rating: 3,
+		rating: 4,
 		num: 89,
-	},
+	}, 
 	elfgunner: { // combines [KEEN EYE] + [SKILL LINK]
 		onModifyMove(move) {
 			if (move.multihit && Array.isArray(move.multihit) && move.multihit.length) {
