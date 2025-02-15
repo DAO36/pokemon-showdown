@@ -621,7 +621,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			}
 		},
 		onSwitchOut(pokemon) {
-			pokemon.heal(pokemon.baseMaxhp / 4);
+			pokemon.heal(pokemon.baseMaxhp / 3);
 		},
 		flags: {},
 		name: "Nurse",
