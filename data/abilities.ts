@@ -602,6 +602,16 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		onSwitchOut(pokemon) {
 			pokemon.heal(pokemon.baseMaxhp / 3);
 		},
+		onResidualOrder: 5,
+		onResidualSubOrder: 3,
+		onResidual(pokemon) {
+			for (const allyActive of pokemon.adjacentAllies()) {
+				if (allyActive.status) {
+					this.add('-activate', pokemon, 'ability: Nurse');
+					allyActive.cureStatus();
+				}
+			}
+		},
 		flags: {},
 		name: "Nurse",
 		rating: 4.5,
