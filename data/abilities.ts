@@ -590,9 +590,9 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			} 
 			let success = false;
 			const allies = [...pokemon.side.pokemon, ...pokemon.side.allySide?.pokemon || []];
+			this.add('-activate', pokemon, 'ability: Nurse');
 			for (const ally of allies) { 
-				if (ally.cureStatus()) success = true;
-				this.add('-activate', pokemon, 'ability: Nurse');
+				if (ally.cureStatus()) success = true; 
 			} 
 			return success;
 		}, 
