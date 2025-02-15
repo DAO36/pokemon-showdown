@@ -585,10 +585,10 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	},
 	nurse: { // reskin of [Regenerator] + [Hospitality] + heals party on switc in
 		onStart(pokemon) {
+			this.add('-activate', pokemon, 'ability: Nurse');
 			for (const ally of pokemon.adjacentAllies()) {
 				this.heal(ally.baseMaxhp / 4, ally, pokemon);
 			}
-			this.add('-activate', pokemon, 'ability: Nurse');
 			let success = false;
 			const allies = [...pokemon.side.pokemon, ...pokemon.side.allySide?.pokemon || []];
 			for (const ally of allies) { 
