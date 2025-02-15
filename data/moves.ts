@@ -744,7 +744,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		name: "Syringe Strike",
 		pp: 10,
 		priority: 0,
-		flags: {protect: 1, mirror: 1, allyanim: 1, heal: 1, slicing: 1},
+		flags: {protect: 1, mirror: 1, contact: 1, allyanim: 1, heal: 1, slicing: 1},
 		onTryHit(target, source, move) {
 			if (source.isAlly(target)) {
 				move.basePower = 0;
@@ -1205,13 +1205,18 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 			},
 		},
 		secondary: {
-			chance: 30,
-			volatileStatus: 'confusion',
+			chance: 100,
+			onHit(target, source, move) {
+				if (target.gender === 'F' && source.gender === 'F') {
+					if (this.randomChance(1, 3))
+					target.addVolatile('confusion', source, move);
+				}
+			},
 		},
 		target: "normal",
 		type: "Water",
 		contestType: "Cute",
-	},
+	}, 
 	forever17: {
 		num: 105,
 		accuracy: true,
