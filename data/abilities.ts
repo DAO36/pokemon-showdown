@@ -1681,7 +1681,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		},  
 		onFoeTryMove(pokemon, target, move) {
 			const payungHolder = this.effectState.target;
-			if (move.id === 'raindance' || move.id === 'sunnyday' || move.id === 'sandstorm' || move.id === 'snowscape' || move.id === 'hail' || move.id === 'tailwind' || move.id === 'mistyterrain' || move.id === 'grassyterrain' || move.id === 'psychicterrain' || move.id === 'electricterrain') {
+			if (move.id === 'chillyreception' || move.id === 'raindance' || move.id === 'sunnyday' || move.id === 'sandstorm' || move.id === 'snowscape' || move.id === 'hail' || move.id === 'tailwind' || move.id === 'mistyterrain' || move.id === 'grassyterrain' || move.id === 'psychicterrain' || move.id === 'electricterrain') {
 				this.attrLastMove('[still]');
 				this.add('cant', payungHolder, 'ability: Payung', move, '[of] ' + pokemon);
 				return false;
