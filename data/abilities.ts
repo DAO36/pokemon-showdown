@@ -1593,7 +1593,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 2,
 		num: 85,
 	}, 
-	payung: { // this.add('-activate', pokemon, 'ability: Payung');
+	payung2: { // this.add('-activate', pokemon, 'ability: Payung');
 		onPreStart(pokemon) { 
 			if (pokemon.side.sideConditions['tailwind']) {
 				this.boost({spa: 1}, pokemon, pokemon);
@@ -1636,6 +1636,21 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			}
 		}, 
 		onUpdate(pokemon) { 
+			this.field.clearWeather();
+			this.field.clearTerrain() 
+		},
+		flags: {},
+		name: "Payung",
+		rating: 4,
+		num: 191,
+	},
+	payung: { // this.add('-activate', pokemon, 'ability: Payung');
+		onPreStart(pokemon) { 
+			this.add('-activate', pokemon, 'ability: Payung');
+			this.field.clearWeather()
+			this.field.clearTerrain() 
+		},
+		onStart(pokemon) { 
 			let activated = false;
             for (const sideCondition of ['tailwind']) {
                 for (const side of [...pokemon.side.foeSidesWithConditions()]) {
@@ -1645,15 +1660,39 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
                         }
                         side.removeSideCondition(sideCondition);
                     }
-                }  	
-		}
-			if (this.field.clearWeather() || this.field.clearTerrain()) this.add('-activate', pokemon, 'ability: Payung'); 
+                }
+            }  	
+		}, 
+		onImmunity(type, pokemon) {
+			if (type === 'sandstorm' || type === 'hail') return false;
 		},
+		onTryHit(target, source, move) {
+			if (target !== source && move.flags['wind']) {
+				if (!this.heal(target.baseMaxhp / 4, target, target)) {
+					this.add('-immune', target, '[from] ability: Payung');
+				}
+				return null;
+			}
+			if (target !== source && move.type === 'Water') {
+				if (!this.boost({spd: 1})) {
+					this.add('-immune', target, '[from] ability: Payung');
+				}
+				return null;
+			}
+		},  
+		onFoeTryMove(pokemon, target, move) {
+			const payungHolder = this.effectState.target;
+			if (move.id === 'raindance' || move.id === 'sunnyday' || move.id === 'sandstorm' || move.id === 'snowscape' || move.id === 'hail' || move.id === 'tailwind' || move.id === 'mistyterrain' || move.id === 'grassyterrain' || move.id === 'psychicterrain' || move.id === 'electricterrain') {
+				this.attrLastMove('[still]');
+				this.add('cant', payungHolder, 'ability: Payung', move, '[of] ' + target);
+				return false;
+			}
+		},	
 		flags: {},
 		name: "Payung",
 		rating: 4,
 		num: 191,
-	},  
+	}, 
 	powerofatlantis: { // combines [Dry Skin] with [Solar Power], if there's: no weather/sun/sandstorm; takes passive damage. If Rain: passively heals; Atk and SpA is boosted
 		onModifySpAPriority: 5,
 		onModifySpA(spa, pokemon) {

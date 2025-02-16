@@ -272,8 +272,8 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	cleaner: {
 		name: "Cleaner",
-		desc: "On switch-in, this Orca will clear up hazards on her side (Stealth Rock, Spikes, Toxic Spikes, Sticky Web, etc.) as well as clear the opponent's side of any screens that are set up (Reflect, Light Screen, Aurora Veil, etc.). The effects of Gravity, Trick Room and Terrain, if active, are removed upon switch-in. If Tailwind is active on the opponent's side, it is also cleared up on switch-in.",
-		shortDesc: "Switch-in: User's side: rids hazards; Other side: rids screens; Removes terrain.",
+		desc: "On switch-in, this Orca will clear up hazards on her side (Stealth Rock, Spikes, Toxic Spikes, Sticky Web, etc.) as well as clear the opponent's side of any screens that are set up (Reflect, Light Screen, Aurora Veil, etc.). The effects of Gravity and Trick Room, if active, are removed upon switch-in.",
+		shortDesc: "Switch-in: User's side: rids hazards; Opponent's side: rids screens.",
 
 		start: "  [POKEMON] is ready to clean up the scene!",
 	},
@@ -358,10 +358,8 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	payung: {
 		name: "Payung",
-		desc: "On switch-in, any weather that is active on the field is removed. This Rain Shaman is immune to Wind-type moves and restores 1/4 of its maximum HP, rounded down, when hit by a Wind-type move. This Rain Shaman is immune to damage from Sandstorm and Hail. When Tailwind is active on this Rain Shaman's side, Special Attack is raised by 1 stage. Immune to Water-type moves and raises her Speed by 1 stage when hit by a Water-type move.",
-		shortDesc: "Removes weather on switch-in. Immune to wind & water type moves. +1 SpA in tailwind.",
-
-		activate: "#lightningrod",
+		desc: "On switch-in, any weather and terrain that is active on the field is removed. If tailwind is active on the opponent's side, it is also removed on switch-in. This Rain Shaman is immune to Wind-type moves and restores 1/4 of her maximum HP, rounded down, when hit by a Wind-type move; immune to Water-type moves and has her Special Defense raised by 1 stage when hit by a Water-type move. Immunity to damage from Sandstorm and Hail.",
+		shortDesc: "Switch-in: removes weather/terrain/foe's tailwind. Immune to wind & water type moves.",
 	},
 	blacksmith: {
 		name: "Blacksmith",
