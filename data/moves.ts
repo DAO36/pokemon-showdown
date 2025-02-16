@@ -120,7 +120,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	virtualsaber: { // FAIRY [LEAF BLADE]  
 		num: 370,
 		accuracy: 100,
-		basePower: 75,
+		basePower: 80,
 		basePowerCallback(source, target, move) {
 			if (this.field.isTerrain('mistyterrain') && target.isGrounded()) {
 				if (!source.isAlly(target)) this.hint(`${move.name}'s BP doubled on grounded target.`);

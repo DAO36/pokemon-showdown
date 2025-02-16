@@ -94154,7 +94154,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			lovelykiss: ["9M"],
 			healblock: ["9M"],
 			splitpersonality: ["9M"],
-			spidercooking: ["9M"],
+			haachamacooking: ["9M"],
 			fourcoursemeal: ["9M"],
         },
 	},
