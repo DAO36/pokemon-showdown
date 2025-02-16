@@ -1216,7 +1216,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
         onStart(pokemon) { 
 			this.add('-activate', pokemon, 'ability: Cleaner');
 			let activated = false;
-            for (const sideCondition of ['reflect', 'lightscreen', 'auroraveil', 'hologram', 'mist', 'safeguard', 'tailwind']) {
+            for (const sideCondition of ['reflect', 'lightscreen', 'auroraveil', 'hologram', 'mist', 'safeguard']) {
                 for (const side of [...pokemon.side.foeSidesWithConditions()]) {
                     if (side.getSideCondition(sideCondition)) {
                         if (!activated) { 
@@ -1238,7 +1238,6 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			}
 			this.field.removePseudoWeather('trickroom');
 			this.field.removePseudoWeather('gravity'); 
-			this.field.clearTerrain(); 
 			return success;  	
 		}, 
         flags: {},
@@ -1594,13 +1593,25 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 2,
 		num: 85,
 	}, 
-	payung: {
-		onStart(pokemon) {
-			this.field.clearWeather();
+	payung: { // this.add('-activate', pokemon, 'ability: Payung');
+		onPreStart(pokemon) { 
 			if (pokemon.side.sideConditions['tailwind']) {
 				this.boost({spa: 1}, pokemon, pokemon);
 			} 
 		},
+		onStart(pokemon) { 
+			let activated = false;
+            for (const sideCondition of ['tailwind']) {
+                for (const side of [...pokemon.side.foeSidesWithConditions()]) {
+                    if (side.getSideCondition(sideCondition)) {
+                        if (!activated) { 
+                            activated = true;
+                        }
+                        side.removeSideCondition(sideCondition);
+                    }
+                }
+            }  	
+		}, 
 		onImmunity(type, pokemon) {
 			if (type === 'sandstorm' || type === 'hail') return false;
 		},
@@ -1624,28 +1635,16 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 				this.boost({spa: 1}, pokemon, pokemon);
 			}
 		}, 
-		onAnyRedirectTarget(target, source, source2, move) {
-			if (move.type !== 'Water' || move.flags['pledgecombo']) return;
-			const redirectTarget = ['randomNormal', 'adjacentFoe'].includes(move.target) ? 'normal' : move.target;
-			if (this.validTarget(this.effectState.target, source, redirectTarget)) {
-				if (move.smartTarget) move.smartTarget = false;
-				if (this.effectState.target !== target) {
-					this.add('-activate', this.effectState.target, 'ability: Payung');
-				}
-				return this.effectState.target;
-			}
+		onResidual(pokemon) { 
+			this.field.clearWeather();
+			this.field.clearTerrain();
+			this.add('-activate', pokemon, 'ability: Payung');
 		},
-		onWeather(target, source, effect) {
-			if (target.hasItem('utilityumbrella')) return;
-			if (target.side.sideConditions['tailwind']) {
-				this.heal(target.baseMaxhp / 8);
-			} 
-		},	
 		flags: {},
 		name: "Payung",
 		rating: 4,
 		num: 191,
-	}, 
+	},  
 	powerofatlantis: { // combines [Dry Skin] with [Solar Power], if there's: no weather/sun/sandstorm; takes passive damage. If Rain: passively heals; Atk and SpA is boosted
 		onModifySpAPriority: 5,
 		onModifySpA(spa, pokemon) {
