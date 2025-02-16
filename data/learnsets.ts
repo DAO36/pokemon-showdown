@@ -94445,7 +94445,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			spite: ["9M"],
 			grudge: ["9M"],
 			healblock: ["9M"],
-			witchattack: ["9M"],
+			blackmagic: ["9M"],
 			arcanegarlic: ["9M"],
 			magickick: ["9M"],
         },

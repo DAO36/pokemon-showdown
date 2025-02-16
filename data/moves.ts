@@ -821,24 +821,25 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Fairy",
 		contestType: "Cute",
 	},
-	witchattack: { // leaf storm but psychic
-		num: 434,
-		accuracy: 90,
-		basePower: 130,
+	blackmagic: {
+		num: 560,
+		accuracy: 100,
+		basePower: 100,
 		category: "Special",
-		name: "Witch Attack",
-		pp: 5,
-		priority: 0,
+		name: "Black Magic",
+		pp: 15,
 		flags: {protect: 1, mirror: 1, pulse: 1},
-		self: {
-			boosts: {
-				spa: -2,
-			},
+		onEffectiveness(typeMod, target, type, move) {
+			return typeMod + this.dex.getEffectiveness('Dark', type);
 		},
+		onModifyMove(move, pokemon) {
+			if (pokemon.getStat('atk', false, true) > pokemon.getStat('spa', false, true)) move.category = 'Physical';
+		},
+		priority: 0,
 		secondary: null,
 		target: "normal",
 		type: "Psychic",
-		contestType: "Beautiful",
+		contestType: "Tough",
 	},
 	arcanegarlic: { // swords dance reskin
 		num: 370,

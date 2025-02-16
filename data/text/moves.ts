@@ -221,10 +221,15 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		desc: "If the target is an ally, this move restores 1/2 of its maximum HP, rounded down, instead of dealing damage, as well as curing it of any status effects.",
 		shortDesc: "If target is ally, heals 50% HP & cures status.",
 	},
-	witchattack: {
-		name: "Witch Attack",
-		desc: "Lowers this witch's Special Attack by 2 stages.",
-		shortDesc: "Lowers user's Special Attack by 2.",
+	blackmagic: {
+		name: "Black Magic",
+		desc: "This move becomes a physical attack if this Witch's Attack is greater than her Special Attack, including stat stage changes. This move combines Dark in its type effectiveness against the target.",
+		shortDesc: "Physical if Atk > SpA. Combines Dark in type effectiveness.",
+	},
+	gpress: {
+		name: "Flying Press",
+		desc: "This move combines Flying in its type effectiveness against the target. Damage doubles and no accuracy check is done if the target has used Minimize while active.",
+		shortDesc: "Combines Flying in its type effectiveness.",
 	},
 	arcanegarlic: {
 		name: "Arcane Garlic",
