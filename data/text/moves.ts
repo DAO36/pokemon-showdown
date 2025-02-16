@@ -261,8 +261,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		desc: "If both the user and the target have not fainted, the target is forced to switch out and be replaced with a random unfainted ally. This effect fails if the target is under the effect of Ingrain, has the Suction Cups Ability, or this move hit a substitute.",
 		shortDesc: "Forces target to switch to a random ally.",
 	},
-	boxingdoggo: {
-		name: "Boxing Doggo",
+	orayo: {
+		name: "Orayo",
 		desc: "If the target lost HP, this Dog takes recoil damage equal to 33% the HP lost by the target, rounded half up, but not less than 1 HP.",
 		shortDesc: "Has 33% recoil.",
 	},
@@ -276,8 +276,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		desc: "Has a 30% chance to make the target flinch. Hits adjacent foes.",
 		shortDesc: "30% chance to make targets flinch.",
 	},
-	moguyummy: {
-		name: "Mogu Yummy",
+	onigirichomp: {
+		name: "Onigiri Chomp",
 		desc: "This Cat recovers 1/2 the HP lost by the target, rounded half up. If Big Root is held by the user, the HP recovered is 1.3x normal, rounded half down. If this move is successful and the user has not fainted, it steals the target's held Berry if it is holding one and eats it immediately, gaining its effects even if the user's item is being ignored. Items lost to this move cannot be regained with Recycle or the Harvest Ability.",
 		shortDesc: "Heals 50% damage dealt; Steals & eats target's Berry.",
 
@@ -293,8 +293,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		desc: "This move becomes a physical attack if this Wolf's Attack is greater than her Special Attack, including stat stage changes.",
 		shortDesc: "Physical if user's Atk > Sp. Atk.",
 	},
-	carrotstrike: {
-		name: "Carrot Strike",
+	rocketcarrots: {
+		name: "Rocket Carrots",
 		desc: "Hits twice. If the first hit breaks the target's substitute, it will take damage for the second hit. This attack always hits. In Double Battles, this move attempts to hit the targeted Pokemon and its ally once each. If hitting one of these Pokemon would be prevented by immunity, protection, semi-invulnerability, an Ability, or accuracy, it attempts to hit the other Pokemon twice instead. If this move is redirected, it hits that target twice.",
 		shortDesc: "Hits 2 times in one turn; Never misses",
 	},

@@ -945,12 +945,12 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Water",
 		contestType: "Tough",
 	},
-	boxingdoggo: {
+	orayo: {
 		num: 370,
 		accuracy: 90,
-		basePower: 120,
+		basePower: 130,
 		category: "Physical",
-		name: "Boxing Doggo",
+		name: "Orayo",
 		pp: 5,
 		priority: 0,
 		flags: {contact: 1, protect: 1, mirror: 1, punch: 1},
@@ -992,19 +992,19 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Normal",
 		contestType: "Cool",
 	},
-	moguyummy: {
+	onigirichomp: {
 		num: 370,
 		accuracy: 100,
 		basePower: 80,
 		category: "Physical",
-		name: "Mogu Yummy",
+		name: "Onigiri Chomp",
 		pp: 15,
 		priority: 0,
 		flags: {contact: 1, protect: 1, mirror: 1, heal: 1, bite: 1},
 		onHit(target, source) {
 			const item = target.getItem();
 			if (source.hp && item.isBerry && target.takeItem(source)) {
-				this.add('-enditem', target, item.name, '[from] stealeat', '[move] Mogu Yummy', '[of] ' + source);
+				this.add('-enditem', target, item.name, '[from] stealeat', '[move] Onigiri Chomp', '[of] ' + source);
 				if (this.singleEvent('Eat', item, null, source, null, null)) {
 					this.runEvent('EatItem', source, null, null, item);
 					if (item.id === 'leppaberry') target.staleness = 'external';
@@ -1035,7 +1035,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	},
 	hatotaurushelp: {
 		num: 722,
-		accuracy: 100,
+		accuracy: 90,
 		basePower: 120,
 		category: "Special",
 		name: "Hatotaurus Help",
@@ -1050,12 +1050,12 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Flying",
 		contestType: "Cool",
 	},
-	carrotstrike: { // dual wingbeat but grass
+	rocketcarrots: { // dual wingbeat but grass
 		num: 370,
 		accuracy: true,
 		basePower: 50,
 		category: "Physical",
-		name: "Carrot Strike",
+		name: "Rocket Carrots",
 		pp: 10,
 		priority: 0,
 		flags: {protect: 1, mirror: 1, bullet: 1, noparentalbond: 1},
