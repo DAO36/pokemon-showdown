@@ -382,7 +382,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3,
 		num: 153,
 	},
-	iamgod: { // [Life Orb (ITEM)] as an ability, but better <1.5 boost instead of 1.3>
+	god: { // [Life Orb (ITEM)] as an ability, but better <1.5 boost instead of 1.3>
 		onModifySpAPriority: 5,
 		onModifySpA(spa, pokemon) {
 		 {
@@ -401,7 +401,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			}
 		},
 		flags: {breakable: 1, noentrain: 1, failskillswap: 1},
-		name: "I am God",
+		name: "God",
 		rating: 4,
 		num: 94,
 	},

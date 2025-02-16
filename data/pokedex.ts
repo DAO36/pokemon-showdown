@@ -18729,7 +18729,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		types: ["Normal"],
 		gender: "F",
 		baseStats: {hp: 75, atk: 125, def: 75, spa: 120, spd: 95, spe: 110},
-		abilities: {0: "Hustle", 1: "Unburden", H: "Mold Breaker", S: "I Am God"},
+		abilities: {0: "Hustle", 1: "Unburden", H: "Mold Breaker", S: "God"},
 		heightm: 1.52,
 		weightkg: 55.5,
 		color: "Brown",

@@ -86,8 +86,8 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 		desc: "This Fox's Attack and Special Attack are both raised by 1 stage each if she attacks and knocks out another Pokemon.",
 		shortDesc: "Attack & Special Attack both raised by 1 if user attacks and KOes another Pokemon.",
 	},
-	iamgod: {
-		name: "I am God",
+	god: {
+		name: "God",
 		shortDesc: "User's attacks do 1.5x damage, and loses 1/10 max HP after the attack.",
 
 		damage: "  [POKEMON] is sacrificing her HP in exchange for more power!",

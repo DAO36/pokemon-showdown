@@ -375,12 +375,12 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Ice",
 		contestType: "Cool",
 	},
-	icesword: {
+	foxkatana: {
 		num: 348,
 		accuracy: 100,
 		basePower: 80,
 		category: "Physical",
-		name: "Ice Sword",
+		name: "Fox Katana",
 		pp: 10,
 		priority: 0,
 		flags: {contact: 1, protect: 1, mirror: 1, slicing: 1},
@@ -468,12 +468,12 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Ice",
 		contestType: "Cool",
 	},
-	godlyattack: {
+	imgod: {
 		num: 370,
 		accuracy: 80,
 		basePower: 140,
 		category: "Physical",
-		name: "Godly Attack",
+		name: "I'm God",
 		pp: 5,
 		priority: 0,
 		flags: {contact: 1, mirror: 1},
@@ -492,12 +492,12 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Normal",
 		contestType: "Tough",
 	}, 
-	imgodok: {
+	ebifrionmight: { // Ebifrion
 		num: 370,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
-		name: "I'm God OK",
+		name: "Ebifrion Might",
 		pp: 10,
 		priority: 0,
 		flags: {snatch: 1, dance: 1},

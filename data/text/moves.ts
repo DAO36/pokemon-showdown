@@ -116,20 +116,20 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 
 		prepare: "  [POKEMON] is charging up!",
 	},
-	icesword: {
-		name: "Ice Sword",
+	foxkatana: {
+		name: "Fox Katana",
 		desc: "Has a 10% chance to freeze the target. Has a higher chance for a critical hit.",
 		shortDesc: "10% chance to freeze target. High crit ratio.",
 	},
-	godlyattack: {
-		name: "Godly Attack",
+	imgod: {
+		name: "I'm God",
 		desc: "If the target lost HP, the user takes recoil damage equal to 1/3 the HP lost by the target, rounded half up, but not less than 1 HP. If this attack does not miss, the effects of Reflect, Light Screen, Mist, Hologram, and Aurora Veil end for the target's side of the field before damage is calculated. If this move is successful, it breaks through the target's Baneful Bunker, Detect, King's Shield, Protect, or Spiky Shield for this turn, allowing other Pokemon to attack the target normally. If the target's side is protected by Crafty Shield, Mat Block, Quick Guard, or Wide Guard, that protection is also broken for this turn and other Pokemon may also attack the target's side normally.",
 		shortDesc: "Breaks protection & destroys screens. 33% recoil.", 
 
 		activate: "  [POKEMON] shattered [TEAM]'s protections!",
 	}, 
-	imgodok: {
-		name: "I'm God OK",
+	ebifrionmight: {
+		name: "Ebifrion Might",
 		desc: "Raises the user's Attack and Speed each by 1 stage.",
 		shortDesc: "Raises Attack & Speed by 1.",
 	},

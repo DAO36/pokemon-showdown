@@ -93907,7 +93907,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			honeclaws: ["9M"],
 			konkon: ["9M"],
 			freezeray: ["9M"],
-			icesword: ["9M"],
+			foxkatana: ["9M"],
         },
 	},
 	fubuzilla: {
@@ -94044,8 +94044,8 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			nastyplot: ["9M"],
 			charm: ["9M"],
 			sweetkiss: ["9M"],
-			godlyattack: ["9M"],
-			imgodok: ["9M"],
+			ebifrionmight: ["9M"],
+			imgod: ["9M"],
         },
 	},
 	haachama: {
