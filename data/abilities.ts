@@ -345,29 +345,29 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3,
 		num: 207,
 	}, 
-	diva: { // combines [Soundproof] + [Punk Rock] 
+	virtualdiva: { // combines [Soundproof] + [Punk Rock] 
 		onTryHit(target, source, move) {
 			if (target !== source && move.flags['sound']) {
 				if (!this.boost({spa: 1})) {
-					this.add('-immune', target, '[from] ability: Diva');
+					this.add('-immune', target, '[from] ability: Virtual Diva');
 				}
 				return null;
 			}
 		},
 		onAllyTryHitSide(target, source, move) {
 			if (move.flags['sound']) {
-				this.add('-immune', this.effectState.target, '[from] ability: Diva');
+				this.add('-immune', this.effectState.target, '[from] ability: Virtual Diva');
 			}
 		},
 		onBasePowerPriority: 7,
 		onBasePower(basePower, attacker, defender, move) {
 			if (move.flags['sound']) {
-				this.debug('Diva boost');
+				this.debug('Virtual Diva boost');
 				return this.chainModify([5325, 4096]);
 			}
 		},
 		flags: {breakable: 1},
-		name: "Diva",
+		name: "Virtual Diva",
 		rating: 3.5,
 		num: 271,
 	},

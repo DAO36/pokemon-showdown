@@ -93859,6 +93859,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			mistyterrain: ["9M"],
 			divasong: ["9M"],
 			divadance: ["9M"],
+			virtualsaber: ["9M"],
         },
 	},
 	fubuki: {

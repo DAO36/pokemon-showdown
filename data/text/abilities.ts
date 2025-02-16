@@ -76,8 +76,8 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 		desc: "If Electric Terrain is active, the Speed of this Robot is doubled, and heals 1/10 of her max HP at the end of each turn.",
 		shortDesc: "If Electric Terrain is active, user's speed is 2x & heals 1/10 of max HP each turn.", 
 	}, 
-	diva: {
-		name: "Diva",
+	virtualdiva: {
+		name: "Virtual Diva",
 		desc: "This Diva's sound-based moves have her power multiplied by 1.3. Her Special Attack raised by 1 stage when she is hit by a Sound-based move; Immune to Sound-type moves",
 		shortDesc: "Sound moves have 1.3x power. +1 Sp.Atk if hit by Sound move; Sound immunity.",
 	},

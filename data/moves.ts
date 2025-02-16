@@ -117,6 +117,27 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Fairy",
 		contestType: "Beautiful",
 	},
+	virtualsaber: { // FAIRY [LEAF BLADE]  
+		num: 370,
+		accuracy: 100,
+		basePower: 75,
+		basePowerCallback(source, target, move) {
+			if (this.field.isTerrain('mistyterrain') && target.isGrounded()) {
+				if (!source.isAlly(target)) this.hint(`${move.name}'s BP doubled on grounded target.`);
+				return move.basePower * 2;
+			}
+			return move.basePower;
+		},
+		category: "Physical",
+		name: "Virtual Saber",
+		pp: 10,
+		priority: 0,
+		flags: {protect: 1, mirror: 1, contact: 1, slicing: 1}, 
+		secondary: null,
+		target: "normal",
+		type: "Fairy",
+		contestType: "Beautiful",
+	},
 	divadance: { // FAIRY reskin of [SWORDS DANCE]
 		num: 14,
 		accuracy: true,
