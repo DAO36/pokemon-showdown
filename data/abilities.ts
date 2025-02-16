@@ -1593,19 +1593,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		name: "Blacksmith",
 		rating: 2,
 		num: 85,
-	},
-	wethair: { // reskin of [Tangled Hair] but lowers accuracy instead of speed
-		onDamagingHit(damage, target, source, move) {
-			if (this.checkMoveMakesContact(move, source, target, true)) {
-				this.add('-ability', target, 'Wet Hair');
-				this.boost({accuracy: -1}, source, target, null, true);
-			}
-		},
-		flags: {breakable: 1},
-		name: "Wet Hair",
-		rating: 3.5,
-		num: 221,
-	},
+	}, 
 	umbrella: {
 		onStart(pokemon) {
 			this.field.clearWeather();
@@ -1625,7 +1613,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			}
 			if (target !== source && move.type === 'Water') {
 				if (!this.boost({spe: 1})) {
-					this.add('-immune', target, '[from] ability: Storm Drain');
+					this.add('-immune', target, '[from] ability: Umbrella');
 				}
 				return null;
 			}

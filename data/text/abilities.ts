@@ -356,10 +356,12 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 		desc: "This Spy's type changes to match the type of the move she is about to use. This effect comes after all effects that change a move's type.",
 		shortDesc: "User's type changes to the type of the move it is using.",
 	},
-	wethair: {
-		name: "Wet Hair",
-		desc: "Pokemon making contact with this Rain Shaman have their Accuracy lowered by 1 stage.",
-		shortDesc: "Pokemon making contact with this Rain Shaman has their Accuracy lowered by 1 stage.",
+	umbrella: {
+		name: "Umbrella",
+		desc: "On switch-in, any weather that is active on the field is removed. This Rain Shaman is immune to Wind-type moves and restores 1/4 of its maximum HP, rounded down, when hit by a Wind-type move. This Rain Shaman is immune to damage from Sandstorm and Hail. When Tailwind is active on this Rain Shaman's side, Special Attack is raised by 1 stage. Immune to Water-type moves and raises her Speed by 1 stage when hit by a Water-type move.",
+		shortDesc: "Removes weather on switch-in. Immune to wind & water type moves. +1 SpA in tailwind.",
+
+		activate: "#lightningrod",
 	},
 	blacksmith: {
 		name: "Blacksmith",
