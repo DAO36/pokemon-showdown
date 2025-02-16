@@ -3432,39 +3432,39 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Dark",
 		contestType: "Cute",
 	},
-	rolldice: {
+	playdice: {
 		num: 860,
 		accuracy: 90,
 		basePower: 0,
 		category: "Physical",
-		name: "Roll Dice",
+		name: "Play Dice",
 		pp: 15,
 		priority: 0,
 		flags: {contact: 1, protect: 1, mirror: 1, bullet: 1},
 		onModifyMove(move, pokemon) {
 			const i = this.random(100);
 			if (i < 17) {
-				move.rolldice = 1;
+				move.playdice = 1;
 				move.basePower = 25;
 			} else if (i < 34) {
-				move.rolldice = 2;
+				move.playdice = 2;
 				move.basePower = 50;
 			} else if (i < 51) {
-				move.rolldice = 3;
+				move.playdice = 3;
 				move.basePower = 75;
 			} else if (i < 68) {
-				move.rolldice = 4;
+				move.playdice = 4;
 				move.basePower = 100;
 			} else if (i < 84) {
-				move.rolldice = 5;
+				move.playdice = 5;
 				move.basePower = 125;
 			} else {
-				move.rolldice = 6;
+				move.playdice = 6;
 				move.basePower = 150;
 			}
 		},
 		onUseMoveMessage(pokemon, target, move) {
-			this.add('-activate', pokemon, 'move: Roll Dice', move.rolldice);
+			this.add('-activate', pokemon, 'move: Play Dice', move.playdice);
 		},
 		secondary: {
 			chance: 30,

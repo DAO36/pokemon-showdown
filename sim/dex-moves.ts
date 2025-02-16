@@ -311,6 +311,7 @@ interface MoveHitData {
 
 type MutableMove = BasicEffect & MoveData;
 export interface ActiveMove extends MutableMove {
+	playdice: number;
 	readonly name: string;
 	readonly effectType: 'Move';
 	readonly id: ID;
