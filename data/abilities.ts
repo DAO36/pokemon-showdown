@@ -1635,10 +1635,19 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 				this.boost({spa: 1}, pokemon, pokemon);
 			}
 		}, 
-		onResidual(pokemon) { 
-			this.field.clearWeather();
-			this.field.clearTerrain();
-			this.add('-activate', pokemon, 'ability: Payung');
+		onUpdate(pokemon) { 
+			let activated = false;
+            for (const sideCondition of ['tailwind']) {
+                for (const side of [...pokemon.side.foeSidesWithConditions()]) {
+                    if (side.getSideCondition(sideCondition)) {
+                        if (!activated) { 
+                            activated = true;
+                        }
+                        side.removeSideCondition(sideCondition);
+                    }
+                }  	
+		}
+			if (this.field.clearWeather() || this.field.clearTerrain()) this.add('-activate', pokemon, 'ability: Payung'); 
 		},
 		flags: {},
 		name: "Payung",
