@@ -684,28 +684,37 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	},
 	dualblades: { // dual wingbeat but fighting
 		num: 370,
-		accuracy: 90,
-		basePower: 40,
+		accuracy: 75,
+		basePower: 75,
 		category: "Physical",
 		name: "Dual Blades",
-		pp: 10,
+		pp: 5,
 		priority: 0,
 		flags: {contact: 1, protect: 1, mirror: 1, slicing: 1},
 		critRatio: 2,
 		multihit: 2,
-		secondary: null,
+		smartTarget: true,
+		secondaries: [
+			{
+				chance: 20,
+				status: 'brn',
+			}, {
+				chance: 20,
+				volatileStatus: 'flinch',
+			},
+		],
 		target: "normal",
 		type: "Fighting",
 	},
-	underworldslash: {
+	asura: {
 		num: 370,
 		accuracy: 100,
-		basePower: 70,
+		basePower: 75,
 		category: "Physical",
-		name: "Underworld Slash",
+		name: "Asura",
 		pp: 15,
 		priority: 0,
-		flags: {protect: 1, mirror: 1, contact: 1, slicing: 1, defrost: 1},
+		flags: {protect: 1, mirror: 1, contact: 1, slicing: 1},
 		thawsTarget: true,
 		critRatio: 2,
 		secondary: {
@@ -716,7 +725,55 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Fire",
 		contestType: "Cool",
 	},
-	onionslaught: { // dank type [Close Combat]
+	rakshasa: {
+		num: 370,
+		accuracy: 100,
+		basePower: 75,
+		category: "Physical",
+		name: "Rakshasa",
+		pp: 15,
+		priority: 0,
+		flags: {protect: 1, mirror: 1, contact: 1, slicing: 1},
+		thawsTarget: true,
+		critRatio: 2,
+		secondary: {
+			chance: 20,
+			boosts: {
+				atk: -1,
+			},
+		},
+		target: "normal",
+		type: "Dark",
+		contestType: "Cool",
+	},
+	onispirits: {
+		num: 751,
+		accuracy: 90,
+		basePower: 60,
+		category: "Special",
+		name: "Oni Spirits",
+		pp: 5,
+		priority: 0,
+		flags: {protect: 1, mirror: 1, pulse: 1, noparentalbond: 1},
+		multihit: 2,
+		smartTarget: true,
+		secondaries: [
+			{
+				chance: 10,
+				boosts: {
+					spa: -1,
+				},
+			}, {
+				chance: 10,
+				boosts: {
+					spd: -1,
+				},
+			},
+		],
+		target: "normal",
+		type: "Dark",
+	},
+	onionslaught: { // <<<UNUSED>>>
 		num: 370,
 		accuracy: 90,
 		basePower: 120,

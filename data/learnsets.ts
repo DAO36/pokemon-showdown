@@ -94342,8 +94342,9 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			calmmind: ["9M"],
 			willowisp: ["9M"],
 			dualblades: ["9M"],
-			underworldslash: ["9M"],
-			onionslaught: ["9M"],
+			rakshasa: ["9M"],
+			asura: ["9M"],
+			onispirits: ["9M"],
         },
 	},
 	choco: {

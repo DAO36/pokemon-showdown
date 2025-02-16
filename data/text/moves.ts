@@ -190,15 +190,25 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	dualblades: {
 		name: "Dual Blades",
-		desc: "Hits twice. If the first hit breaks the target's substitute, it will take damage for the second hit. Has a higher chance for a critical hit.",
-		shortDesc: "Hits 2 times in one turn. High crit ratio.",
-	},
-	underworldslash: {
-		name: "Underworld Slash",
-		desc: "Has a higher chance for a critical hit. Has a 20% chance to burn the foe.",
+		desc: "Has a 20% chance to burn the target and a 20% chance to make it flinch. Hits twice. If the first hit breaks the target's substitute, it will take damage for the second hit. In Double Battles, this move attempts to hit the targeted Pokemon and its ally once each. If hitting one of these Pokemon would be prevented by immunity, protection, semi-invulnerability, an Ability, or accuracy, it attempts to hit the other Pokemon twice instead. If this move is redirected, it hits that target twice. High critical hit ratio. ",
+		shortDesc: "Hits twice. 20% to burn and/or flinch.",
+	}, 
+	asura: {
+		name: "Asura",
+		desc: "Has a higher chance for a critical hit. Has a 20% chance to burn the target.",
 		shortDesc: "20% chance to burn target. High crit ratio.",
 	},
-	onionslaught: {
+	rakshasa: {
+		name: "Rakshasa",
+		desc: "Has a higher chance for a critical hit. Has a 20% chance to make the target flinch.",
+		shortDesc: "20% chance to flinch. High crit ratio.",
+	},
+	onispirits: {
+		name: "Oni Spirits",
+		desc: "Has a 10% chance to lower the target's Special Attack and/or Special Defense by 1 stage. Hits twice. If the first hit breaks the target's substitute, it will take damage for the second hit. In Double Battles, this move attempts to hit the targeted Pokemon and its ally once each. If hitting one of these Pokemon would be prevented by immunity, protection, semi-invulnerability, an Ability, or accuracy, it attempts to hit the other Pokemon twice instead. If this move is redirected, it hits that target twice.",
+		shortDesc: "Hits twice. 10% to lower SpA and/or SpD by 1.",
+	}, 
+	onionslaught: { // [UNUSED]
 		name: "Oni Onslaught",
 		desc: "Lowers the user's Defense and Special Defense by 1 stage.",
 		shortDesc: "Lowers the user's Defense and Sp. Def by 1.",
