@@ -1605,8 +1605,60 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		name: "Wet Hair",
 		rating: 3.5,
 		num: 221,
-	}, // combines [Dry Skin] with [Solar Power], if there's: no weather/sun/sandstorm; takes passive damage. If Rain: passively heals; Atk and SpA is boosted
-	powerofatlantis: {
+	},
+	umbrella: {
+		onStart(pokemon) {
+			this.field.clearWeather();
+			if (pokemon.side.sideConditions['tailwind']) {
+				this.boost({spa: 1}, pokemon, pokemon);
+			} 
+		},
+		onImmunity(type, pokemon) {
+			if (type === 'sandstorm' || type === 'hail') return false;
+		},
+		onTryHit(target, source, move) {
+			if (target !== source && move.flags['wind']) {
+				if (!this.heal(target.baseMaxhp / 4, target, target)) {
+					this.add('-immune', target, '[from] ability: Umbrella');
+				}
+				return null;
+			}
+			if (target !== source && move.type === 'Water') {
+				if (!this.boost({spe: 1})) {
+					this.add('-immune', target, '[from] ability: Storm Drain');
+				}
+				return null;
+			}
+		},
+		onAllySideConditionStart(target, source, sideCondition) {
+			const pokemon = this.effectState.target;
+			if (sideCondition.id === 'tailwind') {
+				this.boost({spa: 1}, pokemon, pokemon);
+			}
+		}, 
+		onAnyRedirectTarget(target, source, source2, move) {
+			if (move.type !== 'Water' || move.flags['pledgecombo']) return;
+			const redirectTarget = ['randomNormal', 'adjacentFoe'].includes(move.target) ? 'normal' : move.target;
+			if (this.validTarget(this.effectState.target, source, redirectTarget)) {
+				if (move.smartTarget) move.smartTarget = false;
+				if (this.effectState.target !== target) {
+					this.add('-activate', this.effectState.target, 'ability: Umbrella');
+				}
+				return this.effectState.target;
+			}
+		},
+		onWeather(target, source, effect) {
+			if (target.hasItem('utilityumbrella')) return;
+			if (target.side.sideConditions['tailwind']) {
+				this.heal(target.baseMaxhp / 8);
+			} 
+		},	
+		flags: {},
+		name: "Umbrella",
+		rating: 4,
+		num: 191,
+	}, 
+	powerofatlantis: { // combines [Dry Skin] with [Solar Power], if there's: no weather/sun/sandstorm; takes passive damage. If Rain: passively heals; Atk and SpA is boosted
 		onModifySpAPriority: 5,
 		onModifySpA(spa, pokemon) {
 			if (['raindance', 'primordialsea'].includes(pokemon.effectiveWeather())) {
