@@ -1593,58 +1593,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 2,
 		num: 85,
 	}, 
-	payung2: { // this.add('-activate', pokemon, 'ability: Payung');
-		onPreStart(pokemon) { 
-			if (pokemon.side.sideConditions['tailwind']) {
-				this.boost({spa: 1}, pokemon, pokemon);
-			} 
-		},
-		onStart(pokemon) { 
-			let activated = false;
-            for (const sideCondition of ['tailwind']) {
-                for (const side of [...pokemon.side.foeSidesWithConditions()]) {
-                    if (side.getSideCondition(sideCondition)) {
-                        if (!activated) { 
-                            activated = true;
-                        }
-                        side.removeSideCondition(sideCondition);
-                    }
-                }
-            }  	
-		}, 
-		onImmunity(type, pokemon) {
-			if (type === 'sandstorm' || type === 'hail') return false;
-		},
-		onTryHit(target, source, move) {
-			if (target !== source && move.flags['wind']) {
-				if (!this.heal(target.baseMaxhp / 4, target, target)) {
-					this.add('-immune', target, '[from] ability: Payung');
-				}
-				return null;
-			}
-			if (target !== source && move.type === 'Water') {
-				if (!this.boost({spe: 1})) {
-					this.add('-immune', target, '[from] ability: Payung');
-				}
-				return null;
-			}
-		},
-		onAllySideConditionStart(target, source, sideCondition) {
-			const pokemon = this.effectState.target;
-			if (sideCondition.id === 'tailwind') {
-				this.boost({spa: 1}, pokemon, pokemon);
-			}
-		}, 
-		onUpdate(pokemon) { 
-			this.field.clearWeather();
-			this.field.clearTerrain() 
-		},
-		flags: {},
-		name: "Payung",
-		rating: 4,
-		num: 191,
-	},
-	payung: { // this.add('-activate', pokemon, 'ability: Payung');
+	payung: { // a reskin of [Cloud Nine] but better in every way
 		onPreStart(pokemon) {
 			this.field.clearWeather();
 			this.field.clearTerrain();
@@ -1683,7 +1632,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			const payungHolder = this.effectState.target;
 			if (move.id === 'chillyreception' || move.id === 'raindance' || move.id === 'sunnyday' || move.id === 'sandstorm' || move.id === 'snowscape' || move.id === 'hail' || move.id === 'tailwind' || move.id === 'mistyterrain' || move.id === 'grassyterrain' || move.id === 'psychicterrain' || move.id === 'electricterrain') {
 				this.attrLastMove('[still]');
-				this.add('cant', payungHolder, 'ability: Payung', move, '[of] ' + pokemon);
+				this.add('cant', payungHolder, 'ability: Payung', move, '[of] ' + target);
 				return false;
 			}
 		},

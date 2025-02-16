@@ -358,8 +358,8 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	payung: {
 		name: "Payung",
-		desc: "On switch-in, any weather and terrain that is active on the field is removed. If tailwind is active on the opponent's side, it is also removed on switch-in. This Rain Shaman is immune to Wind-type moves and restores 1/4 of her maximum HP, rounded down, when hit by a Wind-type move; immune to Water-type moves and has her Special Defense raised by 1 stage when hit by a Water-type move. Immunity to damage from Sandstorm and Hail.",
-		shortDesc: "Switch-in: removes weather/terrain/foe's tailwind. Immune to wind & water type moves.",
+		desc: "On switch-in, this Rain Shaman removes: any weather that is active on the field, any terrain that is active on the field, and tailwind if it is active on the opponent's side. This Rain Shaman is immune to Wind-type moves and restores 1/4 of her maximum HP, rounded down, when hit by a Wind-type move; immune to Water-type moves and has her Special Defense raised by 1 stage when hit by a Water-type move. Immunity to damage from Sandstorm and Hail. Opponents are prevented from using moves that summon weather or terrain (Sunny Day, Misty Terrain, Chilly Reception, etc.).",
+		shortDesc: "Removes & prevents weather/terrain/foe's tailwind. Immune to wind & water type moves.",
 
 		block: "  [SOURCE] cannot use [MOVE]!", 
 	},
