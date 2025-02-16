@@ -95239,6 +95239,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			calmmind: ["9M"],
 			gorillagrip: ["9M"],
 			starshuriken: ["9M"],
+			heavenlyharmony: ["9M"],
         },
 	},	
 	watame: {

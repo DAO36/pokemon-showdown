@@ -390,6 +390,11 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		desc: "Has a 10% chance to lower the foe's Defense by 1 stage. If the target lost HP, the user takes recoil damage equal to 33% the HP lost by the target, rounded half up, but not less than 1 HP.",
 		shortDesc: "33% recoil. 10% chance to lower foe's Def by 1",
 	},
+	heavenlyharmony: {
+		name: "Heavenly Harmony",
+		desc: "If the current terrain is Misty Terrain and the target is grounded, this move's power is doubled.",
+		shortDesc: "2x power if target is grounded in Misty Terrain.",
+	},
 	starshuriken: {
 		name: "Star Shuriken",
 		desc: "Hits twice. If the first hit breaks the target's substitute, it will take damage for the second hit.",

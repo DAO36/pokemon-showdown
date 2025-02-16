@@ -1236,7 +1236,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		name: "Ahoy",
 		pp: 10,
 		priority: 0,
-		flags: {contact: 1, protect: 1, mirror: 1, slicing: 1},
+		flags: {contact: 1, protect: 1, mirror: 1, bullet: 1, slicing: 1},
 		stealsBoosts: true,
 		// Boost stealing implemented in scripts.js
 		secondary: null,
@@ -1252,7 +1252,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		name: "I'm Horny",
 		pp: 10,
 		priority: 0,
-		flags: {sound: 1, protect: 1, mirror: 1},
+		flags: {sound: 1, bypasssub: 1, protect: 1, mirror: 1},
 		self: {
 			onHit(source) {
 				for (const pokemon of source.foes()) {
@@ -1454,6 +1454,27 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		target: "normal",
 		type: "Fairy",
 	},
+	heavenlyharmony: {
+		num: 444,
+		accuracy: 100,
+		basePower: 70,
+		basePowerCallback(source, target, move) {
+			if (this.field.isTerrain('mistyterrain') && target.isGrounded()) {
+				if (!source.isAlly(target)) this.hint(`${move.name}'s BP doubled on grounded target.`);
+				return move.basePower * 2;
+			}
+			return move.basePower;
+		},
+		category: "Special",
+		name: "Heavenly Harmony",
+		pp: 10,
+		priority: 0,
+		flags: {protect: 1, mirror: 1, sound: 1, bypasssub: 1},
+		secondary: null,
+		target: "normal",
+		type: "Flying",
+		contestType: "Tough",
+	}, 
 	nothingwrong: { // swords dance reskin
 		num: 370,
 		accuracy: true,
