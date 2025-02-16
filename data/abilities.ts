@@ -1645,8 +1645,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		num: 191,
 	},
 	payung: { // this.add('-activate', pokemon, 'ability: Payung');
-		onPreStart(pokemon) { 
-			this.add('-activate', pokemon, 'ability: Payung');
+		onPreStart(pokemon) {
 			this.field.clearWeather();
 			this.field.clearTerrain();
 		},
@@ -1684,7 +1683,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			const payungHolder = this.effectState.target;
 			if (move.id === 'raindance' || move.id === 'sunnyday' || move.id === 'sandstorm' || move.id === 'snowscape' || move.id === 'hail' || move.id === 'tailwind' || move.id === 'mistyterrain' || move.id === 'grassyterrain' || move.id === 'psychicterrain' || move.id === 'electricterrain') {
 				this.attrLastMove('[still]');
-				this.add('cant', payungHolder, 'ability: Payung', move, '[of] ' + target);
+				this.add('cant', payungHolder, 'ability: Yandere', move, '[of] ' + pokemon);
 				return false;
 			}
 		},
