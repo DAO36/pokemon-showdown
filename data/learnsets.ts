@@ -96225,7 +96225,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			memento: ["9M"],
 			partingshot: ["9M"],
 			sweetkiss: ["9M"],
-			zombiestrike: ["9M"],
+			pathofsincerity: ["9M"],
         },
 	},	
 	olivia: {

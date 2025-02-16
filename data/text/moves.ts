@@ -558,8 +558,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		desc: "Hits twice. If the first hit breaks the target's substitute, it will take damage for the second hit.",
 		shortDesc: "Hits 2 times in one turn.",
 	},
-	zombiestrike: {
-		name: "Zombie Strike",
+	pathofsincerity: {
+		name: "Path of Sincerity",
 		desc: "If the target lost HP, the Zombie takes recoil damage equal to 33% the HP lost by the target, rounded half up, but not less than 1 HP.",
 		shortDesc: "Has 33% recoil.",
 	},

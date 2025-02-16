@@ -19405,7 +19405,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		types: ["Dark"],
 		gender: "F",
 		baseStats: {hp: 85, atk: 125, def: 85, spa: 120, spd: 80, spe: 105},
-		abilities: {0: "Contrary", 1: "Serene Grace", H: "Levitate", S: "TMT"},
+		abilities: {0: "Contrary", 1: "Serene Grace", H: "Levitate", S: "TMD"},
 		heightm: 1.5,
 		weightkg: 55.5,
 		color: "Purple",

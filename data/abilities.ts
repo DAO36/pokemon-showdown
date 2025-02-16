@@ -997,13 +997,13 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3,
 		num: 207,
 	},
-	tmt: { // combines [Infiltrator] + [Unseen Fist] but better!
+	tmd: { // combines [Infiltrator] + [Unseen Fist] but better!
 		onModifyMove(move) {
 			move.infiltrates = true;
 			if (move.category === 'Physical' || move.category === 'Special' || move.category === 'Status') delete move.flags['protect'];
 		},
 		flags: {breakable: 1},
-		name: "TMT",
+		name: "TMD",
 		rating: 2.5,
 		num: 151,
 	},

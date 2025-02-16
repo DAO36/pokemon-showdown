@@ -2129,12 +2129,12 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		target: "normal",
 		type: "Grass",
 	},
-	zombiestrike: { // ghost double-edge
+	pathofsincerity: { // ghost double-edge
 		num: 370,
 		accuracy: 90,
 		basePower: 120,
 		category: "Physical",
-		name: "Zombie Strike",
+		name: "Path of Sincerity",
 		pp: 5,
 		priority: 0,
 		flags: {contact: 1, protect: 1, mirror: 1, slicing: 1},
