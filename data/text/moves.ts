@@ -191,7 +191,7 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	dualblades: {
 		name: "Dual Blades",
 		desc: "Has a 20% chance to burn the target and a 20% chance to make it flinch. Hits twice. If the first hit breaks the target's substitute, it will take damage for the second hit. In Double Battles, this move attempts to hit the targeted Pokemon and its ally once each. If hitting one of these Pokemon would be prevented by immunity, protection, semi-invulnerability, an Ability, or accuracy, it attempts to hit the other Pokemon twice instead. If this move is redirected, it hits that target twice. High critical hit ratio. ",
-		shortDesc: "Hits twice. 20% to burn and/or flinch.",
+		shortDesc: "Hits twice. 20% to burn and/or flinch target.",
 	}, 
 	asura: {
 		name: "Asura",
@@ -201,7 +201,7 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	rakshasa: {
 		name: "Rakshasa",
 		desc: "Has a higher chance for a critical hit. Has a 20% chance to make the target flinch.",
-		shortDesc: "20% chance to flinch. High crit ratio.",
+		shortDesc: "20% chance to lower Atk by 1. High crit ratio.",
 	},
 	onispirits: {
 		name: "Oni Spirits",
