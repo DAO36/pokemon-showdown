@@ -138,8 +138,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		desc: "This move combines Fairy in its type effectiveness against the target. Hits twice. If the first hit breaks the target's substitute, it will take damage for the second hit.",
 		shortDesc: "Combines Fairy in type effectiveness. Hits 2 times.",
 	},
-	spidercooking: {
-		name: "Spider Cooking",
+	haachamacooking: {
+		name: "Haachama Cooking",
 		desc: "Has a 20% chance to make the target flinch.",
 		shortDesc: "20% chance to make the target flinch.",
 	},
@@ -168,10 +168,15 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		desc: "Has a 10% chance to raise this Elf's Special Defense by 1 stage.",
 		shortDesc: "10% chance to raise user's Sp.Def by 1.", 
 	},
-	twintails: {
-		name: "Twin Tails",
+	aikattack: {
+		name: "Aik Attack",
 		desc: "Hits twice. If the first hit breaks the target's substitute, it will take damage for the second hit. In Double Battles, this move attempts to hit the targeted Pokemon and its ally once each. If hitting one of these Pokemon would be prevented by immunity, protection, semi-invulnerability, an Ability, or accuracy, it attempts to hit the other Pokemon twice instead. If this move is redirected, it hits that target twice.",
 		shortDesc: "Hits 2 times in one turn.",
+	},
+	mukirose: {
+		name: "Mukirose",
+		desc: "Lowers this Elf's Defense and Special Defense by 1 stage.",
+		shortDesc: "Lowers the user's Defense and Sp. Def by 1.",
 	},
 	apexmaid: {
 		name: "Apex Maid",

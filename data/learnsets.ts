@@ -94099,7 +94099,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			lovelykiss: ["9M"],
 			healblock: ["9M"],
 			splitpersonality: ["9M"],
-			spidercooking: ["9M"],
+			haachamacooking: ["9M"],
 			fourcoursemeal: ["9M"],
         },
 	},
@@ -94245,7 +94245,8 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			nastyplot: ["9M"],
 			dragondance: ["9M"],
 			elfdance: ["9M"],
-			twintails: ["9M"],
+			aikattack: ["9M"],
+			mukirose: ["9M"],
         },
 	},	
 	aqua: {

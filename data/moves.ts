@@ -528,12 +528,12 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Dark",
 		contestType: "Tough",
 	},
-	spidercooking: {
+	haachamacooking: {
 		num: 370,
 		accuracy: 95,
 		basePower: 95,
 		category: "Physical",
-		name: "Spider Cooking",
+		name: "Haachama Cooking",
 		pp: 10,
 		priority: 0,
 		flags: {protect: 1, mirror: 1},
@@ -615,12 +615,12 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Fairy",
 		contestType: "Cute",
 	},
-	twintails: { // dual wingbeat but psychic
+	aikattack: { // dual wingbeat but psychic
 		num: 370,
 		accuracy: 100,
 		basePower: 50,
 		category: "Physical",
-		name: "Twin Tails",
+		name: "Aik Attack",
 		pp: 10,
 		priority: 0,
 		flags: {protect: 1, mirror: 1, distance: 1, gravity: 1, noparentalbond: 1},
@@ -629,6 +629,26 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		secondary: null,
 		target: "any",
 		type: "Psychic",
+	},
+	mukirose: {
+		num: 370,
+		accuracy: 90,
+		basePower: 130,
+		category: "Physical",
+		name: "Mukirose",
+		pp: 5,
+		priority: 0,
+		flags: {contact: 1, protect: 1, mirror: 1, punch: 1},
+		self: {
+			boosts: {
+				def: -1,
+				spd: -1,
+			},
+		},
+		secondary: null,
+		target: "normal",
+		type: "Fighting",
+		contestType: "Tough",
 	},
 	apexmaid: { // bullet seed but fairy
 		num: 370,

@@ -404,16 +404,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		name: "God",
 		rating: 4,
 		num: 94,
-	},
-	haachamacooking: { // reskin of [Cheek Pouch] <<<UNUSED>>>
-		onEatItem(item, pokemon) {
-			this.heal(pokemon.baseMaxhp / 3);
-		},
-		flags: {},
-		name: "Haachama Cooking",
-		rating: 2,
-		num: 167,
-	},
+	}, 
 	spidersoup2: { // if haachama is hit by a super-effective move, sets up sticky web <<<UNUSED>>>
 		onDamagingHitOrder: 1,
 		onDamagingHit(damage, target, source, move) {
