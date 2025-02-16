@@ -1647,8 +1647,8 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	payung: { // this.add('-activate', pokemon, 'ability: Payung');
 		onPreStart(pokemon) { 
 			this.add('-activate', pokemon, 'ability: Payung');
-			this.field.clearWeather()
-			this.field.clearTerrain() 
+			this.field.clearWeather();
+			this.field.clearTerrain();
 		},
 		onStart(pokemon) { 
 			let activated = false;
@@ -1687,7 +1687,22 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 				this.add('cant', payungHolder, 'ability: Payung', move, '[of] ' + target);
 				return false;
 			}
-		},	
+		},
+		onUpdate(pokemon) { // this.add('-activate', pokemon, 'ability: Payung');
+			if (this.field.clearWeather()) this.add('-activate', pokemon, 'ability: Payung');
+			if (this.field.clearTerrain()) this.add('-activate', pokemon, 'ability: Payung');
+			let activated = false;
+            for (const sideCondition of ['tailwind']) {
+                for (const side of [...pokemon.side.foeSidesWithConditions()]) {
+                    if (side.getSideCondition(sideCondition)) {
+                        if (!activated) { 
+                            activated = true;
+                        }
+                        side.removeSideCondition(sideCondition), this.add('-activate', pokemon, 'ability: Payung');
+                    }
+                }
+            }  	
+		}, 	
 		flags: {},
 		name: "Payung",
 		rating: 4,
