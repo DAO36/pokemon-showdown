@@ -1594,7 +1594,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 2,
 		num: 85,
 	}, 
-	umbrella: {
+	payung: {
 		onStart(pokemon) {
 			this.field.clearWeather();
 			if (pokemon.side.sideConditions['tailwind']) {
@@ -1607,13 +1607,13 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		onTryHit(target, source, move) {
 			if (target !== source && move.flags['wind']) {
 				if (!this.heal(target.baseMaxhp / 4, target, target)) {
-					this.add('-immune', target, '[from] ability: Umbrella');
+					this.add('-immune', target, '[from] ability: Payung');
 				}
 				return null;
 			}
 			if (target !== source && move.type === 'Water') {
 				if (!this.boost({spe: 1})) {
-					this.add('-immune', target, '[from] ability: Umbrella');
+					this.add('-immune', target, '[from] ability: Payung');
 				}
 				return null;
 			}
@@ -1630,7 +1630,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			if (this.validTarget(this.effectState.target, source, redirectTarget)) {
 				if (move.smartTarget) move.smartTarget = false;
 				if (this.effectState.target !== target) {
-					this.add('-activate', this.effectState.target, 'ability: Umbrella');
+					this.add('-activate', this.effectState.target, 'ability: Payung');
 				}
 				return this.effectState.target;
 			}
@@ -1642,7 +1642,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			} 
 		},	
 		flags: {},
-		name: "Umbrella",
+		name: "Payung",
 		rating: 4,
 		num: 191,
 	}, 
