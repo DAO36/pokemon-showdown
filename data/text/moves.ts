@@ -122,7 +122,7 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		desc: "If the target lost HP, the user takes recoil damage equal to 1/3 the HP lost by the target, rounded half up, but not less than 1 HP. If this attack does not miss, the effects of Reflect, Light Screen, Mist, Hologram, and Aurora Veil end for the target's side of the field before damage is calculated. If this move is successful, it breaks through the target's Baneful Bunker, Detect, King's Shield, Protect, or Spiky Shield for this turn, allowing other Pokemon to attack the target normally. If the target's side is protected by Crafty Shield, Mat Block, Quick Guard, or Wide Guard, that protection is also broken for this turn and other Pokemon may also attack the target's side normally.",
 		shortDesc: "Breaks protection & destroys screens. 33% recoil.", 
 
-		activate: "  [POKEMON] shattered [TEAM]'s protections!",
+		activate: "  [SOURCE] shattered [TARGET]'s protections!",
 	}, 
 	ebifrionmight: {
 		name: "Ebifrion Might",
@@ -323,7 +323,7 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		desc: "If this attack does not miss, the effects of Reflect, Light Screen, Mist, Hologram, and Aurora Veil end for the target's side of the field before damage is calculated. If this move is successful, it breaks through the target's Baneful Bunker, Detect, King's Shield, Protect, or Spiky Shield for this turn, allowing other Pokemon to attack the target normally. If the target's side is protected by Crafty Shield, Mat Block, Quick Guard, or Wide Guard, that protection is also broken for this turn and other Pokemon may attack the target's side normally.",
 		shortDesc: "Breaks protection and destroys screens.",
 
-		activate: "  [POKEMON] shattered [TEAM]'s protections!",
+		activate: "  [SOURCE] shattered [TARGET]'s protections!",
 	},  
 	knightmuscles: {
 		name: "Knight Muscles",
