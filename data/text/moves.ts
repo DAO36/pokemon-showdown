@@ -19,8 +19,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		desc: "This Idol cures her non-volatile status condition. Raises the Idol's Special Attack by 2 stages.",
 		shortDesc: "Raises Sp. Atk by 2; Cures user and her party.",
 	},
-	sakuraattack: {
-		name: "Sakura Attack",
+	sakurastrike: {
+		name: "Sakura Strike",
 		shortDesc: "No additional effect. Hits adjacent foes.",
 	},
 	lavabucket: {
@@ -184,8 +184,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		desc: "Raises this Maid's Attack by 2 stages.",
 		shortDesc: "Raises the user's Attack by 2.",
 	},
-	dualblades: {
-		name: "Dual Blades",
+	dualwielding: {
+		name: "Dual Wielding",
 		desc: "Has a 10% chance to burn the target and a 10% chance to make it flinch. Hits twice. If the first hit breaks the target's substitute, it will take damage for the second hit. In Double Battles, this move attempts to hit the targeted Pokemon and its ally once each. If hitting one of these Pokemon would be prevented by immunity, protection, semi-invulnerability, an Ability, or accuracy, it attempts to hit the other Pokemon twice instead. If this move is redirected, it hits that target twice. High critical hit ratio. ",
 		shortDesc: "10% chance to burn and/or flinch target. Hits twice.",
 	}, 
@@ -222,8 +222,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		desc: "Each Pokemon on this Nurse's side restores 1/3 of their maximum HP, rounded half up, and has their status condition cured.",
 		shortDesc: "User and allies: heal 1/3 max HP, cures status.",
 	},
-	syringestrike: {
-		name: "Syringe Strike",
+	syringe: {
+		name: "Syringe",
 		desc: "Has a 100% chance to poison the target. If the target is an ally, this move instead restores 1/2 of the ally's maximum HP, rounded down, instead of dealing damage, as well as curing them of any status effects.",
 		shortDesc: "100% to poison. If ally, heals 50% HP/cures status.",
 	},
@@ -284,8 +284,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 
 		removeItem: "  [SOURCE] stole and ate [POKEMON]'s [ITEM]!",
 	}, 
-	tarotattack: {
-		name: "Tarot Attack",
+	tarots: {
+		name: "Tarots",
 		desc: "Hits two to five times. Has a 35% chance to hit two or three times and a 15% chance to hit four or five times. If one of the hits breaks the target's substitute, it will take damage for the remaining hits. If the user has the Skill Link Ability, this move will always hit five times. If the user is holding Loaded Dice, this move will hit 4-5 times.",
 		shortDesc: "Hits 2-5 times in one turn.",
 	},
@@ -465,8 +465,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 
 		boost: "  [POKEMON] has gotten drunk!",
 	},
-	nenemaxattack: {
-		name: "NeneMAX Attack",
+	nenemax: {
+		name: "NeneMAX",
 		desc: "Cannot be selected the turn after it's used. Lower's the user's Speed by 1 stage if it successfully hits the target",
 		shortDesc: "-1 user's Speed. Cannot be used twice in a row.",
 	},
@@ -529,8 +529,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		desc: "If this move is successful and the Orca has not fainted, the effects of Leech Seed and binding moves end for the Orca, and all hazards are removed from the Orca's side of the field. The Orca then switches out even if she is trapped and is replaced immediately by a selected party member.",
 		shortDesc: "Clears hazards/bind/Leech Seed. Switches after.",
 	},
-	moonstrike: {
-		name: "Moonstrike",
+	fullmoon: {
+		name: "Full Moon",
 		desc: "Has a 20% chance to lower the target's Special Attack by 1 stage.",
 		shortDesc: "20% chance to lower target's Special Attack by 1.",
 	},
@@ -559,23 +559,23 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		desc: "Hits twice. If the first hit breaks the target's substitute, it will take damage for the second hit.",
 		shortDesc: "Hits 2 times in one turn.",
 	},
-	udinassault: {
+	udinassault: { // [UNUSED]
 		name: "Udin Assault",
 		desc: "If the target lost HP, the Zombie takes recoil damage equal to 33% the HP lost by the target, rounded half up, but not less than 1 HP.",
 		shortDesc: "Has 33% recoil.",
 	},
 	pathofsincerity: {
 		name: "Path of Sincerity",
-		desc: "No additional effect.",
-		shortDesc: "No additional effect.", 
+		desc: "If the target lost HP, the Zombie takes recoil damage equal to 33% the HP lost by the target, rounded half up, but not less than 1 HP.",
+		shortDesc: "Has 33% recoil.",
 	},
 	tonjok: {
 		name: "Tonjok",
 		desc: "Hits twice. If the first hit breaks the target's substitute, it will take damage for the second hit.",
 		shortDesc: "Hits 2 times in one turn.",
 	},
-	peacockattack: {
-		name: "Peacock Attack",
+	peafowlpower: {
+		name: "Peafowl Power",
 		desc: "Has a 20% chance to raise this Peafowl's Special Defense by 1 stage.",
 		shortDesc: "20% chance to raise user's Sp.Def by 1.",
 	},
@@ -734,8 +734,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		desc: "Raises this Tako's Attack by 2 stages.",
 		shortDesc: "Raises the user's Attack by 2.",
 	},
-	tentaclesstrike: {
-		name: "Tentacles Strike",
+	tentacles: {
+		name: "Tentacles",
 		desc: "Hits eight times. This move checks accuracy for each hit, and the attack ends if the target avoids a hit. If one of the hits breaks the target's substitute, it will take damage for the remaining hits. If the user has the Skill Link Ability, this move will always hit ten time.",
 		shortDesc: "Hits 8 times. Each hit can miss.",
 	},
@@ -866,7 +866,7 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		desc: "Has a higher chance for a critical hit.",
 		shortDesc: "High critical hit ratio.",
 	},
-	chaosstrike: {
+	chaosstrike: { // <<UNUSED>>
 		name: "Chaos Strike",
 		desc: "Has a 30% chance to either Burn, Paralyze, Freeze, Poison, Badly Poison, or put the target to sleep. If this move is successful, it deals damage or heals the target. 40% chance for 40 power, 30% chance for 80 power, 10% chance for 120 power, and 20% chance to heal the target by 1/4 of its maximum HP, rounded down.",
 		shortDesc: "30% to BRN/PSN/PAR/FRZ/SLP target. ",
