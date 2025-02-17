@@ -880,18 +880,21 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	},
 	blackmagic: {
 		num: 560,
-		accuracy: 100,
-		basePower: 100,
+		accuracy: 90,
+		basePower: 120,
 		category: "Special",
 		name: "Black Magic",
-		pp: 15,
+		pp: 10,
 		flags: {protect: 1, mirror: 1, pulse: 1},
-		onEffectiveness(typeMod, target, type, move) {
-			return typeMod + this.dex.getEffectiveness('Dark', type);
+		self: {
+			boosts: {
+				spa: -2,
+			},
 		},
-		onModifyMove(move, pokemon) {
-			if (pokemon.getStat('atk', false, true) > pokemon.getStat('spa', false, true)) move.category = 'Physical';
-		},
+		onEffectiveness(typeMod, target, type) {
+			if (type === 'Dark') return 1;
+			if (type === 'Psychic') return 1; 
+		}, 
 		priority: 0,
 		secondary: null,
 		target: "normal",
@@ -3870,7 +3873,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		onEffectiveness(typeMod, target, type, move) {
 			if (move.type !== 'Normal') return;
 			if (!target) return; // avoid crashing when called from a chat plugin
-			// ignore effectiveness if the target is Dark type and immune to Psychic
+			// ignore effectiveness if the target is Ghost type and immune to Normal
 			if (!target.runImmunity('Normal')) {
 				if (target.hasType('Ghost')) return 0;
 			}

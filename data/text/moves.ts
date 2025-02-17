@@ -233,8 +233,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	blackmagic: {
 		name: "Black Magic",
-		desc: "This move becomes a physical attack if this Witch's Attack is greater than her Special Attack, including stat stage changes. This move combines Dark in its type effectiveness against the target.",
-		shortDesc: "Physical if Atk > SpA. Combines Dark in type effectiveness.",
+		desc: "Lowers the user's Special Attack by 2 stages. This move's type effectiveness against Dark and Psychic is changed to be super effective no matter what this move's type is.",
+		shortDesc: "Super effective on Dark. Lowers user's SpA by 2.",
 	}, 
 	arcanegarlic: {
 		name: "Arcane Garlic",
