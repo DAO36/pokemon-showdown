@@ -24,8 +24,8 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 
 		damage: "  [POKEMON] got nuked!",
 	}, 
-	whiteherb: {
-		name: "White Herb",
+	stayingup: {
+		name: "Staying Up",
 		desc: "Restores all lowered stat stages to 0 when one is less than 0, whether as a result of an opposing Pokemon (Parting Shot, Intimidate, etc.) or a self-inflicted reason (Close Combat, Draco Meteor, etc.).",
 		shortDesc: "Restores all lowered stat stages to 0 when one is less than 0.",
 	},
@@ -58,33 +58,33 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	seiso: {
 		name: "Seiso",
-		desc: "This Seiso idol cannot be poisoned, paralyzed, burned, frozen, or put to sleep. Prevents other Pokemon from lowering this Idol's stat stages. Cannot be made to flinch.",
-		shortDesc: "Immune to status effects; Stats can't be lowered by others. Cannot flinch.",
+		desc: "This Seiso idol cannot be poisoned, paralyzed, burned, frozen, or put to sleep. Prevents other Pokemon from lowering this Idol's stat stages. Immune to taunt.",
+		shortDesc: "Immune to status effects. Stats can't be lowered by others. Cannot be taunted.",
 	},
 	elite: {
 		name: "Elite",
 		desc: "This Shrine Maiden has her Special Attack raised by 2 stages after she is damaged by a Fire-type move.",
-		shortDesc: "Special Attack is raised by 2 when damaged by Fire moves.",
+		shortDesc: "Special Attack is raised by 2 stages when damaged by Fire type moves.",
 	},
 	stellar: {
 		name: "Stellar",
 		desc: "On switch-in, all adjacent Pokemon on the opposing side have their stat stages reset to 0; Prevents other Pokemon from lowering this Comet's stat stages.",
-		shortDesc: "Stats can't be lowered by others. Switch-in: foes have stat stages reset to 0.",
+		shortDesc: "On switch-in, foes have stat stages reset to 0. Own stats can't be lowered by others.",
 	},
 	highspecsrobot: {
 		name: "High Specs Robot",
 		desc: "If Electric Terrain is active, the Speed of this Robot is doubled, and heals 1/10 of her max HP at the end of each turn.",
-		shortDesc: "If Electric Terrain is active, user's speed is 2x & heals 1/10 of max HP each turn.", 
+		shortDesc: "In Electric Terrain, user's speed is doubled & heals 1/10 of max HP every turn.", 
 	}, 
 	virtualdiva: {
 		name: "Virtual Diva",
 		desc: "This Diva's sound-based moves have her power multiplied by 1.3. Her Special Attack raised by 1 stage when she is hit by a Sound-based move; Immune to Sound-type moves",
-		shortDesc: "Sound moves have 1.3x power. +1 Sp.Atk if hit by Sound move; Sound immunity.",
+		shortDesc: "Sound moves have 1.3x power. SpAtk is raised by 1 if hit by Sound move; Sound immunity.",
 	},
 	fbking: {
 		name: "FBKing",
 		desc: "This Fox's Attack and Special Attack are both raised by 1 stage each if she attacks and knocks out another Pokemon.",
-		shortDesc: "Attack & Special Attack both raised by 1 if user attacks and KOes another Pokemon.",
+		shortDesc: "Attack & Special Attack both raised by 1 if user attacks & KOs another Pokemon.",
 	},
 	god: {
 		name: "God",
@@ -109,7 +109,7 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	chamachange: {
 		name: "Chama Change",
 		desc: "If User is Akai Haato, she changes to Haachama if she has 1/2 or less of her maximum HP at the end of a turn. If Akai Haato's HP is above 1/2 of her maximum HP at the end of a turn, she changes back to Idol Mode.",
-		shortDesc: "At end of turn, changes to Haachama if > 1/2 max HP, else Akai Haato.",
+		shortDesc: "At the end of a turn, changes to Haachama if she's at > 1/2 max HP, else Akai Haato.",
 
 		transform: "Haachama took over!",
 		transformEnd: "Akai Haato took over!",
@@ -121,11 +121,12 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	vampire: {
 		name: "Vampire",
 		desc: "All moves that directly attack another Pokemon will heal this Vampire 25% of the damage dealt to the opponent.",
-		shortDesc: "User heals 25% of the damage it deals with every direct attack.",
+		shortDesc: "Using moves that deal direct damage heals user 25% of the damage dealt.",
 	},
 	sirendance: {
 		name: "Siren Dance",
-		shortDesc: "On switch-in, this Elf summons Magic Room.",
+		desc: "On switch-in, this Siren summons Wonder Room for 5 turns.",
+		shortDesc: "On switch-in, user summons Wonder Room.",
 	},
 	apex: {
 		name: "Apex",
@@ -134,7 +135,8 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	}, 
 	oni: {
 		name: "Oni",
-		shortDesc: "This Oni's offensive stat is multiplied by 1.5 while using a Fire-type attack.",
+		desc: "This Oni's offensive stat is multiplied by 1.5 while using a Fire-type attack.",
+		shortDesc: "User's offensive stat is boosted by 50% when using a Fire-type attack.",
 
 		start: "  [POKEMON] is channeling Oni energy!",
 	},
@@ -151,18 +153,20 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	witchcraft: {
 		name: "Witchcraft",
-		shortDesc: "On switch-in, this Witch summons Magic Room.",
+		desc: "On switch-in, this Witch summons Magic Room for 5 turns.",
+		shortDesc: "On switch-in, user summons Magic Room.",
 	},
 	shubashuba: {
 		name: "Shuba Shuba",
-		shortDesc: "This Duck's offensive stat is multiplied by 1.5 while using a Water-type attack.",
+		desc: "This Duck's offensive stat is multiplied by 1.5 while using a Water-type attack.",
+		shortDesc: "User's offensive stat is boosted by 50% when using a Water-type attack.",
 
 		start: "  [POKEMON] is embracing her inner Duck!",
 	},
 	doog: {
 		name: "Doog",
 		desc: "When this Doggo has more than 1/2 of her maximum HP and takes damage from an attack bringing her to 1/2 or less of her maximum HP, her Attack is raised by 1 stage. This effect applies after all hits from a multi-hit move. This effect is prevented if the move had a secondary effect removed by the Sheer Force Ability.",
-		shortDesc: "Attack is raised by 1 stage when it reaches 1/2 or less of her max HP.",
+		shortDesc: "Attack is raised by 1 stage when the user reaches 1/2 or less of max HP.",
 	},
 	mogumogu: {
 		name: "Mogu Mogu",
@@ -184,17 +188,17 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	pekopeko: {
 		name: "Peko Peko",
 		desc: "30% chance a Pokemon using an attacking move on this War Criminal will either be poisoned, badly poisoned, paralyzed, frozen, burned or put to sleep.",
-		shortDesc: "30% chance to either PSN/BRN/PAR/SLP/TOX/FRZ those that attack this Rabbit.",
+		shortDesc: "If hit by attack: 30% chance attacker is given a random non-volatile status condition.",
 	},
 	holyknight: {
 		name: "Holy Knight",
 		desc: "This Knight's punch-based attacks have her power multiplied by 1.2. Sucker Punch is not boosted. If this Knight has a non-volatile status condition, her Special Defense is multiplied by 1.5.",
-		shortDesc: "Punch moves are 1.2x power. If under a status condition, SpDef is multiplied by 1.5.",
+		shortDesc: "Punch moves have 1.2x power. If under a status condition, Sp. Def is multiplied by 1.5.",
 	}, 
 	yandere: {
 		name: "Yandere",
 		desc: "This Necromancer prevents opposing Pokemon from using pivot moves, whether they deal damage (U-Turn, Volt Switch, Flip Turn, etc.) or are a status move (Teleport, Baton Pass, Chilly Reception, etc.).",
-		shortDesc: "User prevents opposing Pokemon from using pivot moves (U-Turn, Teleport, etc).",
+		shortDesc: "Prevents opposing Pokemon from using pivot moves (U-Turn, Teleport, etc).",
 
 		block: "  [SOURCE] cannot use [MOVE]!",
 	},
@@ -206,7 +210,7 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	piracy: {
 		name: "Piracy",
 		desc: "On switch-in, this Pirate copies the target's stat changes, then the target has their stat stages reset to 0.",
-		shortDesc: "Copies stat changes of target on switch-in; Clears target's stat changes.",
+		shortDesc: "Copies stat changes of target on switch-in, then resets their stat changes back to 0.",
 
 		start: "  [POKEMON] is ready to plunder your booty!",
 	},
@@ -217,20 +221,22 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	highonasacoco: {
 		name: "High on Asacoco",
 		desc: "If this Dragon is poisoned, she restores 1/8 of her maximum HP, rounded down, at the end of each turn instead of losing HP.",
-		shortDesc: "Heals by 1/8 of her max HP each turn when poisoned; no HP loss.",
+		shortDesc: "This dragon heals by 1/8 of her max HP each turn when poisoned; no HP loss.",
 	},
 	pptgrip: {
 		name: "PPT Grip",
-		shortDesc: "This Angel's grip causes contact moves to have their power multiplied by 1.3.",
+		desc: "This Angel's grip causes contact moves to have their power multiplied by 1.3.",
+		shortDesc: "User's contact moves have their power boosted by 30%.",
 	},
 	watamelon: {
 		name: "Watamelon",
 		desc: "This Sheep is wearing a watermelon that grants her immunity to powder moves, damage from Sandstorm, and the effects of Rage Powder and the Effect Spore Ability. This Sheep takes halved damage from sound-based moves. Cannot be struck by a critical hit.",
-		shortDesc: "Immune to powder moves, sandstorm, & crits; reduces damage from sound moves.",
+		shortDesc: "Immune to powder moves, sandstorm, & crits; takes 1/2 damage from sound-based moves.",
 	},
 	sugarrush: {
 		name: "Sugar Rush",
-		shortDesc: "If Misty Terrain is active, the Speed of this baby is doubled.",
+		desc: "If Misty Terrain is active, the Speed of this baby is doubled.",
+		shortDesc: "If Misty Terrain is active, user's Speed is doubled.",
 	},
 	tmd: {
 		name: "TMD",
@@ -240,21 +246,22 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	legendofpolka: {
 		name: "Legend of Polka",
 		desc: "This Fennec's moves of 60 power or less have their power multiplied by 1.5, including Struggle. This effect comes after a move's effect changes its own power; Multi-hit attacks always hit the maximum number of times. Triple Kick and Triple Axel do not check accuracy for the second and third hits.",
-		shortDesc: "Moves of 60 BP or less are 1.5x; multi-hit moves hit the max number of times.",
+		shortDesc: "Moves of 60 BP or less are 1.5x power; multi-hit moves hit the max number of times.",
 	},
 	botanx: {
 		name: "Botan X",
 		desc: "This Lion's bullet-based attacks have their power multiplied by 1.5. This Lion is also immune to bullet moves.",
-		shortDesc: "Bullet-based attacks have 1.5x power. Immune to bullet moves.",
+		shortDesc: "User's bullet-based attacks have 1.5x power. Immune to bullet moves.",
 	},
 	frozensake: {
 		name: "Frozen Sake",
+		desc: "Pokemon attacking this Elf with moves that make contact have a 30% chance to be frozen.",
 		shortDesc: "20% chance a Pokemon making contact with this Elf will be frozen.",
 	},
 	supernenechi: {
 		name: "Super Nenechi",
 		desc: "NENEMAX's highest stat is raised by 1 stage if she attacks and knocks out another Pokemon. Stat stage changes are not considered. If multiple stats are tied, Attack, Defense, Special Attack, Special Defense, and Speed are prioritized in that order.",
-		shortDesc: "Highest stat is raised by 1 if user attacks and KOs another Pokemon.",
+		shortDesc: "Highest stat is raised by 1 after attacking and KOing another Pokemon.",
 	},
 	succubus: {
 		name: "Succubus",
@@ -268,12 +275,12 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	holohawk: {
 		name: "HoloHawk",
 		desc: "If this Hawk is hit by a damaging move, she sets up Tailwind on her side right after being hit.",
-		shortDesc: "If user is hit by an attack, Tailwind is set up on user's side for 4 turns.",
+		shortDesc: "If this Hawk is hit by an attack, Tailwind is set up on her side for 4 turns.",
 	},
 	cleaner: {
 		name: "Cleaner",
-		desc: "On switch-in, this Orca will clear up hazards on her side (Stealth Rock, Spikes, Toxic Spikes, Sticky Web, etc.) as well as clear the opponent's side of any screens that are set up (Reflect, Light Screen, Aurora Veil, etc.). The effects of Gravity and Trick Room, if active, are removed upon switch-in.",
-		shortDesc: "Switch-in: User's side: rids hazards; Opponent's side: rids screens.",
+		desc: "On switch-in, this Orca will clear up hazards on her side (Stealth Rock, Spikes, Toxic Spikes, Sticky Web, etc.) as well as clear the opponent's side of any screens that are set up (Reflect, Light Screen, Aurora Veil, etc.). The effects of Gravity, Magic Room, Wonder Room, and Trick Room, if active, are removed upon switch-in.",
+		shortDesc: "On switch-in: removes hazards on user's side & removes screens on opponent's side.", 
 
 		start: "  [POKEMON] is ready to clean up the scene!",
 	},
@@ -305,12 +312,12 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	samurai: {
 		name: "Samurai",
 		desc: "This Samurai's Attack is raised by 1 stage if she attacks and knocks out another Pokemon. This Samurai's Attack is raised by 1 stage for each of her stat stages that is lowered by an opposing Pokemon.",
-		shortDesc: "+1 Atk if KOs a foe; Atk is raised by 1 for each stat that is lowered by foe.",
+		shortDesc: "+1 Atk if user KOs a foe; Atk is raised by 1 for each stat that is lowered by foe.",
 	},
 	yamada: {
 		name: "yamada",
 		desc: "When one of YMD's stat stages would be lowered by another Pokemon, that Pokemon's stat stage is lowered instead. This effect does not happen if YMD's stat stage was already -6. If the other Pokemon has a substitute, neither Pokemon has its stat stage lowered. YMD is unaffected by certain non-damaging moves directed at it and will instead use such moves against the original user. Moves reflected in this way are unable to be reflected again by this or Magic Coat's effect. Spikes, Stealth Rock, Sticky Web, and Toxic Spikes can only be reflected once per side, by the leftmost Pokemon under this or Magic Coat's effect. The Lightning Rod and Storm Drain Abilities redirect their respective moves before this Ability takes effect.",
-		shortDesc: "Blocks certain Status moves & stat changes, & bounces them back to the target.",
+		shortDesc: "Blocks certain status moves & stat changes, & bounces them back to the target.",
 	},
 	moongoddess: {
 		name: "Moon Goddess",
@@ -320,7 +327,7 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	moonmania: {
 		name: "Moon Mania",
 		desc: "If Moona, she changes to Hoshinova before using an attacking move, and changes to Moona before using the move Lunar Shield.",
-		shortDesc: "If Moona, changes to Hoshinova before attacks & Moona before Lunar Shield.",
+		shortDesc: "If Moona, changes to Hoshinova before she attacks & to Moona before using Lunar Shield.",
 
 		transform: "Changed to Hoshinova!",
 		transformEnd: "Changed to Moona!",
@@ -328,7 +335,7 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	erofi: {
 		name: "Erofi",
 		desc: "This Alien is immune to Dark-type moves and has her Attack raised by 1 stage when hit by a Dark-type move.",
-		shortDesc: "Attack is raised by 1 stage if user is hit by a Dark type move; Dark immunity.",
+		shortDesc: "Attack is raised by 1 stage if this Alien is hit by a Dark type move; Dark immunity.",
 	},
 	nnn: {
 		name: "NNN",
@@ -342,19 +349,19 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	tonjokqueen: {
 		name: "TonjokQueen",
 		desc: "This Peafowl's punch-based attacks have +1 priority. Sucker Punch is not affected. If this Peafowl is hit by a punch-based attack, her Attack stat is raised by 1 stage; Immune to punching-based attacks.",
-		shortDesc: "Punch moves: +1 priority. +1 ATK if hit by punch move; Immune to punch moves."
+		shortDesc: "Punch moves have +1 priority. +1 ATK if hit by punch move; Immune to punch moves."
 	},
 	keris: {
 		name: "Keris",
 		desc: "Pokemon using Physical attacks against this Keris loses 1/10 of their maximum HP, rounded down. Immune to slicing-based moves.",
-		shortDesc: "Foes using Physical Attacks on user lose 1/10 HP. Immune to slicing-based moves.",
+		shortDesc: "Foes using Physical Attacks on this Keris lose 1/10 HP. Immune to slicing-based moves.",
 
 		damage: "#roughskin",
 	},
 	secretagent: {
 		name: "Secret Agent",
 		desc: "This Spy's type changes to match the type of the move she is about to use. This effect comes after all effects that change a move's type.",
-		shortDesc: "User's type changes to the type of the move it is using.",
+		shortDesc: "This secret agent's type changes to the type of the move it is using.",
 	},
 	payung: {
 		name: "Payung",
@@ -376,7 +383,7 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	powerofatlantis: {
 		name: "Power of Atlantis",
 		desc: "If Rain is active, this Shark's Attack and Special Attack is multiplied by 1.5 and she gains 1/10 of her maximum HP, rounded down, at the end of each turn. If there's no weather, she loses 1/10 of her maximum HP, rounded down, at the end of each turn, if Sunny Day/Desolate Land/Sandstorm, loses 1/8 of her maximum HP per turn instead. These effects are prevented if the Pokemon is holding a Utility Umbrella.",
-		shortDesc: "In rain, Atk & SpAtk: 1.5x; Gains 1/10 HP per turn. Else: loses 1/10 HP per turn.",
+		shortDesc: "In rain: Atk & SpAtk is 1.5x, gains 1/10 HP per turn. Else: loses 1/10 HP per turn.",
 	},
 	ameway: {
 		name: "AmeWay",
@@ -398,7 +405,7 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	phoenix: {
 		name: "Phoenix",
 		desc: "30% chance a Pokemon making contact with this Phoenix will be burned. This Phoenix is immune to Fire-type moves. The first time she is hit by a Fire-type move, her offensive stat is multiplied by 1.5 while using a Fire-type.",
-	    shortDesc: "Contact with user has 30% chance to burn. Fire-type immunity.",
+	    shortDesc: "Contact with this Chicken has a 30% chance to burn. Fire-type immunity.",
 
 	    start: "  [POKEMON] the Part-Time Warrior is here!",
 	},

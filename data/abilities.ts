@@ -257,9 +257,6 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		num: 74,
 	},
 	seiso: { // combines [Clear Body] + [Immunity] but for other statuses too + immune to flinching <held items cant status either>
-		onTryAddVolatile(status, pokemon) {
-			if (status.id === 'flinch') return null;
-		},
 		onUpdate(pokemon) {
 			if (pokemon.status === 'psn' || pokemon.status === 'tox' || pokemon.status === 'par' || pokemon.status === 'slp' || pokemon.status === 'brn' || pokemon.status === 'frz') {
 				this.add('-activate', pokemon, 'ability: Seiso');
@@ -271,8 +268,19 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			if ((effect as Move)?.status) {
 				this.add('-immune', target, '[from] ability: Seiso');
 			}
+			if (source.volatiles['taunt']) {
+				this.add('-activate', source, 'ability: Seiso');
+				source.removeVolatile('taunt');
+				// Taunt's volatile already sends the -end message when removed
+			}
 			return false;
 		},
+		onTryHit(pokemon, target, move) {
+			if (move.id === 'taunt') {
+				this.add('-immune', pokemon, '[from] ability: Seiso');
+				return null;
+			}
+		}, 
 		onTryBoost(boost, target, source, effect) {
 			if (source && target === source) return;
 			let showMsg = false;
@@ -508,7 +516,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	sirendance: { // sets up Magic Room on switch-in 
 		onStart(pokemon) {
 			this.add('-activate', pokemon, 'ability: Siren Dance');
-			this.field.addPseudoWeather('magicroom', pokemon);
+			this.field.addPseudoWeather('wonderroom', pokemon);
 		},
 		flags: {},
 		name: "Siren Dance",
@@ -649,7 +657,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	witchcraft: { // sets up Magic Room on switch-in 
 		onStart(pokemon) {
 			this.add('-activate', pokemon, 'ability: Witchcraft');
-			this.field.addPseudoWeather('wonderroom', pokemon);
+			this.field.addPseudoWeather('magicroom', pokemon);
 		},
 		flags: {},
 		name: "Witchcraft",
@@ -1237,7 +1245,9 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 				}
 			}
 			this.field.removePseudoWeather('trickroom');
-			this.field.removePseudoWeather('gravity'); 
+			this.field.removePseudoWeather('gravity');
+			this.field.removePseudoWeather('magicroom');
+			this.field.removePseudoWeather('wonderroom');
 			return success;  	
 		}, 
         flags: {},
