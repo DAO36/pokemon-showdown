@@ -492,8 +492,8 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	godeyes: {
 		name: "God Eyes",
-		desc: "Every move used by this Big Cat all have a 100% chance to hit the target, .",
-		shortDesc: "All of the user's moves will always hit and never miss, regardless of its accuracy.",
+		desc: "Every move used by this Big Cat all have a 100% chance to hit the target, ignoring accuracy and evasiveness checks.",
+		shortDesc: "All of the user's moves will always hit and never miss.",
 	}, 
 	adaptability: {
 		name: "Adaptability",
