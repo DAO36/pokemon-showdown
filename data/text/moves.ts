@@ -26,7 +26,7 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	lavabucket: {
 		name: "Lava Bucket",
 		desc: "Has a 100% chance to burn the target and the user. Hits all adjacent Pokemon.",
-		shortDesc: "100% chance to burn opponents & the user.",
+		shortDesc: "100% chance to burn opponent(s) & the user.",
 
 		activate: "  [SOURCE] dropped lava everywhere! Atsui!",
 	},
@@ -312,7 +312,7 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	carrottrap: {
 		name: "Carrot Trap",
 		desc: "Sets up a hazard on the opposing side of the field, damaging each opposing Pokemon that switches in, foes lose 1/32, 1/16, 1/8, 1/4, or 1/2 of their maximum HP, rounded down, based on their weakness to the Grass type; 0.25x, 0.5x, neutral, 2x, or 4x, respectively. No damage is taken if the opposing Pokemon are using Heavy-Duty Boots. This also inflicts Leech Seed on any opposing Pokemon that switches in, unless they are using Heavy-Duty Boots. Can be removed from the opposing side if any Pokemon uses Tidy Up, or if any opposing Pokemon uses Clean Up, Mortal Spin, Rapid Spin, or Defog successfully, is hit by Defog, or a Grass-type Pokemon switches in. Safeguard prevents the opposing party from being leech seeded on switch-in, but a substitute does not.",
-		shortDesc: "Hurts foes on switch-in; inflicts leech seed.", 
+		shortDesc: "Hurts foes on switch-in & inflicts leech seed.", 
 
 		start: "  A diabolical trap has been set up for [TEAM]!",
 		end: "  The trap has been disarmed!",

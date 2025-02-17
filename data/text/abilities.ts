@@ -231,7 +231,7 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	watamelon: {
 		name: "Watamelon",
 		desc: "This Sheep is wearing a watermelon that grants her immunity to powder moves, damage from Sandstorm, and the effects of Rage Powder and the Effect Spore Ability. This Sheep takes halved damage from sound-based moves. Cannot be struck by a critical hit.",
-		shortDesc: "Immune to powder moves, sandstorm, & crits; takes 1/2 damage from sound-based moves.",
+		shortDesc: "Immune to powder moves, sandstorm, & crits; takes 1/2 damage from sound moves.",
 	},
 	sugarrush: {
 		name: "Sugar Rush",

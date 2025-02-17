@@ -6032,11 +6032,6 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
         doublesTier: "(DUU)",
         natDexTier: "OU",	
 	},
-	nenemax: {
-		tier: "Uber",
-		doublesTier: "(DUU)",
-		natDexTier: "Uber",
-	},
 	aloe: {
 		tier: "OU",
 		doublesTier: "(DUU)",
