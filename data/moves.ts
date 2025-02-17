@@ -891,6 +891,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 				spa: -2,
 			},
 		},
+		ignoreImmunity: true,
 		onEffectiveness(typeMod, target, type) {
 			if (type === 'Dark') return 1;
 			if (type === 'Psychic') return 1; 
