@@ -19492,7 +19492,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		types: ["Ice"],
 		gender: "F",
 		baseStats: {hp: 80, atk: 95, def: 80, spa: 125, spd: 130, spe: 90},
-		abilities: {0: "Ice Body", 1: "Water Absorb", H: "Snow Warning", S: "Frozen Sake"},
+		abilities: {0: "Ice Body", 1: "Water Absorb", H: "Snow Warning", S: "Sake Soaker"},
 		heightm: 1.58,
 		weightkg: 55.5,
 		color: "Blue",

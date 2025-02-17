@@ -253,11 +253,13 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 		desc: "This Lion's bullet-based attacks have their power multiplied by 1.5. This Lion is also immune to bullet moves.",
 		shortDesc: "User's bullet-based attacks have 1.5x power. Immune to bullet moves.",
 	},
-	frozensake: {
-		name: "Frozen Sake",
-		desc: "Pokemon attacking this Elf with moves that make contact have a 30% chance to be frozen.",
-		shortDesc: "20% chance a Pokemon making contact with this Elf will be frozen.",
-	},
+	sakesoaker: {
+		name: "Sake Soaker",
+		desc: "While this Elf is poisoned or badly poisoned, the power of her attacks are multiplied by 1.5. This Elf is immune to Water-type moves and restores 1/4 of her maximum HP, rounded down, when hit by a Water-type move. If this Elf is not the target of a single-target Water-type move used by another Pokemon, this Elf redirects that move to herself if she is within the range of that move. If multiple Pokemon could redirect with this Ability, it goes to the one with the highest Speed, or in the case of a tie to the one that has had this Ability active longer.",
+		shortDesc: "Draws water moves to itself & heals 1/4 HP. If poisoned, attacks have 1.5x power.",
+
+		activate: "#lightningrod",
+	}, 
 	supernenechi: {
 		name: "Super Nenechi",
 		desc: "NENEMAX's highest stat is raised by 1 stage if she attacks and knocks out another Pokemon. Stat stage changes are not considered. If multiple stats are tied, Attack, Defense, Special Attack, Special Defense, and Speed are prioritized in that order.",

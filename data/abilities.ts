@@ -1080,19 +1080,46 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3.5,
 		num: 101,
 	},
-	frozensake: { // reskin of [Flame Body]/[Static] but for Freeze instead of Burn/Paralyze
-		onDamagingHit(damage, target, source, move) {
-			if (this.checkMoveMakesContact(move, source, target)) {
-				if (this.randomChance(2, 10)) {
-					source.trySetStatus('frz', target);
+	sakesoaker: {
+		onTryHit(target, source, move) {
+			if (target !== source && move.type === 'Water') {
+				if (!this.heal(target.baseMaxhp / 4, target, target)) {
+					this.add('-immune', target, '[from] ability: Sake Soaker');
 				}
+				return null;
+			}
+		},
+		onAnyRedirectTarget(target, source, source2, move) {
+			if (move.type !== 'Water' || move.flags['pledgecombo']) return;
+			const redirectTarget = ['randomNormal', 'adjacentFoe'].includes(move.target) ? 'normal' : move.target;
+			if (this.validTarget(this.effectState.target, source, redirectTarget)) {
+				if (move.smartTarget) move.smartTarget = false;
+				if (this.effectState.target !== target) {
+					this.add('-activate', this.effectState.target, 'ability: Sake Soaker');
+				}
+				return this.effectState.target;
+			}
+		},
+		onBasePowerPriority: 19,
+		onBasePower(basePower, attacker, defender, move) {
+			if (attacker.status === 'psn' && move.category === 'Special') {
+				return this.chainModify(1.5);
+			}
+			if (attacker.status === 'psn' && move.category === 'Physical') {
+				return this.chainModify(1.5);
+			}
+			if (attacker.status === 'tox' && move.category === 'Special') {
+				return this.chainModify(1.5);
+			}
+			if (attacker.status === 'tox' && move.category === 'Physical') {
+				return this.chainModify(1.5);
 			}
 		},
 		flags: {breakable: 1},
-		name: "Frozen Sake",
-		rating: 4,
-		num: 49,
-	},
+		name: "Sake Soaker",
+		rating: 3,
+		num: 114,
+	}, 
 	supernenechi: { // exact copy of [Beast Boost]
 		onSourceAfterFaint(length, target, source, effect) {
 			if (effect && effect.effectType === 'Move') {
