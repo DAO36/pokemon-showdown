@@ -300,7 +300,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 2,
 		num: 29,
 	},
-	elite: { // reskin of [Thermal Exchange], but for SpA instead of Atk
+	elite: { // reskin of [Justified], but for Fire instead of Dark and SpA +2 instead of Atk +1
 		onDamagingHit(damage, target, source, move) {
 			if (move.type === 'Fire') {
 				this.boost({spa: 2});
@@ -697,42 +697,17 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3.5,
 		num: 276,
 	},
-	doog: { // reskin of [Berserk] but for Atk instead of SpA
-		onDamage(damage, target, source, effect) {
-			if (
-				effect.effectType === "Move" &&
-				!effect.multihit &&
-				(!effect.negateSecondary && !(effect.hasSheerForce && source.hasAbility('sheerforce')))
-			) {
-				this.effectState.checkedBerserk = false;
-			} else {
-				this.effectState.checkedBerserk = true;
-			}
-		},
-		onTryEatItem(item) {
-			const healingItems = [
-				'aguavberry', 'enigmaberry', 'figyberry', 'iapapaberry', 'magoberry', 'sitrusberry', 'wikiberry', 'oranberry', 'berryjuice',
-			];
-			if (healingItems.includes(item.id)) {
-				return this.effectState.checkedBerserk;
-			}
-			return true;
-		},
-		onAfterMoveSecondary(target, source, move) {
-			this.effectState.checkedBerserk = true;
-			if (!source || source === target || !target.hp || !move.totalDamage) return;
-			const lastAttackedBy = target.getLastAttackedBy();
-			if (!lastAttackedBy) return;
-			const damage = move.multihit && !move.smartTarget ? move.totalDamage : lastAttackedBy.damage;
-			if (target.hp <= target.maxhp / 2 && target.hp + damage > target.maxhp / 2) {
-				this.boost({atk: 1}, target, target);
+	doog: { // reskin of [Sap Sipper] but for FIGHT ME instead of KUSA
+		onDamagingHit(damage, target, source, move) {
+			if (move.type === 'Fighting') {
+				this.boost({atk: 1, def: 1});
 			}
 		},
 		flags: {},
 		name: "Doog",
 		rating: 3,
 		num: 201,
-	},
+	}, 
 	mogumogu: { // reskin of [Water Absorb] but for Grass
 		onTryHit(target, source, move) {
 			if (target !== source && move.type === 'Grass') {

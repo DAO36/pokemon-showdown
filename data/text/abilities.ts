@@ -165,8 +165,8 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	doog: {
 		name: "Doog",
-		desc: "When this Doggo has more than 1/2 of her maximum HP and takes damage from an attack bringing her to 1/2 or less of her maximum HP, her Attack is raised by 1 stage. This effect applies after all hits from a multi-hit move. This effect is prevented if the move had a secondary effect removed by the Sheer Force Ability.",
-		shortDesc: "Attack is raised by 1 stage when the user reaches 1/2 or less of max HP.",
+		desc: "This Dog's Attack and Defense are both raised by 1 stage after it is damaged by a Fighting-type move.",
+		shortDesc: "Attack & Defense are raised by 1 stage if user is damaged by a Fighting-type move.",
 	},
 	mogumogu: {
 		name: "Mogu Mogu",
