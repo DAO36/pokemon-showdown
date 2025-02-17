@@ -277,7 +277,7 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	holohawk: {
 		name: "HoloHawk",
 		desc: "If this Hawk is hit by a damaging move, she sets up Tailwind on her side right after being hit.",
-		shortDesc: "If this Hawk is hit by an attack, Tailwind is set up on her side for 4 turns.",
+		shortDesc: "If user is hit by an attack, Tailwind is set up on user's side for 4 turns.",
 	},
 	cleaner: {
 		name: "Cleaner",
@@ -337,7 +337,7 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	erofi: {
 		name: "Erofi",
 		desc: "This Alien is immune to Dark-type moves and has her Attack raised by 1 stage when hit by a Dark-type move.",
-		shortDesc: "Attack is raised by 1 stage if this Alien is hit by a Dark type move; Dark immunity.",
+		shortDesc: "Attack is raised by 1 stage if the user is hit by a Dark type move; Dark immunity.",
 	},
 	nnn: {
 		name: "NNN",
@@ -356,14 +356,14 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	keris: {
 		name: "Keris",
 		desc: "Pokemon using Physical attacks against this Keris loses 1/10 of their maximum HP, rounded down. Immune to slicing-based moves.",
-		shortDesc: "Foes using Physical Attacks on this Keris lose 1/10 HP. Immune to slicing-based moves.",
+		shortDesc: "Foes using Physical Attacks on the user lose 1/10 HP. Immune to slicing-based moves.",
 
 		damage: "#roughskin",
 	},
 	secretagent: {
 		name: "Secret Agent",
 		desc: "This Spy's type changes to match the type of the move she is about to use. This effect comes after all effects that change a move's type.",
-		shortDesc: "This secret agent's type changes to the type of the move it is using.",
+		shortDesc: "User's type changes to the type of the move it is using.",
 	},
 	payung: {
 		name: "Payung",
@@ -400,14 +400,14 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	forbiddenwah: {
 		name: "Forbidden Wah",
 		desc: "Pokemon attacking this Tako with Special moves lose 1/10 of their maximum HP, rounded down.",
-		shortDesc: "Pokemon using Special Attacks on this Tako lose 1/10 of their max HP.",
+		shortDesc: "Pokemon using Special Attacks on the user lose 1/10 of their max HP.",
 
 		damage: "  [POKEMON] is succumbing to The Forbidden Wah!",
 	},
 	phoenix: {
 		name: "Phoenix",
 		desc: "30% chance a Pokemon making contact with this Phoenix will be burned. This Phoenix is immune to Fire-type moves. The first time she is hit by a Fire-type move, her offensive stat is multiplied by 1.5 while using a Fire-type.",
-	    shortDesc: "Contact with this Chicken has a 30% chance to burn. Fire-type immunity.",
+	    shortDesc: "Contact with the user has a 30% chance to burn. Fire-type immunity.",
 
 	    start: "  [POKEMON] the Part-Time Warrior is here!",
 	},
@@ -426,12 +426,12 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	faunasweep: { // [UNUSED]
 		name: "Fauna Sweep",
-		shortDesc: "If Grassy Terrain is active, this Pokemon's Speed is doubled.",
+		shortDesc: "If Grassy Terrain is active, user's Speed is doubled.",
 	},
 	mothernature: {
 		name: "Mother Nature",
 		desc: "This Kirin protects herself and her allies from the lowering of stats from other Pokemon. This Kirin and her ally has their non-volatile status condition cured at the end of each turn.",
-		shortDesc: "Protects party from lowering of stats. Party are cured of status at end of turn.",
+		shortDesc: "Protects party from lowering of stats. Party are cured of status at the end of turn.",
 
 		block: "  [POKEMON] is protected by Mother Nature!",
 	}, 
@@ -443,7 +443,7 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	chaos: {
 		name: "Chaos",
 		desc: "If a Pokemon uses a damaging move on this Rat, and she survives the hit, there is a 50% chance the attacker is then forced to switch to a random ally.",
-		shortDesc: "50% chance those who attack this Rat are forced to switch to a random ally.",
+		shortDesc: "50% chance those who attack the user are forced to switch to a random ally.",
 	},
 	archiver: {
 		name: "Archiver",
@@ -460,7 +460,7 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	underworlddiva: {
 		name: "Underworld Diva",
 		desc: "This Raven is immune to Sound-type moves and has her Attack raised by 1 stage when hit by a Sound-based move.",
-		shortDesc: "Attack is raised by 1 if hit by a Sound move; Sound immunity.",
+		shortDesc: "User's Attack is raised by 1 stage if hit by a Sound move; Sound immunity.",
 	},
 	thefuzzyone: {
 		name: "The Fuzzy One",
@@ -478,7 +478,7 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	flamingvoice: {
 		name: "Flaming Voice",
 		desc: "This Scarlet Queen's sound-based moves become Fire-type moves. This effect comes after other effects that change a move's type, but before Ion Deluge and Electrify's effects.",
-		shortDesc: "Sound-based moves become Fire type.",
+		shortDesc: "User's sound-based moves become Fire type.",
 	},
 	chaser: {
 		name: "Chaser",
@@ -488,11 +488,12 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	durable: {
 		name: "Durable",
 		desc: "On switch-in, this Automotan's Defense or Special Defense is raised by 1 stage based on the weaker combined offensive stat of all opposing Pokemon. Physical Defense is raised ny 1 if their Physical Attack is higher, and Special Defense is raised by 1 if their Special Attack is the same or higher.",
-		shortDesc: "On switch-in, Def or SpDef raises by 1 based on foes' weaker Offensive stat.",
+		shortDesc: "On switch-in, Defense or Sp.Def raises by 1 based on foes' weaker Offensive stat.",
 	},
 	godeyes: {
 		name: "God Eyes",
-		shortDesc: "Every move used by this Big Cat will always hit and never miss.",
+		desc: "Every move used by this Big Cat all have a 100% chance to hit the target, .",
+		shortDesc: "All of the user's moves will always hit and never miss, regardless of its accuracy.",
 	}, 
 	adaptability: {
 		name: "Adaptability",
