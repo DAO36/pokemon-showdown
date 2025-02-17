@@ -862,7 +862,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3,
 		num: 171,
 	},
-	muscleknight: { // combines [Iron Fist] + [Marvel Scale] but for Special Defense instead of regular defense
+	holyknight: { // combines [Iron Fist] + [Marvel Scale] but for Special Defense instead of regular defense
 		onBasePowerPriority: 19,
 		onBasePower(basePower, attacker, defender, move) {
 			if (move.flags['punch']) {
@@ -876,7 +876,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			}
 		},
 		flags: {breakable: 1},
-		name: "Muscle Knight",
+		name: "Holy Knight",
 		rating: 4,
 		num: 89,
 	}, 
