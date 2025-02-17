@@ -97954,7 +97954,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			swordsdance: ["9M"],
 			whirlwind: ["9M"],
 			agility: ["9M"],
-			underworldmusic: ["9M"],
+			devilishdiva: ["9M"],
 			divafork: ["9M"],
         },
 	},	
@@ -98242,7 +98242,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			sparklingaria: ["9M"],
 			automotanassault: ["9M"],
 			windup: ["9M"],
-			energyblade: ["9M"],
+			acousticattack: ["9M"],
         },
 	},	
 	raora: {

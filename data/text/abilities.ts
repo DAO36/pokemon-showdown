@@ -457,8 +457,8 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 
 		start: "  [POKEMON] is rock hard!",
 	}, 
-	devilishdiva: {
-		name: "Devilish Diva",
+	demonofsound: {
+		name: "Demon of Sound",
 		desc: "This Raven is immune to Sound-type moves and has her Attack raised by 1 stage when hit by a Sound-based move.",
 		shortDesc: "User's Attack is raised by 1 stage if hit by a Sound move; Sound immunity.",
 	},

@@ -20597,7 +20597,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		types: ["Flying", "Dark"],
 		gender: "F",
 		baseStats: {hp: 105, atk: 120, def: 90, spa: 115, spd: 105, spe: 65},
-		abilities: {0: "Big Pecks", 1: "Sharpness", H: "Punk Rock", S: "Devilish Diva"},
+		abilities: {0: "Big Pecks", 1: "Sharpness", H: "Punk Rock", S: "Demon of Sound"},
 		heightm: 1.75,
 		weightkg: 55.5,
 		color: "Black",

@@ -513,7 +513,7 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	hologram: {
 		name: "Hologram",
 		desc: "For 5 turns, the Coyote and her party members are protected from status moves from other Pokemon. Lasts for 8 turns if the user is holding Light Clay. Fails if the effect is already active on the user's side.",
-		shortDesc: "5 turns: protects from status moves from other Pokemon",
+		shortDesc: "For 5 turns, protects party from status moves.",
 
 		start: "  [TEAM] summoned a hologram!",
 		end: "  [TEAM] is no longer protected!",
@@ -532,17 +532,17 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	moonstrike: {
 		name: "Moonstrike",
 		desc: "Has a 20% chance to lower the target's Special Attack by 1 stage.",
-		shortDesc: "20% chance to lower target's Sp.Atk by 1.",
+		shortDesc: "20% chance to lower target's Special Attack by 1.",
 	},
 	eclipse: {
 		name: "Eclipse",
 		desc: "Has a 20% chance to lower the target's Attack by 1 stage.",
-		shortDesc: "20% chance to lower target's Atk by 1.",
+		shortDesc: "20% chance to lower target's Attack by 1.",
 	},
 	lunarshield: {
 		name: "Lunar Shield",
 		desc: "The user is protected from most attacks made by other Pokemon during this turn, and Pokemon trying to use special attacks against the user have their Special Attack lowered by 1 stage. Non-damaging moves go through this protection. This move has a 1/X chance of being successful, where X starts at 1 and triples each time this move is successfully used. X resets to 1 if this move fails, if the user's last move used is not Baneful Bunker, Burning Bulwark, Detect, Endure, King's Shield, Max Guard, Obstruct, Protect, Quick Guard, Silk Trap, Spiky Shield, or Wide Guard, or if it was one of those moves and the user's protection was broken. Fails if the user moves last this turn.",
-		shortDesc: "Protects. If foe uses special attack: -1 Sp. Atk.",
+		shortDesc: "Protects. If foe uses special attack: -1 Sp.Atk.",
 	},
 	alienassault: {
 		name: "Alien Assault",
@@ -587,7 +587,7 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	spyshot: {
 		name: "Spy Shot",
 		desc: "Bypasses subs and protection without breaking it. Never Misses. High critical hit ratio.",
-		shortDesc: "Bypasses subs/protect; High crit ratio; Never Misses.",
+		shortDesc: "Bypasses subs/protect; High crit ratio.",
 	},
 	nopressure: {
 		name: "No Pressure",
@@ -600,7 +600,7 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	pickaxe: {
 		name: "Pickaxe",
 		desc: "Has a 30% chance to lower the target's Defense by 1 stage. This move's type effectiveness against Ground and Steel is changed to be super effective no matter what this move's type is.",
-		shortDesc: "2x effective on Ground/Steel. 30% to lower Def by 1.",
+		shortDesc: "2x effective on Ground & Steel. 10% for -1 Def.",
 	},
 	pickiaxe: {
 		name: "PiCKIAxe",
@@ -610,7 +610,7 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	grindstone: {
 		name: "Grindstone",
 		desc: "This Blacksmith restores 1/2 of her maximum HP, rounded half down. If the weather is Sandstorm, the user instead restores 2/3 of its maximum HP, rounded half down.",
-		shortDesc: "User restores 1/2 of her max HP; 2/3 in Sandstorm.",
+		shortDesc: "User restores 1/2 of max HP; 2/3 in Sandstorm.",
 	},
 	goriela: {
 		name: "Goriela",
@@ -637,13 +637,13 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	trident: {
 		name: "Trident",
-		desc: "This move can hit a target using Bounce, Fly, or Dive. If the weather is Primordial Sea or Rain Dance, this move does not check accuracy. If the weather is Desolate Land or Sunny Day, this move's accuracy is 50%. If this move is used against a Pokemon holding Utility Umbrella, this move's accuracy remains at 80%.",
+		desc: "This move can hit a target using Bounce, Fly, or Dive. If the weather is Primordial Sea or Rain Dance, this move does not check accuracy. If the weather is Desolate Land or Sunny Day, this move's accuracy is 50%. If this move is used against a Pokemon holding Utility Umbrella, this move's accuracy remains at 70%.",
 		shortDesc: "Does not miss in Rain.",
 	},
 	sharkattack: {
 		name: "Shark Attack",
-		desc: "Has a 10% chance to lower the target's Defense by 1 stage. This move can hit a target using Dive.I f the weather is Primordial Sea or Rain Dance, this move does not check accuracy. If the weather is Desolate Land or Sunny Day, this move's accuracy is 50%. Power is halved if the weather is Desolate Land, Sunny Day, or Sandstorm and the user is not holding Utility Umbrella.",
-		shortDesc: "10% chance to lower target's Defense by 1.",
+		desc: "If the weather is Primordial Sea or Rain Dance, this move does not check accuracy. If the weather is Sandstorm, Desolate Land or Sunny Day, this move's accuracy is 50% and its base power is halved.",
+		shortDesc: "Does not miss in Rain.", 
 	},
 	atlantisstrike: {
 		name: "Atlantis Strike",
@@ -722,7 +722,7 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	grimrapper: {
 		name: "Grim Rapper",
 		desc: "Has a 30% chance to make the target flinch. Hits adjacent foes.",
-		shortDesc: "30% chance to make foes flinch. Hits adjacent foes.",
+		shortDesc: "30% chance to make target(s) flinch.",
 	},
 	tako: {
 		name: "Tako",
@@ -757,7 +757,7 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	phoenixwind: {
 		name: "Phoenix Wind",
 		desc: "Has a 30% chance to burn the target. Hits adjacent Pokemon.",
-		shortDesc: "30% chance to burn target. Hits adjacent Foes.",
+		shortDesc: "30% chance to burn target(s). Hits adjacent Foes.",
 	},
 	hopesoda: {
 		name: "Hope Soda",
@@ -772,7 +772,7 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	hopeless: {
 		name: "Hopeless",
 		desc: "Lowers the Nephelim's Defense and Special Defense by 1 stage. If this attack is not successful, the Nephelim loses half of her maximum HP, rounded down, as crash damage. Pokemon with the Magic Guard Ability are unaffected by crash damage.",
-		shortDesc: "Lowers Def & SpDef by 1. Loses 50% HP if miss.",
+		shortDesc: "Lowers user's Def & SpD by 1. Loses 50% HP if miss.",
 
 		damage: "#crash",
 	},
@@ -818,8 +818,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	goldenapple: {
 		name: "Golden Apple",
-		desc: "Each Pokemon on this Kirin's side restores 1/2 of their maximum HP, rounded half up, and has their status condition cured. If the terrain is Grassy Terrain, this Kirin and her Ally instead restores 2/3 of their maximum HP, rounded half down.",
-		shortDesc: "User & allies: healed 1/2 max HP, status cured.", 
+		desc: "Each Pokemon on this Kirin's side restores 1/3 of their maximum HP, rounded half up, and has their status condition cured. If the terrain is Grassy Terrain, this Kirin and her Ally instead restores 1/2 of their maximum HP, rounded half down.",
+		shortDesc: "User & allies: heal 1/3 max HP, cures status.", 
 	}, 
 	clockstrikes: {
 		name: "Clock Strikes",
@@ -829,9 +829,9 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	timeflies: {
 		name: "Time Flies",
 		desc: "Almost always goes first. Power is multiplied by 1.5 during Trick Room's effect.",
-		shortDesc: "Trick Room: 1.5x power. Almost always goes first.",
+		shortDesc: "1.5x power in Trick Room. Always goes first.",
 	},
-	timetogo: { // <UNUSED>
+	timetogo: { // <Exclusive to Boros>
 		name: "Time to Go",
 		desc: "If this move is successful and the user has not fainted, the user switches out even if it is trapped and is replaced immediately by a selected party member. The user does not switch out if there are no unfainted party members, or if the target switched out using an Eject Button or through the effect of the Emergency Exit or Wimp Out Abilities. If this move is successful, the effect of Trick Room begins.",
 		shortDesc: "Switches after damaging target. Starts Trick Room.",
@@ -841,12 +841,12 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	sandsoftime: {
 		name: "Sands of Time",
 		desc: "Has a 30% chance to lower the target's Speed by 1 stage. Hits adjacent Pokemon.",
-		shortDesc: "30% to lower foe's Speed by 1. Hits adjacent Foes.",
+		shortDesc: "30% chance to lower target's Speed by 1.",
 	},
 	blastfromthepast: {
 		name: "Blast from the Past",
-		desc: "This always hits the target and bypasses substitute. Deals damage two turns after this move is used. At the end of that turn, the damage is calculated at that time and dealt to the Pokemon at the position the target had when the move was used. If the Warden of Time is no longer active at the time, damage is calculated based on the user's natural Special Attack stat, types, and level, with no boosts from its held item or Ability. Fails if this move, Teleport, or Doom Desire is already in effect for the target's position.",
-		shortDesc: "Hits 2 turns after being used. Never misses.",
+		desc: "This move bypasses protection and substitute. Deals damage two turns after this move is used. At the end of that turn, the damage is calculated at that time and dealt to the Pokemon at the position the target had when the move was used. If the Warden of Time is no longer active at the time, damage is calculated based on the user's natural Attack stat, types, and level, with no boosts from its held item or Ability. Fails if this move, Teleport, or Doom Desire is already in effect for the target's position.",
+		shortDesc: "Hits 2 turns after being used.",
 
 		start: "  [POKEMON] is time traveling!",
 		activate: "  [TARGET] is being attacked from past times!",
@@ -886,7 +886,7 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	forbiddenknowledge: {
 		name: "Forbidden Knowledge",
 		desc: "Has a 25% chance to paralyze the target. This attack never misses.",
-		shortDesc: "25% chance to paralyze the foe. Never misses.",
+		shortDesc: "25% chance to paralyze target. Never misses.",
 	},
 	bejeweled: {
 		name: "Bejeweled",
@@ -901,10 +901,10 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	haboob: {
 		name: "Haboob",
 		desc: "Has a 30% chance to lower target's Accuracy by 1 stage. If the weather is Sandstorm, this move does not check accuracy. If the weather is Primordial Sea, Rain Dance, Desolate Land, or Sunny Day, this move's accuracy is 50%. If this move is used against a Pokemon holding Utility Umbrella, this move's accuracy remains at 70%. This move can hit a target using Bounce, Fly, or Dig.",
-		shortDesc: "30% to lower Acc by 1. Can't miss in Sandstorm.",
+		shortDesc: "30% to lower Accuracy by 1. Sandstorm: always hit.",
 	},
-	underworldmusic: {
-		name: "Underworld Music",
+	devilishdiva: {
+		name: "Devilish Diva",
 		desc: "Has a 30% chance to make the target flinch. Hits adjacent foes.",
 		shortDesc: "30% to flinch target. Hits adjacent foes.",
 	},
@@ -920,12 +920,12 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	baubau: {
 		name: "Bau Bau",
 		desc: "If the user is Mococo, this move is Dark type. If the user is Fuwawa, this move is Fairy type. This move becomes a special attack if the user's Special Attack is greater than its Attack, including stat stage changes. This move cannot be used successfully unless the user's current form, while considering Transform, is Fuwawa or Mococo.",
-		shortDesc: "Mococo: Dark; Fuwawa: Fairy. Special if Sp.Atk > Atk.",
+		shortDesc: "Mococo: Dark; Fuwawa: Fairy. Special if SpA > Atk.",
 	}, 
 	songofjustice: {
 		name: "Song of Justice",
 		desc: "Has a 10% chance to raise the user's Special Defense by 1 stage. Hits adjacent foes.",
-		shortDesc: "10% to raise Sp.Def by 1. Hits adjacent foes.",
+		shortDesc: "10% to raise user's Special Defense by 1.",
 	},
 	swordofjustice: {
 		name: "Sword of Justice",
@@ -937,17 +937,17 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		desc: "Hits twice. If the first hit breaks the target's substitute, it will take damage for the second hit. If this move is successful, it breaks through the target's Baneful Bunker, Detect, King's Shield, Protect, or Spiky Shield for this turn, allowing other Pokemon to attack the target normally. If the target's side is protected by Crafty Shield, Mat Block, Quick Guard, or Wide Guard, that protection is also broken for this turn and other Pokemon may attack the target's side normally.",
 		shortDesc: "Breaks protection. Hits twice in one turn.",
 
-		activate: "  [POKEMON] shattered [TEAM]'s protections!",
+		activate: "  [POKEMON] fisted [TEAM]'s protections!",
 	},  
 	automotanassault: {
 		name: "Automotan Assault",
-		desc: "Has a higher chance for a critical hit.",
-		shortDesc: "High critical hit ratio.",
+		desc: "Has a 100% chance to paralyze the target if it used a sound-based move.",
+		shortDesc: "100% to paralyze target that used a sound move.",
 	},
-	energyblade: {
-		name: "Energy Blade",
-		desc: "Has a 10% chance to paralyze the target. Has a high critical hit ratio.",
-		shortDesc: "10% chance to paralyze target. High crit ratio.",
+	acousticattack: {
+		name: "Acoustic Attack",
+		desc: "Has a 10% chance to paralyze the target.",
+		shortDesc: "10% chance to paralyze target.",
 	},
 	windup: {
 		name: "Wind Up",

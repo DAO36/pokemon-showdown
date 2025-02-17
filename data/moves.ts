@@ -2229,8 +2229,9 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		name: "Tonjok",
 		pp: 10,
 		priority: 0,
-		flags: {contact: 1, protect: 1, mirror: 1, punch: 1},
+		flags: {contact: 1, protect: 1, mirror: 1, punch: 1, noparentalbond: 1},
 		multihit: 2,
+		smartTarget: true,
 		secondary: null,
 		target: "normal",
 		type: "Flying",
@@ -2327,7 +2328,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 			if (type === 'Ground' || type === 'Steel') return 1;
 		},  
 		secondary: {
-			chance: 30,
+			chance: 10,
 			boosts: {
 				def: -1,
 			},
@@ -2913,7 +2914,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	tentaclesstrike: { // bullet seed but squib
 		num: 370,
 		accuracy: 80,
-		basePower: 20,
+		basePower: 15,
 		category: "Physical",
 		name: "Tentacles Strike",
 		pp: 20,
@@ -3264,9 +3265,9 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		onHit(target, source) {
 			let success = false;
 			if (this.field.isTerrain('grassyterrain')) {
-				success = !!this.heal(this.modify(target.baseMaxhp, 0.65));
+				success = !!this.heal(this.modify(target.baseMaxhp, 0.5));
 			} else {
-				success = !!this.heal(Math.ceil(target.baseMaxhp * 0.5));
+				success = !!this.heal(Math.ceil(target.baseMaxhp * 0.3));
 			}
 			return success;
 		},
@@ -3675,12 +3676,12 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Rock",
 		contestType: "Tough",
 	},
-	underworldmusic: {
+	devilishdiva: {
 		num: 370,
-		accuracy: 90,
-		basePower: 90,
+		accuracy: 95,
+		basePower: 95,
 		category: "Special",
-		name: "Underworld Music",
+		name: "Devilish Diva",
 		pp: 10,
 		priority: 0,
 		flags: {protect: 1, mirror: 1, sound: 1, bypasssub: 1},
@@ -3807,31 +3808,36 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		target: "normal",
 		type: "Dark",
 	},
-	automotanassault: {
+	automotanassault: { 
 		num: 895,
 		accuracy: 100,
-		basePower: 70,
+		basePower: 80,
 		category: "Physical",
 		name: "Automotan Assault",
-		pp: 15,
+		pp: 10,
 		priority: 0,
-		flags: {protect: 1, mirror: 1, contact: 1, slicing: 1},
-		critRatio: 2,
-		secondary: null,
+		flags: {protect: 1, mirror: 1, contact: 1, slicing: 1}, 
+		secondary: {
+			chance: 100,
+			onHit(target, source, move) {
+				if (target?.lastMoveUsed?.flags['sound']) {
+					target.trySetStatus('par', source, move);
+				}
+			},
+		},
 		target: "normal",
 		type: "Steel",
 		contestType: "Cool",
 	},
-	energyblade: {
+	acousticattack: {
 		num: 348,
 		accuracy: 100,
-		basePower: 70,
+		basePower: 80,
 		category: "Physical",
-		name: "Energy Blade",
-		pp: 15,
+		name: "Acoustic Attack",
+		pp: 10,
 		priority: 0,
-		flags: {contact: 1, protect: 1, mirror: 1, slicing: 1},
-		critRatio: 2,
+		flags: {bypasssub: 1, protect: 1, mirror: 1, sound: 1},
 		secondary: {
 			chance: 10,
 			status: 'par',
