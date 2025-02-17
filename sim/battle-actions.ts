@@ -777,7 +777,7 @@ export class BattleActions {
 					if (move.id === 'feint') {
 						this.battle.add('-activate', target, 'move: Feint');
 					} else {
-						this.battle.add('-activate', target, 'move: ' + move.name, '[broken]');
+						this.battle.add('-activate', pokemon, 'move: ' + move.name, '[broken]');
 					}
 					if (this.battle.gen >= 6) delete target.volatiles['stall'];
 				}
