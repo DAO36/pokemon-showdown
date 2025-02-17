@@ -696,11 +696,11 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		smartTarget: true,
 		secondaries: [
 			{
-				chance: 20,
+				chance: 10,
 				status: 'brn',
 			}, {
-				chance: 20,
-				volatileStatus: 'flinch',
+				chance: 10,
+				volatileStatus: 'confusion',
 			},
 		],
 		target: "normal",
@@ -718,7 +718,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		thawsTarget: true,
 		critRatio: 2,
 		secondary: {
-			chance: 20,
+			chance: 10,
 			status: 'brn',
 		},
 		target: "normal",
@@ -737,10 +737,8 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		thawsTarget: true,
 		critRatio: 2,
 		secondary: {
-			chance: 20,
-			boosts: {
-				atk: -1,
-			},
+			chance: 10,
+			volatileStatus: 'confusion',
 		},
 		target: "normal",
 		type: "Dark",
@@ -1582,7 +1580,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		flags: {contact: 1, protect: 1, mirror: 1, gravity: 1, nonsky: 1},
 		overrideOffensiveStat: 'def',
 		secondary: {
-			chance: 30,
+			chance: 10,
 			status: 'par',
 		},
 		target: "normal",
@@ -1719,7 +1717,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	wamywater: {
 		num: 370,
 		accuracy: 100,
-		basePower: 60, 
+		basePower: 50, 
 		category: "Special",
 		name: "Wamy Water",
 		pp: 10,
@@ -1728,7 +1726,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		basePowerCallback(source, target, move) {
 			if (this.field.isWeather('snow')) {
 				if (!source.isAlly(target)) this.hint(`${move.name}'s BP doubled on target.`);
-				return move.basePower * 1.5;
+				return move.basePower * 2;
 			}
 			return move.basePower;
 		},
@@ -1750,13 +1748,17 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		priority: 0,
 		flags: {snatch: 1},
 		onHit(target) {
-			if (target.hp <= target.maxhp / 2 || target.boosts.spa >= 6 || target.maxhp === 1) { // Shedinja clause
+			if (target.hp <= target.maxhp / 2 || target.boosts.spa >= 6 || target.boosts.atk >= 6 || target.maxhp === 1) { // The Shedninja clause
 				return false;
 			}
 			this.directDamage(target.maxhp / 2);
-			this.boost({spa: 12}, target);
+			this.boost({atk: 12, spa: 12}, target);
 		},
 		secondary: null,
+		self: { 
+			chance: 100,
+		    status: 'tox', 
+		},
 		target: "self",
 		type: "Poison",
 		contestType: "Cute",
@@ -1896,7 +1898,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	samuraistrikes: { // better bullet seed but this time it is fighting type
 		num: 370,
 		accuracy: 80,
-		basePower: 20,
+		basePower: 15,
 		category: "Physical",
 		name: "Samurai Strikes",
 		pp: 20,

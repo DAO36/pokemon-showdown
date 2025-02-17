@@ -2028,22 +2028,22 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3.5,
 		num: 218,
 	}, 
-	underworlddiva: { // if hit by Sound type move, boosts Atk by 1; Sound type immunity
+	devilishdiva: { // if hit by Sound type move, boosts Atk by 1; Sound type immunity
 		onTryHit(target, source, move) {
 			if (target !== source && move.flags['sound']) {
 				if (!this.boost({atk: 1})) {
-					this.add('-immune', target, '[from] ability: Underworld Diva');
+					this.add('-immune', target, '[from] ability: Devilish Diva');
 				}
 				return null;
 			}
 		},
 		onAllyTryHitSide(target, source, move) {
 			if (move.flags['sound']) {
-				this.add('-immune', this.effectState.target, '[from] ability: Underworld Diva');
+				this.add('-immune', this.effectState.target, '[from] ability: Devilish Diva');
 			}
 		},
 		flags: {breakable: 1},
-		name: "Underworld Diva",
+		name: "Devilish Diva",
 		rating: 2.5,
 		num: 43,
 	},
