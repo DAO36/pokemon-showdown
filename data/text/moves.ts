@@ -525,6 +525,11 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		desc: "Hits ten times. This move checks accuracy for each hit, and the attack ends if the target avoids a hit. If one of the hits breaks the target's substitute, it will take damage for the remaining hits. If the user has the Skill Link Ability, this move will always hit ten time.",
 		shortDesc: "Hits 10 times. Each hit can miss.",
 	},
+	pokobee: {
+		name: "Pokobee",
+		desc: "Has a higher chance for a critical hit.",
+		shortDesc: "High critical hit ratio.",
+	},
 	koyolabo: {
 		name: "Koyo Labo",
 		desc: "Raises this Coyote's Attack by 2 stages.",

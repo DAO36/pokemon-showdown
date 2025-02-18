@@ -95653,6 +95653,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			allyswitch: ["9M"],
 			calmmind: ["9M"],
 			samuraistrikes: ["9M"],
+			pokobee: ["9M"],
         },
 	},	
 	koyori: {
