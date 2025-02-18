@@ -520,17 +520,23 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 				return this.chainModify(1.5);
 			}
 		},
-		onTryHit(pokemon, target, move) {
+		onFoeTryMove(pokemon, target, move) {
+			const dancingsirenHolder = this.effectState.target;
 			if (move.flags['dance']) {
-				this.add('-immune', pokemon, '[from] ability: Dancing Siren');
-				return null;
+				this.attrLastMove('[still]');
+				this.add('cant', dancingsirenHolder, 'ability: Dancing Siren', move, '[of] ' + target);
+				return false;
 			}
+			if (move.flags['dance']) {
+				this.add('cant', dancingsirenHolder, 'ability: Dancing Siren', move, '[of] ' + pokemon);
+				return false;
+			} 
 		},
 		flags: {breakable: 1},
 		name: "Dancing Siren",
 		rating: 3,
 		num: 178,
-	}, 
+	},
 	apex: { // reskin of [Berserk] but boosts Physical Attack as well
 		onDamage(damage, target, source, effect) {
 			if (
