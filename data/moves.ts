@@ -1614,7 +1614,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Fairy",
 		contestType: "Tough",
 	},
-	candycrash: { // bullet seed but fairy
+	candycrash: { // LUNA 1
 		num: 370,
 		accuracy: 100,
 		basePower: 30,
@@ -1622,7 +1622,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		name: "Candy Crash",
 		pp: 20,
 		priority: 0,
-		flags: {protect: 1, mirror: 1, bullet: 1},
+		flags: {protect: 1, mirror: 1},
 		multihit: [2, 5],
 		secondary: {
 			chance: 10,
@@ -1636,7 +1636,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Fairy",
 		contestType: "Cute",
 	},
-	sweetassault: {
+	sweetassault: { // LUNA 2
 		num: 370,
 		accuracy: 100,
 		basePower: 90,
@@ -1651,15 +1651,15 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Fairy",
 		contestType: "Cute",
 	},
-	daredevil: { // made with Contray in mind
+	bibiblast: { // TOWA 1
 		num: 370,
 		accuracy: 90,
 		basePower: 110,
 		category: "Physical",
-		name: "Daredevil",
+		name: "Bibi Blast",
 		pp: 5,
 		priority: 0,
-		flags: {bullet: 1, protect: 1, mirror: 1, pulse: 1},
+		flags: {bullet: 1, protect: 1, mirror: 1},
 		self: {
 			boosts: {
 				atk: -1,
@@ -1671,7 +1671,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Dark",
 		contestType: "Tough",
 	},
-	clowntown: {
+	circusshow: { // POLKA 1
 		num: 813,
 		accuracy: 90,
 		basePower: 20,
@@ -1679,7 +1679,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 			return 20 * move.hit;
 		},
 		category: "Physical",
-		name: "Clown Town",
+		name: "Circus Show",
 		pp: 10,
 		priority: 0,
 		flags: {contact: 1, protect: 1, mirror: 1, dance: 1},
@@ -1693,7 +1693,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Normal",
 		contestType: "Cute",
 	},
-	polmao: { // pivot move
+	polmao: { // POLKA 2
 		num: 370,
 		accuracy: 100,
 		basePower: 60,

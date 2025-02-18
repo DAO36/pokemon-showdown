@@ -436,13 +436,13 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		desc: "This baby recovers 1/2 the HP lost by the target, rounded half up.",
 		shortDesc: "User recovers 50% of the damage dealt.",
 	},
-	daredevil: {
-		name: "Daredevil",
+	bibiblast: {
+		name: "Bibi Blast",
 		desc: "Lowers this Devil's Attack by 1 stage, while it increases her Speed by 1 stage.",
 		shortDesc: "Lowers user's Atk by 1; Raises user's Speed by 1.",
 	},
-	clowntown: {
-		name: "Clown Town",
+	circusshow: {
+		name: "Circus Show",
 		desc: "Has a 10% chance to confuse the target. Hits three times. Power increases to 40 for the second hit and 60 for the third. This move checks accuracy for each hit, and the attack ends if the target avoids a hit. If one of the hits breaks the target's substitute, it will take damage for the remaining hits. If the user has the Skill Link Ability, this move will always hit three times.",
 		shortDesc: "10% to confuse. Hits x3 each can miss, but power rises.",
 	},

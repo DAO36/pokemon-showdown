@@ -95361,7 +95361,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			calmmind: ["9M"],
 			trick: ["9M"],
 			healblock: ["9M"],
-			daredevil: ["9M"],
+			bibiblast: ["9M"],
         },
 	},	
 	polka: {
@@ -95411,7 +95411,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			honeclaws: ["9M"],
 			nastyplot: ["9M"],
 			topsyturvy: ["9M"],
-			clowntown: ["9M"],
+			circusshow: ["9M"],
 			polmao: ["9M"],
         },
 	},	
