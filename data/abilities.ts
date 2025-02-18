@@ -2169,12 +2169,12 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	},
 	mammamia: { // combines [Cude Chew] with [Harvest]
 		onEatItem(item, pokemon) {
-			if (item.isBerry && pokemon.addVolatile('cudchew')) {
-				pokemon.volatiles['cudchew'].berry = item;
+			if (item.isBerry && pokemon.addVolatile('mammamia')) {
+				pokemon.volatiles['mammamia'].berry = item;
 			}
 		},
 		onEnd(pokemon) {
-			delete pokemon.volatiles['cudchew'];
+			delete pokemon.volatiles['mammamia'];
 		},
 		condition: {
 			noCopy: true,
