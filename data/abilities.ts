@@ -52,8 +52,6 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			if (!moveSlot) return;
 			moveSlot.pp += 10;
 			if (moveSlot.pp > moveSlot.maxpp) moveSlot.pp = moveSlot.maxpp;
-			this.add('-activate', pokemon, 'ability: Test Subject');
-			this.heal(pokemon.baseMaxhp / 2);
 		},
 		onCriticalHit: false,
 		flags: {},
