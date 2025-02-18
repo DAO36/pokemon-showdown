@@ -45,14 +45,8 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		onResidualSubOrder: 4,
 		onResidual(pokemon) {
 			this.heal(pokemon.baseMaxhp / 2);
-		},
-		onUpdate(pokemon) {
-			if (!pokemon.hp) return;
-			if (pokemon.moveSlots.some(move => move.pp === 0)) {
-				pokemon.eatItem();
-			}
-		},
-		onAfterHit(source, pokemon, move) {  
+		}, 
+		onSourceResidual(source, pokemon, move) {  
 			const moveSlot = pokemon.moveSlots.find(move => move.pp === 0) ||
 				pokemon.moveSlots.find(move => move.pp < move.maxpp);
 			if (!moveSlot) return;
