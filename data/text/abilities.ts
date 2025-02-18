@@ -123,11 +123,11 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 		desc: "All moves that directly attack another Pokemon will heal this Vampire 25% of the damage dealt to the opponent.",
 		shortDesc: "Using moves that deal direct damage heals user 25% of the damage dealt.",
 	},
-	sirendance: {
-		name: "Siren Dance",
-		desc: "On switch-in, this Siren summons Wonder Room for 5 turns.",
-		shortDesc: "On switch-in, user summons Wonder Room.",
-	},
+	dancingsiren: {
+		name: "Dancing Siren",
+		desc: "This Elf's dancing-based attacks have their power multiplied by 1.5x. Immune to other's dance moves",
+		shortDesc: "User's dancing-based attacks have 1.5x power. Immune to dance moves.",
+		},
 	apex: {
 		name: "Apex",
 		desc: "When this Maid has more than 1/2 of her maximum HP and takes damage from an attack bringing her to 1/2 or less of her maximum HP, her Attack and Special Attack are both raised by 1 stage each. This effect applies after all hits from a multi-hit move. This effect is prevented if the move had a secondary effect removed by the Sheer Force Ability.",
@@ -243,10 +243,15 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 		desc: "This Devil's moves ignore substitutes and the opposing side's Reflect, Light Screen, Safeguard, Mist, and Aurora Veil. This Devil's moves also ignore the target's protection, except Max Guard.",
 		shortDesc: "User's moves ignore target's protection, substitutes and screens.",
 	},
-	legendofpolka: {
-		name: "Legend of Polka",
+	legendofpolka2: {
+		name: "Legend of Polka2",
 		desc: "This Fennec's moves of 60 power or less have their power multiplied by 1.5, including Struggle. This effect comes after a move's effect changes its own power; Multi-hit attacks always hit the maximum number of times. Triple Kick and Triple Axel do not check accuracy for the second and third hits.",
 		shortDesc: "Moves of 60 BP or less are 1.5x power; multi-hit moves hit the max number of times.",
+	},
+	legendofpolka: {
+		name: "Legend of Polka",
+		desc: "On switch-in, this Clown summons Wonder Room for 5 turns.",
+		shortDesc: "On switch-in, user summons Wonder Room.",
 	},
 	botanx: {
 		name: "Botan X",

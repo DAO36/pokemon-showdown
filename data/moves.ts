@@ -1708,7 +1708,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Normal",
 		contestType: "Cute",
 	},
-	ssrb: { // fighting bullet seed on crack
+	ssrb: { // BOTAN 1
 		num: 370,
 		accuracy: 80,
 		basePower: 15,

@@ -513,16 +513,24 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3.5,
 		num: 11,
 	},
-	sirendance: { // sets up Magic Room on switch-in 
-		onStart(pokemon) {
-			this.add('-activate', pokemon, 'ability: Siren Dance');
-			this.field.addPseudoWeather('wonderroom', pokemon);
+	dancingsiren: { // reskin of [Strong Jaw] but for JUST DANCE
+		onBasePowerPriority: 19,
+		onBasePower(basePower, attacker, defender, move) {
+			if (move.flags['dance']) {
+				return this.chainModify(1.5);
+			}
 		},
-		flags: {},
-		name: "Siren Dance",
-		rating: 2,
-		num: 28,
-	},
+		onTryHit(pokemon, target, move) {
+			if (move.flags['dance']) {
+				this.add('-immune', pokemon, '[from] ability: Dancing Siren');
+				return null;
+			}
+		},
+		flags: {breakable: 1},
+		name: "Dancing Siren",
+		rating: 3,
+		num: 178,
+	}, 
 	apex: { // reskin of [Berserk] but boosts Physical Attack as well
 		onDamage(damage, target, source, effect) {
 			if (
@@ -1036,13 +1044,23 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3,
 		num: 14,
 	},
-	legendofpolka: { // combines [Skill Link] + [Techncician]
+	legendofpolka: { // sets up Wonder Room on switch-in 
+		onStart(pokemon) {
+			this.add('-activate', pokemon, 'ability: Legend of Polka');
+			this.field.addPseudoWeather('wonderroom', pokemon);
+		},
+		flags: {},
+		name: "Legend of Polka",
+		rating: 2,
+		num: 28,
+	},
+	legendofpolka2: { // <<<UNUSED>>> combines [Skill Link] + [Techncician]
 		onBasePowerPriority: 30,
 		onBasePower(basePower, attacker, defender, move) {
 			const basePowerAfterMultiplier = this.modify(basePower, this.event.modifier);
 			this.debug('Base Power: ' + basePowerAfterMultiplier);
 			if (basePowerAfterMultiplier <= 60) {
-				this.debug('Legend of Polka boost');
+				this.debug('Legend of Polka2 boost');
 				return this.chainModify(1.5);
 			}
 		},
@@ -1055,7 +1073,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			}
 		},
 		flags: {breakable: 1},
-		name: "Legend of Polka",
+		name: "Legend of Polka2",
 		rating: 3.5,
 		num: 101,
 	},
