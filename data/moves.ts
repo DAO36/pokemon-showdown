@@ -3566,7 +3566,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		name: "Chaos Strike",
 		pp: 15,
 		priority: 0,
-		flags: {protect: 1, mirror: 1, bite: 1, contact: 1},
+		flags: {protect: 1, mirror: 1, contact: 1},
 		onModifyMove(move, pokemon, target) {
 			const rand = this.random(10);
 			if (rand < 1) {
