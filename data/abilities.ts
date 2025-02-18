@@ -42,17 +42,15 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	},
 	testsubject: { // Testing testiong 1 2 3 TESTING
 		onResidualOrder: 5,
-		onResidualSubOrder: 4,
-		onResidual(pokemon) {
-			this.heal(pokemon.baseMaxhp / 2);
-		}, 
-		onSourceResidual(source, pokemon, move) {  
+		onResidualSubOrder: 4, 
+		onResidual(source, pokemon, move) {  
 			const moveSlot = pokemon.moveSlots.find(move => move.pp === 0) ||
 				pokemon.moveSlots.find(move => move.pp < move.maxpp);
 			if (!moveSlot) return;
 			moveSlot.pp += 10;
 			if (moveSlot.pp > moveSlot.maxpp) moveSlot.pp = moveSlot.maxpp;
 			this.add('-activate', pokemon, 'ability: Test Subject');
+			this.heal(pokemon.baseMaxhp / 2);
 		},
 		onCriticalHit: false,
 		flags: {},
