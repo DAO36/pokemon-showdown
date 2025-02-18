@@ -1615,7 +1615,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 2,
 		num: 85,
 	}, 
-	payung: { // a reskin of [Cloud Nine] but better in every way
+	rainshaman: { // a reskin of [Cloud Nine] but better in every way
 		onPreStart(pokemon) {
 			this.field.clearWeather();
 			this.field.clearTerrain();
@@ -1633,34 +1633,40 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
                 }
             }  	
 		}, 
+		onBasePowerPriority: 19,
+		onBasePower(basePower, attacker, defender, move) {
+			if (move.flags['wind']) {
+				return this.chainModify(1.3);
+			}
+		},
 		onImmunity(type, pokemon) {
 			if (type === 'sandstorm' || type === 'hail') return false;
 		},
 		onTryHit(target, source, move) {
 			if (target !== source && move.flags['wind']) {
 				if (!this.heal(target.baseMaxhp / 4, target, target)) {
-					this.add('-immune', target, '[from] ability: Payung');
+					this.add('-immune', target, '[from] ability: Rain Shaman');
 				}
 				return null;
 			}
 			if (target !== source && move.type === 'Water') {
 				if (!this.boost({spd: 1})) {
-					this.add('-immune', target, '[from] ability: Payung');
+					this.add('-immune', target, '[from] ability: Rain Shaman');
 				}
 				return null;
 			}
 		},  
 		onFoeTryMove(pokemon, target, move) {
-			const payungHolder = this.effectState.target;
+			const rainshamanHolder = this.effectState.target;
 			if (move.id === 'chillyreception' || move.id === 'raindance' || move.id === 'sunnyday' || move.id === 'sandstorm' || move.id === 'snowscape' || move.id === 'hail' || move.id === 'tailwind' || move.id === 'mistyterrain' || move.id === 'grassyterrain' || move.id === 'psychicterrain' || move.id === 'electricterrain') {
 				this.attrLastMove('[still]');
-				this.add('cant', payungHolder, 'ability: Payung', move, '[of] ' + pokemon);
+				this.add('cant', rainshamanHolder, 'ability: Rain Shaman', move, '[of] ' + pokemon);
 				return false;
 			}
 		},
 		onUpdate(pokemon) { 
-			if (this.field.clearWeather()) this.add('-activate', pokemon, 'ability: Payung');
-			if (this.field.clearTerrain()) this.add('-activate', pokemon, 'ability: Payung');
+			if (this.field.clearWeather()) this.add('-activate', pokemon, 'ability: Rain Shaman');
+			if (this.field.clearTerrain()) this.add('-activate', pokemon, 'ability: Rain Shaman');
 			let activated = false;
             for (const sideCondition of ['tailwind']) {
                 for (const side of [...pokemon.side.foeSidesWithConditions()]) {
@@ -1668,13 +1674,13 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
                         if (!activated) { 
                             activated = true;
                         }
-                        side.removeSideCondition(sideCondition), this.add('-activate', pokemon, 'ability: Payung');
+                        side.removeSideCondition(sideCondition), this.add('-activate', pokemon, 'ability: Rain Shaman');
                     }
                 }
             }  	
 		}, 	
 		flags: {},
-		name: "Payung",
+		name: "Rain Shaman",
 		rating: 4,
 		num: 191,
 	}, 

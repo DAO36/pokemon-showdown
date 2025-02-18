@@ -627,8 +627,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		desc: "Lowers the Blacksmith's Defense and Special Defense both by 1 stage.",
 		shortDesc: "Lowers the user's Defense and Sp. Def by 1.",
 	},
-	rainshaman: {
-		name: "Rain Shaman",
+	payung: {
+		name: "Payung",
 		desc: "For 5 turns, the weather becomes Rain. This Rain Shaman switches out even if she is trapped and is replaced immediately by a selected party member. The user does not switch out if there are no unfainted party members.",
 		shortDesc: "Starts Rain. User switches out.",
 
@@ -640,7 +640,7 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		desc: "Has a 10% chance to lower target's Speed by 1 stage. If the weather is Primordial Sea or Rain Dance, this move does not check accuracy. If the weather is Desolate Land or Sunny Day, this move's accuracy is 50%. If this move is used against a Pokemon holding Utility Umbrella, this move's accuracy remains at 70%. This move can hit a target using Dive.",
 		shortDesc: "10% to lower foe's Speed by 1. Rain: can't miss.",
 	},
-	waterhealing: {
+	waterhealing: { // [UNUSED]
 		name: "Water Healing",
 		desc: "The Rain Shaman restores 1/2 of her maximum HP if Delta Stream or no weather conditions are in effect or if the user is holding Utility Umbrella, 2/3 of its maximum HP if the weather is Primordial Sea or Rain Dance and 1/4 of its maximum HP if the weather is Desolate Land, Sunny Day, Sandstorm, or Snow, all rounded half down.",
 		shortDesc: "Heals the user by a weather-dependent amount.",	

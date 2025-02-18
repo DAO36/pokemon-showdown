@@ -2448,12 +2448,12 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Steel",
 		contestType: "Cool",
 	}, 
-	rainshaman: { // chilly reception but is for rain
+	payung: { // chilly reception but is for rain
 		num: 370,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
-		name: "Rain Shaman",
+		name: "Payung",
 		pp: 10,
 		priority: 0,
 		flags: {switches: 1},
@@ -2496,7 +2496,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Water",
 		contestType: "Tough",
 	},
-	waterhealing: {
+	waterhealing: { // <<<UNUSED>>>
 		num: 235,
 		accuracy: true,
 		basePower: 0,

@@ -96483,9 +96483,9 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			taunt: ["9M"],
 			babydolleyes: ["9M"],
 			charm: ["9M"],
-			rainshaman: ["9M"],
-			tsunami: ["9M"],
-			waterhealing: ["9M"],
+			slackoff: ["9M"],
+			payung: ["9M"],
+			tsunami: ["9M"], 
         },
 	},	
 	gura: {
