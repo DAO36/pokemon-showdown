@@ -1306,7 +1306,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	imhorny: {
 		num: 69,
 		accuracy: 90,
-		basePower: 100,
+		basePower: 90,
 		category: "Special",
 		name: "I'm Horny",
 		pp: 10,
@@ -1763,41 +1763,84 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Poison",
 		contestType: "Cute",
 	},
-	nenemax: { // giga-ton hammer but fairy
+	beetleblast: { // double-e-edge but insect type
 		num: 370,
-		accuracy: 80,
-		basePower: 150,
+		accuracy: 100,
+		basePower: 130,
 		category: "Physical",
-		name: "NeneMAX",
+		name: "Beetle Blast",
 		pp: 5,
 		priority: 0,
-		flags: {protect: 1, mirror: 1, contact: 1, cantusetwice: 1},
+		flags: {protect: 1, mirror: 1, contact: 1},
 		self: {
 			boosts: {
-				spe: -1,
+				def: -1,
+				spd: -1,
 			},
 		},
 		secondary: null,
 		target: "normal",
-		type: "Fairy",
+		type: "Bug",
+		contestType: "Cute",
 	},
-	husbandhelp: {
-		num: 14,
-		accuracy: true,
-		basePower: 0,
-		category: "Status",
-		name: "Husband Help",
-		pp: 20,
+	nenemax: {
+		num: 585,
+		accuracy: 70,
+		basePower: 120,
+		category: "Special",
+		name: "Nene MAX",
+		pp: 5,
 		priority: 0,
-		flags: {snatch: 1},
-		boosts: {
-			atk: 2,
+		flags: {protect: 1, mirror: 1, pulse: 1},
+		onModifyMove(move, pokemon, target) {
+			if (this.field.isTerrain('grassyterrain') && pokemon.isGrounded()) { 
+				move.accuracy = true; 
+			}
+		},
+		self: {
+			boosts: {
+				spa: -1,
+			},
+		},
+		target: "normal",
+		type: "Fairy",
+		contestType: "Cute",
+	},
+	nekkostrike: {
+		num: 738,
+		accuracy: 60,
+		basePower: 100,
+		category: "Physical",
+		name: "Nekko Strike",
+		pp: 10,
+		priority: 0,
+		flags: {protect: 1, reflectable: 1, mirror: 1},
+		onHit(target, source) {
+			if (target.hasType('Grass')) return null;
+			target.addVolatile('leechseed', source);
 		},
 		secondary: null,
-		target: "self",
-		type: "Fairy",
-		contestType: "Beautiful",
+		target: "normal",
+		type: "Grass",
+		contestType: "Cute",
 	},
+	husbandhorde: {
+		num: 583,
+		accuracy: 100,
+		basePower: 100,
+		category: "Physical",
+		name: "Husband Horde",
+		pp: 10,
+		priority: 0,
+		flags: {protect: 1, mirror: 1},
+		secondary: {
+			chance: 20,
+			volatileStatus: 'confusion',
+		},
+		target: "normal",
+		type: "Fairy",
+		contestType: "Cute",
+	}, 
 	succubussong: { // made with Contray in mind
 		num: 370,
 		accuracy: 90,

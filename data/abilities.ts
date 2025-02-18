@@ -715,6 +715,10 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 					this.add('-immune', target, '[from] ability: Mogu Mogu');
 				}
 				return null;
+			} 
+			if (move.flags['bite']) {
+				this.add('-immune', target, '[from] ability: Mogu Mogu');
+				return null;
 			}
 		},
 		flags: {breakable: 1},
@@ -1094,19 +1098,25 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		name: "Sake Soaker",
 		rating: 3,
 		num: 114,
-	}, 
-	supernenechi: { // exact copy of [Beast Boost]
-		onSourceAfterFaint(length, target, source, effect) {
-			if (effect && effect.effectType === 'Move') {
-				const bestStat = source.getBestStat(true, true);
-				this.boost({[bestStat]: length}, source);
+	},  
+	supernenechi: {
+		onBasePowerPriority: 19,
+		onBasePower(basePower, attacker, defender, move) {
+			if (move.flags['pulse']) {
+				return this.chainModify(1.5);
 			}
 		},
-		flags: {},
+		onTryHit(pokemon, target, move) {
+			if (move.flags['pulse']) {
+				this.add('-immune', pokemon, '[from] ability: Super Nenechi');
+				return null;
+			}
+		},
+		flags: {breakable: 1},
 		name: "Super Nenechi",
-		rating: 3.5,
-		num: 224,
-	},
+		rating: 3,
+		num: 178,
+	}, 
 	cleaner5: { // <<<UNUSED>>> rids hazards on users sides and screens on foes sides BUT only when user is hit by an attacc, really/visually (+leech seed binding and terrain)
 		onDamagingHitOrder: 1,
 		onDamagingHit(damage, target, source, move) {  
@@ -1350,7 +1360,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3.5,
 		num: 295,
 	},
-	madscience: { // reskin of [Surge Surfer] but for Psychic Terrain and SpDef instead of Speed <<<UNUSED>>>
+	madscience: { // <<<UNUSED>>> reskin of [Surge Surfer] but for Psychic Terrain and SpDef instead of Speed  
 		onModifySpDPriority: 6,
 		onModifySpD(pokemon) {
 			if (this.field.isTerrain('psychicterrain')) return this.chainModify(1.5);

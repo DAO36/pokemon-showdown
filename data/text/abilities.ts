@@ -170,8 +170,8 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	mogumogu: {
 		name: "Mogu Mogu",
-		desc: "This Cat is immune to Grass-type moves and restores 1/4 of her maximum HP, rounded down, when hit by a Grass-type move.",
-		shortDesc: "Heals 1/4 of max HP when hit by Grass type moves; Grass immunity.",
+		desc: "This Cat is immune to Grass-type moves and restores 1/4 of her maximum HP, rounded down, when hit by a Grass-type move. This Cat is also immune to biting-based moves.",
+		shortDesc: "Heals 1/4 HP when hit by Grass moves; Grass immunity. Immune to bite-based moves.",
 	},
 	miomama: {
 		name: "Mio Mama",
@@ -262,9 +262,9 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	}, 
 	supernenechi: {
 		name: "Super Nenechi",
-		desc: "NENEMAX's highest stat is raised by 1 stage if she attacks and knocks out another Pokemon. Stat stage changes are not considered. If multiple stats are tied, Attack, Defense, Special Attack, Special Defense, and Speed are prioritized in that order.",
-		shortDesc: "Highest stat is raised by 1 after attacking and KOing another Pokemon.",
-	},
+		desc: "This Love Warrior's pulse moves have their power multiplied by 1.5. Heal Pulse restores 3/4 of a target's maximum HP, rounded half down; Immune to pulse moves",
+		shortDesc: "User's pulse moves have 1.5x power. Immune to pulse moves.",
+	}, 
 	succubus: {
 		name: "Succubus",
 		desc: "On switch-in, this Succubus lowers the Special Attack of opposing Pokemon by 1 stage. Pokemon with the Inner Focus, Oblivious, Own Tempo, Scrappy, or Mio Mamma Abilities and Pokemon behind a substitute are immune.",

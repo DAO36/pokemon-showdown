@@ -465,15 +465,25 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 
 		boost: "  [POKEMON] has gotten drunk!",
 	},
-	nenemax: {
-		name: "NeneMAX",
-		desc: "Cannot be selected the turn after it's used. Lower's the user's Speed by 1 stage if it successfully hits the target",
-		shortDesc: "-1 user's Speed. Cannot be used twice in a row.",
+	beetleblast: {
+		name: "Beetle Blast",
+		desc: "Lowers the user's Defense and Special Defense by 1 stage.",
+		shortDesc: "Lowers the user's Defense and Sp. Def by 1.",
 	},
-	husbandhelp: {
-		name: "Husband Help",
-		desc: "Raises this Seal's Attack by 2 stages.",
-		shortDesc: "Raises the user's Attack by 2.",
+	nenemax: {
+		name: "Nene MAX",
+		desc: "Lowers the user's Special Attack by 1 stage. If Grassy Terrain is active, and the user is grounded, this move does not miss.",
+		shortDesc: "-1 Sp.Atk recoil. Grassy Terrain: Cannot miss.",
+	}, 
+	nekkostrike: {
+		name: "Nekko Strike",
+		desc: "This move summons Leech Seed on the target.",
+		shortDesc: "Summons Leech Seed on target.",
+	},
+	husbandhorde: {
+		name: "Husband Horde",
+		desc: "Has a 20% chance to confuse the target.",
+		shortDesc: "20% chance to confuse the target.",
 	},
 	succubussong: {
 		name: "Succubus Song",

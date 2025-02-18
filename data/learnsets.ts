@@ -95550,7 +95550,9 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			nastyplot: ["9M"],
 			honeclaws: ["9M"],
 			nenemax: ["9M"],
-			husbandhelp: ["9M"],
+			nekkostrike: ["9M"],
+			beetleblast: ["9M"],
+			husbandhorde: ["9M"],
         },
 	},
 	aloe: {
