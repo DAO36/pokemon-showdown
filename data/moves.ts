@@ -526,7 +526,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		category: "Physical",
 		name: "Split Personality",
 		pp: 10,
-		flags: {contact: 1, protect: 1, mirror: 1},
+		flags: {contact: 1, protect: 1, mirror: 1, dance: 1},
 		onEffectiveness(typeMod, target, type, move) {
 			return typeMod + this.dex.getEffectiveness('Fairy', type);
 		},
@@ -1741,6 +1741,23 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Fighting",
 		contestType: "Beautiful",
 	},
+	poi: { // BOTAN 3
+		num: 411,
+		accuracy: 90,
+		basePower: 120,
+		category: "Special",
+		name: "Poi",
+		pp: 5,
+		priority: 0,
+		flags: {protect: 1, mirror: 1, distance: 1, bullet: 1},
+		secondary: {
+			chance: 10,
+			status: 'brn',
+		},
+		target: "any",
+		type: "Fighting",
+		contestType: "Cool",
+	},
 	wamywater: { // LAMY 1
 		num: 370,
 		accuracy: 100,
@@ -2330,7 +2347,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		name: "Peafowl Power",
 		pp: 10,
 		priority: 0,
-		flags: {protect: 1, mirror: 1, wind: 1, distance: 1},
+		flags: {protect: 1, mirror: 1, wind: 1, distance: 1, dance: 1},
 		secondary: {
 			chance: 20,
 			self: {

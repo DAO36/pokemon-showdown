@@ -463,6 +463,11 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		desc: "Raises this Lion's Attack by 2 stages.",
 		shortDesc: "Raises the user's Attack by 2.",
 	},
+	poi: {
+		name: "Poi",
+		desc: "Has a 10% chance to burn the target.",
+		shortDesc: "10% chance to burn the target.",
+	},
 	wamywater: {
 		name: "Wamy Water",
 		desc: "Has a 30% chance to freeze the target. If the current weather is Snow, this move's power is boosted by 50%.",
