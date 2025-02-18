@@ -2178,12 +2178,12 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		},
 		condition: {
 			noCopy: true,
-			duration: 2,
+			duration: 1,
 			onRestart() {
-				this.effectState.duration = 2;
+				this.effectState.duration = 1;
 			},
 			onResidualOrder: 28,
-			onResidualSubOrder: 2,
+			onResidualSubOrder: 1,
 			onEnd(pokemon) {
 				if (pokemon.hp) {
 					const item = this.effectState.berry;
