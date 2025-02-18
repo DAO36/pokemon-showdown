@@ -127,6 +127,8 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 		name: "Dancing Siren",
 		desc: "This Elf's dancing-based attacks have their power multiplied by 1.5x. Prevents opposing Pokemon from using dance moves",
 		shortDesc: "User's dancing-based attacks have 1.5x power. Prevents foes from dancing.",
+
+		block: "  [SOURCE] cannot use [MOVE]!",
 		},
 	apex: {
 		name: "Apex",
