@@ -1792,9 +1792,6 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		priority: 0,
 		flags: {snatch: 1, bite: 1},
 		onHit(target) {
-			if (target.hp <= target.maxhp / 2 || target.boosts.spa >= 6 && target.boosts.atk >= 6 || target.maxhp === 1) { // The Shedninja clause
-				return false;
-			}
 			this.directDamage(target.maxhp / 2);
 			this.boost({atk: 12, spa: 12}, target);
 		},
