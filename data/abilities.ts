@@ -2134,22 +2134,63 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3.5,
 		num: 88,
 	},
-	godeyes: { // reskin of [No Guard] but better >:)
-		onAnyInvulnerabilityPriority: 1,
-		onAnyInvulnerability(target, source, move) {
-			if (move && (source === this.effectState.target)) return 0;
+	bigcatmeansbigtrouble: { // <<<UNUSED>>> reskin of [No Guard] but better 
+		onStart(pokemon) {
+			pokemon.abilityState.gluttony = true;
 		},
-		onAnyAccuracy(accuracy, target, source, move) {
-			if (move && (source === this.effectState.target)) {
-				return true;
-			}
-			return accuracy;
+		onDamage(item, pokemon) {
+			pokemon.abilityState.gluttony = true;
 		},
 		flags: {breakable: 1},
 		name: "God Eyes",
 		rating: 4,
 		num: 99,
 	},
+	mammamia: { // combines [Cude Chew] with [Harvest]
+		onEatItem(item, pokemon) {
+			if (item.isBerry && pokemon.addVolatile('cudchew')) {
+				pokemon.volatiles['cudchew'].berry = item;
+			}
+		},
+		onEnd(pokemon) {
+			delete pokemon.volatiles['cudchew'];
+		},
+		condition: {
+			noCopy: true,
+			duration: 2,
+			onRestart() {
+				this.effectState.duration = 2;
+			},
+			onResidualOrder: 28,
+			onResidualSubOrder: 2,
+			onEnd(pokemon) {
+				if (pokemon.hp) {
+					const item = this.effectState.berry;
+					this.add('-activate', pokemon, 'ability: Mamma Mia');
+					this.add('-enditem', pokemon, item.name, '[eat]');
+					if (this.singleEvent('Eat', item, null, pokemon, null, null)) {
+						this.runEvent('EatItem', pokemon, null, null, item);
+					}
+					if (item.onEat) pokemon.ateBerry = true;
+				}
+			},
+		},
+		onResidualOrder: 28,
+		onResidualSubOrder: 2,
+		onResidual(pokemon) {
+			if (this.randomChance(1, 3)) {
+				if (pokemon.hp && !pokemon.item && this.dex.items.get(pokemon.lastItem).isBerry) {
+					pokemon.setItem(pokemon.lastItem);
+					pokemon.lastItem = '';
+					this.add('-item', pokemon, pokemon.getItem(), '[from] ability: Mamma Mia');
+				}
+			}
+		},
+		flags: {},
+		name: "Mamma Mia",
+		rating: 1.5,
+		num: 82,
+	},  
 	adaptability: {
 		onModifySTAB(stab, source, target, move) {
 			if (move.forceSTAB || source.hasType(move.type)) {

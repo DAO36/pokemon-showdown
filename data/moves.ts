@@ -3939,12 +3939,12 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Electric",
 		contestType: "Beautiful",
 	},
-	bigcatmeansbigtrouble: { // RAORA 1
+	godeyes: { // RAORA 1
 		num: 573,
 		accuracy: true,
 		basePower: 70,
 		category: "Physical",
-		name: "Big Cat Means Big Trouble",
+		name: "God Eyes",
 		pp: 10,
 		priority: 0,
 		flags: {bypasssub: 1, mirror: 1, distance: 1},

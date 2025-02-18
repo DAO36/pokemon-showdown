@@ -98248,7 +98248,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			miracleeye: ["9M"],
 			gigadrain: ["9M"],
 			seedbomb: ["9M"],
-			bigcatmeansbigtrouble: ["9M"],
+			godeyes: ["9M"],
 			chattinichomp: ["9M"],
         },
 	},	

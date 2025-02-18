@@ -974,8 +974,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		desc: "This Automotan restores 1/2 of her maximum HP, rounded half up. If the terrain is Electric Terrain, this Automotan instead restores 2/3 of her maximum HP, rounded half down.",
 		shortDesc: "Heals user by a terrain-dependent amount.",
 	},
-	bigcatmeansbigtrouble: {
-		name: "Big Cat Means Big Trouble",
+	godeyes: {
+		name: "God Eyes",
 		desc: "Bypasses subs and protection without breaking it. Never Misses. Has a 10% chance to raise the Cat's Accuracy by 1 stage. This move's type effectiveness against Ghost is changed to be neutrally effective no matter what this move's type is.",
 		shortDesc: "Hits Ghost types. Bypasses subs/protect.",
 	},
