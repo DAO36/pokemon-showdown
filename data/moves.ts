@@ -20,7 +20,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Electric",
 		contestType: "Cool",
 	},
-	tskr2: { // reskin of [TAKE HEART] <UNUSED>
+	tskr2: { // <<<UNUSED>>> reskin of [TAKE HEART]
 		num: 370,
 		accuracy: true,
 		basePower: 0,
@@ -38,7 +38,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Fairy",
 		contestType: "Beautiful",
 	},
-	tskr: { // combines [NASTY PLOT] + [HEAL BELL]
+	tskr: { // SORA 1
 		num: 370,
 		accuracy: true,
 		basePower: 0,
@@ -61,7 +61,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Fairy",
 		contestType: "Beautiful",
 	},
-	ankimoattack: { // a much better [PLAY ROUGH]
+	ankimoattack: { // SORA 2
 		num: 370,
 		accuracy: 100,
 		basePower: 100,
@@ -69,7 +69,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		name: "Ankimo Attack",
 		pp: 10,
 		priority: 0,
-		flags: {protect: 1, mirror: 1},
+		flags: {protect: 1, mirror: 1, contact: 1},
 		secondary: {
 			chance: 10,
 			self: {
@@ -82,7 +82,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Fairy",
 		contestType: "Cute",
 	},
-	idolsong: { // FAIRY [HYPER VOICE] but better
+	idolsong: { // SORA 3
 		num: 370,
 		accuracy: 100,
 		basePower: 100,
@@ -96,7 +96,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Fairy",
 		contestType: "Cute",
 	},
-	divasong: { // FAIRY [RISING VOLTAGE]  
+	divasong: { // AZKI 1  
 		num: 370,
 		accuracy: 100,
 		basePower: 60,
@@ -117,7 +117,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Fairy",
 		contestType: "Beautiful",
 	},
-	virtualsaber: { // FAIRY [LEAF BLADE]  
+	virtualsaber: { // AZKI 2
 		num: 370,
 		accuracy: 100,
 		basePower: 80,
@@ -138,7 +138,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Fairy",
 		contestType: "Beautiful",
 	},
-	divadance: { // FAIRY reskin of [SWORDS DANCE]
+	divadance: { // AZKI 3
 		num: 14,
 		accuracy: true,
 		basePower: 0,
@@ -155,7 +155,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Fairy",
 		contestType: "Beautiful",
 	},
-	sakurastrike: { // reskin of [LEAF STORM] but better
+	sakurastrike: { // MIKO 1
 		num: 370,
 		accuracy: 100,
 		basePower: 100,
@@ -169,7 +169,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Grass",
 		contestType: "Cute",
 	},
-	lavabucket: { // bruns user too
+	lavabucket: { // MIKO 2
 		num: 370,
 		accuracy: 80,
 		basePower: 140,
@@ -179,7 +179,6 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		priority: 0,
 		flags: {protect: 1, mirror: 1, defrost: 1, nonsky: 1},
 		recoil: [33, 100],
-		thawsTarget: true, 
 		secondary: {
 			chance: 100, 
 		    status: 'brn', 
@@ -192,7 +191,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Fire",
 		contestType: "Tough",
 	},
-	elitemiko: { // reskin of [SWORDS DANCE]
+	elitemiko: { // MIKO 3
 		num: 370,
 		accuracy: true,
 		basePower: 0,
@@ -209,7 +208,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Psychic",
 		contestType: "Cool",
 	},
-	faq: {
+	faq: { // MIKO 4
 		num: 583,
 		accuracy: 100,
 		basePower: 90,
@@ -227,21 +226,28 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Fairy",
 		contestType: "Cute",
 	},
-	axeattack: { // slicing
+	axeattack: { // SUISEI 1
 		num: 38,
 		accuracy: 100,
-		basePower: 90,
+		basePower: 80,
 		category: "Physical",
 		name: "Axe Attack",
-		pp: 5,
+		pp: 10,
 		priority: 0,
 		flags: {contact: 1, protect: 1, mirror: 1, slicing: 1}, 
+		onTryHit(pokemon) {
+			// will shatter screens through sub, before you hit
+			pokemon.side.removeSideCondition('reflect');
+			pokemon.side.removeSideCondition('lightscreen');
+			pokemon.side.removeSideCondition('hologram');
+			pokemon.side.removeSideCondition('auroraveil');
+		},
 		secondary: null,
 		target: "normal",
 		type: "Rock",
 		contestType: "Tough",
 	},
-	suicopath: { // DARK type reskin of [DOUBLE EDGE]
+	suicopath: { // SUISEI 2
 		num: 370,
 		accuracy: 90,
 		basePower: 120,
@@ -256,7 +262,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Dark",
 		contestType: "Tough",
 	},
-	cometslam: { // reskin of [DOUBLE-EDGE] but ICE
+	cometslam: { // SUISEI 3
 		num: 370,
 		accuracy: 90,
 		basePower: 120,
@@ -265,7 +271,10 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		pp: 5,
 		priority: 0,
 		flags: {protect: 1, mirror: 1, gravity: 1},
-		recoil: [33, 100],
+		hasCrashDamage: true,
+		onMoveFail(target, source, move) {
+			this.damage(source.baseMaxhp / 2, source, source, this.dex.conditions.get('High Jump Kick'));
+		},
 		secondary: {
 			chance: 10,
 			status: 'frz',
@@ -273,8 +282,8 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		target: "normal",
 		type: "Ice",
 		contestType: "Beautiful",
-	},
-	highspecs: { // flash cannon but better
+	}, 
+	highspecs: { // ROBOCO 1
 		num: 370,
 		accuracy: 90,
 		basePower: 110,
@@ -291,7 +300,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Steel",
 		contestType: "Cool",
 	},
-	laserbeam: { // thunder but better
+	laserbeam: { // ROBOCO 2
 		num: 370,
 		accuracy: 70,
 		basePower: 120,
@@ -313,7 +322,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Electric",
 		contestType: "Tough",
 	},
-	upgradepc: { // maybe acc too
+	upgradepc: { // ROBOCO 3
 		num: 370,
 		accuracy: true,
 		basePower: 0,
@@ -331,7 +340,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Steel",
 		contestType: "Clever",
 	},
-	reboot: {
+	reboot: { // ROBOCO 4
 		num: 666,
 		accuracy: true,
 		basePower: 0,
@@ -354,7 +363,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Electric",
 		contestType: "Beautiful",
 	}, 
-	snowdash: { // ice type [high jump kick] <UNUSED>
+	snowdash: { // <<<UNUSED>>>
 		num: 370,
 		accuracy: 90,
 		basePower: 120,
@@ -375,7 +384,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Ice",
 		contestType: "Cool",
 	},
-	foxkatana: {
+	foxkatana: { // FUBUKI 1
 		num: 348,
 		accuracy: 100,
 		basePower: 80,
@@ -393,7 +402,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Ice",
 		contestType: "Cool",
 	}, 
-	konkon: {
+	konkon: { // FUBUKI 2
 		num: 370,
 		accuracy: true,
 		basePower: 0,
@@ -439,7 +448,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		name: "Fubuzilla Beam",
 		pp: 10,
 		priority: 0,
-		flags: {charge: 1, protect: 1, mirror: 1, metronome: 1, nosleeptalk: 1, failinstruct: 1},
+		flags: {charge: 1, protect: 1, mirror: 1, pulse: 1, nosleeptalk: 1, failinstruct: 1},
 		onTryMove(attacker, defender, move) {
 			if (attacker.removeVolatile(move.id)) {
 				return;
@@ -468,7 +477,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Ice",
 		contestType: "Cool",
 	},
-	imgod: {
+	imgod: { // MATSURI 1
 		num: 370,
 		accuracy: 80,
 		basePower: 140,
@@ -492,7 +501,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Normal",
 		contestType: "Tough",
 	}, 
-	ebifrionmight: { // Ebifrion
+	ebifrionmight: { // MATSURI 2
 		num: 370,
 		accuracy: true,
 		basePower: 0,
@@ -510,7 +519,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Normal",
 		contestType: "Cute",
 	},
-	splitpersonality: { // flying press but with dark/fairy
+	splitpersonality: { // HAACHAMA 1
 		num: 370,
 		accuracy: 100,
 		basePower: 50,
@@ -528,7 +537,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Dark",
 		contestType: "Tough",
 	},
-	haachamacooking: {
+	haachamacooking: { // HAACHAMA 2
 		num: 370,
 		accuracy: 95,
 		basePower: 95,
@@ -545,7 +554,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Bug",
 		contestType: "Cool",
 	},
-	fourcoursemeal: { //swords dance reskin
+	fourcoursemeal: { // HAACHAMA 3
 		num: 370,
 		accuracy: true,
 		basePower: 0,
@@ -562,7 +571,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Bug",
 		contestType: "Beautiful",
 	},
-	kapu: { // crunch but it heals
+	kapu: { // MEL 1
 		num: 370,
 		accuracy: 100,
 		basePower: 80,
@@ -577,7 +586,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Flying",
 		contestType: "Cute",
 	},
-	banpire: { // swords dance reskin
+	banpire: { // MEL 2
 		num: 370,
 		accuracy: true,
 		basePower: 0,
@@ -594,7 +603,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Flying",
 		contestType: "Tough",
 	},
-	elfdance: {
+	elfdance: { // AKIROSE 1
 		num: 370,
 		accuracy: 95,
 		basePower: 95,
@@ -615,7 +624,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Fairy",
 		contestType: "Cute",
 	},
-	aikattack: { // dual wingbeat but psychic
+	aikattack: { // AKIROSE 2
 		num: 370,
 		accuracy: 100,
 		basePower: 50,
@@ -630,7 +639,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		target: "any",
 		type: "Psychic",
 	},
-	mukirose: {
+	mukirose: { // AKIROSE 3
 		num: 370,
 		accuracy: 90,
 		basePower: 130,
@@ -650,7 +659,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Fighting",
 		contestType: "Tough",
 	},
-	apexmaid: { // bullet seed but fairy
+	apexmaid: { // AQUA 1
 		num: 370,
 		accuracy: 90,
 		basePower: 30,
@@ -665,7 +674,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Fairy",
 		contestType: "Cool",
 	},
-	onyan: { // swords dance reskin
+	onyan: { // AQUA 2
 		num: 370,
 		accuracy: true,
 		basePower: 0,
@@ -682,7 +691,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Grass",
 		contestType: "Beautiful",
 	},
-	dualwielding: { // dual wingbeat but fighting
+	dualwielding: { // AYAME 1
 		num: 370,
 		accuracy: 75,
 		basePower: 75,
@@ -690,7 +699,8 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		name: "Dual Wielding",
 		pp: 5,
 		priority: 0,
-		flags: {contact: 1, protect: 1, mirror: 1, slicing: 1},
+		flags: {contact: 1, protect: 1, mirror: 1, slicing: 1, defrost: 1},
+		thawsTarget: true,
 		critRatio: 2,
 		multihit: 2,
 		smartTarget: true,
@@ -706,7 +716,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		target: "normal",
 		type: "Fighting",
 	},
-	asura: {
+	asura: { // AYAME 2
 		num: 370,
 		accuracy: 100,
 		basePower: 75,
@@ -714,8 +724,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		name: "Asura",
 		pp: 15,
 		priority: 0,
-		flags: {protect: 1, mirror: 1, contact: 1, slicing: 1},
-		thawsTarget: true,
+		flags: {protect: 1, mirror: 1, contact: 1, slicing: 1, defrost: 1},
 		critRatio: 2,
 		secondary: {
 			chance: 10,
@@ -725,7 +734,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Fire",
 		contestType: "Cool",
 	},
-	rakshasa: {
+	rakshasa: { // AYAME 3
 		num: 370,
 		accuracy: 100,
 		basePower: 75,
@@ -744,10 +753,10 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Dark",
 		contestType: "Cool",
 	},
-	onispirits: {
+	onispirits: { // AYAME 4
 		num: 751,
-		accuracy: 90,
-		basePower: 60,
+		accuracy: 100,
+		basePower: 50,
 		category: "Special",
 		name: "Oni Spirits",
 		pp: 5,
@@ -757,12 +766,12 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		smartTarget: true,
 		secondaries: [
 			{
-				chance: 10,
+				chance: 20,
 				boosts: {
 					spa: -1,
 				},
 			}, {
-				chance: 10,
+				chance: 20,
 				boosts: {
 					spd: -1,
 				},
@@ -791,7 +800,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Dark",
 		contestType: "Tough",
 	},
-	nursing: { // wish combined with teleport
+	nursing: { // CHOCO 1
 		num: 370,
 		accuracy: true,
 		basePower: 0,
@@ -846,7 +855,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		target: "allies",
 		type: "Fairy",
 	},
-	syringe: {
+	syringe: { // CHOCO 2
 		num: 676,
 		accuracy: 100,
 		basePower: 100,
@@ -876,7 +885,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Fairy",
 		contestType: "Cute",
 	},
-	blackmagic: {
+	blackmagic: { // SHION 1
 		num: 560,
 		accuracy: 90,
 		basePower: 120,
@@ -900,7 +909,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Psychic",
 		contestType: "Tough",
 	},
-	arcanegarlic: { // swords dance reskin
+	arcanegarlic: { // SHION 2
 		num: 370,
 		accuracy: true,
 		basePower: 0,
@@ -917,7 +926,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Grass",
 		contestType: "Clever",
 	},
-	magickick: {
+	magickick: { // SHION 3
 		num: 136,
 		accuracy: 90,
 		basePower: 140,
@@ -935,7 +944,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Psychic",
 		contestType: "Cool",
 	},
-	duckasmr: {
+	duckasmr: { // SUBARU 1
 		num: 370,
 		accuracy: 100,
 		basePower: 80,
@@ -952,7 +961,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Flying",
 		contestType: "Cool",
 	},
-	duckdance: { // dragon dance reskin
+	duckdance: { // SUBARU 2
 		num: 370,
 		accuracy: true,
 		basePower: 0,
@@ -970,7 +979,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Water",
 		contestType: "Cool",
 	},
-	oozorapolice: { // circle throw but better
+	oozorapolice: { // SUBARU 3
 		num: 370,
 		accuracy: 90,
 		basePower: 90,
@@ -984,7 +993,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Fighting",
 		contestType: "Cool",
 	},
-	quackattack: {
+	quackattack: { // SUBARU 4
 		num: 370,
 		accuracy: 90,
 		basePower: 120,
@@ -1004,7 +1013,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Water",
 		contestType: "Tough",
 	},
-	orayo: {
+	orayo: { // KORONE 1
 		num: 370,
 		accuracy: 90,
 		basePower: 130,
@@ -1019,7 +1028,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Fighting",
 		contestType: "Cool",
 	},
-	yubiyubi: { // normal type bullet seed
+	yubiyubi: { // KORONE 2
 		num: 370,
 		accuracy: 100,
 		basePower: 30,
@@ -1034,7 +1043,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Normal",
 		contestType: "Cool",
 	},
-	bark: {
+	bark: { // KORONE 3
 		num: 304,
 		accuracy: 100,
 		basePower: 100,
@@ -1051,7 +1060,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Normal",
 		contestType: "Cool",
 	},
-	onigirichomp: {
+	onigirichomp: { // OKAYU
 		num: 370,
 		accuracy: 100,
 		basePower: 80,
@@ -1077,7 +1086,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Grass",
 		contestType: "Tough",
 	},
-	tarots: { // bullet seed but psychic
+	tarots: { // MIO 1
 		num: 370,
 		accuracy: 100,
 		basePower: 30,
@@ -1092,7 +1101,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Psychic",
 		contestType: "Cool",
 	},
-	hatotaurushelp: {
+	hatotaurushelp: { // MIO 2
 		num: 722,
 		accuracy: 90,
 		basePower: 120,
@@ -1109,7 +1118,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Flying",
 		contestType: "Cool",
 	},
-	rocketcarrots: { // dual wingbeat but grass
+	rocketcarrots: { // PEKORA 1
 		num: 370,
 		accuracy: true,
 		basePower: 50,
@@ -1124,7 +1133,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		target: "normal",
 		type: "Grass",
 	},
-	painpeko: { // dank type close combat
+	painpeko: { // PEKORA 2
 		num: 370,
 		accuracy: 90,
 		basePower: 120,
@@ -1144,7 +1153,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Dark",
 		contestType: "Tough",
 	},
-	tnt: {
+	tnt: { // PEKORA 3
 		num: 437,
 		accuracy: 80,
 		basePower: 140,
@@ -1159,7 +1168,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Dark",
 		contestType: "Beautiful",
 	},
-	carrottrap: {
+	carrottrap: { // PEKORA 4
 		num: 191,
 		accuracy: true,
 		basePower: 0,
@@ -1193,7 +1202,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Grass", 
 		contestType: "Clever",
 	}, 
-	macesmash: { // steel type feint
+	macesmash: { // NOEL 1
 		num: 38,
 		accuracy: 90,
 		basePower: 120,
@@ -1216,7 +1225,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Steel",
 		contestType: "Tough",
 	}, 
-	knightmuscles: {
+	knightmuscles: { // NOEL 2
 		num: 370,
 		accuracy: 100,
 		basePower: 80,
@@ -1231,7 +1240,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Steel",
 		contestType: "Cool",
 	},
-	arrowassault: { // bullet seed but fighting
+	arrowassault: { // FLARE 1
 		num: 370,
 		accuracy: 100,
 		basePower: 25,
@@ -1240,7 +1249,6 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		pp: 10,
 		priority: 0,
 		flags: {protect: 1, mirror: 1, distance: 1, bullet: 1, defrost: 1},
-		thawsTarget: true,
 		multihit: [2, 5],
 		secondary: {
 			chance: 10,
@@ -1250,7 +1258,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Fire",
 		contestType: "Cool",
 	},
-	elfarrows: { // bullet seed but fairy
+	elfarrows: { // FLARE 2
 		num: 370,
 		accuracy: 100,
 		basePower: 25,
@@ -1270,7 +1278,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Fairy",
 		contestType: "Cool",
 	},
-	gundance: { // swords dance
+	gundance: { // FLARE 3
 		num: 370,
 		accuracy: true,
 		basePower: 0,
@@ -1287,7 +1295,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Fighting",
 		contestType: "Beautiful",
 	},
-	ahoy: {
+	ahoy: { // MARINE 1
 		num: 712,
 		accuracy: 90,
 		basePower: 80,
@@ -1303,7 +1311,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Water",
 		contestType: "Cool",
 	},
-	imhorny: {
+	imhorny: { // MARINE 2
 		num: 69,
 		accuracy: 90,
 		basePower: 90,
@@ -1321,7 +1329,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		},
 		secondary: { 
 			onHit(target, source, move) {
-				if (target.gender === 'F' && source.gender === 'F') {
+				if (target.gender === 'F' && source.gender === 'F' || target.gender === 'M' && source.gender === 'M') {
 					if (this.randomChance(1, 2))
 					target.addVolatile('confusion', source, move);
 				}
@@ -1331,7 +1339,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Water",
 		contestType: "Cute",
 	}, 
-	forever17: {
+	forever17: { // MARINE 3
 		num: 105,
 		accuracy: true,
 		basePower: 0,
@@ -1346,7 +1354,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Dark",
 		contestType: "Clever",
 	},
-	yanderestrike: { // pursuit copy 
+	yanderestrike: { // RUSHIA 1
 		num: 228,
 		accuracy: 100,
 		basePower: 45,
@@ -1419,7 +1427,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Dark",
 		contestType: "Clever",
 	},
-	necromancy: { // revival blessing but ghost
+	necromancy: { // RUSHIA 2
 		num: 370,
 		accuracy: true,
 		basePower: 0,
@@ -1447,7 +1455,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		target: "self",
 		type: "Ghost",
 	},
-	asacoco: {
+	asacoco: { // COCO 1
 		num: 370,
 		accuracy: 50,
 		basePower: 120,
@@ -1464,7 +1472,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Poison",
 		contestType: "Tough",
 	},
-	gmmf: { // dragon double-edge
+	gmmf: { // COCO 2
 		num: 370,
 		accuracy: 100,
 		basePower: 120,
@@ -1479,7 +1487,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Dragon",
 		contestType: "Tough",
 	},
-	gorillagrip: { // fairy double-edge
+	gorillagrip: { // KANATA 1
 		num: 370,
 		accuracy: 90,
 		basePower: 120,
@@ -1499,7 +1507,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Fairy",
 		contestType: "Tough",
 	},
-	starshuriken: {
+	starshuriken: { // KANATA 2
 		num: 860,
 		accuracy: 90,
 		basePower: 50,
@@ -1513,7 +1521,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		target: "normal",
 		type: "Fairy",
 	},
-	heavenlyharmony: {
+	heavenlyharmony: { // KANATA 3
 		num: 444,
 		accuracy: 100,
 		basePower: 70,
@@ -1534,7 +1542,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Flying",
 		contestType: "Tough",
 	}, 
-	nothingwrong: { // swords dance reskin
+	nothingwrong: { // WATAME 1
 		num: 370,
 		accuracy: true,
 		basePower: 0,
@@ -1551,7 +1559,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Dark",
 		contestType: "Clever",
 	},
-	ubersheep: { // healing move
+	ubersheep: { // WATAME 2
 		num: 370,
 		accuracy: true,
 		basePower: 0,
@@ -1566,10 +1574,10 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		},
 		secondary: null,
 		target: "self",
-		type: "Normal",
+		type: "Grass",
 		contestType: "Cute",
 	},
-	staticslam: {
+	staticslam: { // WATAME 3
 		num: 34,
 		accuracy: 100,
 		basePower: 100,
@@ -1585,6 +1593,25 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		},
 		target: "normal",
 		type: "Electric",
+		contestType: "Tough",
+	},
+	watamebeam: { // WATAME 4
+		num: 586,
+		accuracy: 90,
+		basePower: 120,
+		category: "Special",
+		name: "Watame Beam",
+		pp: 5,
+		priority: 0,
+		flags: {protect: 1, mirror: 1, sound: 1, bypasssub: 1, pulse: 1},
+		self: {
+			boosts: {
+				spa: -2,
+			},
+		},
+		secondary: null,
+		target: "normal",
+		type: "Fairy",
 		contestType: "Tough",
 	},
 	candycrash: { // bullet seed but fairy

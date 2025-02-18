@@ -19360,7 +19360,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		name: "Watame-Mega",
 		baseSpecies: "Watame",
 		forme: "Mega",
-		types: ["Normal", "Electric"],
+		types: ["Normal", "Fairy"],
 		gender: "F",
 		baseStats: {hp: 95, atk: 125, def: 130, spa: 140, spd: 155, spe: 55},
 		abilities: {0: "Punk Rock"},

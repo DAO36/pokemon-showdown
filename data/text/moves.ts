@@ -45,13 +45,18 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		shortDesc: "Has 33% recoil.",
 	},
 	axeattack: {
-		name: "Axe Attack",
-		shortDesc: "No additional effect.",
+		name: "Axe Attack", 
+		desc: "If this attack does not miss, the effects of Reflect, Light Screen, Hologram, and Aurora Veil end for the target's side of the field before damage is calculated.",
+		shortDesc: "Destroys screens.",
+
+		activate: "  Axed away [TEAM]'s protections!",
 	},
 	cometslam: {
 		name: "Comet Slam",
-		desc: "Has a 10% chance to freeze the target. If the target lost HP, the Comet takes recoil damage equal to 33% the HP lost by the target, rounded half up, but not less than 1 HP.",
-		shortDesc: "10% chance to freeze the target. Has 33% recoil.",
+		desc: "Has a 10% chance to freeze the target. If this attack is not successful, this Comet loses half of her maximum HP, rounded down, as crash damage. Pokemon with the Magic Guard Ability are unaffected by crash damage.",
+		shortDesc: "10% to freeze target. User loses 50% HP if miss.", 
+
+		damage: "#crash",
 	},
 	highspecs: {
 		name: "High Specs",
@@ -201,8 +206,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	onispirits: {
 		name: "Oni Spirits",
-		desc: "Has a 10% chance to lower the target's Special Attack and/or Special Defense by 1 stage. Hits twice. If the first hit breaks the target's substitute, it will take damage for the second hit. In Double Battles, this move attempts to hit the targeted Pokemon and its ally once each. If hitting one of these Pokemon would be prevented by immunity, protection, semi-invulnerability, an Ability, or accuracy, it attempts to hit the other Pokemon twice instead. If this move is redirected, it hits that target twice.",
-		shortDesc: "10% to lower foe's SpA and/or SpD by 1. Hits twice.",
+		desc: "Has a 20% chance to lower the target's Special Attack and/or Special Defense by 1 stage. Hits twice. If the first hit breaks the target's substitute, it will take damage for the second hit. In Double Battles, this move attempts to hit the targeted Pokemon and its ally once each. If hitting one of these Pokemon would be prevented by immunity, protection, semi-invulnerability, an Ability, or accuracy, it attempts to hit the other Pokemon twice instead. If this move is redirected, it hits that target twice.",
+		shortDesc: "20% to lower foe's SpA and/or SpD by 1. Hits twice.",
 	}, 
 	onionslaught: { // [UNUSED]
 		name: "Oni Onslaught",
@@ -410,6 +415,11 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		name: "Uber Sheep",
 		desc: "This Sheep restores 1/2 of her maximum HP, rounded half up. Removes any status effect that the Sheep is inflicted with.",
 		shortDesc: "Heals user by 50% of max HP; Cures user of status.",
+	},
+	watamebeam: {
+		name: "Watame Beam",
+		desc: "Lowers this Bard's Special Attack by 2 stages.",
+		shortDesc: "Lowers the user's Sp. Atk by 2.",
 	},
 	staticslam: {
 		name: "Static Slam",

@@ -95276,6 +95276,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			nothingwrong: ["9M"],
 			ubersheep: ["9M"],
 			staticslam: ["9M"],
+			watamebeam: ["9M"],
         },
 	},	
 	luna: {
