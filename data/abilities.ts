@@ -40,6 +40,32 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 0.1,
 		num: 0,
 	},
+	testsubject: { // Testing testiong 1 2 3 TESTING
+		onResidualOrder: 5,
+		onResidualSubOrder: 4,
+		onResidual(pokemon) {
+			this.heal(pokemon.baseMaxhp / 2);
+		},
+		onUpdate(pokemon) {
+			if (!pokemon.hp) return;
+			if (pokemon.moveSlots.some(move => move.pp === 0)) {
+				pokemon.eatItem();
+			}
+		},
+		onAfterHit(source, pokemon, move) {  
+			const moveSlot = pokemon.moveSlots.find(move => move.pp === 0) ||
+				pokemon.moveSlots.find(move => move.pp < move.maxpp);
+			if (!moveSlot) return;
+			moveSlot.pp += 10;
+			if (moveSlot.pp > moveSlot.maxpp) moveSlot.pp = moveSlot.maxpp;
+			this.add('-activate', pokemon, 'ability: Test Subject');
+		},
+		onCriticalHit: false,
+		flags: {},
+		name: "Test Subject",
+		rating: 5,
+		num: 24,
+	},
 	corruption: { // instantly kills any pokemon thats attacks user
 		onDamagingHitOrder: 1,
 		onDamagingHit(damage, target, source, move) {

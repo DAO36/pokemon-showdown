@@ -3,6 +3,10 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 		name: "No Ability",
 		shortDesc: "Does nothing.",
 	},
+	testsubject: {
+		name: "Test Subject", 
+		shortDesc: "Testing, testing, 1 2 3, TESTING",
+	},
 	corruption: {
 		name: "Corruption",
 		desc: "...something's...not right...",
