@@ -508,8 +508,8 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	mammamia: {
 		name: "Mamma Mia",
-		desc: "If the last item this Big Cat used is a Berry, there is a 30% chance it gets restored at the end of each turn. If this Big Cat eats a Berry, she will eat that Berry again at the end of the next turn.",
-		shortDesc: "User eats a Berry: eats Berry again. If item used is a Berry, 30% chance to restore.",
+		desc: "If this Big Cat eats a Berry, she will eat that Berry again at the end of the turn. If the last item this Big Cat used is a Berry, there is a 25% chance it gets restored at the end of each turn.",
+		shortDesc: "User eats a Berry: eats Berry again. If item used is a Berry, 25% chance to restore.",
 
 		addItem: "  [POKEMON] spotted one [ITEM]!",
 	},

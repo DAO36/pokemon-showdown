@@ -2199,7 +2199,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		onResidualOrder: 28,
 		onResidualSubOrder: 2,
 		onResidual(pokemon) {
-			if (this.randomChance(1, 3)) {
+			if (this.randomChance(1, 4)) {
 				if (pokemon.hp && !pokemon.item && this.dex.items.get(pokemon.lastItem).isBerry) {
 					pokemon.setItem(pokemon.lastItem);
 					pokemon.lastItem = '';
@@ -2211,7 +2211,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		name: "Mamma Mia",
 		rating: 1.5,
 		num: 82,
-	},  
+	},
 	adaptability: {
 		onModifySTAB(stab, source, target, move) {
 			if (move.forceSTAB || source.hasType(move.type)) {
