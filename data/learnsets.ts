@@ -97057,6 +97057,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			phoenixblade: ["9M"],
 			phoenixshield: ["9M"],
 			phoenixwind: ["9M"],
+			phoenixdance: ["9M"],
         },
 	},	
 	froggywawa: {

@@ -3135,6 +3135,28 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Water",
 		contestType: "Beautiful",
 	},
+	phoenixdance: { // KIARA 4
+		num: 552,
+		accuracy: 95,
+		basePower: 95,
+		category: "Special",
+		name: "Phoenix Dance",
+		pp: 10,
+		priority: 0,
+		flags: {protect: 1, mirror: 1, dance: 1, defrost: 1},
+		thawsTarget: true,
+		secondary: {
+			chance: 20,
+			self: {
+				boosts: {
+					spd: 1,
+				},
+			},
+		},
+		target: "normal",
+		type: "Fighting",
+		contestType: "Beautiful",
+	},
 	hopeful: { // IRYS 2
 		num: 370,
 		accuracy: 100,

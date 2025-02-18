@@ -784,6 +784,11 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		desc: "Has a 30% chance to burn the target. Hits adjacent Pokemon.",
 		shortDesc: "30% chance to burn target(s). Hits adjacent Foes.",
 	},
+	phoenixdance: {
+		name: "Phoenix Dance",
+		desc: "Has a 20% chance to raise the user's Special Defense by 1 stage.",
+		shortDesc: "20% chance to raise the user's Sp. Def by 1.",
+	},
 	hopesoda: {
 		name: "Hope Soda",
 		desc: "Raises this Nephelim's Attack by 2 stages.",
