@@ -524,7 +524,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			const dancingsirenHolder = this.effectState.target;
 			if (move.flags['dance']) {
 				this.attrLastMove('[still]');
-				this.add('cant', dancingsirenHolder, 'ability: Dancing Siren', move, '[of] ' + target);
+				this.add('cant', dancingsirenHolder, 'ability: Dancing Siren', move, '[of] ' + pokemon);
 				return false;
 			} 
 		},
