@@ -2412,7 +2412,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		selfSwitch: true,
 		secondary: null,
 		target: "normal",
-		type: "Steel",
+		type: "Fire",
 		contestType: "Cool",
 	},
 	pickaxe: { // KAELA 2
