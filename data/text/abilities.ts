@@ -147,7 +147,7 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 		shortDesc: "Switch-in: heals allies by 1/4 HP & prevents status. Heals 1/3 HP when switching out.", 
 
 		heal: "  [POKEMON] was nursed back to health by [SOURCE]!",
-		block: "  [POKEMON] is protected by the Nurse!",
+		block: "  [POKEMON] is protected by medicine!",
 	}, 
 	witchcraft2: { // [UNUSED]
 		name: "Witchcraft2",
@@ -444,7 +444,7 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 		desc: "This Kirin protects herself and her allies from the lowering of stats from other Pokemon. This Kirin and her ally has their non-volatile status condition cured at the end of each turn.",
 		shortDesc: "Protects party from lowering of stats. Party are cured of status at the end of turn.",
 
-		block: "  [POKEMON] is protected by Mother Nature!",
+		block: "  [POKEMON] is protected by nature!",
 	}, 
 	societalcollapse: {
 		name: "Societal Collapse",
