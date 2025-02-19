@@ -94835,7 +94835,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			spite: ["9M"],
 			synthesis: ["9M"],
 			curse: ["9M"],
-			carrotstrike: ["9M"],
+			rocketcarrots: ["9M"],
 			painpeko: ["9M"],
         },
 	},		
