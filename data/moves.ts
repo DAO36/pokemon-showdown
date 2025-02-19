@@ -932,7 +932,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		basePower: 140,
 		category: "Physical",
 		name: "Magic Kick",
-		pp: 10,
+		pp: 5,
 		priority: 0,
 		flags: {contact: 1, protect: 1, mirror: 1, gravity: 1},
 		hasCrashDamage: true,
