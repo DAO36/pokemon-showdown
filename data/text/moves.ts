@@ -8069,8 +8069,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	poi: {
 		name: "Poi",
-		desc: "Has a 10% chance to burn the target.",
-		shortDesc: "10% chance to burn the target.",
+		desc: "Has a 10% chance to burn the target. If the target lost HP, the user takes recoil damage equal to 33% the HP lost by the target, rounded half up, but not less than 1 HP.",
+		shortDesc: "10% chance to burn the target. 33% recoil.",
 	},
 	wamywater: {
 		name: "Wamy Water",

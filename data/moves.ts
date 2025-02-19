@@ -1597,8 +1597,8 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	},
 	watamebeam: { // WATAME 4
 		num: 586,
-		accuracy: 90,
-		basePower: 120,
+		accuracy: 80,
+		basePower: 130,
 		category: "Special",
 		name: "Watame Beam",
 		pp: 5,
@@ -1744,12 +1744,13 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	poi: { // BOTAN 3
 		num: 411,
 		accuracy: 90,
-		basePower: 120,
+		basePower: 130,
 		category: "Special",
 		name: "Poi",
 		pp: 5,
 		priority: 0,
 		flags: {protect: 1, mirror: 1, distance: 1, bullet: 1},
+		recoil: [33, 100],
 		secondary: {
 			chance: 10,
 			status: 'brn',
@@ -1849,8 +1850,8 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	},
 	nekkostrike: { // NENE 3
 		num: 738,
-		accuracy: 60,
-		basePower: 100,
+		accuracy: 100,
+		basePower: 50,
 		category: "Physical",
 		name: "Nekko Strike",
 		pp: 10,
@@ -2657,8 +2658,8 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	},
 	atlantisstrike: { // GURA 3
 		num: 76,
-		accuracy: 90,
-		basePower: 120,
+		accuracy: 80,
+		basePower: 130,
 		category: "Special",
 		name: "Atlantis Strike",
 		pp: 10,
@@ -2851,7 +2852,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	gamerrage: { // AME 3
 		num: 416,
 		accuracy: 90,
-		basePower: 140,
+		basePower: 150,
 		category: "Special",
 		name: "Gamer Rage",
 		pp: 5,
@@ -3099,8 +3100,8 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	},
 	phoenixblade: { // KIARA 2
 		num: 370,
-		accuracy: 100,
-		basePower: 75,
+		accuracy: 90,
+		basePower: 100,
 		category: "Physical",
 		name: "Phoenix Blade",
 		pp: 10,
@@ -3899,8 +3900,8 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	},
 	swordofjustice: { // ELIZABETH 2
 		num: 370,
-		accuracy: 90,
-		basePower: 100,
+		accuracy: 80,
+		basePower: 120,
 		category: "Physical",
 		name: "Sword of Justice",
 		pp: 5,
