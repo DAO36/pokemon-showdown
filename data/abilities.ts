@@ -635,14 +635,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 				}
 				return null;
 			}
-		},
-		onSetStatus(status, target, source, effect) {
-			if (status.id !== 'psn' && status.id !== 'tox' && status.id !== 'par' && status.id !== 'slp' && status.id !== 'brn' && status.id !== 'frz') return;
-			if ((effect as Move)?.status) {
-				this.add('-immune', target, '[from] ability: Nurse');
-			} 
-			return false;
-		},  
+		}, 
 		onAllyTryAddVolatile(status, target, source, effect) {
 			if (['healblock'].includes(status.id)) {
 				if (effect.effectType === 'Move') {

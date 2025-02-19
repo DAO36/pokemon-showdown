@@ -147,6 +147,7 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 		shortDesc: "Switch-in: heals allies by 1/4 HP & prevents status. Heals 1/3 HP when switching out.", 
 
 		heal: "  [POKEMON] was nursed back to health by [SOURCE]!",
+		block: "  [POKEMON] is protected by the Nurse!",
 	}, 
 	witchcraft2: { // [UNUSED]
 		name: "Witchcraft2",
