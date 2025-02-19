@@ -7929,8 +7929,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	}, 
 	macesmash: {
 		name: "Mace Smash",
-		desc: "If this attack does not miss, the effects of Reflect, Light Screen, Mist, Hologram, and Aurora Veil end for the target's side of the field before damage is calculated. If this move is successful, it breaks through the target's Baneful Bunker, Detect, King's Shield, Protect, or Spiky Shield for this turn, allowing other Pokemon to attack the target normally. If the target's side is protected by Crafty Shield, Mat Block, Quick Guard, or Wide Guard, that protection is also broken for this turn and other Pokemon may attack the target's side normally.",
-		shortDesc: "Breaks protection and destroys screens.",
+		desc: "If this attack does not miss, the effects of Reflect, Light Screen, Mist, Hologram, and Aurora Veil end for the target's side of the field before damage is calculated. If this move is successful, it breaks through the target's Baneful Bunker, Detect, King's Shield, Protect, or Spiky Shield for this turn, allowing other Pokemon to attack the target normally. If the target's side is protected by Crafty Shield, Mat Block, Quick Guard, or Wide Guard, that protection is also broken for this turn and other Pokemon may attack the target's side normally. Cannot be selected the turn after it's used.",
+		shortDesc: "Breaks protect/screens. Can't be used twice in a row.",
 
 		activate: "  Muscled through [TARGET]'s protection!",
 	},  

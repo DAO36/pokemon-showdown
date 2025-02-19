@@ -84,7 +84,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	},
 	idolsong: { // SORA 3
 		num: 370,
-		accuracy: 100,
+		accuracy: 95,
 		basePower: 100,
 		category: "Special",
 		name: "Idol Song",
@@ -1204,13 +1204,13 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	}, 
 	macesmash: { // NOEL 1
 		num: 38,
-		accuracy: 90,
-		basePower: 120,
+		accuracy: 80,
+		basePower: 130,
 		category: "Physical",
 		name: "Mace Smash",
 		pp: 5,
 		priority: 0,
-		flags: {contact: 1, mirror: 1, slicing: 1}, 
+		flags: {contact: 1, mirror: 1, slicing: 1, cantusetwice: 1}, 
 		onTryHit(pokemon) {
 			// will shatter screens through sub, before you hit
 			pokemon.side.removeSideCondition('reflect');
