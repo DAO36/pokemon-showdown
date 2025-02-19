@@ -97127,6 +97127,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			eeriespell: ["9M"],
 			psychicnoise: ["9M"],
 			headsmash: ["9M"],
+			moonlight: ["9M"],
 			facade: ["9M"],
 			protect: ["9M"],
 			rest: ["9M"],
