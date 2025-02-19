@@ -3008,7 +3008,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		},
 		secondary: null,
 		target: "self",
-		type: "Psychic",
+		type: "Fairy",
 		contestType: "Clever",
 	},
 	tentacles: { // INA 3
