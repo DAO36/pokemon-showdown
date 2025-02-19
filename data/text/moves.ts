@@ -7692,7 +7692,7 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		desc: "If the current terrain is Misty Terrain and the target is grounded, this move's power is doubled.",
 		shortDesc: "2x power if target is grounded in Misty Terrain.",
 	}, 
-	divadance: {
+	divadance: { // [UNUSED]
 		name: "Diva Dance",
 		desc: "Raises this Diva's Attack by 2 stages.",
 		shortDesc: "Raises the user's Attack by 2.",

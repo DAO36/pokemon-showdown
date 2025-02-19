@@ -138,7 +138,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Fairy",
 		contestType: "Beautiful",
 	},
-	divadance: { // AZKI 3
+	divadance: { // <<<UNUSED>>>
 		num: 14,
 		accuracy: true,
 		basePower: 0,
