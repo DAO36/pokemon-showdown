@@ -926,12 +926,12 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	bejeweled: {
 		name: "Bejeweled",
 		desc: "Has a high chance to land a critical hit. If this move is successful, it sets up stealth rock on the opposing side of the field, damaging each opposing Pokemon that switches in, foes lose 1/32, 1/16, 1/8, 1/4, or 1/2 of their maximum HP, rounded down, based on their weakness to the Rock type; 0.25x, 0.5x, neutral, 2x, or 4x, respectively. Can be removed from the opposing side if any Pokemon uses Tidy Up, or if any opposing Pokemon uses Mortal Spin, Rapid Spin, Clean Up, or Defog successfully, or is hit by Defog.",
-		shortDesc: "Sets Stealth Rock on opposing side. High crit ratio",
+		shortDesc: "Sets Stealth Rock on target's side. High crit ratio",
 	},
 	bibooblade: {
 		name: "Biboo Blade",
 		desc: "Has a high chance to land a critical hit. If this move is successful, it sets up spikes on the opposing side of the field, damaging each opposing Pokemon that switches in, unless it is a Flying-type Pokemon or has the Levitate Ability. A maximum of three layers may be set, and opponents lose 1/8 of their maximum HP with one layer, 1/6 of their maximum HP with two layers, and 1/4 of their maximum HP with three layers, all rounded down. Can be removed from the opposing side if any Pokemon uses Tidy Up, or if any opposing Pokemon uses Mortal Spin, Rapid Spin, Clean Up, or Defog successfully, or is hit by Defog.",
-		shortDesc: "Sets a layer of Spikes on opposing side. High crit ratio.",
+		shortDesc: "Sets a layer of Spikes on foe's side. High crit ratio.",
 	},
 	haboob: {
 		name: "Haboob",

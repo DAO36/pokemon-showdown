@@ -54,7 +54,7 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	sneakypebbles: {
 		name: "Sneaky Pebbles",
-		shortDesc: "If this Pokemon is hit by a physical attack, Stealth Rock is set on the opposing side.",
+		shortDesc: "If this Pebble is hit by a physical attack, Stealth Rock is set on the opposing side.",
 	},
 	purepower: {
 		name: "Pure Power",
@@ -83,7 +83,7 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	virtualdiva: {
 		name: "Virtual Diva",
 		desc: "This Diva's sound-based moves have her power multiplied by 1.3. Her Special Attack raised by 1 stage when she is hit by a Sound-based move; Immune to Sound-type moves",
-		shortDesc: "Sound moves have 1.3x power. SpAtk is raised by 1 if hit by Sound move; Sound immunity.",
+		shortDesc: "Sound moves are 1.3x power. SpAtk is raised by 1 if hit by Sound move; Sound immunity.",
 	},
 	fbking: {
 		name: "FBKing",
@@ -95,15 +95,10 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 		shortDesc: "User's attacks do 1.5x damage, and loses 1/10 max HP after the attack.",
 
 		damage: "  [POKEMON] is sacrificing her HP in exchange for more power!",
-	},
-	haachamacooking: { // [UNUSED]
-		name: "Haachama Cooking",
-		desc: "If this Master Chef eats a held Berry, it restores 1/3 of its maximum HP, rounded down, in addition to the Berry's effect. This effect can also activate after the effects of Bug Bite, Fling, Pluck, Stuff Cheeks, and Teatime if the eaten Berry had an effect on this Pokemon.",
-		shortDesc: "If this Master Chef eats a Berry, it restores 1/3 of its max HP after the Berry's effect.",
-	},
+	}, 
 	spidersoup2: { // [UNUSED]
 		name: "Spider Soup2",
-		shortDesc: "If this Pokemon is hit by a super-effective attack, Sticky Web is set on the opposing side.",
+		shortDesc: "If user is hit by a super-effective attack, Sticky Web is set on the opposing side.",
 	},
 	spidersoup: {
 		name: "Spider Soup",
@@ -249,7 +244,7 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 		desc: "This Devil's moves ignore substitutes and the opposing side's Reflect, Light Screen, Safeguard, Mist, and Aurora Veil. This Devil's moves also ignore the target's protection, except Max Guard.",
 		shortDesc: "User's moves ignore target's protection, substitutes and screens.",
 	},
-	legendofpolka2: {
+	legendofpolka2: { // [UNUSED]
 		name: "Legend of Polka2",
 		desc: "This Fennec's moves of 60 power or less have their power multiplied by 1.5, including Struggle. This effect comes after a move's effect changes its own power; Multi-hit attacks always hit the maximum number of times. Triple Kick and Triple Axel do not check accuracy for the second and third hits.",
 		shortDesc: "Moves of 60 BP or less are 1.5x power; multi-hit moves hit the max number of times.",
@@ -299,19 +294,23 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	cleaner2: { // [UNUSED]
 		name: "Cleaner2",
-		shortDesc: "On switch-in, Aurora Veil, Light Screen, Reflect, Mist, Hologram, Stealth Rock, Spikes, Toxic Spikes, and Sticky Web are cleared up for both sides; Removes terrain.",
+		desc: "On switch-in, Aurora Veil, Light Screen, Reflect, Mist, Hologram, Stealth Rock, Spikes, Toxic Spikes, and Sticky Web are cleared up for both sides; Removes terrain.",
+		shortDesc: "On Switch-in, screens and hazards are cleared up for both sides; Removes terrain.",
 	},
 	cleaner3: { // [UNUSED]
 		name: "Cleaner3",
-		shortDesc: "On switch-in, Stealth Rock, Spikes, Toxic Spikes, and Sticky Web are cleared up for the user's side; Removes terrain.",
+		desc: "On switch-in, Stealth Rock, Spikes, Toxic Spikes, and Sticky Web are cleared up for the user's side; Removes terrain.",
+		shortDesc: "On switch-in, hazards are cleared up for the user's side; Removes terrain.",
 	},
 	cleaner4: { // [UNUSED]
 		name: "Cleaner4",
-		shortDesc: "If this Pokemon is hit by an attack, Aurora Veil, Light Screen, Reflect, Mist, Hologram, Stealth Rock, Spikes, Toxic Spikes, and Sticky Web are cleared up for both sides; Removes terrain.",
+		desc: "If this Pokemon is hit by an attack, Aurora Veil, Light Screen, Reflect, Mist, Hologram, Stealth Rock, Spikes, Toxic Spikes, and Sticky Web are cleared up for both sides; Removes terrain.",
+		shortDesc: "If user is attacked, screens & hazards are cleared up for both sides; Removes terrain.",
 	},
 	cleaner5: { // [UNUSED]
 		name: "Cleaner5",
-		shortDesc: "If this Pokemon is hit by an attack, their side is cleared of hazards, while the opposing side has their screens cleared; Removes terrain.",
+		desc: "If this Pokemon is hit by an attack, their side is cleared of hazards, while the opposing side has their screens cleared; Removes terrain.",
+		shortDesc: "If attacked: user's side: rids hazards; foe's side: rids screens; Removes terrain.",
 	},
 	madscience: { // [UNUSED]
 		name: "Mad Science",
