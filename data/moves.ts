@@ -1335,7 +1335,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 				}
 			},
 		},
-		target: "normal",
+		target: "allAdjacentFoes",
 		type: "Water",
 		contestType: "Cute",
 	}, 
