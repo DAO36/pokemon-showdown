@@ -1524,7 +1524,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	heavenlyharmony: { // KANATA 3
 		num: 444,
 		accuracy: 100,
-		basePower: 70,
+		basePower: 60,
 		basePowerCallback(source, target, move) {
 			if (this.field.isTerrain('mistyterrain') && target.isGrounded()) {
 				if (!source.isAlly(target)) this.hint(`${move.name}'s BP doubled on grounded target.`);
