@@ -8405,7 +8405,7 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	hopeful: {
 		name: "Hopeful",
-		desc: "Has a 10% chance to raise this Nephelim's Attack, Defense, Special Attack, Special Defense, and Speed by 1 stage.",
+		desc: "Has a 10% chance to raise this Nephelim's Attack, Defense, Special Attack, Special Defense, and Speed by 1 stage. This attack bypasses accuracy checks and never misses.",
 		shortDesc: "10% chance to raise all stats by 1 (not acc/eva).",
 	},
 	hopeless: {

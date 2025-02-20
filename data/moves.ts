@@ -3174,13 +3174,13 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	},
 	hopeful: { // IRYS 2
 		num: 370,
-		accuracy: 100,
-		basePower: 85,
+		accuracy: true,
+		basePower: 80,
 		category: "Physical",
 		name: "Hopeful",
 		pp: 5,
 		priority: 0,
-		flags: {protect: 1, pulse: 1, mirror: 1, heal: 1},
+		flags: {protect: 1, pulse: 1, mirror: 1},
 		secondary: {
 			chance: 10,
 			self: {
@@ -3229,7 +3229,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		name: "Song of Hope",
 		pp: 15,
 		priority: 0,
-		flags: {protect: 1, mirror: 1, sound: 1, bypasssub: 1},
+		flags: {protect: 1, mirror: 1, sound: 1, bypasssub: 1, heal: 1},
 		self: {
 			onHit(pokemon, source, move) { 
 				for (const ally of source.side.pokemon) {
