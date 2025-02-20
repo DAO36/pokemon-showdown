@@ -3178,20 +3178,21 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		basePower: 85,
 		category: "Physical",
 		name: "Hopeful",
-		pp: 10,
+		pp: 5,
 		priority: 0,
 		flags: {protect: 1, pulse: 1, mirror: 1, heal: 1},
-		self: {
-			onHit(pokemon, source, move) { 
-				for (const ally of source.side.pokemon) {
-					if (ally !== source && (ally.volatiles['substitute'] && !move.infiltrates)) {
-						continue;
-					}
-					ally.cureStatus();
-				}
+		secondary: {
+			chance: 10,
+			self: {
+				boosts: {
+					atk: 1,
+					def: 1,
+					spa: 1,
+					spd: 1,
+					spe: 1,
+				},
 			},
 		},
-		secondary: null,
 		target: "normal",
 		type: "Fairy",
 		contestType: "Clever",
@@ -3223,22 +3224,20 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	songofhope: { // IRYS 4
 		num: 444,
 		accuracy: 100,
-		basePower: 100,
+		basePower: 80,
 		category: "Special",
 		name: "Song of Hope",
 		pp: 5,
 		priority: 0,
 		flags: {protect: 1, mirror: 1, sound: 1, bypasssub: 1},
-		secondary: {
-			chance: 10,
-			self: {
-				boosts: {
-					atk: 1,
-					def: 1,
-					spa: 1,
-					spd: 1,
-					spe: 1,
-				},
+		self: {
+			onHit(pokemon, source, move) { 
+				for (const ally of source.side.pokemon) {
+					if (ally !== source && (ally.volatiles['substitute'] && !move.infiltrates)) {
+						continue;
+					}
+					ally.cureStatus();
+				}
 			},
 		},
 		target: "allAdjacentFoes",

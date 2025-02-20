@@ -8405,8 +8405,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	hopeful: {
 		name: "Hopeful",
-		desc: "Every Pokemon in this Nephelim's party is cured of their non-volatile status condition.",
-		shortDesc: "Cures the user's party of all status conditions.",
+		desc: "Has a 10% chance to raise this Nephelim's Attack, Defense, Special Attack, Special Defense, and Speed by 1 stage.",
+		shortDesc: "10% chance to raise all stats by 1 (not acc/eva).",
 	},
 	hopeless: {
 		name: "Hopeless",
@@ -8416,9 +8416,9 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		damage: "#crash",
 	},
 	songofhope: {
-		name: "Song of Hope",
-		desc: "Has a 10% chance to raise this Nephelim's Attack, Defense, Special Attack, Special Defense, and Speed by 1 stage.",
-		shortDesc: "10% chance to raise all stats by 1 (not acc/eva).",
+		name: "Song of Hope", 
+		desc: "Every Pokemon in this Nephelim's party is cured of their non-volatile status condition.",
+		shortDesc: "Cures the user's party of all status conditions.",
 	},
 	wormhole: {
 		name: "Wormhole",
