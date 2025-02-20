@@ -1926,14 +1926,15 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 				this.add('-block', target, 'ability: Mother Nature', '[of] ' + effectHolder);
 			}
 		},   
+		onResidualOrder: 5,
+		onResidualSubOrder: 3,
 		onResidual(pokemon) {
-			let success = false;
-			const allies = [...pokemon.side.pokemon, ...pokemon.side.allySide?.pokemon || []];
-			for (const ally of allies) {
-				if (ally.status) { 
-					ally.cureStatus();
-				}	
-			}		
+			for (const allyActive of pokemon.adjacentAllies()) {
+				if (allyActive.status) {
+					this.add('-activate', pokemon, 'ability: Mother Nature');
+					allyActive.cureStatus();
+				}
+			}
 		},
 		flags: {breakable: 1},
 		name: "Mother Nature",
