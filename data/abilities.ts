@@ -1112,7 +1112,8 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			const redirectTarget = ['randomNormal', 'adjacentFoe'].includes(move.target) ? 'normal' : move.target;
 			if (this.validTarget(this.effectState.target, source, redirectTarget)) {
 				if (move.smartTarget) move.smartTarget = false;
-				if (this.effectState.target !== target) { 
+				if (this.effectState.target !== target) {
+					this.add('-activate', this.effectState.target, 'ability: Sake Soaker');
 				}
 				return this.effectState.target;
 			}
@@ -1717,7 +1718,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
                 }
             }  	
 		}, 	
-		flags: {},
+		flags: {breakable: 1},
 		name: "Rain Shaman",
 		rating: 4,
 		num: 191,
