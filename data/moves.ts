@@ -3199,7 +3199,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	hopeless: { // IRYS 3
 		num: 370,
 		accuracy: 90,
-		basePower: 130,
+		basePower: 120,
 		category: "Physical",
 		name: "Hopeless",
 		pp: 5,
@@ -3223,10 +3223,10 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	songofhope: { // IRYS 4
 		num: 444,
 		accuracy: 100,
-		basePower: 70,
+		basePower: 100,
 		category: "Special",
 		name: "Song of Hope",
-		pp: 10,
+		pp: 5,
 		priority: 0,
 		flags: {protect: 1, mirror: 1, sound: 1, bypasssub: 1},
 		secondary: {
@@ -3241,7 +3241,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 				},
 			},
 		},
-		target: "normal",
+		target: "allAdjacentFoes",
 		type: "Rock",
 		contestType: "Tough",
 	},
