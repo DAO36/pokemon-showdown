@@ -1930,8 +1930,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			let success = false;
 			const allies = [...pokemon.side.pokemon, ...pokemon.side.allySide?.pokemon || []];
 			for (const ally of allies) {
-				if (ally.status) {
-					this.add('-activate', pokemon, 'ability: Mother Nature');
+				if (ally.status) { 
 					ally.cureStatus();
 				}	
 			}		
