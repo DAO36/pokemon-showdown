@@ -8079,7 +8079,7 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	}, 
 	sake: {
 		name: "Sake",
-		desc: "Raises this Elf's Attack and Special Attack by 12 stages in exchange for this Elf losing 1/2 of her maximum HP, rounded down; and being badly poisoned.",
+		desc: "Raises this Elf's Attack and Special Attack by 12 stages in exchange for this Elf losing 1/2 of her maximum HP, rounded down, and being badly poisoned.",
 		shortDesc: "Maxes SpA & Atk; Lose 50% HP & get badly poisoned.",
 
 		boost: "  [POKEMON] has gotten drunk!",
