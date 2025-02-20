@@ -2120,6 +2120,32 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 1,
 		num: 258,
 	},
+	fuzzyone: {
+		onUpdate(pokemon) {
+			for (const allyActive of pokemon.allies()) {
+				if (allyActive.hasAbility(['fluffyone'])) {
+					this.boost({atk: 1}, pokemon);
+				}
+			}
+		},
+		flags: {},
+		name: "Fuzzy One",
+		rating: 0,
+		num: 57,
+	},
+	fluffyone: {
+		onUpdate(pokemon) {
+			for (const allyActive of pokemon.allies()) {
+				if (allyActive.hasAbility(['fuzzyone'])) {
+					this.boost({def: 1}, pokemon);
+				}
+			}
+		},
+		flags: {},
+		name: "Fluffy One",
+		rating: 0,
+		num: 57,
+	},
 	flamingvoice: { // reskin of [Liquid Voice] but it's Fire instead of Water
 		onModifyTypePriority: -1,
 		onModifyType(move, pokemon) {
