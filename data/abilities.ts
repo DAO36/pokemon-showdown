@@ -2170,7 +2170,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		num: 258,
 	},
 	fuzzyone: {
-		onResidual(pokemon) {
+		onStart(pokemon) {
 			for (const allyActive of pokemon.allies()) {
 				if (allyActive.hasAbility(['fluffyone'])) {
 					this.boost({atk: 1}, pokemon);
@@ -2196,8 +2196,19 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 0,
 		num: 58,
 	},
+	idsword: {
+		onStart(pokemon) {
+			if (pokemon.swordBoost) return;
+			pokemon.swordBoost = true;
+			this.boost({atk: 1}, pokemon);
+		},
+		flags: {},
+		name: "Intrepid Sword",
+		rating: 4,
+		num: 234,
+	},
 	fluffyone: {
-		onResidual(pokemon) {
+		onStart(pokemon) {
 			for (const allyActive of pokemon.allies()) {
 				if (allyActive.hasAbility(['fuzzyone'])) {
 					this.boost({def: 1}, pokemon);
