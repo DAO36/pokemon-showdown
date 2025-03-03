@@ -265,6 +265,20 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3.5,
 		num: 295,
 	},
+	cdebris: {
+		onDamagingHit(damage, target, source, move) {
+			const side = source.isAlly(target) ? source.side.foe : source.side;
+			const toxicSpikes = side.sideConditions['toxicspikes'];
+			if (move.category === 'Physical' && (!toxicSpikes || toxicSpikes.layers < 2)) {
+				this.add('-activate', target, 'ability: Toxic Debris');
+				side.addSideCondition('toxicspikes', target);
+			}
+		},
+		flags: {},
+		name: "Toxic Debris",
+		rating: 3.5,
+		num: 295,
+	},
 	purepower: { // Huge Power but for Special Attack
 		onModifySpAPriority: 5,
 		onModifySpA(spa) {
@@ -2156,7 +2170,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		num: 258,
 	},
 	fuzzyone: {
-		onUpdate(pokemon) {
+		onResidual(pokemon) {
 			for (const allyActive of pokemon.allies()) {
 				if (allyActive.hasAbility(['fluffyone'])) {
 					this.boost({atk: 1}, pokemon);
@@ -2168,8 +2182,22 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 0,
 		num: 57,
 	},
+	sinus: {
+		onModifySpAPriority: 5,
+		onModifySpA(spa, pokemon) {
+			for (const allyActive of pokemon.allies()) {
+				if (allyActive.hasAbility(['minus', 'plus'])) {
+					return this.chainModify(1.5);
+				}
+			}
+		},
+		flags: {},
+		name: "Minus",
+		rating: 0,
+		num: 58,
+	},
 	fluffyone: {
-		onUpdate(pokemon) {
+		onResidual(pokemon) {
 			for (const allyActive of pokemon.allies()) {
 				if (allyActive.hasAbility(['fuzzyone'])) {
 					this.boost({def: 1}, pokemon);
