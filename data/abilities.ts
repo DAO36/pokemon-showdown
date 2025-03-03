@@ -2170,7 +2170,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		num: 258,
 	},
 	fuzzyone: {
-		onStart(pokemon) {
+		onResidual(pokemon) {
 			for (const allyActive of pokemon.allies()) {
 				if (allyActive.hasAbility(['fluffyone'])) {
 					this.boost({atk: 1}, pokemon);
@@ -2181,34 +2181,9 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		name: "Fuzzy One",
 		rating: 0,
 		num: 57,
-	},
-	sinus: {
-		onModifySpAPriority: 5,
-		onModifySpA(spa, pokemon) {
-			for (const allyActive of pokemon.allies()) {
-				if (allyActive.hasAbility(['minus', 'plus'])) {
-					return this.chainModify(1.5);
-				}
-			}
-		},
-		flags: {},
-		name: "Minus",
-		rating: 0,
-		num: 58,
-	},
-	idsword: {
-		onStart(pokemon) {
-			if (pokemon.swordBoost) return;
-			pokemon.swordBoost = true;
-			this.boost({atk: 1}, pokemon);
-		},
-		flags: {},
-		name: "Intrepid Sword",
-		rating: 4,
-		num: 234,
-	},
+	}, 
 	fluffyone: {
-		onStart(pokemon) {
+		onResidual(pokemon) {
 			for (const allyActive of pokemon.allies()) {
 				if (allyActive.hasAbility(['fuzzyone'])) {
 					this.boost({def: 1}, pokemon);
