@@ -1605,7 +1605,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3,
 		num: 44,
 	},
-	blacksmith: { // [Heatproof] + [Earth Eater] + [Water Veil] + [Thermal Exchange] but for Steel=>DEF + Rock=>ATK instead of Fire=>ATK
+	blacksmith2: { // [Heatproof] + [Earth Eater] + [Water Veil] + [Thermal Exchange] but for Steel=>DEF + Rock=>ATK instead of Fire=>ATK
 		onTryHit(target, source, move) {
 			if (target !== source && move.type === 'Ground') {
 				if (!this.heal(target.baseMaxhp / 5, target, target)) {
@@ -1628,6 +1628,41 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 				return this.chainModify(0.5);
 			}
 		},
+		onDamagingHit(damage, target, source, move) {
+			if (move.type === 'Steel') {
+				this.boost({def: 1});
+			}
+			if (move.type === 'Rock') {
+				this.boost({atk: 1});
+			}
+		},
+		onUpdate(pokemon) {
+			if (pokemon.status === 'brn') {
+				this.add('-activate', pokemon, 'ability: Blacksmith');
+				pokemon.cureStatus();
+			}
+		},
+		onSetStatus(status, target, source, effect) {
+			if (status.id !== 'brn') return;
+			if ((effect as Move)?.status) {
+				this.add('-immune', target, '[from] ability: Blacksmith');
+			}
+			return false;
+		},
+		flags: {breakable: 1},
+		name: "Blacksmith",
+		rating: 2,
+		num: 85,
+	}, 
+	blacksmith: { // [Earth Eater] + [Water Veil] + [Thermal Exchange] but for Steel=>DEF + Rock=>ATK instead of Fire=>ATK
+		onTryHit(target, source, move) {
+			if (target !== source && move.type === 'Ground') {
+				if (!this.heal(target.baseMaxhp / 5, target, target)) {
+					this.add('-immune', target, '[from] ability: Blacksmith');
+				}
+				return null;
+			}
+		}, 
 		onDamagingHit(damage, target, source, move) {
 			if (move.type === 'Steel') {
 				this.boost({def: 1});
@@ -1962,7 +1997,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	chaos: { // [Red Card (ITEM)] but as an ability
 		onAfterMoveSecondary(target, source, move) {
 			if (source && source !== target && source.hp && target.hp && move && move.category !== 'Status') {
-				if (this.randomChance(5, 10)) { 
+				if (this.randomChance(3, 10)) { 
 				source.forceSwitchFlag || target.forceSwitchFlag; {
 					return; 
 				}

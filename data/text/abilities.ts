@@ -383,10 +383,15 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 
 		block: "  [SOURCE] cannot use [MOVE]!", 
 	},
-	blacksmith: {
+	blacksmith2: {
 		name: "Blacksmith",
 		desc: "This Blacksmith is immune to Ground-type moves and restores 1/5 of her maximum HP, rounded down, when hit by a Ground-type move. If a Pokemon uses a Fire-type attack against this Blacksmith, that Pokemon's offensive stat is halved when calculating the damage to this Blacksmith; cannot be burned, gaining this Ability while burned cures it. This Blacksmith's Attack is raised 1 stage after it is damaged by a Rock-type move and Defense is raised 1 stage after it is damaged by a Steel-type move.",
 		shortDesc: "Hit by Rock: +1 Atk, Steel: +1 Def. Ground immunity. Fire damage is 1/2; can't burn.",
+	},
+	blacksmith: {
+		name: "Blacksmith",
+		desc: "This Blacksmith is immune to Ground-type moves and restores 1/5 of her maximum HP, rounded down, when hit by a Ground-type move. If a Pokemon uses a Fire-type attack against this Blacksmith, that Pokemon's offensive stat is halved when calculating the damage to this Blacksmith; cannot be burned, gaining this Ability while burned cures it. This Blacksmith's Attack is raised 1 stage after it is damaged by a Rock-type move and Defense is raised 1 stage after it is damaged by a Steel-type move.",
+		shortDesc: "If user is hit by Rock move, +1 Atk; If Steel, +1 Def. Ground immunity. Can't burn.",
 	},
 	graondstone: { // [UNUSED]
 		name: "Graondstone",
@@ -453,8 +458,8 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	chaos: {
 		name: "Chaos",
-		desc: "If a Pokemon uses a damaging move on this Rat, and she survives the hit, there is a 50% chance the attacker is then forced to switch to a random ally.",
-		shortDesc: "50% chance those who attack the user are forced to switch to a random ally.",
+		desc: "If a Pokemon uses a damaging move on this Rat, and she survives the hit, there is a 33% chance the attacker is then forced to switch to a random ally.",
+		shortDesc: "33% chance those who attack the user are forced to switch to a random ally.",
 	},
 	archiver: {
 		name: "Archiver",
