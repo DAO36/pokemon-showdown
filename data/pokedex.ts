@@ -19293,7 +19293,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		types: ["Dragon", "Flying"],
 		gender: "F",
 		baseStats: {hp: 125, atk: 150, def: 160, spa: 120, spd: 90, spe: 55},
-		abilities: {0: "Dragon's Maw"},
+		abilities: {0: "Beast Boost"},
 		heightm: 2.1,
 		weightkg: 66.6,
 		color: "Brown",
