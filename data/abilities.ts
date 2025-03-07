@@ -625,7 +625,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3.5,
 		num: 276,
 	},
-	nurse: { // reskin of [Hospitality] + [Regenerator] + [Flower Veil] but for all types + cures Party upon switch-in 
+	nurse: { // reskin of [Regenerator] + [Flower Veil] but for all types + cures Party upon switch-in 
 		onPreStart(pokemon) {
 			this.add('-activate', pokemon, 'ability: Nurse');
 			let success = false;
@@ -634,11 +634,6 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 				if (ally.cureStatus()) success = true;
 			} 
 			return success;
-		},
-		onStart(pokemon) {
-			for (const ally of pokemon.adjacentAllies()) {
-				this.heal(ally.baseMaxhp / 4, ally, pokemon);
-			}
 		}, 
 		onAllySetStatus(status, target, source, effect) {
 			if (source && target !== source && effect && effect.id !== 'yawn') {
