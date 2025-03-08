@@ -1771,13 +1771,13 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		onModifySpAPriority: 5,
 		onModifySpA(spa, pokemon) {
 			if (['raindance', 'primordialsea'].includes(pokemon.effectiveWeather())) {
-				return this.chainModify(1.5);
+				return this.chainModify(1.3);
 			}
 		},
 		onModifyAtkPriority: 5,
 		onModifyAtk(atk, pokemon) {
 			if (['raindance', 'primordialsea'].includes(pokemon.effectiveWeather())) {
-				return this.chainModify(1.5);
+				return this.chainModify(1.3);
 			}
 		},
 		onWeather(target, source, effect) {
