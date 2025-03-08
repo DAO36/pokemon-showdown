@@ -25223,7 +25223,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	tentacles: { // INA 3
 		num: 370,
 		accuracy: 80,
-		basePower: 15,
+		basePower: 20,
 		category: "Physical",
 		name: "Tentacles",
 		pp: 15,
