@@ -97178,6 +97178,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			meteorassault: ["9M"],
 			vacuumwave: ["9M"],
 			rockblast: ["9M"],
+			moonlight: ["9M"],
 			bodypress: ["9M"],
 			earthpower: ["9M"],
 			earthquake: ["9M"],
