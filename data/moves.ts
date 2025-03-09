@@ -23099,7 +23099,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		basePower: 120,
 		category: "Special",
 		name: "Black Magic",
-		pp: 10,
+		pp: 5,
 		flags: {protect: 1, mirror: 1, pulse: 1},
 		self: {
 			boosts: {
