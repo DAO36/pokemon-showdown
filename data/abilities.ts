@@ -446,17 +446,18 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 4,
 		num: 94,
 	}, 
-	spidersoup3: { // if hit by physcial instead of more specific contacts
+	spidersoup: { // if hit by physcial instead of more specific contacts
+		onDamagingHitOrder: 1,
 		onDamagingHit(damage, target, source, move) {
 			const side = source.isAlly(target) ? source.side.foe : source.side;
 			const stickyweb = side.sideConditions['stickyweb'];
 			if (move.category === 'Physical' && (!stickyweb || stickyweb.layers < 1)) {
-				this.add('-activate', target, 'ability: Spider Soup3');
+				this.add('-activate', target, 'ability: Spider Soup');
 				side.addSideCondition('stickyweb', target);
 			}
 		},
-		flags: {},
-		name: "Spider Soup3",
+		flags: {breakable: 1},
+		name: "Spider Soup",
 		rating: 3.5,
 		num: 295,
 	},
@@ -475,18 +476,18 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3.5,
 		num: 295,
 	},
-	spidersoup: { // reskin of [Toxic Debris] but for sticky webs instead of toxic waste
+	spidersoup3: { // reskin of [Toxic Debris] but for sticky webs instead of toxic waste
 		onDamagingHitOrder: 1,
 		onDamagingHit(damage, target, source, move) {
 			const side = source.isAlly(target) ? source.side.foe : source.side;
 			const stickyweb = side.sideConditions['stickyweb'];
 			if (this.checkMoveMakesContact(move, source, target) && (!stickyweb || stickyweb.layers < 1)) {
-				this.add('-activate', target, 'ability: Spider Soup');
+				this.add('-activate', target, 'ability: Spider Soup3');
 				side.addSideCondition('stickyweb', target);
 			}
 		},
 		flags: {breakable: 1},
-		name: "Spider Soup",
+		name: "Spider Soup3",
 		rating: 3.5,
 		num: 295,
 	},
