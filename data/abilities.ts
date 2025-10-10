@@ -446,6 +446,20 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 4,
 		num: 94,
 	}, 
+	spidersoup3: { // if hit by physcial instead of more specific contacts
+		onDamagingHit(damage, target, source, move) {
+			const side = source.isAlly(target) ? source.side.foe : source.side;
+			const stickyweb = side.sideConditions['stickyweb'];
+			if (move.category === 'Physical' && (!stickyweb || stickyweb.layers < 1)) {
+				this.add('-activate', target, 'ability: Spider Soup3');
+				side.addSideCondition('stickyweb', target);
+			}
+		},
+		flags: {},
+		name: "Spider Soup3",
+		rating: 3.5,
+		num: 295,
+	},
 	spidersoup2: { // if haachama is hit by a super-effective move, sets up sticky web <<<UNUSED>>>
 		onDamagingHitOrder: 1,
 		onDamagingHit(damage, target, source, move) {
