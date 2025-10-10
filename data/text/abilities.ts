@@ -188,8 +188,8 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	pekopeko: {
 		name: "Peko Peko",
-		desc: "30% chance a Pokemon using an attacking move on this War Criminal will either be poisoned, badly poisoned, paralyzed, frozen, burned or put to sleep.",
-		shortDesc: "If hit by attack: 30% chance attacker is given a random non-volatile status condition.",
+		desc: "25% chance a Pokemon using an attacking move on this War Criminal will either be poisoned, paralyzed, frozen, burned or put to sleep.",
+		shortDesc: "If hit by attack: 25% chance attacker is given a random non-volatile status condition.",
 	},
 	holyknight: {
 		name: "Holy Knight",
@@ -457,8 +457,8 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	chaos: {
 		name: "Chaos",
-		desc: "If a Pokemon uses a damaging move on this Rat, and she survives the hit, there is a 33% chance the attacker is then forced to switch to a random ally.",
-		shortDesc: "33% chance those who attack the user are forced to switch to a random ally.",
+		desc: "If a Pokemon uses a damaging move on this Rat, and she survives the hit, there is a 1 in 6 chance the attacker is then forced to switch to a random ally.",
+		shortDesc: "1/6 chance those who attack the user are forced to switch to a random ally.",
 	},
 	archiver: {
 		name: "Archiver",

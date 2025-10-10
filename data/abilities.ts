@@ -842,6 +842,30 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 				} else if (r < 20) {
 					source.setStatus('slp', target);
 				} else if (r < 25) {
+					source.setStatus('frz', target);
+				}
+				 
+			}
+		},
+		flags: {breakable: 1},
+		name: "Peko Peko",
+		rating: 2,
+		num: 27,
+	},
+	pekopeko2: { // reskin of [Effect Spore] but even more on crack
+		onDamagingHitOrder: 1,
+		onDamagingHit(damage, target, source, move) {
+			if (move.category === 'Special' || move.category === 'Physical' && !source.status) {
+				const r = this.random(100);
+				if (r < 5) {
+					source.setStatus('psn', target);
+				} else if (r < 10) {
+					source.setStatus('brn', target);
+				} else if (r < 15) {
+					source.setStatus('par', target);
+				} else if (r < 20) {
+					source.setStatus('slp', target);
+				} else if (r < 25) {
 					source.setStatus('tox', target);
 				} else if (r < 30) {
 					source.setStatus('frz', target);
@@ -850,7 +874,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			}
 		},
 		flags: {breakable: 1},
-		name: "Peko Peko",
+		name: "Peko Peko2",
 		rating: 2,
 		num: 27,
 	},
@@ -2021,7 +2045,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	chaos: { // [Red Card (ITEM)] but as an ability
 		onAfterMoveSecondary(target, source, move) {
 			if (source && source !== target && source.hp && target.hp && move && move.category !== 'Status') {
-				if (this.randomChance(3, 10)) { 
+				if (this.randomChance(1, 6)) { 
 				source.forceSwitchFlag || target.forceSwitchFlag; {
 					return; 
 				}
