@@ -66,6 +66,50 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 5,
 		num: 24,
 	},
+	testsubject2: { // Testing testiong 1 2 3 TESTINg
+		onResidualOrder: 5,
+		onResidualSubOrder: 4,
+		onResidual(pokemon) {
+			this.heal(pokemon.baseMaxhp / 2);
+		}, 
+		onDeductPP(pokemon) {  
+			const moveSlot = pokemon.moveSlots.find(move => move.pp === 0) ||
+				pokemon.moveSlots.find(move => move.pp < move.maxpp);
+			if (!moveSlot) return;
+			moveSlot.pp += 10;
+			if (moveSlot.pp > moveSlot.maxpp) moveSlot.pp = moveSlot.maxpp;
+		},
+		flags: {},
+		name: "Test Subject2",
+		rating: 5,
+		num: 24,
+	},
+	testgiver: { // Testing testiong 1 2 3 TESTING
+		onModifyMove(move) {
+			if (!move.ignoreImmunity) move.ignoreImmunity = {};
+			if (move.ignoreImmunity !== true) {
+				move.ignoreImmunity['Normal'] = true;
+				move.ignoreImmunity['Ghost'] = true;
+			}
+		},
+		onResidualOrder: 5,
+		onResidualSubOrder: 4,
+		onResidual(pokemon) {
+			this.heal(pokemon.baseMaxhp / 2);
+		}, 
+		onDeductPP(pokemon) {  
+			const moveSlot = pokemon.moveSlots.find(move => move.pp === 0) ||
+				pokemon.moveSlots.find(move => move.pp < move.maxpp);
+			if (!moveSlot) return;
+			moveSlot.pp += 10;
+			if (moveSlot.pp > moveSlot.maxpp) moveSlot.pp = moveSlot.maxpp;
+		},
+		onCriticalHit: false,
+		flags: {},
+		name: "Test Giver",
+		rating: 5,
+		num: 24,
+	},
 	corruption: { // instantly kills any pokemon thats attacks user
 		onDamagingHitOrder: 1,
 		onDamagingHit(damage, target, source, move) {

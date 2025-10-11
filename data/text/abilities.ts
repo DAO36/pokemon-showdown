@@ -7,6 +7,14 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 		name: "Test Subject", 
 		shortDesc: "Testing, testing, 1 2 3, TESTING",
 	},
+	testsubject2: {
+		name: "Test Subject2", 
+		shortDesc: "no longer immune to crits, and no immunity avoiding",
+	},
+	testgiver: {
+		name: "Test Giver", 
+		shortDesc: "FOR SCIENCE!",
+	},
 	corruption: {
 		name: "Corruption",
 		desc: "...something's...not right...",
