@@ -165,7 +165,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 5,
 		num: 24,
 	},
-	gtfo: { // Sreskin of [Emergency Exit]/[Wimp Out] + [RED CARD] as an ability
+	gtfo: { // reskin of [Emergency Exit]/[Wimp Out] + [RED CARD] as an ability
 		onAfterMoveSecondary(target, source, move) {
 			if (target.hp <= target.maxhp / 2 && move && move.category !== 'Status') {
 				if (!source.isActive || !this.canSwitch(source.side) || source.forceSwitchFlag || target.forceSwitchFlag) {
@@ -194,7 +194,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 5,
 		num: 24,
 	}, 
-	survivalist: { // works (maybe works a little TOO much) mf literally is unkillable
+	survivalist: { // works (maybe works a little TOO much) mf literally is unkillable [focus band as ability]
 		onDamagePriority: -40,
 		onDamage(damage, target, source, effect) {
 			if (this.randomChance(1, 1) && damage >= target.hp && effect && effect.effectType === 'Move') {
@@ -313,20 +313,6 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		},
 		flags: {},
 		name: "Sneaky Pebbles",
-		rating: 3.5,
-		num: 295,
-	},
-	cdebris: {
-		onDamagingHit(damage, target, source, move) {
-			const side = source.isAlly(target) ? source.side.foe : source.side;
-			const toxicSpikes = side.sideConditions['toxicspikes'];
-			if (move.category === 'Physical' && (!toxicSpikes || toxicSpikes.layers < 2)) {
-				this.add('-activate', target, 'ability: Toxic Debris');
-				side.addSideCondition('toxicspikes', target);
-			}
-		},
-		flags: {},
-		name: "Toxic Debris",
 		rating: 3.5,
 		num: 295,
 	},
