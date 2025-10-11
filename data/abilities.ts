@@ -45,6 +45,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			if (!move.ignoreImmunity) move.ignoreImmunity = {};
 			if (move.ignoreImmunity !== true) {
 				move.ignoreImmunity['Normal'] = true;
+				move.ignoreImmunity['Ghost'] = true;
 			}
 		},
 		onResidualOrder: 5,
