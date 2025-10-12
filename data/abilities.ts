@@ -2316,7 +2316,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			pokemon.abilityState.gluttony = true;
 		},
 		flags: {breakable: 1},
-		name: "God Eyes",
+		name: "Big Cat Means Big Trouble",
 		rating: 4,
 		num: 99,
 	},
