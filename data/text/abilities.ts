@@ -104,12 +104,16 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 
 		damage: "  [POKEMON] is sacrificing her HP in exchange for more power!",
 	}, 
+	spidersoup: {
+		name: "Spider Soup",
+		shortDesc: "If this Master Chef is hit by a physical attack, Sticky Web is set on the opposing side.",
+	},
 	spidersoup2: { // [UNUSED]
 		name: "Spider Soup2",
 		shortDesc: "If user is hit by a super-effective attack, Sticky Web is set on the opposing side.",
 	},
-	spidersoup: {
-		name: "Spider Soup",
+	spidersoup3: {
+		name: "Spider Soup3",
 		desc: "If this Master Chef is hit by a move that makes contact, Sticky Web is set up on the opposing side.",
 		shortDesc: "If user is hit by a move that makes contact, Sticky Web is set on the opposing side.",
 	},
