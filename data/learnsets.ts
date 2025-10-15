@@ -94099,6 +94099,11 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			splitpersonality: ["9M"],
 			haachamacooking: ["9M"],
 			fourcoursemeal: ["9M"],
+			sludgewave: ["9M"],
+			sludgebomb: ["9M"],
+			gunkshot: ["9M"],
+			poisonjab: ["9M"],
+			toxic: ["9M"],
         },
 	},
 	akaihaato: {
@@ -94305,6 +94310,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 		learnset: {
 			nightslash: ["9M"],
 			darkpulse: ["9M"],
+			sacredsword: ["9M"],
 			throatchop: ["9M"],
 			closecombat: ["9M"],
 			secretsword: ["9M"],

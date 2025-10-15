@@ -18755,7 +18755,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 	haachama: {
 		num: 595,
 		name: "Haachama",
-		types: ["Dark", "Bug"],
+		types: ["Bug", "Poison"],
 		gender: "F",
 		baseStats: {hp: 80, atk: 125, def: 75, spa: 120, spd: 95, spe: 105},
 		abilities: {0: "Unnerve", 1: "Prankster", H: "Mold Breaker", S: "Spider Soup"},
@@ -18771,7 +18771,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		name: "Haachama-Mega",
 		baseSpecies: "Haachama",
 		forme: "Mega",
-		types: ["Dark", "Bug"],
+		types: ["Bug", "Poison"],
 		gender: "F",
 		baseStats: {hp: 80, atk: 145, def: 85, spa: 140, spd: 135, spe: 115},
 		abilities: {0: "Compound Eyes"},
