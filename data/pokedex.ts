@@ -18931,7 +18931,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 	choco: {
 		num: 241,
 		name: "Choco",
-		types: ["Fairy", "Dark"],
+		types: ["Fairy"],
 		gender: "F",
 		baseStats: {hp: 130, atk: 105, def: 110, spa: 105, spd: 90, spe: 60},
 		abilities: {0: "Healer", 1: "Natural Cure", H: "Levitate", S: "Nurse"},
@@ -18947,7 +18947,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		name: "Choco-Mega",
 		baseSpecies: "Choco",
 		forme: "Mega",
-		types: ["Fairy", "Dark"],
+		types: ["Fairy"],
 		gender: "F",
 		baseStats: {hp: 130, atk: 125, def: 140, spa: 125, spd: 120, spe: 60},
 		abilities: {0: "Triage"},
