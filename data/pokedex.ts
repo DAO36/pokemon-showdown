@@ -19187,7 +19187,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 	rushia: {
 		num: 12,
 		name: "Rushia",
-		types: ["Dark", "Bug"],
+		types: ["Bug", "Ghost"],
 		gender: "F",
 		baseStats: {hp: 75, atk: 125, def: 75, spa: 115, spd: 100, spe: 110},
 		abilities: {0: "Berserk", 1: "Anger Point", H: "Pressure", S: "Yandere"},
@@ -19203,7 +19203,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		name: "Rushia-Mega",
 		baseSpecies: "Rushia",
 		forme: "Mega",
-		types: ["Dark", "Bug"],
+		types: ["Bug", "Ghost"],
 		gender: "F",
 		baseStats: {hp: 75, atk: 145, def: 85, spa: 135, spd: 140, spe: 120},
 		abilities: {0: "Sheer Force"},

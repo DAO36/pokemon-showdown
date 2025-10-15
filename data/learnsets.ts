@@ -94952,6 +94952,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			facade: ["9M"],
 			protect: ["9M"],
 			rest: ["9M"],
+			pursuit: ["9M"],
 			destinybond: ["9M"],
 			necromancy: ["9M"],
 			swordsdance: ["9M"],

@@ -23632,7 +23632,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		},
 		secondary: null,
 		target: "normal",
-		type: "Dark",
+		type: "Ghost",
 		contestType: "Clever",
 	},
 	necromancy: { // RUSHIA 2
