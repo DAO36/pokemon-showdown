@@ -18797,7 +18797,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		formeOrder: ["AkaiHaato", "AkaiHaato-Haachama"],
 	},
 	akaihaatohaachama: {
-		num: 452,
+		num: 451,
 		name: "AkaiHaato-Haachama",
 		baseSpecies: "AkaiHaato",
 		forme: "Haachama",
@@ -19185,7 +19185,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		requiredItem: "Noelite",
 	},
 	rushia: {
-		num: 12,
+		num: 666,
 		name: "Rushia",
 		types: ["Bug", "Ghost"],
 		gender: "F",
@@ -19199,7 +19199,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		formeOrder: ["Rushia", "Rushia-Mega"],
 	},
 	rushiamega: {
-		num: 666,
+		num: 292,
 		name: "Rushia-Mega",
 		baseSpecies: "Rushia",
 		forme: "Mega",
@@ -19286,7 +19286,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		formeOrder: ["Coco", "Coco-Mega", "Coco-Draco"],
 	},
 	cocomega: {
-		num: 149,
+		num: 6,
 		name: "Coco-Mega",
 		baseSpecies: "Coco",
 		forme: "Mega",
@@ -19301,7 +19301,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		requiredItem: "Coconite",
 	},
 	cocodraco: {
-		num: 621,
+		num: 149,
 		name: "Coco-Draco",
 		types: ["Dragon", "Flying"],
 		gender: "F",
@@ -19458,7 +19458,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		requiredItem: "Polkanite",
 	},
 	botan: {
-		num: 667,
+		num: 668,
 		name: "Botan",
 		types: ["Fighting"],
 		gender: "F",
@@ -19472,7 +19472,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		formeOrder: ["Botan", "Botan-Mega"],
 	},
 	botanmega: {
-		num: 668,
+		num: 244,
 		name: "Botan-Mega",
 		baseSpecies: "Botan",
 		forme: "Mega",
@@ -19819,7 +19819,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		requiredItem: "Iofinite",
 	},
 	risu: {
-		num: 819,
+		num: 417,
 		name: "Risu",
 		types: ["Grass", "Normal"],
 		gender: "F",
@@ -20219,7 +20219,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		formeOrder: ["Ina", "Ina-Mega"],
 	},
 	inamega: {
-		num: 72,
+		num: 73,
 		name: "Ina-Mega",
 		baseSpecies: "Ina",
 		forme: "Mega",
@@ -20403,7 +20403,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		requiredItem: "Kroniite",
 	},
 	kroniiboros: {
-		num: 23,
+		num: 147,
 		name: "Kronii-Boros",
 		types: ["Psychic", "Dragon"],
 		gender: "M",
@@ -23150,7 +23150,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		eggGroups: ["Field"],
 	},
 	ultima: {
-		num: 69420,
+		num: 493,
 		name: "Ultima",
 		types: ["Normal", "Grass", "Fire", "Water", "Electric", "Fighting", "Flying", "Poison", "Ground", "Rock", "Psychic", "Ice", "Bug", "Dragon", "Ghost", "Dark", "Steel", "Fairy"],
 		gender: "N",
