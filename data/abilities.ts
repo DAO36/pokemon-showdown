@@ -945,60 +945,6 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 0,
 		num: 294,
 	},
-	piracy2: { // reskin of [Costar] but copies foes stats insetad of allies and also clears foes stats  
-		onPreStart(pokemon) { 
-			const foe = pokemon.side.foe.active[pokemon.side.active.length - 1 - pokemon.position]
-			const adjacentFoe = pokemon.adjacentFoes()[0]; 
-			if (!foe) return;
-
-            const positiveBoosts: Partial<BoostsTable> = {};
-			let i: BoostID;
-			for (i in foe.boosts) {
-				if (foe.boosts[i]! > 0) {
-					positiveBoosts[i] = foe.boosts[i];
-				}
-				if (Object.keys(positiveBoosts).length < 1) return;
-			    this.boost(positiveBoosts, foe);
-			}
-			const volatilesToCopy = ['dragoncheer', 'focusenergy', 'gmaxchistrike', 'laserfocus'];
-			// we need to be sure to remove all the overlapping crit volatiles before trying to add any
-			for (const volatile of volatilesToCopy) pokemon.removeVolatile(volatile);
-			for (const volatile of volatilesToCopy) {
-				if (foe.volatiles[volatile]) {
-					pokemon.addVolatile(volatile);
-					if (volatile === 'gmaxchistrike') pokemon.volatiles[volatile].layers = foe.volatiles[volatile].layers;
-					if (volatile === 'dragoncheer') pokemon.volatiles[volatile].hasDragonType = foe.volatiles[volatile].hasDragonType;
-				}  
-			}	
-				this.add('-copyboost', pokemon, foe, '[from] ability: Piracy2');  
-			 
-				foe.clearBoosts();
-			this.add('-clearboost', foe);
-		},
-		flags: {breakable: 1},
-		name: "Piracy2",
-		rating: 0,
-		num: 294,
-	},
-	oppurtunist: {
-		onFoeAfterBoost(boost, target, source, effect) {
-			if (effect?.name === 'Opportunist' || effect?.name === 'Mirror Herb') return;
-			const pokemon = this.effectState.target;
-			const positiveBoosts: Partial<BoostsTable> = {};
-			let i: BoostID;
-			for (i in boost) {
-				if (boost[i]! > 0) {
-					positiveBoosts[i] = boost[i];
-				}
-			}
-			if (Object.keys(positiveBoosts).length < 1) return;
-			this.boost(positiveBoosts, pokemon);
-		},
-		flags: {},
-		name: "Opportunist",
-		rating: 3,
-		num: 290,
-	},
 	yandere: { // blocks pivot moves like U-Turn/Volt Switch/Flip Turn and status like Teleport/Parting Shot/Baton Pass/Chilly Reception etc.
 		onFoeTryMove(pokemon, target, move) {
 			const yandereHolder = this.effectState.target;
