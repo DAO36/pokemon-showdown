@@ -35,11 +35,6 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 		shortDesc: "If the user is KO'd by a Pokemon, that Pokemon also gets KO'd.",
 
 		damage: "  [POKEMON] got nuked!",
-	}, 
-	stayingup: {
-		name: "Staying Up",
-		desc: "Restores all lowered stat stages to 0 when one is less than 0, whether as a result of an opposing Pokemon (Parting Shot, Intimidate, etc.) or a self-inflicted reason (Close Combat, Draco Meteor, etc.).",
-		shortDesc: "Restores all lowered stat stages to 0 when one is less than 0.",
 	},
 	babydonthurtme: {
 		name: "Baby Dont Hurt Me",
@@ -169,7 +164,12 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 		desc: "On switch-in, this Witch summons Magic Room for 5 turns.",
 		shortDesc: "On switch-in, user summons Magic Room.",
 	},
-	shubashuba: {
+	stayingpositive: {
+		name: "Staying Positive",
+		desc: "Restores all lowered stat stages to 0 when one is less than 0, whether as a result of an opposing Pokemon (Parting Shot, Intimidate, etc.) or a self-inflicted reason (Close Combat, Draco Meteor, etc.).",
+		shortDesc: "If this Duck's stat is lowered to less than 0, resets back to 0.",
+	},
+	shubashuba: { // UNUSED
 		name: "Shuba Shuba",
 		desc: "This Duck's offensive stat is multiplied by 1.5 while using a Water-type attack.",
 		shortDesc: "User's offensive stat is boosted by 50% when using a Water-type attack.",

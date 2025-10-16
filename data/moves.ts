@@ -23201,12 +23201,12 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Fighting",
 		contestType: "Cool",
 	},
-	quackattack: { // SUBARU 4
+	shuba: { // SUBARU 4
 		num: 370,
 		accuracy: 90,
 		basePower: 120,
 		category: "Physical",
-		name: "Quack Attack",
+		name: "Shuba",
 		pp: 5,
 		priority: 0,
 		flags: {contact: 1, protect: 1, mirror: 1, wind: 1},

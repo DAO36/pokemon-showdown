@@ -232,29 +232,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		name: "Imma Bounce",
 		rating: 5,
 		num: 24,
-	}, 
-	stayingup: { // SUCCESS! if the user's stats are lowered bc of a move it uses, the lowered stats are reset back to zer0
-		onUpdate(pokemon) {
-			let activate = false;
-			const boosts: SparseBoostsTable = {};  
-			let i: BoostID;
-			for (i in pokemon.boosts) {
-				if (pokemon.boosts[i] < 0) {
-					activate = true;
-					boosts[i] = 0;
-				}
-			}
-			if (activate) {
-				pokemon.setBoost(boosts);  
-				this.add('-activate', pokemon, 'ability: Staying Up');
-			    this.add('-clearnegativeboost', pokemon);
-			}
-		},
-		flags: {},
-		name: "Staying Up", 
-		rating: 5,
-		num: 24,
-	}, 
+	},
 	babydonthurtme: { // any pokemon that attacks the user loses 1/8 of their max hp
 		onDamagingHitOrder: 1,
 		onDamagingHit(damage, target, source, move) {
@@ -764,7 +742,29 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 1.5,
 		num: 179,
 	},
-	shubashuba: { // reskin of [Rocky Payload] but for Water
+	stayingpositive: { // SUCCESS! if the user's stats are lowered bc of a move it uses, the lowered stats are reset back to zer0
+		onUpdate(pokemon) {
+			let activate = false;
+			const boosts: SparseBoostsTable = {};  
+			let i: BoostID;
+			for (i in pokemon.boosts) {
+				if (pokemon.boosts[i] < 0) {
+					activate = true;
+					boosts[i] = 0;
+				}
+			}
+			if (activate) {
+				pokemon.setBoost(boosts);  
+				this.add('-activate', pokemon, 'ability: Staying Positive');
+			    this.add('-clearnegativeboost', pokemon);
+			}
+		},
+		flags: {},
+		name: "Staying Positive", 
+		rating: 5,
+		num: 24,
+	}, 
+	shubashuba: { // [UNUSED] reskin of [Rocky Payload] but for Water
 		onStart(pokemon) {
 			this.add('-activate', pokemon, 'ability: Shuba Shuba');
 		},
