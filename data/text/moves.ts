@@ -7853,8 +7853,13 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	duckasmr: {
 		name: "Duck ASMR",
-		desc: "Has a 10% chance to confuse the target. Hits adjacent foes.",
-		shortDesc: "Hits adjacent foes, 10% chance to confuse target(s).",
+		desc: "Has a 10% chance to confuse the target; Lowers the user's Special Attack by 2 stages. Hits adjacent foes.",
+		shortDesc: "Lowers Sp.Atk by 2. 10% chance to confuse target(s).",
+	},
+	cometeor: {
+		name: "Draco Meteor",
+		desc: "Lowers the user's Special Attack by 2 stages.",
+		shortDesc: "Lowers the user's Sp. Atk by 2.",
 	},
 	duckdance: {
 		name: "Duck Dance",

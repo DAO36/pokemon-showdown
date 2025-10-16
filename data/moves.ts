@@ -23154,13 +23154,18 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	},
 	duckasmr: { // SUBARU 1
 		num: 370,
-		accuracy: 100,
-		basePower: 80,
+		accuracy: 90,
+		basePower: 130,
 		category: "Special",
 		name: "Duck ASMR",
-		pp: 10,
+		pp: 5,
 		priority: 0,
 		flags: {protect: 1, mirror: 1, sound: 1, bypasssub: 1},
+		self: {
+			boosts: {
+				spa: -2,
+			},
+		},
 		secondary: {
 			chance: 20,
 			volatileStatus: 'confusion',
