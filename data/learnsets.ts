@@ -94499,6 +94499,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			roost: ["9M"],
 			featherdance: ["9M"],
 			defog: ["9M"],
+			curse: ["9M"],
 			tailwind: ["9M"],
 			aquaring: ["9M"],
 			raindance: ["9M"],
