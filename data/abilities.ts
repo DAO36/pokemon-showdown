@@ -954,8 +954,8 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
             const positiveBoosts: Partial<BoostsTable> = {};
 			let i: BoostID;
 			for (i in foe.boosts) {
-				if (pokemon.boosts[i]! > 0) {
-					positiveBoosts[i] = pokemon.boosts[i];
+				if (foe.boosts[i]! > 0) {
+					positiveBoosts[i] = foe.boosts[i];
 				}
 			}
 			const volatilesToCopy = ['dragoncheer', 'focusenergy', 'gmaxchistrike', 'laserfocus'];
