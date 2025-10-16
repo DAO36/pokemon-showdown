@@ -955,7 +955,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			let i: BoostID;
 			for (i in foe.boosts) {
 				if (foe.boosts[i]! > 0) {
-					positiveBoosts[i] = pokemon.boosts[i];
+					positiveBoosts[i] = foe.boosts[i];
 				}
 				if (Object.keys(positiveBoosts).length < 1) return;
 			    this.boost(positiveBoosts, foe);
