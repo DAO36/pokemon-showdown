@@ -94516,7 +94516,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			duckasmr: ["9M"],
 			duckdance: ["9M"],
 			oozorapolice: ["9M"],
-			quackattack: ["9M"],
+			shuba: ["9M"],
         },
 	},		
 	korone: {
