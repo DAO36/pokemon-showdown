@@ -7866,8 +7866,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		desc: "Raises this duck's Attack and Speed by 1 stage.",
 		shortDesc: "Raises user's Attack and Speed by 1.",
 	},
-	quackattack: {
-		name: "Quack Attack",
+	shuba: {
+		name: "Shuba",
 		desc: "Lowers this Duck's Defense and Special Defense by 1 stage.",
 		shortDesc: "Lowers the user's Defense and Sp. Def by 1.",
 	},
