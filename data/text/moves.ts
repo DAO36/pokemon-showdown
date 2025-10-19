@@ -7625,7 +7625,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	sakurastrike: {
 		name: "Sakura Strike",
-		shortDesc: "No additional effect. Hits adjacent foes.",
+		desc: "Has a 10% chance to raise this Shrine maiden's Attack by 1 stage. Hits adjacent foes.",
+		shortDesc: "10% chance to raise the user's Attack by 1.", 
 	},
 	lavabucket: {
 		name: "Lava Bucket",
@@ -8012,8 +8013,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	starshuriken: {
 		name: "Star Shuriken",
-		desc: "Hits twice. If the first hit breaks the target's substitute, it will take damage for the second hit.",
-		shortDesc: "Hits 2 times in one turn.",
+		desc: "Has a 20% chance to raise this Angel's Special Defense by 1 stage. Hits twice. If the first hit breaks the target's substitute, it will take damage for the second hit.",
+		shortDesc: "20% chance to raise user's Sp.Def by 1. Hits twice.",
 	},
 	nothingwrong: {
 		name: "Nothing Wrong",
@@ -8032,13 +8033,13 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	staticslam: {
 		name: "Static Slam",
-		desc: "Has a 10% chance to paralyze the target. Damage is calculated using this Sheep's Defense stat as her Attack, including stat stage changes. Other effects that modify the Attack stat are used as normal.",
-		shortDesc: "Uses Def as Atk in damage calc. 10% to paralyze foe.",
+		desc: "Has a 20% chance to paralyze the target. Damage is calculated using this Sheep's Defense stat as her Attack, including stat stage changes. Other effects that modify the Attack stat are used as normal.",
+		shortDesc: "Uses Def as Atk in damage calc. 20% to paralyze foe.",
 	},
 	candycrash: {
 		name: "Candy Crash",
-		desc: "Has a 10% chance to raise this baby's Speed by 1 stage. Hits two to five times. Has a 35% chance to hit two or three times and a 15% chance to hit four or five times. If one of the hits breaks the target's substitute, it will take damage for the remaining hits. If the user has the Skill Link Ability, this move will always hit five times. If the user is holding Loaded Dice, this move will hit 4-5 times.",
-		shortDesc: "10% raise user's Speed by 1. Hits 2-5 times in one turn.",
+		desc: "Has a 25% chance to raise this baby's Speed by 1 stage. Hits two to five times. Has a 35% chance to hit two or three times and a 15% chance to hit four or five times. If one of the hits breaks the target's substitute, it will take damage for the remaining hits. If the user has the Skill Link Ability, this move will always hit five times. If the user is holding Loaded Dice, this move will hit 4-5 times.",
+		shortDesc: "25% raise user's Speed by 1. Hits 2-5 times in one turn.",
 	}, 
 	sweetassault: {
 		name: "Sweet Assault",
@@ -8052,8 +8053,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	circusshow: {
 		name: "Circus Show",
-		desc: "Has a 10% chance to confuse the target. Hits three times. Power increases to 40 for the second hit and 60 for the third. This move checks accuracy for each hit, and the attack ends if the target avoids a hit. If one of the hits breaks the target's substitute, it will take damage for the remaining hits. If the user has the Skill Link Ability, this move will always hit three times.",
-		shortDesc: "10% to confuse. Hits x3 each can miss, but power rises.",
+		desc: "Has a 20% chance to confuse the target. Hits three times. Power increases to 40 for the second hit and 60 for the third. This move checks accuracy for each hit, and the attack ends if the target avoids a hit. If one of the hits breaks the target's substitute, it will take damage for the remaining hits. If the user has the Skill Link Ability, this move will always hit three times.",
+		shortDesc: "20% to confuse. Hits x3 each can miss, but power rises.",
 	},
 	polmao: {
 		name: "PoLMAO",
@@ -8281,8 +8282,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	sharkattack: {
 		name: "Shark Attack",
-		desc: "If the weather is Primordial Sea or Rain Dance, this move does not check accuracy. If the weather is Sandstorm, Desolate Land or Sunny Day, this move's accuracy is 50% and its base power is halved.",
-		shortDesc: "Does not miss in Rain.", 
+		desc: "Has a 20% chance to lower the target's Defense by 1 stage and/or a 20% chance to make it flinch. If the weather is Primordial Sea or Rain Dance, this move does not check accuracy. If the weather is Sandstorm, Desolate Land or Sunny Day, this move's accuracy is 50%.",
+		shortDesc: "Target: 20% -1 Defense, 20% flinch.", 
 	},
 	atlantisstrike: {
 		name: "Atlantis Strike",

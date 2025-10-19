@@ -167,7 +167,7 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	stayingpositive: {
 		name: "Staying Positive",
 		desc: "Restores all lowered stat stages to 0 when one is less than 0, whether as a result of an opposing Pokemon (Parting Shot, Intimidate, etc.) or a self-inflicted reason (Close Combat, Draco Meteor, etc.).",
-		shortDesc: "If this Duck's stat is lowered to less than 0, resets back to 0.",
+		shortDesc: "If a stat(s) is lowered to less than 0, resets back to 0.",
 	},
 	shubashuba: { // UNUSED
 		name: "Shuba Shuba",
