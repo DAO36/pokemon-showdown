@@ -97683,6 +97683,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			suckerpunch: ["9M"],
 			knockoff: ["9M"],
 			darkpulse: ["9M"],
+			superpower: ["9M"],
 			snarl: ["9M"],
 			explosion: ["9M"],
 			hyperfang: ["9M"],
