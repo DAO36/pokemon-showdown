@@ -2728,6 +2728,11 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
         doublesTier: "(DUU)",
         natDexTier: "OU",
 	},
+	ashlucario: {
+        tier: "Uber",
+        doublesTier: "DOU",
+        natDexTier: "Uber",
+	},
 	hippopotas: {
 		tier: "LC",
 	},

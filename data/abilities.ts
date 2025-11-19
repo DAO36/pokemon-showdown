@@ -40,6 +40,21 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 0.1,
 		num: 0,
 	},
+	battlebond3: { 
+		onSourceAfterFaint(length, target, source, effect) {
+			if (effect?.effectType !== 'Move') {
+				return;
+			}
+			if (source.species.id === 'ashslucario' && source.hp && !source.transformed && source.side.foePokemonLeft()) {
+				this.add('-activate', source, 'ability: Battle Bond 3');
+				source.formeChange('Ash-Lucario', this.effect, true);
+			}
+		},
+		flags: {},
+		name: "Battle Bond 3",
+		rating: 4,
+		num: 24,
+	},
 	battlebond2: { 
 		onSourceAfterFaint(length, target, source, effect) {
 			if (effect?.effectType !== 'Move') {
