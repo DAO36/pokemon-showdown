@@ -40,6 +40,39 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 0.1,
 		num: 0,
 	},
+	battlebond2: { 
+		onSourceAfterFaint(length, target, source, effect) {
+			if (effect?.effectType !== 'Move') {
+				return;
+			}
+			if (source.species.id === 'ashspikachu' && source.hp && !source.transformed && source.side.foePokemonLeft()) {
+				this.add('-activate', source, 'ability: Battle Bond 2');
+				source.formeChange('Ash-Pikachu', this.effect, true);
+			}
+		},
+		flags: {},
+		name: "Battle Bond 2",
+		rating: 4,
+		num: 24,
+	},
+	pokemonmaster: {
+		onModifyAtkPriority: 5,
+		onModifyAtk(atk) {
+			return this.chainModify(2);
+		},
+		onModifySpAPriority: 5,
+		onModifySpA(spa) {
+			return this.chainModify(2);
+		},
+		onModifySpePriority: 5,
+		onModifySpe(spe) {
+			return this.chainModify(2);
+		},
+		flags: {},
+		name: "Pokemon Master",
+		rating: 5,
+		num: 37,
+	},
 	testsubject: { // Testing testiong 1 2 3 TESTING
 		onModifyMove(move) {
 			if (!move.ignoreImmunity) move.ignoreImmunity = {};

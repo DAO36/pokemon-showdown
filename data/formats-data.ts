@@ -254,6 +254,16 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		doublesTier: "(DUU)",
 		natDexTier: "RU",
 	},
+	ashspikachu: {
+		tier: "ZU",
+		doublesTier: "(DUU)",
+		natDexTier: "ZU",
+	},
+	ashpikachu: {
+		tier: "Uber",
+		doublesTier: "(DUU)",
+		natDexTier: "UUBL",
+	},
 	raichu: {
 		tier: "ZU",
 		doublesTier: "DUU",
