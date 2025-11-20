@@ -40,6 +40,50 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 0.1,
 		num: 0,
 	},
+	punchingbag: {
+		onFoeTrapPokemon(pokemon) {
+			if (!pokemon.hasAbility('punchingbag') && pokemon.isAdjacent(this.effectState.target)) {
+				pokemon.tryTrap(true);
+			}
+		},
+		onFoeMaybeTrapPokemon(pokemon, source) {
+			if (!source) source = this.effectState.target;
+			if (!source || !pokemon.isAdjacent(source)) return;
+			if (!pokemon.hasAbility('punchingbag')) {
+				pokemon.maybeTrapped = true;
+			}
+		},
+		onStart(pokemon) {
+            let activated = false;
+            for (const target of pokemon.foes()) {
+                if (!activated) {
+                    this.add('-ability', pokemon, 'Punching Bag', 'boost');
+                    activated = true;
+                    target.addVolatile('taunt', this.effectState.pokemon);
+                }
+            }
+        },
+		flags: {},
+		name: "Punching Bag",
+		rating: 5,
+		num: 23,
+	},
+	flinchinator: { 
+		onStart(pokemon) {
+            let activated = false;
+            for (const target of pokemon.foes()) {
+                if (!activated) {
+                    this.add('-ability', pokemon, 'Flinchinator', 'boost');
+                    activated = true;
+                    target.addVolatile('flinch', this.effectState.pokemon);
+                }
+            }
+        },
+		flags: {},
+		name: "Flinchinator",
+		rating: 5,
+		num: 23,
+	},
 	battlebond3: { 
 		onSourceAfterFaint(length, target, source, effect) {
 			if (effect?.effectType !== 'Move') {

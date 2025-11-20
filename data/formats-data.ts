@@ -539,9 +539,9 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
         natDexTier: "RU",
 	},
 	machampmega: {
-        tier: "OU",
+        tier: "Uber",
         doublesTier: "(DUU)",
-        natDexTier: "OU",
+        natDexTier: "UU",
 	},
 	machampgmax: {
 		isNonstandard: "Past",
