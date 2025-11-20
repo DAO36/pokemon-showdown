@@ -53,11 +53,11 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 				pokemon.maybeTrapped = true;
 			}
 		},
-		onDisableMove(pokemon) {
-			for (const moveSlot of pokemon.moveSlots) {
+		onDisableMove(target) {
+			for (const moveSlot of target.moveSlots) {
 				const move = this.dex.moves.get(moveSlot.id);
 				if (move.category === 'Status' && move.id !== 'mefirst') {
-					pokemon.disableMove(moveSlot.id);
+					target.disableMove(moveSlot.id);
 				}
 			}
 		},
