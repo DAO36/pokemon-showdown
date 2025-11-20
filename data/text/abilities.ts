@@ -3,6 +3,18 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 		name: "No Ability",
 		shortDesc: "Does nothing.",
 	},
+	pokemonmaster: {
+		name: "Pokemon Master", 
+		shortDesc: "Doubles the user's Attack, Special Attack, and Speed",
+	},
+	aurabond: {
+		name: "Aura Bond", 
+		shortDesc: "Transforms Ash's Lucario into Ash-Lucario after KOing a Pokemon",
+	},
+	pikabond: {
+		name: "Pika Bond", 
+		shortDesc: "Transforms Ash's Pikachu into Ash-Pikachu after KOing a Pokemon",
+	},
 	testsubject: {
 		name: "Test Subject", 
 		shortDesc: "Testing, testing, 1 2 3, TESTING",

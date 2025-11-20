@@ -82,33 +82,33 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 5,
 		num: 23,
 	},
-	battlebond3: { 
+	aurabond: { 
 		onSourceAfterFaint(length, target, source, effect) {
 			if (effect?.effectType !== 'Move') {
 				return;
 			}
 			if (source.species.id === 'ashslucario' && source.hp && !source.transformed && source.side.foePokemonLeft()) {
-				this.add('-activate', source, 'ability: Battle Bond 3');
+				this.add('-activate', source, 'ability: Aura Bond');
 				source.formeChange('Ash-Lucario', this.effect, true);
 			}
 		},
 		flags: {},
-		name: "Battle Bond 3",
+		name: "Aura Bond",
 		rating: 4,
 		num: 24,
 	},
-	battlebond2: { 
+	pikabond: { 
 		onSourceAfterFaint(length, target, source, effect) {
 			if (effect?.effectType !== 'Move') {
 				return;
 			}
 			if (source.species.id === 'ashspikachu' && source.hp && !source.transformed && source.side.foePokemonLeft()) {
-				this.add('-activate', source, 'ability: Battle Bond 2');
+				this.add('-activate', source, 'ability: Pika Bond');
 				source.formeChange('Ash-Pikachu', this.effect, true);
 			}
 		},
 		flags: {},
-		name: "Battle Bond 2",
+		name: "Pika Bond",
 		rating: 4,
 		num: 24,
 	},
