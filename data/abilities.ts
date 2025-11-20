@@ -53,16 +53,14 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 				pokemon.maybeTrapped = true;
 			}
 		},
-		onStart(pokemon) {
-            let activated = false;
-            for (const target of pokemon.foes()) {
-                if (!activated) {
-                    this.add('-ability', pokemon, 'Punching Bag', 'boost');
-                    activated = true;
-                    target.addVolatile('taunt', this.effectState.pokemon);
-                }
-            }
-        },
+		onDisableMove(pokemon) {
+			for (const moveSlot of pokemon.moveSlots) {
+				const move = this.dex.moves.get(moveSlot.id);
+				if (move.category === 'Status' && move.id !== 'mefirst') {
+					pokemon.disableMove(moveSlot.id);
+				}
+			}
+		},
 		flags: {},
 		name: "Punching Bag",
 		rating: 5,
