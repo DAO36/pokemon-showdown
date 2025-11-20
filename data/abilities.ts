@@ -40,6 +40,34 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 0.1,
 		num: 0,
 	},
+	firebreathingdragon: {
+		onModifyAtkPriority: 5,
+		onModifyAtk(atk, attacker, defender, move) {
+			if (move.type === 'Fire') {
+				this.debug('Fire Breathing Dragon boost');
+				return this.chainModify(1.5);
+			}
+		},
+		onModifySpAPriority: 5,
+		onModifySpA(atk, attacker, defender, move) {
+			if (move.type === 'Fire') {
+				this.debug('Fire Breathing Dragon boost');
+				return this.chainModify(1.5);
+			}
+		},
+		onTryHit(target, source, move) {
+			if (target !== source && move.type === 'Fire') {
+				if (!this.heal(target.baseMaxhp / 4)) {
+					this.add('-immune', target, '[from] ability: Fire Breathing Dragon');
+				}
+				return null;
+			}
+		},
+		flags: {},
+		name: "Fire Breathing Dragon",
+		rating: 4.5,
+		num: 199,
+	},
 	punchingbag: {
 		onFoeTrapPokemon(pokemon) {
 			if (!pokemon.hasAbility('punchingbag') && pokemon.isAdjacent(this.effectState.target)) {
