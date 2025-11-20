@@ -5,7 +5,7 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	firebreathingdragon: {
 		name: "Fire Breathing Dragon", 
-		shortDesc: "User's fire type attacks have 50% power; Fire-type immunity.'",
+		shortDesc: "User's fire type attacks have 50% power; Fire-type immunity.",
 	},
 	pokemonmaster: {
 		name: "Pokemon Master", 
