@@ -156,7 +156,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		forme: "Mega-Z",
 		types: ["Flying", "Dragon"],
 		genderRatio: {M: 0.875, F: 0.125},
-		baseStats: {hp: 78, atk: 114, def: 88, spa: 169, spd: 75, spe: 110},
+		baseStats: {hp: 78, atk: 144, def: 58, spa: 149, spd: 55, spe: 150},
 		abilities: {0: "Dragon's Maw"},
 		heightm: 1.7,
 		weightkg: 100.5,
