@@ -57,7 +57,6 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
             let activated = false;
             for (const target of pokemon.foes()) {
                 if (!activated) {
-                    this.add('-ability', pokemon, 'War Cry', 'boost');
                     activated = true;
                     target.addVolatile('taunt', this.effectState.pokemon);
                 }
