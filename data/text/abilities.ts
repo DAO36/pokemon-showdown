@@ -11,6 +11,10 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 		name: "Pokemon Master", 
 		shortDesc: "Doubles the user's Attack, Special Attack, and Speed",
 	},
+	aurafarming: {
+		name: "Aura Farming", 
+		shortDesc: "+1 Attack, Special Attack, & Speed after hit by a move.",
+	},
 	aurabond: {
 		name: "Aura Bond", 
 		shortDesc: "Transforms Ash's Lucario into Ash-Lucario after KOing a Pokemon",
