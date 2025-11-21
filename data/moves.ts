@@ -95,6 +95,37 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		target: "allAdjacentFoes",
 		type: "Normal",
 	},
+	wobbattack: {
+		num: 368,
+		accuracy: true,
+		basePower: 0,
+		damageCallback(pokemon) {
+			const lastDamagedBy = pokemon.getLastDamagedBy(true);
+			if (lastDamagedBy !== undefined) {
+				return (lastDamagedBy.damage * 2) || 1;
+			}
+			return 0;
+		},
+		category: "Special",
+		name: "Wobbattack",
+		pp: 15,
+		priority: -5,
+		flags: {protect: 1, mirror: 1, metronome: 1, failmefirst: 1},
+		onTry(source) {
+			const lastDamagedBy = source.getLastDamagedBy(true);
+			if (lastDamagedBy === undefined || !lastDamagedBy.thisTurn) return false;
+		},
+		onModifyTarget(targetRelayVar, source, target, move) {
+			const lastDamagedBy = source.getLastDamagedBy(true);
+			if (lastDamagedBy) {
+				targetRelayVar.target = this.getAtSlot(lastDamagedBy.slot);
+			}
+		},
+		secondary: null,
+		target: "scripted",
+		type: "Steel",
+		contestType: "Cool",
+	},
 	absorb: {
 		num: 71,
 		accuracy: 100,
