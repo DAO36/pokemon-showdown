@@ -51523,6 +51523,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			waterpulse: ["9M", "7T", "6T", "4M", "4S0"],
 			workup: ["9L16", "8M", "8L1", "7M", "7L42", "5M"],
 			zenheadbutt: ["9M", "8M", "7T", "6T", "5T", "4T"],
+			aurafist: ["9M"],
 		},
 	},
 	hippopotas: {

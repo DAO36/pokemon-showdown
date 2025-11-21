@@ -126,6 +126,25 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Steel",
 		contestType: "Cool",
 	},
+	aurafist: {
+		num: 889,
+		accuracy: 90,
+		basePower: 50,
+		basePowerCallback(pokemon) {
+			return Math.min(1000, 50 + 50 * pokemon.timesAttacked);
+		},
+		category: "Special",
+		name: "Aura Fist",
+		pp: 10,
+		priority: 0,
+		flags: {contact: 1, protect: 1, mirror: 1, punch: 1},
+		onModifyMove(move, pokemon) {
+			if (pokemon.getStat('atk', false, true) > pokemon.getStat('spa', false, true)) move.category = 'Physical';
+		},
+		secondary: null,
+		target: "normal",
+		type: "Fight",
+	},
 	absorb: {
 		num: 71,
 		accuracy: 100,

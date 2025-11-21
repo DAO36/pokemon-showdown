@@ -9,6 +9,11 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		desc: "Deals damage to the last opposing Pokemon to hit the user with a physical or special attack this turn equal to 2 times the HP lost by the user from that attack, rounded down. If the user did not lose HP from that attack, this move deals 1 HP of damage instead. If that opposing Pokemon's position is no longer in use and there is another opposing Pokemon on the field, the damage is done to it instead. Only the last hit of a multi-hit attack is counted. Fails if the user was not hit by an opposing Pokemon's physical or special attack this turn.",
 		shortDesc: "If hit by an attack, returns double damage.",
 	},
+	aurafist: {
+		name: "Aura Fist",
+		desc: "Power is equal to 50+(X*50), where X is the total number of times the user has been hit by a damaging attack during the battle, even if the user did not lose HP from the attack. Does not reset upon switching out or fainting. Each hit of a multi-hit attack is counted, but confusion damage is not counted. This move becomes a physical attack if user's Attack is greater than their Special Attack, including stat stage changes",
+		shortDesc: "+50 power per hit. Physical if Atk > Sp.Atk.",
+	}, 
 	absorb: {
 		name: "Absorb",
 		desc: "The user recovers 1/2 the HP lost by the target, rounded half up. If Big Root is held by the user, the HP recovered is 1.3x normal, rounded half down.",
