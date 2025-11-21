@@ -4,6 +4,11 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		desc: "Has a very high chance for a critical hit.",
 		shortDesc: "Very high critical hit ratio.",
 	},
+	wobbattack: {
+		name: "Wobbattack",
+		desc: "Deals damage to the last opposing Pokemon to hit the user with a physical or special attack this turn equal to 2 times the HP lost by the user from that attack, rounded down. If the user did not lose HP from that attack, this move deals 1 HP of damage instead. If that opposing Pokemon's position is no longer in use and there is another opposing Pokemon on the field, the damage is done to it instead. Only the last hit of a multi-hit attack is counted. Fails if the user was not hit by an opposing Pokemon's physical or special attack this turn.",
+		shortDesc: "If hit by an attack, returns double damage.",
+	},
 	absorb: {
 		name: "Absorb",
 		desc: "The user recovers 1/2 the HP lost by the target, rounded half up. If Big Root is held by the user, the HP recovered is 1.3x normal, rounded half down.",
