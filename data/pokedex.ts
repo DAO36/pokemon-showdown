@@ -807,7 +807,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 	},
 	ashspikachu: {
 		num: 25,
-		name: "Ash\u2019s Pikachu",
+		name: "Ash\u2019s-Pikachu",
 		types: ["Electric"],
 		gender: "M",
 		baseStats: {hp: 35, atk: 55, def: 40, spa: 50, spd: 50, spe: 90},
@@ -821,7 +821,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 	ashpikachu: {
 		num: 26,
 		name: "Ash-Pikachu",
-		baseSpecies: "Ash\u2019s Pikachu",
+		baseSpecies: "Ash\u2019s-Pikachu",
 		forme: "Ash",
 		types: ["Electric"],
 		gender: "M",
@@ -831,7 +831,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		weightkg: 7,
 		color: "Yellow",
 		eggGroups: ["Undiscovered"],
-		battleOnly: "Ash\u2019s Pikachu",
+		battleOnly: "Ash\u2019s-Pikachu",
 		gen: 8,
 	},
 	raichu: {

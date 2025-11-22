@@ -260,9 +260,9 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		natDexTier: "ZU",
 	},
 	ashpikachu: {
-		tier: "Uber",
+		tier: "OU",
 		doublesTier: "(DUU)",
-		natDexTier: "UUBL",
+		natDexTier: "Uber",
 	},
 	raichu: {
 		tier: "ZU",
@@ -2729,7 +2729,7 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
         natDexTier: "OU",
 	},
 	ashlucario: {
-        tier: "Uber",
+        tier: "OU",
         doublesTier: "DOU",
         natDexTier: "Uber",
 	},
