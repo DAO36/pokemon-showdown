@@ -2435,6 +2435,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 	},
 	pikachuash: {
 		learnset: {
+			pikavolt: ["9M"],
 			agility: ["9M", "9L24", "8M", "8L24", "8V", "7L45", "7V", "6L37", "6S41", "5L37", "4L34", "3L33", "3S0", "3S8"],
 			alluringvoice: ["9M"],
 			attract: ["8M", "7M", "7V", "6M", "5M", "4M", "3M"],
@@ -2562,6 +2563,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 		learnset: {
 			agility: ["9M", "9L24", "8M", "8L24", "8V", "7L45", "7V", "6L37", "6S41", "5L37", "4L34", "3L33", "3S0", "3S8"],
 			alluringvoice: ["9M"],
+			pikavolt: ["9M"],
 			attract: ["8M", "7M", "7V", "6M", "5M", "4M", "3M"],
 			bestow: ["7S44", "6S42"],
 			bide: ["7V"],
@@ -51284,6 +51286,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			aerialace: ["9M"],
 			agility: ["9M", "8M"],
 			attract: ["8M", "7M", "6M", "5M", "4M"],
+			aurafist: ["9M"],
 			aurasphere: ["9M", "9L0", "9S7", "8M", "8L0", "8S6", "7L1", "7S5", "6L1", "6S4", "5L51", "4L37", "4S0"],
 			blazekick: ["8M", "4S1"],
 			bodyslam: ["9M"],

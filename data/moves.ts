@@ -143,7 +143,30 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		},
 		secondary: null,
 		target: "normal",
-		type: "Fight",
+		type: "Fighting",
+	},
+	pikavolt: {
+		num: 614,
+		accuracy: 100,
+		basePower: 90,
+		category: "Special",
+		name: "Pika Volt",
+		pp: 10,
+		priority: 0,
+		flags: {protect: 1, mirror: 1, contact: 1},
+		onEffectiveness(typeMod, target, type, move) {
+			if (move.type !== 'Electric') return;
+			if (!target) return; // avoid crashing when called from a chat plugin
+			// ignore effectiveness if the target is Flying type and immune to Ground
+			if (!target.runImmunity('Electric')) {
+				if (target.hasType('Ground')) return 0;
+			}
+		},
+		ignoreImmunity: {'Electric': true},
+		secondary: null,
+		target: "normal",
+		type: "Electric",
+		contestType: "Beautiful",
 	},
 	absorb: {
 		num: 71,
