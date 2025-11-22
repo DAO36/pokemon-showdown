@@ -152,9 +152,9 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			if (effect?.effectType !== 'Move') {
 				return;
 			}
-			if (source.species.id === 'ashslucario' && source.hp && !source.transformed && source.side.foePokemonLeft()) {
+			if (source.species.id === 'lucario' && source.hp && !source.transformed && source.side.foePokemonLeft()) {
 				this.add('-activate', source, 'ability: Aura Bond');
-				source.formeChange('Ash-Lucario', this.effect, true);
+				source.formeChange('Lucario-Ash', this.effect, true);
 			}
 		},
 		flags: {},
@@ -167,9 +167,9 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			if (effect?.effectType !== 'Move') {
 				return;
 			}
-			if (source.species.id === 'ashspikachu' && source.hp && !source.transformed && source.side.foePokemonLeft()) {
+			if (source.species.id === 'pikachu' && source.hp && !source.transformed && source.side.foePokemonLeft()) {
 				this.add('-activate', source, 'ability: Pika Bond');
-				source.formeChange('Ash-Pikachu', this.effect, true);
+				source.formeChange('Pikachu-Ash', this.effect, true);
 			}
 		},
 		flags: {},

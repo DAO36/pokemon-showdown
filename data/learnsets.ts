@@ -2433,7 +2433,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 		],
 		eventOnly: true,
 	},
-	ashspikachu: {
+	pikachuash: {
 		learnset: {
 			agility: ["9M", "9L24", "8M", "8L24", "8V", "7L45", "7V", "6L37", "6S41", "5L37", "4L34", "3L33", "3S0", "3S8"],
 			alluringvoice: ["9M"],
@@ -51407,7 +51407,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			{generation: 9, level: 75, shiny: true, gender: "M", nature: "Naive", abilities: ["innerfocus"], ivs: {hp: 31, atk: 31, def: 20, spa: 31, spd: 20, spe: 31}, moves: ["flashcannon", "bulletpunch", "aurasphere", "icepunch"], pokeball: "cherishball"},
 		],
 	},
-	ashslucario: {
+	lucarioash: {
 		learnset: {
 			aerialace: ["9M"],
 			agility: ["9M", "8M"],
