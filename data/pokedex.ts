@@ -832,6 +832,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		weightkg: 7,
 		color: "Yellow",
 		eggGroups: ["Undiscovered"],
+		requiredAbility: "Pika Bond",
 		battleOnly: "Ash\u2019s Pikachu",
 	},
 	raichu: {
@@ -8110,6 +8111,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		weightkg: 55,
 		color: "Blue",
 		eggGroups: ["Undiscovered"],
+		requiredAbility: "Aura Bond",
 		battleOnly: "Ash\u2019s Lucario",
 		gen: 8,
 	},
