@@ -148,7 +148,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	pikavolt: {
 		num: 614,
 		accuracy: 100,
-		basePower: 90,
+		basePower: 100,
 		category: "Special",
 		name: "Pika Volt",
 		pp: 10,
