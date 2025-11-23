@@ -2174,17 +2174,6 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3,
 		num: -19,		
 	},
-	faunasweep: { // reskin of [Surge Surfer] but for Grassy Terrain instead of Electric Terrain <<<UNUSED>>>
-		onModifySpe(spe) {
-			if (this.field.isTerrain('grassyterrain')) {
-				return this.chainModify(2);
-			}
-		},
-		flags: {},
-		name: "Fauna Sweep",
-		rating: 3,
-		num: 207,
-	},
 	mothernature: { // combines [Aroma Veil] + [Healer] but 100% chance to heal status end of evey turn 
 		onAllyTryBoost(boost, target, source, effect) {
 			if (source && target === source) return;

@@ -8460,16 +8460,16 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		name: "Black Hole",
 		desc: "Hits adjacent Pokemon. Prevents the targets from switching out. The targets can still switch out if it is holding Shed Shell or uses Baton Pass, Flip Turn, Parting Shot, Teleport, U-turn, or Volt Switch. If the target leaves the field using Baton Pass, the replacement will remain trapped. The effect ends if the user leaves the field. Has a 100% chance to lower the target's Speed by 1 stage. Power is multiplied by 1.5 during Gravity's effect. The accuracy of this move is unaffected by Gravity.",
 		shortDesc: "Prevents switching; -1 Speed. Gravity: 1.5x power.",
-	}, 
-	naturalasmr: {
-		name: "Natural ASMR",
-		desc: "Every Pokemon in this Nephelim's party is cured of their non-volatile status condition. Hits adjacent foes.",
-		shortDesc: "Cures the user's party of all status conditions.",
-	}, 
+	},
 	gamerkirin: {
 		name: "Gamer Kirin",
 		desc: "Raises this Kirin's Attack by 2 stages.",
 		shortDesc: "Raises the user's Attack by 2.",
+	},
+	naturalasmr: {
+		name: "Natural ASMR",
+		desc: "Every Pokemon in this Nephelim's party is cured of their non-volatile status condition. Hits adjacent foes.",
+		shortDesc: "Cures the user's party of all status conditions.",
 	},
 	nemu: {
 		name: "Nemu",
@@ -8480,7 +8480,12 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		name: "Golden Apple",
 		desc: "Each Pokemon on this Kirin's side restores 1/3 of their maximum HP, rounded half up, and has their status condition cured. If the terrain is Grassy Terrain, this Kirin and her Ally instead restores 1/2 of their maximum HP, rounded half down.",
 		shortDesc: "User & allies: heal 1/3 max HP, cures status.", 
-	}, 
+	},
+	faunasweep: {
+		name: "Fauna Sweep",
+		desc: "If the current terrain is Grassy Terrain and the user is grounded, this move has its priority increased by 1.",
+		shortDesc: "User on Grassy Terrain: +1 priority.",
+	},
 	clockstrikes: {
 		name: "Clock Strikes",
 		desc: "Hits twice. If the first hit breaks the target's substitute, it will take damage for the second hit.",

@@ -25618,7 +25618,24 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		target: "allAdjacentFoes",
 		type: "Psychic",
 		contestType: "Tough",
-	}, 
+	},
+	gamerkirin: { // FAUNUSED
+		num: 14,
+		accuracy: true,
+		basePower: 0,
+		category: "Status",
+		name: "Gamer Kirin",
+		pp: 20,
+		priority: 0,
+		flags: {snatch: 1},
+		boosts: {
+			atk: 2,
+		},
+		secondary: null,
+		target: "self",
+		type: "Grass",
+		contestType: "Beautiful",
+	},
 	naturalasmr: { // FAUNA 1
 		num: 370,
 		accuracy: 100,
@@ -25643,24 +25660,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Grass",
 		contestType: "Clever",
 	},
-	gamerkirin: { // FAUNA 2
-		num: 14,
-		accuracy: true,
-		basePower: 0,
-		category: "Status",
-		name: "Gamer Kirin",
-		pp: 20,
-		priority: 0,
-		flags: {snatch: 1},
-		boosts: {
-			atk: 2,
-		},
-		secondary: null,
-		target: "self",
-		type: "Grass",
-		contestType: "Beautiful",
-	},
-	nemu: { // FAUNA 3
+	nemu: { // FAUNA 2
 		num: 38,
 		accuracy: 100,
 		basePower: 130,
@@ -25675,7 +25675,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Grass",
 		contestType: "Tough",
 	},
-	goldenapple: { // FAUNA 4
+	goldenapple: { // FAUNA 3
 		num: 420,
 		accuracy: true,
 		basePower: 0,
@@ -25707,7 +25707,26 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		target: "allies",
 		type: "Grass",
 		contestType: "Beautiful",
-	}, 
+	},
+	faunasweep: { // FAUNA 4
+		num: 803,
+		accuracy: 100,
+		basePower: 55,
+		category: "Special",
+		name: "Fauna Sweep",
+		pp: 20,
+		priority: 0,
+		flags: {protect: 1, mirror: 1, metronome: 1},
+		onModifyPriority(priority, source, target, move) {
+			if (this.field.isTerrain('grassyterrain') && source.isGrounded()) {
+				return priority + 1;
+			}
+		},
+		secondary: null,
+		target: "normal",
+		type: "Grass",
+		contestType: "Cool",
+	},
 	clockstrikes: { // KRONII 1
 		num: 370,
 		accuracy: 100,

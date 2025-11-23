@@ -471,10 +471,6 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 		name: "Gravitational Pull",
 		shortDesc: "On switch-in, user summons Gravity for 5 turns.",
 	},
-	faunasweep: { // [UNUSED]
-		name: "Fauna Sweep",
-		shortDesc: "If Grassy Terrain is active, user's Speed is doubled.",
-	},
 	mothernature: {
 		name: "Mother Nature",
 		desc: "This Kirin protects herself and her allies from the lowering of stats from other Pokemon. This Kirin and her ally has their non-volatile status condition cured at the end of each turn.",

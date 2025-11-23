@@ -97559,7 +97559,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			hail: ["9M"],
 			naturalasmr: ["9M"],
 			nemu: ["9M"],
-			gamerkirin: ["9M"],
+			faunasweep: ["9M"],
 			goldenapple: ["9M"],
         },
 	},	
