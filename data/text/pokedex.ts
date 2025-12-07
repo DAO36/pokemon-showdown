@@ -677,6 +677,9 @@ export const PokedexText: {[id: IDEntry]: PokedexText} = {
 	mew: {
 		name: "Mew",
 	},
+	mewthree: {
+		name: "Mewthree",
+	},
 	chikorita: {
 		name: "Chikorita",
 	},

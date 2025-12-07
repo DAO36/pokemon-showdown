@@ -1221,6 +1221,11 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		doublesTier: "DUU",
 		natDexTier: "RUBL",
 	},
+	mewthree: {
+		tier: "Uber",
+		doublesTier: "DUber",
+		natDexTier: "AG",
+	},
 	chikorita: {
 		tier: "LC",
 	},

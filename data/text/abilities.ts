@@ -1266,12 +1266,8 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	illuminate: {
 		name: "Illuminate",
-		desc: "Prevents other Pokemon from lowering this Pokemon's accuracy stat stage. This Pokemon ignores a target's evasiveness stat stage.",
-		shortDesc: "This Pokemon's accuracy can't be lowered by others; ignores their evasiveness stat.",
-		gen8: {
-			desc: "No competitive use.",
-			shortDesc: "No competitive use.",
-		},
+		desc: "On switch-in, this Pokemon lowers the Accuracy of opposing Pokemon by 1 stage. Pokemon behind a substitute are immune.",
+		shortDesc: "On switch-in, this Pokemon lowers the Accuracy of opponents by 1 stage.",
 	},
 	illusion: {
 		name: "Illusion",
