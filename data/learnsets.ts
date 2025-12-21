@@ -98583,6 +98583,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			agility: ["9M"],
 			trick: ["9M"],
 			fisted: ["9M"],
+			boatgoesbinted: ["9M"],
         },
 	},	
 	cecilia: {

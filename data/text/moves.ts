@@ -8603,7 +8603,12 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		shortDesc: "Breaks protection. Hits twice in one turn.",
 
 		activate: "  Fisted [TARGET]'s protection!",
-	},  
+	},
+	boatgoesbinted: {
+		name: "Boat Goes Binted",
+		desc: "Damage is calculated using the user's Speed stat as its Attack, including stat stage changes. Other effects that modify the Attack stat are used as normal.",
+		shortDesc: "Uses user's Speed stat as Atk in damage calculation.",
+	},
 	automotanassault: {
 		name: "Automotan Assault",
 		desc: "Has a 100% chance to paralyze the target if it used a sound-based move.",
