@@ -156,11 +156,16 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 
 		block: "  [SOURCE] cannot use [MOVE]!",
 		},
-	apex: {
-		name: "Apex",
+	apex2: {
+		name: "Apex2",
 		desc: "When this Maid has more than 1/2 of her maximum HP and takes damage from an attack bringing her to 1/2 or less of her maximum HP, her Attack and Special Attack are both raised by 1 stage each. This effect applies after all hits from a multi-hit move. This effect is prevented if the move had a secondary effect removed by the Sheer Force Ability.",
 		shortDesc: "If HP reaches 1/2 or less, user's Attack & Special Attack are both raised by 1.",
-	}, 
+	},
+	apex: {
+		name: "Apex",
+		desc: "This Maid's Attack and Special Attack are both raised by 1 stage after it is damaged by a super effective move.",
+		shortDesc: "Attack & Speed are raised by 1 stage if user is hit by a super effective move.",
+	},
 	oni: {
 		name: "Oni",
 		desc: "This Oni's offensive stat is multiplied by 1.5 while using a Fire-type attack.",
@@ -198,8 +203,8 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	doog: {
 		name: "Doog",
-		desc: "This Dog's Attack and Defense are both raised by 1 stage after it is damaged by a Fighting-type move.",
-		shortDesc: "Attack & Defense are raised by 1 stage if user is damaged by a Fighting-type move.",
+		desc: "This Dog's Attack and Speed are both raised by 1 stage after it is damaged by a Fighting-type move.",
+		shortDesc: "Attack & Speed are raised by 1 stage if user is damaged by a Fighting-type move.",
 	},
 	mogumogu: {
 		name: "Mogu Mogu",
@@ -478,10 +483,15 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 
 		block: "  [POKEMON] is protected by nature!",
 	}, 
-	societalcollapse: {
-		name: "Societal Collapse",
+	societalcollapse2: {
+		name: "Societal Collapse2",
 		desc: "If a Special Attacking move hits this Owl, her Special Defense is lowered by 1 stage and her Speed is raised by 2 stages.",
 		shortDesc: "If hit by a special attack, Special Defense is lowered by 1, Speed is raised by 2.",
+	},
+	societalcollapse: {
+		name: "Societal Collapse",
+		desc: "When this Owl has more than 1/2 of her maximum HP and takes damage from an attack bringing her to 1/2 or less of her maximum HP, her Attack and Special Attack are both raised by 1 stage each. This effect applies after all hits from a multi-hit move. This effect is prevented if the move had a secondary effect removed by the Sheer Force Ability.",
+		shortDesc: "If HP reaches 1/2 or less, user's Attack & Special Attack are both raised by 1.",
 	},
 	chaos: {
 		name: "Chaos",

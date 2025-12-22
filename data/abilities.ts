@@ -751,7 +751,21 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3,
 		num: 178,
 	},
-	apex: { // reskin of [Berserk] but boosts Physical Attack as well
+	apex: { // if aqua is hit by a super-effective move, raises Atk and SpAtk by 1 each
+		onDamagingHitOrder: 1,
+		onDamagingHit(damage, target, source, move) {
+			const side = source.isAlly(target) ? source.side.foe : source.side;
+			if (target.runEffectiveness(move) >= 1) {
+				this.add('-activate', target, 'ability: Apex');
+				this.boost({atk: 1, spa: 1});
+			}
+		},
+		flags: {},
+		name: "Apex",
+		rating: 3.5,
+		num: 295,
+	},
+	apex2: { // [UNUSED] reskin of [Berserk] but boosts Physical Attack as well [UNUSED]
 		onDamage(damage, target, source, effect) {
 			if (
 				effect.effectType === "Move" &&
@@ -783,7 +797,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			}
 		},
 		flags: {},
-		name: "Apex",
+		name: "Apex2",
 		rating: 2,
 		num: 201,
 	},
@@ -945,7 +959,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	doog: { // reskin of [Sap Sipper] but for FIGHT ME instead of KUSA
 		onDamagingHit(damage, target, source, move) {
 			if (move.type === 'Fighting') {
-				this.boost({atk: 1, def: 1});
+				this.boost({atk: 1, spe: 1});
 			}
 		},
 		flags: {},
@@ -2212,16 +2226,52 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3,
 		num: 207,
 	}, 
-	societalcollapse: { // reskin of [Weak Armour] but for SpDef <= Special Moves instead of Def <= Contact Moves
+	societalcollapse2: { // [UNUSED] reskin of [Weak Armour] but for SpDef <= Special Moves instead of Def <= Contact Moves [UNUSED]
 		onDamagingHit(damage, target, source, move) {
 			if (move.category === 'Special') {
 				this.boost({spd: -1, spe: 2}, target, target);
 			}
 		},
 		flags: {breakable: 1},
-		name: "Societal Collapse",
+		name: "Societal Collapse2",
 		rating: 2,
 		num: 133,
+	},
+	societalcollapse: { // reskin of [Berserk] but boosts Physical Attack as well
+		onDamage(damage, target, source, effect) {
+			if (
+				effect.effectType === "Move" &&
+				!effect.multihit &&
+				(!effect.negateSecondary && !(effect.hasSheerForce && source.hasAbility('sheerforce')))
+			) {
+				this.effectState.checkedBerserk = false;
+			} else {
+				this.effectState.checkedBerserk = true;
+			}
+		},
+		onTryEatItem(item) {
+			const healingItems = [
+				'aguavberry', 'enigmaberry', 'figyberry', 'iapapaberry', 'magoberry', 'sitrusberry', 'wikiberry', 'oranberry', 'berryjuice',
+			];
+			if (healingItems.includes(item.id)) {
+				return this.effectState.checkedBerserk;
+			}
+			return true;
+		},
+		onAfterMoveSecondary(target, source, move) {
+			this.effectState.checkedBerserk = true;
+			if (!source || source === target || !target.hp || !move.totalDamage) return;
+			const lastAttackedBy = target.getLastAttackedBy();
+			if (!lastAttackedBy) return;
+			const damage = move.multihit && !move.smartTarget ? move.totalDamage : lastAttackedBy.damage;
+			if (target.hp <= target.maxhp / 2 && target.hp + damage > target.maxhp / 2) {
+				this.boost({spa: 1, atk: 1}, target, target);
+			}
+		},
+		flags: {},
+		name: "Societal Collapse",
+		rating: 2,
+		num: 201,
 	},
 	chaos: { // [Red Card (ITEM)] but as an ability
 		onAfterMoveSecondary(target, source, move) {
