@@ -490,8 +490,8 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	societalcollapse: {
 		name: "Societal Collapse",
-		desc: "When this Owl has more than 1/2 of her maximum HP and takes damage from an attack bringing her to 1/2 or less of her maximum HP, her Attack and Special Attack are both raised by 1 stage each. This effect applies after all hits from a multi-hit move. This effect is prevented if the move had a secondary effect removed by the Sheer Force Ability.",
-		shortDesc: "If HP reaches 1/2 or less, user's Attack & Special Attack are both raised by 1.",
+		desc: "When this Owl has more than 1/2 its maximum HP and takes damage from an attack bringing it to 1/2 or less of its maximum HP, its Attack and Special Attack are raised by 1 stage, and its Defense and Special Defense are lowered by 1 stage. This effect applies after all hits from a multi-hit move. This effect is prevented if the move had a secondary effect removed by the Sheer Force Ability.",
+		shortDesc: "At 1/2 or less of this Owl's max HP: +1 Atk, Sp. Atk, & -1 Def, Sp. Def.",
 	},
 	chaos: {
 		name: "Chaos",
