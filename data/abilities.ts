@@ -1760,7 +1760,9 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	nnn: { // exact copy of [Seed Sower]
 		onDamagingHitOrder: 1,
 	    onDamagingHit(damage, target, source, move) {
-        if (move.category === 'Physical' || move.category === 'Special' && !source.hasType('Grass')) {
+		const side = source.isAlly(target) ? source.side.foe : source.side;	
+		const leechseed = side.sideConditions['leechseed'];
+        if (move.category === 'Physical' || move.category === 'Special' && !source.hasType('Grass') && (!leechseed)) {
 			this.add('-activate', target, 'ability: NNN');
             const r = this.random(100);
             if (r < 51) {
