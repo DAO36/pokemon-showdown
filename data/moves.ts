@@ -24052,11 +24052,11 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		pp: 5,
 		priority: 0,
 		flags: {protect: 1, mirror: 1, distance: 1, bullet: 1},
-		recoil: [33, 100],
-		secondary: {
-			chance: 10,
-			status: 'brn',
+		hasCrashDamage: true,
+		onMoveFail(target, source, move) {
+			this.damage(source.baseMaxhp / 2, source, source, this.dex.conditions.get('High Jump Kick'));
 		},
+		secondary: null,
 		target: "any",
 		type: "Fighting",
 		contestType: "Cool",

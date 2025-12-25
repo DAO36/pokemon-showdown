@@ -8090,8 +8090,10 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	poi: {
 		name: "Poi",
-		desc: "Has a 10% chance to burn the target. If the target lost HP, the user takes recoil damage equal to 33% the HP lost by the target, rounded half up, but not less than 1 HP.",
-		shortDesc: "10% chance to burn the target. 33% recoil.",
+		desc: "If this attack is not successful, the user loses half of its maximum HP, rounded down, as crash damage. Pokemon with the Magic Guard Ability are unaffected by crash damage.",
+		shortDesc: "User is hurt by 50% of its max HP if it misses.",
+
+		damage: "#crash",
 	},
 	wamywater: {
 		name: "Wamy Water",
