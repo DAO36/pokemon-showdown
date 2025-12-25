@@ -388,7 +388,7 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	nnn: {
 		name: "NNN",
-		shortDesc: "If this Squirrel is hit by an attack, Grassy Terrain is set up.",
+		shortDesc: "If this Squirrel is hit by a damaging move, Leech Seed is set on the opponent.",
 	},
 	zombie: {
 		name: "Zombie",

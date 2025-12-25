@@ -1759,9 +1759,15 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	},
 	nnn: { // exact copy of [Seed Sower]
 		onDamagingHitOrder: 1,
-		onDamagingHit(damage, target, source, move) {
-			this.field.setTerrain('grassyterrain');
-		},
+	    onDamagingHit(damage, target, source, move) {
+        if (move.category === 'Physical' || move.category === 'Special' && !source.hasType('Grass')) {
+			this.add('-activate', target, 'ability: NNN');
+            const r = this.random(100);
+            if (r < 51) {
+                source.addVolatile('leechseed', target);
+            }
+		  }
+        },
 		flags: {breakable: 1},
 		name: "NNN",
 		rating: 2.5,
