@@ -1764,10 +1764,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		const leechseed = side.sideConditions['leechseed'];
         if (move.category === 'Physical' || move.category === 'Special' && !source.hasType('Grass') && (!leechseed || leechseed.layers < 1)) {
 			this.add('-activate', target, 'ability: NNN');
-            const r = this.random(100);
-            if (r < 51) {
                 source.addVolatile('leechseed', target);
-            }
 		  }
         },
 		flags: {breakable: 1},
