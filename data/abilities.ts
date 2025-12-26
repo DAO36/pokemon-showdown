@@ -1818,7 +1818,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	zombie: { // exact copy of [Weak Armour]
 		onDamagingHit(damage, target, source, move) {
 			if (move.category === 'Physical') {
-				this.boost({def: -1, spe: 2}, target, target);
+				this.boost({def: -2, spe: 1, atk: 1}, target, target);
 			}
 		},
 		flags: {breakable: 1},

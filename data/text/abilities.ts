@@ -392,8 +392,8 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	zombie: {
 		name: "Zombie",
-		desc: "If a physical attack hits this Zombie, her Defense is lowered by 1 stage and her Speed is raised by 2 stages.",
-		shortDesc: "If hit by a physical attack, Defense lowered by 1, Speed raised by 2.",
+		desc: "If a physical attack hits this Zombie, her Defense is lowered by 2 stages and her Attack and Speed are both raised by 1 stage each.",
+		shortDesc: "If user is hit by a physical attack: Defense: -2; Atk & Speed: +1.",
 	},
 	tonjokqueen: {
 		name: "TonjokQueen",
