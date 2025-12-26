@@ -555,30 +555,47 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		name: "High Specs Robot",
 		rating: 3,
 		num: 207,
-	}, 
-	virtualdiva: { // combines [Soundproof] + [Punk Rock] 
+	},
+	virtualdiva: { // reskin of [Water Absorb] but for Sound type moves
 		onTryHit(target, source, move) {
 			if (target !== source && move.flags['sound']) {
+				if (!this.heal(target.baseMaxhp / 4, target, target)) {
+					this.add('-immune', target, '[from] ability: Virtual Diva');
+				}
 				if (!this.boost({spa: 1})) {
 					this.add('-immune', target, '[from] ability: Virtual Diva');
 				}
 				return null;
 			}
 		},
+		flags: {breakable: 1},
+		name: "Virtual Diva",
+		rating: 2.5,
+		num: 11,
+	},
+	virtualdiva2: { // [UNUSED] combines [Soundproof] + [Punk Rock] 
+		onTryHit(target, source, move) {
+			if (target !== source && move.flags['sound']) {
+				if (!this.boost({spa: 1})) {
+					this.add('-immune', target, '[from] ability: Virtual Diva2');
+				}
+				return null;
+			}
+		},
 		onAllyTryHitSide(target, source, move) {
 			if (move.flags['sound']) {
-				this.add('-immune', this.effectState.target, '[from] ability: Virtual Diva');
+				this.add('-immune', this.effectState.target, '[from] ability: Virtual Diva2');
 			}
 		},
 		onBasePowerPriority: 7,
 		onBasePower(basePower, attacker, defender, move) {
 			if (move.flags['sound']) {
-				this.debug('Virtual Diva boost');
+				this.debug('Virtual Diva2 boost');
 				return this.chainModify([5325, 4096]);
 			}
 		},
 		flags: {breakable: 1},
-		name: "Virtual Diva",
+		name: "Virtual Diva2",
 		rating: 3.5,
 		num: 271,
 	},

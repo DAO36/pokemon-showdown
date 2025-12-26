@@ -106,7 +106,7 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	virtualdiva: {
 		name: "Virtual Diva",
 		desc: "This Diva's sound-based moves have her power multiplied by 1.3. Her Special Attack raised by 1 stage when she is hit by a Sound-based move; Immune to Sound-type moves",
-		shortDesc: "Sound moves are 1.3x power. SpAtk is raised by 1 if hit by Sound move; Sound immunity.",
+		shortDesc: "Heals 1/4 hp when hit by sound moves. +1 Sp.Atk if hit by sound moves; Sound immunity.",
 	},
 	fbking: {
 		name: "FBKing",
