@@ -581,7 +581,6 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 				}
 				if (!this.heal(target.baseMaxhp / 4, target, target)) {
 				} 
-				{this.add('-immune', target, '[from] ability: Virtual Diva');}
 				return null;
 			}
 		},
