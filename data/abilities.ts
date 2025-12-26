@@ -1293,10 +1293,15 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 2,
 		num: 142,
 	},
-	sugarrush: { // reskin of [Surge Surfer] but for Fairy Terrain
+	sugarrush: { // reskin of [Surge Surfer] + [Rain Dish] except for Fairy Terrain insteads of Rain Dancing
 		onModifySpe(spe) {
-			if (this.field.isTerrain('mistyterrain')) {
+			if (this.field.isTerrain('mistyterrain')) { 
 				return this.chainModify(2);
+			}
+		},
+		onResidual(target, source, effect) { 
+			if (this.field.isTerrain('mistyterrain')) {
+				this.heal(target.baseMaxhp / 10);
 			}
 		},
 		flags: {},

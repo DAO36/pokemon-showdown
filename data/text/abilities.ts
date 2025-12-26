@@ -273,9 +273,9 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	sugarrush: {
 		name: "Sugar Rush",
-		desc: "If Misty Terrain is active, the Speed of this baby is doubled.",
-		shortDesc: "If Misty Terrain is active, user's Speed is doubled.",
-	},
+		desc: "If Misty Terrain is active, the Speed of this Robot is doubled, and heals 1/10 of her max HP at the end of each turn.",
+		shortDesc: "In Misty Terrain, user's speed is doubled & heals 1/10 of max HP every turn.", 
+	}, 
 	tmd: {
 		name: "TMD",
 		desc: "This Devil's moves ignore substitutes and the opposing side's Reflect, Light Screen, Safeguard, Mist, and Aurora Veil. This Devil's moves also ignore the target's protection, except Max Guard.",
