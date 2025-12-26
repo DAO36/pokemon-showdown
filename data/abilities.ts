@@ -1958,12 +1958,12 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	blacksmith: { // [Earth Eater] + [Water Veil] + [Thermal Exchange] but for Steel=>DEF + Rock=>ATK instead of Fire=>ATK
 		onTryHit(target, source, move) {
 			if (target !== source && move.type === 'Ground') {
-				if (!this.heal(target.baseMaxhp / 5, target, target)) {
+				{
 					this.add('-immune', target, '[from] ability: Blacksmith');
 				}
 				return null;
 			}
-		}, 
+		},
 		onDamagingHit(damage, target, source, move) {
 			if (move.type === 'Steel') {
 				this.boost({def: 1});

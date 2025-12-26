@@ -426,7 +426,7 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	blacksmith: {
 		name: "Blacksmith",
-		desc: "This Blacksmith is immune to Ground-type moves and restores 1/5 of her maximum HP, rounded down, when hit by a Ground-type move. If a Pokemon uses a Fire-type attack against this Blacksmith, that Pokemon's offensive stat is halved when calculating the damage to this Blacksmith; cannot be burned, gaining this Ability while burned cures it. This Blacksmith's Attack is raised 1 stage after it is damaged by a Rock-type move and Defense is raised 1 stage after it is damaged by a Steel-type move.",
+		desc: "This Blacksmith is immune to Ground-type moves. If a Pokemon uses a Fire-type attack against this Blacksmith, that Pokemon's offensive stat is halved when calculating the damage to this Blacksmith; cannot be burned, gaining this Ability while burned cures it. This Blacksmith's Attack is raised 1 stage after it is damaged by a Rock-type move and Defense is raised 1 stage after it is damaged by a Steel-type move.",
 		shortDesc: "If user is hit by Rock move, +1 Atk; If Steel, +1 Def. Ground immunity. Can't burn.",
 	},
 	graondstone: { // [UNUSED]
