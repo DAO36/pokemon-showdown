@@ -19684,7 +19684,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		types: ["Psychic", "Dark"],
 		gender: "F",
 		baseStats: {hp: 70, atk: 130, def: 70, spa: 120, spd: 140, spe: 70},
-		abilities: {0: "Magic Guard", 1: "Magic Bounce", H: "Moxie", S: "Yamada"},
+		abilities: {0: "Magic Guard", 1: "Prankster", H: "Moxie", S: "Yamada"},
 		heightm: 1.39,
 		weightkg: 55.5,
 		color: "Purple",
