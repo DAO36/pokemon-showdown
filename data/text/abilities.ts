@@ -451,8 +451,8 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	forbiddenwah: {
 		name: "Forbidden Wah",
-		desc: "Pokemon attacking this Tako with Special moves lose 1/10 of their maximum HP, rounded down.",
-		shortDesc: "Pokemon using Special Attacks on the user lose 1/10 of their max HP.",
+		desc: "Pokemon attacking this Tako with Special moves lose 1/8 of their maximum HP, rounded down.",
+		shortDesc: "Pokemon using Special Attacks on the user lose 1/8 of their max HP.",
 
 		damage: "  [POKEMON] is succumbing to The Forbidden Wah!",
 	},
