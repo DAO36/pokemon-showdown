@@ -97135,6 +97135,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			glare: ["9M"],
 			leer: ["9M"],
 			lockon: ["9M"],
+			meteorbeam: ["9M"],
 			meanlook: ["9M"],
 			screech: ["9M"],
 			swagger: ["9M"],
