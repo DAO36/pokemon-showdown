@@ -555,31 +555,13 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		name: "High Specs Robot",
 		rating: 3,
 		num: 207,
-	},
-	gumogu2: { // reskin of [Water Absorb] but for Grass
-		onTryHit(target, source, move) {
-			if (target !== source && move.type === 'Grass') {
-				if (!this.heal(target.baseMaxhp / 4, target, target)) {
-					this.add('-immune', target, '[from] ability: Mogu Mogu2');
-				}
-				return null;
-			} 
-			if (move.flags['bite']) {
-				this.add('-immune', target, '[from] ability: Mogu Mogu2');
-				return null;
-			}
-		},
-		flags: {breakable: 1},
-		name: "Mogu Mogu2",
-		rating: 2.5,
-		num: 11,
-	},
+	}, 
 	virtualdiva: { // reskin of [Water Absorb] but for Sound type moves
 		onTryHit(target, source, move) {
-			if (target !== source && move.flags['sound']) { 
+			if (target !== source && move.flags['sound']) {
+				this.add('-immune', target, '[from] ability: Virtual Diva');
 				if (!this.boost({spa: 1})) {
-				}
-				if (!this.heal(target.baseMaxhp / 4, target, target)) {
+				(!this.heal(target.baseMaxhp / 4, target, target))
 				} 
 				return null;
 			}
