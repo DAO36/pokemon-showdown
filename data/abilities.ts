@@ -2019,17 +2019,11 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		},
 		onTryHit(target, source, move) {
 			if (target !== source && move.flags['wind']) {
-				if (!this.heal(target.baseMaxhp / 4, target, target)) {
+				if (!this.heal(target.baseMaxhp / 6, target, target)) {
 					this.add('-immune', target, '[from] ability: Rain Shaman');
 				}
 				return null;
-			}
-			if (target !== source && move.type === 'Water') {
-				if (!this.boost({spd: 1})) {
-					this.add('-immune', target, '[from] ability: Rain Shaman');
-				}
-				return null;
-			}
+			} 
 		},  
 		onFoeTryMove(pokemon, target, move) {
 			const rainshamanHolder = this.effectState.target;

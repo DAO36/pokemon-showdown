@@ -414,8 +414,8 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	rainshaman: {
 		name: "Rain Shaman",
-		desc: "This Rain Shaman's wind-based attacks have their power multiplied by 1.3. On switch-in, this Rain Shaman removes: any weather that is active on the field, any terrain that is active on the field, and tailwind if it is active on the opponent's side. This Rain Shaman is immune to Wind-type moves and restores 1/4 of her maximum HP, rounded down, when hit by a Wind-type move; immune to Water-type moves and has her Special Defense raised by 1 stage when hit by a Water-type move. Immunity to damage from Sandstorm and Hail. Opponents are prevented from using moves that summon weather or terrain (Sunny Day, Misty Terrain, Chilly Reception, etc.).",
-		shortDesc: "Prevents weather/terrain/tailwind. Wind moves have 1.3x power. Wind/Water immunity.",
+		desc: "This Rain Shaman's wind-based attacks have their power multiplied by 1.3. On switch-in, this Rain Shaman removes: any weather that is active on the field, any terrain that is active on the field, and tailwind if it is active on the opponent's side. This Rain Shaman is immune to Wind-type moves and restores 1/4 of her maximum HP, rounded down, when hit by a Wind-type move. Immunity to damage from Sandstorm and Hail. Opponents are prevented from using moves that summon weather or terrain (Sunny Day, Misty Terrain, Chilly Reception, etc.).",
+		shortDesc: "Prevents weather/terrain/tailwind. Wind moves have 1.3x power. Wind immunity.",
 
 		block: "  [SOURCE] cannot use [MOVE]!", 
 	},
