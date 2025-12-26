@@ -560,9 +560,10 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		onTryHit(target, source, move) {
 			if (target !== source && move.flags['sound']) {
 				if (!this.boost({spa: 1})) {
-				if (!this.heal(target.baseMaxhp / 4, target, target))
-					this.add('-immune', target, '[from] ability: Virtual Diva'); 
 				}
+				if (!this.heal(target.baseMaxhp / 4, target, target)) {
+				}
+				this.add('-immune', target, '[from] ability: Virtual Diva');
 				return null;
 			}
 		},
