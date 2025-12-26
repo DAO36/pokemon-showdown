@@ -203,8 +203,8 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	doog: {
 		name: "Doog",
-		desc: "This Dog's Attack and Speed are both raised by 1 stage after it is damaged by a Fighting-type move.",
-		shortDesc: "Attack & Speed are raised by 1 stage if user is damaged by a Fighting-type move.",
+		desc: "This Dog is immune to Fighting-type moves and raises its Attack by 1 stage when hit by a Fighting-type move.",
+		shortDesc: "Attack is raised by 1 if hit by a Fighting type move; Fighting immunity.",
 	},
 	mogumogu: {
 		name: "Mogu Mogu",

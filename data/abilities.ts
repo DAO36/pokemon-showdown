@@ -972,17 +972,20 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3.5,
 		num: 276,
 	},
-	doog: { // reskin of [Sap Sipper] but for FIGHT ME instead of KUSA
-		onDamagingHit(damage, target, source, move) {
-			if (move.type === 'Fighting') {
-				this.boost({atk: 1, spe: 1});
+	doog: { // reskin of [Storm Drain] but for FIGHT ME instead of AQUA
+		onTryHit(target, source, move) {
+			if (target !== source && move.type === 'Fighting') {
+				if (!this.boost({atk: 1})) {
+					this.add('-immune', target, '[from] ability: Doog');
+				}
+				return null;
 			}
 		},
 		flags: {},
 		name: "Doog",
 		rating: 3,
 		num: 201,
-	}, 
+	},
 	mogumogu: { // reskin of [Water Absorb] but for Grass
 		onTryHit(target, source, move) {
 			if (target !== source && move.type === 'Grass') {
