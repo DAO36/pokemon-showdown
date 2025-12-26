@@ -230,8 +230,8 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	holyknight: {
 		name: "Holy Knight",
-		desc: "This Knight's punch-based attacks have her power multiplied by 1.2. Sucker Punch is not boosted. If this Knight has a non-volatile status condition, her Special Defense is multiplied by 1.5.",
-		shortDesc: "Punch moves have 1.2x power. If under a status condition, Sp. Def is multiplied by 1.5.",
+		desc: "This Knight's punch-based attacks have her power multiplied by 1.3. Sucker Punch is not boosted. If this Knight has a non-volatile status condition, her Special Defense is multiplied by 1.5.",
+		shortDesc: "Punch moves have 1.3x power. If under a status condition, Sp. Def is multiplied by 1.5.",
 	}, 
 	yandere: {
 		name: "Yandere",
