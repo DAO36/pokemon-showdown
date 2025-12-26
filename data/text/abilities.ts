@@ -90,8 +90,8 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	elite: {
 		name: "Elite",
-		desc: "This Shrine Maiden has her Special Attack raised by 2 stages after she is damaged by a Fire-type move.",
-		shortDesc: "Special Attack is raised by 2 stages when damaged by Fire type moves.",
+		desc: "This Shrine Maiden has her Special Attack, Special Defense, and Speed all raised by 1 stage after she is damaged by a Fire-type move.",
+		shortDesc: "Sp.Atk, Sp.Def, & Speed all raised by 1 stage when damaged by Fire type moves.",
 	},
 	stellar: {
 		name: "Stellar",

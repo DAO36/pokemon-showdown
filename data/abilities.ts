@@ -506,7 +506,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	elite: { // reskin of [Justified], but for Fire instead of Dark and SpA +2 instead of Atk +1
 		onDamagingHit(damage, target, source, move) {
 			if (move.type === 'Fire') {
-				this.boost({spa: 2});
+				this.boost({spa: 1, spd: 1, spe: 1});
 			}
 		},  
 		flags: {breakable: 1},
