@@ -208,9 +208,9 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	mogumogu: {
 		name: "Mogu Mogu",
-		desc: "This Cat is immune to Grass-type moves and restores 1/4 of her maximum HP, rounded down, when hit by a Grass-type move. This Cat is also immune to biting-based moves.",
-		shortDesc: "Heals 1/4 HP when hit by Grass moves; Grass immunity. Immune to bite-based moves.",
-	},
+		desc: "This Cat's biting moves have their power multiplied by 1.5. Immune to biting moves",
+		shortDesc: "User's biting moves have 1.5x power. Immune to bite moves.",
+	}, 
 	miomama: {
 		name: "Mio Mama",
 		desc: "This Wolf can hit Dark types with Psychic-type moves. This Wolf is immune to the effects of the Intimidate, Succubus, and Death Abilities.",

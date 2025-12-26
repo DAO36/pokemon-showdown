@@ -986,24 +986,42 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3,
 		num: 201,
 	},
-	mogumogu: { // reskin of [Water Absorb] but for Grass
+	mogumogu2: { // reskin of [Water Absorb] but for Grass
 		onTryHit(target, source, move) {
 			if (target !== source && move.type === 'Grass') {
 				if (!this.heal(target.baseMaxhp / 4, target, target)) {
-					this.add('-immune', target, '[from] ability: Mogu Mogu');
+					this.add('-immune', target, '[from] ability: Mogu Mogu2');
 				}
 				return null;
 			} 
 			if (move.flags['bite']) {
-				this.add('-immune', target, '[from] ability: Mogu Mogu');
+				this.add('-immune', target, '[from] ability: Mogu Mogu2');
 				return null;
 			}
 		},
 		flags: {breakable: 1},
-		name: "Mogu Mogu",
+		name: "Mogu Mogu2",
 		rating: 2.5,
 		num: 11,
 	},
+	mogumogu: {
+		onBasePowerPriority: 19,
+		onBasePower(basePower, attacker, defender, move) {
+			if (move.flags['bite']) {
+				return this.chainModify(1.5);
+			}
+		},
+		onTryHit(pokemon, target, move) {
+			if (move.flags['bite']) {
+				this.add('-immune', pokemon, '[from] ability: Mogu Mogu');
+				return null;
+			}
+		},
+		flags: {breakable: 1},
+		name: "Super Nenechi",
+		rating: 3,
+		num: 178,
+	}, 
 	miomama: { // reskin of [Scrappy] but for Psychic => Dark instead of Normal/Fighting => Ghost
 		onModifyMovePriority: -5,
 		onModifyMove(move) {
