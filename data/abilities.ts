@@ -1018,7 +1018,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			}
 		},
 		flags: {breakable: 1},
-		name: "Super Nenechi",
+		name: "Mogu Mogu",
 		rating: 3,
 		num: 178,
 	}, 
