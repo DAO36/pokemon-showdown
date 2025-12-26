@@ -576,12 +576,12 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	},
 	virtualdiva: { // reskin of [Water Absorb] but for Sound type moves
 		onTryHit(target, source, move) {
-			if (target !== source && move.flags['sound']) {
-				this.add('-immune', target, '[from] ability: Virtual Diva');
+			if (target !== source && move.flags['sound']) { 
 				if (!this.boost({spa: 1})) {
 				}
 				if (!this.heal(target.baseMaxhp / 4, target, target)) {
 				} 
+				{this.add('-immune', target, '[from] ability: Virtual Diva');}
 				return null;
 			}
 		},
