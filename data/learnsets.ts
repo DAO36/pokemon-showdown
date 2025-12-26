@@ -98684,6 +98684,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			seedbomb: ["9M"],
 			godeyes: ["9M"],
 			chattinichomp: ["9M"],
+			doom: ["9M"],
         },
 	},	
 	lamball: {
