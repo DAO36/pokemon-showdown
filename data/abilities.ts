@@ -1851,7 +1851,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	keris: { // reskin of [Iron Barbs] but better + immunity to slice'n'dice moves
 		onDamagingHitOrder: 1,
 		onDamagingHit(damage, target, source, move) {
-			if (move.category === 'Physical') {
+			if (move.category === 'Physical' || move.category === 'Special') {
 				this.damage(source.baseMaxhp / 10, source, target);
 			}
 		},
