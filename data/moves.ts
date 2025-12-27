@@ -66,10 +66,11 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		onAfterSubDamage(damage, target, source, move) {
 			if (!source.isAlly(target)) this.hint(move.category + " Shell Side Arm");
 		},
+		ignoreImmunity: true,
 		onEffectiveness(typeMod, target, type, move) {
 			if (move.type !== 'Normal') return;
 			if (!target) return; // avoid crashing when called from a chat plugin
-			// ignore effectiveness if the target is Flying type and immune to Ground
+			// ignore effectiveness if the target is Ghost type and immune to Normal
 			if (!target.runImmunity('Normal')) {
 				if (target.hasType('Ghost')) return 0;
 			}
