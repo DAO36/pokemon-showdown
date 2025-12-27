@@ -774,7 +774,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 				this.boost({atk: 1, spa: 1});
 			}
 		},
-		flags: {},
+		flags: {breakable: 1},
 		name: "Apex",
 		rating: 3.5,
 		num: 295,
@@ -942,7 +942,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			    this.add('-clearnegativeboost', pokemon);
 			}
 		},
-		flags: {},
+		flags: {breakable: 1},
 		name: "Staying Positive", 
 		rating: 5,
 		num: 24,
@@ -979,7 +979,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 				return null;
 			}
 		},
-		flags: {},
+		flags: {breakable: 1},
 		name: "Doog",
 		rating: 3,
 		num: 201,
@@ -2307,7 +2307,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 				this.boost({atk: 1, spa: 1, def: -1, spd: -1}, target, target);
 			}
 		},
-		flags: {},
+		flags: {breakable: 1},
 		name: "Societal Collapse",
 		rating: 2,
 		num: 201,
@@ -2473,7 +2473,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 1,
 		num: 258,
 	},
-	fuzzyone: {
+	fuzzyone: { // WIP in Progress
 		onResidual(pokemon) {
 			for (const allyActive of pokemon.allies()) {
 				if (allyActive.hasAbility(['fluffyone'])) {
@@ -2486,7 +2486,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 0,
 		num: 57,
 	}, 
-	fluffyone: {
+	fluffyone: { // WIP in Progress
 		onResidual(pokemon) {
 			for (const allyActive of pokemon.allies()) {
 				if (allyActive.hasAbility(['fuzzyone'])) {
