@@ -26209,8 +26209,8 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	},
 	songofjustice: { // ELIZABETH 1
 		num: 370,
-		accuracy: 100,
-		basePower: 90,
+		accuracy: 95,
+		basePower: 95,
 		category: "Special",
 		name: "Song of Justice",
 		pp: 10,
@@ -26230,7 +26230,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	},
 	swordofjustice: { // ELIZABETH 2
 		num: 370,
-		accuracy: 80,
+		accuracy: 90,
 		basePower: 120,
 		category: "Physical",
 		name: "Sword of Justice",
@@ -26269,7 +26269,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	},
 	boatgoesbinted: { // GIGI 2
 		num: 776,
-		accuracy: 80,
+		accuracy: 85,
 		basePower: 110,
 		category: "Special",
 		name: "Boat Goes Binted",
