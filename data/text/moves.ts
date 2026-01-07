@@ -7707,11 +7707,6 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		name: "Virtual Saber",
 		desc: "If the current terrain is Misty Terrain and the target is grounded, this move's power is doubled.",
 		shortDesc: "2x power if target is grounded in Misty Terrain.",
-	}, 
-	divadance: { // [UNUSED]
-		name: "Diva Dance",
-		desc: "Raises this Diva's Attack by 2 stages.",
-		shortDesc: "Raises the user's Attack by 2.",
 	},
 	snowdash: { // <UNUSED>
 		name: "Snow Dash",
@@ -7732,15 +7727,15 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	fubuzillabeam: {
 		name: "Fubuzilla Beam",
-		desc: "This attack charges on the first turn and executes on the second. Power is halved if the weather is Primordial Sea, Rain Dance, Desolate Land, Sunny Day, or Sandstorm and the user is not holding Utility Umbrella. If the user is holding a Power Herb or the weather is Snow/Hail, the move completes in one turn. If the user is holding Utility Umbrella and the weather is Snow/Hail, the move still requires a turn to charge.",
-		shortDesc: "Charges turn 1. Hits turn 2. No charge in snow.", 
+		desc: "This attack charges on the first turn and executes on the second. Raises the user's Special Attack by 1 stage on the first turn. If the user is holding a Power Herb or the weather is Snow/Hail, the move completes in one turn. If the user is holding Utility Umbrella and the weather is Snow/Hail, the move still requires a turn to charge. Power is halved if the weather is Primordial Sea, Rain Dance, Desolate Land, Sunny Day, or Sandstorm and the user is not holding Utility Umbrella.",
+		shortDesc: "Raises Sp.Atk by 1 on turn 1. No charge in snow.", 
 
 		prepare: "  [POKEMON] is charging up!",
 	},
 	foxkatana: {
 		name: "Fox Katana",
-		desc: "Has a 10% chance to freeze the target. Has a higher chance for a critical hit.",
-		shortDesc: "10% chance to freeze target. High crit ratio.",
+		desc: "Has a 20% chance to freeze the target. Has a higher chance for a critical hit.",
+		shortDesc: "20% chance to freeze target. High crit ratio.",
 	},
 	imgod: {
 		name: "I'm God",
@@ -8345,7 +8340,7 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		desc: "This attack charges on the first turn and executes on the second. Raises this Detective's Attack by 1 stage on the first turn. If the Detective is holding a Power Herb, the move completes in one turn.",
 		shortDesc: "Raises user's Attack by 1 on turn 1. Hits turn 2.",
 
-		prepare: "[POKEMON] is getting swole!",
+		prepare: "[POKEMON] is flexing!",
 	},
 	hivemind: {
 		name: "Hive Mind",
