@@ -7911,8 +7911,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	}, 
 	tarots: {
 		name: "Tarots",
-		desc: "Hits two to five times. Has a 35% chance to hit two or three times and a 15% chance to hit four or five times. If one of the hits breaks the target's substitute, it will take damage for the remaining hits. If the user has the Skill Link Ability, this move will always hit five times. If the user is holding Loaded Dice, this move will hit 4-5 times. This move's type effectiveness against Dark is changed to be neutrally effective no matter what this move's type is.",
-		shortDesc: "Hits 2-5 times in one turn. Hits dark types.",
+		desc: "Hits four times. If one of the hits breaks the target's substitute, it will take damage for the remaining hits. This move's type effectiveness against Dark is changed to be neutrally effective no matter what this move's type is.",
+		shortDesc: "Hits 4 times in one turn. Can hit Dark types.",
 	},
 	hatotaurushelp: {
 		name: "Hatotaurus Help",
@@ -8008,13 +8008,13 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	gmmf: {
 		name: "GMMF",
-		desc: "If the target lost HP, the user takes recoil damage equal to 1/3 the HP lost by the target, rounded half up, but not less than 1 HP.",
-		shortDesc: "Has 33% recoil.",
+		desc: "Lowers the user's Defense and Special Defense by 1 stage.",
+		shortDesc: "Lowers the user's Defense and Sp. Def by 1.",
 	},
 	gorillagrip: {
 		name: "Gorilla Grip",
-		desc: "Has a 10% chance to lower the foe's Defense by 1 stage. If the target lost HP, the user takes recoil damage equal to 33% the HP lost by the target, rounded half up, but not less than 1 HP.",
-		shortDesc: "10% to lower target's Defense by 1. 33% recoil.",
+		desc: "Has a 30% chance to lower the foe's Defense by 1 stage. If the target lost HP, the user takes recoil damage equal to 33% the HP lost by the target, rounded half up, but not less than 1 HP.",
+		shortDesc: "30% to lower target's Defense by 1. 33% recoil.",
 	},
 	heavenlyharmony: {
 		name: "Heavenly Harmony",
@@ -8048,8 +8048,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	candycrash: {
 		name: "Candy Crash",
-		desc: "Has a 25% chance to raise this baby's Speed by 1 stage. Hits two to five times. Has a 35% chance to hit two or three times and a 15% chance to hit four or five times. If one of the hits breaks the target's substitute, it will take damage for the remaining hits. If the user has the Skill Link Ability, this move will always hit five times. If the user is holding Loaded Dice, this move will hit 4-5 times.",
-		shortDesc: "25% raise user's Speed by 1. Hits 2-5 times in one turn.",
+		desc: "Has a 25% chance to raise this baby's Speed by 1 stage. Hits four times. If one of the hits breaks the target's substitute, it will take damage for the remaining hits.",
+		shortDesc: "25% raise user's Speed by 1. Hits 4 times in one turn.",
 	}, 
 	sweetassault: {
 		name: "Sweet Assault",
@@ -8063,8 +8063,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	circusshow: {
 		name: "Circus Show",
-		desc: "Has a 20% chance to confuse the target. Hits three times. Power increases to 40 for the second hit and 60 for the third. This move checks accuracy for each hit, and the attack ends if the target avoids a hit. If one of the hits breaks the target's substitute, it will take damage for the remaining hits. If the user has the Skill Link Ability, this move will always hit three times.",
-		shortDesc: "20% to confuse. Hits x3 each can miss, but power rises.",
+		desc: "Has a 25% chance to confuse the target. Hits three times. Power increases to 40 for the second hit and 60 for the third. This move checks accuracy for each hit, and the attack ends if the target avoids a hit. If one of the hits breaks the target's substitute, it will take damage for the remaining hits. If the user has the Skill Link Ability, this move will always hit three times.",
+		shortDesc: "25% to confuse. Hits x3 each can miss, but power rises.",
 	},
 	polmao: {
 		name: "PoLMAO",
@@ -8109,8 +8109,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	nenemax: {
 		name: "Nene MAX",
-		desc: "Lowers the user's Special Attack by 1 stage. If Grassy Terrain is active, and the user is grounded, this move does not miss.",
-		shortDesc: "-1 Sp.Atk recoil. Grassy Terrain: Cannot miss.",
+		desc: "Lowers the user's Special Attack by 2 stage. If Grassy Terrain is active, and the user is grounded, this move does not miss.",
+		shortDesc: "-2 Sp.Atk recoil. Grassy Terrain: Cannot miss.",
 	}, 
 	nekkostrike: {
 		name: "Nekko Strike",
@@ -8144,7 +8144,7 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	falconwhip: {
 		name: "Falcon Whip",
-		desc: "Has a 10% chance to confuse the target.",
+		desc: "Has a 10% chance to confuse the target. Has a higher chance for a critical hit.",
 		shortDesc: "10% chance to confuse target.",
 	},
 	samuraistrikes: {
@@ -8173,8 +8173,13 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	madscientist: {
 		name: "Mad Scientist",
-		desc: "Lowers this Coyote's Special Attack by 2 stages. If the target lost HP, the Coyote takes recoil damage equal to 1/3 the HP lost by the target, rounded half up, but not less than 1 HP.",
-		shortDesc: "Has 33% recoil. Lowers user's Sp.Atk by 2.",
+		desc: "Lowers the user's Special Attack by 2 stages. Has a 30% chance to either burn, freeze, paralyze, poison, badly poison, or put the target to sleep.",
+		shortDesc: "30% chance for random status on foe. -2 SpA recoil.",
+	},
+	atattack: {
+		name: "Rat Attack",
+		desc: "Has a 30% chance to either burn, freeze, paralyze, poison, badly poison, or put the target to sleep.",
+		shortDesc: "30% chance to PAR/FRZ/PSN/BRN/SLP target.",
 	},
 	cleanup: {
 		name: "Clean Up",
@@ -8413,8 +8418,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	phoenixdance: {
 		name: "Phoenix Dance",
-		desc: "Has a 20% chance to raise the user's Special Defense by 1 stage.",
-		shortDesc: "20% chance to raise the user's Sp. Def by 1.",
+		desc: "Has a 30% chance to burn the target.",
+		shortDesc: "30% chance to burn the target.",
 	},
 	hopesoda: {
 		name: "Hope Soda",
@@ -8542,7 +8547,7 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	ratattack: {
 		name: "Rat Attack",
-		desc: "Has a 30% chance to either burn, freeze, paralyze, poison, badly poison, or put the target to sleep.",
+		desc: "Has a 30% chance to either burn, freeze, paralyze, poison, or put the target to sleep.",
 		shortDesc: "30% chance to PAR/FRZ/PSN/BRN/SLP target.",
 	},
 	forbiddenknowledge: {
@@ -8550,8 +8555,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		desc: "Has a 25% chance to paralyze the target. This attack never misses.",
 		shortDesc: "25% chance to paralyze target. Never misses.",
 	},
-	bejeweled: {
-		name: "Bejeweled",
+	moyaimash: {
+		name: "Moyai Mash",
 		desc: "Has a high chance to land a critical hit. If this move is successful, it sets up stealth rock on the opposing side of the field, damaging each opposing Pokemon that switches in, foes lose 1/32, 1/16, 1/8, 1/4, or 1/2 of their maximum HP, rounded down, based on their weakness to the Rock type; 0.25x, 0.5x, neutral, 2x, or 4x, respectively. Can be removed from the opposing side if any Pokemon uses Tidy Up, or if any opposing Pokemon uses Mortal Spin, Rapid Spin, Clean Up, or Defog successfully, or is hit by Defog.",
 		shortDesc: "Sets Stealth Rock on target's side. High crit ratio",
 	},

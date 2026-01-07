@@ -23746,7 +23746,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	},
 	asacoco: { // COCO 1
 		num: 370,
-		accuracy: 50,
+		accuracy: 75,
 		basePower: 120,
 		category: "Physical",
 		name: "AsaCoco",
@@ -23770,7 +23770,12 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		pp: 10,
 		priority: 0,
 		flags: {contact: 1, protect: 1, mirror: 1, gravity: 1},
-		recoil: [33, 100],
+		self: {
+			boosts: {
+				def: -1,
+				spd: -1,
+			},
+		},
 		secondary: null,
 		target: "normal",
 		type: "Dragon",
@@ -23779,7 +23784,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	gorillagrip: { // KANATA 1
 		num: 370,
 		accuracy: 90,
-		basePower: 120,
+		basePower: 130,
 		category: "Physical",
 		name: "Gorilla Grip",
 		pp: 5,
@@ -23787,7 +23792,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		flags: {contact: 1, protect: 1, mirror: 1, punch: 1},
 		recoil: [33, 100],
 		secondary: {
-			chance: 10,
+			chance: 30,
 			boosts: {
 				def: -1,
 			},
@@ -23893,7 +23898,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	},
 	watamebeam: { // WATAME 4
 		num: 586,
-		accuracy: 80,
+		accuracy: 90,
 		basePower: 130,
 		category: "Special",
 		name: "Watame Beam",
@@ -23912,14 +23917,14 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	},
 	candycrash: { // LUNA 1
 		num: 370,
-		accuracy: 100,
-		basePower: 25,
+		accuracy: 90,
+		basePower: 30,
 		category: "Special",
 		name: "Candy Crash",
 		pp: 20,
 		priority: 0,
 		flags: {protect: 1, bullet: 1, mirror: 1},
-		multihit: [2, 5],
+		multihit: 4,
 		secondary: {
 			chance: 25,
 			self: {
@@ -23982,7 +23987,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		multihit: 3,
 		multiaccuracy: true,
 		secondary: {
-			chance: 20,
+			chance: 25,
 			volatileStatus: 'confusion',
 		},
 		target: "normal",
@@ -24040,7 +24045,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	poi: { // BOTAN 3
 		num: 411,
 		accuracy: 90,
-		basePower: 130,
+		basePower: 140,
 		category: "Special",
 		name: "Poi",
 		pp: 5,
@@ -24137,7 +24142,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		},
 		self: {
 			boosts: {
-				spa: -1,
+				spa: -2,
 			},
 		},
 		target: "normal",
@@ -24147,7 +24152,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	nekkostrike: { // NENE 3
 		num: 738,
 		accuracy: 100,
-		basePower: 50,
+		basePower: 60,
 		category: "Physical",
 		name: "Nekko Strike",
 		pp: 10,
@@ -24164,15 +24169,15 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	},
 	husbandhorde: { // NENE 4
 		num: 583,
-		accuracy: 100,
-		basePower: 100,
+		accuracy: 90,
+		basePower: 110,
 		category: "Physical",
 		name: "Husband Horde",
 		pp: 10,
 		priority: 0,
 		flags: {protect: 1, mirror: 1},
 		secondary: {
-			chance: 20,
+			chance: 25,
 			volatileStatus: 'confusion',
 		},
 		target: "normal",
@@ -24268,6 +24273,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		pp: 10,
 		priority: 0,
 		flags: {protect: 1, mirror: 1, slicing: 1},
+		critRatio: 2,
 		secondary: {
 			chance: 10,
 			volatileStatus: 'confusion',
@@ -24294,7 +24300,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	},
 	pokobee: {
 		num: 348,
-		accuracy: 100,
+		accuracy: 90,
 		basePower: 100,
 		category: "Special",
 		name: "Pokobee",
@@ -24363,9 +24369,9 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		contestType: "Clever",
 	},
 	madscientist: { // KOYORI 3
-		num: 354,
-		accuracy: 80,
-		basePower: 140,
+		num: 399,
+		accuracy: 90,
+		basePower: 130,
 		category: "Special",
 		name: "Mad Scientist",
 		pp: 5,
@@ -24376,8 +24382,25 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 				spa: -2,
 			},
 		},
-		recoil: [33, 100],
-		secondary: null,
+		secondary: {
+			chance: 30,
+			onHit(target, source) {
+				const result = this.random(6);
+				if (result === 0) {
+					target.trySetStatus('brn', source);
+				} else if (result === 1) {
+					target.trySetStatus('par', source);
+				} else if (result === 2) {
+					target.trySetStatus('tox', source);
+				} else if (result === 3) {
+					target.trySetStatus('slp', source);
+				} else if (result === 4) {
+					target.trySetStatus('psn', source);
+				} else {
+					target.trySetStatus('frz', source);
+				}
+			},
+		},
 		target: "normal",
 		type: "Psychic",
 		contestType: "Clever",
@@ -24783,8 +24806,8 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	},
 	pickiaxe: { // CKIA 1
 		num: 370,
-		accuracy: 90,
-		basePower: 80,
+		accuracy: 95,
+		basePower: 75,
 		category: "Physical",
 		name: "PiCKIAxe",
 		pp: 10,
@@ -24953,8 +24976,8 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	},
 	atlantisstrike: { // GURA 3
 		num: 76,
-		accuracy: 80,
-		basePower: 130,
+		accuracy: 90,
+		basePower: 120,
 		category: "Special",
 		name: "Atlantis Strike",
 		pp: 10,
@@ -25041,8 +25064,8 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	},
 	timetravel: { // AME 1
 		num: 800,
-		accuracy: 90,
-		basePower: 130,
+		accuracy: 80,
+		basePower: 140,
 		category: "Special",
 		name: "Time Travel",
 		pp: 5,
@@ -25087,7 +25110,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	},
 	groundpound: { // SMOL AME 1
 		num: 19,
-		accuracy: 90,
+		accuracy: 80,
 		basePower: 140,
 		category: "Physical",
 		name: "Ground Pound",
@@ -25396,7 +25419,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	phoenixblade: { // KIARA 2
 		num: 370,
 		accuracy: 90,
-		basePower: 100,
+		basePower: 110,
 		category: "Physical",
 		name: "Phoenix Blade",
 		pp: 10,
@@ -25439,12 +25462,8 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		flags: {protect: 1, mirror: 1, dance: 1, defrost: 1},
 		thawsTarget: true,
 		secondary: {
-			chance: 20,
-			self: {
-				boosts: {
-					spd: 1,
-				},
-			},
+			chance: 30,
+			status: 'brn',
 		},
 		target: "normal",
 		type: "Fighting",
@@ -25542,7 +25561,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	wormhole: { // SANA 1
 		num: 370,
 		accuracy: true,
-		basePower: 40,
+		basePower: 60,
 		category: "Special",
 		name: "Wormhole",
 		pp: 25,
@@ -25556,7 +25575,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	supernova: { // SANA 2
 		num: 38,
 		accuracy: 90,
-		basePower: 130,
+		basePower: 140,
 		category: "Special",
 		name: "Supernova",
 		pp: 15,
@@ -25613,7 +25632,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Psychic",
 		contestType: "Tough",
 	},
-	gamerkirin: { // FAUNUSED
+	gamerkirin: { // <<FAUNUSED>>
 		num: 14,
 		accuracy: true,
 		basePower: 0,
@@ -25657,7 +25676,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	nemu: { // FAUNA 2
 		num: 38,
 		accuracy: 100,
-		basePower: 130,
+		basePower: 140,
 		category: "Physical",
 		name: "Nemu",
 		pp: 10,
@@ -25739,7 +25758,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	timeflies: { // KRONII 2
 		num: 370,
 		accuracy: 100,
-		basePower: 50,
+		basePower: 40,
 		onBasePower(basePower) {
 			if (this.field.getPseudoWeather('trickroom')) {
 				return this.chainModify(1.5);
@@ -25985,16 +26004,14 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		secondary: {
 			chance: 30,
 			onHit(target, source) {
-				const result = this.random(6);
+				const result = this.random(5);
 				if (result === 0) {
 					target.trySetStatus('brn', source);
 				} else if (result === 1) {
 					target.trySetStatus('par', source);
 				} else if (result === 2) {
-					target.trySetStatus('tox', source);
-				} else if (result === 3) {
 					target.trySetStatus('slp', source);
-				} else if (result === 4) {
+				} else if (result === 3) {
 					target.trySetStatus('psn', source);
 				} else {
 					target.trySetStatus('frz', source);
@@ -26022,26 +26039,26 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Psychic",
 		contestType: "Tough",
 	},
-	bejeweled: { // BIJOU 1
+	moyaimash: { // BIJOU 1
 		num: 830,
 		accuracy: 100,
-		basePower: 70,
+		basePower: 75,
 		category: "Physical",
-		name: "Bejeweled",
+		name: "Moyai Mash",
 		pp: 10,
 		priority: 0,
 		flags: {protect: 1, mirror: 1, slicing: 1, bullet: 1},
 		onAfterHit(target, source, move) {
 			if (!move.hasSheerForce && source.hp) {
 				for (const side of source.side.foeSidesWithConditions()) {
-					side.addSideCondition('stealthrock');
+					side.addSideCondition('spikes');
 				}
 			}
 		},
 		onAfterSubDamage(damage, target, source, move) {
 			if (!move.hasSheerForce && source.hp) {
 				for (const side of source.side.foeSidesWithConditions()) {
-					side.addSideCondition('stealthrock');
+					side.addSideCondition('spikes');
 				}
 			}
 		},
@@ -26053,7 +26070,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	bibooblade: { // BIJOU 2
 		num: 348,
 		accuracy: true,
-		basePower: 70,
+		basePower: 75,
 		category: "Physical",
 		name: "Biboo Blade",
 		pp: 10,
@@ -26062,14 +26079,14 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		onAfterHit(target, source, move) {
 			if (!move.hasSheerForce && source.hp) {
 				for (const side of source.side.foeSidesWithConditions()) {
-					side.addSideCondition('spikes');
+					side.addSideCondition('stealthrock');
 				}
 			}
 		},
 		onAfterSubDamage(damage, target, source, move) {
 			if (!move.hasSheerForce && source.hp) {
 				for (const side of source.side.foeSidesWithConditions()) {
-					side.addSideCondition('spikes');
+					side.addSideCondition('stealthrock');
 				}
 			}
 		},
