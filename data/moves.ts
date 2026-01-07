@@ -23323,7 +23323,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Normal",
 		contestType: "Cool",
 	},
-	bark: { // KORONE 3
+	bark: { // KORONE 3 [but also FuwaMoco]
 		num: 304,
 		accuracy: 100,
 		basePower: 100,
@@ -23368,8 +23368,8 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	},
 	tarots: { // MIO 1
 		num: 370,
-		accuracy: 100,
-		basePower: 30,
+		accuracy: 90,
+		basePower: 25,
 		category: "Physical",
 		name: "Tarots",
 		pp: 20,
@@ -23384,7 +23384,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 				if (target.hasType('Dark')) return 0;
 			}
 		},
-		multihit: [2, 5],
+		multihit: 4,
 		secondary: null,
 		target: "any",
 		type: "Psychic",
@@ -23445,7 +23445,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	tnt: { // PEKORA 3
 		num: 437,
 		accuracy: 90,
-		basePower: 130,
+		basePower: 120,
 		category: "Special",
 		name: "TNT",
 		pp: 5,
@@ -23493,8 +23493,8 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	}, 
 	macesmash: { // NOEL 1
 		num: 38,
-		accuracy: 80,
-		basePower: 130,
+		accuracy: 90,
+		basePower: 120,
 		category: "Physical",
 		name: "Mace Smash",
 		pp: 5,
@@ -23603,7 +23603,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	imhorny: { // MARINE 2
 		num: 69,
 		accuracy: 90,
-		basePower: 90,
+		basePower: 80,
 		category: "Special",
 		name: "I'm Horny",
 		pp: 5,
