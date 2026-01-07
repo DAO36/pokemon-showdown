@@ -22753,8 +22753,8 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	},
 	imgod: { // MATSURI 1
 		num: 370,
-		accuracy: 80,
-		basePower: 140,
+		accuracy: 90,
+		basePower: 130,
 		category: "Physical",
 		name: "I'm God",
 		pp: 5,
@@ -22796,7 +22796,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	splitpersonality: { // HAACHAMA 1
 		num: 370,
 		accuracy: 100,
-		basePower: 50,
+		basePower: 55,
 		category: "Physical",
 		name: "Split Personality",
 		pp: 10,
@@ -22821,7 +22821,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		priority: 0,
 		flags: {protect: 1, mirror: 1},
 		secondary: {
-			chance: 20,
+			chance: 25,
 			volatileStatus: 'flinch',
 		},
 		target: "normal",
@@ -23030,8 +23030,8 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	},
 	onispirits: { // AYAME 4
 		num: 751,
-		accuracy: 100,
-		basePower: 50,
+		accuracy: 90,
+		basePower: 60,
 		category: "Special",
 		name: "Oni Spirits",
 		pp: 5,
@@ -23204,7 +23204,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	magickick: { // SHION 3
 		num: 136,
 		accuracy: 90,
-		basePower: 140,
+		basePower: 150,
 		category: "Physical",
 		name: "Magic Kick",
 		pp: 5,
@@ -23310,7 +23310,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	},
 	yubiyubi: { // KORONE 2
 		num: 370,
-		accuracy: 100,
+		accuracy: 95,
 		basePower: 30,
 		category: "Physical",
 		name: "Yubi Yubi",

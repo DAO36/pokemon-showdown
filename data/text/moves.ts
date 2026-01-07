@@ -7756,8 +7756,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	haachamacooking: {
 		name: "Haachama Cooking",
-		desc: "Has a 20% chance to make the target flinch.",
-		shortDesc: "20% chance to make the target flinch.",
+		desc: "Has a 25% chance to make the target flinch.",
+		shortDesc: "25% chance to make the target flinch.",
 	},
 	alterego: { // [UNUSED]
 		name: "Alter Ego",
@@ -7796,7 +7796,7 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	apexmaid: {
 		name: "Apex Maid",
-		desc: "Hits two to five times. Has a 35% chance to hit two or three times and a 15% chance to hit four or five times. If one of the hits breaks the target's substitute, it will take damage for the remaining hits. If the user has the Skill Link Ability, this move will always hit five times. If the user is holding Loaded Dice, this move will hit 4-5 times.",
+		desc: "Hits two to five times. Has a 35% chance to hit two or three times and a 15% chance to hit four or five times. If one of the hits breaks the target's substitute, it will take damage for the remaining hits. If the user has the Skill Link Ability, this move will always hit five times. If the user is holding Loaded Dice, this move will hit 4-5 times. Has a higher chance for a critical hit.",
 		shortDesc: "Hits 2-5 times in one turn.",
 	},
 	onyan: {

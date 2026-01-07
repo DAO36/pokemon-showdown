@@ -98401,6 +98401,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			charm: ["9M"],
 			drainpunch: ["9M"],
 			twinstrikes: ["9M"],
+			bark: ["9M"],
         },
 	},	
 	fuwawa: {
@@ -98450,6 +98451,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			charm: ["9M"],
 			moonlight: ["9M"],
 			twinstrikes: ["9M"],
+			bark: ["9M"],
         },
 	},	
 	fuwamoco: {
@@ -98502,6 +98504,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			drainpunch: ["9M"],
 			moonlight: ["9M"],
 			baubau: ["9M"],
+			bark: ["9M"],
         },
 	},	
 	elizabeth: {
