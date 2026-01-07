@@ -22353,7 +22353,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		priority: 0,
 		flags: {protect: 1, mirror: 1, contact: 1},
 		secondary: {
-			chance: 10,
+			chance: 30,
 			self: {
 				boosts: {
 					atk: 1,
@@ -22421,26 +22421,9 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Fairy",
 		contestType: "Beautiful",
 	},
-	divadance: { // <<<UNUSED>>>
-		num: 14,
-		accuracy: true,
-		basePower: 0,
-		category: "Status",
-		name: "Diva Dance",
-		pp: 25,
-		priority: 0,
-		flags: {snatch: 1, dance: 1},
-		boosts: {
-			atk: 2,
-		},
-		secondary: null,
-		target: "self",
-		type: "Fairy",
-		contestType: "Beautiful",
-	},
 	sakurastrike: { // MIKO 1
 		num: 370,
-		accuracy: 100,
+		accuracy: 95,
 		basePower: 100,
 		category: "Physical",
 		name: "Sakura Strike",
@@ -22461,8 +22444,8 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	},
 	lavabucket: { // MIKO 2
 		num: 370,
-		accuracy: 80,
-		basePower: 140,
+		accuracy: 90,
+		basePower: 110,
 		category: "Special",
 		name: "Lava Bucket",
 		pp: 5,
@@ -22575,7 +22558,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	}, 
 	highspecs: { // ROBOCO 1
 		num: 370,
-		accuracy: 90,
+		accuracy: 85,
 		basePower: 110,
 		category: "Special",
 		name: "High Specs",
@@ -22593,7 +22576,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	laserbeam: { // ROBOCO 2
 		num: 370,
 		accuracy: 70,
-		basePower: 120,
+		basePower: 110,
 		category: "Special",
 		name: "Laser Beam",
 		pp: 5,

@@ -7623,15 +7623,15 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 			shortDesc: "Nearly always goes first. Always crits.",
 		},
 	},
-	idolsong: {
+	idolsong: { // Sora
 		name: "Idol Song",
 		desc: "Hits adjacent foes. No additional effect.",
 		shortDesc: "No additional effect. Hits adjacent foes.", 
 	},
 	ankimoattack: {
 		name: "Ankimo Attack",
-		desc: "Has a 10% chance to raise this Idol's Attack by 1 stage.",
-		shortDesc: "10% chance to raise the user's Attack by 1.", 
+		desc: "Has a 30% chance to raise this Idol's Attack by 1 stage.",
+		shortDesc: "30% chance to raise the user's Attack by 1.", 
 	},
 	tskr: {
 		name: "TSKR",
