@@ -553,7 +553,7 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 		desc: "If this Big Cat eats a Berry, she will eat that Berry again at the end of the turn. If the last item this Big Cat used is a Berry, there is a 25% chance it gets restored at the end of each turn.",
 		shortDesc: "User eats a Berry: eats Berry again. If item used is a Berry, 25% chance to restore.",
 
-		addItem: "  [POKEMON] spotted one [ITEM]!",
+		addItem: "  [POKEMON] cooked up one [ITEM]!",
 	},
 	adaptability: {
 		name: "Adaptability",
