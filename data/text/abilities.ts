@@ -105,8 +105,8 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	}, 
 	virtualdiva: {
 		name: "Virtual Diva",
-		desc: "This Diva's sound-based moves have her power multiplied by 1.3. Her Special Attack raised by 1 stage when she is hit by a Sound-based move; Immune to Sound-type moves",
-		shortDesc: "Heals 1/4 hp when hit by sound moves. +1 Sp.Atk if hit by sound moves; Sound immunity.",
+		desc: "This Diva's sound-based attacks have +1 priority. If this Diva is hit by a sound-based attack, her Special Attack stat is raised by 1 stage; Immune to sound-based attacks.",
+		shortDesc: "Sound moves have +1 priority. +1 SpA if hit by sound move; Immune to sound moves."
 	},
 	fbking: {
 		name: "FBKing",
@@ -465,8 +465,10 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	yabairys: {
 		name: "YabaIRyS",
-		desc: "This Nephelim's sound-based moves have their power multiplied by 1.3; This Nephelim's offensive stat is multiplied by 1.5 while using a Rock-type attacking move.",
-		shortDesc: "Sound-based moves have 1.3x power; Rock-type moves have 1.5x power.",
+		desc: "This Nephelim is immune to Sound-type moves and heals 1/4 of her maximum HP when hit by a Sound-type move. If this Nephilim is not the target of a Sound-type move used by another Pokemon, this Nephilim redirects that move to herself if she is within the range of that move. If multiple Pokemon could redirect with this Ability, it goes to the one with the highest Speed, or in the case of a tie to the one that has had this Ability active longer. This Nephelim's offensive stat is multiplied by 1.5 while using a Rock-type attacking move.",
+		shortDesc: "Heals 1/4 HP when hit by sound; Sound immunity. Rock-type moves have 1.5x power.",
+
+		activate: "#lightningrod",
 	},
 	timedilation: {
 		name: "Time Dilation",

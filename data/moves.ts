@@ -25407,7 +25407,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		name: "Phoenix Blade",
 		pp: 10,
 		priority: 0,
-		flags: {protect: 1, mirror: 1, contact: 1, slicing: 1, defrost: 1}, 
+		flags: {protect: 1, mirror: 1, contact: 1, slicing: 1, defrost: 1},
 		secondary: {
 			chance: 30,
 			status: 'brn',

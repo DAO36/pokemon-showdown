@@ -557,6 +557,28 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		num: 207,
 	},
 	virtualdiva: { // reskin of [Water Absorb] but for Sound type moves
+		onModifyPriority(priority, pokemon, target, move) {
+			if (move.flags['sound']) return priority + 1;
+		},
+		onTryHit(target, source, move) {
+			if (target !== source && move.flags['sound']) {
+				if (!this.boost({spa: 1})) {
+					this.add('-immune', target, '[from] ability: Virtual Diva');
+				}
+				return null;
+			}
+		},
+		onAllyTryHitSide(target, source, move) {
+			if (move.flags['sound']) {
+				this.add('-immune', this.effectState.target, '[from] ability: Virtual Diva');
+			}
+		},
+		flags: {breakable: 1},
+		name: "Virtual Diva",
+		rating: 2.5,
+		num: 11,
+	},
+	virtualdiva3: { // reskin of [Water Absorb] but for Sound type moves
 		onTryHit(target, source, move) {
 			if (target !== source && move.flags['sound']) {
 				if (!this.boost({spa: 1})) {
@@ -567,7 +589,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			}
 		},
 		flags: {breakable: 1},
-		name: "Virtual Diva",
+		name: "Virtual Diva3",
 		rating: 2.5,
 		num: 11,
 	},
@@ -2182,12 +2204,23 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 4,
 		num: 18,
 	},
-	yabairys: { // combines [Rocky Payload] + [Punk Rock] minus the sound resistance
-		onBasePowerPriority: 7,
-		onBasePower(basePower, attacker, defender, move) {
-			if (move.flags['sound']) {
-				this.debug('YabaIRyS boost');
-				return this.chainModify([5325, 4096]);
+	yabairys: { // combines [Rocky Payload] + [] minus the sound resistance
+		onTryHit(target, source, move) {
+			if (target !== source && move.flags['sound']) {
+				if (!this.heal(target.baseMaxhp / 4, target, target)) {
+				} 
+				return null;
+			}
+		},
+		onAnyRedirectTarget(target, source, source2, move) {
+			if (move.flags['sound']) return;
+			const redirectTarget = ['randomNormal', 'adjacentFoe', 'any', 'allAdjacent', 'allAdjacentFoes'].includes(move.target) ? 'normal' : move.target;
+			if (this.validTarget(this.effectState.target, source, redirectTarget)) {
+				if (move.smartTarget) move.smartTarget = false;
+				if (this.effectState.target !== target) {
+					this.add('-activate', this.effectState.target, 'ability: YabaIRyS');
+				}
+				return this.effectState.target;
 			}
 		},
 		onModifyAtkPriority: 5,
