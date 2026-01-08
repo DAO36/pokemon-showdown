@@ -22624,8 +22624,19 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		flags: {snatch: 1, heal: 1},
 		heal: [1, 2],
 		onHit(pokemon) {
-			pokemon.cureStatus() 
-		},
+            {const boosts: SparseBoostsTable = {};
+            let i: BoostID;
+            for (i in pokemon.boosts) {
+                if (pokemon.boosts[i] < 0) {
+                    boosts[i] = 0;
+                }
+            }
+            pokemon.setBoost(boosts);
+            this.add('-clearnegativeboost', pokemon)
+            }
+            const success = !!this.heal(this.modify(pokemon.maxhp, 1/2));
+            return success;
+        },
 		secondary: null,
 		target: "self",
 		type: "Electric",
