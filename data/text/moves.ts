@@ -8490,8 +8490,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	timeflies: {
 		name: "Time Flies",
-		desc: "Almost always goes first. Power is multiplied by 1.5 during Trick Room's effect.",
-		shortDesc: "1.5x power in Trick Room. Always goes first.",
+		desc: "Almost always goes first. Power is multiplied by 2 during Trick Room's effect.",
+		shortDesc: "2x power in Trick Room. Always goes first.",
 	},
 	timetogo: { // <Exclusive to Boros>
 		name: "Time to Go",
@@ -8502,8 +8502,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	}, 
 	sandsoftime: {
 		name: "Sands of Time",
-		desc: "Has a 30% chance to lower the target's Speed by 1 stage. Hits adjacent Pokemon.",
-		shortDesc: "30% chance to lower target's Speed by 1.",
+		desc: "Has a 100% chance to lower the target's Speed by 1 stage. Power is multiplied by 2 during Trick Room's effect. Hits adjacent Pokemon.",
+		shortDesc: "Lower foe's Speed by 1. 2x power in Trick Room.",
 	},
 	blastfromthepast: {
 		name: "Blast from the Past",

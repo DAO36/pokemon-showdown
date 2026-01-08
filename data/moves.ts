@@ -25558,7 +25558,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	supernova: { // SANA 2
 		num: 38,
 		accuracy: 90,
-		basePower: 140,
+		basePower: 150,
 		category: "Special",
 		name: "Supernova",
 		pp: 15,
@@ -25744,7 +25744,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		basePower: 40,
 		onBasePower(basePower) {
 			if (this.field.getPseudoWeather('trickroom')) {
-				return this.chainModify(1.5);
+				return this.chainModify(2);
 			}
 		},
 		category: "Physical",
@@ -25759,15 +25759,20 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	},
 	sandsoftime: { // KRONII 3
 		num: 157,
-		accuracy: 100,
-		basePower: 80,
+		accuracy: 90,
+		basePower: 50,
+		onBasePower(basePower) {
+			if (this.field.getPseudoWeather('trickroom')) {
+				return this.chainModify(2);
+			}
+		},
 		category: "Special",
 		name: "Sands of Time",
 		pp: 10,
 		priority: 0,
 		flags: {protect: 1, mirror: 1},
 		secondary: {
-			chance: 30,
+			chance: 100,
 			boosts: {
 				spe: -1,
 			},

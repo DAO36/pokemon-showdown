@@ -97774,6 +97774,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			scorchingsands: ["9M"],
 			headsmash: ["9M"],
 			ancientpower: ["9M"],
+			powergem: ["9M"],
 			rockslide: ["9M"],
 			xscissor: ["9M"],
 			nightslash: ["9M"],
