@@ -8314,11 +8314,6 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		desc: "Lowers this Shark's Defense and Special Defense by 1 stage.",
 		shortDesc: "Lowers the user's Defense and Sp. Def by 1.",
 	},
-	ameway2: {
-		name: "Ame Way",
-		desc: "Raises this Detective's Attack by 2 stages.",
-		shortDesc: "Raises the user's Attack by 2.",
-	},
 	timetravel2: {
 		name: "Time Travel2",
 		desc: "If this move is successful and the Detective has not fainted, the Detective switches out even if she is trapped and is replaced immediately by a selected party member. The Detective does not switch out if there are no unfainted party members, or if the target switched out using an Eject Button or through the effect of the Emergency Exit or Wimp Out Abilities. This attack never misses.",

@@ -98297,7 +98297,6 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			flash: ["9M"],
 			nastyplot: ["9M"],
 			irondefense: ["9M"],
-			pebbles: ["9M"],
         },
 	},
 	nerissa: {
@@ -98690,7 +98689,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			chattinichomp: ["9M"],
 			doom: ["9M"],
         },
-	},	
+	},
 	lamball: {
 		learnset: {
 			agility: ["9M"],

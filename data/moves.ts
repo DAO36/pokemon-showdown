@@ -24298,7 +24298,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Fighting",
 		contestType: "Cool",
 	},
-	pokobee: {
+	pokobee: { // IROHA 2
 		num: 348,
 		accuracy: 90,
 		basePower: 100,
@@ -25031,23 +25031,6 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Water",
 		contestType: "Tough",
 	},
-	ameway2: { // <<<UNUSED>>>
-		num: 370,
-		accuracy: true,
-		basePower: 0,
-		category: "Status",
-		name: "Ame Way",
-		pp: 20,
-		priority: 0,
-		flags: {snatch: 1},
-		boosts: {
-			atk: 2, 
-		},
-		secondary: null,
-		target: "self",
-		type: "Psychic",
-		contestType: "Clever",
-	},
 	timetravel2: { // <<<UNUSED>>>
 		num: 370,
 		accuracy: true,
@@ -25062,34 +25045,6 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		target: "normal",
 		type: "Psychic",
 	},
-	timetravel: { // AME 1
-		num: 800,
-		accuracy: 80,
-		basePower: 140,
-		category: "Special",
-		name: "Time Travel",
-		pp: 5,
-		priority: 0,
-		flags: {charge: 1, protect: 1, mirror: 1, contact: 1, distance: 1},
-		onTryMove(attacker, defender, move) {
-			if (attacker.removeVolatile(move.id)) {
-				return;
-			}
-			this.add('-prepare', attacker, move.name); 
-			if (!this.runEvent('ChargeMove', attacker, defender, move)) {
-				return;
-			}
-			attacker.addVolatile('twoturnmove', defender);
-			return null;
-		},
-		condition: {
-			duration: 2,
-			onInvulnerability: false,
-		},
-		secondary: null,
-		target: "any",
-		type: "Psychic",
-	}, 
 	groundpound2: { // <<<UNUSED>>>
 		num: 370,
 		accuracy: 80,
@@ -25149,6 +25104,34 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		target: "any",
 		type: "Ground",
 		contestType: "Clever",
+	},
+	timetravel: { // AME 1
+		num: 800,
+		accuracy: 80,
+		basePower: 140,
+		category: "Special",
+		name: "Time Travel",
+		pp: 5,
+		priority: 0,
+		flags: {charge: 1, protect: 1, mirror: 1, contact: 1, distance: 1},
+		onTryMove(attacker, defender, move) {
+			if (attacker.removeVolatile(move.id)) {
+				return;
+			}
+			this.add('-prepare', attacker, move.name); 
+			if (!this.runEvent('ChargeMove', attacker, defender, move)) {
+				return;
+			}
+			attacker.addVolatile('twoturnmove', defender);
+			return null;
+		},
+		condition: {
+			duration: 2,
+			onInvulnerability: false,
+		},
+		secondary: null,
+		target: "any",
+		type: "Psychic",
 	},
 	bubbabite: { // AME 2
 		num: 331,
