@@ -2205,13 +2205,6 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		num: 18,
 	},
 	yabairys: { // combines [Rocky Payload] + [] minus the sound resistance
-		onTryHit(target, source, move) {
-			if (target !== source && move.flags['sound']) {
-				if (!this.heal(target.baseMaxhp / 4, target, target)) {
-				} 
-				return null;
-			}
-		},
 		onAnyRedirectTarget(target, source, source2, move) {
 			if (!move.flags['sound']) return;
 			const redirectTarget = ['randomNormal', 'adjacentFoe', 'allAdjacent', 'allAdjacentFoes'].includes(move.target) ? 'normal' : move.target;
