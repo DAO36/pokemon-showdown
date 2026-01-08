@@ -22622,7 +22622,6 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		pp: 5,
 		priority: 0,
 		flags: {snatch: 1, heal: 1},
-		heal: [1, 2],
 		onHit(pokemon) {
             {const boosts: SparseBoostsTable = {};
             let i: BoostID;
