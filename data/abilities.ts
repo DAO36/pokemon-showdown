@@ -2204,49 +2204,12 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 4,
 		num: 18,
 	},
-	tormdrain: {
-		onTryHit(target, source, move) {
-			if (target !== source && move.type === 'Water') {
-				if (!this.boost({spa: 1})) {
-					this.add('-immune', target, '[from] ability: Storm Drain');
-				}
-				return null;
-			}
-		},
-		onAnyRedirectTarget(target, source, source2, move) {
-			if (move.type !== 'Water' || move.flags['pledgecombo']) return;
-			const redirectTarget = ['randomNormal', 'adjacentFoe'].includes(move.target) ? 'normal' : move.target;
-			if (this.validTarget(this.effectState.target, source, redirectTarget)) {
-				if (move.smartTarget) move.smartTarget = false;
-				if (this.effectState.target !== target) {
-					this.add('-activate', this.effectState.target, 'ability: Storm Drain');
-				}
-				return this.effectState.target;
-			}
-		},
-		flags: {breakable: 1},
-		name: "Storm Drain",
-		rating: 3,
-		num: 114,
-	},
 	yabairys: { // combines [Rocky Payload] + [] minus the sound resistance
-		onTryHit(target, source, move) {
-			if (target !== source && move.flags['sound']) {
-				if (!this.heal(target.baseMaxhp / 4, target, target)) {
-					this.add('-immune', target, '[from] ability: YabaIRyS');
-				} 
-				return null;
-			}
-		},
-		onAnyRedirectTarget(target, source, source2, move) {
-			if (!move.flags['sound']) return;
-			const redirectTarget = ['randomNormal', 'adjacentFoe', 'allAdjacent', 'allAdjacentFoes'].includes(move.target) ? 'normal' : move.target;
-			if (this.validTarget(this.effectState.target, source, redirectTarget)) {
-				if (move.smartTarget) move.smartTarget = false;
-				if (this.effectState.target !== target) {
-					this.add('-activate', this.effectState.target, 'ability: YabaIRyS');
-				}
-				return this.effectState.target;
+		onBasePowerPriority: 7,
+		onBasePower(basePower, attacker, defender, move) {
+			if (move.flags['sound']) {
+				this.debug('YabaIRyS boost');
+				return this.chainModify([5325, 4096]);
 			}
 		},
 		onModifyAtkPriority: 5,
