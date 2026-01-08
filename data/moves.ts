@@ -22634,9 +22634,10 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
             pokemon.setBoost(boosts);
             this.add('-clearnegativeboost', pokemon)
             }
+			pokemon.cureStatus()
             const success = !!this.heal(this.modify(pokemon.maxhp, 1/2));
-            return success;
-        },
+            return success; 
+		},
 		secondary: null,
 		target: "self",
 		type: "Electric",
