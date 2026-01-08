@@ -2214,7 +2214,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		},
 		onAnyRedirectTarget(target, source, source2, move) {
 			if (!move.flags['sound']) return;
-			const redirectTarget = ['randomNormal', 'adjacentFoe', 'any', 'allAdjacent', 'allAdjacentFoes'].includes(move.target) ? 'normal' : move.target;
+			const redirectTarget = ['randomNormal', 'adjacentFoe', 'allAdjacent', 'allAdjacentFoes'].includes(move.target) ? 'normal' : move.target;
 			if (this.validTarget(this.effectState.target, source, redirectTarget)) {
 				if (move.smartTarget) move.smartTarget = false;
 				if (this.effectState.target !== target) {
