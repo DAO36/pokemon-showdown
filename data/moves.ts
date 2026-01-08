@@ -24103,17 +24103,17 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	},
 	beetleblast: { // NENE 1
 		num: 370,
-		accuracy: 100,
+		accuracy: 90,
 		basePower: 130,
 		category: "Physical",
 		name: "Beetle Blast",
 		pp: 5,
 		priority: 0,
-		flags: {protect: 1, mirror: 1, contact: 1},
-		self: {
+		flags: {protect: 1, mirror: 1,},
+		selfBoost: {
 			boosts: {
 				def: -1,
-				spd: -1,
+				spe: 1,
 			},
 		},
 		secondary: null,

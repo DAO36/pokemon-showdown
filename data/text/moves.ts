@@ -8104,8 +8104,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	beetleblast: {
 		name: "Beetle Blast",
-		desc: "Lowers the user's Defense and Special Defense by 1 stage.",
-		shortDesc: "Lowers the user's Defense and Sp. Def by 1.",
+		desc: "Lowers the user's Defense by 1 stage and raises the user's Speed by 1 stage.",
+		shortDesc: "Lowers user's Def by 1 and Raises user's Spe by 1.",
 	},
 	nenemax: {
 		name: "Nene MAX",
