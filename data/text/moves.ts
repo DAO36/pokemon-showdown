@@ -7695,8 +7695,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	reboot: {
 		name: "Reboot",
-		desc: "This Robot restores 1/2 of her maximum HP, rounded half up. If the terrain is Electric Terrain, this Robot instead restores 2/3 of her maximum HP, rounded half down.",
-		shortDesc: "Heals the user by a terrain-dependent amount.",
+		desc: "This Robot restores 1/2 of her maximum HP, rounded half up. Removes any status effect that the Robot is inflicted with.",
+		shortDesc: "Heals user by 50% of max HP; Cures user of status.",
 	},
 	divasong: {
 		name: "Diva Song",
@@ -8618,8 +8618,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	windup: {
 		name: "Wind Up",
-		desc: "This Automotan restores 1/2 of her maximum HP, rounded half up. If the terrain is Electric Terrain, this Automotan instead restores 2/3 of her maximum HP, rounded half down.",
-		shortDesc: "Heals user by a terrain-dependent amount.",
+		desc: "User restores 1/2 of her maximum HP, rounded half up. Removes any status effect that the user is inflicted with.",
+		shortDesc: "Heals user by 50% of max HP; Cures user of status.",
 	},
 	godeyes: {
 		name: "God Eyes",

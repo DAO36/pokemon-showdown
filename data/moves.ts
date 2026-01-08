@@ -22622,14 +22622,9 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		pp: 5,
 		priority: 0,
 		flags: {snatch: 1, heal: 1},
-		onHit(target, source) {
-			let success = false;
-			if (this.field.isTerrain('electricterrain')) {
-				success = !!this.heal(this.modify(target.baseMaxhp, 0.667));
-			} else {
-				success = !!this.heal(Math.ceil(target.baseMaxhp * 0.5));
-			}
-			return success;
+		heal: [1, 2],
+		onHit(pokemon) {
+			pokemon.cureStatus() 
 		},
 		secondary: null,
 		target: "self",
@@ -26316,14 +26311,9 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		pp: 5,
 		priority: 0,
 		flags: {snatch: 1, heal: 1},
-		onHit(target, source) {
-			let success = false;
-			if (this.field.isTerrain('electricterrain')) {
-				success = !!this.heal(this.modify(target.baseMaxhp, 0.667));
-			} else {
-				success = !!this.heal(Math.ceil(target.baseMaxhp * 0.5));
-			}
-			return success;
+		heal: [1, 2],
+		onHit(pokemon) {
+			pokemon.cureStatus() 
 		},
 		secondary: null,
 		target: "self",
