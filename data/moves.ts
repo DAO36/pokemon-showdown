@@ -22622,8 +22622,9 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		pp: 5,
 		priority: 0,
 		flags: {snatch: 1, heal: 1},
+		heal: [1, 2],
 		onHit(pokemon) {
-            const boosts: SparseBoostsTable = {};
+            {const boosts: SparseBoostsTable = {};
             let i: BoostID;
             for (i in pokemon.boosts) {
                 if (pokemon.boosts[i] < 0) {
@@ -22632,10 +22633,8 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
             }
             pokemon.setBoost(boosts);
             this.add('-clearnegativeboost', pokemon)
-            
+            }
 			pokemon.cureStatus()
-            const success = !!this.heal(this.modify(pokemon.maxhp, 1/2));
-            return success; 
 		},
 		secondary: null,
 		target: "self",
