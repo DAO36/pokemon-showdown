@@ -561,6 +561,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			if (move.flags['sound']) return priority + 1;
 		},
 		onAllyTryHitSide(target, source, move) {
+			if (source === this.effectState.target || !target.isAlly(source)) return;
 			if (move.flags['sound']) {
 				this.add('-immune', this.effectState.target, '[from] ability: Virtual Diva');
 			}
@@ -2227,8 +2228,9 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			} 
 		},
 		onAllyTryHitSide(target, source, move) {
+			if (source === this.effectState.target || !target.isAlly(source)) return;
 			if (move.flags['sound']) {
-				this.add('-immune', this.effectState.target, '[from] ability: YabaIRyS');
+				this.add('-immune', this.effectState.target, '[from] ability: Virtual Diva');
 			}
 		},
 		onModifyAtkPriority: 5,
