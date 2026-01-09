@@ -94864,6 +94864,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			confide: ["9M"],
 			disable: ["9M"],
 			swagger: ["9M"],
+			trick: ["9M"],
 			screech: ["9M"],
 			nastyplot: ["9M"],
 			partingshot: ["9M"],

@@ -7695,8 +7695,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	reboot: {
 		name: "Reboot",
-		desc: "This Robot restores 1/2 of her maximum HP, rounded half up. Removes any status effect that the Robot is inflicted with.",
-		shortDesc: "Heals user by 50% of max HP; Cures user of status.",
+		desc: "This Robot restores 1/2 of her maximum HP, rounded half up. Removes any status effect that the Robot is inflicted with. Resets any negative stat changes the user has.",
+		shortDesc: "Heals 1/2 HP; Cures status; Resets negative stats.",
 	},
 	divasong: {
 		name: "Diva Song",
@@ -7859,8 +7859,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	magickick: {
 		name: "High Jump Kick",
-		desc: "If this attack is not successful, this witch loses half of her maximum HP, rounded down, as crash damage. Pokemon with the Magic Guard Ability are unaffected by crash damage.",
-		shortDesc: "User is hurt by 50% of its max HP if it misses.",
+		desc: "If this attack is not successful, this witch loses half of her maximum HP, rounded down, as crash damage. Pokemon with the Magic Guard Ability are unaffected by crash damage. This move has its base power boosted by 50% during Magic Room.",
+		shortDesc: "1.5x power in Magic Room. If miss: lose 1/2 HP.",
 	},
 	duckasmr: {
 		name: "Duck ASMR",
@@ -8063,7 +8063,7 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	circusshow: {
 		name: "Circus Show",
-		desc: "Has a 25% chance to confuse the target. Hits three times. Power increases to 40 for the second hit and 60 for the third. This move checks accuracy for each hit, and the attack ends if the target avoids a hit. If one of the hits breaks the target's substitute, it will take damage for the remaining hits. If the user has the Skill Link Ability, this move will always hit three times.",
+		desc: "Has a 25% chance to confuse the target. Hits three times. Power increases to 50 for the second hit and 75 for the third. This move checks accuracy for each hit, and the attack ends if the target avoids a hit. If one of the hits breaks the target's substitute, it will take damage for the remaining hits. If the user has the Skill Link Ability, this move will always hit three times.",
 		shortDesc: "25% to confuse. Hits x3 each can miss, but power rises.",
 	},
 	polmao: {
@@ -8618,8 +8618,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	windup: {
 		name: "Wind Up",
-		desc: "User restores 1/2 of her maximum HP, rounded half up. Removes any status effect that the user is inflicted with.",
-		shortDesc: "Heals user by 50% of max HP; Cures user of status.",
+		desc: "User restores 1/2 of her maximum HP, rounded half up. Removes any status effect that the user is inflicted with. Resets any negative stat changes the user has.",
+		shortDesc: "Heals 1/2 HP; Cures status; Resets negative stats.",
 	},
 	godeyes: {
 		name: "God Eyes",

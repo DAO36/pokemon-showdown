@@ -23210,6 +23210,11 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		num: 136,
 		accuracy: 90,
 		basePower: 150,
+		onBasePower(basePower) {
+			if (this.field.getPseudoWeather('magicroom')) {
+				return this.chainModify(1.5);
+			}
+		},
 		category: "Physical",
 		name: "Magic Kick",
 		pp: 5,
@@ -23924,7 +23929,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		num: 370,
 		accuracy: 90,
 		basePower: 30,
-		category: "Special",
+		category: "Physical",
 		name: "Candy Crash",
 		pp: 20,
 		priority: 0,
@@ -23944,9 +23949,9 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	},
 	sweetassault: { // LUNA 2
 		num: 370,
-		accuracy: 100,
-		basePower: 85,
-		category: "Physical",
+		accuracy: 95,
+		basePower: 95,
+		category: "Special",
 		name: "Sweet Assault",
 		pp: 10,
 		priority: 0,
@@ -23980,9 +23985,9 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	circusshow: { // POLKA 1
 		num: 813,
 		accuracy: 90,
-		basePower: 20,
+		basePower: 25,
 		basePowerCallback(pokemon, target, move) {
-			return 20 * move.hit;
+			return 25 * move.hit;
 		},
 		category: "Physical",
 		name: "Circus Show",
@@ -24002,7 +24007,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	polmao: { // POLKA 2
 		num: 370,
 		accuracy: 100,
-		basePower: 60,
+		basePower: 70,
 		category: "Physical",
 		name: "PoLMAO",
 		pp: 10,
