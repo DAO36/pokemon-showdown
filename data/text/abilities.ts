@@ -470,10 +470,10 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	yabairys: {
 		name: "YabaIRyS",
-		desc: "This Nephelim is immune to Sound-type moves and heals 1/4 of her maximum HP when hit by a Sound-type move. If this Nephilim is not the target of a Sound-type move used by another Pokemon, this Nephilim redirects that move to herself if she is within the range of that move. If multiple Pokemon could redirect with this Ability, it goes to the one with the highest Speed, or in the case of a tie to the one that has had this Ability active longer. This Nephelim's offensive stat is multiplied by 1.5 while using a Rock-type attacking move.",
-		shortDesc: "Heals 1/4 HP when hit by sound; Sound immunity. Rock-type moves have 1.5x power.",
+		desc: "Sound moves used by opposing Pokemon targeting this Nephilim or its allies are prevented from having an effect. Immune to sound based attacks from the user's allies.",
+		shortDesc: "This Nephilim and her allies are protected from opposing sound moves.",
 
-		activate: "#lightningrod",
+		block: "#damp",
 	},
 	timedilation: {
 		name: "Time Dilation",

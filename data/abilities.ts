@@ -2218,50 +2218,17 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3.5,
 		num: 292,
 	},
-	yabairys3: {
+	yabairys: { // [DAZZLING] but for SOUND type moves
 		onFoeTryMove(pokemon, target, move) {
-			const yabairys3Holder = this.effectState.target;
+			const yabairysHolder = this.effectState.target;
 			if (move.flags['sound']) {
-				this.attrLastMove('[still]');
-				if (!this.heal(target.baseMaxhp / 4, target, target))
-				this.add('cant', yabairys3Holder, 'ability: YabaIRyS3', move, '[of] ' + pokemon);
+				this.add('cant', yabairysHolder, 'ability: YabaIRyS', move, '[of] ' + pokemon);
 				return false;
-			}
+			} 
 		},
-		onTryHit(target, source, move) {
+		onAllyTryHitSide(target, source, move) {
 			if (move.flags['sound']) {
-				if (!this.heal(target.baseMaxhp / 4, target, target)) {
-					this.add('-immune', target, '[from] ability: YabaIRyS3');
-				}
-				return null;
-			}
-		},
-		flags: {breakable: 1},
-		name: "YabaIRyS3",
-		rating: 0.5,
-		num: 6,
-	},
-	yabairys2: {
-		onFoeTryMove(pokemon, target, move) {
-			const yabairys2Holder = this.effectState.target;
-			if (move.flags['sound']) {
-				this.attrLastMove('[still]');
-				if (!this.heal(target.baseMaxhp / 4, target, target))
-				this.add('cant', yabairys2Holder, 'ability: YabaIRyS2', move, '[of] ' + pokemon);
-				return false;
-			}
-		},
-		flags: {breakable: 1},
-		name: "YabaIRyS2",
-		rating: 0.5,
-		num: 6,
-	},
-	yabairys: { // combines [Rocky Payload] + [PUNK ROCK] minus the sound resistance
-		onBasePowerPriority: 7,
-		onBasePower(basePower, attacker, defender, move) {
-			if (move.flags['sound']) {
-				this.debug('YabaIRyS boost');
-				return this.chainModify([5325, 4096]);
+				this.add('-immune', this.effectState.target, '[from] ability: YabaIRyS');
 			}
 		},
 		onModifyAtkPriority: 5,
@@ -2280,6 +2247,33 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		},
 		flags: {breakable: 1},
 		name: "YabaIRyS",
+		rating: 3,
+		num: 171,
+	},
+	yabairys2: { // combines [Rocky Payload] + [PUNK ROCK] minus the sound resistance
+		onBasePowerPriority: 7,
+		onBasePower(basePower, attacker, defender, move) {
+			if (move.flags['sound']) {
+				this.debug('YabaIRyS2 boost');
+				return this.chainModify([5325, 4096]);
+			}
+		},
+		onModifyAtkPriority: 5,
+		onModifyAtk(atk, attacker, defender, move) {
+			if (move.type === 'Rock') {
+				this.debug('Rocky Payload boost');
+				return this.chainModify(1.5);
+			}
+		},
+		onModifySpAPriority: 5,
+		onModifySpA(atk, attacker, defender, move) {
+			if (move.type === 'Rock') {
+				this.debug('Rocky Payload boost');
+				return this.chainModify(1.5);
+			}
+		},
+		flags: {breakable: 1},
+		name: "YabaIRyS2",
 		rating: 4,
 		num: 29,
 	},
