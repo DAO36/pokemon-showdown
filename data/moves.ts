@@ -25141,7 +25141,10 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 				}
 			},
 		},
-		secondary: null,
+		secondary: {
+			chance: 30,
+			status: 'par',
+		},
 		target: "any",
 		type: "Ground",
 		contestType: "Clever",
