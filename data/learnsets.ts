@@ -95846,6 +95846,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			topsyturvy: ["9M"],
 			circusshow: ["9M"],
 			polmao: ["9M"],
+			polkaradio: ["9M"],
         },
 	},	
 	botan: {

@@ -24019,6 +24019,31 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Normal",
 		contestType: "Cute",
 	},
+	polkaradio: { // POLKA 3
+		num: 914,
+		accuracy: 100,
+		basePower: 80,
+		onBasePower(basePower) {
+			if (this.field.getPseudoWeather('wonderroom')) {
+				return this.chainModify(2);
+			}
+		},
+		category: "Special",
+		name: "Polka Radio",
+		pp: 10,
+		priority: 0,
+		flags: {protect: 1, mirror: 1, sound: 1, bypasssub: 1, metronome: 1},
+		secondary: {
+			chance: 100,
+			onHit(target, source, move) {
+				if (target?.lastMoveUsed?.flags['sound']) {
+					target.trySetStatus('brn', source, move);
+				}
+			},
+		},
+		target: "normal",
+		type: "Normal",
+	},
 	ssrb: { // BOTAN 1
 		num: 370,
 		accuracy: 85,

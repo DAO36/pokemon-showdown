@@ -7859,7 +7859,7 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	magickick: {
 		name: "High Jump Kick",
-		desc: "If this attack is not successful, this witch loses half of her maximum HP, rounded down, as crash damage. Pokemon with the Magic Guard Ability are unaffected by crash damage. This move has its base power boosted by 50% during Magic Room.",
+		desc: "If this attack is not successful, this witch loses half of her maximum HP, rounded down, as crash damage. Pokemon with the Magic Guard Ability are unaffected by crash damage. Power is multiplied by 1.5 during Magic Room's effect.",
 		shortDesc: "1.5x power in Magic Room. If miss: lose 1/2 HP.",
 	},
 	duckasmr: {
@@ -8072,6 +8072,11 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		shortDesc: "User switches out after damaging the target.",
 
 		switchOut: "#uturn",
+	},
+	polkaradio: {
+		name: "Polka Radio",
+		desc: "Has a 100% chance to burn the target if it used a sound-based move. Power is multiplied by 2 during Wonder Room's effect.",
+		shortDesc: "Burns foes that used sound moves. Wonder Room: 2x power",
 	},
 	ssrb: {
 		name: "SSRB",
