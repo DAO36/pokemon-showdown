@@ -97563,7 +97563,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			phoenixdance: ["9M"],
         },
 	},	
-	froggywawa: {
+	frogiwawa: {
 		learnset: {
 			mysticalfire: ["9M"],
 			aerialace: ["9M"],

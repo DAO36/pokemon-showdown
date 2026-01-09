@@ -20291,8 +20291,8 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		weightkg: 55.5,
 		color: "Brown",
 		eggGroups: ["Human-Like", "Flying"],
-		otherFormes: ["Kiara-Mega", "Froggy Wawa"],
-		formeOrder: ["Kiara", "Kiara-Mega", "Kiara-Warrior", "Froggy Wawa"],
+		otherFormes: ["Kiara-Mega", "Frogiwawa"],
+		formeOrder: ["Kiara", "Kiara-Mega", "Kiara-Warrior", "Frogiwawa"],
 	},
 	kiaramega: {
 		num: 257,
@@ -20321,9 +20321,9 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		color: "Brown",
 		eggGroups: ["Human-Like"],
 	},
-	froggywawa: {
+	frogiwawa: {
 		num: 656,
-		name: "Froggy Wawa",
+		name: "Frogiwawa",
 		types: ["Water", "Poison"],
 		gender: "F",
 		baseStats: {hp: 55, atk: 111, def: 52, spa: 123, spd: 78, spe: 136},
