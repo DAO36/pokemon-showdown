@@ -2226,7 +2226,22 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3.5,
 		num: 292,
 	},
-	yabairys: { // combines [Rocky Payload] + [PUNK ROCK] minus the sound resistance
+	yabairys: {
+		onFoeTryMove(pokemon, target, move) {
+			const yabairysHolder = this.effectState.target;
+			if (move.flags['dance']) {
+				this.attrLastMove('[still]');
+				this.add('cant', yabairysHolder, 'ability: YabaIRyS', move, '[of] ' + pokemon);
+				if (!this.heal(target.baseMaxhp / 4, target, target))
+				return false;
+			}
+		},
+		flags: {breakable: 1},
+		name: "YabaIRyS",
+		rating: 0.5,
+		num: 6,
+	},
+	yabairys2: { // combines [Rocky Payload] + [PUNK ROCK] minus the sound resistance
 		onBasePowerPriority: 7,
 		onBasePower(basePower, attacker, defender, move) {
 			if (move.flags['sound']) {
