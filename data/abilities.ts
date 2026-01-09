@@ -2280,7 +2280,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 0.5,
 		num: 6,
 	},
-	yabairys0: { // combines [Rocky Payload] + [PUNK ROCK] minus the sound resistance
+	yabairys: { // combines [Rocky Payload] + [PUNK ROCK] minus the sound resistance
 		onBasePowerPriority: 7,
 		onBasePower(basePower, attacker, defender, move) {
 			if (move.flags['sound']) {
