@@ -8309,7 +8309,7 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	atlantisstrike: {
 		name: "Atlantis Strike",
-		desc: "This attack charges on the first turn and executes on the second. Power is halved if the weather is Desolate Land, Sunny Day, Sandstorm, or Snow and the user is not holding Utility Umbrella. If the user is holding a Power Herb or the weather is Primordial Sea or Rain Dance, the move completes in one turn. If the user is holding Utility Umbrella and the weather is Primordial Sea or Rain Dance, the move still requires a turn to charge.",
+		desc: "This attack charges on the first turn and executes on the second. If the user is holding a Power Herb or the weather is Primordial Sea or Rain Dance, the move completes in one turn. If the user is holding Utility Umbrella and the weather is Primordial Sea or Rain Dance, the move still requires a turn to charge. If the weather is Sandstream, Desolate Land, or Sunny Day, this move's accuracy is 50%. If this move is used against a Pokemon holding Utility Umbrella, this move's accuracy remains at 90%.",
 		shortDesc: "Charges turn 1. Hits turn 2. No charge in rain.", 
 
 		prepare: "  [POKEMON] is channeling the Power of Atlantis!",
@@ -8445,8 +8445,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	wormhole: {
 		name: "Wormhole",
-		desc: "This move always hits. Usually goes first.",
-		shortDesc: "Usually goes first. Never Misses",
+		desc: "This move always hits. Almost always goes first. Power is multiplied by 2 during Gravity's effect.",
+		shortDesc: "Usually goes first. Gravity: 2x power",
 	},
 	supernova: {
 		name: "Supernova",
@@ -8525,8 +8525,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	}, 
 	moomers: {
 		name: "Moomers",
-		desc: "Has a 30% chance to paralyze the target and a 30% chance to make it flinch.",
-		shortDesc: "30% chance to paralyze. 30% chance to flinch.",
+		desc: "Has a 25% chance to paralyze the target and a 25% chance to make it flinch.",
+		shortDesc: "25% chance to paralyze. 25% chance to flinch.",
 	},
 	owlblade: {
 		name: "Owl Blade",
@@ -8567,7 +8567,7 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	haboob: {
 		name: "Haboob",
-		desc: "Has a 30% chance to lower target's Accuracy by 1 stage. If the weather is Sandstorm, this move does not check accuracy. If the weather is Primordial Sea, Rain Dance, Desolate Land, or Sunny Day, this move's accuracy is 50%. If this move is used against a Pokemon holding Utility Umbrella, this move's accuracy remains at 70%. This move can hit a target using Bounce, Fly, or Dig.",
+		desc: "Has a 30% chance to lower target's Accuracy by 1 stage. If the weather is Sandstorm, this move does not check accuracy. If the weather is Primordial Sea, Rain Dance, Desolate Land, Sunny Day, or Snow this move's accuracy is 50%. If this move is used against a Pokemon holding Utility Umbrella, this move's accuracy remains at 70%. This move can hit a target using Bounce, Fly, or Dig.",
 		shortDesc: "30% to lower Accuracy by 1. Sandstorm: always hit.",
 	},
 	devilishdiva: {

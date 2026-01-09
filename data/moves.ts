@@ -24615,7 +24615,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		priority: 0,
 		flags: {protect: 1, mirror: 1, allyanim: 1, contact: 1},
 		onTryHit(target) {
-			if (target.getAbility().flags['cantsuppress'] || target.ability === 'color change' || target.ability === 'truant') {
+			if (target.getAbility().flags['cantsuppress'] || target.ability === 'color change') {
 				return false;
 			}
 		},
@@ -24715,8 +24715,8 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	},
 	kerisslash: { // ANYA 1
 		num: 370,
-		accuracy: 100,
-		basePower: 80,
+		accuracy: 90,
+		basePower: 90,
 		category: "Physical",
 		name: "Keris Slash",
 		pp: 10,
@@ -25034,11 +25034,17 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 			attacker.addVolatile('twoturnmove', defender);
 			return null;
 		},
-		onBasePower(basePower, pokemon, target) {
-			const weakWeathers = ['sunnyday', 'desolateland', 'sandstorm'];
-			if (weakWeathers.includes(pokemon.effectiveWeather())) {
-				this.debug('weakened by weather');
-				return this.chainModify(0.5);
+		onModifyMove(move, pokemon, target) {
+			switch (target?.effectiveWeather()) {
+			case 'raindance':
+			case 'primordialsea':
+				move.accuracy = true;
+				break;
+			case 'sunnyday':
+			case 'desolateland':
+			case 'sandstorm':	
+				move.accuracy = 50;
+				break;
 			}
 		},
 		secondary: null,
@@ -25402,7 +25408,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 			},
 			onTryHitPriority: 3,
 			onTryHit(target, source, move) {
-				if (!move.flags['protect'] || move.category === 'Status') {
+				if (!move.flags['protect']) {
 					if (['gmaxoneblow', 'gmaxrapidflow'].includes(move.id)) return;
 					if (move.isZ || move.isMax) target.getMoveHitData(move).zBrokeProtect = true;
 					return;
@@ -25436,8 +25442,8 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	},
 	phoenixblade: { // KIARA 2
 		num: 370,
-		accuracy: 90,
-		basePower: 110,
+		accuracy: 95,
+		basePower: 95,
 		category: "Physical",
 		name: "Phoenix Blade",
 		pp: 10,
@@ -25579,7 +25585,12 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	wormhole: { // SANA 1
 		num: 370,
 		accuracy: true,
-		basePower: 60,
+		basePower: 50,
+		onBasePower(basePower) {
+			if (this.field.getPseudoWeather('gravity')) {
+				return this.chainModify(2);
+			}
+		},
 		category: "Special",
 		name: "Wormhole",
 		pp: 25,
@@ -25760,7 +25771,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	},
 	clockstrikes: { // KRONII 1
 		num: 370,
-		accuracy: 100,
+		accuracy: 95,
 		basePower: 50, 
 		category: "Physical",
 		name: "Clock Strikes",
@@ -25893,7 +25904,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	}, 
 	moomers: { // MUMIE 1
 		num: 370,
-		accuracy: 80,
+		accuracy: 90,
 		basePower: 120,
 		category: "Physical",
 		name: "Moomers",
@@ -25902,10 +25913,10 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		flags: {protect: 1, mirror: 1, wind: 1},
 		secondaries: [
 			{
-				chance: 30,
+				chance: 25,
 				status: 'par',
 			}, {
-				chance: 30,
+				chance: 25,
 				volatileStatus: 'flinch',
 			},
 		],
@@ -26136,7 +26147,8 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 			case 'sunnyday':
 			case 'desolateland':
 			case 'raindance':
-			case 'primordialsea':	
+			case 'primordialsea':
+			case 'snowscape':
 				move.accuracy = 50;
 				break;
 			}

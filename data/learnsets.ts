@@ -96732,6 +96732,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			focusblast: ["9M"],
 			aurasphere: ["9M"],
 			smartstrike: ["9M"],
+			ironhead: ["9M"],
 			flashcannon: ["9M"],
 			doubleedge: ["9M"],
 			mysticalfire: ["9M"],
