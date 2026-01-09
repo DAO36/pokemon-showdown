@@ -20310,7 +20310,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		requiredItem: "Kiarite",
 	},
 	kiarawarrior: {
-		num: 656,
+		num: 250,
 		name: "Kiara-Warrior",
 		types: ["Fire", "Fighting"],
 		gender: "F",
