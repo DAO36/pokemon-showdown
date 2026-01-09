@@ -473,7 +473,7 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 		desc: "Sound moves used by opposing Pokemon targeting this Nephilim or its allies are prevented from having an effect. Immune to sound based attacks from the user's allies.",
 		shortDesc: "This Nephilim and her allies are protected from opposing sound moves.",
 
-		block: "#damp",
+		block: "  [SOURCE] cannot use [MOVE]!",
 	},
 	timedilation: {
 		name: "Time Dilation",
