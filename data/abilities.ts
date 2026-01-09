@@ -556,17 +556,9 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3,
 		num: 207,
 	},
-	virtualdiva: { // reskin of [Water Absorb] but for Sound type moves
+	virtualdiva: { // reskin of [DANCER] but for Sound type moves
 		onModifyPriority(priority, pokemon, target, move) {
 			if (move.flags['sound']) return priority + 1;
-		},
-		onTryHit(target, source, move) {
-			if (target !== source && move.flags['sound']) {
-				if (!this.boost({spa: 1})) {
-					this.add('-immune', target, '[from] ability: Virtual Diva');
-				}
-				return null;
-			}
 		},
 		onAllyTryHitSide(target, source, move) {
 			if (move.flags['sound']) {
@@ -2226,29 +2218,13 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3.5,
 		num: 292,
 	},
-	ogu2: { // reskin of [Water Absorb] but for Grass
-		onTryHit(target, source, move) {
-			if (target !== source && move.type === 'Grass') {
-				if (!this.heal(target.baseMaxhp / 4, target, target)) {
-					this.add('-immune', target, '[from] ability: Mogu Mogu2');
-				}
-				return null;
-			} 
-			if (move.flags['bite']) {
-				this.add('-immune', target, '[from] ability: Mogu Mogu2');
-				return null;
-			}
-		},
-		flags: {breakable: 1},
-		name: "Mogu Mogu2",
-		rating: 2.5,
-		num: 11,
-	},
 	yabairys3: {
-		onAnyTryMove(pokemon, target, move) {
+		onFoeTryMove(pokemon, target, move) {
+			const yabairys3Holder = this.effectState.target;
 			if (move.flags['sound']) {
 				this.attrLastMove('[still]');
-				this.add('cant', this.effectState.target, 'ability: YabaIRyS3', move, '[of] ' + target);
+				if (!this.heal(target.baseMaxhp / 4, target, target))
+				this.add('cant', yabairys3Holder, 'ability: YabaIRyS3', move, '[of] ' + pokemon);
 				return false;
 			}
 		},
@@ -2270,8 +2246,8 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			const yabairys2Holder = this.effectState.target;
 			if (move.flags['sound']) {
 				this.attrLastMove('[still]');
-				this.add('cant', yabairys2Holder, 'ability: YabaIRyS2', move, '[of] ' + pokemon);
 				if (!this.heal(target.baseMaxhp / 4, target, target))
+				this.add('cant', yabairys2Holder, 'ability: YabaIRyS2', move, '[of] ' + pokemon);
 				return false;
 			}
 		},
