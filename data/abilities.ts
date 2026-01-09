@@ -2244,56 +2244,43 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 2.5,
 		num: 11,
 	},
-	amp: {
-		onAnyTryMove(target, source, effect) {
-			if (['explosion', 'mindblown', 'mistyexplosion', 'bigbang', 'selfdestruct'].includes(effect.id)) {
-				this.attrLastMove('[still]');
-				this.add('cant', this.effectState.target, 'ability: Damp', effect, '[of] ' + target);
-				return false;
-			}
-		},
-		flags: {breakable: 1},
-		name: "Damp",
-		rating: 0.5,
-		num: 6,
-	},
-	yabairys: {
-		onAnyTryMove(target, source, move) {
+	yabairys3: {
+		onAnyTryMove(pokemon, target, move) {
 			if (move.flags['sound']) {
 				this.attrLastMove('[still]');
-				this.add('cant', this.effectState.target, 'ability: YabaIRyS', move, '[of] ' + target);
+				this.add('cant', this.effectState.target, 'ability: YabaIRyS3', move, '[of] ' + target);
 				return false;
 			}
 		},
 		onTryHit(target, source, move) {
 			if (move.flags['sound']) {
 				if (!this.heal(target.baseMaxhp / 4, target, target)) {
-					this.add('-immune', target, '[from] ability: YabaIRyS');
+					this.add('-immune', target, '[from] ability: YabaIRyS3');
 				}
 				return null;
 			}
 		},
 		flags: {breakable: 1},
-		name: "YabaIRyS",
+		name: "YabaIRyS3",
 		rating: 0.5,
 		num: 6,
 	},
-	yabairys3: {
+	yabairys2: {
 		onFoeTryMove(pokemon, target, move) {
-			const yabairysHolder = this.effectState.target;
-			if (move.flags['dance']) {
+			const yabairys2Holder = this.effectState.target;
+			if (move.flags['sound']) {
 				this.attrLastMove('[still]');
-				this.add('cant', yabairysHolder, 'ability: YabaIRyS', move, '[of] ' + pokemon);
+				this.add('cant', yabairys2Holder, 'ability: YabaIRyS2', move, '[of] ' + pokemon);
 				if (!this.heal(target.baseMaxhp / 4, target, target))
 				return false;
 			}
 		},
 		flags: {breakable: 1},
-		name: "YabaIRyS",
+		name: "YabaIRyS2",
 		rating: 0.5,
 		num: 6,
 	},
-	yabairys2: { // combines [Rocky Payload] + [PUNK ROCK] minus the sound resistance
+	yabairys0: { // combines [Rocky Payload] + [PUNK ROCK] minus the sound resistance
 		onBasePowerPriority: 7,
 		onBasePower(basePower, attacker, defender, move) {
 			if (move.flags['sound']) {
