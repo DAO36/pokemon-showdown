@@ -2226,7 +2226,59 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3.5,
 		num: 292,
 	},
+	ogu2: { // reskin of [Water Absorb] but for Grass
+		onTryHit(target, source, move) {
+			if (target !== source && move.type === 'Grass') {
+				if (!this.heal(target.baseMaxhp / 4, target, target)) {
+					this.add('-immune', target, '[from] ability: Mogu Mogu2');
+				}
+				return null;
+			} 
+			if (move.flags['bite']) {
+				this.add('-immune', target, '[from] ability: Mogu Mogu2');
+				return null;
+			}
+		},
+		flags: {breakable: 1},
+		name: "Mogu Mogu2",
+		rating: 2.5,
+		num: 11,
+	},
+	amp: {
+		onAnyTryMove(target, source, effect) {
+			if (['explosion', 'mindblown', 'mistyexplosion', 'bigbang', 'selfdestruct'].includes(effect.id)) {
+				this.attrLastMove('[still]');
+				this.add('cant', this.effectState.target, 'ability: Damp', effect, '[of] ' + target);
+				return false;
+			}
+		},
+		flags: {breakable: 1},
+		name: "Damp",
+		rating: 0.5,
+		num: 6,
+	},
 	yabairys: {
+		onAnyTryMove(target, source, move) {
+			if (move.flags['sound']) {
+				this.attrLastMove('[still]');
+				this.add('cant', this.effectState.target, 'ability: YabaIRyS', move, '[of] ' + target);
+				return false;
+			}
+		},
+		onTryHit(target, source, move) {
+			if (move.flags['sound']) {
+				if (!this.heal(target.baseMaxhp / 4, target, target)) {
+					this.add('-immune', target, '[from] ability: YabaIRyS');
+				}
+				return null;
+			}
+		},
+		flags: {breakable: 1},
+		name: "YabaIRyS",
+		rating: 0.5,
+		num: 6,
+	},
+	yabairys3: {
 		onFoeTryMove(pokemon, target, move) {
 			const yabairysHolder = this.effectState.target;
 			if (move.flags['dance']) {
