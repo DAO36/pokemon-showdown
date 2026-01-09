@@ -24149,7 +24149,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		name: "Beetle Blast",
 		pp: 5,
 		priority: 0,
-		flags: {protect: 1, mirror: 1,},
+		flags: {protect: 1, mirror: 1, contact: 1},
 		selfBoost: {
 			boosts: {
 				def: -1,
@@ -24192,7 +24192,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		name: "Nekko Strike",
 		pp: 10,
 		priority: 0,
-		flags: {protect: 1, reflectable: 1, mirror: 1},
+		flags: {protect: 1, reflectable: 1, mirror: 1, contact: 1},
 		onHit(target, source) {
 			if (target.hasType('Grass')) return null;
 			target.addVolatile('leechseed', source);
