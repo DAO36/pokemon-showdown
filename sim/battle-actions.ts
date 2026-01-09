@@ -356,6 +356,33 @@ export class BattleActions {
 				this.runMove(move.id, dancer, dancersTargetLoc, {sourceEffect: this.dex.abilities.get('dancer'), externalMove: true});
 			}
 		}
+		if (move.flags['sound'] && moveDidSomething && !move.isExternal) {
+			const virtualdivas = [];
+			for (const currentPoke of this.battle.getAllActive()) {
+				if (pokemon === currentPoke) continue;
+				if (currentPoke.hasAbility('virtualdiva') && !currentPoke.isSemiInvulnerable()) {
+					virtualdivas.push(currentPoke);
+				}
+			}
+			// Dancer activates in order of lowest speed stat to highest
+			// Note that the speed stat used is after any volatile replacements like Speed Swap,
+			// but before any multipliers like Agility or Choice Scarf
+			// Ties go to whichever Pokemon has had the ability for the least amount of time
+			virtualdivas.sort(
+				(a, b) => -(b.storedStats['spe'] - a.storedStats['spe']) || b.abilityOrder - a.abilityOrder
+			);
+			const targetOf1stSound = this.battle.activeTarget!;
+			for (const virtualdiva of virtualdivas) {
+				if (this.battle.faintMessages()) break;
+				if (virtualdiva.fainted) continue;
+				this.battle.add('-activate', virtualdiva, 'ability: Virtual Diva');
+				const virtualdivasTarget = !targetOf1stSound.isAlly(virtualdiva) && pokemon.isAlly(virtualdiva) ?
+					targetOf1stSound :
+					pokemon;
+				const virtualdivasTargetLoc = virtualdiva.getLocOf(virtualdivasTarget);
+				this.runMove(move.id, virtualdiva, virtualdivasTargetLoc, {sourceEffect: this.dex.abilities.get('virtualdiva'), externalMove: true});
+			}
+		}
 		if (noLock && pokemon.volatiles['lockedmove']) delete pokemon.volatiles['lockedmove'];
 		this.battle.faintMessages();
 		this.battle.checkWin();
