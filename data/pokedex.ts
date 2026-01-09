@@ -20069,7 +20069,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		types: ["Steel"],
 		gender: "F",
 		baseStats: {hp: 60, atk: 125, def: 100, spa: 75, spd: 50, spe: 125},
-		abilities: {0: "Cute Charm", 1: "Prankster", H: "Steely Spirit", S: "Blacksmith"},
+		abilities: {0: "Cute Charm", 1: "Prankster", H: "Steely Spirit", S: "Graondstone"},
 		heightm: 0.73,
 		weightkg: 25.5,
 		color: "Yellow",
