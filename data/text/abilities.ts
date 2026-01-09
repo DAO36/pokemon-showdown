@@ -163,8 +163,8 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	apex: {
 		name: "Apex",
-		desc: "This Maid's Attack and Special Attack are both raised by 1 stage after it is damaged by a super effective move.",
-		shortDesc: "Attack & Speed are raised by 1 stage if user is hit by a super effective move.",
+		desc: "This Maid's Attack and Special Attack are both raised by 2 stages after it is damaged by a super effective move.",
+		shortDesc: "Attack & Speed are raised by 2 stages if user is hit by a super effective move.",
 	},
 	oni: {
 		name: "Oni",
@@ -460,6 +460,11 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 		name: "Phoenix",
 		desc: "30% chance a Pokemon making contact with this Phoenix will be burned. This Phoenix is immune to Fire-type moves. The first time she is hit by a Fire-type move, her offensive stat is multiplied by 1.5 while using a Fire-type.",
 	    shortDesc: "Contact with the user has a 30% chance to burn. Fire-type immunity.",
+	},
+	parttimewarrior: {
+		name: "Part Time Warrior",
+		desc: "This Part Time Warrior is immune to Flying-type moves and has her Speed raised by 2 stages when hit by a Flying-type move. This Phoenix's Attack is raised 2 stages after it is damaged by a Fire-type move and Defense is raised by 2 stages after it is damaged by a Fighting-type move.",
+		shortDesc: "Hit by Fire: +2 Atk, Fighting: +2 Def. Flying immunity; +2 Spe if hit by Flying.",
 
 	    start: "  [POKEMON] the Part-Time Warrior is here!",
 	},

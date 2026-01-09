@@ -20292,7 +20292,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		color: "Brown",
 		eggGroups: ["Human-Like", "Flying"],
 		otherFormes: ["Kiara-Mega", "Froggy Wawa"],
-		formeOrder: ["Kiara", "Kiara-Mega", "Froggy Wawa"],
+		formeOrder: ["Kiara", "Kiara-Mega", "Kiara-Warrior", "Froggy Wawa"],
 	},
 	kiaramega: {
 		num: 257,
@@ -20308,6 +20308,18 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		color: "Brown",
 		eggGroups: ["Human-Like", "Flying"],
 		requiredItem: "Kiarite",
+	},
+	kiarawarrior: {
+		num: 656,
+		name: "Kiara-Warrior",
+		types: ["Fire", "Fighting"],
+		gender: "F",
+		baseStats: {hp: 90, atk: 130, def: 95, spa: 100, spd: 75, spe: 110},
+		abilities: {0: "Flame Body", 1: "Flash Fire", H: "Justified", S: "Part Time Warrior"},
+		heightm: 1.65,
+		weightkg: 55.5,
+		color: "Brown",
+		eggGroups: ["Human-Like"],
 	},
 	froggywawa: {
 		num: 656,

@@ -793,7 +793,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		onDamagingHit(damage, target, source, move) {
 			const side = source.isAlly(target) ? source.side.foe : source.side;
 			if (target.runEffectiveness(move) >= 1) {
-				this.boost({atk: 1, spa: 1});
+				this.boost({atk: 2, spa: 2});
 			}
 		},
 		flags: {breakable: 1},
@@ -2203,6 +2203,28 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		name: "Phoenix",
 		rating: 4,
 		num: 18,
+	},
+	parttimewarrior: {
+		onDamagingHit(damage, target, source, move) {
+			if (move.type === 'Fighting') {
+				this.boost({def: 2});
+			}
+			if (move.type === 'Fire') {
+				this.boost({atk: 2});
+			}
+		},
+		onTryHit(target, source, move) {
+			if (target !== source && move.type === 'Flying') {
+				if (!this.boost({spe: 2})) {
+					this.add('-immune', target, '[from] ability: Part Time Warrior');
+				}
+				return null;
+			}
+		},
+		flags: {},
+		name: "Part Time Warrior",
+		rating: 3.5,
+		num: 292,
 	},
 	yabairys: { // combines [Rocky Payload] + [PUNK ROCK] minus the sound resistance
 		onBasePowerPriority: 7,

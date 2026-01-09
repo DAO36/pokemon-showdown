@@ -6300,6 +6300,11 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
         doublesTier: "(DUU)",
         natDexTier: "OU",	
 	},
+	kiarawarrior: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "UU",
+	},
 	froggywawa: {
 		tier: "OU",
 		doublesTier: "(DUU)",
