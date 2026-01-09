@@ -2223,6 +2223,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		onFoeTryMove(pokemon, target, move) {
 			const yabairysHolder = this.effectState.target;
 			if (move.flags['sound']) {
+				this.attrLastMove('[still]');
 				this.add('cant', yabairysHolder, 'ability: YabaIRyS', move, '[of] ' + pokemon);
 				return false;
 			} 
