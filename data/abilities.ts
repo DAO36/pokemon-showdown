@@ -2052,11 +2052,11 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		num: 171,
 	},
 	yabairys: { // [DAZZLING] but for SOUND type moves
-		onFoeTryMove(pokemon, source, move) {
+		onFoeTryMove(pokemon, target, move) {
 			const yabairysHolder = this.effectState.source;
 			if (move.flags['sound']) {
 				this.attrLastMove('[still]');
-				this.add('cant', source, 'ability: YabaIRyS', move, '[of] ' + pokemon);
+				this.add('-block', target, 'ability: Yandere', move, pokemon);
 				return false;
 			} 
 		},
