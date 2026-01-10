@@ -20759,7 +20759,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		types: ["Fire", "Fighting"],
 		gender: "F",
 		baseStats: {hp: 100, atk: 125, def: 110, spa: 100, spd: 90, spe: 75},
-		abilities: {0: "Justified", 1: "Punk Rock", H: "Sharpness", S: "Flaming Voice"},
+		abilities: {0: "Justified", 1: "Punk Rock", H: "Sharpness", S: "Voice of Justice"},
 		heightm: 1.71,
 		weightkg: 55.5,
 		color: "Red",

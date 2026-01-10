@@ -26283,6 +26283,23 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Fighting",
 		contestType: "Cool",
 	},
+	scarletsong: {
+		num: 304,
+		accuracy: 90,
+		basePower: 90,
+		category: "Special",
+		name: "Scarlet Song",
+		pp: 10,
+		priority: 0,
+		flags: {protect: 1, mirror: 1, sound: 1, bypasssub: 1, metronome: 1},
+		secondary: {
+			chance: 30,
+			status: 'brn',
+		},
+		target: "allAdjacentFoes",
+		type: "Fire",
+		contestType: "Cool",
+	},
 	fisted: { // GIGI 1
 		num: 814,
 		accuracy: 90,

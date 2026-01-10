@@ -493,10 +493,9 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 		desc: "If the user is FuwaMoco, changes formes between Mococo and Fuwawa at the end of each turn.",
 		shortDesc: "If FuwaMoco, changes between Mococo and Fuwawa at the end of each turn.",
 	},
-	flamingvoice: {
-		name: "Flaming Voice",
-		desc: "This Pokemon's sound-based moves become Fire-type moves. This effect comes after other effects that change a move's type, but before Ion Deluge and Electrify's effects.",
-		shortDesc: "User's sound-based moves become Fire type.",
+	voiceofjustice: {
+		name: "Voice of Justice",
+		desc: "This Pokemon's sound-based moves have +1 Priority",
 	},
 	chaser: {
 		name: "Chaser",

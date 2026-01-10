@@ -2353,15 +2353,12 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 0,
 		num: 57,
 	},
-	flamingvoice: { // reskin of [Liquid Voice] but it's Fire instead of Water
-		onModifyTypePriority: -1,
-		onModifyType(move, pokemon) {
-			if (move.flags['sound'] && !pokemon.volatiles['dynamax']) { // hardcode
-				move.type = 'Fire';
-			}
+	voiceofjustice: { // reskin of [Liquid Voice] but it's Fire instead of Water
+		onModifyPriority(priority, pokemon, target, move) {
+			if (move.flags['sound']) return priority + 1;
 		},
 		flags: {},
-		name: "Flaming Voice",
+		name: "Voice of Justice",
 		rating: 1.5,
 		num: 204,
 	},

@@ -98617,6 +98617,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			calmmind: ["9M"],
 			songofjustice: ["9M"],
 			swordofjustice: ["9M"],
+			scarletsong: ["9M"],
         },
 	},	
 	gigi: {
