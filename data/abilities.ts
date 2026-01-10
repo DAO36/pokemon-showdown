@@ -2056,7 +2056,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			const yabairysHolder = this.effectState.source;
 			if (move.flags['sound']) {
 				this.attrLastMove('[still]');
-				this.add('-block', target, 'ability: Yandere', move, pokemon);
+				this.add('-block', target, 'ability: YabaIRyS', move, pokemon);
 				return false;
 			} 
 		},
