@@ -557,9 +557,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		num: 207,
 	},
 	virtualdiva: { // reskin of [DANCER] but for Sound type moves
-		onModifyPriority(priority, pokemon, target, move) {
-			if (move.flags['sound']) return priority + 1;
-		},
+		// implemented in runMove in scripts.js
 		flags: {breakable: 1},
 		name: "Virtual Diva",
 		rating: 2.5,
