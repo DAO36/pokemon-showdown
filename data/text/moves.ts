@@ -8591,13 +8591,18 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	}, 
 	songofjustice: {
 		name: "Song of Justice",
-		desc: "Has a 10% chance to raise the user's Special Defense by 1 stage. Hits adjacent foes.",
+		desc: "Has a 10% chance to raise the user's Special Defense by 1 stage.",
 		shortDesc: "10% to raise user's Special Defense by 1.",
 	},
 	swordofjustice: {
 		name: "Sword of Justice",
 		desc: "Has a 20% chance to burn the target.",
 		shortDesc: "20% chance to burn the target.",
+	},
+	scarletsong: {
+		name: "Scarlet Song",
+		desc: "Has a 30% chance to burn the target. Hits adjacent foes.",
+		shortDesc: "30% chance to burn the target. Hits adjacent foes.",
 	},
 	fisted: {
 		name: "Fisted",

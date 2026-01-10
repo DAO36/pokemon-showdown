@@ -26262,7 +26262,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 				},
 			},
 		},
-		target: "allAdjacentFoes",
+		target: "normal",
 		type: "Fighting",
 		contestType: "Cool",
 	},
