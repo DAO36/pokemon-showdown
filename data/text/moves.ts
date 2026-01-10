@@ -7894,8 +7894,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	yubiyubi: {
 		name: "Yubi Yubi",
-		desc: "Hits two to five times. Has a 35% chance to hit two or three times and a 15% chance to hit four or five times. If one of the hits breaks the target's substitute, it will take damage for the remaining hits. If the user has the Skill Link Ability, this move will always hit five times. If the user is holding Loaded Dice, this move will hit 4-5 times.",
-		shortDesc: "Hits 2-5 times in one turn.",
+		desc: "Hits five times. If one of the hits breaks the target's substitute, it will take damage for the remaining hits.",
+		shortDesc: "Hits five times in one turn.",
 	},
 	bark: {
 		name: "Bark",
