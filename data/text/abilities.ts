@@ -105,8 +105,8 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	}, 
 	virtualdiva: {
 		name: "Virtual Diva",
-		desc: "This Pokemon's sound-based attacks have +1 priority. After another Pokemon uses a sound move, this Pokemon uses the same move. The copied move is subject to all effects that can prevent a move from being executed. A move used through this Ability cannot be copied again by other Pokemon with this Ability. Immune to sound based attacks from the user's allies.",
-		shortDesc: "Sound moves: +1 priority. If a Pokemon uses a sound move, user uses the same move."
+		desc: "After another Pokemon uses a sound move, this Pokemon uses the same move. The copied move is subject to all effects that can prevent a move from being executed. A move used through this Ability cannot be copied again by other Pokemon with this Ability.",
+		shortDesc: "After another Pokemon uses a sound move, this Pokemon uses the same move.",
 	},
 	fbking: {
 		name: "FBKing",
