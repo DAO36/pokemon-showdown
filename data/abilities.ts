@@ -2019,44 +2019,12 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3.5,
 		num: 292,
 	},
-	ncingsiren: { // reskin of [Strong Jaw] but for JUST DANCE 
+	yabairys: { // [DAZZLING] but for SOUND type moves + [ROCKY PLAYLOAD]
 		onFoeTryMove(pokemon, target, move) {
-			const dancingsirenHolder = this.effectState.target;
-			if (move.flags['dance']) {
-				this.attrLastMove('[still]');
-				this.add('cant', dancingsirenHolder, 'ability: Dancing Siren', move, '[of] ' + pokemon);
-				return false;
-			} 
-		},
-		flags: {breakable: 1},
-		name: "Dancing Siren",
-		rating: 3,
-		num: 178,
-	},
-	dere: { // blocks pivot moves like U-Turn/Volt Switch/Flip Turn and status like Teleport/Parting Shot/Baton Pass/Chilly Reception etc.
-		onFoeTryMove(pokemon, target, move) {
-			const yandereHolder = this.effectState.target;
-			if (move.id === 'teleport' || move.id === 'batonpass') {
-				this.attrLastMove('[still]');
-				this.add('cant', yandereHolder, 'ability: Yandere', move, '[of] ' + target);
-				return false;
-			}
-			if (move.flags['switches']) {
-				this.add('cant', yandereHolder, 'ability: Yandere', move, '[of] ' + pokemon);
-				return false;
-			} 
-		},
-		flags: {breakable: 1},
-		name: "Yandere",
-		rating: 3,
-		num: 171,
-	},
-	yabairys: { // [DAZZLING] but for SOUND type moves
-		onFoeTryMove(pokemon, target, move) {
-			const yabairysHolder = this.effectState.source;
+			const yabairysHolder = this.effectState.target;
 			if (move.flags['sound']) {
 				this.attrLastMove('[still]');
-				this.add('-block', target, 'ability: YabaIRyS', move, pokemon);
+				this.add('cant', yabairysHolder, 'ability: YabaIRyS', move, '[of] ' + pokemon);
 				return false;
 			} 
 		},
