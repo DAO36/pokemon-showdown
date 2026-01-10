@@ -25684,7 +25684,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	naturalasmr: { // FAUNA 1
 		num: 370,
 		accuracy: 100,
-		basePower: 80,
+		basePower: 90,
 		category: "Special",
 		name: "Natural ASMR",
 		pp: 10,
