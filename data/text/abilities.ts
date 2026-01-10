@@ -508,11 +508,6 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 		desc: "On switch-in, this Pokemon's Defense or Special Defense is raised by 1 stage based on the weaker combined offensive stat of all opposing Pokemon. Physical Defense is raised by 1 if their Physical Attack is higher, and Special Defense is raised by 1 if their Special Attack is the same or higher.",
 		shortDesc: "On switch-in, Defense or Sp.Def raises by 1 based on foes' weaker Offensive stat.",
 	},
-	bigcatmeansbigtrouble: { // [UNUSED]
-		name: "God Eyes",
-		desc: "Every move used by this Big Cat all have a 100% chance to hit the target, ignoring accuracy and evasiveness checks.",
-		shortDesc: "All of the user's moves will always hit and never miss.",
-	},
 	mammamia: {
 		name: "Mamma Mia",
 		desc: "If this Pokemon eats a Berry, they will eat that Berry again at the end of the turn. If the last item this Pokemon used is a Berry, there is a 25% chance it gets restored at the end of each turn.",

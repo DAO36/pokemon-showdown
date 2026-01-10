@@ -459,7 +459,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 5,
 		num: 74,
 	},
-	seiso: { // combines [Clear Body] + [Immunity] but for other statuses too + immune to flinching <held items cant status either>
+	seiso: { // SORA: combines [Clear Body] + [Immunity] but for other statuses too + immune to flinching <held items cant status either>
 		onUpdate(pokemon) {
 			if (pokemon.status === 'psn' || pokemon.status === 'tox' || pokemon.status === 'par' || pokemon.status === 'slp' || pokemon.status === 'brn' || pokemon.status === 'frz') {
 				this.add('-activate', pokemon, 'ability: Seiso');
@@ -565,21 +565,6 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 2.5,
 		num: 11,
 	},
-	virtualdiva3: { // reskin of [Water Absorb] but for Sound type moves
-		onTryHit(target, source, move) {
-			if (target !== source && move.flags['sound']) {
-				if (!this.boost({spa: 1})) {
-				}
-				if (!this.heal(target.baseMaxhp / 4, target, target)) {
-				} 
-				return null;
-			}
-		},
-		flags: {breakable: 1},
-		name: "Virtual Diva3",
-		rating: 2.5,
-		num: 11,
-	},
 	virtualdiva2: { // [UNUSED] combines [Soundproof] + [Punk Rock] 
 		onTryHit(target, source, move) {
 			if (target !== source && move.flags['sound']) {
@@ -652,36 +637,6 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		},
 		flags: {breakable: 1},
 		name: "Spider Soup",
-		rating: 3.5,
-		num: 295,
-	},
-	spidersoup2: { // if haachama is hit by a super-effective move, sets up sticky web <<<UNUSED>>>
-		onDamagingHitOrder: 1,
-		onDamagingHit(damage, target, source, move) {
-			const side = source.isAlly(target) ? source.side.foe : source.side;
-			const stickyweb = side.sideConditions['stickyweb'];
-			if (target.runEffectiveness(move) >= 1 && (!stickyweb || stickyweb.layers < 1)) {
-				this.add('-activate', target, 'ability: Spider Soup2');
-				side.addSideCondition('stickyweb', target);
-			}
-		},
-		flags: {},
-		name: "Spider Soup2",
-		rating: 3.5,
-		num: 295,
-	},
-	spidersoup3: { // reskin of [Toxic Debris] but for sticky webs instead of toxic waste
-		onDamagingHitOrder: 1,
-		onDamagingHit(damage, target, source, move) {
-			const side = source.isAlly(target) ? source.side.foe : source.side;
-			const stickyweb = side.sideConditions['stickyweb'];
-			if (this.checkMoveMakesContact(move, source, target) && (!stickyweb || stickyweb.layers < 1)) {
-				this.add('-activate', target, 'ability: Spider Soup3');
-				side.addSideCondition('stickyweb', target);
-			}
-		},
-		flags: {breakable: 1},
-		name: "Spider Soup3",
 		rating: 3.5,
 		num: 295,
 	},
@@ -788,42 +743,6 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3.5,
 		num: 295,
 	},
-	apex2: { // [UNUSED] reskin of [Berserk] but boosts Physical Attack as well [UNUSED]
-		onDamage(damage, target, source, effect) {
-			if (
-				effect.effectType === "Move" &&
-				!effect.multihit &&
-				(!effect.negateSecondary && !(effect.hasSheerForce && source.hasAbility('sheerforce')))
-			) {
-				this.effectState.checkedBerserk = false;
-			} else {
-				this.effectState.checkedBerserk = true;
-			}
-		},
-		onTryEatItem(item) {
-			const healingItems = [
-				'aguavberry', 'enigmaberry', 'figyberry', 'iapapaberry', 'magoberry', 'sitrusberry', 'wikiberry', 'oranberry', 'berryjuice',
-			];
-			if (healingItems.includes(item.id)) {
-				return this.effectState.checkedBerserk;
-			}
-			return true;
-		},
-		onAfterMoveSecondary(target, source, move) {
-			this.effectState.checkedBerserk = true;
-			if (!source || source === target || !target.hp || !move.totalDamage) return;
-			const lastAttackedBy = target.getLastAttackedBy();
-			if (!lastAttackedBy) return;
-			const damage = move.multihit && !move.smartTarget ? move.totalDamage : lastAttackedBy.damage;
-			if (target.hp <= target.maxhp / 2 && target.hp + damage > target.maxhp / 2) {
-				this.boost({spa: 1, atk: 1}, target, target);
-			}
-		},
-		flags: {},
-		name: "Apex2",
-		rating: 2,
-		num: 201,
-	},
 	oni: { // reskin of [Rocky Payload] but for Fire
 		onStart(pokemon) {
 			this.add('-activate', pokemon, 'ability: Oni');
@@ -924,16 +843,6 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 5,
 		num: -19,		
 	},
-	witchcraft2: { // reskin of [Surge Surfer] but for Psychic Terrain <<<UNUSED>>>
-		onModifySpePriority: 6,
-		onModifySpe(pokemon) {
-			if (this.field.isTerrain('psychicterrain')) return this.chainModify(1.5);
-		},
-		flags: {breakable: 1},
-		name: "Witchcraft2",
-		rating: 1.5,
-		num: 179,
-	},
 	stayingpositive: { // SUCCESS! if the user's stats are lowered bc of a move it uses, the lowered stats are reset back to zer0
 		onUpdate(pokemon) {
 			let activate = false;
@@ -955,29 +864,6 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		name: "Staying Positive", 
 		rating: 5,
 		num: 24,
-	}, 
-	shubashuba: { // [UNUSED] reskin of [Rocky Payload] but for Water
-		onStart(pokemon) {
-			this.add('-activate', pokemon, 'ability: Shuba Shuba');
-		},
-		onModifyAtkPriority: 5,
-		onModifyAtk(atk, attacker, defender, move) {
-			if (move.type === 'Water') {
-				this.debug('Shuba Shuba boost');
-				return this.chainModify(1.5);
-			}
-		},
-		onModifySpAPriority: 5,
-		onModifySpA(atk, attacker, defender, move) {
-			if (move.type === 'Water') {
-				this.debug('Shuba Shuba boost');
-				return this.chainModify(1.5);
-			}
-		},
-		flags: {},
-		name: "Shuba Shuba",
-		rating: 3.5,
-		num: 276,
 	},
 	doog: { // reskin of [Storm Drain] but for FIGHT ME instead of AQUA
 		onTryHit(target, source, move) {
@@ -1218,40 +1104,6 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3,
 		num: 92,
 	},
-	elvishflare: { // reskin of [Rocky Payload] but for Fire <<<UNUSED>>>
-		onModifyAtkPriority: 5,
-		onModifyAtk(atk, attacker, defender, move) {
-			if (move.type === 'Fire') {
-				this.debug('Elvish Flare boost');
-				return this.chainModify(1.5);
-			}
-		},
-		onModifySpAPriority: 5,
-		onModifySpA(atk, attacker, defender, move) {
-			if (move.type === 'Fire') {
-				this.debug('Elvish Flare boost');
-				return this.chainModify(1.5);
-			}
-		},
-		onTryBoost(boost, target, source, effect) {
-			if (effect.name === 'Intimidate' && boost.atk) {
-				delete boost.atk;
-				this.add('-fail', target, 'unboost', 'Attack', '[from] ability: Scrappy', '[of] ' + target);
-			}
-			if (effect.name === 'Succubus' && boost.spa) {
-				delete boost.spa;
-				this.add('-fail', target, 'unboost', 'Special Attack', '[from] ability: Scrappy', '[of] ' + target);
-			}
-			if (effect.name === 'Death' && boost.spe) {
-				delete boost.spe;
-				this.add('-fail', target, 'unboost', 'Speed', '[from] ability: Scrappy', '[of] ' + target);
-			}
-		},
-		flags: {},
-		name: "Elvish Flare",
-		rating: 3.5,
-		num: 276,
-	},
 	highonasacoco: { // exact copy of [Poison Heal]
 		onDamagePriority: 1,
 		onDamage(damage, target, source, effect) {
@@ -1325,30 +1177,6 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		name: "TMD",
 		rating: 2.5,
 		num: 151,
-	},
-	botanx2: { // combines [Compound Eyes] + [Keen Eye] <<<UNUSED>>>
-		onSourceModifyAccuracyPriority: -1,
-		onSourceModifyAccuracy(accuracy) {
-			if (typeof accuracy !== 'number') return;
-			this.debug('botanx2 - enhancing accuracy');
-			return this.chainModify([5325, 4096]);
-		},
-		onTryBoost(boost, target, source, effect) {
-			if (source && target === source) return;
-			if (boost.accuracy && boost.accuracy < 0) {
-				delete boost.accuracy;
-				if (!(effect as ActiveMove).secondaries) {
-					this.add("-fail", target, "unboost", "accuracy", "[from] ability: Botan X2", "[of] " + target);
-				}
-			}
-		},
-		onModifyMove(move) {
-			move.ignoreEvasion = true;
-		},
-		flags: {},
-		name: "Botan X2",
-		rating: 3,
-		num: 14,
 	},
 	botanx: { // combines [Bulletproof] + [Iron Fist] but bullets instead of fisting 
 		onBasePowerPriority: 19,
@@ -1627,15 +1455,6 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		name: "HoloHawk",
 		rating: 4,
 		num: 295,
-	},  
-	thexo: { // reskin of [Gale Wings] pre-nerf, but for Flying type Status moves only <<<UNUSED>>>
-		onModifyPriority(priority, pokemon, target, move) {
-			if (move.type === 'Flying' && move.category === 'Status') return priority + 1;
-		},
-		flags: {},
-		name: "The XO",
-		rating: 4.5,
-		num: 177,
 	},
 	succubus: { // reskin of [Intimidate] but for Special Attack instead of Physical Attack
 		onStart(pokemon) {
@@ -1701,16 +1520,6 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		name: "Firewall",
 		rating: 3.5,
 		num: 295,
-	},
-	madscience: { // <<<UNUSED>>> reskin of [Surge Surfer] but for Psychic Terrain and SpDef instead of Speed  
-		onModifySpDPriority: 6,
-		onModifySpD(pokemon) {
-			if (this.field.isTerrain('psychicterrain')) return this.chainModify(1.5);
-		},
-		flags: {breakable: 1},
-		name: "Mad Science",
-		rating: 1.5,
-		num: 179,
 	},
 	yamada: { // combines [Mirror Armour] + [Magic Bounce]
 		onTryHitPriority: 1,
@@ -2320,17 +2129,6 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		name: "Mother Nature",
 		rating: 3,
 		num: 207,
-	}, 
-	societalcollapse2: { // [UNUSED] reskin of [Weak Armour] but for SpDef <= Special Moves instead of Def <= Contact Moves [UNUSED]
-		onDamagingHit(damage, target, source, move) {
-			if (move.category === 'Special') {
-				this.boost({spd: -1, spe: 2}, target, target);
-			}
-		},
-		flags: {breakable: 1},
-		name: "Societal Collapse2",
-		rating: 2,
-		num: 133,
 	},
 	societalcollapse: { // reskin of [ANGER SHELL]
 		onDamage(damage, target, source, effect) {
@@ -2596,18 +2394,6 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		name: "Durable",
 		rating: 3.5,
 		num: 88,
-	},
-	bigcatmeansbigtrouble: { // <<<UNUSED>>> reskin of [No Guard] but better 
-		onStart(pokemon) {
-			pokemon.abilityState.gluttony = true;
-		},
-		onDamage(item, pokemon) {
-			pokemon.abilityState.gluttony = true;
-		},
-		flags: {breakable: 1},
-		name: "Big Cat Means Big Trouble",
-		rating: 4,
-		num: 99,
 	},
 	mammamia: { // combines [Cude Chew] with [Harvest]
 		onEatItem(item, pokemon) {
