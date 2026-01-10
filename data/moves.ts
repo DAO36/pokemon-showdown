@@ -25447,7 +25447,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		priority: 4,
 		flags: {noassist: 1, failcopycat: 1},
 		stallingMove: true,
-		volatileStatus: 'protect',
+		volatileStatus: 'phoenixshield',
 		onPrepareHit(pokemon) {
 			return !!this.queue.willAct() && this.runEvent('StallMove', pokemon);
 		},
