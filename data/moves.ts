@@ -25151,7 +25151,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	},
 	timetravel: { // AME 1
 		num: 800,
-		accuracy: 80,
+		accuracy: 90,
 		basePower: 140,
 		category: "Special",
 		name: "Time Travel",

@@ -95616,6 +95616,8 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			nastyplot: ["9M"],
 			honeclaws: ["9M"],
 			partingshot: ["9M"],
+			asacoco: ["9M"],
+			gmmf: ["9M"],
         },
 	},	
 	kanata: {

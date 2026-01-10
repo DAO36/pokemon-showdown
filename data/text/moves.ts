@@ -7922,7 +7922,7 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	rocketcarrots: {
 		name: "Rocket Carrots",
 		desc: "Hits twice. If the first hit breaks the target's substitute, it will take damage for the second hit. This attack always hits. In Double Battles, this move attempts to hit the targeted Pokemon and its ally once each. If hitting one of these Pokemon would be prevented by immunity, protection, semi-invulnerability, an Ability, or accuracy, it attempts to hit the other Pokemon twice instead. If this move is redirected, it hits that target twice.",
-		shortDesc: "Hits 2 times in one turn; Never misses",
+		shortDesc: "Hits 2 times in one turn; Never misses.",
 	},
 	painpeko: {
 		name: "Pain Peko",
@@ -8049,7 +8049,7 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	candycrash: {
 		name: "Candy Crash",
 		desc: "Has a 25% chance to raise this baby's Speed by 1 stage. Hits four times. If one of the hits breaks the target's substitute, it will take damage for the remaining hits.",
-		shortDesc: "25% raise user's Speed by 1. Hits 4 times in one turn.",
+		shortDesc: "25% to raise Speed by 1. Hits 4 times in one turn.",
 	}, 
 	sweetassault: {
 		name: "Sweet Assault",
@@ -8064,7 +8064,7 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	circusshow: {
 		name: "Circus Show",
 		desc: "Has a 25% chance to confuse the target. Hits three times. Power increases to 50 for the second hit and 75 for the third. This move checks accuracy for each hit, and the attack ends if the target avoids a hit. If one of the hits breaks the target's substitute, it will take damage for the remaining hits. If the user has the Skill Link Ability, this move will always hit three times.",
-		shortDesc: "25% to confuse. Hits x3 each can miss, but power rises.",
+		shortDesc: "Hits up to 3 times, power rises. 25% to confuse.",
 	},
 	polmao: {
 		name: "PoLMAO",
