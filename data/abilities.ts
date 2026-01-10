@@ -560,12 +560,6 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		onModifyPriority(priority, pokemon, target, move) {
 			if (move.flags['sound']) return priority + 1;
 		},
-		onAllyTryHitSide(target, source, move) {
-			if (source === this.effectState.target || !target.isAlly(source)) return;
-			if (move.flags['sound']) {
-				this.add('-immune', this.effectState.target, '[from] ability: Virtual Diva');
-			}
-		},
 		flags: {breakable: 1},
 		name: "Virtual Diva",
 		rating: 2.5,
@@ -2027,9 +2021,6 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 				return this.chainModify(1.3);
 			}
 		},
-		onImmunity(type, pokemon) {
-			if (type === 'sandstorm' || type === 'hail') return false;
-		},
 		onTryHit(target, source, move) {
 			if (target !== source && move.flags['wind']) {
 				if (!this.heal(target.baseMaxhp / 4, target, target)) {
@@ -2224,15 +2215,9 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			const yabairysHolder = this.effectState.target;
 			if (move.flags['sound']) {
 				this.attrLastMove('[still]');
-				this.add('cant', yabairysHolder, 'ability: YabaIRyS', move, '[of] ' + pokemon);
+				this.add('cant', yabairysHolder, 'ability: YabaIRyS', move, '[of] ' + target);
 				return false;
 			} 
-		},
-		onAllyTryHitSide(target, source, move) {
-			if (source === this.effectState.target || !target.isAlly(source)) return;
-			if (move.flags['sound']) {
-				this.add('-immune', this.effectState.target, '[from] ability: Virtual Diva');
-			}
 		},
 		onModifyAtkPriority: 5,
 		onModifyAtk(atk, attacker, defender, move) {
