@@ -26200,7 +26200,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	},
 	twinstrikes: { // MOCOCO 1 + FUWAWA 1 + FUWAMOCO 1
 		num: 370,
-		accuracy: 100,
+		accuracy: 90,
 		basePower: 50,
 		category: "Physical",
 		name: "Twin Strikes",
