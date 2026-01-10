@@ -19826,7 +19826,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		name: "MoonaH-Hoshinova",
 		baseSpecies: "MoonaH",
 		forme: "Hoshinova",
-		types: ["Psychic", "Dark"],
+		types: ["Dark", "Fairy"],
 		baseStats: {hp: 100, atk: 130, def: 55, spa: 130, spd: 55, spe: 130},
 		abilities: {0: "Moon Mania"},
 		heightm: 1.65,
