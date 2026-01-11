@@ -26493,7 +26493,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	doom: { // RAORA 3
 		num: 38,
 		accuracy: 90,
-		basePower: 130,
+		basePower: 150,
 		category: "Special",
 		name: "Doom",
 		pp: 5,
@@ -26501,7 +26501,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		flags: {protect: 1, mirror: 1, metronome: 1},
 		recoil: [33, 100],
 		secondary: null,
-		target: "allAdjacentFoes",
+		target: "allAdjacent",
 		type: "Normal",
 		contestType: "Tough",
 	},
