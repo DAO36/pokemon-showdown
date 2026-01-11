@@ -19968,7 +19968,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		types: ["Flying", "Psychic"],
 		gender: "F",
 		baseStats: {hp: 95, atk: 130, def: 115, spa: 145, spd: 160, spe: 55},
-		abilities: {0: "Unseen Fist"},
+		abilities: {0: "Magic Guard"},
 		heightm: 1.72,
 		weightkg: 55.5,
 		color: "Blue",
