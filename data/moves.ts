@@ -25222,7 +25222,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		name: "Interdimensional Detective",
 		pp: 5,
 		priority: 0,
-		flags: {charge: 1, protect: 1, mirror: 1, bullet: 1, distance: 1, nosleeptalk: 1, failinstruct: 1},
+		flags: {charge: 1, protect: 1, mirror: 1, bullet: 1, distance: 1},
 		onTryMove(attacker, defender, move) {
 			if (attacker.removeVolatile(move.id)) {
 				return;
@@ -25247,7 +25247,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		name: "Time Shattering Punch",
 		pp: 5,
 		priority: 0,
-		flags: {charge: 1, protect: 1, mirror: 1, punch: 1, contact: 1, nosleeptalk: 1, failinstruct: 1},
+		flags: {charge: 1, protect: 1, mirror: 1, punch: 1, contact: 1},
 		onTryMove(attacker, defender, move) {
 			if (attacker.removeVolatile(move.id)) {
 				return;
@@ -25268,16 +25268,17 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		num: 63,
 		accuracy: 90,
 		basePower: 140,
-		category: "Physical",
+		category: "Special",
 		name: "Hive Mind",
 		pp: 5,
 		priority: 0,
-		flags: {charge: 1, protect: 1, mirror: 1, wind: 1, contact: 1, nosleeptalk: 1, failinstruct: 1},
+		flags: {charge: 1, protect: 1, mirror: 1, wind: 1},
 		onTryMove(attacker, defender, move) {
 			if (attacker.removeVolatile(move.id)) {
 				return;
 			}
-			this.add('-prepare', attacker, move.name); 
+			this.add('-prepare', attacker, move.name);
+			this.boost({spa: 1}, attacker, attacker, move);
 			if (!this.runEvent('ChargeMove', attacker, defender, move)) {
 				return;
 			}
