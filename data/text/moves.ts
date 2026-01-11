@@ -7630,17 +7630,17 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	ankimoattack: {
 		name: "Ankimo Attack",
-		desc: "Has a 30% chance to raise this Idol's Attack by 1 stage.",
+		desc: "Has a 30% chance to raise this Pokemon's Attack by 1 stage.",
 		shortDesc: "30% chance to raise the user's Attack by 1.", 
 	},
 	tskr: {
 		name: "TSKR",
-		desc: "This Idol cures her non-volatile status condition. Raises the Idol's Special Attack by 2 stages.",
+		desc: "This Pokemon cures their party of non-volatile status condition. Raises the Idol's Special Attack by 2 stages.",
 		shortDesc: "Raises Sp. Atk by 2; Cures user and her party.",
 	},
 	sakurastrike: {
 		name: "Sakura Strike",
-		desc: "Has a 10% chance to raise this Shrine maiden's Attack by 1 stage. Hits adjacent foes.",
+		desc: "Has a 10% chance to raise this Pokemon's Attack by 1 stage. Hits adjacent foes.",
 		shortDesc: "10% chance to raise the user's Attack by 1.", 
 	},
 	lavabucket: {
@@ -7652,7 +7652,7 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	elitemiko: {
 		name: "Elite Miko",
-		desc: "Raises the Shrine Maiden's Attack by 2 stages.",
+		desc: "Raises the Pokemon's Attack by 2 stages.",
 		shortDesc: "Raises the user's Attack by 2.",
 	},
 	faq: {
@@ -7661,7 +7661,7 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	suicopath: {
 		name: "Suicopath",
-		desc: "If the target lost HP, this comet takes recoil damage equal to 1/3 the HP lost by the target, rounded half up, but not less than 1 HP.",
+		desc: "If the target lost HP, this Pokemon takes recoil damage equal to 1/3 the HP lost by the target, rounded half up, but not less than 1 HP.",
 		shortDesc: "Has 33% recoil.",
 	},
 	axeattack: {
@@ -7673,7 +7673,7 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	cometslam: {
 		name: "Comet Slam",
-		desc: "Has a 10% chance to freeze the target. If this attack is not successful, this Comet loses half of her maximum HP, rounded down, as crash damage. Pokemon with the Magic Guard Ability are unaffected by crash damage.",
+		desc: "Has a 10% chance to freeze the target. If this attack is not successful, this Pokemon loses half of its maximum HP, rounded down, as crash damage. Pokemon with the Magic Guard Ability are unaffected by crash damage.",
 		shortDesc: "10% to freeze target. User loses 50% HP if miss.", 
 
 		damage: "#crash",
@@ -7690,12 +7690,12 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	upgradepc: {
 		name: "Upgrade PC",
-		desc: "Raises the Robot's Special Attack and Defense by 1 stage.",
+		desc: "Raises the Pokemon's Special Attack and Defense by 1 stage.",
 		shortDesc: "Raises user's Special Attack & Defense by 1.",
 	},
 	reboot: {
 		name: "Reboot",
-		desc: "This Robot restores 1/2 of her maximum HP, rounded half up. Removes any status effect that the Robot is inflicted with. Resets any negative stat changes the user has.",
+		desc: "This Pokemon restores 1/2 of its maximum HP, rounded half up. Removes any status effect that the user is inflicted with. Resets any negative stat changes the user has.",
 		shortDesc: "Heals 1/2 HP; Cures status; Resets negative stats.",
 	},
 	divasong: {
@@ -7710,7 +7710,7 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	snowdash: { // <UNUSED>
 		name: "Snow Dash",
-		desc: "Has a 10% chance to freeze the foe .If this attack is not successful, the user loses half of its maximum HP, rounded down, as crash damage. Pokemon with the Magic Guard Ability are unaffected by crash damage.",
+		desc: "Has a 10% chance to freeze the foe. If this attack is not successful, the user loses half of its maximum HP, rounded down, as crash damage. Pokemon with the Magic Guard Ability are unaffected by crash damage.",
 		shortDesc: "Loses 50% max HP if miss. 10% chance to freeze.",
 
 		damage: "#crash",
@@ -7771,17 +7771,17 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	kapu: {
 		name: "Kapu",
-		desc: "This Vampire recovers 1/2 the HP lost by the target, rounded half up.",
+		desc: "This Pokemon recovers 1/2 the HP lost by the target, rounded half up.",
 		shortDesc: "Recovers 50% of the damage dealt.",
 	},
 	banpire: {
 		name: "Banpire",
-		desc: "Raises this Vampire's Attack by 2 stages.",
+		desc: "Raises this Pokemon's Attack by 2 stages.",
 		shortDesc: "Raises the user's Attack by 2.",
 	},
 	elfdance: {
 		name: "Elf Dance",
-		desc: "Has a 10% chance to raise this Elf's Special Defense by 1 stage.",
+		desc: "Has a 10% chance to raise this Pokemon's Special Defense by 1 stage.",
 		shortDesc: "10% chance to raise user's Special Defense by 1.", 
 	},
 	aikattack: {
@@ -7791,7 +7791,7 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	mukirose: {
 		name: "Mukirose",
-		desc: "Lowers this Elf's Defense and Special Defense by 1 stage.",
+		desc: "Lowers this Pokemon's Defense and Special Defense by 1 stage.",
 		shortDesc: "Lowers the user's Defense and Sp. Def by 1.",
 	},
 	apexmaid: {
@@ -7801,7 +7801,7 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	onyan: {
 		name: "Onyan",
-		desc: "Raises this Maid's Attack by 2 stages.",
+		desc: "Raises this Pokemon's Attack by 2 stages.",
 		shortDesc: "Raises the user's Attack by 2.",
 	},
 	dualwielding: {
@@ -7839,7 +7839,7 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	firstaid: { // [UNUSED]
 		name: "First Aid",
-		desc: "Each Pokemon on this Nurse's side restores 1/3 of their maximum HP, rounded half up, and has their status condition cured.",
+		desc: "Each Pokemon on the user's side restores 1/3 of their maximum HP, rounded half up, and has their status condition cured.",
 		shortDesc: "User and allies: heal 1/3 max HP, cures status.",
 	},
 	syringe: {
@@ -7854,12 +7854,12 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	}, 
 	arcanegarlic: {
 		name: "Arcane Garlic",
-		desc: "Raises this witch's Attack by 2 stages.",
+		desc: "Raises this Pokemon's Attack by 2 stages.",
 		shortDesc: "Raises the user's Attack by 2.",
 	},
 	magickick: {
 		name: "High Jump Kick",
-		desc: "If this attack is not successful, this witch loses half of her maximum HP, rounded down, as crash damage. Pokemon with the Magic Guard Ability are unaffected by crash damage. Power is multiplied by 1.5 during Magic Room's effect.",
+		desc: "If this attack is not successful, this Pokemon loses half of her maximum HP, rounded down, as crash damage. Pokemon with the Magic Guard Ability are unaffected by crash damage. Power is multiplied by 1.5 during Magic Room's effect.",
 		shortDesc: "1.5x power in Magic Room. If miss: lose 1/2 HP.",
 	},
 	duckasmr: {
@@ -7867,19 +7867,14 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		desc: "Has a 10% chance to confuse the target; Lowers the user's Special Attack by 2 stages. Hits adjacent foes.",
 		shortDesc: "Lowers Sp.Atk by 2. 10% chance to confuse target(s).",
 	},
-	cometeor: {
-		name: "Draco Meteor",
-		desc: "Lowers the user's Special Attack by 2 stages.",
-		shortDesc: "Lowers the user's Sp. Atk by 2.",
-	},
 	duckdance: {
 		name: "Duck Dance",
-		desc: "Raises this duck's Attack and Speed by 1 stage.",
+		desc: "Raises this Pokemon's Attack and Speed by 1 stage.",
 		shortDesc: "Raises user's Attack and Speed by 1.",
 	},
 	shuba: {
 		name: "Shuba",
-		desc: "Lowers this Duck's Defense and Special Defense by 1 stage.",
+		desc: "Lowers this Pokemon's Defense and Special Defense by 1 stage.",
 		shortDesc: "Lowers the user's Defense and Sp. Def by 1.",
 	},
 	oozorapolice: {
@@ -7889,7 +7884,7 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	orayo: {
 		name: "Orayo",
-		desc: "If the target lost HP, this Dog takes recoil damage equal to 33% the HP lost by the target, rounded half up, but not less than 1 HP.",
+		desc: "If the target lost HP, this Pokemon takes recoil damage equal to 33% the HP lost by the target, rounded half up, but not less than 1 HP.",
 		shortDesc: "Has 33% recoil.",
 	},
 	yubiyubi: {
@@ -7904,7 +7899,7 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	onigirichomp: {
 		name: "Onigiri Chomp",
-		desc: "This Cat recovers 1/2 the HP lost by the target, rounded half up. If Big Root is held by the user, the HP recovered is 1.3x normal, rounded half down. If this move is successful and the user has not fainted, it steals the target's held Berry if it is holding one and eats it immediately, gaining its effects even if the user's item is being ignored. Items lost to this move cannot be regained with Recycle or the Harvest Ability.",
+		desc: "This Pokemon recovers 1/2 the HP lost by the target, rounded half up. If Big Root is held by the user, the HP recovered is 1.3x normal, rounded half down. If this move is successful and the user has not fainted, it steals the target's held Berry if it is holding one and eats it immediately, gaining its effects even if the user's item is being ignored. Items lost to this move cannot be regained with Recycle or the Harvest Ability.",
 		shortDesc: "Heals 50% damage dealt; Steals & eats foe's Berry.",
 
 		removeItem: "  [SOURCE] stole and ate [POKEMON]'s [ITEM]!",
@@ -7926,12 +7921,12 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	painpeko: {
 		name: "Pain Peko",
-		desc: "Lowers this Rabbit's Defense and Special Defense by 1 stage.",
+		desc: "Lowers this Pokemon's Defense and Special Defense by 1 stage.",
 		shortDesc: "Lowers user's Defense and Sp.Def by 1.",
 	},
 	tnt: {
 		name: "TNT",
-		desc: "Hits adjacent foes. If this Rabbit lost HP, she takes recoil damage equal to 1/3 the HP lost by the target, rounded half up, but not less than 1 HP.",
+		desc: "Hits adjacent foes. If this Pokemon lost HP, it takes recoil damage equal to 1/3 the HP lost by the target, rounded half up, but not less than 1 HP.",
 		shortDesc: "Has 33% recoil. Hits adjacent foes.",
 	}, 
 	carrottrap: {
@@ -7941,7 +7936,7 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 
 		start: "  A diabolical trap has been set up for [TEAM]!",
 		end: "  The trap has been disarmed!",
-		damage: "  The trap has been activated!",
+		damage: "  The trap has been triggered!",
 	}, 
 	macesmash: {
 		name: "Mace Smash",
@@ -7967,7 +7962,7 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	gundance: {
 		name: "Gun Dance",
-		desc: "Raises this Elf's Attack by 2 stages.",
+		desc: "Raises this Pokemon's Attack by 2 stages.",
 		shortDesc: "Raises the user's Attack by 2.",
 	},
 	ahoy: {
@@ -7979,12 +7974,12 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	imhorny: {
 		name: "I'm Horny",
-		desc: "Target becomes infatuated. This effect does not happen for a target if both it and the user are the same gender, if either is genderless, or if the target is already infatuated. If the target is the same gender as the user, 50% chance to be confused instead.",
+		desc: "Target becomes infatuated. This effect does not happen for a target if both it and the user are the same gender, or if the target is already infatuated. If the target is the same gender as the user, 50% chance to be confused instead.",
 		shortDesc: "Infatuates if opposite gender. Else, 50% to confuse.",
 	},
 	forever17: {
 		name: "Forever 17",
-		desc: "The Pirate restores 1/2 of her maximum HP, rounded half up.",
+		desc: "The Pokemon restores 1/2 of her maximum HP, rounded half up.",
 		shortDesc: "Heals the user by 50% of its max HP.",
 	},
 	yanderestrike: {
@@ -8023,42 +8018,42 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	starshuriken: {
 		name: "Star Shuriken",
-		desc: "Has a 20% chance to raise this Angel's Special Defense by 1 stage. Hits twice. If the first hit breaks the target's substitute, it will take damage for the second hit.",
+		desc: "Has a 20% chance to raise this Pokemon's Special Defense by 1 stage. Hits twice. If the first hit breaks the target's substitute, it will take damage for the second hit.",
 		shortDesc: "20% chance to raise user's Sp.Def by 1. Hits twice.",
 	},
 	nothingwrong: {
 		name: "Nothing Wrong",
-		desc: "Raises this Sheep's Attack by 2 stages.",
+		desc: "Raises this Pokemon's Attack by 2 stages.",
 		shortDesc: "Raises the user's Attack by 2.",
 	},
 	ubersheep: {
 		name: "Uber Sheep",
-		desc: "This Sheep restores 1/2 of her maximum HP, rounded half up. Removes any status effect that the Sheep is inflicted with.",
+		desc: "This Pokemon restores 1/2 of their maximum HP, rounded half up. Removes any status effect that the Pokemon is inflicted with.",
 		shortDesc: "Heals user by 50% of max HP; Cures user of status.",
 	},
 	watamebeam: {
 		name: "Watame Beam",
-		desc: "Lowers this Bard's Special Attack by 2 stages.",
+		desc: "Lowers this Pokemon's Special Attack by 2 stages.",
 		shortDesc: "Lowers the user's Sp. Atk by 2.",
 	},
 	staticslam: {
 		name: "Static Slam",
-		desc: "Has a 20% chance to paralyze the target. Damage is calculated using this Sheep's Defense stat as her Attack, including stat stage changes. Other effects that modify the Attack stat are used as normal.",
+		desc: "Has a 20% chance to paralyze the target. Damage is calculated using this Pokemon's Defense stat as their Attack, including stat stage changes. Other effects that modify the Attack stat are used as normal.",
 		shortDesc: "Uses Def as Atk in damage calc. 20% to paralyze foe.",
 	},
 	candycrash: {
 		name: "Candy Crash",
-		desc: "Has a 25% chance to raise this baby's Speed by 1 stage. Hits four times. If one of the hits breaks the target's substitute, it will take damage for the remaining hits.",
+		desc: "Has a 25% chance to raise this Pokemon's Speed by 1 stage. Hits four times. If one of the hits breaks the target's substitute, it will take damage for the remaining hits.",
 		shortDesc: "25% to raise Speed by 1. Hits 4 times in one turn.",
 	}, 
 	sweetassault: {
 		name: "Sweet Assault",
-		desc: "This baby recovers 1/2 the HP lost by the target, rounded half up.",
+		desc: "This Pokemon recovers 1/2 the HP lost by the target, rounded half up.",
 		shortDesc: "User recovers 50% of the damage dealt.",
 	},
 	bibiblast: {
 		name: "Bibi Blast",
-		desc: "Lowers this Devil's Attack by 1 stage, while it increases her Speed by 1 stage.",
+		desc: "Lowers this Pokemon's Attack by 1 stage, while it increases their Speed by 1 stage.",
 		shortDesc: "Lowers user's Atk by 1; Raises user's Speed by 1.",
 	},
 	circusshow: {
@@ -8068,7 +8063,7 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	polmao: {
 		name: "PoLMAO",
-		desc: "If this move is successful and the Fennec has not fainted, the user switches out even if it is trapped and is replaced immediately by a selected party member. The user does not switch out if there are no unfainted party members, or if the target switched out using an Eject Button or through the effect of the Emergency Exit or Wimp Out Abilities.",
+		desc: "If this move is successful and this Pokemon has not fainted, the user switches out even if it is trapped and is replaced immediately by a selected party member. The user does not switch out if there are no unfainted party members, or if the target switched out using an Eject Button or through the effect of the Emergency Exit or Wimp Out Abilities.",
 		shortDesc: "User switches out after damaging the target.",
 
 		switchOut: "#uturn",
@@ -8085,7 +8080,7 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	lalion: {
 		name: "Lalion",
-		desc: "Raises this Lion's Attack by 2 stages.",
+		desc: "Raises this Pokemon's Attack by 2 stages.",
 		shortDesc: "Raises the user's Attack by 2.",
 	},
 	poi: {
@@ -8102,7 +8097,7 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	}, 
 	sake: {
 		name: "Sake",
-		desc: "Raises this Elf's Attack and Special Attack by 12 stages in exchange for this Elf losing 1/2 of her maximum HP, rounded down, and being badly poisoned.",
+		desc: "Raises this Pokemon's Attack and Special Attack by 12 stages in exchange for this Pokemon losing 1/2 of its maximum HP, rounded down, and being badly poisoned.",
 		shortDesc: "Maxes SpA & Atk; Lose 50% HP & get badly poisoned.",
 
 		boost: "  [POKEMON] has gotten drunk!",
@@ -8129,22 +8124,22 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	succubussong: {
 		name: "Succubus Song",
-		desc: "Hits adjacent foes. Lowers this Succubus's Special Attack by 1 stage; Increases her's Special Defense by 1 stage.",
+		desc: "Hits adjacent foes. Lowers this Pokemon's Special Attack by 1 stage; Increases its's Special Defense by 1 stage.",
 		shortDesc: "Lowers user's SpAtk by 1; Raises user's SpDef by 1.", 
 	},
 	succubusstrike: {
 		name: "Succubus Strike",
-		desc: "Lowers this Succubus's Attack by 1 stage; Raises her Defense by 1 stage.",
+		desc: "Lowers this Pokemon's Attack by 1 stage; Raises its Defense by 1 stage.",
 		shortDesc: "Lowers user's Atk by 1; raises user's Def by 1.",
 	},
 	ymd: {
 		name: "YMD",
-		desc: "Has a 20% to raise the YMD's Special Defense by 1 stage. If the target lost HP, the user takes recoil damage equal to 33% the HP lost by the target, rounded half up, but not less than 1 HP.",
+		desc: "Has a 20% to raise this Pokemon's Special Defense by 1 stage. If the target lost HP, the user takes recoil damage equal to 33% the HP lost by the target, rounded half up, but not less than 1 HP.",
 		shortDesc: "33% recoil. 20% to raise user's Sp.Def by 1",
 	},
 	focusshades: {
 		name: "Focus Shades",
-		desc: "Raises this Falcon's Attack by 2 stages and accuracy by 1 stage.",
+		desc: "Raises this Pokemon's Attack by 2 stages and accuracy by 1 stage.",
 		shortDesc: "Raises user's Attack by 2 and Accuracy by 1.",
 	},
 	falconwhip: {
@@ -8164,12 +8159,12 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	koyolabo: {
 		name: "Koyo Labo",
-		desc: "Raises this Coyote's Attack by 2 stages.",
+		desc: "Raises this Pokemon's Attack by 2 stages.",
 		shortDesc: "Raises the user's Attack by 2.",
 	},
 	hologram: {
 		name: "Hologram",
-		desc: "For 5 turns, the Coyote and her party members are protected from status moves from other Pokemon. Lasts for 8 turns if the user is holding Light Clay. Fails if the effect is already active on the user's side.",
+		desc: "For 5 turns, this Pokemon and its party members are protected from status moves from other Pokemon. Lasts for 8 turns if the user is holding Light Clay. Fails if the effect is already active on the user's side.",
 		shortDesc: "For 5 turns, protects party from status moves.",
 
 		start: "  [TEAM] summoned a hologram!",
@@ -8188,7 +8183,7 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	cleanup: {
 		name: "Clean Up",
-		desc: "If this move is successful and the Orca has not fainted, the effects of Leech Seed and binding moves end for the Orca, and all hazards are removed from the Orca's side of the field. The Orca then switches out even if she is trapped and is replaced immediately by a selected party member.",
+		desc: "If this move is successful and this Pokemon has not fainted, the effects of Leech Seed and binding moves end for the Orca, and all hazards are removed from the Orca's side of the field. The Orca then switches out even if she is trapped and is replaced immediately by a selected party member.",
 		shortDesc: "Clears hazards/bind/Leech Seed. Switches after.",
 	},
 	fullmoon: {
@@ -8228,7 +8223,7 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	pathofsincerity: {
 		name: "Path of Sincerity",
-		desc: "If the target lost HP, the Zombie takes recoil damage equal to 33% the HP lost by the target, rounded half up, but not less than 1 HP.",
+		desc: "If the target lost HP, this Pokemon takes recoil damage equal to 33% the HP lost by the target, rounded half up, but not less than 1 HP.",
 		shortDesc: "Has 33% recoil.",
 	},
 	tonjok: {
@@ -8238,12 +8233,12 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	peafowlpower: {
 		name: "Peafowl Power",
-		desc: "Has a 20% chance to raise this Peafowl's Special Defense by 1 stage.",
+		desc: "Has a 20% chance to raise this Pokemon's Special Defense by 1 stage.",
 		shortDesc: "20% chance to raise user's Sp.Def by 1.",
 	},
 	kerisslash: {
 		name: "Keris Slash",
-		desc: "Has a 10% chance to raise this Keris' Special Defense by 1 stage. Has a high critical hit ratio.",
+		desc: "Has a 10% chance to raise this Pokemon's Special Defense by 1 stage. Has a high critical hit ratio.",
 		shortDesc: "10% to raise user's Sp.Def by 1. High crit ratio.",
 	},
 	spyshot: {
@@ -8271,17 +8266,17 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	grindstone: {
 		name: "Grindstone",
-		desc: "This Blacksmith restores 1/2 of her maximum HP, rounded half down. If the weather is Sandstorm, the user instead restores 2/3 of its maximum HP, rounded half down.",
+		desc: "This Pokemon restores 1/2 of its maximum HP, rounded half down. If the weather is Sandstorm, the user instead restores 2/3 of its maximum HP, rounded half down.",
 		shortDesc: "User restores 1/2 of max HP; 2/3 in Sandstorm.",
 	},
 	goriela: {
 		name: "Goriela",
-		desc: "Lowers the Blacksmith's Defense and Special Defense both by 1 stage.",
+		desc: "Lowers the Pokemon's Defense and Special Defense both by 1 stage.",
 		shortDesc: "Lowers the user's Defense and Sp. Def by 1.",
 	},
 	payung: {
 		name: "Payung",
-		desc: "For 5 turns, the weather becomes Rain. This Rain Shaman switches out even if she is trapped and is replaced immediately by a selected party member. The user does not switch out if there are no unfainted party members.",
+		desc: "For 5 turns, the weather becomes Rain. This Pokemon switches out even if it is trapped and is replaced immediately by a selected party member. The user does not switch out if there are no unfainted party members.",
 		shortDesc: "Starts Rain. User switches out.",
 
 		// TODO needs to be implemented
@@ -8316,40 +8311,40 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	gawrrage: {
 		name: "Gawr Rage",
-		desc: "Lowers this Shark's Defense and Special Defense by 1 stage.",
+		desc: "Lowers this Pokemon's Defense and Special Defense by 1 stage.",
 		shortDesc: "Lowers the user's Defense and Sp. Def by 1.",
 	},
 	timetravel2: {
 		name: "Time Travel2",
-		desc: "If this move is successful and the Detective has not fainted, the Detective switches out even if she is trapped and is replaced immediately by a selected party member. The Detective does not switch out if there are no unfainted party members, or if the target switched out using an Eject Button or through the effect of the Emergency Exit or Wimp Out Abilities. This attack never misses.",
+		desc: "If this move is successful and this Pokemon has not fainted, the Pokemon switches out even if it is trapped and is replaced immediately by a selected party member. The user does not switch out if there are no unfainted party members, or if the target switched out using an Eject Button or through the effect of the Emergency Exit or Wimp Out Abilities. This attack never misses.",
 		shortDesc: "Switches user out. Never misses.",
 
 		switchOut: "#uturn",
 	},
 	timetravel: {
 		name: "Time Travel",
-		desc: "This attack charges on the first turn and executes on the second. On the first turn, this Detective avoids all attacks. If the Detective is holding a Power Herb, the move completes in one turn.",
+		desc: "This attack charges on the first turn and executes on the second. On the first turn, this Pokemon avoids all attacks. If the Pokemon is holding a Power Herb, the move completes in one turn.",
 		shortDesc: "Disappears turn 1. Hits turn 2.",
 
 		prepare: "[POKEMON] is tampering with the timeline!",
 	}, 
 	interdimensionaldetective: {
 		name: "Interdimensional Detective",
-		desc: "This attack charges on the first turn and executes on the second. Raises this Detective's Attack by 1 stage on the first turn. If the Detective is holding a Power Herb, the move completes in one turn.",
+		desc: "This attack charges on the first turn and executes on the second. Raises this Pokemon's Attack by 1 stage on the first turn. If the user is holding a Power Herb, the move completes in one turn.",
 		shortDesc: "Raises user's Attack by 1 on turn 1. Hits turn 2.",
 
 		prepare: "[POKEMON] is gathering interdimensional energy!",
 	},
 	timeshatteringpunch: {
 		name: "Time Shattering Punch",
-		desc: "This attack charges on the first turn and executes on the second. Raises this Detective's Attack by 1 stage on the first turn. If the Detective is holding a Power Herb, the move completes in one turn.",
+		desc: "This attack charges on the first turn and executes on the second. Raises this Pokemon's Attack by 1 stage on the first turn. If the user is holding a Power Herb, the move completes in one turn.",
 		shortDesc: "Raises user's Attack by 1 on turn 1. Hits turn 2.",
 
 		prepare: "[POKEMON] is flexing!",
 	},
 	hivemind: {
 		name: "Hive Mind",
-		desc: "This attack charges on the first turn and executes on the second. If the Detective is holding a Power Herb, the move completes in one turn.",
+		desc: "This attack charges on the first turn and executes on the second. If the Pokemon is holding a Power Herb, the move completes in one turn.",
 		shortDesc: "Charges on turn 1. Hits turn 2.",
 
 		prepare: "[POKEMON] is calling the Hive!",
@@ -8368,7 +8363,7 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	}, 
 	gamerrage: {
 		name: "Gamer Rage",
-		desc: "If this move is successful, this Toxic Gamer must recharge on the following turn and cannot select a move. Has a 10% chance to badly poison the target.",
+		desc: "If this move is successful, this Pokemon must recharge on the following turn and cannot select a move. Has a 10% chance to badly poison the target.",
 		shortDesc: "Cannot move next turn. 10% to badly poison target.", 
 	},
 	scythe: {
@@ -8388,7 +8383,7 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	wah: {
 		name: "Wah",
-		desc: "Raises this Tako's Attack by 2 stages.",
+		desc: "Raises this Pokemon's Attack by 2 stages.",
 		shortDesc: "Raises the user's Attack by 2.",
 	},
 	tentacles: {
@@ -8403,7 +8398,7 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	phoenixshield: {
 		name: "Phoenix Shield",
-		desc: "This Phoenix is protected from most attacks made by other Pokemon during this turn, and Pokemon trying to make contact with this Phoenix become burned. Non-damaging moves go through this protection. This move has a 1/X chance of being successful, where X starts at 1 and triples each time this move is successfully used. X resets to 1 if this move fails, if the Phoenix's last move used is not Baneful Bunker, Burning Bulwark, Detect, Endure, King's Shield, Max Guard, Obstruct, Protect, Quick Guard, Silk Trap, Spiky Shield, or Wide Guard, or if it was one of those moves and the user's protection was broken. Fails if the Phoenix moves last this turn.",
+		desc: "This Pokemon is protected from most attacks made by other Pokemon during this turn, and Pokemon trying to make contact with the user become burned. This move has a 1/X chance of being successful, where X starts at 1 and triples each time this move is successfully used. X resets to 1 if this move fails, if this Pokemon's last move used is not Baneful Bunker, Burning Bulwark, Detect, Endure, King's Shield, Max Guard, Obstruct, Protect, Quick Guard, Silk Trap, Spiky Shield, Lunar Shield, or Wide Guard, or if it was one of those moves and the user's protection was broken. Fails if the Pokemon moves last this turn.",
 		shortDesc: "Protects from damaging attacks. Contact: burn.",
 	},
 	phoenixblade: {
@@ -8423,24 +8418,24 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	hopesoda: {
 		name: "Hope Soda",
-		desc: "Raises this Nephelim's Attack by 2 stages.",
+		desc: "Raises this Pokemon's Attack by 2 stages.",
 		shortDesc: "Raises the user's Attack by 2.",
 	},
 	hopeful: {
 		name: "Hopeful",
-		desc: "Has a 10% chance to raise this Nephelim's Attack, Defense, Special Attack, Special Defense, and Speed by 1 stage. This attack bypasses accuracy checks and never misses.",
+		desc: "Has a 10% chance to raise this Pokemon's Attack, Defense, Special Attack, Special Defense, and Speed by 1 stage. This attack bypasses accuracy checks and never misses.",
 		shortDesc: "10% chance to raise all stats by 1 (not acc/eva).",
 	},
 	hopeless: {
 		name: "Hopeless",
-		desc: "Lowers the Nephelim's Defense and Special Defense by 1 stage. If this attack is not successful, the Nephelim loses half of her maximum HP, rounded down, as crash damage. Pokemon with the Magic Guard Ability are unaffected by crash damage.",
+		desc: "Lowers this Pokemon's Defense and Special Defense by 1 stage. If this attack is not successful, this Pokemon loses half of its maximum HP, rounded down, as crash damage. Pokemon with the Magic Guard Ability are unaffected by crash damage.",
 		shortDesc: "Lowers user's Def & SpD by 1. Loses 50% HP if miss.",
 
 		damage: "#crash",
 	},
 	songofhope: {
 		name: "Song of Hope", 
-		desc: "Every Pokemon in this Nephelim's party is cured of their non-volatile status condition.",
+		desc: "Every Pokemon in the user's party is cured of their non-volatile status condition.",
 		shortDesc: "Cures the user's party of all status conditions.",
 	},
 	wormhole: {
@@ -8450,12 +8445,12 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	supernova: {
 		name: "Supernova",
-		desc: "Hits adjacent Pokemon. If the target lost HP, this Astro Girl takes recoil damage equal to 33% the HP lost by the target, rounded half up, but not less than 1 HP.",
+		desc: "Hits adjacent Pokemon. If the target lost HP, this Pokemon takes recoil damage equal to 33% the HP lost by the target, rounded half up, but not less than 1 HP.",
 		shortDesc: "Has 33% recoil. Hits adjacent Pokemon.",
 	},
 	bigbang: {
 		name: "Big Bang",
-		desc: "Sana faints after using this move, even if this move fails for having no target. This move is prevented from executing if any active Pokemon has the Damp Ability. Hits adjacent Pokemon. This moves bypasses substitute and ignores protection.",
+		desc: "This Pokemon faints after using this move, even if this move fails for having no target. This move is prevented from executing if any active Pokemon has the Damp Ability. Hits adjacent Pokemon. This moves bypasses substitute and ignores protection.",
 		shortDesc: "User faints. Bypasses sub/protect. Hits adjacent Pokemon.",
 	},
 	blackhole: {
@@ -8465,22 +8460,22 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	gamerkirin: {
 		name: "Gamer Kirin",
-		desc: "Raises Nemu's Attack by 2 stages.",
+		desc: "Raises this Pokemon's Attack by 2 stages.",
 		shortDesc: "Raises the user's Attack by 2.",
 	},
 	naturalasmr: {
 		name: "Natural ASMR",
-		desc: "Every Pokemon in this Nephelim's party is cured of their non-volatile status condition. Hits adjacent foes.",
+		desc: "Every Pokemon in the user's party is cured of their non-volatile status condition. Hits adjacent foes.",
 		shortDesc: "Cures the user's party of all status conditions.",
 	},
 	kirinattack: {
 		name: "Kirin Attack",
-		desc: "If the target lost HP, the Kirin takes recoil damage equal to 33% the HP lost by the target, rounded half up, but not less than 1 HP.",
+		desc: "If the target lost HP, this Pokemon takes recoil damage equal to 33% the HP lost by the target, rounded half up, but not less than 1 HP.",
 		shortDesc: "Has 33% recoil.",
 	},
 	goldenapple: {
 		name: "Golden Apple",
-		desc: "Each Pokemon on this Kirin's side restores 1/3 of their maximum HP, rounded half up, and has their status condition cured. If the terrain is Grassy Terrain, this Kirin and her Ally instead restores 1/2 of their maximum HP, rounded half down.",
+		desc: "Each Pokemon on the user's side restores 1/3 of their maximum HP, rounded half up, and has their status condition cured. If the terrain is Grassy Terrain, this Kirin and her Ally instead restores 1/2 of their maximum HP, rounded half down.",
 		shortDesc: "User & allies: heal 1/3 max HP, cures status.", 
 	},
 	faunasweep: {
@@ -8520,7 +8515,7 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	borosblast: {
 		name: "Boros Blast",
-		desc: "This move becomes a physical attack if this Boros's Attack is greater than his Special Attack, including stat stage changes. Power is doubled during Trick Room's effect.",
+		desc: "This move becomes a physical attack if this Pokemon's Attack is greater than its Special Attack, including stat stage changes. Power is doubled during Trick Room's effect.",
 		shortDesc: "Physical if Atk > Sp.Atk. Trick Room: 2x power.",
 	}, 
 	moomers: {
@@ -8628,7 +8623,7 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	windup: {
 		name: "Wind Up",
-		desc: "User restores 1/2 of her maximum HP, rounded half up. Removes any status effect that the user is inflicted with. Resets any negative stat changes the user has.",
+		desc: "User restores 1/2 of its maximum HP, rounded half up. Removes any status effect that the user is inflicted with. Resets any negative stat changes the user has.",
 		shortDesc: "Heals 1/2 HP; Cures status; Resets negative stats.",
 	},
 	godeyes: {
@@ -8638,7 +8633,7 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	chattinichomp: {
 		name: "Chattini Chomp",
-		desc: "The Cat recovers 1/2 the HP lost by the target, rounded half up.",
+		desc: "This Pokemon recovers 1/2 the HP lost by the target, rounded half up.",
 		shortDesc: "User recovers 50% of the damage dealt.",
 	},
 	doom: {
