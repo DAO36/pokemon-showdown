@@ -26198,8 +26198,6 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 			case 'sandstorm':
 				move.accuracy = true;
 				break;
-			case 'sunnyday':
-			case 'desolateland':
 			case 'raindance':
 			case 'primordialsea':
 			case 'snowscape':

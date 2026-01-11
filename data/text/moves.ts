@@ -8309,7 +8309,7 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	atlantisstrike: {
 		name: "Atlantis Strike",
-		desc: "This attack charges on the first turn and executes on the second. If the user is holding a Power Herb or the weather is Primordial Sea or Rain Dance, the move completes in one turn. If the user is holding Utility Umbrella and the weather is Primordial Sea or Rain Dance, the move still requires a turn to charge. If the weather is Sandstream, Desolate Land, or Sunny Day, this move's accuracy is 50%. If this move is used against a Pokemon holding Utility Umbrella, this move's accuracy remains at 90%.",
+		desc: "This attack charges on the first turn and executes on the second. If the user is holding a Power Herb or the weather is Primordial Sea or Rain Dance, the move completes in one turn. If the user is holding Utility Umbrella and the weather is Primordial Sea or Rain Dance, the move still requires a turn to charge; If the weather is Primordial Sea or Rain Dance, this move does not check accuracy. If the weather is Sandstream, Desolate Land, or Sunny Day, this move's accuracy is 50%. If this move is used against a Pokemon holding Utility Umbrella, this move's accuracy remains at 90%.",
 		shortDesc: "Charges turn 1. Hits turn 2. No charge in rain.", 
 
 		prepare: "  [POKEMON] is channeling the Power of Atlantis!",
@@ -8567,7 +8567,7 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	haboob: {
 		name: "Haboob",
-		desc: "Has a 30% chance to lower target's Accuracy by 1 stage. If the weather is Sandstorm, this move does not check accuracy. If the weather is Primordial Sea, Rain Dance, Desolate Land, Sunny Day, or Snow this move's accuracy is 50%. If this move is used against a Pokemon holding Utility Umbrella, this move's accuracy remains at 70%. This move can hit a target using Bounce, Fly, or Dig.",
+		desc: "Has a 30% chance to lower target's Accuracy by 1 stage. If the weather is Sandstorm, this move does not check accuracy. If the weather is Primordial Sea, Rain, or Snow this move's accuracy is 50%. If this move is used against a Pokemon holding Utility Umbrella, this move's accuracy remains at 70%. This move can hit a target using Bounce, Fly, or Dig.",
 		shortDesc: "30% to lower Accuracy by 1. Sandstorm: always hit.",
 	},
 	devilishdiva: {
