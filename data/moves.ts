@@ -25694,7 +25694,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 				return this.chainModify(1.5);
 			}
 		},
-		category: "Physical",
+		category: "Special",
 		name: "Black Hole",
 		pp: 5,
 		priority: 0,
@@ -25712,7 +25712,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 			},
 		},
 		target: "allAdjacentFoes",
-		type: "Psychic",
+		type: "Dark",
 		contestType: "Tough",
 	},
 	gamerkirin: { // Nemu
