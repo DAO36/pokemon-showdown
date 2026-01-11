@@ -20481,6 +20481,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 	kroniiboros: {
 		num: 147,
 		name: "Kronii-Boros",
+		baseSpecies: "Kronii",
 		types: ["Psychic", "Dragon"],
 		gender: "M",
 		baseStats: {hp: 50, atk: 120, def: 50, spa: 115, spd: 155, spe: 110},
@@ -20522,6 +20523,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 	mumeievil: {
 		num: 717,
 		name: "Mumei-Evil",
+		baseSpecies: "Mumei",
 		types: ["Flying", "Dark"],
 		gender: "F",
 		baseStats: {hp: 80, atk: 130, def: 125, spa: 120, spd: 75, spe: 70},
@@ -20534,6 +20536,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 	boomei: {
 		num: 778,
 		name: "Boomei",
+		baseSpecies: "Mumei",
 		types: ["Normal", "Ghost"],
 		gender: "F",
 		baseStats: {hp: 70, atk: 115, def: 70, spa: 125, spd: 150, spe: 70},
@@ -20575,6 +20578,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 	baerat: {
 		num: 925,
 		name: "Baerat",
+		baseSpecies: "Bae",
 		types: ["Dark"],
 		gender: "F",
 		baseStats: {hp: 66, atk: 130, def: 55, spa: 99, spd: 72, spe: 133},
@@ -20645,6 +20649,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 	pebble: {
 		num: 74,
 		name: "Pebble",
+		baseSpecies: "Bijou",
 		types: ["Rock"],
 		baseStats: {hp: 69, atk: 69, def: 169, spa: 69, spd: 169, spe: 10},
 		abilities: {0: "Sand Stream", S: "Sneaky Pebbles"},
