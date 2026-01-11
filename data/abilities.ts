@@ -1619,7 +1619,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	    onDamagingHit(damage, target, source, move) {
 		const side = source.isAlly(target) ? source.side.foe : source.side;	
 		const leechseed = side.sideConditions['leechseed'];
-        if ((!source.hasType('Grass')) && move.category === 'Physical' || move.category === 'Special') {
+        if ((!source.hasType('Grass')) && move.category === 'Physical' || (!source.hasType('Grass') && move.category === 'Special')) {
 			this.add('-activate', target, 'ability: NNN');
                 source.addVolatile('leechseed', target);
 		  }
