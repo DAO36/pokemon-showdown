@@ -25755,12 +25755,12 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Grass",
 		contestType: "Clever",
 	},
-	nemu: { // FAUNA 2
+	kirinattack: { // FAUNA 2
 		num: 38,
 		accuracy: 100,
 		basePower: 140,
 		category: "Physical",
-		name: "Nemu",
+		name: "Kirin Attack",
 		pp: 10,
 		priority: 0,
 		flags: {contact: 1, protect: 1, mirror: 1},

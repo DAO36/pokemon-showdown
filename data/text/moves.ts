@@ -8473,8 +8473,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		desc: "Every Pokemon in this Nephelim's party is cured of their non-volatile status condition. Hits adjacent foes.",
 		shortDesc: "Cures the user's party of all status conditions.",
 	},
-	nemu: {
-		name: "Nemu",
+	kirinattack: {
+		name: "Kirin Attack",
 		desc: "If the target lost HP, the Kirin takes recoil damage equal to 33% the HP lost by the target, rounded half up, but not less than 1 HP.",
 		shortDesc: "Has 33% recoil.",
 	},
