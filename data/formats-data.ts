@@ -6345,6 +6345,11 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
         doublesTier: "(DUU)",
         natDexTier: "OU",	
 	},
+	nemu: {
+        tier: "OU",
+        doublesTier: "(DUU)",
+        natDexTier: "Uber",	
+	},
 	kronii: {
 		tier: "OU",
 		doublesTier: "(DUU)",
