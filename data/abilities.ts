@@ -1614,12 +1614,27 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 5,
 		num: 157,
 	},
+	nnnn: { // exact copy of [Seed Sower]
+		onDamagingHitOrder: 1,
+	    onDamagingHit(damage, target, source, move) {
+		const side = source.isAlly(target) ? source.side.foe : source.side;	
+		const leechseed = side.sideConditions['leechseed'];
+        if (move.category === 'Physical' || move.category === 'Special' && target.hasType('Grass')) {
+			this.add('-activate', target, 'ability: NNNn');
+                source.addVolatile('leechseed', target);
+		  }
+        },
+		flags: {breakable: 1},
+		name: "NNNn",
+		rating: 2.5,
+		num: 269,
+	},
 	nnn: { // exact copy of [Seed Sower]
 		onDamagingHitOrder: 1,
 	    onDamagingHit(damage, target, source, move) {
 		const side = source.isAlly(target) ? source.side.foe : source.side;	
 		const leechseed = side.sideConditions['leechseed'];
-        if ((!target.hasType('Grass')) && move.category === 'Physical' || move.category === 'Special') {
+        if ((!source.hasType('Grass')) && move.category === 'Physical' || move.category === 'Special') {
 			this.add('-activate', target, 'ability: NNN');
                 source.addVolatile('leechseed', target);
 		  }
