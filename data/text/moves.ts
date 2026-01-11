@@ -8465,7 +8465,7 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	gamerkirin: {
 		name: "Gamer Kirin",
-		desc: "Raises this Kirin's Attack by 2 stages.",
+		desc: "Raises Nemu's Attack by 2 stages.",
 		shortDesc: "Raises the user's Attack by 2.",
 	},
 	naturalasmr: {

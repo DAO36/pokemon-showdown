@@ -25715,7 +25715,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Psychic",
 		contestType: "Tough",
 	},
-	gamerkirin: { // <<FAUNUSED>>
+	gamerkirin: { // Nemu
 		num: 14,
 		accuracy: true,
 		basePower: 0,
