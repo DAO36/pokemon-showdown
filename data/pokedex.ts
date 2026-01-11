@@ -18749,6 +18749,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 	fubuzilla: {
 		num: 985,
 		name: "Fubuzilla",
+		baseSpecies: "Fubuki",
 		types: ["Ice", "Dragon"],
 		gender: "F",
 		baseStats: {hp: 155, atk: 150, def: 140, spa: 130, spd: 70, spe: 55},
@@ -18761,6 +18762,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 	kurokami: {
 		num: 827,
 		name: "Kurokami",
+		baseSpecies: "Fubuki",
 		types: ["Dark", "Ice"],
 		gender: "F",
 		baseStats: {hp: 70, atk: 130, def: 80, spa: 120, spd: 70, spe: 130},
@@ -19123,6 +19125,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 	hatotaurus: {
 		num: 398,
 		name: "Hatotaurus",
+		baseSpecies: "Mio",
 		types: ["Flying"],
 		gender: "M",
 		baseStats: {hp: 125, atk: 150, def: 145, spa: 125, spd: 100, spe: 55},
@@ -19193,6 +19196,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 	pekorawarcriminal: {
 		num: 815,
 		name: "Pekora-WarCriminal",
+		baseSpecies: "Pekora",
 		types: ["Dark", "Grass"],
 		gender: "F",
 		baseStats: {hp: 75, atk: 140, def: 135, spa: 125, spd: 75, spe: 50},
@@ -19350,6 +19354,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 	cocodraco: {
 		num: 149,
 		name: "Coco-Draco",
+		baseSpecies: "Coco",
 		types: ["Dragon", "Flying"],
 		gender: "F",
 		baseStats: {hp: 140, atk: 125, def: 140, spa: 145, spd: 90, spe: 60},
@@ -19776,8 +19781,8 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		weightkg: 55.5,
 		color: "Purple",
 		eggGroups: ["Human-Like"],
-		otherFormes: ["Moona-Mega", "Hoshinova"],
-		formeOrder: ["Moona", "Moona-Mega", "Hoshinova"],
+		otherFormes: ["Moona-Mega", "Hoshinova-Moona"],
+		formeOrder: ["Moona", "Moona-Mega", "Hoshinova-Moona"],
 	},
 	moonamega: {
 		num: 792,
@@ -19797,7 +19802,8 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 	hoshinovamoona: {
 		num: 800,
 		name: "Hoshinova-Moona",
-		types: ["Dark", "Psychic"],
+		baseSpecies: "Moona",
+		types: ["Psychic", "Dark"],
 		gender: "F",
 		baseStats: {hp: 100, atk: 125, def: 100, spa: 90, spd: 75, spe: 110},
 		abilities: {0: "Pressure", 1: "Intimidate", H: "Sheer Force"},
@@ -19897,6 +19903,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 	risusaurus: {
 		num: 820,
 		name: "Risusaurus",
+		baseSpecies: "Risu",
 		types: ["Dragon"],
 		gender: "F",
 		baseStats: {hp: 120, atk: 125, def: 95, spa: 145, spd: 140, spe: 75},
@@ -19938,6 +19945,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 	olivia: {
 		num: 327,
 		name: "Olivia",
+		baseSpecies: "Ollie",
 		types: ["Normal"],
 		gender: "F",
 		baseStats: {hp: 80, atk: 120, def: 90, spa: 120, spd: 90, spe: 100},
@@ -20066,6 +20074,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 	ckia: {
 		num: 957,
 		name: "Ckia",
+		baseSpecies: "Kaela",
 		types: ["Steel"],
 		gender: "F",
 		baseStats: {hp: 60, atk: 125, def: 100, spa: 75, spd: 50, spe: 125},
@@ -20136,6 +20145,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 	guragawr: {
 		num: 319,
 		name: "Gura-Gawr",
+		baseSpecies: "Gura",
 		types: ["Water", "Dark"],
 		gender: "F",
 		baseStats: {hp: 70, atk: 130, def: 90, spa: 125, spd: 70, spe: 115},
@@ -20148,6 +20158,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 	gurazilla: {
 		num: 445,
 		name: "Gurazilla",
+		baseSpecies: "Gura",
 		types: ["Water", "Dragon"],
 		gender: "F",
 		baseStats: {hp: 100, atk: 140, def: 125, spa: 110, spd: 75, spe: 50},
@@ -20189,6 +20200,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 	amesmol: {
 		num: 859,
 		name: "Ame-Smol",
+		baseSpecies: "Ame",
 		types: ["Psychic", "Dark"],
 		gender: "F",
 		baseStats: {hp: 50, atk: 150, def: 50, spa: 150, spd: 50, spe: 150},
@@ -20201,6 +20213,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 	amebuff: {
 		num: 68,
 		name: "Ame-Buff",
+		baseSpecies: "Ame",
 		types: ["Psychic", "Fighting"],
 		gender: "F",
 		baseStats: {hp: 101, atk: 164, def: 152, spa: 44, spd: 99, spe: 40},
@@ -20213,6 +20226,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 	amebee: {
 		num: 15,
 		name: "Ame-Bee",
+		baseSpecies: "Ame",
 		types: ["Bug", "Poison"],
 		gender: "F",
 		baseStats: {hp: 55, atk: 130, def: 55, spa: 125, spd: 75, spe: 115},
@@ -20291,7 +20305,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		weightkg: 55.5,
 		color: "Brown",
 		eggGroups: ["Human-Like", "Flying"],
-		otherFormes: ["Kiara-Mega", "Frogiwawa"],
+		otherFormes: ["Kiara-Mega", "Kiara-Warrior", "Frogiwawa"],
 		formeOrder: ["Kiara", "Kiara-Mega", "Kiara-Warrior", "Frogiwawa"],
 	},
 	kiaramega: {
@@ -20312,6 +20326,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 	kiarawarrior: {
 		num: 250,
 		name: "Kiara-Warrior",
+		baseSpecies: "Kiara",
 		types: ["Fire", "Fighting"],
 		gender: "F",
 		baseStats: {hp: 90, atk: 130, def: 95, spa: 100, spd: 75, spe: 110},
@@ -20324,6 +20339,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 	frogiwawa: {
 		num: 656,
 		name: "Frogiwawa",
+		baseSpecies: "Kiara",
 		types: ["Water", "Poison"],
 		gender: "F",
 		baseStats: {hp: 55, atk: 111, def: 52, spa: 123, spd: 78, spe: 136},
@@ -20394,6 +20410,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 	sanabeeg: {
 		num: 338,
 		name: "Sana-Beeg",
+		baseSpecies: "Sana",
 		types: ["Psychic"],
 		gender: "F",
 		baseStats: {hp: 200, atk: 80, def: 180, spa: 80, spd: 120, spe: 40},
