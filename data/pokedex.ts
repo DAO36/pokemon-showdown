@@ -20432,7 +20432,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		requiredItem: "Faunite",
 	},
 	nemu: {
-		num: 586,
+		num: 672,
 		name: "Nemu",
 		types: ["Grass"],
 		gender: "F",
