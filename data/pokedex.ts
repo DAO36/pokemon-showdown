@@ -20436,7 +20436,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		name: "Nemu",
 		types: ["Grass"],
 		gender: "F",
-		baseStats: {hp: 60, atk: 130, def: 60, spa: 125, spd: 100, spe: 125},
+		baseStats: {hp: 60, atk: 130, def: 60, spa: 120, spd: 100, spe: 130},
 		abilities: {0: "Natural Cure", 1: "Flower Veil", H: "Grassy Surge", S: "Mother Nature"},
 		heightm: 0.64,
 		weightkg: 25.5,
