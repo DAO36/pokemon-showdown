@@ -2084,7 +2084,7 @@ export class Pokemon {
 		return !!(
 			this.volatiles['protect'] || this.volatiles['detect'] || this.volatiles['maxguard'] ||
 			this.volatiles['kingsshield'] || this.volatiles['spikyshield'] || this.volatiles['banefulbunker'] ||
-			this.volatiles['obstruct'] || this.volatiles['silktrap'] || this.volatiles['burningbulwark']
+			this.volatiles['obstruct'] || this.volatiles['silktrap'] || this.volatiles['burningbulwark'] || this.volatiles['phoenixshield'] || this.volatiles['lunarshield']
 		);
 	}
 
