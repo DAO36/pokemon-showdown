@@ -733,7 +733,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		onDamagingHit(damage, target, source, move) {
 			const side = source.isAlly(target) ? source.side.foe : source.side;
 			if (target.runEffectiveness(move) >= 1) {
-				this.boost({atk: 2, spa: 2});
+				this.boost({atk: 1, spa: 1});
 			}
 		},
 		flags: {breakable: 1},

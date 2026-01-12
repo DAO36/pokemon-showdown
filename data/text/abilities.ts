@@ -154,8 +154,8 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	apex: {
 		name: "Apex",
-		desc: "This Pokemon's Attack and Special Attack are both raised by 2 stages after it is damaged by a super effective move.",
-		shortDesc: "Attack & Speed are raised by 2 stages if user is hit by a super effective move.",
+		desc: "This Pokemon's Attack and Special Attack are both raised by 1 stage after it is damaged by a super effective move.",
+		shortDesc: "Attack & Speed are raised by 1 stage if user is hit by a super effective move.",
 	},
 	oni: {
 		name: "Oni",
