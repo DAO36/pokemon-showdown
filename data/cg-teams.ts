@@ -498,10 +498,10 @@ export default class TeamGenerator {
 					case 'protect':
 						weight *= 3;
 						break;
-					case 'kingsshield': case 'silktrap':
+					case 'kingsshield': case 'lunarshield': case 'silktrap':
 						weight *= 4;
 						break;
-					case 'banefulbunker': case 'burningbulwark': case 'spikyshield':
+					case 'banefulbunker': case 'burningbulwark': case 'spikyshield': case 'phoenixshield':
 						weight *= 5;
 						break;
 					default:
