@@ -23861,7 +23861,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		name: "Nothing Wrong",
 		pp: 20,
 		priority: 0,
-		flags: {snatch: 1, sound: 1},
+		flags: {snatch: 1},
 		boosts: {
 			atk: 2,
 		},
