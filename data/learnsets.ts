@@ -94001,7 +94001,6 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			dazzlinggleam: ["9M"],
 			hyperbeam: ["9M"],
 			alluringvoice: ["9M"],
-			playrough: ["9M"],
 			boomburst: ["9M"],
 			hypervoice: ["9M"],
 			razorwind: ["9M"],
@@ -94241,7 +94240,6 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 	},
 	azki: {
 		learnset: {
-			playrough: ["9M"],
 			boomburst: ["9M"],
 			hypervoice: ["9M"],
 			triattack: ["9M"],
@@ -94689,7 +94687,6 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			flipturn: ["9M"],
 			strangesteam: ["9M"],
 			dazzlinggleam: ["9M"],
-			playrough: ["9M"],
 			hypervoice: ["9M"],
 			fakeout: ["9M"],
 			sludgewave: ["9M"],
@@ -95033,7 +95030,6 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			snarl: ["9M"],
 			irontail: ["9M"],
 			metalclaw: ["9M"],
-			playrough: ["9M"],
 			dazzlinggleam: ["9M"],
 			agility: ["9M"],
 			calmmind: ["9M"],
@@ -95369,6 +95365,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			grudge: ["9M"],
 			spite: ["9M"],
 			healblock: ["9M"],
+			playrough: ["9M"],
 			facade: ["9M"],
 			protect: ["9M"],
 			rest: ["9M"],
@@ -95381,7 +95378,6 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 	},
 	flare: {
 		learnset: {
-			playrough: ["9M"],
 			dazzlinggleam: ["9M"],
 			closecombat: ["9M"],
 			triplearrows: ["9M"],
@@ -95688,7 +95684,6 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			psychicnoise: ["9M"],
 			zenheadbutt: ["9M"],
 			alluringvoice: ["9M"],
-			playrough: ["9M"],
 			safeguard: ["9M"],
 			hornleech: ["9M"],
 			megahorn: ["9M"],
@@ -97891,7 +97886,6 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			darkpulse: ["9M"],
 			stoneedge: ["9M"],
 			lashout: ["9M"],
-			playrough: ["9M"],
 			alluringvoice: ["9M"],
 			imprison: ["9M"],
 			trickroom: ["9M"],
