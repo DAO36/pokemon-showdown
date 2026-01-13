@@ -2023,47 +2023,31 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3.5,
 		num: 292,
 	},
-	gu2: { // reskin of [Water Absorb] but for Grass
-		onTryHit(target, source, move) {
-			if (target !== source && move.type === 'Grass') {
-				if (!this.heal(target.baseMaxhp / 4, target, target)) {
-					this.add('-immune', target, '[from] ability: Mogu Mogu2');
-				}
-				return null;
-			} 
-			if (move.flags['bite']) {
-				this.add('-immune', target, '[from] ability: Mogu Mogu2');
-				return null;
-			}
-		},
-		flags: {breakable: 1},
-		name: "Mogu Mogu2",
-		rating: 2.5,
-		num: 11,
-	},
-	mp: {
-		onAnyTryMove(target, source, effect) {
-			if (['explosion', 'mindblown', 'mistyexplosion', 'bigbang', 'selfdestruct'].includes(effect.id)) {
-				this.attrLastMove('[still]');
-				this.add('cant', this.effectState.target, 'ability: Damp', effect, '[of] ' + target);
-				return false;
-			}
-		},
-		onAnyDamage(damage, target, source, effect) {
-			if (effect && effect.name === 'Aftermath') {
-				return false;
-			}
-		},
-		flags: {breakable: 1},
-		name: "Damp",
-		rating: 0.5,
-		num: 6,
-	},
 	mute: {
 		onFoeTryMove(target, source, effect) {
 			if (['boomburst', 'alluringvoice', 'hypervoice', 'partingshot', 'overdrive'].includes(effect.id)) {
 				this.attrLastMove('[still]');
 				this.add('cant', this.effectState.target, 'ability: Mute', effect, '[of] ' + target);
+				return false;
+			} 
+		},
+		onAnyTryMove(target, source, effect) {
+			if (['boomburst', 'alluringvoice', 'hypervoice', 'partingshot', 'overdrive'].includes(effect.id)) {
+				if (!this.heal(target.baseMaxhp / 4, source, source))
+				this.attrLastMove('[still]');
+				return true;
+			} 
+		},
+		flags: {breakable: 1},
+		name: "Mute",
+		rating: 0.5,
+		num: 6,
+	},
+	mute2: {
+		onFoeTryMove(target, source, effect) {
+			if (['boomburst', 'alluringvoice', 'hypervoice', 'partingshot', 'overdrive'].includes(effect.id)) {
+				this.attrLastMove('[still]');
+				this.add('cant', this.effectState.target, 'ability: Mute2', effect, '[of] ' + target);
 				return false;
 			} 
 		},
@@ -2075,7 +2059,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			} 
 		},
 		flags: {breakable: 1},
-		name: "Mute",
+		name: "Mute2",
 		rating: 0.5,
 		num: 6,
 	},
