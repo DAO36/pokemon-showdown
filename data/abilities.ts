@@ -2023,6 +2023,68 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3.5,
 		num: 292,
 	},
+	gu2: { // reskin of [Water Absorb] but for Grass
+		onTryHit(target, source, move) {
+			if (target !== source && move.type === 'Grass') {
+				if (!this.heal(target.baseMaxhp / 4, target, target)) {
+					this.add('-immune', target, '[from] ability: Mogu Mogu2');
+				}
+				return null;
+			} 
+			if (move.flags['bite']) {
+				this.add('-immune', target, '[from] ability: Mogu Mogu2');
+				return null;
+			}
+		},
+		flags: {breakable: 1},
+		name: "Mogu Mogu2",
+		rating: 2.5,
+		num: 11,
+	},
+	mute: {
+		onAnyTryMove(target, source, effect) {
+			if (['boomburst', 'alluringvoice', 'hypervoice', 'partingshot', 'overdrive'].includes(effect.id)) {
+				this.attrLastMove('[still]');
+				if (!this.heal(target.baseMaxhp / 4, target, target)) 
+				this.add('cant', this.effectState.target, 'ability: Mute', effect, '[of] ' + target);
+				return false;
+			}
+		},
+		onAnyDamage(damage, target, source, effect) {
+			if (effect && effect.name === 'Mute') {
+				return false;
+			}
+		},
+		flags: {breakable: 1},
+		name: "Mute",
+		rating: 0.5,
+		num: 6,
+	},
+	unmuted: {
+		onTryHit(target, source, move) {
+			if (target !== source && move.type === 'Water') {
+				if (!this.boost({spa: 1})) {
+					this.add('-immune', target, '[from] ability: unMuted');
+				}
+				return null;
+			}
+		},
+		onAnyRedirectTarget(target, source, source2, move) {
+			if (move.type !== 'Water' || move.flags['pledgecombo']) return;
+			const redirectTarget = ['randomNormal', 'adjacentFoe'].includes(move.target) ? 'normal' : move.target;
+			if (this.validTarget(this.effectState.target, source, redirectTarget)) {
+				if (move.smartTarget) move.smartTarget = false;
+				if (this.effectState.target !== target) {
+					this.add('-activate', this.effectState.target, 'ability: unMuted');
+				}
+				return this.effectState.target;
+			}
+		},
+		flags: {breakable: 1},
+		name: "unMuted",
+		rating: 3,
+		num: 114,
+	},
 	yabairys: { // [DAZZLING] but for SOUND type moves + [ROCKY PLAYLOAD]
 		onFoeTryMove(pokemon, target, move) {
 			const yabairysHolder = this.effectState.target;
