@@ -2042,7 +2042,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		num: 11,
 	},
 	mute: {
-		onAnyTryMove(target, source, effect) {
+		onFoeTryMove(target, source, effect) {
 			if (['boomburst', 'alluringvoice', 'hypervoice', 'partingshot', 'overdrive'].includes(effect.id)) {
 				this.heal(source.baseMaxhp / 4);
 				this.add('cant', this.effectState.target, 'ability: Mute', effect, '[of] ' + target);
