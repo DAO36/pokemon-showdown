@@ -2041,10 +2041,29 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 2.5,
 		num: 11,
 	},
+	mp: {
+		onAnyTryMove(target, source, effect) {
+			if (['explosion', 'mindblown', 'mistyexplosion', 'bigbang', 'selfdestruct'].includes(effect.id)) {
+				this.attrLastMove('[still]');
+				this.add('cant', this.effectState.target, 'ability: Damp', effect, '[of] ' + target);
+				return false;
+			}
+		},
+		onAnyDamage(damage, target, source, effect) {
+			if (effect && effect.name === 'Aftermath') {
+				return false;
+			}
+		},
+		flags: {breakable: 1},
+		name: "Damp",
+		rating: 0.5,
+		num: 6,
+	},
 	mute: {
 		onFoeTryMove(target, source, effect) {
 			if (['boomburst', 'alluringvoice', 'hypervoice', 'partingshot', 'overdrive'].includes(effect.id)) {
 				this.heal(source.baseMaxhp / 4);
+				this.attrLastMove('[still]');
 				this.add('cant', this.effectState.target, 'ability: Mute', effect, '[of] ' + target);
 				return false;
 			} 
