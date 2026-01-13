@@ -2063,9 +2063,15 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		onFoeTryMove(target, source, effect) {
 			if (['boomburst', 'alluringvoice', 'hypervoice', 'partingshot', 'overdrive'].includes(effect.id)) {
 				this.attrLastMove('[still]');
-				this.heal(source.baseMaxhp / 4);
 				this.add('cant', this.effectState.target, 'ability: Mute', effect, '[of] ' + target);
 				return false;
+			} 
+		},
+		onTryMove(target, source, move) {
+			if (move.flags['sound']) {
+				this.heal(source.baseMaxhp / 4);
+				this.attrLastMove('[still]');
+				return true;
 			} 
 		},
 		flags: {breakable: 1},
