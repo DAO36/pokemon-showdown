@@ -96972,6 +96972,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			trident: ["9M"],
 			sharkattack: ["9M"],
 			atlantisstrike: ["9M"],
+			hydrodynamic: ["9M"],
         },
 	},	
 		guragawr: {

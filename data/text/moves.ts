@@ -8309,6 +8309,11 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 
 		prepare: "  [POKEMON] is channeling the Power of Atlantis!",
 	},
+	hydrodynamic: {
+		name: "Hydrodynamic",
+		desc: "Damage is calculated using the user's Speed stat as its Attack, including stat stage changes. Other effects that modify the Attack stat are used as normal.",
+		shortDesc: "Uses user's Speed stat as Atk in damage calculation.",
+	},
 	gawrrage: {
 		name: "Gawr Rage",
 		desc: "Lowers this Pokemon's Defense and Special Defense by 1 stage.",
