@@ -2067,7 +2067,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 				return false;
 			} 
 		},
-		onTryMove(target, source, move) {
+		onTryHit(target, source, move) {
 			if (move.flags['sound']) {
 				this.heal(source.baseMaxhp / 4);
 				this.attrLastMove('[still]');
