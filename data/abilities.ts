@@ -2069,7 +2069,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		},
 		onAnyTryHit(target, source, effect) {
 			if (['boomburst', 'alluringvoice', 'hypervoice', 'partingshot', 'overdrive'].includes(effect.id)) {
-				if (!this.heal(target.baseMaxhp / 4, target, target))
+				if (!this.heal(target.baseMaxhp / 4, source, source))
 				this.attrLastMove('[still]');
 				return true;
 			} 
