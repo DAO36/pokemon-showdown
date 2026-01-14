@@ -96929,6 +96929,8 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			muddywater: ["9M"],
 			chillingwater: ["9M"],
 			wavecrash: ["9M"],
+			tailwind: ["9M"],
+			partingshot: ["9M"],
 			liquidation: ["9M"],
 			waterfall: ["9M"],
 			flipturn: ["9M"],
