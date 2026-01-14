@@ -1110,7 +1110,6 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 				return false;
 			}
 		},
-		onResidualPriority: 1,
 		onResidual(target, source, effect) {
 			if (effect.id === 'frz' || effect.id === 'slp' || effect.id === 'par') {
 				this.heal(target.baseMaxhp / 8);
