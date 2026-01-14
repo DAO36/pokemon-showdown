@@ -6160,7 +6160,7 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 	ollie: {
 		tier: "OU",
 		doublesTier: "(DUU)",
-		natDexTier: "OU",
+		natDexTier: "ZU",
 	},
 	olliemega: {
         tier: "OU",
@@ -6170,7 +6170,12 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 	olivia: {
         tier: "OU",
         doublesTier: "(DUU)",
-        natDexTier: "UU",	
+        natDexTier: "NU",	
+	},
+	udin: {
+        tier: "OU",
+        doublesTier: "(DUU)",
+        natDexTier: "Uber",	
 	},
 	reine: {
 		tier: "OU",
