@@ -651,7 +651,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		num: 258,
 	},
 	chamachange: { // reSkin of [Zen Mode]
-		onResidualOrder: -1,
+		onResidualOrder: 29,
 		onResidual(pokemon) {
 			if (pokemon.baseSpecies.baseSpecies !== 'AkaiHaato' || pokemon.transformed) {
 				return;
@@ -662,15 +662,15 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 				pokemon.addVolatile('chamachange'); // in case of base Darmanitan-Zen
 				pokemon.removeVolatile('chamachange');
 			}
-		},
-		onEnd(pokemon) {
+		{
 			if (!pokemon.volatiles['chamachange'] || !pokemon.hp) return;
 			pokemon.transformed = false;
 			delete pokemon.volatiles['chamachange'];
 			if (pokemon.species.baseSpecies === 'AkaiHaato' && pokemon.species.battleOnly) {
 				pokemon.formeChange(pokemon.species.battleOnly as string, this.effect, false, '0', '[silent]');
 			}
-		},
+		}
+	},
 		condition: {
 			onStart(pokemon) { 
 					if (pokemon.species.id !== 'akaihaatohaachama') pokemon.formeChange('AkaiHaato-Haachama'); 
@@ -1109,10 +1109,13 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 				this.heal(target.baseMaxhp / 8);
 				return false;
 			}
+		},
+		onSetStatus(status, target, source, effect) {
 			if (effect.id === 'frz' || effect.id === 'slp' || effect.id === 'par') {
 				this.heal(target.baseMaxhp / 8);
 				return true;
 			}
+			return false;
 		},
 		flags: {},
 		name: "High on Asacoco",
