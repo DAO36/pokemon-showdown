@@ -651,7 +651,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		num: 258,
 	},
 	chamachange: { // reSkin of [Zen Mode]
-		onResidualOrder: 1,
+		onResidualOrder: -1,
 		onResidual(pokemon) {
 			if (pokemon.baseSpecies.baseSpecies !== 'AkaiHaato' || pokemon.transformed) {
 				return;
@@ -1105,7 +1105,14 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	highonasacoco: { // exact copy of [Poison Heal] but butter
 		onDamagePriority: 1,
 		onDamage(damage, target, source, effect) {
-			if (effect.id === 'psn' || effect.id === 'tox' || effect.id === 'brn' || effect.id === 'par' || effect.id === 'frz' || effect.id === 'slp') {
+			if (effect.id === 'psn' || effect.id === 'tox' || effect.id === 'brn') {
+				this.heal(target.baseMaxhp / 8);
+				return false;
+			}
+		},
+		onResidualPriority: 1,
+		onResidual(target, source, effect) {
+			if (effect.id === 'frz' || effect.id === 'slp' || effect.id === 'par') {
 				this.heal(target.baseMaxhp / 8);
 				return false;
 			}
@@ -2023,46 +2030,6 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3.5,
 		num: 292,
 	},
-	mute: {
-		onFoeTryMove(target, source, effect) {
-			if (['boomburst', 'alluringvoice', 'hypervoice', 'partingshot', 'overdrive'].includes(effect.id)) {
-				this.attrLastMove('[still]');
-				this.add('cant', this.effectState.target, 'ability: Mute', effect, '[of] ' + target);
-				return false;
-			} 
-		},
-		onAnyTryMove(target, source, effect) {
-			if (['boomburst', 'alluringvoice', 'hypervoice', 'partingshot', 'overdrive'].includes(effect.id)) {
-				if (!this.heal(target.baseMaxhp / 4, source, source))
-				this.attrLastMove('[still]');
-				return true;
-			} 
-		},
-		flags: {breakable: 1},
-		name: "Mute",
-		rating: 0.5,
-		num: 6,
-	},
-	mute2: {
-		onFoeTryMove(target, source, effect) {
-			if (['boomburst', 'alluringvoice', 'hypervoice', 'partingshot', 'overdrive'].includes(effect.id)) {
-				this.attrLastMove('[still]');
-				this.add('cant', this.effectState.target, 'ability: Mute2', effect, '[of] ' + target);
-				return false;
-			} 
-		},
-		onAnyTryHit(target, source, effect) {
-			if (['boomburst', 'alluringvoice', 'hypervoice', 'partingshot', 'overdrive'].includes(effect.id)) {
-				if (!this.heal(target.baseMaxhp / 4, source, source))
-				this.attrLastMove('[still]');
-				return true;
-			} 
-		},
-		flags: {breakable: 1},
-		name: "Mute2",
-		rating: 0.5,
-		num: 6,
-	},
 	muteheal: {
 		onTryMove(target, source, move) {
 			if (move.flags['sound']) {
@@ -2080,31 +2047,6 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		name: "Muteheal",
 		rating: 0.5,
 		num: 6,
-	},
-	unmuted: {
-		onTryHit(target, source, move) {
-			if (target !== source && move.type === 'Water') {
-				if (!this.boost({spa: 1})) {
-					this.add('-immune', target, '[from] ability: unMuted');
-				}
-				return null;
-			}
-		},
-		onAnyRedirectTarget(target, source, source2, move) {
-			if (move.type !== 'Water' || move.flags['pledgecombo']) return;
-			const redirectTarget = ['randomNormal', 'adjacentFoe'].includes(move.target) ? 'normal' : move.target;
-			if (this.validTarget(this.effectState.target, source, redirectTarget)) {
-				if (move.smartTarget) move.smartTarget = false;
-				if (this.effectState.target !== target) {
-					this.add('-activate', this.effectState.target, 'ability: unMuted');
-				}
-				return this.effectState.target;
-			}
-		},
-		flags: {breakable: 1},
-		name: "unMuted",
-		rating: 3,
-		num: 114,
 	},
 	yabairys: { // [DAZZLING] but for SOUND type moves + [ROCKY PLAYLOAD]
 		onFoeTryMove(pokemon, target, move) {
