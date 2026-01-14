@@ -661,7 +661,9 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			} else if (pokemon.hp > pokemon.maxhp / 2 && ['Haachama'].includes(pokemon.species.forme)) {
 				pokemon.addVolatile('chamachange'); // in case of base Darmanitan-Zen
 				pokemon.removeVolatile('chamachange');
-			} 
+			}
+		},
+		onEnd(pokemon) {
 			if (!pokemon.volatiles['chamachange'] || !pokemon.hp) return;
 			pokemon.transformed = false;
 			delete pokemon.volatiles['chamachange'];
@@ -671,7 +673,9 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		},
 		condition: {
 			onStart(pokemon) { 
-					if (pokemon.species.id !== 'akaihaatohaachama') pokemon.formeChange('AkaiHaato-Haachama');
+					if (pokemon.species.id !== 'akaihaatohaachama') pokemon.formeChange('AkaiHaato-Haachama'); 
+			},
+			onEnd(pokemon) {
 				if (['Haachama'].includes(pokemon.species.forme)) {
 					pokemon.formeChange(pokemon.species.battleOnly as string);
 				}
@@ -1105,13 +1109,6 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 				this.heal(target.baseMaxhp / 8);
 				return false;
 			}
-		},
-		onSetStatus(status, target, source, effect) {
-			if (effect.id === 'frz' || effect.id === 'slp' || effect.id === 'par') {
-				this.heal(target.baseMaxhp / 8);
-				return true;
-			}
-			return false;
 		},
 		flags: {},
 		name: "High on Asacoco",
