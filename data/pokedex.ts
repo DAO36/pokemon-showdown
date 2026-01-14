@@ -19947,7 +19947,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		eggGroups: ["Human-Like"],
 	},
 	udin: {
-		num: 327,
+		num: 354,
 		name: "Udin",
 		types: ["Normal", "Ghost"],
 		gender: "N",
