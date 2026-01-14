@@ -661,21 +661,17 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			} else if (pokemon.hp > pokemon.maxhp / 2 && ['Haachama'].includes(pokemon.species.forme)) {
 				pokemon.addVolatile('chamachange'); // in case of base Darmanitan-Zen
 				pokemon.removeVolatile('chamachange');
-			}
-		{
+			} 
 			if (!pokemon.volatiles['chamachange'] || !pokemon.hp) return;
 			pokemon.transformed = false;
 			delete pokemon.volatiles['chamachange'];
 			if (pokemon.species.baseSpecies === 'AkaiHaato' && pokemon.species.battleOnly) {
 				pokemon.formeChange(pokemon.species.battleOnly as string, this.effect, false, '0', '[silent]');
 			}
-		}
-	},
+		},
 		condition: {
 			onStart(pokemon) { 
-					if (pokemon.species.id !== 'akaihaatohaachama') pokemon.formeChange('AkaiHaato-Haachama'); 
-			},
-			onEnd(pokemon) {
+					if (pokemon.species.id !== 'akaihaatohaachama') pokemon.formeChange('AkaiHaato-Haachama');
 				if (['Haachama'].includes(pokemon.species.forme)) {
 					pokemon.formeChange(pokemon.species.battleOnly as string);
 				}
