@@ -402,8 +402,8 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 		desc: "If Rain is active, this Pokemon's Attack and Special Attack is multiplied by 1.3 and gains 1/10 of its maximum HP, rounded down, at the end of each turn. If there's no weather, loses 1/10 of maximum HP, rounded down, at the end of each turn, if Sunny Day/Desolate Land/Sandstorm, loses 1/8 of maximum HP per turn instead. These effects are prevented if the Pokemon is holding a Utility Umbrella.",
 		shortDesc: "In rain: Atk & SpAtk is 1.3x, gains 1/10 HP per turn. Else: loses 1/10 HP per turn.",
 	},
-	ameway: {
-		name: "AmeWay",
+	timetravel: {
+		name: "Time Travel",
 		desc: "If this Pokemon uses a two-turn move, it will complete it in one turn instead (except Sky Drop). If this Pokemon uses a move that require recharging after (Hyper Beam, Giga Impact, etc.), it is not affected by the recharge status.",
 		shortDesc: "2-turn moves complete in 1 turn. Moves with recharge doesn't make user recharge.",
 	},

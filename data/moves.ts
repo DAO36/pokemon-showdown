@@ -23891,7 +23891,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	staticslam: { // WATAME 3
 		num: 34,
 		accuracy: 100,
-		basePower: 100,
+		basePower: 80,
 		category: "Physical",
 		name: "Static Slam",
 		pp: 10,
@@ -25163,12 +25163,12 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Ground",
 		contestType: "Clever",
 	},
-	timetravel: { // AME 1
+	ameway: { // AME 1
 		num: 800,
 		accuracy: 90,
 		basePower: 140,
 		category: "Special",
-		name: "Time Travel",
+		name: "Ame Way",
 		pp: 5,
 		priority: 0,
 		flags: {charge: 1, protect: 1, mirror: 1, contact: 1, distance: 1},

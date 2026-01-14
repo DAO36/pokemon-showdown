@@ -1901,12 +1901,12 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 4.5,
 		num: 87,
 	},
-	ameway: { // [Power Herb (ITEM)] but as an ability; skips recharging as well
+	timetravel: { // [Power Herb (ITEM)] but as an ability; skips recharging as well
 		onTryAddVolatile(status, pokemon) {
 			if (status.id === 'mustrecharge') return null;
 		},
 		onChargeMove(pokemon, target, move) {
-			if (pokemon.hasAbility('ameway')) {
+			if (pokemon.hasAbility('timetravel')) {
 				this.debug('power herb - remove charge turn for ' + move.id);
 				this.attrLastMove('[still]');
 				this.addMove('-anim', pokemon, move.name, target);
@@ -1914,7 +1914,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			}
 		},
 		flags: {},
-		name: "AmeWay",
+		name: "Time Travel",
 		rating: 5,
 		num: 24,
 	}, 

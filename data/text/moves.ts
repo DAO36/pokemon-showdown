@@ -8254,16 +8254,6 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		heal: "#memento",
 		switchOut: "#uturn",
 	},
-	pickaxe: {
-		name: "Pickaxe",
-		desc: "Has a 30% chance to lower the target's Defense by 1 stage. This move's type effectiveness against Ground and Steel is changed to be super effective no matter what this move's type is.",
-		shortDesc: "2x effective on Ground & Steel. 10% for -1 Def.",
-	},
-	pickiaxe: {
-		name: "PiCKIAxe",
-		desc: "If the current weather is Sandstorm, this move's power is doubled.",
-		shortDesc: "Double power in Sandstorm.",
-	},
 	grindstone: {
 		name: "Grindstone",
 		desc: "This Pokemon restores 1/2 of its maximum HP, rounded half down. If the weather is Sandstorm, the user instead restores 2/3 of its maximum HP, rounded half down.",
@@ -8273,6 +8263,16 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		name: "Goriela",
 		desc: "Lowers the Pokemon's Defense and Special Defense both by 1 stage.",
 		shortDesc: "Lowers the user's Defense and Sp. Def by 1.",
+	},
+	pickaxe: {
+		name: "Pickaxe",
+		desc: "Has a 30% chance to lower the target's Defense by 1 stage. This move's type effectiveness against Ground and Steel is changed to be super effective no matter what this move's type is.",
+		shortDesc: "2x effective on Ground & Steel. 10% for -1 Def.",
+	},
+	pickiaxe: {
+		name: "PiCKIAxe",
+		desc: "If the current weather is Sandstorm, this move's power is doubled.",
+		shortDesc: "Double power in Sandstorm.",
 	},
 	payung: {
 		name: "Payung",
@@ -8319,15 +8319,15 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		desc: "Lowers this Pokemon's Defense and Special Defense by 1 stage.",
 		shortDesc: "Lowers the user's Defense and Sp. Def by 1.",
 	},
-	timetravel2: {
+	timetravel2: { // [UNUSED]
 		name: "Time Travel2",
 		desc: "If this move is successful and this Pokemon has not fainted, the Pokemon switches out even if it is trapped and is replaced immediately by a selected party member. The user does not switch out if there are no unfainted party members, or if the target switched out using an Eject Button or through the effect of the Emergency Exit or Wimp Out Abilities. This attack never misses.",
 		shortDesc: "Switches user out. Never misses.",
 
 		switchOut: "#uturn",
 	},
-	timetravel: {
-		name: "Time Travel",
+	ameway: {
+		name: "Ame Way",
 		desc: "This attack charges on the first turn and executes on the second. On the first turn, this Pokemon avoids all attacks. If the Pokemon is holding a Power Herb, the move completes in one turn.",
 		shortDesc: "Disappears turn 1. Hits turn 2.",
 
@@ -8339,6 +8339,16 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		shortDesc: "Raises user's Attack by 1 on turn 1. Hits turn 2.",
 
 		prepare: "[POKEMON] is gathering interdimensional energy!",
+	},
+	bubbabite: {
+		name: "Bubba Bite",
+		desc: "Has a 10% chance to badly poison the target.",
+		shortDesc: "10% chance to badly poison the target.",
+	}, 
+	gamerrage: {
+		name: "Gamer Rage",
+		desc: "If this move is successful, this Pokemon must recharge on the following turn and cannot select a move. Has a 10% chance to badly poison the target.",
+		shortDesc: "Cannot move next turn. 10% to badly poison target.", 
 	},
 	timeshatteringpunch: {
 		name: "Time Shattering Punch",
@@ -8361,16 +8371,6 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 
 		prepare: "[POKEMON] jumped up high!",
 	}, 
-	bubbabite: {
-		name: "Bubba Bite",
-		desc: "Has a 10% chance to badly poison the target.",
-		shortDesc: "10% chance to badly poison the target.",
-	}, 
-	gamerrage: {
-		name: "Gamer Rage",
-		desc: "If this move is successful, this Pokemon must recharge on the following turn and cannot select a move. Has a 10% chance to badly poison the target.",
-		shortDesc: "Cannot move next turn. 10% to badly poison target.", 
-	},
 	scythe: {
 		name: "Scythe",
 		desc: "Has a higher chance for a critical hit. Never misses.",
@@ -8463,7 +8463,7 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		desc: "Hits adjacent Pokemon. Prevents the targets from switching out. The targets can still switch out if it is holding Shed Shell or uses Baton Pass, Flip Turn, Parting Shot, Teleport, U-turn, or Volt Switch. If the target leaves the field using Baton Pass, the replacement will remain trapped. The effect ends if the user leaves the field. Has a 100% chance to lower the target's Speed by 1 stage. Power is multiplied by 1.5 during Gravity's effect. The accuracy of this move is unaffected by Gravity.",
 		shortDesc: "Prevents switching; -1 Speed. Gravity: 1.5x power.",
 	},
-	gamerkirin: {
+	gamerkirin: { // [UNUSED]
 		name: "Gamer Kirin",
 		desc: "Raises this Pokemon's Attack by 2 stages.",
 		shortDesc: "Raises the user's Attack by 2.",
@@ -8498,13 +8498,6 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		desc: "Almost always goes first. Power is multiplied by 2 during Trick Room's effect.",
 		shortDesc: "2x power in Trick Room. Always goes first.",
 	},
-	timetogo: { // <Exclusive to Boros>
-		name: "Time to Go",
-		desc: "If this move is successful and the user has not fainted, the user switches out even if it is trapped and is replaced immediately by a selected party member. The user does not switch out if there are no unfainted party members, or if the target switched out using an Eject Button or through the effect of the Emergency Exit or Wimp Out Abilities. If this move is successful, the effect of Trick Room begins.",
-		shortDesc: "Switches after damaging target. Starts Trick Room.",
-
-		switchOut: "#uturn",
-	}, 
 	sandsoftime: {
 		name: "Sands of Time",
 		desc: "Has a 100% chance to lower the target's Speed by 1 stage. Power is multiplied by 2 during Trick Room's effect. Hits adjacent Pokemon.",
@@ -8517,6 +8510,13 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 
 		start: "  [POKEMON] is time traveling!",
 		activate: "  [TARGET] is being attacked from past times!",
+	},
+	timetogo: { // <Exclusive to Boros>
+		name: "Time to Go",
+		desc: "If this move is successful and the user has not fainted, the user switches out even if it is trapped and is replaced immediately by a selected party member. The user does not switch out if there are no unfainted party members, or if the target switched out using an Eject Button or through the effect of the Emergency Exit or Wimp Out Abilities. If this move is successful, the effect of Trick Room begins.",
+		shortDesc: "Switches after damaging target. Starts Trick Room.",
+
+		switchOut: "#uturn",
 	},
 	borosblast: {
 		name: "Boros Blast",
@@ -8643,7 +8643,7 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	doom: {
 		name: "Doom",
-		desc: "Hits adjacent foes. If the target lost HP, the user takes recoil damage equal to 33% the HP lost by the target, rounded half up, but not less than 1 HP.",
-		shortDesc: "Has 33% recoil. Hits adjacent foes.",
+		desc: "Hits adjacent Pokemon. If the target lost HP, the user takes recoil damage equal to 33% the HP lost by the target, rounded half up, but not less than 1 HP.",
+		shortDesc: "Has 33% recoil. Hits adjacent Pokemon.",
 	},
 };
