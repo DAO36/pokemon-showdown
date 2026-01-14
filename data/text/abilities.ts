@@ -234,8 +234,8 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	highonasacoco: {
 		name: "High on Asacoco",
-		desc: "If this Pokemon is poisoned, it restores 1/8 of her maximum HP, rounded down, at the end of each turn instead of losing HP.",
-		shortDesc: "User heals by 1/8 of max HP each turn when poisoned; no HP loss.",
+		desc: "If this Pokemon is poisoned, badly poisoned, paralyzed, burned, frozen, or asleep, it restores 1/8 of ita maximum HP, rounded down, at the end of each turn instead of losing HP.",
+		shortDesc: "User heals by 1/8 of max HP each turn if statused; no HP loss.",
 	},
 	pptgrip: {
 		name: "PPT Grip",
@@ -436,7 +436,7 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 		desc: "Sound moves used by opposing Pokemon targeting the user or their allies are prevented from having an effect. This Pokemon's offensive stat is multiplied by 1.5 while using a Rock-type attack.",
 		shortDesc: "User & its allies are protected from opposing sound moves. Rock moves: 1.5x power",
 
-		block: "  [SOURCE] cannot use [MOVE]!",
+		block: "  [SOURCE] cannot sing [MOVE]!",
 	},
 	timedilation: {
 		name: "Time Dilation",
@@ -465,7 +465,7 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	archiver: {
 		name: "Archiver",
-		desc: "this GotPokemonh copies the stat changes of the target on switch-in; If opposing Pokemon has a stat stage raised, user copies.",
+		desc: "this Pokemon copies the stat changes of the target on switch-in; If opposing Pokemon has a stat stage raised, user copies.",
 		shortDesc: "Copies stat changes of target on switch-in; Target has stat stage raised, user copies.",
 	},
 	rockhard: {

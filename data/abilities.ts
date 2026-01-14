@@ -1102,10 +1102,10 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3,
 		num: 92,
 	},
-	highonasacoco: { // exact copy of [Poison Heal]
+	highonasacoco: { // exact copy of [Poison Heal] but butter
 		onDamagePriority: 1,
 		onDamage(damage, target, source, effect) {
-			if (effect.id === 'psn' || effect.id === 'tox') {
+			if (effect.id === 'psn' || effect.id === 'tox' || effect.id === 'brn' || effect.id === 'par' || effect.id === 'frz' || effect.id === 'slp') {
 				this.heal(target.baseMaxhp / 8);
 				return false;
 			}
