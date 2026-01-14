@@ -23138,7 +23138,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	syringe: { // CHOCO 2
 		num: 676,
 		accuracy: 100,
-		basePower: 100,
+		basePower: 80,
 		category: "Physical",
 		name: "Syringe",
 		pp: 10,
@@ -23936,7 +23936,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		flags: {protect: 1, bullet: 1, mirror: 1},
 		multihit: 4,
 		secondary: {
-			chance: 25,
+			chance: 10,
 			self: {
 				boosts: {
 					spe: 1,
@@ -24090,7 +24090,10 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		onMoveFail(target, source, move) {
 			this.damage(source.baseMaxhp / 2, source, source, this.dex.conditions.get('High Jump Kick'));
 		},
-		secondary: null,
+		secondary: {
+			chance: 10,
+			status: 'brn',
+		},
 		target: "any",
 		type: "Fighting",
 		contestType: "Cool",

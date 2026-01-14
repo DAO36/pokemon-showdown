@@ -7715,6 +7715,11 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 
 		damage: "#crash",
 	},
+	foxkatana: {
+		name: "Fox Katana",
+		desc: "Has a 20% chance to freeze the target. Has a higher chance for a critical hit.",
+		shortDesc: "20% chance to freeze target. High crit ratio.",
+	},
 	konkon: {
 		name: "Kon Kon",
 		desc: "Raises the user's Special Attack and Speed both by 1 stage.",
@@ -7731,11 +7736,6 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		shortDesc: "Raises Sp.Atk by 1 on turn 1. No charge in snow.", 
 
 		prepare: "  [POKEMON] is charging up!",
-	},
-	foxkatana: {
-		name: "Fox Katana",
-		desc: "Has a 20% chance to freeze the target. Has a higher chance for a critical hit.",
-		shortDesc: "20% chance to freeze target. High crit ratio.",
 	},
 	imgod: {
 		name: "I'm God",
@@ -8043,8 +8043,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	candycrash: {
 		name: "Candy Crash",
-		desc: "Has a 25% chance to raise this Pokemon's Speed by 1 stage. Hits four times. If one of the hits breaks the target's substitute, it will take damage for the remaining hits.",
-		shortDesc: "25% to raise Speed by 1. Hits 4 times in one turn.",
+		desc: "Has a 10% chance to raise this Pokemon's Speed by 1 stage. Hits four times. If one of the hits breaks the target's substitute, it will take damage for the remaining hits.",
+		shortDesc: "10% to raise Speed by 1. Hits 4 times in one turn.",
 	}, 
 	sweetassault: {
 		name: "Sweet Assault",
@@ -8085,8 +8085,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	poi: {
 		name: "Poi",
-		desc: "If this attack is not successful, the user loses half of its maximum HP, rounded down, as crash damage. Pokemon with the Magic Guard Ability are unaffected by crash damage.",
-		shortDesc: "User is hurt by 50% of its max HP if it misses.",
+		desc: "Has a 10% chance to burn the target. If this attack is not successful, the user loses half of its maximum HP, rounded down, as crash damage. Pokemon with the Magic Guard Ability are unaffected by crash damage.",
+		shortDesc: "10% chance to burn. Lose 50% HP if it misses.",
 
 		damage: "#crash",
 	},
@@ -8176,11 +8176,6 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		desc: "Lowers the user's Special Attack by 2 stages. Has a 30% chance to either burn, freeze, paralyze, poison, badly poison, or put the target to sleep.",
 		shortDesc: "30% chance for random status on foe. -2 SpA recoil.",
 	},
-	atattack: {
-		name: "Rat Attack",
-		desc: "Has a 30% chance to either burn, freeze, paralyze, poison, badly poison, or put the target to sleep.",
-		shortDesc: "30% chance to PAR/FRZ/PSN/BRN/SLP target.",
-	},
 	cleanup: {
 		name: "Clean Up",
 		desc: "If this move is successful and this Pokemon has not fainted, the effects of Leech Seed and binding moves end for the Orca, and all hazards are removed from the Orca's side of the field. The Orca then switches out even if she is trapped and is replaced immediately by a selected party member.",
@@ -8215,16 +8210,6 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		name: "Deez",
 		desc: "Hits twice. If the first hit breaks the target's substitute, it will take damage for the second hit. In Double Battles, this move attempts to hit the targeted Pokemon and its ally once each. If hitting one of these Pokemon would be prevented by immunity, protection, semi-invulnerability, an Ability, or accuracy, it attempts to hit the other Pokemon twice instead. If this move is redirected, it hits that target twice.",
 		shortDesc: "Hits twice. Doubles: Tries to hit each foe once.",
-	},
-	yshock: {
-		name: "Psyshock",
-		desc: "Deals damage to the target based on its Defense instead of Special Defense.",
-		shortDesc: "Damages target based on Defense, not Sp. Def.",
-	},
-	osecombat: {
-		name: "Close Combat",
-		desc: "Lowers the user's Defense and Special Defense by 1 stage.",
-		shortDesc: "Lowers the user's Defense and Sp. Def by 1.",
 	},
 	udinassault: {
 		name: "Udin Assault",
@@ -8288,9 +8273,6 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		name: "Payung",
 		desc: "For 5 turns, the weather becomes Rain. This Pokemon switches out even if it is trapped and is replaced immediately by a selected party member. The user does not switch out if there are no unfainted party members.",
 		shortDesc: "Starts Rain. User switches out.",
-
-		// TODO needs to be implemented
-		activate: "  [POKEMON] is a brat!",
 	},
 	tsunami: {
 		name: "Tsunami",
