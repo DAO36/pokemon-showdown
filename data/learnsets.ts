@@ -96610,6 +96610,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			partingshot: ["9M"],
 			sweetkiss: ["9M"],
 			pathofsincerity: ["9M"],
+			udinassault: ["9M"],
         },
 	},	
 	olivia: {

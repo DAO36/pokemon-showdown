@@ -8216,15 +8216,25 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 		desc: "Hits twice. If the first hit breaks the target's substitute, it will take damage for the second hit. In Double Battles, this move attempts to hit the targeted Pokemon and its ally once each. If hitting one of these Pokemon would be prevented by immunity, protection, semi-invulnerability, an Ability, or accuracy, it attempts to hit the other Pokemon twice instead. If this move is redirected, it hits that target twice.",
 		shortDesc: "Hits twice. Doubles: Tries to hit each foe once.",
 	},
-	udinassault: { // [UNUSED]
+	yshock: {
+		name: "Psyshock",
+		desc: "Deals damage to the target based on its Defense instead of Special Defense.",
+		shortDesc: "Damages target based on Defense, not Sp. Def.",
+	},
+	osecombat: {
+		name: "Close Combat",
+		desc: "Lowers the user's Defense and Special Defense by 1 stage.",
+		shortDesc: "Lowers the user's Defense and Sp. Def by 1.",
+	},
+	udinassault: {
 		name: "Udin Assault",
-		desc: "If the target lost HP, the Zombie takes recoil damage equal to 33% the HP lost by the target, rounded half up, but not less than 1 HP.",
+		desc: "If the target lost HP, this Pokemon takes recoil damage equal to 33% the HP lost by the target, rounded half up, but not less than 1 HP.",
 		shortDesc: "Has 33% recoil.",
 	},
 	pathofsincerity: {
 		name: "Path of Sincerity",
-		desc: "If the target lost HP, this Pokemon takes recoil damage equal to 33% the HP lost by the target, rounded half up, but not less than 1 HP.",
-		shortDesc: "Has 33% recoil.",
+		desc: "Lowers the user's Defense and Special Defense by 1 stage. Deals damage to the target based on its Special Defense instead of Defense.",
+		shortDesc: "User: -1 Def & SpDef. Damages on SpDef, not Def.",
 	},
 	tonjok: {
 		name: "Tonjok",
