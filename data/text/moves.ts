@@ -177,8 +177,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	elfdance: {
 		name: "Elf Dance",
-		desc: "Has a 10% chance to raise this Pokemon's Special Defense by 1 stage.",
-		shortDesc: "10% chance to raise user's Special Defense by 1.", 
+		desc: "Has a 30% chance to raise this Pokemon's Speed by 1 stage.",
+		shortDesc: "30% chance to raise user's Speed by 1.", 
 	},
 	aikattack: {
 		name: "Aik Attack",

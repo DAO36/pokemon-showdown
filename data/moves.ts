@@ -610,10 +610,10 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		priority: 0,
 		flags: {contact: 1, protect: 1, mirror: 1, dance: 1},
 		secondary: {
-			chance: 20,
+			chance: 30,
 			self: {
 				boosts: {
-					spd: 1,
+					spe: 1,
 				},
 			},
 		},
