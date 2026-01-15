@@ -1102,11 +1102,12 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3,
 		num: 92,
 	},
-	highonasacoco: { // exact copy of [Poison Heal] but butter
-		onDamagePriority: 1,
-		onDamage(damage, target, source, effect) {
-			if (effect.id === 'psn' || effect.id === 'tox' || effect.id === 'brn') {
-				this.heal(target.baseMaxhp / 8);
+	highonasacoco: { // exact copy of [Poison Heal] but butter 
+		onResidualOrder: 28,
+		onResidualSubOrder: 2,
+		onResidual(pokemon) {
+			if (pokemon.status) {
+				this.heal(pokemon.baseMaxhp / 8);
 				return false;
 			}
 		},
