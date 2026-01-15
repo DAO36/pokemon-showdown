@@ -322,8 +322,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	},
 	tnt: {
 		name: "TNT",
-		desc: "Hits adjacent foes. If this Pokemon lost HP, it takes recoil damage equal to 1/3 the HP lost by the target, rounded half up, but not less than 1 HP.",
-		shortDesc: "Has 33% recoil. Hits adjacent foes.",
+		desc: "Hits adjacent foes. If this Pokemon lost HP, it takes recoil damage equal to 1/3 the HP lost by the target, rounded half up, but not less than 1 HP. Has a 10% chance to burn the target.",
+		shortDesc: "33% recoil. 10% chance to burn target(s).",
 	}, 
 	carrottrap: {
 		name: "Carrot Trap",

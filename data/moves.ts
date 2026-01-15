@@ -1192,7 +1192,10 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		priority: 0,
 		flags: {protect: 1, mirror: 1, bullet: 1}, 
 		recoil: [33, 100],
-		secondary: null,
+		secondary: {
+			chance: 10,
+			status: 'brn',
+		},
 		target: "allAdjacent",
 		type: "Dark",
 		contestType: "Beautiful",
