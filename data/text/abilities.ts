@@ -121,7 +121,7 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	}, 
 	spidersoup: {
 		name: "Spider Soup",
-		shortDesc: "If this Pokemon is hit by a physical attack, Sticky Web is set on the opposing side.",
+		shortDesc: "If this Pokemon is hit by a special attack, Sticky Web is set on the opposing side.",
 	},
 	chamachange: {
 		name: "Chama Change",

@@ -302,8 +302,8 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 	}, 
 	tarots: {
 		name: "Tarots",
-		desc: "Hits four times. If one of the hits breaks the target's substitute, it will take damage for the remaining hits. This move's type effectiveness against Dark is changed to be neutrally effective no matter what this move's type is.",
-		shortDesc: "Hits 4 times in one turn. Can hit Dark types.",
+		desc: "Has a 25% chance to either burn, paralyze, or badly poison the target. Hits four times. If one of the hits breaks the target's substitute, it will take damage for the remaining hits. This move's type effectiveness against Dark is changed to be neutrally effective no matter what this move's type is.",
+		shortDesc: "25% chance to inflict a status. Hits Dark types.",
 	},
 	hatotaurushelp: {
 		name: "Hatotaurus Help",

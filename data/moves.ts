@@ -1113,7 +1113,19 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 			}
 		},
 		multihit: 4,
-		secondary: null,
+		secondary: {
+			chance: 25,
+			onHit(target, source) {
+				const result = this.random(3);
+				if (result === 0) {
+					target.trySetStatus('brn', source);
+				} else if (result === 1) {
+					target.trySetStatus('par', source);
+				} else {
+					target.trySetStatus('tox', source);
+				}
+			},
+		},
 		target: "any",
 		type: "Psychic",
 		contestType: "Cool",

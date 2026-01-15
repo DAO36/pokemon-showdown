@@ -503,7 +503,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 2,
 		num: 29,
 	},
-	elite: { // reskin of [Justified], but for Fire instead of Dark and SpA +2 instead of Atk +1
+	elite: { // reskin of [Justified], but for Fire instead of Dark 
 		onDamagingHit(damage, target, source, move) {
 			if (move.type === 'Fire') {
 				this.boost({spa: 1, spd: 1, spe: 1});
@@ -628,7 +628,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		onDamagingHit(damage, target, source, move) {
 			const side = source.isAlly(target) ? source.side.foe : source.side;
 			const stickyweb = side.sideConditions['stickyweb'];
-			if (move.category === 'Physical' && (!stickyweb || stickyweb.layers < 1)) {
+			if (move.category === 'Special' && (!stickyweb || stickyweb.layers < 1)) {
 				this.add('-activate', target, 'ability: Spider Soup');
 				side.addSideCondition('stickyweb', target);
 			}
@@ -895,7 +895,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 2.5,
 		num: 11,
 	},
-	mogumogu: {
+	mogumogu: { // [STRONG JAW] but also immune to chomp
 		onBasePowerPriority: 19,
 		onBasePower(basePower, attacker, defender, move) {
 			if (move.flags['bite']) {
@@ -1636,7 +1636,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 2.5,
 		num: 269,
 	},
-	zombie: { // exact copy of [Weak Armour]
+	zombie: { // better copy of [Weak Armour]
 		onDamagingHit(damage, target, source, move) {
 			if (move.category === 'Physical') {
 				this.boost({def: -2, spe: 1, atk: 1}, target, target);
