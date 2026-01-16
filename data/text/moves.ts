@@ -714,19 +714,19 @@ export const MovesText: {[id: IDEntry]: MoveText} = {
 
 		switchOut: "#uturn",
 	},
-	ameway: {
-		name: "Ame Way",
+	timedattack: {
+		name: "Timed Attack",
 		desc: "This attack charges on the first turn and executes on the second. On the first turn, this Pokemon avoids all attacks. If the Pokemon is holding a Power Herb, the move completes in one turn.",
 		shortDesc: "Disappears turn 1. Hits turn 2.",
 
 		prepare: "[POKEMON] is tampering with the timeline!",
 	}, 
-	interdimensionaldetective: {
-		name: "Interdimensional Detective",
+	ameway: {
+		name: "Ame Way",
 		desc: "This attack charges on the first turn and executes on the second. Raises this Pokemon's Attack by 1 stage on the first turn. If the user is holding a Power Herb, the move completes in one turn.",
 		shortDesc: "Raises user's Attack by 1 on turn 1. Hits turn 2.",
 
-		prepare: "[POKEMON] is gathering interdimensional energy!",
+		prepare: "[POKEMON] is breaking dimensions!",
 	},
 	bubbabite: {
 		name: "Bubba Bite",

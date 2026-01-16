@@ -2905,12 +2905,12 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Ground",
 		contestType: "Clever",
 	},
-	ameway: { // AME 1
+	timedattack: { // AME 1
 		num: 800,
 		accuracy: 90,
 		basePower: 140,
 		category: "Special",
-		name: "Ame Way",
+		name: "Timed Attack",
 		pp: 5,
 		priority: 0,
 		flags: {charge: 1, protect: 1, mirror: 1, contact: 1, distance: 1},
@@ -2970,12 +2970,12 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Poison",
 		contestType: "Tough",
 	},
-	interdimensionaldetective: { // AME 4
+	ameway: { // AME 4
 		num: 800,
 		accuracy: 90,
 		basePower: 130,
 		category: "Physical",
-		name: "Interdimensional Detective",
+		name: "Ame Way",
 		pp: 5,
 		priority: 0,
 		flags: {charge: 1, protect: 1, mirror: 1, bullet: 1, distance: 1},

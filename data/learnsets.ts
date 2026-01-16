@@ -97197,7 +97197,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			ameway: ["9M"], 
 			bubbabite: ["9M"],
 			gamerrage: ["9M"],
-			interdimensionaldetective: ["9M"],
+			timedattack: ["9M"],
         },
 	},	
 	amesmol: {
@@ -97255,7 +97255,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			groundpound: ["9M"],
 			ameway: ["9M"],  
 			gamerrage: ["9M"],
-			interdimensionaldetective: ["9M"],
+			timedattack: ["9M"],
         },
 	},	
 	amebuff: {
@@ -97305,7 +97305,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			shadowpunch: ["9M"],
 			bulletpunch: ["9M"], 
 			ameway: ["9M"],  
-			interdimensionaldetective: ["9M"],
+			timedattack: ["9M"],
 			timeshatteringpunch: ["9M"],
         },
 	},	
@@ -97361,7 +97361,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			roost: ["9M"],
 			hivemind: ["9M"],
 			ameway: ["9M"],  
-			interdimensionaldetective: ["9M"],
+			timedattack: ["9M"],
         },
 	},	
 	calliope: {
