@@ -2198,7 +2198,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	chaos: { // [Red Card (ITEM)] but as an ability
 		onAfterMoveSecondary(target, source, move) {
 			if (source && source !== target && source.hp && target.hp && move && move.category !== 'Status') {
-				if (this.randomChance(1, 6)) { 
+				if (this.randomChance(5, 6)) { 
 				source.forceSwitchFlag || target.forceSwitchFlag; {
 					return; 
 				}
