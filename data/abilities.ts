@@ -1962,7 +1962,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			this.add('-activate', pokemon, 'ability: Phoenix');
 		},
 		onDamagingHit(damage, target, source, move) {
-			if (this.checkMoveMakesContact(move, source, target)) {
+			if (move.category === 'Special' || move.category === 'Physical' && !source.status) {
 				if (this.randomChance(3, 10)) {
 					source.trySetStatus('brn', target);
 				}
@@ -2198,7 +2198,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	chaos: { // [Red Card (ITEM)] but as an ability
 		onAfterMoveSecondary(target, source, move) {
 			if (source && source !== target && source.hp && target.hp && move && move.category !== 'Status') {
-				if (this.randomChance(5, 6)) { 
+				if (this.randomChance(2, 3)) { 
 				source.forceSwitchFlag || target.forceSwitchFlag; {
 					return; 
 				}

@@ -421,8 +421,8 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	phoenix: {
 		name: "Phoenix",
-		desc: "30% chance a Pokemon making contact with this Pokemon will be burned. This Pokemon is immune to Fire-type moves. The first time this Pokemon is hit by a Fire-type move, its offensive stat is multiplied by 1.5 while using a Fire-type.",
-	    shortDesc: "Contact with the user has a 30% chance to burn. Fire-type immunity.",
+		desc: "30% chance a Pokemon attacking this Pokemon will be burned. This Pokemon is immune to Fire-type moves. The first time this Pokemon is hit by a Fire-type move, its offensive stat is multiplied by 1.5 while using a Fire-type.",
+	    shortDesc: "Attacking the user has a 30% chance to burn the attacker. Fire-type immunity.",
 	},
 	parttimewarrior: {
 		name: "Part Time Warrior",
@@ -460,8 +460,8 @@ export const AbilitiesText: {[id: IDEntry]: AbilityText} = {
 	},
 	chaos: {
 		name: "Chaos",
-		desc: "If a Pokemon uses a damaging move on this Pokemon, and it survives the hit, there is a 1 in 6 chance the attacker is then forced to switch to a random ally.",
-		shortDesc: "1/6 chance those who attack the user are forced to switch to a random ally.",
+		desc: "If a Pokemon uses a damaging move on this Pokemon, and it survives the hit, there is a 1 in 3 chance the attacker is then forced to switch to a random ally.",
+		shortDesc: "30% chance those who attack the user are forced to switch to a random ally.",
 	},
 	archiver: {
 		name: "Archiver",
