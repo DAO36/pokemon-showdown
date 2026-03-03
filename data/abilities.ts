@@ -134,7 +134,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	unfavoredretreat: {
     onAfterMoveSecondarySelf(source, target, move) {
         if (move && target && target != source && target.getMoveHitData(move).typeMod < 0) source.switchFlag = true;
-	this.add('-ability', source, 'ability: Unfavored Retreat');	
+	this.add('-activate', source, 'ability: Unfavored Retreat');	
     },
 		flags: {},
 		name: "Unfavored Retreat",
