@@ -131,6 +131,15 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 5,
 		num: 23,
 	},
+	unfavoredretreat: {
+    onAfterMoveSecondarySelf(source, target, move) {
+        if (move && target && target != source && target.getMoveHitData(move).typeMod < 0) source.switchFlag = true;
+    },
+		flags: {},
+		name: "Unfavored Retreat",
+		rating: 5,
+		num: 23,
+	},
 	flinchinator: { 
 		onStart(pokemon) {
             let activated = false;
