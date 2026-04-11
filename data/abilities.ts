@@ -40,6 +40,33 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 0.1,
 		num: 0,
 	},
+	arttheft: {
+		name: "Art Theft",
+		rating: 4,
+
+		onStart(pokemon) {
+			const target = pokemon.adjacentFoes()[0];
+			if (!target || target.fainted) return;
+
+			const ability = target.getAbility();
+			// if (!ability || ability.isPermanent) return; [<= ADD THIS LATER, REMOVE THE SLANTS FOR FUTURE UPDATE]
+
+			// supress other OnStart abilities such as intimidate so they don't activate twice
+			target.addVolatile('gastroacid');
+
+			this.add('-activate', pokemon, 'ability: Art Theft', ability.name, '[of] ' + target);
+			this.add('-message', `${pokemon.name} stole the Ability of ${target.name}!`);
+
+			const stolen = pokemon.setAbility(ability.id, target);
+			if (!stolen) return;
+
+			target.setAbility('noability', pokemon);
+			this.add('-ability', target, 'No Ability');
+			this.add('-message', `${target.name} has No Ability!`);
+
+			target.removeVolatile('gastroacid');
+		},
+	},
 	aurafarming: {
 		onDamagingHit(damage, target, source, effect) {
 			this.boost({atk: 1, spa: 1, spe: 1});
