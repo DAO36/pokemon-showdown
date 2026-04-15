@@ -437,7 +437,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 			}
 			this.add('-prepare', attacker, move.name);
 			this.boost({spa: 1}, attacker, attacker, move);
-			if (['snow', 'hail'].includes(attacker.effectiveWeather())) {
+			if (['snowscape', 'hail'].includes(attacker.effectiveWeather())) {
 				this.attrLastMove('[still]');
 				this.addMove('-anim', attacker, move.name, defender);
 				return;
@@ -1784,7 +1784,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		priority: 0,
 		flags: {protect: 1, mirror: 1},
 		basePowerCallback(source, target, move) {
-			if (this.field.isWeather('snow')) {
+			if (this.field.isWeather('snowscape')) {
 				if (!source.isAlly(target)) this.hint(`${move.name}'s BP doubled on target.`);
 				return move.basePower * 2;
 			}
@@ -2608,7 +2608,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 				break;
 			case 'sandstorm':
 			case 'hail':
-			case 'snow':
+			case 'snowscape':
 			case 'sunnyday':
 			case 'desolateland':	
 				factor = 0.25;
