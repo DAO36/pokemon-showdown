@@ -2788,14 +2788,14 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
         doublesTier: "(DUU)",
         natDexTier: "OU",
 	},
+	lucariomegaz: {
+		isNonstandard: "Future",
+		tier: "Illegal",
+	},
 	lucarioash: {
         tier: "OU",
         doublesTier: "DOU",
         natDexTier: "Uber",
-	},
-	lucariomegaz: {
-		isNonstandard: "Future",
-		tier: "Illegal",
 	},
 	hippopotas: {
 		tier: "LC",
