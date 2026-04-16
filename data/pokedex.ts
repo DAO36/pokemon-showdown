@@ -160,7 +160,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		abilities: {0: "Fire Breathing Dragon"},
 		heightm: 1.7,
 		weightkg: 100.5,
-		color: "Red",
+		color: "Green",
 		eggGroups: ["Monster", "Dragon"],
 		requiredItem: "Charizardite Z",
 	},
