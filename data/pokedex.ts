@@ -8355,7 +8355,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		baseStats: {hp: 70, atk: 150, def: 70, spa: 150, spd: 70, spe: 125},
 		abilities: {0: "Aura Farming"},
 		heightm: 1.36,
-		weightkg: 50,
+		weightkg: 52,
 		color: "Blue",
 		eggGroups: ["Undiscovered"],
 		requiredAbility: "Aura Bond",
