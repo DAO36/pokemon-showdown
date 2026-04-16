@@ -22027,7 +22027,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 	missingno: {
 		num: 0,
 		name: "MissingNo.",
-		types: ["Bird", "Normal"],
+		types: ["Normal"],
 		baseStats: {hp: 33, atk: 136, def: 0, spa: 6, spd: 6, spe: 29},
 		abilities: {0: "Pressure", 1: "Unnerve", H: "Trace", S: "Corruption"},
 		heightm: 3,
