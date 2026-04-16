@@ -21567,7 +21567,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		forme: "Mega",
 		types: ["Grass", "Psychic"],
 		gender: "F",
-		baseStats: {hp: 85, atk: 110, def: 100, spa: 140, spd: 195, spe: 75},
+		baseStats: {hp: 85, atk: 110, def: 95, spa: 140, spd: 195, spe: 75},
 		abilities: {0: "Grassy Surge"},
 		heightm: 1.64,
 		weightkg: 55.5,
