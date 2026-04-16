@@ -575,7 +575,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		abilities: {0: "Pokemon Master"},
 		heightm: 0.5,
 		weightkg: 7,
-		color: "Yellow",
+		color: "Red",
 		eggGroups: ["Undiscovered"],
 		requiredAbility: "Pika Bond",
 		battleOnly: "Pikachu",
