@@ -2792,11 +2792,6 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		isNonstandard: "Future",
 		tier: "Illegal",
 	},
-	lucarioash: {
-        tier: "OU",
-        doublesTier: "DOU",
-        natDexTier: "Uber",
-	},
 	hippopotas: {
 		tier: "LC",
 	},

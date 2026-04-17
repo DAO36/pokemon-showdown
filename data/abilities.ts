@@ -184,21 +184,6 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 5,
 		num: 23,
 	},
-	aurabond: { 
-		onSourceAfterFaint(length, target, source, effect) {
-			if (effect?.effectType !== 'Move') {
-				return;
-			}
-			if (source.species.id === 'lucario' && source.hp && !source.transformed && source.side.foePokemonLeft()) {
-				this.add('-activate', source, 'ability: Aura Bond');
-				source.formeChange('Lucario-Ash', this.effect, true);
-			}
-		},
-		flags: {},
-		name: "Aura Bond",
-		rating: 4,
-		num: 24,
-	},
 	pikabond: { 
 		onSourceAfterFaint(length, target, source, effect) {
 			if (effect?.effectType !== 'Move') {
