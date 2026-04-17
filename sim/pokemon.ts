@@ -312,8 +312,10 @@ export class Pokemon {
 
 		this.m = {};
 
-		const pokemonScripts = this.battle.format.pokemon || this.battle.dex.data.Scripts.pokemon;
+		const pokemonScripts = this.battle.dex.data.Scripts.pokemon;
 		if (pokemonScripts) Object.assign(this, pokemonScripts);
+
+		if (this.battle.format.pokemon) Object.assign(this, this.battle.format.pokemon);
 
 		if (typeof set === 'string') set = { name: set };
 
@@ -708,7 +710,7 @@ export class Pokemon {
 		return move.moveHitData[slot] || (move.moveHitData[slot] = {
 			crit: false,
 			typeMod: 0,
-			brokeProtect: false,
+			bypassProtect: false,
 		});
 	}
 
