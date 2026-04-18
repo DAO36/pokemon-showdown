@@ -747,7 +747,7 @@ export const MovesText: { [id: IDEntry]: MoveText } = {
 	},
 	hivemind: {
 		name: "Hive Mind",
-		desc: "This attack charges on the first turn and executes on the second. If the Pokemon is holding a Power Herb, the move completes in one turn.",
+		desc: "This attack charges on the first turn and executes on the second. Raises this Pokemon's Special Attack by 1 stage on the first turn. If the Pokemon is holding a Power Herb, the move completes in one turn.",
 		shortDesc: "Charges on turn 1. Hits turn 2.",
 
 		prepare: "[POKEMON] is calling the Hive!",
