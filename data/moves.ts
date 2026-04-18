@@ -2230,13 +2230,13 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 						delete source.volatiles['lockedmove'];
 					}
 				}
-				if (this.checkMoveMakesContact(move, source, target)) {
+				if (move.category === 'Special') {
 					this.boost({ spa: -1 }, source, target, this.dex.getActiveMove("King's Shield"));
 				}
 				return this.NOT_FAIL;
 			},
 			onHit(target, source, move) {
-				if (move.isZOrMaxPowered && this.checkMoveMakesContact(move, source, target)) {
+				if (move.category === 'Special') {
 					this.boost({ spa: -1 }, source, target, this.dex.getActiveMove("King's Shield"));
 				}
 			},
@@ -3106,13 +3106,13 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 						delete source.volatiles['lockedmove'];
 					}
 				}
-				if (this.checkMoveMakesContact(move, source, target)) {
+				if (move.category === 'Special' || move.category === 'Physical') {
 					source.trySetStatus('brn', target);
 				}
 				return this.NOT_FAIL;
 			},
 			onHit(target, source, move) {
-				if (move.isZOrMaxPowered && this.checkMoveMakesContact(move, source, target)) {
+				if (move.category === 'Special' || move.category === 'Physical') {
 					source.trySetStatus('brn', target);
 				}
 			},
