@@ -1176,7 +1176,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 			onSideStart(side) {
 				this.add('-sidestart', side, 'move: Carrot Trap');
 			},
-			onEntryHazard(pokemon) { 	
+			onSwitchIn(pokemon) { 	
 				if (pokemon.hasType('Grass')) {
 					this.add('-sideend', pokemon.side, 'move: Carrot Trap', '[of] ' + pokemon);
 					pokemon.side.removeSideCondition('carrottrap');
@@ -1193,7 +1193,72 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		target: "foeSide",
 		type: "Grass", 
 		contestType: "Clever",
-	}, 
+	},
+	xicspikes: {
+		num: 390,
+		accuracy: true,
+		basePower: 0,
+		category: "Status",
+		name: "Toxic Spikes",
+		pp: 20,
+		priority: 0,
+		flags: { reflectable: 1, nonsky: 1, metronome: 1, mustpressure: 1 },
+		sideCondition: 'toxicspikes',
+		condition: {
+			// this is a side condition
+			onSideStart(side) {
+				this.add('-sidestart', side, 'move: Toxic Spikes');
+				this.effectState.layers = 1;
+			},
+			onSideRestart(side) {
+				if (this.effectState.layers >= 2) return false;
+				this.add('-sidestart', side, 'move: Toxic Spikes');
+				this.effectState.layers++;
+			},
+			onSwitchIn(pokemon) {
+				if (!pokemon.isGrounded()) return;
+				if (pokemon.hasType('Poison')) {
+					this.add('-sideend', pokemon.side, 'move: Toxic Spikes', `[of] ${pokemon}`);
+					pokemon.side.removeSideCondition('toxicspikes');
+				} else if (pokemon.hasType('Steel') || pokemon.hasItem('heavydutyboots')) {
+					// do nothing
+				} else if (this.effectState.layers >= 2) {
+					pokemon.trySetStatus('tox', pokemon.side.foe.active[0]);
+				} else {
+					pokemon.trySetStatus('psn', pokemon.side.foe.active[0]);
+				}
+			},
+		},
+		target: "foeSide",
+		type: "Poison",
+		zMove: { boost: { def: 1 } },
+		contestType: "Clever",
+	},
+	ickyweb: {
+		num: 564,
+		accuracy: true,
+		basePower: 0,
+		category: "Status",
+		name: "Sticky Web",
+		pp: 20,
+		priority: 0,
+		flags: { reflectable: 1, metronome: 1 },
+		sideCondition: 'stickyweb',
+		condition: {
+			onSideStart(side) {
+				this.add('-sidestart', side, 'move: Sticky Web');
+			},
+			onSwitchIn(pokemon) {
+				if (!pokemon.isGrounded() || pokemon.hasItem('heavydutyboots')) return;
+				this.add('-activate', pokemon, 'move: Sticky Web');
+				this.boost({ spe: -1 }, pokemon, pokemon.side.foe.active[0], this.dex.getActiveMove('stickyweb'));
+			},
+		},
+		target: "foeSide",
+		type: "Bug",
+		zMove: { boost: { spe: 1 } },
+		contestType: "Tough",
+	},
 	macesmash: { // NOEL 1
 		num: 38,
 		accuracy: 90,
