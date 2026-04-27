@@ -21784,7 +21784,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		num: 74,
 		name: "Pebble",
 		types: ["Rock"],
-		baseStats: {hp: 69, atk: 69, def: 169, spa: 69, spd: 169, spe: 10},
+		baseStats: {hp: 67, atk: 67, def: 167, spa: 67, spd: 167, spe: 10},
 		abilities: {0: "Sand Stream", S: "Sneaky Pebbles"},
 		heightm: 0.69,
 		weightkg: 69.69,

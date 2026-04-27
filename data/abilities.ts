@@ -1118,7 +1118,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	highonasacoco: { // exact copy of [Poison Heal] but butter
 		onDamagePriority: 1,
 		onDamage(damage, target, source, effect) {
-			if (effect.id === 'psn' || effect.id === 'tox' || effect.id === 'brn') { 
+			if (effect.id === 'psn' || effect.id === 'tox' || effect.id === 'brn' || effect.id === 'par' || effect.id === 'slp' || effect.id === 'frz') { 
 				return false;
 			}
 		},
