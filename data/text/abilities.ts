@@ -244,8 +244,8 @@ export const AbilitiesText: { [id: IDEntry]: AbilityText } = {
 	},
 	watamelon: {
 		name: "Watamelon",
-		desc: "This Pokemon is wearing a watermelon that grants them immunity to powder moves, damage from Sandstorm, and the effects of Rage Powder and the Effect Spore Ability. This Pokemon takes halved damage from sound-based moves. Cannot be struck by a critical hit.",
-		shortDesc: "Immune to powder moves, sandstorm, & crits; takes 1/2 damage from sound moves.",
+		desc: "This Pokemon is wearing a watermelon that grants them immunity to powder moves, sound moves, damage from Sandstorm, and the effects of Rage Powder and the Effect Spore Ability. Cannot be struck by a critical hit.",
+		shortDesc: "Immune to powder moves, sound moves, sandstorm, & crits.",
 	},
 	sugarrush: {
 		name: "Sugar Rush",

@@ -1158,11 +1158,14 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 				this.add('-immune', target, '[from] ability: Watamelon');
 				return null;
 			}
+			if (target !== source && move.flags['sound']) {
+				this.add('-immune', target, '[from] ability: Watamelon');
+				return null;
+			}
 		},
-		onSourceModifyDamage(damage, source, target, move) {
+		onAllyTryHitSide(target, source, move) {
 			if (move.flags['sound']) {
-				this.debug('Watamelon weaken');
-				return this.chainModify(0.5);
+				this.add('-immune', this.effectState.target, '[from] ability: Watamelon');
 			}
 		},
 		flags: {breakable: 1},
