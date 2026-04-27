@@ -660,12 +660,12 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 4,
 		num: 94,
 	}, 
-	spidersoup: { // if hit by physcial instead of more specific contacts
+	spidersoup: { // if hit instead of more specific contacts
 		onDamagingHitOrder: 1,
 		onDamagingHit(damage, target, source, move) {
 			const side = source.isAlly(target) ? source.side.foe : source.side;
 			const stickyweb = side.sideConditions['stickyweb'];
-			if (move.category === 'Special' && (!stickyweb || stickyweb.layers < 1)) {
+			if (move.category === 'Special' || move.category === 'Physical' && (!stickyweb || stickyweb.layers < 1)) {
 				this.add('-activate', target, 'ability: Spider Soup');
 				side.addSideCondition('stickyweb', target);
 			}
