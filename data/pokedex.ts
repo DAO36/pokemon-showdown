@@ -20041,7 +20041,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		types: ["Fairy", "Psychic"],
 		gender: "F",
 		baseStats: {hp: 95, atk: 130, def: 115, spa: 140, spd: 145, spe: 75},
-		abilities: {0: "Flower Veil"},
+		abilities: {0: "Grassy Surge"},
 		heightm: 1.62,
 		weightkg: 55.5,
 		color: "Yellow",
