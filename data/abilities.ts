@@ -1423,7 +1423,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 2,
 		num: 251,
 	},
-	cleaner: { // upon switch in, clears users side of hazards; clears foes screens; removes terrain 
+	cleaner: { // upon switch in, clears users side of hazards; clears foes screens; removes rooms 
         onStart(pokemon) { 
 			this.add('-activate', pokemon, 'ability: Cleaner');
 			let activated = false;
