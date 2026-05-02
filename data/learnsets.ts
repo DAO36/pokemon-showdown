@@ -96180,7 +96180,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			lunarblessing: ["9M"],
 			faketears: ["9M"],
 			bloodmoon: ["9M"],
-			candycrash: ["9M"],
+			luknightlance: ["9M"],
 			sweetassault: ["9M"],
         },
 	},	
