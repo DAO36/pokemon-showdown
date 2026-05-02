@@ -819,13 +819,13 @@ export const MovesText: { [id: IDEntry]: MoveText } = {
 		desc: "Raises this Pokemon's Attack by 2 stages.",
 		shortDesc: "Raises the user's Attack by 2.",
 	},
-	hopeful: {
-		name: "Hopeful",
+	hope: {
+		name: "Hope",
 		desc: "Has a 10% chance to raise this Pokemon's Attack, Defense, Special Attack, Special Defense, and Speed by 1 stage. This attack bypasses accuracy checks and never misses.",
 		shortDesc: "10% chance to raise all stats by 1 (not acc/eva).",
 	},
-	hopeless: {
-		name: "Hopeless",
+	despair: {
+		name: "Despair",
 		desc: "Lowers this Pokemon's Defense and Special Defense by 1 stage. If this attack is not successful, this Pokemon loses half of its maximum HP, rounded down, as crash damage. Pokemon with the Magic Guard Ability are unaffected by crash damage.",
 		shortDesc: "Lowers user's Def & SpD by 1. Loses 50% HP if miss.",
 

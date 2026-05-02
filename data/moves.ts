@@ -3222,12 +3222,12 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Water",
 		contestType: "Beautiful",
 	},
-	hopeful: { // IRYS 2
+	hope: { // IRYS 2
 		num: 370,
 		accuracy: true,
 		basePower: 80,
 		category: "Physical",
-		name: "Hopeful",
+		name: "Hope",
 		pp: 5,
 		priority: 0,
 		flags: {protect: 1, pulse: 1, mirror: 1},
@@ -3247,12 +3247,12 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Fairy",
 		contestType: "Clever",
 	},
-	hopeless: { // IRYS 3
+	despair: { // IRYS 3
 		num: 370,
 		accuracy: 90,
 		basePower: 120,
 		category: "Physical",
-		name: "Hopeless",
+		name: "Despair",
 		pp: 5,
 		priority: 0,
 		flags: {contact: 1, protect: 1, mirror: 1},
