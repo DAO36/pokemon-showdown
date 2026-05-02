@@ -437,15 +437,20 @@ export const MovesText: { [id: IDEntry]: MoveText } = {
 		desc: "Has a 20% chance to paralyze the target. Damage is calculated using this Pokemon's Defense stat as their Attack, including stat stage changes. Other effects that modify the Attack stat are used as normal.",
 		shortDesc: "Uses Def as Atk in damage calc. 20% to paralyze foe.",
 	},
-	candycrash: {
+	luknightlance: {
+		name: "Luknight Lance",
+		desc: "Has a 10% chance to raise the user's Speed by 1 stage. If Misty Terrain is active, and the user is grounded, this move does not miss.",
+		shortDesc: "10% to raise Speed by 1. Cannot miss in Misty Terrain.",
+	},
+	sweetassault: {
+		name: "Sweet Assault",
+		desc: "This Pokemon recovers 1/2 the HP lost by the target, rounded half up. If the current terrain is Misty Terrain and the target is grounded, this move's power is doubled.",
+		shortDesc: "Heals 50% of damage dealt. 2x power in Misty Terrain.",
+	},
+	candycrash: { // [UNUSED]
 		name: "Candy Crash",
 		desc: "Has a 10% chance to raise this Pokemon's Speed by 1 stage. Hits four times. If one of the hits breaks the target's substitute, it will take damage for the remaining hits.",
 		shortDesc: "10% to raise Speed by 1. Hits 4 times in one turn.",
-	}, 
-	sweetassault: {
-		name: "Sweet Assault",
-		desc: "This Pokemon recovers 1/2 the HP lost by the target, rounded half up.",
-		shortDesc: "User recovers 50% of the damage dealt.",
 	},
 	bibiblast: {
 		name: "Bibi Blast",

@@ -1606,7 +1606,54 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Fairy",
 		contestType: "Tough",
 	},
-	candycrash: { // LUNA 1
+	luknightlance: { // LUNA 1
+		num: 370,
+		accuracy: 80,
+		basePower: 120,
+		category: "Physical",
+		name: "Luknight Lance",
+		pp: 5,
+		priority: 0,
+		flags: {protect: 1, mirror: 1, slicing: 1},
+		onModifyMove(move, pokemon, target) {
+			if (this.field.isTerrain('mistyterrain') && pokemon.isGrounded()) { 
+				move.accuracy = true; 
+			}
+		},
+		secondary: {
+			chance: 10,
+			self: {
+				boosts: {
+					spe: 1,
+				},
+			},
+		},
+		target: "normal",
+		type: "Fairy",
+		contestType: "Beautiful",
+	},
+	sweetassault: { // LUNA 2
+		num: 370,
+		accuracy: 100,
+		basePower: 75,
+		basePowerCallback(source, target, move) {
+			if (this.field.isTerrain('mistyterrain') && target.isGrounded()) {
+				if (!source.isAlly(target)) this.hint(`${move.name}'s BP doubled on grounded target.`);
+				return move.basePower * 2;
+			}
+			return move.basePower;
+		},
+		category: "Special",
+		name: "Sweet Assault",
+		pp: 10,
+		priority: 0,
+		flags: {protect: 1, contact: 1, mirror: 1, heal: 1, bite: 1},
+		drain: [1, 2],
+		target: "normal",
+		type: "Fairy",
+		contestType: "Cute",
+	},
+	candycrash: { // [UNUSED]
 		num: 370,
 		accuracy: 90,
 		basePower: 30,
@@ -1624,20 +1671,6 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 				},
 			},
 		},
-		target: "normal",
-		type: "Fairy",
-		contestType: "Cute",
-	},
-	sweetassault: { // LUNA 2
-		num: 370,
-		accuracy: 95,
-		basePower: 95,
-		category: "Special",
-		name: "Sweet Assault",
-		pp: 10,
-		priority: 0,
-		flags: {protect: 1, contact: 1, mirror: 1, heal: 1, bite: 1},
-		drain: [1, 2],
 		target: "normal",
 		type: "Fairy",
 		contestType: "Cute",
