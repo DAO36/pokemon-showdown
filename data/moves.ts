@@ -290,8 +290,8 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		pp: 5,
 		priority: 0,
 		flags: {protect: 1, mirror: 1, pulse: 1},
-		onModifyMove(move, pokemon, target) {
-			if (this.field.isTerrain('electricterrain') && pokemon.isGrounded()) { 
+		onModifyMove(move, target) {
+			if (this.field.isTerrain('electricterrain') && target.isGrounded()) { 
 				move.accuracy = true; 
 			}
 		},
@@ -1615,8 +1615,8 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		pp: 5,
 		priority: 0,
 		flags: {protect: 1, mirror: 1, slicing: 1},
-		onModifyMove(move, pokemon, target) {
-			if (this.field.isTerrain('mistyterrain') && pokemon.isGrounded()) { 
+		onModifyMove(move, target) {
+			if (this.field.isTerrain('mistyterrain') && target.isGrounded()) { 
 				move.accuracy = true; 
 			}
 		},
@@ -1880,8 +1880,8 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		pp: 5,
 		priority: 0,
 		flags: {protect: 1, mirror: 1, pulse: 1},
-		onModifyMove(move, pokemon, target) {
-			if (this.field.isTerrain('grassyterrain') && pokemon.isGrounded()) { 
+		onModifyMove(move, target) {
+			if (this.field.isTerrain('grassyterrain') && target.isGrounded()) { 
 				move.accuracy = true; 
 			}
 		},
@@ -2041,7 +2041,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	pokobee: { // IROHA 2
 		num: 348,
 		accuracy: 90,
-		basePower: 100,
+		basePower: 110,
 		category: "Special",
 		name: "Pokobee",
 		pp: 10,
