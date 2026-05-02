@@ -538,8 +538,8 @@ export const MovesText: { [id: IDEntry]: MoveText } = {
 		desc: "Has a 20% to raise this Pokemon's Special Defense by 1 stage. If the target lost HP, the user takes recoil damage equal to 33% the HP lost by the target, rounded half up, but not less than 1 HP.",
 		shortDesc: "33% recoil. 20% to raise user's Sp.Def by 1",
 	},
-	focusshades: {
-		name: "Focus Shades",
+	hawkeye: {
+		name: "Hawkeye",
 		desc: "Raises this Pokemon's Attack by 2 stages and accuracy by 1 stage.",
 		shortDesc: "Raises user's Attack by 2 and Accuracy by 1.",
 	},
