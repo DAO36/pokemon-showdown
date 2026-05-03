@@ -556,7 +556,7 @@ export const MovesText: { [id: IDEntry]: MoveText } = {
 	ganmasmash: {
 		name: "Ganma Smash",
 		desc: "If this attack is not successful, this Pokemon loses half of its maximum HP, rounded down, as crash damage. Pokemon with the Magic Guard Ability are unaffected by crash damage.",
-		shortDesc: "User is hurt by 50% of its max HP if it misses..",
+		shortDesc: "User is hurt by 50% of its max HP if it misses.",
 
 		damage: "#crash",
 	},
