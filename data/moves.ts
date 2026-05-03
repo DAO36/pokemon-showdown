@@ -1612,7 +1612,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		name: "Luknight Lance",
 		pp: 5,
 		priority: 0,
-		flags: {protect: 1, mirror: 1, slicing: 1},
+		flags: {protect: 1, contact: 1, slicing: 1},
 		onModifyMove(move, source, target) {
 			if (this.field.isTerrain('mistyterrain') && source.isGrounded()) { 
 				move.accuracy = true; 

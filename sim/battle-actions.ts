@@ -794,6 +794,11 @@ export class BattleActions {
 					} else {
 						this.battle.add('-activate', target, `move: ${move.name}`, '[broken]');
 					}
+					if (move.id === 'v7strike') {
+						this.battle.add('-activate', target, 'move: V7 Strike');
+					} else {
+						this.battle.add('-activate', target, `move: ${move.name}`, '[broken]');
+					}
 					if (this.battle.gen >= 6) delete target.volatiles['stall'];
 				}
 			}
