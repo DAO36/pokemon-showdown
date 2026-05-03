@@ -2494,13 +2494,38 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		category: "Physical",
 		name: "V7 Strike",
 		pp: 10,
-		priority: 2,
+		priority: 0,
 		flags: { contact: 1, bullet: 1 },
+		onModifyPriority(priority, source, target, move) {
+			if (!move || move.flags['protect']) {
+				return priority + 3;
+			}
+		},
 		breaksProtect: true,
 		// Breaking protection implemented in scripts.js
 		target: "normal",
 		type: "Psychic",
 		contestType: "Clever",
+	},
+	assyglide: {
+		num: 803,
+		accuracy: 100,
+		basePower: 55,
+		category: "Physical",
+		name: "Grassy Glide",
+		pp: 20,
+		priority: 0,
+		flags: { contact: 1, protect: 1, mirror: 1, metronome: 1 },
+		onTry(source, target) {
+			const action = this.queue.willMove(target);
+			const move = action?.choice === 'move' ? action.move : null;
+			if (!move || move.flags['protect']) {
+				return false;
+			}
+		},
+		target: "normal",
+		type: "Grass",
+		contestType: "Cool",
 	},
 	nopressure: { // KAELA 1
 		num: 370,
