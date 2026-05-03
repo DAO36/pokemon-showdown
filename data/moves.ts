@@ -2495,7 +2495,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		name: "V7 Strike",
 		pp: 10,
 		priority: 0,
-		flags: { contact: 1, bullet: 1 },
+		flags: {contact: 1, bullet: 1},
 		onModifyPriority(priority, source, target, move) {
 			if (target.volatiles['protect'] || target.volatiles['kingsshield'] || target.volatiles['spikyshield'] || target.volatiles['lunarshield'] || target.volatiles['obstruct'] || target.volatiles['phoenixshield'] || target.volatiles['burningbulwark'] || target.volatiles['banefulbunker'] || target.volatiles['shelltrap'] || target.volatiles['silktrap']) {
 				return priority + 3;
