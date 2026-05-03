@@ -2497,7 +2497,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		priority: 0,
 		flags: { contact: 1, bullet: 1 },
 		onModifyPriority(priority, source, target, move) {
-			if (!move || move.flags['protect']) {
+			if (move.flags['protect']) {
 				return priority + 3;
 			}
 		},
