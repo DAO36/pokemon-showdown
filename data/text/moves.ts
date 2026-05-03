@@ -656,8 +656,8 @@ export const MovesText: { [id: IDEntry]: MoveText } = {
 	},
 	v7strike: {
 		name: "V7 Strike",
-		desc: "If this move is successful, it breaks through the target's Protect, Baneful Bunker, Detect, King's Shield, Lunar Shield, Phoenix Shield, Obstruct, Silk Trap, or Spiky Shield for this turn, allowing other Pokemon to attack the target normally. If the target's side is protected by Crafty Shield, Mat Block, Quick Guard, or Wide Guard, that protection is also broken for this turn and other Pokemon may attack the target's side normally.",
-		shortDesc: "Nullifies Detect, Protect, & Quick/Wide Guard.",
+		desc: "If the target uses Protect, Baneful Bunker, Detect, King's Shield, Lunar Shield, Phoenix Shield, Obstruct, Silk Trap, or Spiky Shield, this move gains +3 priority. If this move is successful, it breaks through the target's Baneful Bunker, Detect, King's Shield, Lunar Shield, Phoenix Shield, Protect, or Spiky Shield for this turn, allowing other Pokemon to attack the target normally.",
+		shortDesc: "+3 priority if foe uses protect. Breaks protection.",
 
 		activate: "  Time traveled past [TARGET]'s protection!",
 	},
