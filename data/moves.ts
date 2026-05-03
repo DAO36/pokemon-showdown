@@ -2499,7 +2499,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		breaksProtect: true,
 		// Breaking protection implemented in scripts.js
 		target: "normal",
-		type: "Normal",
+		type: "Psychic",
 		contestType: "Clever",
 	},
 	nopressure: { // KAELA 1
