@@ -49,7 +49,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			if (!target || target.fainted) return;
 
 			const ability = target.getAbility();
-			// if (!ability || ability.isPermanent) return; [<= ADD THIS LATER, REMOVE THE SLANTS FOR FUTURE UPDATE]
+			if (!ability || ability.isPermanent) return;
 
 			// supress other OnStart abilities such as intimidate so they don't activate twice
 			target.addVolatile('gastroacid');
