@@ -97289,6 +97289,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			lockon: ["9M"],
 			psychup: ["9M"],
 			spyshot: ["9M"],
+			v7strike: ["9M"],
         },
 	},	
 	kaela: {

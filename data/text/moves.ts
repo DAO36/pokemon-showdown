@@ -654,6 +654,13 @@ export const MovesText: { [id: IDEntry]: MoveText } = {
 		desc: "Bypasses subs and protection without breaking it. Never Misses. High critical hit ratio.",
 		shortDesc: "Bypasses subs/protect; High crit ratio.",
 	},
+	v7strike: {
+		name: "V7 Strike",
+		desc: "If this move is successful, it breaks through the target's Baneful Bunker, Detect, King's Shield, Protect, or Spiky Shield for this turn, allowing other Pokemon to attack the target normally. If the target's side is protected by Crafty Shield, Mat Block, Quick Guard, or Wide Guard, that protection is also broken for this turn and other Pokemon may attack the target's side normally.",
+		shortDesc: "Nullifies Detect, Protect, & Quick/Wide Guard.",
+
+		activate: "  [POKEMON] time traveled!",
+	},
 	nopressure: {
 		name: "No Pressure",
 		desc: "Lowers the target's Defense and Special Defense by 1 stage. If this move is successful, this Blacksmith switches out even if she is trapped and is replaced immediately by a selected party member. The user does not switch out if the target's Defense and Special Defense stat stages were both unchanged, or if there are no unfainted party members.",

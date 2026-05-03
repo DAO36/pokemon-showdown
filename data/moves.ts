@@ -2487,6 +2487,21 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		target: "normal",
 		type: "Dark",
 	},
+	v7strike: {
+		num: 364,
+		accuracy: 100,
+		basePower: 80,
+		category: "Physical",
+		name: "V7 Strike",
+		pp: 10,
+		priority: 2,
+		flags: { contact: 1, bullet: 1 },
+		breaksProtect: true,
+		// Breaking protection implemented in scripts.js
+		target: "normal",
+		type: "Normal",
+		contestType: "Clever",
+	},
 	nopressure: { // KAELA 1
 		num: 370,
 		accuracy: 100,
