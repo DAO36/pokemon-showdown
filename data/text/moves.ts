@@ -399,8 +399,8 @@ export const MovesText: { [id: IDEntry]: MoveText } = {
 	},
 	gmmf: {
 		name: "GMMF",
-		desc: "Lowers the user's Defense and Special Defense by 1 stage.",
-		shortDesc: "Lowers the user's Defense and Sp. Def by 1.",
+		desc: "Hits adjacent Pokemon. Has a 30% chance to badly poison the target.",
+		shortDesc: "30% chance to badly poison foe(s).",
 	},
 	gorillagrip: {
 		name: "Gorilla Grip",
