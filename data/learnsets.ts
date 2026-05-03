@@ -96660,6 +96660,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			focusenergy: ["9M"], 
 			hawkeye: ["9M"],
 			falconwhip: ["9M"],
+			ganmasmash: ["9M"],
         },
 	},	
 	chloe: {

@@ -2007,8 +2007,8 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	},
 	falconwhip: { // LUI 2
 		num: 680,
-		accuracy: 110,
-		basePower: 90,
+		accuracy: 90,
+		basePower: 110,
 		category: "Physical",
 		name: "Falcon Whip",
 		pp: 10,
@@ -2022,6 +2022,23 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		target: "normal",
 		type: "Flying",
 		contestType: "Cute",
+	},
+	ganmasmash: {
+		num: 136,
+		accuracy: 90,
+		basePower: 130,
+		category: "Physical",
+		name: "Ganma Smash",
+		pp: 10,
+		priority: 0,
+		flags: { contact: 1, protect: 1, mirror: 1, gravity: 1, wind: 1 },
+		hasCrashDamage: true,
+		onMoveFail(target, source, move) {
+			this.damage(source.baseMaxhp / 2, source, source, this.dex.conditions.get('High Jump Kick'));
+		},
+		target: "normal",
+		type: "Psychic",
+		contestType: "Cool",
 	},
 	samuraistrikes: { // IROHA 1
 		num: 370,

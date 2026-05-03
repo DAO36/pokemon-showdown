@@ -548,6 +548,13 @@ export const MovesText: { [id: IDEntry]: MoveText } = {
 		desc: "Has a 10% chance to confuse the target. Has a higher chance for a critical hit.",
 		shortDesc: "10% chance to confuse target.",
 	},
+	ganmasmash: {
+		name: "Ganma Smash",
+		desc: "If this attack is not successful, this Pokemon loses half of its maximum HP, rounded down, as crash damage. Pokemon with the Magic Guard Ability are unaffected by crash damage.",
+		shortDesc: "User is hurt by 50% of its max HP if it misses..",
+
+		damage: "#crash",
+	},
 	samuraistrikes: {
 		name: "Samurai Strikes",
 		desc: "Hits ten times. This move checks accuracy for each hit, and the attack ends if the target avoids a hit. If one of the hits breaks the target's substitute, it will take damage for the remaining hits. If the user has the Skill Link Ability, this move will always hit ten time.",
