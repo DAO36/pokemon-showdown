@@ -290,8 +290,8 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		pp: 5,
 		priority: 0,
 		flags: {protect: 1, mirror: 1, pulse: 1},
-		onModifyMove(move, target) {
-			if (this.field.isTerrain('electricterrain') && target.isGrounded()) { 
+		onModifyMove(move, source, target) {
+			if (this.field.isTerrain('electricterrain') && source.isGrounded()) { 
 				move.accuracy = true; 
 			}
 		},
@@ -1613,8 +1613,8 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		pp: 5,
 		priority: 0,
 		flags: {protect: 1, mirror: 1, slicing: 1},
-		onModifyMove(move, target) {
-			if (this.field.isTerrain('mistyterrain') && target.isGrounded()) { 
+		onModifyMove(move, source, target) {
+			if (this.field.isTerrain('mistyterrain') && source.isGrounded()) { 
 				move.accuracy = true; 
 			}
 		},
@@ -1905,8 +1905,8 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		pp: 5,
 		priority: 0,
 		flags: {protect: 1, mirror: 1, pulse: 1},
-		onModifyMove(move, target) {
-			if (this.field.isTerrain('grassyterrain') && target.isGrounded()) { 
+		onModifyMove(move, source, target) {
+			if (this.field.isTerrain('grassyterrain') && source.isGrounded()) { 
 				move.accuracy = true; 
 			}
 		},
