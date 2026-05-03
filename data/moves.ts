@@ -1716,20 +1716,6 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Normal",
 		contestType: "Cute",
 	},
-	polmao: { // POLKA 2
-		num: 370,
-		accuracy: 100,
-		basePower: 70,
-		category: "Physical",
-		name: "PoLMAO",
-		pp: 10,
-		priority: 0,
-		flags: {contact: 1, protect: 1, mirror: 1, dance: 1, switches: 1},
-		selfSwitch: true,
-		target: "normal",
-		type: "Normal",
-		contestType: "Cute",
-	},
 	polkaradio: { // POLKA 3
 		num: 914,
 		accuracy: 100,
@@ -1754,6 +1740,47 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		},
 		target: "normal",
 		type: "Normal",
+	},
+	polpol: { // POLKA 3
+		num: 370,
+		accuracy: 90,
+		basePower: 20,
+		category: "Physical",
+		name: "Pol Pol",
+		pp: 20,
+		priority: 0,
+		flags: {protect: 1, mirror: 1, distance: 1, bullet: 1},
+		multihit: 4,
+		secondary: {
+			chance: 25,
+			onHit(target, source) {
+				const result = this.random(3);
+				if (result === 0) {
+					target.trySetStatus('brn', source);
+				} else if (result === 1) {
+					target.trySetStatus('par', source);
+				} else {
+					target.trySetStatus('tox', source);
+				}
+			},
+		},
+		target: "any",
+		type: "Fairy",
+		contestType: "Cool",
+	},
+	polmao: { // POLKA 4
+		num: 370,
+		accuracy: 100,
+		basePower: 70,
+		category: "Physical",
+		name: "PoLMAO",
+		pp: 10,
+		priority: 0,
+		flags: {contact: 1, protect: 1, mirror: 1, dance: 1, switches: 1},
+		selfSwitch: true,
+		target: "normal",
+		type: "Normal",
+		contestType: "Cute",
 	},
 	ssrb: { // BOTAN 1
 		num: 370,

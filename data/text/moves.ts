@@ -474,6 +474,11 @@ export const MovesText: { [id: IDEntry]: MoveText } = {
 		desc: "Has a 100% chance to burn the target if it used a sound-based move. Power is multiplied by 2 during Wonder Room's effect.",
 		shortDesc: "Burns foes that used sound moves. Wonder Room: 2x power",
 	},
+	polpol: {
+		name: "Pol Pol",
+		desc: "Has a 25% chance to either burn, paralyze, or badly poison the target. Hits four times. If one of the hits breaks the target's substitute, it will take damage for the remaining hits. This move's type effectiveness against Dark is changed to be neutrally effective no matter what this move's type is.",
+		shortDesc: "25% chance to inflict a status.",
+	},
 	ssrb: {
 		name: "SSRB",
 		desc: "Hits ten times. This move checks accuracy for each hit, and the attack ends if the target avoids a hit. If one of the hits breaks the target's substitute, it will take damage for the remaining hits. If the user has the Skill Link Ability, this move will always hit ten times.",
