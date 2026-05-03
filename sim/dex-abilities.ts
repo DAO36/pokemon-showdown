@@ -39,6 +39,7 @@ export class Ability extends BasicEffect implements Readonly<BasicEffect> {
 	readonly suppressWeather: boolean;
 	readonly flags: AbilityFlags;
 	declare readonly condition?: ConditionData;
+	isPermanent: boolean;
 
 	constructor(data: AnyObject) {
 		super(data);
@@ -48,6 +49,7 @@ export class Ability extends BasicEffect implements Readonly<BasicEffect> {
 		this.suppressWeather = !!data.suppressWeather;
 		this.flags = data.flags || {};
 		this.rating = data.rating || 0;
+		this.isPermanent = !!data.isPermanent;
 
 		if (!this.gen) {
 			if (this.num >= 268) {
