@@ -81,8 +81,8 @@ export const MovesText: { [id: IDEntry]: MoveText } = {
 	},
 	laserbeam: {
 		name: "Laser Beam",
-		desc: "Has a 10% chance to paralyze the target. If Electric Terrain is active, and the user is grounded, this move does not miss.",
-		shortDesc: "10% to paralyze. Cannot miss in Electric Terrain.",
+		desc: "Has a 20% chance to paralyze the target. If Electric Terrain is active, and the user is grounded, this move does not miss.",
+		shortDesc: "20% to paralyze. Cannot miss in Electric Terrain.",
 	},
 	upgradepc: {
 		name: "Upgrade PC",

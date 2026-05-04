@@ -296,7 +296,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 			}
 		},
 		secondary: {
-			chance: 10,
+			chance: 20,
 			status: 'par',
 		},
 		target: "normal",
