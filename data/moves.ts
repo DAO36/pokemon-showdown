@@ -81,7 +81,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	},
 	idolsong: { // SORA 3
 		num: 370,
-		accuracy: 95,
+		accuracy: 90,
 		basePower: 100,
 		category: "Special",
 		name: "Idol Song",

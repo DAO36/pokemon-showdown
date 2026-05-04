@@ -31,8 +31,8 @@ export const MovesText: { [id: IDEntry]: MoveText } = {
 	},
 	tskr: {
 		name: "TSKR",
-		desc: "This Pokemon cures their party of non-volatile status condition. Raises the Idol's Special Attack by 2 stages.",
-		shortDesc: "Raises Sp. Atk by 2; Cures user and her party.",
+		desc: "This Pokemon cures their party of non-volatile status condition. Raises the user's Special Attack by 2 stages.",
+		shortDesc: "Raises Sp. Atk by 2; Cures user & her party.",
 	},
 	sakurastrike: {
 		name: "Sakura Strike",
