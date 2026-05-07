@@ -243,8 +243,8 @@ export const MovesText: { [id: IDEntry]: MoveText } = {
 		desc: "Has a 100% chance to poison the target. If the target is an ally, this move instead restores 1/2 of the ally's maximum HP, rounded down, instead of dealing damage, as well as curing them of any status effects.",
 		shortDesc: "100% to poison. If ally, heals 50% HP/cures status.",
 	},
-	blackmagic: {
-		name: "Black Magic",
+	darkmagic: {
+		name: "Dark Magic",
 		desc: "Lowers the user's Special Attack by 2 stages. This move's type effectiveness against Dark and Psychic is changed to be super effective no matter what this move's type is.",
 		shortDesc: "2x effective on Dark & Psychic. -2 SpAtk recoil.",
 	}, 

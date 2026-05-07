@@ -869,14 +869,10 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 			},
 		},
 		ignoreImmunity: true,
-		onEffectiveness(typeMod, target, type, move) {
-			if (move.type !== 'Psychic') return;
-			if (!target) return; // avoid crashing when called from a chat plugin
-			// ignore effectiveness if the target is Dark type and immune to Psychic
-			if (!target.runImmunity('Psychic')) {
-				if (target.hasType('Dark')) return 0;
-			}
-		},
+		onEffectiveness(typeMod, target, type) {
+			if (type === 'Dark') return 1;
+			if (type === 'Psychic') return 1; 
+		}, 
 		priority: 0,
 		target: "normal",
 		type: "Psychic",
