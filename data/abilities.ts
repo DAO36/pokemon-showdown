@@ -975,53 +975,26 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 1.5,
 		num: 194,
 	},
-	pekopeko: { // reskin of [Effect Spore] but on crack
+	pekopeko: { // inflicts Taunt on switch-in
 		onDamagingHitOrder: 1,
 		onDamagingHit(damage, target, source, move) {
-			if (move.category === 'Special' || move.category === 'Physical' && !source.status) {
-				const r = this.random(100);
-				if (r < 5) {
-					source.setStatus('psn', target);
-				} else if (r < 10) {
-					source.setStatus('brn', target);
-				} else if (r < 15) {
-					source.setStatus('par', target);
-				} else if (r < 20) {
-					source.setStatus('slp', target);
-				} else if (r < 25) {
-					source.setStatus('frz', target);
-				}
-				 
+			if (!target.hp) {
+				if (!move.smartTarget) damage += Number(move.totalDamage);
+				this.damage(target.getUndynamaxedHP(damage), source, target);
 			}
 		},
+		onUpdate(pokemon) {
+            let activated = false;
+            for (const target of pokemon.foes()) {
+                if (!activated) {
+                    this.add('-ability', pokemon, 'Peko Peko', 'boost');
+                    activated = true;
+                    target.addVolatile('taunt', this.effectState.pokemon);
+                }
+            }
+        },
 		flags: {breakable: 1},
 		name: "Peko Peko",
-		rating: 2,
-		num: 27,
-	},
-	pekopeko2: { // reskin of [Effect Spore] but even more on crack
-		onDamagingHitOrder: 1,
-		onDamagingHit(damage, target, source, move) {
-			if (move.category === 'Special' || move.category === 'Physical' && !source.status) {
-				const r = this.random(100);
-				if (r < 5) {
-					source.setStatus('psn', target);
-				} else if (r < 10) {
-					source.setStatus('brn', target);
-				} else if (r < 15) {
-					source.setStatus('par', target);
-				} else if (r < 20) {
-					source.setStatus('slp', target);
-				} else if (r < 25) {
-					source.setStatus('tox', target);
-				} else if (r < 30) {
-					source.setStatus('frz', target);
-				}
-				 
-			}
-		},
-		flags: {breakable: 1},
-		name: "Peko Peko2",
 		rating: 2,
 		num: 27,
 	},
@@ -2209,7 +2182,31 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 2,
 		num: 201,
 	},
-	chaos: { // [Red Card (ITEM)] but as an ability
+	chaos: { // reskin of [Effect Spore] but on crack
+		onDamagingHitOrder: 1,
+		onDamagingHit(damage, target, source, move) {
+			if (move.category === 'Special' || move.category === 'Physical' && !source.status) {
+				const r = this.random(100);
+				if (r < 5) {
+					source.setStatus('psn', target);
+				} else if (r < 10) {
+					source.setStatus('brn', target);
+				} else if (r < 15) {
+					source.setStatus('par', target);
+				} else if (r < 20) {
+					source.setStatus('slp', target);
+				} else if (r < 25) {
+					source.setStatus('frz', target);
+				}
+				 
+			}
+		},
+		flags: {breakable: 1},
+		name: "Chaos",
+		rating: 2,
+		num: 27,
+	},
+	chaos2: { // [Red Card (ITEM)] but as an ability
 		onAfterMoveSecondary(target, source, move) {
 			if (source && source !== target && source.hp && target.hp && move && move.category !== 'Status') {
 				if (this.randomChance(2, 3)) { 
@@ -2217,10 +2214,10 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 					return; 
 				}
 			} 
-				if (target.hasAbility('chaos')) {
+				if (target.hasAbility('chaos2')) {
 					if (this.runEvent('DragOut', source, target, move)) {
 						source.forceSwitchFlag = true; 
-						this.add('-activate', target, 'ability: Chaos');
+						this.add('-activate', target, 'ability: Chaos2');
 					}
 				}
 			}
@@ -2229,8 +2226,8 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		name: "Chaos",
 		rating: 5,
 		num: 24,
-	}, 
-	chaos2: { // <<<UNUSED VARIANT>>>
+	},
+	chaos3: { // <<<UNUSED VARIANT>>>
 		onDamagingHitOrder: 1,
 		onDamagingHit(damage, target, source, move) {
 			if (move.category === 'Special' || move.category === 'Physical' && !source.status) {
@@ -2252,7 +2249,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			}
 		},
 		flags: {},
-		name: "Chaos2",
+		name: "Chaos3",
 		rating: 2,
 		num: 27,
 	}, 

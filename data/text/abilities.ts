@@ -205,8 +205,10 @@ export const AbilitiesText: { [id: IDEntry]: AbilityText } = {
 	},
 	pekopeko: {
 		name: "Peko Peko",
-		desc: "25% chance a Pokemon using an attacking move on this Pokemon will either be poisoned, paralyzed, frozen, burned or put to sleep.",
-		shortDesc: "If hit by attack: 25% chance attacker is given a random non-volatile status condition.",
+		desc: "On switch-in, this ability inflicts Taunt on all adjacent opponents. If this Pokemon is knocked out with a move, the atacker loses HP equal to the amount of damage inflicted on this Pokemon.",
+		shortDesc: "On switch-in, inflicts Taunt. If user is KOed, the attacker loses equal amount of HP.",
+
+		damage: "#aftermath",
 	},
 	holyknight: {
 		name: "Holy Knight",
@@ -458,10 +460,15 @@ export const AbilitiesText: { [id: IDEntry]: AbilityText } = {
 		desc: "When this Pokemon has more than 1/2 its maximum HP and takes damage from an attack bringing it to 1/2 or less of its maximum HP, its Attack and Special Attack are raised by 1 stage, and its Defense and Special Defense are lowered by 1 stage. This effect applies after all hits from a multi-hit move. This effect is prevented if the move had a secondary effect removed by the Sheer Force Ability.",
 		shortDesc: "At 1/2 or less of user's max HP: +1 Atk, Sp. Atk, & -1 Def, Sp. Def.",
 	},
-	chaos: {
-		name: "Chaos",
+	chaos3: {
+		name: "Chaos3",
 		desc: "If a Pokemon uses a damaging move on this Pokemon, and it survives the hit, there is a 1 in 3 chance the attacker is then forced to switch to a random ally.",
 		shortDesc: "30% chance those who attack the user are forced to switch to a random ally.",
+	},
+	chaos: {
+		name: "Chaos",
+		desc: "25% chance a Pokemon using an attacking move on this Pokemon will either be poisoned, paralyzed, frozen, burned or put to sleep.",
+		shortDesc: "If hit by attack: 25% chance attacker is given a random non-volatile status condition.",
 	},
 	archiver: {
 		name: "Archiver",
