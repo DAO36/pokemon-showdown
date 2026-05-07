@@ -2110,8 +2110,9 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		pp: 20,
 		priority: 0,
 		flags: {snatch: 1},
-		boosts: {
-			atk: 2,
+		onHit(pokemon) {
+			const success = !!this.boost({ atk: 2 });
+			return pokemon.cureStatus() || success;
 		},
 		target: "self",
 		type: "Psychic",
@@ -2399,12 +2400,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		pp: 5,
 		priority: 0,
 		flags: {contact: 1, protect: 1, mirror: 1, slicing: 1},
-		self: {
-			boosts: {
-				def: -1,
-				spd: -1,
-			},
-		},
+		recoil: [33, 100],
 		target: "normal",
 		type: "Ghost",
 		contestType: "Tough",
@@ -2418,7 +2414,12 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		pp: 5,
 		priority: 0,
 		flags: {contact: 1, protect: 1, mirror: 1, punch: 1}, 
-		recoil: [33, 100],
+		self: {
+			boosts: {
+				def: -1,
+				spd: -1,
+			},
+		},
 		target: "normal",
 		type: "Ghost",
 		contestType: "Tough",
@@ -2942,12 +2943,12 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	timedattack: { // AME 1
 		num: 800,
 		accuracy: 90,
-		basePower: 140,
+		basePower: 120,
 		category: "Special",
 		name: "Timed Attack",
 		pp: 5,
 		priority: 0,
-		flags: {charge: 1, protect: 1, mirror: 1, contact: 1, distance: 1},
+		flags: {charge: 1, mirror: 1, contact: 1, distance: 1},
 		onTryMove(attacker, defender, move) {
 			if (attacker.removeVolatile(move.id)) {
 				return;
@@ -3166,6 +3167,15 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		pp: 5,
 		priority: 0,
 		flags: {protect: 1, mirror: 1, pulse: 1},
+		ignoreImmunity: true,
+		onEffectiveness(typeMod, target, type, move) {
+			if (move.type !== 'Psychic') return;
+			if (!target) return; // avoid crashing when called from a chat plugin
+			// ignore effectiveness if the target is Dark type and immune to Psychic
+			if (!target.runImmunity('Psychic')) {
+				if (target.hasType('Dark')) return 0;
+			}
+		},
 		target: "normal",
 		type: "Psychic",
 		contestType: "Cool",

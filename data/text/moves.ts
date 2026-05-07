@@ -572,8 +572,8 @@ export const MovesText: { [id: IDEntry]: MoveText } = {
 	},
 	koyolabo: {
 		name: "Koyo Labo",
-		desc: "Raises this Pokemon's Attack by 2 stages.",
-		shortDesc: "Raises the user's Attack by 2.",
+		desc: "The user cures its non-volatile status condition. Raises the user's Attack by 2 stages.",
+		shortDesc: "Cures user's status, raises Attack by 2.",
 	},
 	hologram: {
 		name: "Hologram",
@@ -626,13 +626,13 @@ export const MovesText: { [id: IDEntry]: MoveText } = {
 	},
 	udinassault: {
 		name: "Udin Assault",
-		desc: "If the target lost HP, this Pokemon takes recoil damage equal to 33% the HP lost by the target, rounded half up, but not less than 1 HP.",
-		shortDesc: "Has 33% recoil.",
+		desc: "Lowers the user's Defense and Special Defense by 1 stage. Deals damage to the target based on its Special Defense instead of Defense.",
+		shortDesc: "User: -1 Def & SpDef. Damages on SpDef, not Def.",
 	},
 	pathofsincerity: {
 		name: "Path of Sincerity",
-		desc: "Lowers the user's Defense and Special Defense by 1 stage. Deals damage to the target based on its Special Defense instead of Defense.",
-		shortDesc: "User: -1 Def & SpDef. Damages on SpDef, not Def.",
+		desc: "If the target lost HP, this Pokemon takes recoil damage equal to 33% the HP lost by the target, rounded half up, but not less than 1 HP.",
+		shortDesc: "Has 33% recoil.",
 	},
 	tonjok: {
 		name: "Tonjok",
@@ -810,8 +810,8 @@ export const MovesText: { [id: IDEntry]: MoveText } = {
 	},
 	aochan: {
 		name: "AO Chan",
-		desc: "This attack never misses.",
-		shortDesc: "This attack never misses.",
+		desc: "This move's type effectiveness against Dark is changed to be neutrally effective no matter what this move's type is. This attack never misses. ",
+		shortDesc: "Psychic type move that can hit Dark types.",
 	},
 	phoenixshield: {
 		name: "Phoenix Shield",
