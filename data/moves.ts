@@ -371,7 +371,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	foxkatana: { // FUBUKI 1
 		num: 348,
 		accuracy: 100,
-		basePower: 80,
+		basePower: 75,
 		category: "Physical",
 		name: "Fox Katana",
 		pp: 10,
@@ -502,10 +502,10 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	splitpersonality: { // HAACHAMA 1
 		num: 370,
 		accuracy: 100,
-		basePower: 55,
+		basePower: 60,
 		category: "Physical",
 		name: "Split Personality",
-		pp: 10,
+		pp: 5,
 		flags: {contact: 1, protect: 1, mirror: 1},
 		onEffectiveness(typeMod, target, type, move) {
 			return typeMod + this.dex.getEffectiveness('Fairy', type);
@@ -518,15 +518,15 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	},
 	haachamacooking: { // HAACHAMA 2
 		num: 370,
-		accuracy: 100,
-		basePower: 90,
+		accuracy: 95,
+		basePower: 95,
 		category: "Physical",
 		name: "Haachama Cooking",
 		pp: 10,
 		priority: 0,
 		flags: {protect: 1, mirror: 1},
 		secondary: {
-			chance: 25,
+			chance: 30,
 			volatileStatus: 'flinch',
 		},
 		target: "normal",
@@ -534,20 +534,20 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		contestType: "Cool",
 	},
 	fourcoursemeal: { // HAACHAMA 3
-		num: 370,
+		num: 850,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
 		name: "Four Course Meal",
-		pp: 20,
+		pp: 15,
 		priority: 0,
-		flags: {snatch: 1, bite: 1},
-		boosts: {
-			atk: 2,
+		flags: { snatch: 1, bite: 1 },
+		onHit(pokemon) {
+			const success = !!this.boost({ atk: 2 });
+			return pokemon.cureStatus() || success;
 		},
 		target: "self",
 		type: "Bug",
-		contestType: "Beautiful",
 	},
 	kapu: { // MEL 1
 		num: 370,
@@ -751,7 +751,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 			},
 		],
 		target: "normal",
-		type: "Dark",
+		type: "Ghost",
 	},
 	onionslaught: { // <<<UNUSED>>>
 		num: 370,
@@ -771,6 +771,22 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		target: "normal",
 		type: "Dark",
 		contestType: "Tough",
+	},
+	firstaid: { // <<<UNUSED>>>
+		num: 816,
+		accuracy: true,
+		basePower: 0,
+		category: "Status",
+		name: "First Aid",
+		pp: 5,
+		priority: 0,
+		flags: {heal: 1, bypasssub: 1, allyanim: 1},
+		onHit(pokemon) {
+			const success = !!this.heal(this.modify(pokemon.maxhp, 0.33));
+			return pokemon.cureStatus() || success;
+		},
+		target: "allies",
+		type: "Fairy",
 	},
 	nursing: { // CHOCO 1
 		num: 370,
@@ -809,22 +825,6 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Fairy",
 		contestType: "Cute",
 	},
-	firstaid: { // <<<UNUSED>>>
-		num: 816,
-		accuracy: true,
-		basePower: 0,
-		category: "Status",
-		name: "First Aid",
-		pp: 5,
-		priority: 0,
-		flags: {heal: 1, bypasssub: 1, allyanim: 1},
-		onHit(pokemon) {
-			const success = !!this.heal(this.modify(pokemon.maxhp, 0.33));
-			return pokemon.cureStatus() || success;
-		},
-		target: "allies",
-		type: "Fairy",
-	},
 	syringe: { // CHOCO 2
 		num: 676,
 		accuracy: 100,
@@ -852,7 +852,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 			status: 'psn',
 		},
 		target: "normal",
-		type: "Fairy",
+		type: "Poison",
 		contestType: "Cute",
 	},
 	blackmagic: { // SHION 1
@@ -897,7 +897,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	magickick: { // SHION 3
 		num: 136,
 		accuracy: 90,
-		basePower: 150,
+		basePower: 140,
 		onBasePower(basePower) {
 			if (this.field.getPseudoWeather('magicroom')) {
 				return this.chainModify(1.5);
@@ -957,8 +957,8 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	},
 	oozorapolice: { // SUBARU 3
 		num: 370,
-		accuracy: 90,
-		basePower: 90,
+		accuracy: 95,
+		basePower: 95,
 		category: "Physical",
 		name: "Oozora Police",
 		pp: 10,

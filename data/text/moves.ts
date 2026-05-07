@@ -152,8 +152,8 @@ export const MovesText: { [id: IDEntry]: MoveText } = {
 	},
 	haachamacooking: {
 		name: "Haachama Cooking",
-		desc: "Has a 25% chance to make the target flinch.",
-		shortDesc: "25% chance to make the target flinch.",
+		desc: "Has a 30% chance to make the target flinch.",
+		shortDesc: "30% chance to make the target flinch.",
 	},
 	alterego: { // [UNUSED]
 		name: "Alter Ego",
@@ -162,8 +162,8 @@ export const MovesText: { [id: IDEntry]: MoveText } = {
 	},
 	fourcoursemeal: {
 		name: "Four Course Meal",
-		desc: "Raises the user's Attack by 2 stages.",
-		shortDesc: "Raises the user's Attack by 2.",
+		desc: "The user cures its non-volatile status condition. Raises the user's Attack by 2 stages.",
+		shortDesc: "Cures user's status, raises Attack by 1.",
 	},
 	kapu: {
 		name: "Kapu",
