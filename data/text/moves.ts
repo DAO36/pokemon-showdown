@@ -163,7 +163,7 @@ export const MovesText: { [id: IDEntry]: MoveText } = {
 	fourcoursemeal: {
 		name: "Four Course Meal",
 		desc: "The user cures its non-volatile status condition. Raises the user's Attack by 2 stages.",
-		shortDesc: "Cures user's status, raises Attack by 1.",
+		shortDesc: "Cures user's status, raises Attack by 2.",
 	},
 	kapu: {
 		name: "Kapu",
