@@ -585,7 +585,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		},
 		onResidual(target, source, effect) { 
 			if (this.field.isTerrain('electricterrain')) {
-				this.heal(target.baseMaxhp / 10);
+				this.heal(target.baseMaxhp / 8);
 			}
 		},
 		flags: {},
@@ -770,7 +770,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		onDamagingHit(damage, target, source, move) {
 			const side = source.isAlly(target) ? source.side.foe : source.side;
 			if (target.runEffectiveness(move) >= 1) {
-				this.boost({atk: 1, spa: 1});
+				this.boost({spa: 1, spe: 1});
 			}
 		},
 		flags: {breakable: 1},
@@ -1154,7 +1154,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		},
 		onResidual(target, source, effect) { 
 			if (this.field.isTerrain('mistyterrain')) {
-				this.heal(target.baseMaxhp / 10);
+				this.heal(target.baseMaxhp / 8);
 			}
 		},
 		flags: {},
@@ -1562,7 +1562,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 2,
 		num: 240,
 	},
-	moongoddess: { // reskin of [Shield Dust] + immunity to flinch/crits 
+	moongoddess: { // reskin of [Shield Dust/COVERT CLOAK] + immunity to flinch/crits 
 		onCriticalHit: false,
 		onTryAddVolatile(status, pokemon) {
 			if (status.id === 'flinch') return null;

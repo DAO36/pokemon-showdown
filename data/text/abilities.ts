@@ -100,8 +100,8 @@ export const AbilitiesText: { [id: IDEntry]: AbilityText } = {
 	},
 	highspecsrobot: {
 		name: "High Specs Robot",
-		desc: "If Electric Terrain is active, the Speed of this Pokemon is doubled, and heals 1/10 of max HP at the end of each turn.",
-		shortDesc: "In Electric Terrain, user's speed is doubled & heals 1/10 of max HP every turn.", 
+		desc: "If Electric Terrain is active, the Speed of this Pokemon is doubled, and heals 1/8 of max HP at the end of each turn.",
+		shortDesc: "In Electric Terrain, user's speed is doubled & heals 1/8 of max HP every turn.", 
 	}, 
 	virtualdiva: {
 		name: "Virtual Diva",
@@ -147,15 +147,10 @@ export const AbilitiesText: { [id: IDEntry]: AbilityText } = {
 
 		block: "  [SOURCE] cannot use [MOVE]!",
 		},
-	apex2: { // [UNUSED]
-		name: "Apex2",
-		desc: "When this Maid has more than 1/2 of her maximum HP and takes damage from an attack bringing her to 1/2 or less of her maximum HP, her Attack and Special Attack are both raised by 1 stage each. This effect applies after all hits from a multi-hit move. This effect is prevented if the move had a secondary effect removed by the Sheer Force Ability.",
-		shortDesc: "If HP reaches 1/2 or less, user's Attack & Special Attack are both raised by 1.",
-	},
 	apex: {
 		name: "Apex",
-		desc: "This Pokemon's Attack and Special Attack are both raised by 1 stage after it is damaged by a super effective move.",
-		shortDesc: "Attack & Speed are raised by 1 stage if user is hit by a super effective move.",
+		desc: "This Pokemon's Special Attack and Speed are both raised by 1 stage after it is damaged by a super effective move.",
+		shortDesc: "+1 Special Attack & Speed if user was hit by a super effective move.",
 	},
 	oni: {
 		name: "Oni",
@@ -251,8 +246,8 @@ export const AbilitiesText: { [id: IDEntry]: AbilityText } = {
 	},
 	sugarrush: {
 		name: "Sugar Rush",
-		desc: "If Misty Terrain is active, the Speed of this Pokemon is doubled, and heals 1/10 of max HP at the end of each turn.",
-		shortDesc: "In Misty Terrain, user's speed is doubled & heals 1/10 of max HP every turn.", 
+		desc: "If Misty Terrain is active, the Speed of this Pokemon is doubled, and heals 1/8 of max HP at the end of each turn.",
+		shortDesc: "In Misty Terrain, user's speed is doubled & heals 1/8 of max HP every turn.", 
 	}, 
 	tmd: {
 		name: "TMD",
