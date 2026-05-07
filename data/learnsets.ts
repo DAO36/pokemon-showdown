@@ -96317,6 +96317,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			pinmissile: ["9M"],
 			vacuumwave: ["9M"],
 			rest: ["9M"],
+			snarl: ["9M"],
 			icefang: ["9M"],
 			shadowclaw: ["9M"],
 			crunch: ["9M"],
