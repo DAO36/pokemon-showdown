@@ -855,12 +855,12 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Poison",
 		contestType: "Cute",
 	},
-	blackmagic: { // SHION 1
+	darkmagic: { // SHION 1
 		num: 560,
 		accuracy: 90,
 		basePower: 120,
 		category: "Special",
-		name: "Black Magic",
+		name: "Dark Magic",
 		pp: 5,
 		flags: {protect: 1, mirror: 1, pulse: 1},
 		self: {
@@ -869,10 +869,14 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 			},
 		},
 		ignoreImmunity: true,
-		onEffectiveness(typeMod, target, type) {
-			if (type === 'Dark') return 1;
-			if (type === 'Psychic') return 1; 
-		}, 
+		onEffectiveness(typeMod, target, type, move) {
+			if (move.type !== 'Psychic') return;
+			if (!target) return; // avoid crashing when called from a chat plugin
+			// ignore effectiveness if the target is Dark type and immune to Psychic
+			if (!target.runImmunity('Psychic')) {
+				if (target.hasType('Dark')) return 0;
+			}
+		},
 		priority: 0,
 		target: "normal",
 		type: "Psychic",
@@ -1086,7 +1090,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 				} else if (result === 1) {
 					target.trySetStatus('par', source);
 				} else {
-					target.trySetStatus('tox', source);
+					target.trySetStatus('psn', source);
 				}
 			},
 		},
@@ -1443,7 +1447,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	asacoco: { // COCO 1
 		num: 370,
 		accuracy: 70,
-		basePower: 110,
+		basePower: 120,
 		category: "Physical",
 		name: "AsaCoco",
 		pp: 10,
@@ -1467,7 +1471,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		priority: 0,
 		flags: { contact: 1, protect: 1, mirror: 1},
 		secondary: {
-			chance: 30,
+			chance: 20,
 			status: 'tox',
 		},
 		target: "allAdjacentFoes",
@@ -1675,7 +1679,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	},
 	bibiblast: { // TOWA 1
 		num: 370,
-		accuracy: 90,
+		accuracy: 85,
 		basePower: 110,
 		category: "Physical",
 		name: "Bibi Blast",
@@ -1752,13 +1756,15 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		secondary: {
 			chance: 25,
 			onHit(target, source) {
-				const result = this.random(3);
+				const result = this.random(4);
 				if (result === 0) {
 					target.trySetStatus('brn', source);
 				} else if (result === 1) {
 					target.trySetStatus('par', source);
+				} else if (result === 2) {
+					target.trySetStatus('slp', source);
 				} else {
-					target.trySetStatus('tox', source);
+					target.trySetStatus('psn', source);
 				}
 			},
 		},
@@ -1784,7 +1790,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		num: 370,
 		accuracy: 85,
 		basePower: 15,
-		category: "Physical",
+		category: "Special",
 		name: "SSRB",
 		pp: 10,
 		priority: 0,
@@ -1814,8 +1820,8 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	poi: { // BOTAN 3
 		num: 411,
 		accuracy: 90,
-		basePower: 140,
-		category: "Special",
+		basePower: 120,
+		category: "Physical",
 		name: "Poi",
 		pp: 5,
 		priority: 0,
@@ -2000,6 +2006,11 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		pp: 5,
 		priority: 0,
 		flags: {contact: 1, protect: 1, mirror: 1},
+		ignoreImmunity: true,
+		onEffectiveness(typeMod, target, type) {
+			if (type === 'Dark') return 1;
+			if (type === 'Psychic') return 1; 
+		}, 
 		recoil: [33, 100],
 		secondary: {
 			chance: 20,
@@ -2970,7 +2981,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		flags: {protect: 1, mirror: 1, contact: 1, bite: 1}, 
 		secondary: {
 			chance: 10,
-			status: 'tox',
+			status: 'psn',
 		},
 		target: "normal",
 		type: "Poison",

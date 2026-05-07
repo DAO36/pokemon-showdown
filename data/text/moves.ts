@@ -302,7 +302,7 @@ export const MovesText: { [id: IDEntry]: MoveText } = {
 	}, 
 	tarots: {
 		name: "Tarots",
-		desc: "Has a 25% chance to either burn, paralyze, or badly poison the target. Hits four times. If one of the hits breaks the target's substitute, it will take damage for the remaining hits. This move's type effectiveness against Dark is changed to be neutrally effective no matter what this move's type is.",
+		desc: "Has a 25% chance to either burn, paralyze, poison the target. Hits four times. If one of the hits breaks the target's substitute, it will take damage for the remaining hits. This move's type effectiveness against Dark is changed to be neutrally effective no matter what this move's type is.",
 		shortDesc: "25% chance to inflict a status. Hits Dark types.",
 	},
 	hatotaurushelp: {
@@ -399,8 +399,8 @@ export const MovesText: { [id: IDEntry]: MoveText } = {
 	},
 	gmmf: {
 		name: "GMMF",
-		desc: "Hits adjacent Pokemon. Has a 30% chance to badly poison the target.",
-		shortDesc: "30% chance to badly poison foe(s).",
+		desc: "Hits adjacent Pokemon. Has a 20% chance to badly poison the target.",
+		shortDesc: "20% chance to badly poison foe(s).",
 	},
 	gorillagrip: {
 		name: "Gorilla Grip",
@@ -476,7 +476,7 @@ export const MovesText: { [id: IDEntry]: MoveText } = {
 	},
 	polpol: {
 		name: "Pol Pol",
-		desc: "Has a 25% chance to either burn, paralyze, or badly poison the target. Hits four times. If one of the hits breaks the target's substitute, it will take damage for the remaining hits. This move's type effectiveness against Dark is changed to be neutrally effective no matter what this move's type is.",
+		desc: "Has a 25% chance to either burn, paralyze, poison, or make the target fall asleep. Hits four times. If one of the hits breaks the target's substitute, it will take damage for the remaining hits. This move's type effectiveness against Dark is changed to be neutrally effective no matter what this move's type is.",
 		shortDesc: "25% chance to inflict a status.",
 	},
 	ssrb: {
