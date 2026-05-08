@@ -978,8 +978,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		onDamagingHitOrder: 1,
 		onDamagingHit(damage, target, source, move) {
 			if (!target.hp) {
-				if (!move.smartTarget) damage += Number(move.totalDamage);
-				this.damage(target.getUndynamaxedHP(damage), source, target);
+				this.damage(source.baseMaxhp / 3, source, target);
 			}
 		},
 		onStart(pokemon) {
@@ -996,6 +995,29 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		name: "Peko Peko",
 		rating: 2,
 		num: 27,
+	},
+	pekopeko2: { // any pokemon that KOs user loses 1/2 of their maximum HP
+		onDamagingHitOrder: 1,
+		onDamagingHit(damage, target, source, move) {
+			if (!target.hp) {
+				if (!move.smartTarget) damage += Number(move.totalDamage);
+				this.damage(target.getUndynamaxedHP(damage), source, target);
+			}
+		},
+		onStart(pokemon) {
+            let activated = false;
+            for (const target of pokemon.foes()) {
+                if (!activated) {
+                    this.add('-ability', pokemon, 'Peko Peko', 'boost');
+                    activated = true;
+                    target.addVolatile('taunt', this.effectState.pokemon);
+                }
+            }
+        },
+		flags: {},
+		name: "pekopeko2",
+		rating: 2,
+		num: 106,
 	},
 	piracy: { // reskin of [Costar] but copies foes stats insetad of allies and also clears foes stats  
 		onStart(pokemon) { 
