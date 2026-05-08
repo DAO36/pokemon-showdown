@@ -98548,6 +98548,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			charm: ["9M"],
 			moomers: ["9M"],
 			owlblade: ["9M"],
+			sweetberries: ["9M"],
         },
 	},	
 	mumeievil: {
@@ -98607,6 +98608,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			charm: ["9M"],
 			moomers: ["9M"],
 			owlblade: ["9M"],
+			sweetberries: ["9M"],
         },
 	},	
 	boomei: {
@@ -98656,6 +98658,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			hex: ["9M"],
 			moomers: ["9M"],
 			owlblade: ["9M"],
+			sweetberries: ["9M"],
         },
 	},
 	bae: {

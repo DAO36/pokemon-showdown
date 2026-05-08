@@ -299,7 +299,7 @@ export const MovesText: { [id: IDEntry]: MoveText } = {
 		shortDesc: "Heals 50% damage dealt; Steals & eats foe's Berry.",
 
 		removeItem: "  [SOURCE] stole and ate [POKEMON]'s [ITEM]!",
-	}, 
+	},
 	tarots: {
 		name: "Tarots",
 		desc: "Has a 25% chance to either burn, paralyze, poison the target. Hits four times. If one of the hits breaks the target's substitute, it will take damage for the remaining hits. This move's type effectiveness against Dark is changed to be neutrally effective no matter what this move's type is.",
@@ -944,6 +944,13 @@ export const MovesText: { [id: IDEntry]: MoveText } = {
 		name: "Owl Blade",
 		desc: "Has a higher chance for a critical hit.",
 		shortDesc: "High critical hit ratio.",
+	},
+	sweetberries: {
+		name: "Sweet Berries",
+		desc: "This move summons Leech Seed on the target. If this move is successful and the user has not fainted, it steals the target's held Berry if it is holding one and eats it immediately, gaining its effects even if the user's item is being ignored. Items lost to this move cannot be regained with Recycle or the Harvest Ability.",
+		shortDesc: "Leech Seeds foe; Steals & eats foe's Berry.",
+
+		removeItem: "  [SOURCE] stole and ate [POKEMON]'s [ITEM]!",
 	},
 	chaosstrike: { // <<UNUSED>>
 		name: "Chaos Strike",

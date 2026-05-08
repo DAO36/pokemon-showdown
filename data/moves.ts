@@ -3714,6 +3714,32 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Flying",
 		contestType: "Cool",
 	},
+	sweetberries: { // MUMEI 3
+		num: 370,
+		accuracy: 100,
+		basePower: 60,
+		category: "Physical",
+		name: "Sweet Berries",
+		pp: 15,
+		priority: 0,
+		flags: {contact: 1, protect: 1, mirror: 1, heal: 1, bite: 1},
+		onHit(target, source) {
+			const item = target.getItem();
+			if (source.hp && item.isBerry && target.takeItem(source)) {
+				this.add('-enditem', target, item.name, '[from] stealeat', '[move] Sweet Berries', '[of] ' + source);
+				if (this.singleEvent('Eat', item, null, source, null, null)) {
+					this.runEvent('EatItem', source, null, null, item);
+					if (item.id === 'leppaberry') target.staleness = 'external';
+				}
+				if (item.onEat) source.ateBerry = true;
+			}
+			if (target.hasType('Grass')) return null;
+			target.addVolatile('leechseed', source);
+		},
+		target: "normal",
+		type: "Grass",
+		contestType: "Tough",
+	},
 	chaosstrike: { // FURRY BAE 1
 		num: 217,
 		accuracy: 90,
