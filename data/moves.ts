@@ -251,7 +251,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		name: "Comet Slam",
 		pp: 5,
 		priority: 0,
-		flags: {protect: 1, mirror: 1, gravity: 1},
+		flags: {protect: 1, contact: 1, gravity: 1},
 		hasCrashDamage: true,
 		onMoveFail(target, source, move) {
 			this.damage(source.baseMaxhp / 2, source, source, this.dex.conditions.get('High Jump Kick'));
