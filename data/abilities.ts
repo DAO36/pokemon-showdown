@@ -983,7 +983,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 				this.damage(target.getUndynamaxedHP(damage), source, target);
 			}
 		},
-		onUpdate(pokemon) {
+		onStart(pokemon) {
             let activated = false;
             for (const target of pokemon.foes()) {
                 if (!activated) {
