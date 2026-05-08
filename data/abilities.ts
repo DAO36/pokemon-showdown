@@ -688,8 +688,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		num: 258,
 	},
 	chamachange: { // reSkin of [Zen Mode]
-		onResidualOrder: 29,
-		onResidual(pokemon) {
+		onUpdate(pokemon) {
 			if (pokemon.baseSpecies.baseSpecies !== 'AkaiHaato' || pokemon.transformed) {
 				return;
 			}
