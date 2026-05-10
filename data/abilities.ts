@@ -168,6 +168,17 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 5,
 		num: 23,
 	},
+	pacifisthealing: {
+		onAfterMove(target, source, move) {
+            if (move.category === 'Status') {
+                this.heal(target.baseMaxhp / 8);
+            }
+        },
+		flags: {},
+		name: "Pacifist Healing",
+		rating: 4,
+		num: 192,
+	},
 	flinchinator: { 
 		onStart(pokemon) {
             let activated = false;
@@ -836,7 +847,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			}
 		},
 		onSwitchOut(pokemon) {
-			pokemon.heal(pokemon.baseMaxhp / 3);
+			pokemon.heal(pokemon.baseMaxhp / 4);
 		}, 
 		flags: {breakable: 1},
 		name: "Nurse",

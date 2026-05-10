@@ -161,8 +161,8 @@ export const AbilitiesText: { [id: IDEntry]: AbilityText } = {
 	},
 	nurse: {
 		name: "Nurse",
-		desc: "On switch-in, this Pokemon cures their party of any status effects they may have. Pokemon on the user's side cannot have have a non-volatile status condition inflicted on them by other Pokemon. This Pokemon restores 1/3 of her maximum HP, rounded down, when she switches out.",
-		shortDesc: "On switch-in, user heals party of status. Heals 1/3 HP when switching out.", 
+		desc: "On switch-in, this Pokemon cures their party of any status effects they may have. Pokemon on the user's side cannot have have a non-volatile status condition inflicted on them by other Pokemon. This Pokemon restores 1/4 of her maximum HP, rounded down, when she switches out.",
+		shortDesc: "On switch-in, user heals party of status. Heals 1/4 HP when switching out.", 
 
 		block: "  [POKEMON] is protected by medicine!",
 	},
