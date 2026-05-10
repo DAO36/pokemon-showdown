@@ -7447,7 +7447,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		flags: { mirror: 1, metronome: 1 },
 		onHitField(target, source) {
 			const sideConditions = [
-				'mist', 'lightscreen', 'reflect', 'spikes', 'hologram', 'carrottrap', 'safeguard', 'tailwind', 'toxicspikes', 'stealthrock', 'waterpledge', 'firepledge', 'grasspledge', 'stickyweb', 'auroraveil', 'luckychant', 'gmaxsteelsurge', 'gmaxcannonade', 'gmaxvinelash', 'gmaxwildfire', 'gmaxvolcalith',
+				'mist', 'lightscreen', 'reflect', 'spikes', 'hologram', 'infirmary', 'carrottrap', 'safeguard', 'tailwind', 'toxicspikes', 'stealthrock', 'waterpledge', 'firepledge', 'grasspledge', 'stickyweb', 'auroraveil', 'luckychant', 'gmaxsteelsurge', 'gmaxcannonade', 'gmaxvinelash', 'gmaxwildfire', 'gmaxvolcalith',
 			];
 			let success = false;
 			if (this.gameType === "freeforall") {
@@ -7865,7 +7865,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 			let success = false;
 			if (!target.volatiles['substitute'] || move.infiltrates) success = !!this.boost({ evasion: -1 });
 			const removeAll = ['spikes', 'toxicspikes', 'stealthrock', 'stickyweb', 'gmaxsteelsurge', 'carrottrap'];
-			const removeTarget = ['reflect', 'lightscreen', 'auroraveil', 'Hologram', 'safeguard', 'mist', ...removeAll];
+			const removeTarget = ['reflect', 'lightscreen', 'auroraveil', 'infirmary', 'Hologram', 'safeguard', 'mist', ...removeAll];
 			for (const targetCondition of removeTarget) {
 				if (target.side.removeSideCondition(targetCondition)) {
 					if (!removeAll.includes(targetCondition)) continue;

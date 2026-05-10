@@ -1432,7 +1432,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
         onStart(pokemon) { 
 			this.add('-activate', pokemon, 'ability: Cleaner');
 			let activated = false;
-            for (const sideCondition of ['reflect', 'lightscreen', 'auroraveil', 'hologram', 'mist', 'safeguard']) {
+            for (const sideCondition of ['reflect', 'lightscreen', 'auroraveil', 'hologram', 'infirmary', 'mist', 'safeguard']) {
                 for (const side of [...pokemon.side.foeSidesWithConditions()]) {
                     if (side.getSideCondition(sideCondition)) {
                         if (!activated) { 
