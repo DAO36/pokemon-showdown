@@ -857,7 +857,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Poison",
 		contestType: "Cute",
 	},
-	infirmary: { // CHOCO #
+	infirmary: { // CHOCO 3
 		num: 54,
 		accuracy: true,
 		basePower: 0,
@@ -877,7 +877,6 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 			},
 			onSwitchIn(pokemon) { 	
 				if (pokemon.hasItem('heavydutyboots')) return;
-				this.add('-activate', pokemon, 'move: Infirmary');
 			    this.heal(pokemon.baseMaxhp / 4);
             },
 			onSideStart(side) {
