@@ -247,7 +247,10 @@ export const MovesText: { [id: IDEntry]: MoveText } = {
 		name: "Infirmary",
 		desc: "Heals first grounded ally on switch-in. Max 4 layers.",
 		shortDesc: "Heals first grounded ally on switch-in. Max 4 layers.",
-	},
+
+		start: "  An Infirmary has been set up for [TEAM]!",
+		end: "  The Infirmary has been demolished!",
+	}, 
 	darkmagic: {
 		name: "Dark Magic",
 		desc: "Lowers the user's Special Attack by 2 stages. This move's type effectiveness against Dark and Psychic is changed to be super effective no matter what this move's type is.",
