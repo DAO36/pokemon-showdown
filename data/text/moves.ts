@@ -248,9 +248,10 @@ export const MovesText: { [id: IDEntry]: MoveText } = {
 		desc: "Heals allies on switch-in.",
 		shortDesc: "Heals allies on switch-in.",
 
-		start: "  An Infirmary has been set up for [TEAM]!",
-		end: "  The Infirmary has been demolished!",
-	}, 
+		start: "  [TEAM] built an infirmary!",
+		end: "  [TEAM] is no longer covered by insurance!",
+		heal: "  [POKEMON] was healed by the infirmary!",
+	},
 	darkmagic: {
 		name: "Dark Magic",
 		desc: "Lowers the user's Special Attack by 2 stages. This move's type effectiveness against Dark and Psychic is changed to be super effective no matter what this move's type is.",
