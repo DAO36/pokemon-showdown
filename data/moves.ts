@@ -36,42 +36,6 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Fairy",
 		contestType: "Beautiful",
 	},
-	infirmary: {
-        num: 274,
-        accuracy: true,
-        basePower: 0,
-        category: "Status",
-        name: "Infirmary",
-        pp: 10,
-        priority: 0,
-        flags: {snatch: 1, heal: 1},
-        sideCondition: 'infirmary',
-        target: "allySide",
-        condition: {
-            // this is a side condition
-            onSideStart(side) {
-                this.add('-sidestart', side, 'move: Infirmary');
-                this.effectState.layers = 1;
-            },
-            onSideRestart(side) {
-                if (this.effectState.layers >= 4) return false;
-                this.add('-sidestart', side, 'Infirmary');
-                this.effectState.layers++;
-            },
-            onEntryHazard(pokemon) {
-                if (pokemon.hasItem('heavydutyboots')) return;
-                const healAmounts = [0, 4, 2, 4/3, 1]
-                if(healAmounts[this.effectState.layers]!=0 && pokemon.hp < pokemon.maxhp)
-                {
-                    this.heal(pokemon.baseMaxhp / healAmounts[this.effectState.layers]);
-                    pokemon.side.removeSideCondition('infirmary');
-                }
-            },
-            },
-        type: "Fairy",
-        zMove: {boost: {def: 1}},
-        contestType: "Clever",
-    },
 	tskr: { // SORA 1
 		num: 370,
 		accuracy: true,
@@ -891,6 +855,42 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Poison",
 		contestType: "Cute",
 	},
+	infirmary: { // CHOCO 3
+        num: 274,
+        accuracy: true,
+        basePower: 0,
+        category: "Status",
+        name: "Infirmary",
+        pp: 10,
+        priority: 0,
+        flags: {snatch: 1, heal: 1},
+        sideCondition: 'infirmary',
+        target: "allySide",
+        condition: {
+            // this is a side condition
+            onSideStart(side) {
+                this.add('-sidestart', side, 'move: Infirmary');
+                this.effectState.layers = 1;
+            },
+            onSideRestart(side) {
+                if (this.effectState.layers >= 4) return false;
+                this.add('-sidestart', side, 'Infirmary');
+                this.effectState.layers++;
+            },
+            onEntryHazard(pokemon) {
+                if (pokemon.hasItem('heavydutyboots')) return;
+                const healAmounts = [0, 4, 2, 4/3, 1]
+                if(healAmounts[this.effectState.layers]!=0 && pokemon.hp < pokemon.maxhp)
+                {
+                    this.heal(pokemon.baseMaxhp / healAmounts[this.effectState.layers]);
+                    pokemon.side.removeSideCondition('infirmary');
+                }
+            },
+            },
+        type: "Fairy",
+        zMove: {boost: {def: 1}},
+        contestType: "Clever",
+    },
 	darkmagic: { // SHION 1
 		num: 560,
 		accuracy: 90,

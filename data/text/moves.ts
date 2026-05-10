@@ -225,6 +225,11 @@ export const MovesText: { [id: IDEntry]: MoveText } = {
 		desc: "Lowers the user's Defense and Special Defense by 1 stage.",
 		shortDesc: "Lowers the user's Defense and Sp. Def by 1.",
 	},
+	firstaid: { // [UNUSED]
+		name: "First Aid",
+		desc: "Each Pokemon on the user's side restores 1/3 of their maximum HP, rounded half up, and has their status condition cured.",
+		shortDesc: "User and allies: heal 1/3 max HP, cures status.",
+	},
 	nursing: {
 		name: "Nursing",
 		desc: "User switches out. At the end of the next turn, the Pokemon at the user's position has 1/2 of its maximum HP restored to it, rounded down. Fails if this move is already in effect for the user's position.",
@@ -233,15 +238,15 @@ export const MovesText: { [id: IDEntry]: MoveText } = {
 		heal: "  [NICKNAME]'s was nursed back to health!",
 		switchOut: "#uturn",
 	},
-	firstaid: { // [UNUSED]
-		name: "First Aid",
-		desc: "Each Pokemon on the user's side restores 1/3 of their maximum HP, rounded half up, and has their status condition cured.",
-		shortDesc: "User and allies: heal 1/3 max HP, cures status.",
-	},
 	syringe: {
 		name: "Syringe",
 		desc: "Has a 100% chance to poison the target. If the target is an ally, this move instead restores 1/2 of the ally's maximum HP, rounded down, instead of dealing damage, as well as curing them of any status effects.",
 		shortDesc: "100% to poison. If ally, heals 50% HP/cures status.",
+	},
+	infirmary: {
+		name: "Infirmary",
+		desc: "Heals first grounded ally on switch-in. Max 4 layers.",
+		shortDesc: "Heals first grounded ally on switch-in. Max 4 layers.",
 	},
 	darkmagic: {
 		name: "Dark Magic",
