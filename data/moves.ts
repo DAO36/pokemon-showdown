@@ -867,22 +867,45 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
         sideCondition: 'infirmary',
         target: "allySide",
         condition: {
-            // this is a side condition
             onSideStart(side) {
                 this.add('-sidestart', side, 'move: Infirmary');
             },
 			onSwitchIn(pokemon) { 	
-				if (pokemon.hasItem('heavydutyboots')) {
-					return;
-				} else if (this.effectState.layers = 1) {
-					this.heal(pokemon.baseMaxhp / 4);
-				}
+				if (pokemon.hasItem('heavydutyboots')) return;
+				this.add('-activate', pokemon, 'move: Infirmary');
+			    this.heal(pokemon.baseMaxhp / 4);
 			  },
             },
         type: "Fairy",
         zMove: {boost: {def: 1}},
         contestType: "Clever",
     },
+	throck: {
+		num: 446,
+		accuracy: true,
+		basePower: 0,
+		category: "Status",
+		name: "Stealth Rock",
+		pp: 20,
+		priority: 0,
+		flags: { reflectable: 1, metronome: 1, mustpressure: 1 },
+		sideCondition: 'stealthrock',
+		condition: {
+			// this is a side condition
+			onSideStart(side) {
+				this.add('-sidestart', side, 'move: Stealth Rock');
+			},
+			onSwitchIn(pokemon) {
+				if (pokemon.hasItem('heavydutyboots')) return;
+				const typeMod = this.clampIntRange(pokemon.runEffectiveness(this.dex.getActiveMove('stealthrock')), -6, 6);
+				this.damage(pokemon.maxhp * (2 ** typeMod) / 8);
+			},
+		},
+		target: "foeSide",
+		type: "Rock",
+		zMove: { boost: { def: 1 } },
+		contestType: "Cool",
+	},
 	darkmagic: { // SHION 1
 		num: 560,
 		accuracy: 90,
