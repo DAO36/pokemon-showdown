@@ -245,8 +245,8 @@ export const MovesText: { [id: IDEntry]: MoveText } = {
 	},
 	infirmary: {
 		name: "Infirmary",
-		desc: "Heals first grounded ally on switch-in. Max 4 layers.",
-		shortDesc: "Heals first grounded ally on switch-in. Max 4 layers.",
+		desc: "Heals allies on switch-in.",
+		shortDesc: "Heals allies on switch-in.",
 
 		start: "  An Infirmary has been set up for [TEAM]!",
 		end: "  The Infirmary has been demolished!",
