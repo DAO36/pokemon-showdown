@@ -875,10 +875,45 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 				if (pokemon.hasItem('heavydutyboots')) {
 					return;
 				} else if (this.effectState.layers = 1) {
-					this.heal(pokemon.baseMaxhp / 8);
-                    pokemon.side.removeSideCondition('infirmary');
+					this.heal(pokemon.baseMaxhp / 4);
 				}
 			  },
+            },
+        type: "Fairy",
+        zMove: {boost: {def: 1}},
+        contestType: "Clever",
+    },
+	ytreats: {
+        num: 274,
+        accuracy: true,
+        basePower: 0,
+        category: "Status",
+        name: "Tasty Treats",
+        pp: 10,
+        priority: 0,
+        flags: {snatch: 1, heal: 1},
+        sideCondition: 'tastytreats',
+        target: "allySide",
+        condition: {
+            // this is a side condition
+            onSideStart(side) {
+                this.add('-sidestart', side, 'move: Tasty Treats');
+                this.effectState.layers = 1;
+            },
+            onSideRestart(side) {
+                if (this.effectState.layers >= 4) return false;
+                this.add('-sidestart', side, 'Tasty Treats');
+                this.effectState.layers++;
+            },
+            onEntryHazard(pokemon) {
+                if (pokemon.hasItem('heavydutyboots')) return;
+                const healAmounts = [0, 4, 2, 4/3, 1]
+                if(healAmounts[this.effectState.layers]!=0 && pokemon.hp < pokemon.maxhp)
+                {
+                    this.heal(pokemon.baseMaxhp / healAmounts[this.effectState.layers]);
+                    pokemon.side.removeSideCondition('tastytreats');
+                }
+            },
             },
         type: "Fairy",
         zMove: {boost: {def: 1}},
