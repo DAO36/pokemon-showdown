@@ -870,27 +870,53 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
             // this is a side condition
             onSideStart(side) {
                 this.add('-sidestart', side, 'move: Infirmary');
-                this.effectState.layers = 1;
             },
-            onSideRestart(side) {
-                if (this.effectState.layers >= 4) return false;
-                this.add('-sidestart', side, 'Infirmary');
-                this.effectState.layers++;
-            },
-            onEntryHazard(pokemon) {
-                if (pokemon.hasItem('heavydutyboots')) return;
-                const healAmounts = [0, 4, 2, 4/3, 1]
-                if(healAmounts[this.effectState.layers]!=0 && pokemon.hp < pokemon.maxhp)
-                {
-                    this.heal(pokemon.baseMaxhp / healAmounts[this.effectState.layers]);
+			onSwitchIn(pokemon) { 	
+				if (pokemon.hasItem('heavydutyboots')) {
+					return;
+				} else if (this.effectState.layers = 1) {
+					this.heal(pokemon.baseMaxhp / 8);
                     pokemon.side.removeSideCondition('infirmary');
-                }
-            },
+				}
+			  },
             },
         type: "Fairy",
         zMove: {boost: {def: 1}},
         contestType: "Clever",
     },
+	ottrap: { // PEKORA 4
+		num: 191,
+		accuracy: true,
+		basePower: 0,
+		category: "Status",
+		name: "Carrot Trap",
+		pp: 20,
+		priority: 0,
+		flags: {reflectable: 1, mustpressure: 1},
+		sideCondition: 'carrottrap',
+		condition: {
+			// this is a side condition
+			onSideStart(side) {
+				this.add('-sidestart', side, 'move: Carrot Trap');
+			},
+			onSwitchIn(pokemon) { 	
+				if (pokemon.hasType('Grass')) {
+					this.add('-sideend', pokemon.side, 'move: Carrot Trap', '[of] ' + pokemon);
+					pokemon.side.removeSideCondition('carrottrap');
+				} else if (pokemon.hasItem('heavydutyboots') || pokemon.hasType('Grass')) {
+					return;
+				} else if (this.effectState.layers = 1) {
+					pokemon.addVolatile('leechseed', pokemon.side.foe.active[0]);
+				} 
+				if (pokemon.hasItem('heavydutyboots') || pokemon.hasType('Grass')) return;
+				const typeMod = this.clampIntRange(pokemon.runEffectiveness(this.dex.getActiveMove('carrottrap')), -6, 6);
+				this.damage(pokemon.maxhp * Math.pow(2, typeMod) / 8); 
+			},
+		},
+		target: "foeSide",
+		type: "Grass", 
+		contestType: "Clever",
+	},
 	darkmagic: { // SHION 1
 		num: 560,
 		accuracy: 90,
