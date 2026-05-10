@@ -223,6 +223,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 			pokemon.side.removeSideCondition('reflect');
 			pokemon.side.removeSideCondition('lightscreen');
 			pokemon.side.removeSideCondition('hologram');
+			pokemon.side.removeSideCondition('infirmary');
 			pokemon.side.removeSideCondition('auroraveil');
 		},
 		target: "normal",
@@ -473,6 +474,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 			pokemon.side.removeSideCondition('reflect');
 			pokemon.side.removeSideCondition('lightscreen');
 			pokemon.side.removeSideCondition('hologram');
+			pokemon.side.removeSideCondition('infirmary');
 			pokemon.side.removeSideCondition('auroraveil');
 			pokemon.side.removeSideCondition('mist');
 		},
@@ -855,24 +857,60 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Poison",
 		contestType: "Cute",
 	},
-	infirmary: { // CHOCO 3
+	infirmary: { // KOYORI 2
+		num: 54,
+		accuracy: true,
+		basePower: 0,
+		category: "Status",
+		name: "Infirmary",
+		pp: 20,
+		priority: 0,
+		flags: {snatch: 1},
+		sideCondition: 'infirmary',
+		condition: {
+			duration: 5,
+			durationCallback(target, source, effect) {
+				if (source?.hasItem('lightclay')) {
+					return 8;
+				}
+				return 5;
+			},
+			onSwitchIn(pokemon) { 	
+				if (pokemon.hasItem('heavydutyboots')) return;
+				this.add('-activate', pokemon, 'move: Infirmary2');
+			    this.heal(pokemon.baseMaxhp / 4);
+            },
+			onSideStart(side) {
+				this.add('-sidestart', side, 'Infirmary');
+			},
+			onSideResidualOrder: 26,
+			onSideResidualSubOrder: 4,
+			onSideEnd(side) {
+				this.add('-sideend', side, 'Infirmary');
+			},
+		},
+		target: "allySide",
+		type: "Psychic",
+		contestType: "Clever",
+	},
+	infirmary2: { // CHOCO 3
         num: 274,
         accuracy: true,
         basePower: 0,
         category: "Status",
-        name: "Infirmary",
+        name: "Infirmary2",
         pp: 10,
         priority: 0,
         flags: {snatch: 1, heal: 1},
-        sideCondition: 'infirmary',
+        sideCondition: 'infirmary2',
         target: "allySide",
         condition: {
             onSideStart(side) {
-                this.add('-sidestart', side, 'move: Infirmary');
+                this.add('-sidestart', side, 'move: Infirmary2');
             },
 			onSwitchIn(pokemon) { 	
 				if (pokemon.hasItem('heavydutyboots')) return;
-				this.add('-activate', pokemon, 'move: Infirmary');
+				this.add('-activate', pokemon, 'move: Infirmary2');
 			    this.heal(pokemon.baseMaxhp / 4);
 			  },
             },
@@ -1233,6 +1271,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 			pokemon.side.removeSideCondition('reflect');
 			pokemon.side.removeSideCondition('lightscreen');
 			pokemon.side.removeSideCondition('hologram');
+			pokemon.side.removeSideCondition('infirmary');
 			pokemon.side.removeSideCondition('auroraveil');
 			pokemon.side.removeSideCondition('mist');
 		},
@@ -4132,6 +4171,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 			pokemon.side.removeSideCondition('reflect');
 			pokemon.side.removeSideCondition('lightscreen');
 			pokemon.side.removeSideCondition('hologram');
+			pokemon.side.removeSideCondition('infirmary');
 			pokemon.side.removeSideCondition('auroraveil');
 		},
 		breaksProtect: true,
@@ -6229,6 +6269,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 			pokemon.side.removeSideCondition('reflect');
 			pokemon.side.removeSideCondition('lightscreen');
 			pokemon.side.removeSideCondition('hologram');
+			pokemon.side.removeSideCondition('infirmary');
 			pokemon.side.removeSideCondition('auroraveil');
 		},
 		target: "normal",
@@ -18469,6 +18510,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 			pokemon.side.removeSideCondition('lightscreen');
 			pokemon.side.removeSideCondition('auroraveil');
 			pokemon.side.removeSideCondition('hologram');
+			pokemon.side.removeSideCondition('infirmary');
 		},
 		target: "normal",
 		type: "Psychic",
@@ -19042,6 +19084,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 			pokemon.side.removeSideCondition('reflect');
 			pokemon.side.removeSideCondition('lightscreen');
 			pokemon.side.removeSideCondition('hologram');
+			pokemon.side.removeSideCondition('infirmary');
 			pokemon.side.removeSideCondition('auroraveil');
 		},
 		onModifyType(move, pokemon) {
