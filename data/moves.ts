@@ -501,12 +501,12 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Dark",
 		contestType: "Tough",
 	},
-	haachamacooking: { // HAACHAMA 2
+	spidercooking: { // HAACHAMA 2
 		num: 370,
 		accuracy: 95,
 		basePower: 95,
 		category: "Physical",
-		name: "Haachama Cooking",
+		name: "Spider Cooking",
 		pp: 10,
 		priority: 0,
 		flags: {protect: 1, mirror: 1},

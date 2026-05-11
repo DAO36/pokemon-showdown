@@ -186,8 +186,9 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	},
 	unfavoredretreat: {
     onAfterMoveSecondarySelf(source, target, move) {
-        if (move && target && target != source && target.getMoveHitData(move).typeMod < 0) source.switchFlag = true;
-	this.add('-activate', source, 'ability: Unfavored Retreat');	
+        if (move && target && target != source && target.getMoveHitData(move).typeMod < 0) 
+		this.add('-activate', source, 'ability: Unfavored Retreat');
+			source.switchFlag = true;	
     },
 		flags: {},
 		name: "Unfavored Retreat",
@@ -205,19 +206,19 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 4,
 		num: 192,
 	},
-	flinchinator: { 
+	menacing: { 
 		onStart(pokemon) {
             let activated = false;
             for (const target of pokemon.foes()) {
                 if (!activated) {
-                    this.add('-ability', pokemon, 'Flinchinator', 'boost');
+                    this.add('-ability', pokemon, 'Menacing', 'boost');
                     activated = true;
                     target.addVolatile('flinch', this.effectState.pokemon);
                 }
             }
         },
 		flags: {},
-		name: "Flinchinator",
+		name: "Menacing",
 		rating: 5,
 		num: 23,
 	},
@@ -697,20 +698,41 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 4,
 		num: 94,
 	}, 
-	spidersoup: { // if hit instead of more specific contacts
+	spiderman: { // [UNUSED] if hit, sets up STICKY WEBS
 		onDamagingHitOrder: 1,
 		onDamagingHit(damage, target, source, move) {
 			const side = source.isAlly(target) ? source.side.foe : source.side;
 			const stickyweb = side.sideConditions['stickyweb'];
 			if (move.category === 'Special' || move.category === 'Physical' && (!stickyweb || stickyweb.layers < 1)) {
-				this.add('-activate', target, 'ability: Spider Soup');
+				this.add('-activate', target, 'ability: Spiderman');
 				side.addSideCondition('stickyweb', target);
 			}
 		},
 		flags: {breakable: 1},
-		name: "Spider Soup",
+		name: "Spiderman",
 		rating: 3.5,
 		num: 295,
+	},
+	haachamacooking: { // FLINCH on switch in - HEALS when using STATUS moves
+		onStart(pokemon) {
+            let activated = false;
+            for (const target of pokemon.foes()) {
+                if (!activated) {
+                    this.add('-ability', pokemon, 'Haachama Cooking', 'boost');
+                    activated = true;
+                    target.addVolatile('flinch', this.effectState.pokemon);
+                }
+            }
+        },
+		onAfterMove(target, source, move) {
+            if (move.category === 'Status') {
+                this.heal(target.baseMaxhp / 8);
+            }
+        },
+		flags: {},
+		name: "Haachama Cooking",
+		rating: 5,
+		num: 23,
 	},
 	splitpersonalities: { // reskin of [Hunger Switch] <<<UNUSED>>>
 		onResidualOrder: 29,
@@ -2075,7 +2097,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3.5,
 		num: 292,
 	},
-	muteheal: {
+	muteheal: { // [UNUSED]
 		onTryMove(target, source, move) {
 			if (move.flags['sound']) {
 				if (!this.heal(target.baseMaxhp / 4, target, target))
@@ -2451,7 +2473,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 0,
 		num: 57,
 	},
-	voiceofjustice: { // reskin of [Liquid Voice] but it's Fire instead of Water
+	voiceofjustice: { // sounds type moves have PRIORITY
 		onModifyPriority(priority, pokemon, target, move) {
 			if (move.flags['sound']) return priority + 1;
 		},

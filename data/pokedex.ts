@@ -19936,7 +19936,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		types: ["Bug", "Poison"],
 		gender: "F",
 		baseStats: {hp: 80, atk: 125, def: 75, spa: 120, spd: 95, spe: 105},
-		abilities: {0: "Unnerve", 1: "Prankster", H: "Mold Breaker", S: "Spider Soup"},
+		abilities: {0: "Unnerve", 1: "Prankster", H: "Mold Breaker", S: "Haachama Cooking"},
 		heightm: 1.54,
 		weightkg: 55.5,
 		color: "Yellow",

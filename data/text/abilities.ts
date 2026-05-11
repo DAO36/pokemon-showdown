@@ -119,9 +119,14 @@ export const AbilitiesText: { [id: IDEntry]: AbilityText } = {
 
 		damage: "  [POKEMON] is sacrificing her HP in exchange for more power!",
 	}, 
-	spidersoup: {
-		name: "Spider Soup",
+	spiderman: { // [UNUSED]
+		name: "SpiderMan",
 		shortDesc: "If this Pokemon is hit by an attack, Sticky Web is set on the opposing side.",
+	},
+	haachamacooking: {
+		name: "Haachama Cooking",
+		desc: "Upon switching in, causes opposing Pokemon to flinch. This Pokemon heals 1/8 of their maximum HP whn using a status move.",
+		shortDesc: "Heals 1/8 HP when using status moves; Causes foes to flinch on switch-in.",
 	},
 	chamachange: {
 		name: "Chama Change",
