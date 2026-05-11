@@ -552,6 +552,21 @@ export const MovesText: { [id: IDEntry]: MoveText } = {
 		desc: "Has a 20% to raise this Pokemon's Special Defense by 1 stage. If the target lost HP, the user takes recoil damage equal to 33% the HP lost by the target, rounded half up, but not less than 1 HP.",
 		shortDesc: "33% recoil. 20% to raise user's Sp.Def by 1",
 	},
+	laplacedemon: {
+		name: "Laplace Demon",
+		desc: "Fails if the target did not select a physical attack, special attack, or Me First for use this turn, or if the target moves before the user.",
+		shortDesc: "Usually goes first. Fails if target is not attacking.",
+	},
+	karasu: {
+		name: "Karasu",
+		desc: "Has a 100% chance to raise the user's Speed by 1 stage.",
+		shortDesc: "100% chance to raise the user's Speed by 1.",
+	},
+	shackleless: {
+		name: "Shackleless",
+		desc: "Lowers the user's Defense and Special Defense by 2 stages. Raises the user's Attack, Special Attack, and Speed by 2 stages.",
+		shortDesc: "Lowers Def, SpD by 2; raises Atk, SpA, Spe by 2.",
+	},
 	hawkeye: {
 		name: "Hawkeye",
 		desc: "Raises this Pokemon's Attack by 2 stages and accuracy by 1 stage.",

@@ -96628,6 +96628,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			ymd: ["9M"],
 			laplacedemon: ["9M"],
 			karasu: ["9M"],
+			shackleless: ["9M"],
         },
 	},	
 	lui: {
