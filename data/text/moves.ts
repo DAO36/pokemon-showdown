@@ -19,20 +19,30 @@ export const MovesText: { [id: IDEntry]: MoveText } = {
 		desc: "This move can hit ground type Pokemon. If the target is a Ground type, this move deals neutral damage regardless of its other type(s). This move becomes a physical attack if user's Attack is greater than their Special Attack, including stat stage changes.",
 		shortDesc: "Can hit ground types; Physical if Atk > Sp.Atk.",
 	},
-	idolsong: { // Sora
-		name: "Idol Song",
-		desc: "Hits adjacent foes. No additional effect.",
-		shortDesc: "No additional effect. Hits adjacent foes.", 
+	tskr: {
+		name: "TSKR",
+		desc: "This Pokemon cures their party of non-volatile status condition. Raises the user's Special Attack by 2 stages.",
+		shortDesc: "Raises Sp. Atk by 2; Cures user & their party.",
 	},
 	ankimoattack: {
 		name: "Ankimo Attack",
 		desc: "Has a 30% chance to raise this Pokemon's Attack by 1 stage.",
 		shortDesc: "30% chance to raise the user's Attack by 1.", 
 	},
-	tskr: {
-		name: "TSKR",
-		desc: "This Pokemon cures their party of non-volatile status condition. Raises the user's Special Attack by 2 stages.",
-		shortDesc: "Raises Sp. Atk by 2; Cures user & their party.",
+	idolsong: { // Sora
+		name: "Idol Song",
+		desc: "Hits adjacent foes. No additional effect.",
+		shortDesc: "No additional effect. Hits adjacent foes.", 
+	},
+	divasong: {
+		name: "Diva Song",
+		desc: "If the current terrain is Misty Terrain and the target is grounded, this move's power is doubled.",
+		shortDesc: "2x power if target is grounded in Misty Terrain.",
+	},
+	virtualsaber: {
+		name: "Virtual Saber",
+		desc: "If the current terrain is Misty Terrain and the target is grounded, this move's power is doubled.",
+		shortDesc: "2x power if target is grounded in Misty Terrain.",
 	},
 	sakurastrike: {
 		name: "Sakura Strike",
@@ -81,7 +91,7 @@ export const MovesText: { [id: IDEntry]: MoveText } = {
 	},
 	laserbeam: {
 		name: "Laser Beam",
-		desc: "Has a 20% chance to paralyze the target. If Electric Terrain is active, and the user is grounded, this move does not miss.",
+		desc: "Has a 20% chance to paralyze the target. If Electric Terrain is active, and the target is grounded, this move does not miss.",
 		shortDesc: "20% to paralyze. Cannot miss in Electric Terrain.",
 	},
 	upgradepc: {
@@ -93,16 +103,6 @@ export const MovesText: { [id: IDEntry]: MoveText } = {
 		name: "Reboot",
 		desc: "This Pokemon restores 1/2 of its maximum HP, rounded half up. Removes any status effect that the user is inflicted with. Resets any negative stat changes the user has.",
 		shortDesc: "Heals 1/2 HP; Cures status; Resets negative stats.",
-	},
-	divasong: {
-		name: "Diva Song",
-		desc: "If the current terrain is Misty Terrain and the target is grounded, this move's power is doubled.",
-		shortDesc: "2x power if target is grounded in Misty Terrain.",
-	},
-	virtualsaber: {
-		name: "Virtual Saber",
-		desc: "If the current terrain is Misty Terrain and the target is grounded, this move's power is doubled.",
-		shortDesc: "2x power if target is grounded in Misty Terrain.",
 	},
 	snowdash: { // <UNUSED>
 		name: "Snow Dash",
@@ -155,15 +155,15 @@ export const MovesText: { [id: IDEntry]: MoveText } = {
 		desc: "Has a 30% chance to make the target flinch.",
 		shortDesc: "30% chance to make the target flinch.",
 	},
+	ourcoursemeal: {
+		name: "Four Course Meal",
+		desc: "The user cures its non-volatile status condition. Raises the user's Attack by 2 stages.",
+		shortDesc: "Cures user's status, raises Attack by 2.",
+	},
 	alterego: { // [UNUSED]
 		name: "Alter Ego",
 		desc: "Has a 10% chance to flinch the foe. If the user is Akai in Idol Mode, this move is Fairy type and Special. If she is in Haachama Mode, this move is Dark type and Physical. This move cannot be used successfully unless the user's current form, while considering Transform, is Akai or Haato Mode.",
 		shortDesc: "Akai: Fairy; Haato: Dark; 10% to flinch target.",
-	},
-	fourcoursemeal: {
-		name: "Four Course Meal",
-		desc: "The user cures its non-volatile status condition. Raises the user's Attack by 2 stages.",
-		shortDesc: "Cures user's status, raises Attack by 2.",
 	},
 	kapu: {
 		name: "Kapu",
@@ -243,11 +243,6 @@ export const MovesText: { [id: IDEntry]: MoveText } = {
 		desc: "Has a 100% chance to poison the target. If the target is an ally, this move instead restores 1/2 of the ally's maximum HP, rounded down, instead of dealing damage, as well as curing them of any status effects.",
 		shortDesc: "100% to poison. If ally, heals 50% HP/cures status.",
 	},
-	logram: {
-		name: "Hologram",
-		desc: "For 5 turns, this Pokemon and its party members are protected from status moves from other Pokemon. Lasts for 8 turns if the user is holding Light Clay. Fails if the effect is already active on the user's side.",
-		shortDesc: "For 5 turns, protects party from status moves.",
-	},
 	infirmary: {
 		name: "Infirmary",
 		desc: "For 5 turns, this Pokemon and its party members heal 1/4 of their maximum HP upon switching in. Lasts for 8 turns if the user is holding Light Clay. Fails if the effect is already active on the user's side.",
@@ -259,9 +254,9 @@ export const MovesText: { [id: IDEntry]: MoveText } = {
 	},
 	darkmagic: {
 		name: "Dark Magic",
-		desc: "Lowers the user's Special Attack by 2 stages. This move's type effectiveness against Dark and Psychic is changed to be super effective no matter what this move's type is.",
-		shortDesc: "2x effective on Dark & Psychic. -2 SpAtk recoil.",
-	}, 
+		desc: "This move's type effectiveness against Dark and Psychic is changed to be super effective no matter what this move's type is. If the target lost HP, the user takes recoil damage equal to 33% the HP lost by the target, rounded half up, but not less than 1 HP.",
+		shortDesc: "2x effective on Dark & Psychic. Has 33% recoil.",
+	},
 	arcanegarlic: {
 		name: "Arcane Garlic",
 		desc: "Raises this Pokemon's Attack by 2 stages.",

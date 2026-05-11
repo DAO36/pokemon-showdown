@@ -19,23 +19,6 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Electric",
 		contestType: "Cool",
 	},
-	tskr2: { // <<<UNUSED>>> reskin of [TAKE HEART]
-		num: 370,
-		accuracy: true,
-		basePower: 0,
-		category: "Status",
-		name: "TSKR2",
-		pp: 10,
-		priority: 0,
-		flags: {snatch: 1, heal: 1},
-		onHit(pokemon) {
-			const success = !!this.boost({spa: 2});
-			return pokemon.cureStatus() || success;
-		}, // heals user only, not teammates
-		target: "self",
-		type: "Fairy",
-		contestType: "Beautiful",
-	},
 	tskr: { // SORA 1
 		num: 370,
 		accuracy: true,
@@ -209,7 +192,21 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Fairy",
 		contestType: "Cute",
 	},
-	axeattack: { // SUISEI 1
+	suicopath: { // SUISEI 1
+		num: 370,
+		accuracy: 90,
+		basePower: 120,
+		category: "Physical",
+		name: "Suicopath",
+		pp: 5,
+		priority: 0,
+		flags: {contact: 1, protect: 1, mirror: 1, punch: 1},
+		recoil: [33, 100],
+		target: "normal",
+		type: "Dark",
+		contestType: "Tough",
+	},
+	axeattack: { // SUISEI 2
 		num: 38,
 		accuracy: 100,
 		basePower: 80,
@@ -228,20 +225,6 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		},
 		target: "normal",
 		type: "Rock",
-		contestType: "Tough",
-	},
-	suicopath: { // SUISEI 2
-		num: 370,
-		accuracy: 90,
-		basePower: 120,
-		category: "Physical",
-		name: "Suicopath",
-		pp: 5,
-		priority: 0,
-		flags: {contact: 1, protect: 1, mirror: 1, punch: 1},
-		recoil: [33, 100],
-		target: "normal",
-		type: "Dark",
 		contestType: "Tough",
 	},
 	cometslam: { // SUISEI 3
@@ -549,7 +532,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 			return pokemon.cureStatus() || success;
 		},
 		target: "self",
-		type: "Bug",
+		type: "Poison",
 	},
 	kapu: { // MEL 1
 		num: 370,
@@ -924,18 +907,14 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		category: "Special",
 		name: "Dark Magic",
 		pp: 5,
+		priority: 0,
 		flags: {protect: 1, mirror: 1, pulse: 1},
-		self: {
-			boosts: {
-				spa: -2,
-			},
-		},
 		ignoreImmunity: true,
 		onEffectiveness(typeMod, target, type) {
 			if (type === 'Dark') return 1;
 			if (type === 'Psychic') return 1; 
 		}, 
-		priority: 0,
+		recoil: [33, 100],
 		target: "normal",
 		type: "Psychic",
 		contestType: "Tough",
