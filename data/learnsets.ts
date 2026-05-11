@@ -99396,8 +99396,6 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			substitute: ["9M"],
 			protect: ["9M"],
 			rest: ["9M"],
-			highhorsepower: ["9M"],
-			spinout: ["9M"],
         },
 	},
 	lamball: {
