@@ -135,7 +135,7 @@ export const MovesText: { [id: IDEntry]: MoveText } = {
 	},
 	imgod: {
 		name: "I'm God",
-		desc: "If the target lost HP, the user takes recoil damage equal to 1/3 the HP lost by the target, rounded half up, but not less than 1 HP. If this attack does not miss, the effects of Reflect, Light Screen, Mist, Hologram, and Aurora Veil end for the target's side of the field before damage is calculated. If this move is successful, it breaks through the target's Baneful Bunker, Detect, King's Shield, Protect, or Spiky Shield for this turn, allowing other Pokemon to attack the target normally. If the target's side is protected by Crafty Shield, Mat Block, Quick Guard, or Wide Guard, that protection is also broken for this turn and other Pokemon may also attack the target's side normally.",
+		desc: "If the target lost HP, the user takes recoil damage equal to 1/3 the HP lost by the target, rounded half up, but not less than 1 HP. If this attack does not miss, the effects of Reflect, Light Screen, Mist, Infirmary, Hologram, and Aurora Veil end for the target's side of the field before damage is calculated. If this move is successful, it breaks through the target's Baneful Bunker, Detect, King's Shield, Protect, or Spiky Shield for this turn, allowing other Pokemon to attack the target normally. If the target's side is protected by Crafty Shield, Mat Block, Quick Guard, or Wide Guard, that protection is also broken for this turn and other Pokemon may also attack the target's side normally.",
 		shortDesc: "Breaks protection & destroys screens. 33% recoil.", 
 
 		activate: "  Destroyed [TARGET]'s protection!",
@@ -345,7 +345,7 @@ export const MovesText: { [id: IDEntry]: MoveText } = {
 	}, 
 	macesmash: {
 		name: "Mace Smash",
-		desc: "If this attack does not miss, the effects of Reflect, Light Screen, Mist, Hologram, and Aurora Veil end for the target's side of the field before damage is calculated. If this move is successful, it breaks through the target's Baneful Bunker, Detect, King's Shield, Protect, or Spiky Shield for this turn, allowing other Pokemon to attack the target normally. If the target's side is protected by Crafty Shield, Mat Block, Quick Guard, or Wide Guard, that protection is also broken for this turn and other Pokemon may attack the target's side normally. Cannot be selected the turn after it's used.",
+		desc: "If this attack does not miss, the effects of Reflect, Light Screen, Mist, Infirmary, Hologram, and Aurora Veil end for the target's side of the field before damage is calculated. If this move is successful, it breaks through the target's Baneful Bunker, Detect, King's Shield, Protect, or Spiky Shield for this turn, allowing other Pokemon to attack the target normally. If the target's side is protected by Crafty Shield, Mat Block, Quick Guard, or Wide Guard, that protection is also broken for this turn and other Pokemon may attack the target's side normally. Cannot be selected the turn after it's used.",
 		shortDesc: "Breaks protect/screens. Can't be used twice in a row.",
 
 		activate: "  Muscled through [TARGET]'s protection!",
@@ -660,7 +660,7 @@ export const MovesText: { [id: IDEntry]: MoveText } = {
 		desc: "Hits twice. If the first hit breaks the target's substitute, it will take damage for the second hit. In Double Battles, this move attempts to hit the targeted Pokemon and its ally once each. If hitting one of these Pokemon would be prevented by immunity, protection, semi-invulnerability, an Ability, or accuracy, it attempts to hit the other Pokemon twice instead. If this move is redirected, it hits that target twice.",
 		shortDesc: "Hits twice. Doubles: Tries to hit each foe once.",
 	},
-	udinassault: {
+	udinassault: { // [UNUSED]
 		name: "Udin Assault",
 		desc: "Lowers the user's Defense and Special Defense by 1 stage. Deals damage to the target based on its Special Defense instead of Defense.",
 		shortDesc: "User: -1 Def & SpDef. Damages on SpDef, not Def.",
@@ -1010,13 +1010,13 @@ export const MovesText: { [id: IDEntry]: MoveText } = {
 		desc: "Has a 25% chance to paralyze the target. This attack never misses.",
 		shortDesc: "25% chance to paralyze target. Never misses.",
 	},
-	moyaimash: {
-		name: "Moyai Mash",
+	bibooblade: {
+		name: "Biboo Blade",
 		desc: "Has a high chance to land a critical hit. If this move is successful, it sets up stealth rock on the opposing side of the field, damaging each opposing Pokemon that switches in, foes lose 1/32, 1/16, 1/8, 1/4, or 1/2 of their maximum HP, rounded down, based on their weakness to the Rock type; 0.25x, 0.5x, neutral, 2x, or 4x, respectively. Can be removed from the opposing side if any Pokemon uses Tidy Up, or if any opposing Pokemon uses Mortal Spin, Rapid Spin, Clean Up, or Defog successfully, or is hit by Defog.",
 		shortDesc: "Sets Stealth Rock on target's side. High crit ratio",
 	},
-	bibooblade: {
-		name: "Biboo Blade",
+	moyaimash: {
+		name: "Moyai Mash",
 		desc: "Has a high chance to land a critical hit. If this move is successful, it sets up spikes on the opposing side of the field, damaging each opposing Pokemon that switches in, unless it is a Flying-type Pokemon or has the Levitate Ability. A maximum of three layers may be set, and opponents lose 1/8 of their maximum HP with one layer, 1/6 of their maximum HP with two layers, and 1/4 of their maximum HP with three layers, all rounded down. Can be removed from the opposing side if any Pokemon uses Tidy Up, or if any opposing Pokemon uses Mortal Spin, Rapid Spin, Clean Up, or Defog successfully, or is hit by Defog.",
 		shortDesc: "Sets a layer of Spikes on foe's side. High crit ratio.",
 	},
@@ -1051,8 +1051,8 @@ export const MovesText: { [id: IDEntry]: MoveText } = {
 	},
 	swordofjustice: {
 		name: "Sword of Justice",
-		desc: "Has a 20% chance to burn the target.",
-		shortDesc: "20% chance to burn the target.",
+		desc: "Has a 30% chance to burn the target.",
+		shortDesc: "30% chance to burn the target.",
 	},
 	scarletsong: {
 		name: "Scarlet Song",
@@ -1816,7 +1816,7 @@ export const MovesText: { [id: IDEntry]: MoveText } = {
 	},
 	brickbreak: {
 		name: "Brick Break",
-		desc: "If this attack does not miss, the effects of Reflect, Light Screen, Aurora Veil, and Hologram end for the target's side of the field before damage is calculated.",
+		desc: "If this attack does not miss, the effects of Reflect, Light Screen, Aurora Veil, Infirmary, and Hologram end for the target's side of the field before damage is calculated.",
 		shortDesc: "Destroys screens, unless the target is immune.",
 		gen6: {
 			desc: "If this attack does not miss, the effects of Reflect and Light Screen end for the target's side of the field before damage is calculated.",
@@ -6035,7 +6035,7 @@ export const MovesText: { [id: IDEntry]: MoveText } = {
 	},
 	psychicfangs: {
 		name: "Psychic Fangs",
-		desc: "If this attack does not miss, the effects of Reflect, Light Screen, and Aurora Veil end for the target's side of the field before damage is calculated.",
+		desc: "If this attack does not miss, the effects of Reflect, Light Screen, Infirmary, and Aurora Veil end for the target's side of the field before damage is calculated.",
 		shortDesc: "Destroys screens, unless the target is immune.",
 	},
 	psychicnoise: {

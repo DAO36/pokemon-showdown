@@ -2550,7 +2550,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Ghost",
 		contestType: "Tough",
 	},
-	udinassault: { // OLLIE 2
+	udinassault: { // [UNUSED]
 		num: 370,
 		accuracy: 90,
 		basePower: 120,
@@ -2764,22 +2764,6 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		target: "normal",
 		type: "Steel",
 		contestType: "Cool",
-	}, 
-	betapayung: { // BETA MOVE
-		num: 370,
-		accuracy: true,
-		basePower: 0,
-		category: "Status",
-		name: "Beta Payung",
-		pp: 10,
-		priority: 0,
-		flags: {switches: 1},
-		// TODO show prepare message before the "POKEMON used MOVE!" message
-		// This happens even before sleep shows its "POKEMON is fast asleep." message
-		weather: 'RainDance',
-		selfSwitch: true,
-		target: "all",
-		type: "Water",
 	},
 	payung: { // KOBO 1
 		num: 881,
@@ -3010,81 +2994,6 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Water",
 		contestType: "Tough",
 	},
-	timetravel2: { // <<<UNUSED>>>
-		num: 370,
-		accuracy: true,
-		basePower: 60,
-		category: "Physical",
-		name: "Time Travel2",
-		pp: 15,
-		priority: 0,
-		flags: {protect: 1, mirror: 1, pulse: 1, switches: 1},
-		selfSwitch: true,
-		target: "normal",
-		type: "Psychic",
-	},
-	groundpound2: { // <<<UNUSED>>>
-		num: 370,
-		accuracy: 80,
-		basePower: 150,
-		category: "Physical",
-		name: "Ground Pound2",
-		pp: 5,
-		priority: 0,
-		flags: {contact: 1, protect: 1, mirror: 1, gravity: 1, nonsky: 1},
-		hasCrashDamage: true,
-		onMoveFail(target, source, move) {
-			this.damage(source.baseMaxhp / 2, source, source, this.dex.conditions.get('High Jump Kick'));
-		},
-		target: "normal",
-		type: "Ground",
-		contestType: "Cool",
-	},
-	groundpound: { // SMOL AME 1
-		num: 19,
-		accuracy: 80,
-		basePower: 140,
-		category: "Physical",
-		name: "Ground Pound",
-		pp: 5,
-		priority: 0,
-		flags: {
-			contact: 1, charge: 1, protect: 1, mirror: 1, gravity: 1, distance: 1,
-			nonsky: 1, nosleeptalk: 1, noassist: 1, failinstruct: 1,
-		},
-		onTryMove(attacker, defender, move) {
-			if (attacker.removeVolatile(move.id)) {
-				return;
-			}
-			this.add('-prepare', attacker, move.name);
-			if (!this.runEvent('ChargeMove', attacker, defender, move)) {
-				return;
-			}
-			attacker.addVolatile('twoturnmove', defender);
-			return null;
-		},
-		condition: {
-			duration: 2,
-			onInvulnerability(target, source, move) {
-				if (['gust', 'twister', 'skyuppercut', 'thunder', 'hurricane', 'smackdown', 'haboob', 'trident', 'thousandarrows'].includes(move.id)) {
-					return;
-				}
-				return false;
-			},
-			onSourceModifyDamage(damage, source, target, move) {
-				if (move.id === 'gust' || move.id === 'twister') {
-					return this.chainModify(2);
-				}
-			},
-		},
-		secondary: {
-			chance: 30,
-			status: 'par',
-		},
-		target: "any",
-		type: "Ground",
-		contestType: "Clever",
-	},
 	timedattack: { // AME 1
 		num: 800,
 		accuracy: 90,
@@ -3173,6 +3082,81 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		target: "any",
 		type: "Psychic",
 	},
+	timetravel2: { // <<<UNUSED>>>
+		num: 370,
+		accuracy: true,
+		basePower: 60,
+		category: "Physical",
+		name: "Time Travel2",
+		pp: 15,
+		priority: 0,
+		flags: {protect: 1, mirror: 1, pulse: 1, switches: 1},
+		selfSwitch: true,
+		target: "normal",
+		type: "Psychic",
+	},
+	groundpound2: { // <<<UNUSED>>>
+		num: 370,
+		accuracy: 80,
+		basePower: 150,
+		category: "Physical",
+		name: "Ground Pound2",
+		pp: 5,
+		priority: 0,
+		flags: {contact: 1, protect: 1, mirror: 1, gravity: 1, nonsky: 1},
+		hasCrashDamage: true,
+		onMoveFail(target, source, move) {
+			this.damage(source.baseMaxhp / 2, source, source, this.dex.conditions.get('High Jump Kick'));
+		},
+		target: "normal",
+		type: "Ground",
+		contestType: "Cool",
+	},
+	groundpound: { // SMOL AME 1
+		num: 19,
+		accuracy: 80,
+		basePower: 140,
+		category: "Physical",
+		name: "Ground Pound",
+		pp: 5,
+		priority: 0,
+		flags: {
+			contact: 1, charge: 1, protect: 1, mirror: 1, gravity: 1, distance: 1,
+			nonsky: 1, nosleeptalk: 1, noassist: 1, failinstruct: 1,
+		},
+		onTryMove(attacker, defender, move) {
+			if (attacker.removeVolatile(move.id)) {
+				return;
+			}
+			this.add('-prepare', attacker, move.name);
+			if (!this.runEvent('ChargeMove', attacker, defender, move)) {
+				return;
+			}
+			attacker.addVolatile('twoturnmove', defender);
+			return null;
+		},
+		condition: {
+			duration: 2,
+			onInvulnerability(target, source, move) {
+				if (['gust', 'twister', 'skyuppercut', 'thunder', 'hurricane', 'smackdown', 'haboob', 'trident', 'thousandarrows'].includes(move.id)) {
+					return;
+				}
+				return false;
+			},
+			onSourceModifyDamage(damage, source, target, move) {
+				if (move.id === 'gust' || move.id === 'twister') {
+					return this.chainModify(2);
+				}
+			},
+		},
+		secondary: {
+			chance: 30,
+			status: 'par',
+		},
+		target: "any",
+		type: "Ground",
+		contestType: "Clever",
+	},
 	timeshatteringpunch: { // BUFF AME 1
 		num: 800,
 		accuracy: 90,
@@ -3181,7 +3165,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		name: "Time Shattering Punch",
 		pp: 5,
 		priority: 0,
-		flags: {charge: 1, protect: 1, mirror: 1, punch: 1, contact: 1},
+		flags: {charge: 1, mirror: 1, punch: 1, contact: 1},
 		onTryMove(attacker, defender, move) {
 			if (attacker.removeVolatile(move.id)) {
 				return;
@@ -3194,6 +3178,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 			attacker.addVolatile('twoturnmove', defender);
 			return null;
 		},
+		breaksProtect: true,
 		target: "normal",
 		type: "Fighting",
 	},
@@ -4214,7 +4199,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		priority: 0,
 		flags: {contact: 1, protect: 1, mirror: 1, slicing: 1},
 		secondary: {
-			chance: 20,
+			chance: 30,
 			status: 'brn',
 		},
 		target: "normal",
