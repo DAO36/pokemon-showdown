@@ -99324,6 +99324,82 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			doom: ["9M"],
         },
 	},
+	kanade: {
+		learnset: {
+			substitute: ["9M"],
+			protect: ["9M"],
+			rest: ["9M"],
+        },
+	},
+	ririka: {
+		learnset: {
+			substitute: ["9M"],
+			protect: ["9M"],
+			rest: ["9M"],
+        },
+	},
+	raden: {
+		learnset: {
+			substitute: ["9M"],
+			protect: ["9M"],
+			rest: ["9M"],
+        },
+	},
+	hajime: {
+		learnset: {
+			substitute: ["9M"],
+			protect: ["9M"],
+			rest: ["9M"],
+        },
+	},
+	ao: {
+		learnset: {
+			substitute: ["9M"],
+			protect: ["9M"],
+			rest: ["9M"],
+        },
+	},
+	riona: {
+		learnset: {
+			substitute: ["9M"],
+			protect: ["9M"],
+			rest: ["9M"],
+        },
+	},
+	niko: {
+		learnset: {
+			substitute: ["9M"],
+			protect: ["9M"],
+			rest: ["9M"],
+			fakeout: ["9M"],
+        },
+	},
+	su: {
+		learnset: {
+			substitute: ["9M"],
+			protect: ["9M"],
+			rest: ["9M"],
+			fakeout: ["9M"],
+        },
+	},
+	chihaya: {
+		learnset: {
+			substitute: ["9M"],
+			protect: ["9M"],
+			rest: ["9M"],
+			highhorsepower: ["9M"],
+			spinout: ["9M"],
+        },
+	},
+	vivi: {
+		learnset: {
+			substitute: ["9M"],
+			protect: ["9M"],
+			rest: ["9M"],
+			highhorsepower: ["9M"],
+			spinout: ["9M"],
+        },
+	},
 	lamball: {
 		learnset: {
 			agility: ["9M"],

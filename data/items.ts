@@ -1135,6 +1135,116 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		num: 674,
 		gen: 6,
 	},
+	kanadite: {
+		name: "Kanadite",
+		spritenum: 622, // change this
+		megaStone: {"Kanade": "Kanade-Mega"},
+		itemUser: ["Kanade"],
+		onTakeItem(item, source) {
+			return !item.megaStone?.[source.baseSpecies.baseSpecies];
+		},
+		num: 674,
+		gen: 6,
+	},
+	ririkite: {
+		name: "Ririkite",
+		spritenum: 622, // change this
+		megaStone: {"Ririka": "Ririka-Mega"},
+		itemUser: ["Ririka"],
+		onTakeItem(item, source) {
+			return !item.megaStone?.[source.baseSpecies.baseSpecies];
+		},
+		num: 674,
+		gen: 6,
+	},
+	radenite: {
+		name: "Radenite",
+		spritenum: 622, // change this
+		megaStone: {"Raden": "Raden-Mega"},
+		itemUser: ["Raden"],
+		onTakeItem(item, source) {
+			return !item.megaStone?.[source.baseSpecies.baseSpecies];
+		},
+		num: 674,
+		gen: 6,
+	},
+	hajimite: {
+		name: "Hajimite",
+		spritenum: 622, // change this
+		megaStone: {"Hajime": "Hajime-Mega"},
+		itemUser: ["Hajime"],
+		onTakeItem(item, source) {
+			return !item.megaStone?.[source.baseSpecies.baseSpecies];
+		},
+		num: 674,
+		gen: 6,
+	},
+	aorite: {
+		name: "Aorite",
+		spritenum: 622, // change this
+		megaStone: {"Ao": "Ao-Mega"},
+		itemUser: ["Ao"],
+		onTakeItem(item, source) {
+			return !item.megaStone?.[source.baseSpecies.baseSpecies];
+		},
+		num: 674,
+		gen: 6,
+	},
+	rionite: {
+		name: "Rionite",
+		spritenum: 622, // change this
+		megaStone: {"Riona": "Riona-Mega"},
+		itemUser: ["Riona"],
+		onTakeItem(item, source) {
+			return !item.megaStone?.[source.baseSpecies.baseSpecies];
+		},
+		num: 674,
+		gen: 6,
+	},
+	nikonite: {
+		name: "Nikonite",
+		spritenum: 622, // change this
+		megaStone: {"Niko": "Niko-Mega"},
+		itemUser: ["Niko"],
+		onTakeItem(item, source) {
+			return !item.megaStone?.[source.baseSpecies.baseSpecies];
+		},
+		num: 674,
+		gen: 6,
+	},
+	sunite: {
+		name: "Sunite",
+		spritenum: 622, // change this
+		megaStone: {"Su": "Su-Mega"},
+		itemUser: ["Su"],
+		onTakeItem(item, source) {
+			return !item.megaStone?.[source.baseSpecies.baseSpecies];
+		},
+		num: 674,
+		gen: 6,
+	},
+	chihayite: {
+		name: "Chihayite",
+		spritenum: 622, // change this
+		megaStone: {"Chihaya": "Chihaya-Mega"},
+		itemUser: ["Chihaya"],
+		onTakeItem(item, source) {
+			return !item.megaStone?.[source.baseSpecies.baseSpecies];
+		},
+		num: 674,
+		gen: 6,
+	},
+	vivite: {
+		name: "Vivite",
+		spritenum: 622, // change this
+		megaStone: {"Vivi": "Vivi-Mega"},
+		itemUser: ["Vivi"],
+		onTakeItem(item, source) {
+			return !item.megaStone?.[source.baseSpecies.baseSpecies];
+		},
+		num: 674,
+		gen: 6,
+	},
 	wobbuffetite: {
 		name: "Wobbuffetite",
 		spritenum: 575,

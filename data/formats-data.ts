@@ -6707,6 +6707,106 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
         doublesTier: "(DUU)",
         natDexTier: "OU",	
 	},
+	kanade: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "UU",
+	},
+	kanademega: {
+        tier: "OU",
+        doublesTier: "(DUU)",
+        natDexTier: "OU",	
+	},
+	ririka: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "UU",
+	},
+	ririkamega: {
+        tier: "OU",
+        doublesTier: "(DUU)",
+        natDexTier: "OU",	
+	},
+	raden: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "UU",
+	},
+	radenmega: {
+        tier: "OU",
+        doublesTier: "(DUU)",
+        natDexTier: "OU",	
+	},
+	hajime: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "UU",
+	},
+	hajimemega: {
+        tier: "OU",
+        doublesTier: "(DUU)",
+        natDexTier: "OU",	
+	},
+	ao: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "UU",
+	},
+	aomega: {
+        tier: "OU",
+        doublesTier: "(DUU)",
+        natDexTier: "OU",	
+	},
+	riona: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "UU",
+	},
+	rionamega: {
+        tier: "OU",
+        doublesTier: "(DUU)",
+        natDexTier: "OU",	
+	},
+	niko: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "UU",
+	},
+	nikomega: {
+        tier: "OU",
+        doublesTier: "(DUU)",
+        natDexTier: "OU",	
+	},
+	su: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "UU",
+	},
+	sumega: {
+        tier: "OU",
+        doublesTier: "(DUU)",
+        natDexTier: "OU",	
+	},
+	chihaya: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "UU",
+	},
+	chihayamega: {
+        tier: "OU",
+        doublesTier: "(DUU)",
+        natDexTier: "OU",	
+	},
+	vivi: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "UU",
+	},
+	vivimega: {
+        tier: "OU",
+        doublesTier: "(DUU)",
+        natDexTier: "OU",	
+	},
 	lamball: {
         tier: "PU",
         doublesTier: "(DUU)",

@@ -289,6 +289,46 @@ export const ItemsText: { [id: IDEntry]: ItemText } = {
 		name: "Raorite",
 		shortDesc: "If held by Raora Panthera, this item allows her to Mega Evolve in battle.",
 	},
+	kanadite: {
+		name: "Kanadite",
+		shortDesc: "If held by Otonose Kanade, this item allows her to Mega Evolve in battle.",
+	},
+	ririkite: {
+		name: "Ririkite",
+		shortDesc: "If held by Ichijou Ririka, this item allows her to Mega Evolve in battle.",
+	},
+	radenite: {
+		name: "Radenite",
+		shortDesc: "If held by Juufuutei Raden, this item allows her to Mega Evolve in battle.",
+	},
+	hajimite: {
+		name: "Hajimite",
+		shortDesc: "If held by Todoroki Hajime, this item allows her to Mega Evolve in battle.",
+	},
+	aorite: {
+		name: "Aorite",
+		shortDesc: "If held by Hiodoshi Ao, this item allows her to Mega Evolve in battle.",
+	},
+	rionite: {
+		name: "Rionite",
+		shortDesc: "If held by Isaki Riona, this item allows her to Mega Evolve in battle.",
+	},
+	nikonite: {
+		name: "Nikonite",
+		shortDesc: "If held by Koganei Niko, this item allows her to Mega Evolve in battle.",
+	},
+	sunite: {
+		name: "Sunite",
+		shortDesc: "If held by Mizumiya Su, this item allows her to Mega Evolve in battle.",
+	},
+	chihayite: {
+		name: "Chihayite",
+		shortDesc: "If held by Rindo Chihaya, this item allows her to Mega Evolve in battle.",
+	},
+	vivite: {
+		name: "Vivite",
+		shortDesc: "If held by Kikirara Vivi, this item allows her to Mega Evolve in battle.",
+	},
 	abomasite: {
 		name: "Abomasite",
 		shortDesc: "If held by an Abomasnow, this item allows it to Mega Evolve in battle.",
