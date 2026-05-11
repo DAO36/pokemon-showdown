@@ -384,7 +384,7 @@ export const MovesText: { [id: IDEntry]: MoveText } = {
 	},
 	forever17: {
 		name: "Forever 17",
-		desc: "The Pokemon restores 1/2 of her maximum HP, rounded half up.",
+		desc: "The Pokemon restores 1/2 of its maximum HP, rounded half up.",
 		shortDesc: "Heals the user by 50% of its max HP.",
 	},
 	yanderestrike: {
@@ -416,15 +416,15 @@ export const MovesText: { [id: IDEntry]: MoveText } = {
 		desc: "Has a 30% chance to lower the foe's Defense by 1 stage. If the target lost HP, the user takes recoil damage equal to 33% the HP lost by the target, rounded half up, but not less than 1 HP.",
 		shortDesc: "30% to lower target's Defense by 1. 33% recoil.",
 	},
-	heavenlyharmony: {
-		name: "Heavenly Harmony",
-		desc: "If the current terrain is Misty Terrain and the target is grounded, this move's power is doubled.",
-		shortDesc: "2x power if target is grounded in Misty Terrain.",
-	},
 	starshuriken: {
 		name: "Star Shuriken",
 		desc: "Has a 20% chance to raise this Pokemon's Special Defense by 1 stage. Hits twice. If the first hit breaks the target's substitute, it will take damage for the second hit.",
 		shortDesc: "20% chance to raise user's Sp.Def by 1. Hits twice.",
+	},
+	heavenlyharmony: {
+		name: "Heavenly Harmony",
+		desc: "If the current terrain is Misty Terrain and the target is grounded, this move's power is doubled.",
+		shortDesc: "2x power if target is grounded in Misty Terrain.",
 	},
 	nothingwrong: {
 		name: "Nothing Wrong",
@@ -471,13 +471,6 @@ export const MovesText: { [id: IDEntry]: MoveText } = {
 		desc: "Has a 25% chance to confuse the target. Hits three times. Power increases to 50 for the second hit and 75 for the third. This move checks accuracy for each hit, and the attack ends if the target avoids a hit. If one of the hits breaks the target's substitute, it will take damage for the remaining hits. If the user has the Skill Link Ability, this move will always hit three times.",
 		shortDesc: "Hits up to 3 times, power rises. 25% to confuse.",
 	},
-	polmao: {
-		name: "PoLMAO",
-		desc: "If this move is successful and this Pokemon has not fainted, the user switches out even if it is trapped and is replaced immediately by a selected party member. The user does not switch out if there are no unfainted party members, or if the target switched out using an Eject Button or through the effect of the Emergency Exit or Wimp Out Abilities.",
-		shortDesc: "User switches out after damaging the target.",
-
-		switchOut: "#uturn",
-	},
 	polkaradio: {
 		name: "Polka Radio",
 		desc: "Has a 100% chance to burn the target if it used a sound-based move. Power is multiplied by 2 during Wonder Room's effect.",
@@ -487,6 +480,13 @@ export const MovesText: { [id: IDEntry]: MoveText } = {
 		name: "Pol Pol",
 		desc: "Has a 25% chance to either burn, paralyze, poison, or make the target fall asleep. Hits four times. If one of the hits breaks the target's substitute, it will take damage for the remaining hits. This move's type effectiveness against Dark is changed to be neutrally effective no matter what this move's type is.",
 		shortDesc: "25% chance to inflict a status.",
+	},
+	polmao: {
+		name: "PoLMAO",
+		desc: "If this move is successful and this Pokemon has not fainted, the user switches out even if it is trapped and is replaced immediately by a selected party member. The user does not switch out if there are no unfainted party members, or if the target switched out using an Eject Button or through the effect of the Emergency Exit or Wimp Out Abilities.",
+		shortDesc: "User switches out after damaging the target.",
+
+		switchOut: "#uturn",
 	},
 	ssrb: {
 		name: "SSRB",
@@ -534,8 +534,8 @@ export const MovesText: { [id: IDEntry]: MoveText } = {
 	},
 	husbandhorde: {
 		name: "Husband Horde",
-		desc: "Has a 20% chance to confuse the target.",
-		shortDesc: "20% chance to confuse the target.",
+		desc: "Has a 25% chance to confuse the target.",
+		shortDesc: "25% chance to confuse the target.",
 	},
 	succubussong: {
 		name: "Succubus Song",

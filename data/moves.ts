@@ -1675,7 +1675,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	sweetassault: { // LUNA 2
 		num: 370,
 		accuracy: 100,
-		basePower: 75,
+		basePower: 70,
 		basePowerCallback(source, target, move) {
 			if (this.field.isTerrain('mistyterrain') && target.isGrounded()) {
 				if (!source.isAlly(target)) this.hint(`${move.name}'s BP doubled on grounded target.`);
@@ -2061,6 +2061,47 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		target: "normal",
 		type: "Psychic",
 		contestType: "Tough",
+	},
+	laplacedemon: { // LA+ 2
+		num: 389,
+		accuracy: 100,
+		basePower: 80,
+		category: "Physical",
+		name: "Laplace Demon",
+		pp: 5,
+		priority: 1,
+		flags: { contact: 1, protect: 1, mirror: 1, metronome: 1 },
+		onTry(source, target) {
+			const action = this.queue.willMove(target);
+			const move = action?.choice === 'move' ? action.move : null;
+			if (!move || (move.category === 'Status' && move.id !== 'mefirst') || target.volatiles['mustrecharge']) {
+				return false;
+			}
+		},
+		target: "normal",
+		type: "Psychic",
+		contestType: "Clever",
+	},
+	karasu: { // LA+ 3
+		num: 872,
+		accuracy: 90,
+		basePower: 90,
+		category: "Physical",
+		name: "Karasu",
+		pp: 10,
+		priority: 0,
+		flags: { contact: 1, protect: 1, mirror: 1, wind: 1, metronome: 1 },
+		secondary: {
+			chance: 100,
+			self: {
+				boosts: {
+					spe: 1,
+				},
+			},
+		},
+		target: "any",
+		type: "Flying",
+		contestType: "Cool",
 	},
 	hawkeye: { // LUI 1
 		num: 370,
