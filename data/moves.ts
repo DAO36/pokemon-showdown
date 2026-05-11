@@ -960,7 +960,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	duckasmr: { // SUBARU 1
 		num: 370,
 		accuracy: 90,
-		basePower: 130,
+		basePower: 120,
 		category: "Special",
 		name: "Duck ASMR",
 		pp: 5,
@@ -1198,7 +1198,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 			chance: 10,
 			status: 'brn',
 		},
-		target: "allAdjacent",
+		target: "allAdjacentFoes",
 		type: "Dark",
 		contestType: "Beautiful",
 	},

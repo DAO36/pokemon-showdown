@@ -269,23 +269,23 @@ export const MovesText: { [id: IDEntry]: MoveText } = {
 	},
 	duckasmr: {
 		name: "Duck ASMR",
-		desc: "Has a 10% chance to confuse the target; Lowers the user's Special Attack by 2 stages. Hits adjacent foes.",
-		shortDesc: "Lowers Sp.Atk by 2. 10% chance to confuse target(s).",
+		desc: "Has a 20% chance to confuse the target; Lowers the user's Special Attack by 2 stages. Hits adjacent foes.",
+		shortDesc: "Lowers Sp.Atk by 2. 20% chance to confuse target(s).",
 	},
 	duckdance: {
 		name: "Duck Dance",
 		desc: "Raises this Pokemon's Attack and Speed by 1 stage.",
 		shortDesc: "Raises user's Attack and Speed by 1.",
 	},
-	shuba: {
-		name: "Shuba",
-		desc: "Lowers this Pokemon's Defense and Special Defense by 1 stage.",
-		shortDesc: "Lowers the user's Defense and Sp. Def by 1.",
-	},
 	oozorapolice: {
 		name: "Oozora Police",
 		desc: "If both the user and the target have not fainted, the target is forced to switch out and be replaced with a random unfainted ally. This effect fails if the target is under the effect of Ingrain, has the Suction Cups Ability, or this move hit a substitute.",
 		shortDesc: "Forces the target to switch to a random ally.",
+	},
+	shuba: {
+		name: "Shuba",
+		desc: "Lowers this Pokemon's Defense and Special Defense by 1 stage.",
+		shortDesc: "Lowers the user's Defense and Sp. Def by 1.",
 	},
 	orayo: {
 		name: "Orayo",
@@ -311,7 +311,7 @@ export const MovesText: { [id: IDEntry]: MoveText } = {
 	},
 	tarots: {
 		name: "Tarots",
-		desc: "Has a 25% chance to either burn, paralyze, poison the target. Hits four times. If one of the hits breaks the target's substitute, it will take damage for the remaining hits. This move's type effectiveness against Dark is changed to be neutrally effective no matter what this move's type is.",
+		desc: "Has a 25% chance to either burn, paralyze, or poison the target. Hits four times. If one of the hits breaks the target's substitute, it will take damage for the remaining hits. This move's type effectiveness against Dark is changed to be neutrally effective no matter what this move's type is.",
 		shortDesc: "25% chance to inflict a status. Hits Dark types.",
 	},
 	hatotaurushelp: {
