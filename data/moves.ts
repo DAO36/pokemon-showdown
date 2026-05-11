@@ -2194,16 +2194,57 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	pokobee: { // IROHA 2
 		num: 348,
 		accuracy: 90,
-		basePower: 110,
-		category: "Special",
-		name: "Pokobee",
-		pp: 10,
+		basePower: 150,
+		category: "Physical",
+		name: "Katana",
+		pp: 5,
 		priority: 0,
-		flags: {protect: 1, mirror: 1, slicing: 1},
-		critRatio: 2,
+		flags: {contact: 1, mirror: 1, slicing: 1, cantusetwice: 1}, 
+		onTryHit(pokemon) {
+			pokemon.side.removeSideCondition('reflect');
+			pokemon.side.removeSideCondition('lightscreen');
+			pokemon.side.removeSideCondition('hologram');
+			pokemon.side.removeSideCondition('infirmary');
+			pokemon.side.removeSideCondition('auroraveil');
+			pokemon.side.removeSideCondition('mist');
+		},
+		breaksProtect: true,
 		target: "normal",
 		type: "Grass",
-		contestType: "Cool",
+		contestType: "Tough",
+	}, 
+	ninjutsu: { // IROHA 3
+		num: 389,
+		accuracy: 100,
+		basePower: 80,
+		category: "Physical",
+		name: "Ninjutsu",
+		pp: 5,
+		priority: 1,
+		flags: { contact: 1, protect: 1, mirror: 1, slicing: 1 },
+		onTry(source, target) {
+			const action = this.queue.willMove(target);
+			const move = action?.choice === 'move' ? action.move : null;
+			if (!move || (move.category === 'Status' && move.id !== 'mefirst') || target.volatiles['mustrecharge']) {
+				return false;
+			}
+		},
+		target: "normal",
+		type: "Fighting",
+		contestType: "Clever",
+	},
+	katana: { // IROHA 4
+		num: 38,
+		accuracy: true,
+		basePower: 75,
+		category: "Physical",
+		name: "Katana",
+		pp: 5,
+		priority: 0,
+		flags: { contact: 1, protect: 1, mirror: 1, slicing: 1 },
+		willCrit: true,
+		target: "normal",
+		type: "Steel",
 	},
 	koyolabo: { // KOYORI 1
 		num: 370,

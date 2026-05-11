@@ -591,8 +591,20 @@ export const MovesText: { [id: IDEntry]: MoveText } = {
 	},
 	pokobee: {
 		name: "Pokobee",
-		desc: "Has a higher chance for a critical hit.",
-		shortDesc: "High critical hit ratio.",
+		desc: "If this attack does not miss, the effects of Reflect, Light Screen, Mist, Hologram, Infirmary, and Aurora Veil end for the target's side of the field before damage is calculated. If this move is successful, it breaks through the target's Baneful Bunker, Detect, King's Shield, Protect, or Spiky Shield for this turn, allowing other Pokemon to attack the target normally. If the target's side is protected by Crafty Shield, Mat Block, Quick Guard, or Wide Guard, that protection is also broken for this turn and other Pokemon may attack the target's side normally. Cannot be selected the turn after it's used.",
+		shortDesc: "Breaks protect/screens. Can't be used twice in a row.",
+
+		activate: "  Sliced through [TARGET]'s protection!",
+	},
+	ninjutsu: {
+		name: "Ninjutsu",
+		desc: "Fails if the target did not select a physical attack, special attack, or Me First for use this turn, or if the target moves before the user.",
+		shortDesc: "Usually goes first. Fails if target is not attacking.",
+	},
+	katana: {
+		name: "Katana",
+		desc: "This move does not check accuracy. This move is always a critical hit unless the target is under the effect of Lucky Chant or has the Battle Armor or Shell Armor Abilities.",
+		shortDesc: "Always results in a critical hit. Never Misses.",
 	},
 	koyolabo: {
 		name: "Koyo Labo",
