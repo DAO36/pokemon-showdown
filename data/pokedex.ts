@@ -22030,7 +22030,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		types: ["Normal"],
 		gender: "F",
 		baseStats: {hp: 100, atk: 100, def: 100, spa: 100, spd: 100, spe: 100},
-		abilities: {0: "Soundproof", 1: "Unaware", H: "Punk Rock", S: "???"}, // Nerissa ability but SpAtk
+		abilities: {0: "Soundproof", 1: "Unaware", H: "Punk Rock", S: "???"}, // Nerissa ability but SpAtk [immune to sound, get +1 SpAtk]
 		heightm: 1.53,
 		weightkg: 55.5,
 		color: "Pink",
@@ -22059,7 +22059,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		types: ["Normal", "Normal"],
 		gender: "F",
 		baseStats: {hp: 100, atk: 100, def: 100, spa: 100, spd: 100, spe: 100},
-		abilities: {0: "Unburden", 1: "Rattled", H: "???", S: "???"},
+		abilities: {0: "Unburden", 1: "Rattled", H: "???", S: "???"}, // CEO related??? Investment - if a move misses, then smthn?
 		heightm: 1.62,
 		weightkg: 55.5,
 		color: "Pink",
@@ -22088,7 +22088,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		types: ["Normal"],
 		gender: "F",
 		baseStats: {hp: 100, atk: 100, def: 100, spa: 100, spd: 100, spe: 100},
-		abilities: {0: "White Smoke", 1: "Water Absorb", H: "???", S: "???"}, // mask related? musuem? maybe swap with Archivist???
+		abilities: {0: "White Smoke", 1: "Water Absorb", H: "???", S: "???"}, // NOH MASK OFF - idk
 		heightm: 1.59,
 		weightkg: 55.5,
 		color: "Black",
@@ -22117,7 +22117,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		types: ["Psychic"],
 		gender: "F",
 		baseStats: {hp: 100, atk: 100, def: 100, spa: 100, spd: 100, spe: 100},
-		abilities: {0: "Unaware", 1: "Unburden", H: "???", S: "???"}, // bad-ass???
+		abilities: {0: "Unaware", 1: "Unburden", H: "???", S: "???"}, // BANCHO - badass???
 		heightm: 1.55,
 		weightkg: 55.5,
 		color: "Pink",
@@ -22146,7 +22146,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		types: ["Normal"],
 		gender: "F",
 		baseStats: {hp: 100, atk: 100, def: 100, spa: 100, spd: 100, spe: 100},
-		abilities: {0: "Rattled", 1: "Dazzling", H: "???", S: "???"},
+		abilities: {0: "Dazzling", 1: "Wimp Out", H: "???", S: "???"}, // weak armour clone? ? maybe unfavored rtreat idk?
 		heightm: 1.71,
 		weightkg: 55.5,
 		color: "Blue",
@@ -22175,7 +22175,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		types: ["Normal"],
 		gender: "F",
 		baseStats: {hp: 100, atk: 100, def: 100, spa: 100, spd: 100, spe: 100},
-		abilities: {0: "Dancer", 1: "Soundproof", H: "???", S: "???"}, // ???
+		abilities: {0: "Dancer", 1: "Soundproof", H: "???", S: "???"}, // when at 1/3 hp maybe berserk clone ?
 		heightm: 1.60,
 		weightkg: 55.5,
 		color: "Black",
@@ -22204,7 +22204,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		types: ["Normal"],
 		gender: "F",
 		baseStats: {hp: 100, atk: 100, def: 100, spa: 100, spd: 100, spe: 100},
-		abilities: {0: "Trace", 1: "???", H: "???", S: "???"}, // gold related????
+		abilities: {0: "Trace", 1: "???", H: "???", S: "???"}, // gold tiger - uh? magnet pull?
 		heightm: 1.72,
 		weightkg: 55.5,
 		color: "Yellow",
@@ -22233,7 +22233,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		types: ["Normal"],
 		gender: "F",
 		baseStats: {hp: 100, atk: 100, def: 100, spa: 100, spd: 100, spe: 100},
-		abilities: {0: "???", 1: "???", H: "???", S: "?????"}, // something with water????
+		abilities: {0: "Water Absorb", 1: "???", H: "???", S: "?????"}, // something with water???? Steelworker but with water?
 		heightm: 1.45,
 		weightkg: 55.5,
 		color: "Blue",
@@ -22262,7 +22262,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		types: ["Normal"],
 		gender: "F",
 		baseStats: {hp: 100, atk: 100, def: 100, spa: 100, spd: 100, spe: 100},
-		abilities: {0: "Soundproof", 1: "???", H: "Speed Boost", S: "???"}, // DJ?? and cars
+		abilities: {0: "Soundproof", 1: "Motor Drive", H: "Speed Boost", S: "???"}, // cars - DJ - heals when hit by electric, sound moves +1 speed, 2x speed in electricity terrain
 		heightm: 1.68,
 		weightkg: 55.5,
 		color: "Green",
@@ -22291,7 +22291,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		types: ["Normal"],
 		gender: "F",
 		baseStats: {hp: 100, atk: 100, def: 100, spa: 100, spd: 100, spe: 100},
-		abilities: {0: "Dry Skin", 1: "Harvest", H: "???", S: "???"}, // HATES the SUN + MAKEUP
+		abilities: {0: "Dry Skin", 1: "Harvest", H: "???", S: "???"}, // HATES the SUN + MAKEUP - during sun loses 1/8 hp, weak to fire type?
 		heightm: 1.61,
 		weightkg: 55.5,
 		color: "Pink",
