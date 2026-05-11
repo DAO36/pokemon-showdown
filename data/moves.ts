@@ -44,7 +44,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		name: "TSKR",
 		pp: 10,
 		priority: 0,
-		flags: {snatch: 1, heal: 1},
+		flags: {snatch: 1, heal: 1, metronome: 1},
 		onHit(pokemon, source, move) {
 			const success = !!this.boost({spa: 2}); 
 				for (const ally of source.side.pokemon) {
@@ -66,7 +66,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		name: "Ankimo Attack",
 		pp: 10,
 		priority: 0,
-		flags: {protect: 1, mirror: 1, contact: 1},
+		flags: {protect: 1, mirror: 1, contact: 1, metronome: 1},
 		secondary: {
 			chance: 30,
 			self: {
@@ -87,7 +87,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		name: "Idol Song",
 		pp: 10,
 		priority: 0,
-		flags: {protect: 1, mirror: 1, sound: 1, bypasssub: 1},
+		flags: {protect: 1, mirror: 1, sound: 1, bypasssub: 1, metronome: 1},
 		target: "allAdjacentFoes",
 		type: "Fairy",
 		contestType: "Cute",
@@ -107,7 +107,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		name: "Diva Song",
 		pp: 10,
 		priority: 0,
-		flags: {protect: 1, mirror: 1, sound: 1, bypasssub: 1},
+		flags: {protect: 1, mirror: 1, sound: 1, bypasssub: 1, metronome: 1},
 		target: "allAdjacentFoes",
 		type: "Fairy",
 		contestType: "Beautiful",
@@ -127,7 +127,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		name: "Virtual Saber",
 		pp: 10,
 		priority: 0,
-		flags: {protect: 1, mirror: 1, contact: 1, slicing: 1}, 
+		flags: {protect: 1, mirror: 1, contact: 1, slicing: 1, metronome: 1}, 
 		critRatio: 2,
 		target: "normal",
 		type: "Fairy",
@@ -141,7 +141,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		name: "Sakura Strike",
 		pp: 10,
 		priority: 0,
-		flags: {protect: 1, mirror: 1, slicing: 1},
+		flags: {protect: 1, mirror: 1, slicing: 1, metronome: 1},
 		secondary: {
 			chance: 10,
 			self: {
@@ -162,7 +162,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		name: "Lava Bucket",
 		pp: 5,
 		priority: 0,
-		flags: {protect: 1, mirror: 1, defrost: 1, nonsky: 1},
+		flags: {protect: 1, mirror: 1, defrost: 1, nonsky: 1, metronome: 1},
 		recoil: [33, 100],
 		secondary: {
 			chance: 100, 
@@ -184,7 +184,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		name: "Elite Miko",
 		pp: 20,
 		priority: 0,
-		flags: {snatch: 1},
+		flags: {snatch: 1, metronome: 1},
 		boosts: {
 			atk: 2,
 		},
@@ -200,7 +200,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		name: "FAQ",
 		pp: 10,
 		priority: 0,
-		flags: {contact: 1, protect: 1, mirror: 1},
+		flags: {contact: 1, protect: 1, mirror: 1, metronome: 1},
 		onHit(target) {
 			target.clearBoosts();
 			this.add('-clearboost', target);
@@ -865,7 +865,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		name: "Infirmary",
 		pp: 20,
 		priority: 0,
-		flags: {snatch: 1},
+		flags: {snatch: 1, heal: 1},
 		sideCondition: 'infirmary',
 		condition: {
 			duration: 5,
@@ -892,7 +892,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Psychic",
 		contestType: "Clever",
 	},
-	infirmary2: { // CHOCO 3
+	infirmary2: { // [UNUSED]
         num: 274,
         accuracy: true,
         basePower: 0,

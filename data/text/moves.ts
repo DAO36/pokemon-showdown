@@ -243,10 +243,15 @@ export const MovesText: { [id: IDEntry]: MoveText } = {
 		desc: "Has a 100% chance to poison the target. If the target is an ally, this move instead restores 1/2 of the ally's maximum HP, rounded down, instead of dealing damage, as well as curing them of any status effects.",
 		shortDesc: "100% to poison. If ally, heals 50% HP/cures status.",
 	},
+	logram: {
+		name: "Hologram",
+		desc: "For 5 turns, this Pokemon and its party members are protected from status moves from other Pokemon. Lasts for 8 turns if the user is holding Light Clay. Fails if the effect is already active on the user's side.",
+		shortDesc: "For 5 turns, protects party from status moves.",
+	},
 	infirmary: {
 		name: "Infirmary",
-		desc: "Heals allies on switch-in.",
-		shortDesc: "Heals allies on switch-in.",
+		desc: "For 5 turns, this Pokemon and its party members heal 1/4 of their maximum HP upon switching in. Lasts for 8 turns if the user is holding Light Clay. Fails if the effect is already active on the user's side.",
+		shortDesc: "For 5 turns, heals party on switch-in.",
 
 		start: "  [TEAM] built an infirmary!",
 		end: "  [TEAM] is no longer covered by insurance!",
