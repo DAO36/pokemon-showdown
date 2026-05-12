@@ -2557,6 +2557,45 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 1.5,
 		num: 82,
 	},
+	musicalmaniac: { // if hit by Sound type move, boosts SpAtk by 1; Sound type immunity
+		onTryHit(target, source, move) {
+			if (target !== source && move.flags['sound']) {
+				if (!this.boost({spa: 1})) {
+					this.add('-immune', target, '[from] ability: Musical Maniac');
+				}
+				return null;
+			}
+		},
+		onAllyTryHitSide(target, source, move) {
+			if (move.flags['sound']) {
+				this.add('-immune', this.effectState.target, '[from] ability: Musical Maniac');
+			}
+		},
+		flags: {breakable: 1},
+		name: "Musical Maniac",
+		rating: 2.5,
+		num: 43,
+	},
+	investment: { // STOMPING TANTRUM but an ability
+		onModifyMove(move, pokemon, target) {
+			if (pokemon.moveLastTurnResult === false) {
+				this.debug('Investment doubling BP due to previous move failure');
+				return move.basePower * 2;
+			}
+			return move.basePower;
+		},
+		flags: {breakable: 1},
+		name: "Investment",
+		rating: 2.5,
+		num: 11,
+	},
+	investing: { // BLUNDER POLICY but an ability [UNUSED]
+		// implemented in runMove in BUILD-ACTIONS.ts
+		flags: {breakable: 1},
+		name: "Investment",
+		rating: 2.5,
+		num: 11,
+	},
 	adaptability: {
 		onModifySTAB(stab, source, target, move) {
 			if (move.forceSTAB || source.hasType(move.type)) {

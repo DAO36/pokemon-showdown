@@ -22030,7 +22030,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		types: ["Normal"],
 		gender: "F",
 		baseStats: {hp: 100, atk: 100, def: 100, spa: 100, spd: 100, spe: 100},
-		abilities: {0: "Soundproof", 1: "Unaware", H: "Punk Rock", S: "???"}, // Nerissa ability but SpAtk [immune to sound, get +1 SpAtk]
+		abilities: {0: "Soundproof", 1: "Unaware", H: "Punk Rock", S: "Musical Maniac"},
 		heightm: 1.53,
 		weightkg: 55.5,
 		color: "Pink",
@@ -22056,10 +22056,10 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 	ririka: {
 		num: 52,
 		name: "Ririka",
-		types: ["Normal", "Normal"],
+		types: ["Normal"],
 		gender: "F",
 		baseStats: {hp: 100, atk: 100, def: 100, spa: 100, spd: 100, spe: 100},
-		abilities: {0: "Unburden", 1: "Rattled", H: "???", S: "???"}, // CEO related??? Investment - if a move misses, then smthn?
+		abilities: {0: "Unburden", 1: "Rattled", H: "Oppurtunist", S: "Investment"},
 		heightm: 1.62,
 		weightkg: 55.5,
 		color: "Pink",
@@ -22075,7 +22075,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		types: ["Normal", "Fairy"],
 		gender: "F",
 		baseStats: {hp: 100, atk: 120, def: 120, spa: 120, spd: 120, spe: 120},
-		abilities: {0: "???"},
+		abilities: {0: "Oppurtunist"},
 		heightm: 1.62,
 		weightkg: 55.5,
 		color: "Pink",
