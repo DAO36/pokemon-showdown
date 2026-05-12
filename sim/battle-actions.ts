@@ -769,6 +769,7 @@ export class BattleActions {
 				}
 				if (!move.ohko && pokemon.hasAbility('gowiththeflow')) {
 					this.battle.boost({ spe: 2 }, pokemon);
+			        this.battle.add('-activate', pokemon, 'ability: Go With The Flow');
 				}
 				hitResults[i] = false;
 				continue;

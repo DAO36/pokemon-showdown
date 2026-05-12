@@ -664,6 +664,9 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		num: 153,
 	},
 	god: { // [Life Orb (ITEM)] as an ability, but better <1.5 boost instead of 1.3>
+		onStart(pokemon) {
+			this.add('-activate', pokemon, 'ability: God');
+		},
 		onModifySpAPriority: 5,
 		onModifySpA(spa, pokemon) {
 		 {
