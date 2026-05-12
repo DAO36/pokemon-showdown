@@ -183,16 +183,6 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 5,
 		num: 23,
 	},
-	unfavoredretreat: {
-    onAfterMoveSecondarySelf(source, target, move) {
-        if (move && target && target != source && target.getMoveHitData(move).typeMod < 0) source.switchFlag = true;
-		this.add('-activate', source, 'ability: Unfavored Retreat');
-    },
-		flags: {},
-		name: "Unfavored Retreat",
-		rating: 5,
-		num: 23,
-	},
 	pacifisthealing: {
 		onAfterMove(target, source, move) {
             if (move.category === 'Status') {
@@ -1593,48 +1583,11 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3.5,
 		num: 295,
 	},
-	yamada: { // combines [Mirror Armour] + [Magic Bounce]
-		onTryHitPriority: 1,
-		onTryHit(target, source, move) {
-			if (target === source || move.hasBounced || !move.flags['reflectable']) {
-				return;
-			}
-			const newMove = this.dex.getActiveMove(move.id);
-			newMove.hasBounced = true;
-			newMove.pranksterBoosted = false;
-			this.actions.useMove(newMove, target, {target: source});
-			return null;
-		},
-		onAllyTryHitSide(target, source, move) {
-			if (target.isAlly(source) || move.hasBounced || !move.flags['reflectable']) {
-				return;
-			}
-			const newMove = this.dex.getActiveMove(move.id);
-			newMove.hasBounced = true;
-			newMove.pranksterBoosted = false;
-			this.actions.useMove(newMove, this.effectState.target, {target: source});
-			return null;
-		},
-		condition: {
-			duration: 1,
-		},
-		onTryBoost(boost, target, source, effect) {
-			// Don't bounce self stat changes, or boosts that have already bounced
-			if (!source || target === source || !boost || effect.name === 'Yamada') return;
-			let b: BoostID;
-			for (b in boost) {
-				if (boost[b]! < 0) {
-					if (target.boosts[b] === -6) continue;
-					const negativeBoost: SparseBoostsTable = {};
-					negativeBoost[b] = boost[b];
-					delete boost[b];
-					if (source.hp) {
-						this.add('-ability', target, 'Yamada');
-						this.boost(negativeBoost, source, target, null, true);
-					}
-				}
-			}
-		},
+	yamada: { // unique idea
+		onAfterMoveSecondarySelf(source, target, move) {
+        if (move && target && target != source && target.getMoveHitData(move).typeMod < 0) source.switchFlag = true;
+		this.add('-activate', source, 'ability: Yamada');
+        },
 		flags: {breakable: 1},
 		name: "Yamada",
 		rating: 2,
@@ -2585,6 +2538,53 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		name: "Investment",
 		rating: 2.5,
 		num: 11,
+	},
+	bancho: { // combines [Mirror Armour] + [Magic Bounce]
+		onTryHitPriority: 1,
+		onTryHit(target, source, move) {
+			if (target === source || move.hasBounced || !move.flags['reflectable']) {
+				return;
+			}
+			const newMove = this.dex.getActiveMove(move.id);
+			newMove.hasBounced = true;
+			newMove.pranksterBoosted = false;
+			this.actions.useMove(newMove, target, {target: source});
+			return null;
+		},
+		onAllyTryHitSide(target, source, move) {
+			if (target.isAlly(source) || move.hasBounced || !move.flags['reflectable']) {
+				return;
+			}
+			const newMove = this.dex.getActiveMove(move.id);
+			newMove.hasBounced = true;
+			newMove.pranksterBoosted = false;
+			this.actions.useMove(newMove, this.effectState.target, {target: source});
+			return null;
+		},
+		condition: {
+			duration: 1,
+		},
+		onTryBoost(boost, target, source, effect) {
+			// Don't bounce self stat changes, or boosts that have already bounced
+			if (!source || target === source || !boost || effect.name === 'Bancho') return;
+			let b: BoostID;
+			for (b in boost) {
+				if (boost[b]! < 0) {
+					if (target.boosts[b] === -6) continue;
+					const negativeBoost: SparseBoostsTable = {};
+					negativeBoost[b] = boost[b];
+					delete boost[b];
+					if (source.hp) {
+						this.add('-ability', target, 'Bancho');
+						this.boost(negativeBoost, source, target, null, true);
+					}
+				}
+			}
+		},
+		flags: {breakable: 1},
+		name: "Bancho",
+		rating: 2,
+		num: 240,
 	},
 	mangaka: { // COLOR CHANGE but in reverse
 		onAfterMoveSecondary(target, source, move) {

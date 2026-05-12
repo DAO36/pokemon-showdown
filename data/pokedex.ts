@@ -22114,10 +22114,10 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 	hajime: {
 		num: 52,
 		name: "Hajime",
-		types: ["Psychic"],
+		types: ["Normal"],
 		gender: "F",
 		baseStats: {hp: 100, atk: 100, def: 100, spa: 100, spd: 100, spe: 100},
-		abilities: {0: "Unaware", 1: "Prankster", H: "Moxie", S: "???"}, // BANCHO - badass???
+		abilities: {0: "Unaware", 1: "Prankster", H: "Moxie", S: "Bancho"},
 		heightm: 1.55,
 		weightkg: 55.5,
 		color: "Pink",
@@ -22130,7 +22130,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		name: "Hajime-Mega",
 		baseSpecies: "Hajime",
 		forme: "Mega",
-		types: ["Psychic"],
+		types: ["Normal"],
 		gender: "F",
 		baseStats: {hp: 100, atk: 120, def: 120, spa: 120, spd: 120, spe: 120},
 		abilities: {0: "Magic Guard"},
@@ -22146,7 +22146,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		types: ["Normal"],
 		gender: "F",
 		baseStats: {hp: 100, atk: 100, def: 100, spa: 100, spd: 100, spe: 100},
-		abilities: {0: "Dazzling", 1: "Wimp Out", H: "Trace", S: "???"}, // weak armour clone? ? maybe unfavored rtreat idk?
+		abilities: {0: "Dazzling", 1: "Wimp Out", H: "Trace", S: "Mangaka"},
 		heightm: 1.71,
 		weightkg: 55.5,
 		color: "Blue",

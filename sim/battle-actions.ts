@@ -767,8 +767,8 @@ export class BattleActions {
 				if (!move.ohko && pokemon.hasItem('blunderpolicy') && pokemon.useItem()) {
 					this.battle.boost({ spe: 2 }, pokemon);
 				}
-				if (!move.ohko && pokemon.hasAbility('investing')) {
-					this.battle.boost({ spa: 2 }, pokemon);
+				if (!move.ohko && pokemon.hasAbility('gowiththeflow')) {
+					this.battle.boost({ spe: 2 }, pokemon);
 				}
 				hitResults[i] = false;
 				continue;
