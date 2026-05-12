@@ -2707,7 +2707,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			}
 		},
 		flags: { breakable: 1 },
-		name: "Dry Skin",
+		name: "Smooth Skin",
 		rating: 3,
 		num: 87,
 	},
