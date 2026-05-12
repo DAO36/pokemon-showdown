@@ -2670,13 +2670,13 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		},
 		onTryHit(target, source, move) {
 			if (target !== source && move.type === 'Electric') {
-				if (!this.heal(target.baseMaxhp / 4)) {
+				if (!this.heal(target.baseMaxhp / 4, target, target)) {
 					this.add('-immune', target, '[from] ability: Mixtape');
 				}
 				return null;
 			}
 			if (target !== source && move.flags['sound']) {
-				if (!this.heal(target.baseMaxhp / 4)) {
+				if (!this.heal(target.baseMaxhp / 4, target, target)) {
 					this.add('-immune', target, '[from] ability: Mixtape');
 				}
 				return null;
