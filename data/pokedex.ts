@@ -22088,7 +22088,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		types: ["Normal"],
 		gender: "F",
 		baseStats: {hp: 100, atk: 100, def: 100, spa: 100, spd: 100, spe: 100},
-		abilities: {0: "White Smoke", 1: "Water Absorb", H: "???", S: "???"}, // NOH MASK OFF - idk
+		abilities: {0: "White Smoke", 1: "Water Absorb", H: "Dancer", S: "Noh Mask"},
 		heightm: 1.59,
 		weightkg: 55.5,
 		color: "Black",
