@@ -22204,7 +22204,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		types: ["Normal"],
 		gender: "F",
 		baseStats: {hp: 100, atk: 100, def: 100, spa: 100, spd: 100, spe: 100},
-		abilities: {0: "Vital Spirit", 1: "Mold Breaker", H: "Scrappy", S: "???"}, // gold tiger - uh? magnet pull?
+		abilities: {0: "Vital Spirit", 1: "Scrappy", H: "Tinted Lens", S: "Gold Tiger"},
 		heightm: 1.72,
 		weightkg: 55.5,
 		color: "Yellow",

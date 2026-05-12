@@ -2618,6 +2618,17 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 0,
 		num: 16,
 	},
+	goldtiger: {
+		onFoeEffectiveness(typeMod, target, type, move) {
+			if (type === 'Steel' && move.type === 'Normal') {
+				return 1;
+			}
+		},
+		flags: { breakable: 1 },
+		name: "Mind's Eye",
+		rating: 0,
+		num: 300,
+	},
 	sucharge: {
 		onTryHit(target, source, move) {
 			if (target !== source && move.type === 'Water') {

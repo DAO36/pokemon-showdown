@@ -531,6 +531,11 @@ export const AbilitiesText: { [id: IDEntry]: AbilityText } = {
 		desc: "If the user's last move on the previous turn, including moves called by other moves or those used through Instruct, Magic Coat, Snatch, or the Dancer or Magic Bounce Abilities, failed to do any of its normal effects, not including damage from an unsuccessful High Jump Kick, Jump Kick, or Mind Blown, or if the user was prevented from moving by any effect other than recharging or Sky Drop, then the user's next move will do double damage. A move that was blocked by Baneful Bunker, Detect, King's Shield, Protect, Spiky Shield, Crafty Shield, Mat Block, Lunar Shield, Phoenix Shield, Quick Guard, or Wide Guard will not double the move's power, nor will Bounce or Fly ending early due to the effect of Gravity, Smack Down, or Thousand Arrows.",
 		shortDesc: "Moves have double power if the user's last move failed.",
 	},
+	goldtiger: {
+		name: "Gold Tiger",
+		desc: "This Pokemon's Normal type moves hit Steel type Pokemon for super-effective damage.",
+		shortDesc: "Normal type moves hit Steel types for super-effective damage.",
+	},
 	sucharge: {
 		name: "Su Charge",
 		desc: "This Pokemon is immune to Water-type moves. The first time it is hit by a Water-type move, its offensive stat is multiplied by 1.5 while using a Water-type attack as long as it remains active and has this Ability.",
