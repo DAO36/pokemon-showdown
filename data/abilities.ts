@@ -1597,8 +1597,9 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	},
 	yamada2: { // unique idea
 		onAfterMoveSecondarySelf(source, target, move) {
-        if (move && target && target != source && target.getMoveHitData(move).typeMod < 0) source.switchFlag = true;
+        if (move && target && target != source && target.getMoveHitData(move).typeMod < 0)
 		  {
+			source.switchFlag = true;
 			this.add('-activate', source, 'ability: Yamada2');
 		  }
         },
@@ -2601,7 +2602,36 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		num: 240,
 	},
 	mangaka: { // COLOR CHANGE but in reverse
-		onAfterHit(source, target, move) {
+		onPrepareHit(source, target, move) {
+            if (move.hasBounced || move.flags['futuremove'] || move.sourceEffect === 'snatch') return;
+            const type = move.type;
+            if (type && type !== '???' && target.getTypes().join() !== type) {
+                if (!target.setType(type)) return;
+                this.add('-start', target, 'typechange', type, '[from] ability: Mangaka');
+            }
+        },
+        onSwitchIn() {},
+		flags: {},
+		name: "Mangaka",
+		rating: 0,
+		num: 16,
+	},
+	cretagent: { // exact copy of [Protean] pre-nerf
+        onPrepareHit(source, target, move) {
+            if (move.hasBounced || move.flags['futuremove'] || move.sourceEffect === 'snatch') return;
+            const type = move.type;
+            if (type && type !== '???' && source.getTypes().join() !== type) {
+                if (!source.setType(type)) return;
+                this.add('-start', source, 'typechange', type, '[from] ability: Secret Agent');
+            }
+        },
+        onSwitchIn() {},
+        rating: 5,
+        name: "Secret Agent",
+        num: 236
+	},
+	colourchange: {
+		onAfterMoveSecondary(target, source, move) {
 			if (!target.hp) return;
 			const type = move.type;
 			if (
@@ -2609,7 +2639,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 				type !== '???' && !target.hasType(type)
 			) {
 				if (!target.setType(type)) return false;
-				this.add('-start', target, 'typechange', type, '[from] ability: Mangaka');
+				this.add('-start', target, 'typechange', type, '[from] ability: Color Change');
 
 				if (target.side.active.length === 2 && target.position === 1) {
 					// Curse Glitch
@@ -2621,7 +2651,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			}
 		},
 		flags: {},
-		name: "Mangaka",
+		name: "Color Change",
 		rating: 0,
 		num: 16,
 	},
