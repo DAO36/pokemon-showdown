@@ -2581,7 +2581,6 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			if (pokemon.moveLastTurnResult === false) {
 				return move.basePower * 2;
 			}
-			return move.basePower;
 		},
 		flags: {breakable: 1},
 		name: "Investment",
