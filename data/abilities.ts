@@ -2577,8 +2577,8 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		num: 43,
 	},
 	investment: { // STOMPING TANTRUM but an ability
-		onModifyMove(move, pokemon, target) {
-			if (pokemon.moveLastTurnResult === false) {
+		onBasePower(relayVar, source, target, move) {
+			if (source.moveLastTurnResult === false) {
 				this.debug('doubling BP due to previous move failure');
 				return move.basePower * 2;
 			}
