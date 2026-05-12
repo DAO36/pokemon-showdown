@@ -1588,23 +1588,14 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	},
 	yamada: { // unique idea
 		onAfterMoveSecondarySelf(source, target, move) {
-        if (move && target && target != source && target.getMoveHitData(move).typeMod < 0) source.switchFlag = true;
-        },
-		flags: {breakable: 1},
-		name: "Yamada",
-		rating: 2,
-		num: 240,
-	},
-	yamada2: { // unique idea
-		onAfterMoveSecondarySelf(source, target, move) {
         if (move && target && target != source && target.getMoveHitData(move).typeMod < 0)
 		  {
 			source.switchFlag = true;
-			this.add('-activate', source, 'ability: Yamada2');
+			this.add('-activate', source, 'ability: Yamada');
 		  }
         },
 		flags: {breakable: 1},
-		name: "Yamada2",
+		name: "Yamada",
 		rating: 2,
 		num: 240,
 	},
@@ -2616,6 +2607,21 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 0,
 		num: 16,
 	},
+	mangaka2: { // COLOR CHANGE but in reverse
+		onHit(source, target, move) {
+            if (move.hasBounced || move.flags['futuremove'] || move.sourceEffect === 'snatch') return;
+            const type = move.type;
+            if (move.category !== 'Status' && type && type !== '???' && target.getTypes().join() !== type) {
+                if (!target.setType(type)) return;
+                this.add('-start', target, 'typechange', type, '[from] ability: Mangaka2');
+            }
+        },
+        onSwitchIn() {},
+		flags: {},
+		name: "Mangaka2",
+		rating: 0,
+		num: 16,
+	},
 	cretagent: { // exact copy of [Protean] pre-nerf
         onPrepareHit(source, target, move) {
             if (move.hasBounced || move.flags['futuremove'] || move.sourceEffect === 'snatch') return;
@@ -2629,31 +2635,6 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
         rating: 5,
         name: "Secret Agent",
         num: 236
-	},
-	colourchange: {
-		onAfterMoveSecondary(target, source, move) {
-			if (!target.hp) return;
-			const type = move.type;
-			if (
-				target.isActive && move.effectType === 'Move' && move.category !== 'Status' &&
-				type !== '???' && !target.hasType(type)
-			) {
-				if (!target.setType(type)) return false;
-				this.add('-start', target, 'typechange', type, '[from] ability: Color Change');
-
-				if (target.side.active.length === 2 && target.position === 1) {
-					// Curse Glitch
-					const action = this.queue.willMove(target);
-					if (action && action.move.id === 'curse') {
-						action.targetLoc = -1;
-					}
-				}
-			}
-		},
-		flags: {},
-		name: "Color Change",
-		rating: 0,
-		num: 16,
 	},
 	gowiththeflow: { // BLUNDER POLICY but an ability
 		// implemented in runMove in BUILD-ACTIONS.ts
