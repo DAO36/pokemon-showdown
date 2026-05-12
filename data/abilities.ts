@@ -2596,6 +2596,31 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 2.5,
 		num: 11,
 	},
+	mangaka: {
+		onAfterMoveSecondary(target, source, move) {
+			if (!source.hp) return;
+			const type = move.type;
+			if (
+				source.isActive && move.effectType === 'Move' && move.category !== 'Status' &&
+				type !== '???' && !source.hasType(type)
+			) {
+				if (!source.setType(type)) return false;
+				this.add('-start', source, 'typechange', type, '[from] ability: Mangaka');
+
+				if (source.side.active.length === 2 && source.position === 1) {
+					// Curse Glitch
+					const action = this.queue.willMove(source);
+					if (action && action.move.id === 'curse') {
+						action.targetLoc = -1;
+					}
+				}
+			}
+		},
+		flags: {},
+		name: "Mangaka",
+		rating: 0,
+		num: 16,
+	},
 	sucharge: {
 		onTryHit(target, source, move) {
 			if (target !== source && move.type === 'Water') {
