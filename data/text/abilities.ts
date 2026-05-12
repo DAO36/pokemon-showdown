@@ -531,12 +531,19 @@ export const AbilitiesText: { [id: IDEntry]: AbilityText } = {
 		desc: "If the user's last move on the previous turn, including moves called by other moves or those used through Instruct, Magic Coat, Snatch, or the Dancer or Magic Bounce Abilities, failed to do any of its normal effects, not including damage from an unsuccessful High Jump Kick, Jump Kick, or Mind Blown, or if the user was prevented from moving by any effect other than recharging or Sky Drop, then the user's next move will do double damage. A move that was blocked by Baneful Bunker, Detect, King's Shield, Protect, Spiky Shield, Crafty Shield, Mat Block, Lunar Shield, Phoenix Shield, Quick Guard, or Wide Guard will not double the move's power, nor will Bounce or Fly ending early due to the effect of Gravity, Smack Down, or Thousand Arrows.",
 		shortDesc: "Moves have double power if the user's last move failed.",
 	},
+	sucharge: {
+		name: "Su Charge",
+		desc: "This Pokemon is immune to Water-type moves. The first time it is hit by a Water-type move, its offensive stat is multiplied by 1.5 while using a Water-type attack as long as it remains active and has this Ability.",
+		shortDesc: "This Pokemon's Water attacks do 1.5x damage if hit by one Water move; Water immunity.",
+
+		start: "  The power of [POKEMON]'s Water-type moves rose!",
+	},
 	mixtape: { // CHIHAYA
 		name: "Mixtape",
 		desc: "This Pokemon is immune to sound and Electric-type moves and restores 1/4 of its maximum HP, rounded down, when hit by a sound or Electric-type move. If Electric Terrain is active, the Speed of this Pokemon is doubled.",
 		shortDesc: "Heals 1/4 HP if hit by sound or Electric moves; 2x Spe in Electric Terrain.", 
 	},
-	smoothskin: {
+	smoothskin: { // VIVI
 		name: "Smooth Skin",
 		desc: "This Pokemon receives 3/4 damage from supereffective attacks. The power of Fire-type moves is multiplied by 1.5 when used on this Pokemon. At the end of each turn, this Pokemon loses 1/8 of its maximum HP, rounded down, if the weather is Sunny Day. The weather effects are prevented if this Pokemon is holding a Utility Umbrella.",
 		shortDesc: "Supereffective attacks do 3/4 damage. User is hurt 1.5x by Fire, 1/8 by Sun.",
