@@ -536,6 +536,11 @@ export const AbilitiesText: { [id: IDEntry]: AbilityText } = {
 		desc: "When one of this user's stat stages would be lowered by another Pokemon, that Pokemon's stat stage is lowered instead. This effect does not happen if the user's stat stage was already -6. If the other Pokemon has a substitute, neither Pokemon has its stat stage lowered. This Pokemon is unaffected by certain non-damaging moves directed at it and will instead use such moves against the original user. Moves reflected in this way are unable to be reflected again by this or Magic Coat's effect. Spikes, Stealth Rock, Sticky Web, and Toxic Spikes can only be reflected once per side, by the leftmost Pokemon under this or Magic Coat's effect. The Lightning Rod and Storm Drain Abilities redirect their respective moves before this Ability takes effect.",
 		shortDesc: "Blocks certain status moves & stat changes, & bounces them back to the target.",
 	},
+	orchange: {
+		name: "Color Change",
+		desc: "This Pokemon's attacking moves change the typing of the target to match the type of the move that hit it. This effect comes after all effects that change a move's type.",
+		shortDesc: "User's moves changes the type of target to type of move that hit it.",
+	},
 	gowiththeflow: {
 		name: "Go with the Flow",
 		shortDesc: "If user misses a move due to accuracy, their Speed is raised by 2 stages.",

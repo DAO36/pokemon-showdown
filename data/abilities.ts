@@ -2632,47 +2632,17 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		num: 240,
 	},
 	mangaka: { // COLOR CHANGE but in reverse
-		onPrepareHit(source, target, move) {
-            if (move.hasBounced || move.flags['futuremove'] || move.sourceEffect === 'snatch') return;
-            const type = move.type;
-            if (type && type !== '???' && target.getTypes().join() !== type) {
-                if (!target.setType(type)) return;
-                this.add('-start', target, 'typechange', type, '[from] ability: Mangaka');
-            }
-        },
-        onSwitchIn() {},
-		flags: {},
-		name: "Mangaka",
-		rating: 0,
-		num: 16,
-	},
-	mangaka2: { // COLOR CHANGE but in reverse
 		onAfterMove(source, target, move) {
             if (move.hasBounced || move.flags['futuremove'] || move.sourceEffect === 'snatch') return;
             const type = move.type;
             if (move.category !== 'Status' && type && type !== '???' && target.getTypes().join() !== type) {
                 if (!target.setType(type)) return;
-                this.add('-start', target, 'typechange', type, '[from] ability: Mangaka2');
+                this.add('-start', source, 'typechange', type, '[from] ability: Mangaka');
             }
         },
         onSwitchIn() {},
 		flags: {},
-		name: "Mangaka2",
-		rating: 0,
-		num: 16,
-	},
-	mangaka3: { // COLOR CHANGE but in reverse
-		onPrepareHit(source, target, move) {
-            if (move.hasBounced || move.flags['futuremove'] || move.sourceEffect === 'snatch') return;
-            const type = move.type;
-            if (move.category !== 'Status' && type && type !== '???' && target.getTypes().join() !== type) {
-                if (!target.setType(type)) return;
-                this.add('-start', target, 'typechange', type, '[from] ability: Mangaka3');
-            }
-        },
-        onSwitchIn() {},
-		flags: {},
-		name: "Mangaka3",
+		name: "Mangaka",
 		rating: 0,
 		num: 16,
 	},
