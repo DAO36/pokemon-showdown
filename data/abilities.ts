@@ -40,6 +40,45 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 0.1,
 		num: 0,
 	},
+	feastorfamine: {
+        onFoeTryBoost(boost, target, source, effect) {
+            if (effect?.name === 'Opportunist' || effect?.name === 'Mirror Herb') return;
+            if (!this.effectState.boosts) this.effectState.boosts = {} as SparseBoostsTable;
+            const boostPlus = this.effectState.boosts;
+            let i: BoostID;
+            for (i in boost) {
+                if (boost[i]! > 0) {
+                    boostPlus[i] = (boostPlus[i] || 0) + boost[i]!;
+                }
+            }
+            target.clearBoosts();
+            this.add('-clearboost', target);
+        },
+        onAnySwitchInPriority: -3,
+        onAnySwitchIn() {
+            if (!this.effectState.boosts) return;
+            this.boost(this.effectState.boosts, this.effectState.target);
+            delete this.effectState.boosts;
+        },
+        onAnyAfterMove() {
+            if (!this.effectState.boosts) return;
+            this.boost(this.effectState.boosts, this.effectState.target);
+            delete this.effectState.boosts;
+        },
+        onResidualOrder: 29,
+        onResidual(pokemon) {
+            if (!this.effectState.boosts) return;
+            this.boost(this.effectState.boosts, this.effectState.target);
+            delete this.effectState.boosts;
+        },
+        onEnd() {
+            delete this.effectState.boosts;
+        },
+        flags: {},
+        name: "Feast or Famine",
+        rating: 4,
+        num: -99,
+    },
 	arttheft: {
 		name: "Art Theft",
 		rating: 4,
@@ -2608,7 +2647,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		num: 16,
 	},
 	mangaka2: { // COLOR CHANGE but in reverse
-		onAfterHit(source, target, move) {
+		onAfterMove(source, target, move) {
             if (move.hasBounced || move.flags['futuremove'] || move.sourceEffect === 'snatch') return;
             const type = move.type;
             if (move.category !== 'Status' && type && type !== '???' && target.getTypes().join() !== type) {
@@ -2622,19 +2661,20 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 0,
 		num: 16,
 	},
-	cretagent: { // exact copy of [Protean] pre-nerf
-        onPrepareHit(source, target, move) {
+	mangaka3: { // COLOR CHANGE but in reverse
+		onPrepareHit(source, target, move) {
             if (move.hasBounced || move.flags['futuremove'] || move.sourceEffect === 'snatch') return;
             const type = move.type;
-            if (type && type !== '???' && source.getTypes().join() !== type) {
-                if (!source.setType(type)) return;
-                this.add('-start', source, 'typechange', type, '[from] ability: Secret Agent');
+            if (move.category !== 'Status' && type && type !== '???' && target.getTypes().join() !== type) {
+                if (!target.setType(type)) return;
+                this.add('-start', target, 'typechange', type, '[from] ability: Mangaka3');
             }
         },
         onSwitchIn() {},
-        rating: 5,
-        name: "Secret Agent",
-        num: 236
+		flags: {},
+		name: "Mangaka3",
+		rating: 0,
+		num: 16,
 	},
 	gowiththeflow: { // BLUNDER POLICY but an ability
 		// implemented in runMove in BUILD-ACTIONS.ts
