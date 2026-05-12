@@ -552,10 +552,10 @@ export const AbilitiesText: { [id: IDEntry]: AbilityText } = {
 	},
 	sucharge: {
 		name: "Su Charge",
-		desc: "This Pokemon is immune to Water-type moves. The first time it is hit by a Water-type move, its offensive stat is multiplied by 1.5 while using a Water-type attack as long as it remains active and has this Ability.",
-		shortDesc: "This Pokemon's Water attacks do 1.5x damage if hit by one Water move; Water immunity.",
+		desc: "This Pokemon is immune to Water-type moves and raises both its Special Attack and Speed by 1 stage each when hit by a Water-type move. If this Pokemon is not the target of a single-target Water-type move used by another Pokemon, this Pokemon redirects that move to itself if it is within the range of that move. If multiple Pokemon could redirect with this Ability, it goes to the one with the highest Speed, or in the case of a tie to the one that has had this Ability active longer.",
+		shortDesc: "User draws Water moves to itself & raise Sp.Atk & Spe by 1; Water immunity.",
 
-		start: "  The power of [POKEMON]'s Water-type moves rose!",
+		activate: "#lightningrod",
 	},
 	mixtape: { // CHIHAYA
 		name: "Mixtape",
