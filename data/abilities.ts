@@ -1597,9 +1597,10 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	},
 	yamada2: { // unique idea
 		onAfterMoveSecondarySelf(source, target, move) {
-        if (move && target && target != source && target.getMoveHitData(move).typeMod < 0) 
-		source.switchFlag = true
-		this.add('-activate', source, 'ability: Yamada2');
+        if (move && target && target != source && target.getMoveHitData(move).typeMod < 0) source.switchFlag = true;
+		  {
+			this.add('-activate', source, 'ability: Yamada2');
+		  }
         },
 		flags: {breakable: 1},
 		name: "Yamada2",
@@ -2601,18 +2602,18 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	},
 	mangaka: { // COLOR CHANGE but in reverse
 		onAfterHit(source, target, move) {
-			if (!source.hp) return;
+			if (!target.hp) return;
 			const type = move.type;
 			if (
-				source.isActive && move.effectType === 'Move' && move.category !== 'Status' &&
-				type !== '???' && !source.hasType(type)
+				target.isActive && move.effectType === 'Move' && move.category !== 'Status' &&
+				type !== '???' && !target.hasType(type)
 			) {
-				if (!source.setType(type)) return false;
-				this.add('-start', source, 'typechange', type, '[from] ability: Mangaka');
+				if (!target.setType(type)) return false;
+				this.add('-start', target, 'typechange', type, '[from] ability: Mangaka');
 
-				if (source.side.active.length === 2 && source.position === 1) {
+				if (target.side.active.length === 2 && target.position === 1) {
 					// Curse Glitch
-					const action = this.queue.willMove(source);
+					const action = this.queue.willMove(target);
 					if (action && action.move.id === 'curse') {
 						action.targetLoc = -1;
 					}
