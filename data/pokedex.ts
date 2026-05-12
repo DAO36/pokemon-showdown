@@ -22262,7 +22262,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		types: ["Normal"],
 		gender: "F",
 		baseStats: {hp: 100, atk: 100, def: 100, spa: 100, spd: 100, spe: 100},
-		abilities: {0: "Soundproof", 1: "Motor Drive", H: "Speed Boost", S: "???"}, // cars - DJ - heals when hit by electric, sound moves +1 speed, 2x speed in electricity terrain
+		abilities: {0: "Soundproof", 1: "Motor Drive", H: "Speed Boost", S: "Mixtape"},
 		heightm: 1.68,
 		weightkg: 55.5,
 		color: "Green",

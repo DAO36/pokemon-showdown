@@ -2596,6 +2596,31 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 2.5,
 		num: 11,
 	},
+	mixtape: {
+		onModifySpe(spe) {
+			if (this.field.isTerrain('electricterrain')) { 
+				return this.chainModify(2);
+			}
+		},
+		onTryHit(target, source, move) {
+			if (target !== source && move.type === 'Electric') {
+				if (!this.heal(target.baseMaxhp / 4)) {
+					this.add('-immune', target, '[from] ability: Mixtape');
+				}
+				return null;
+			}
+			if (target !== source && move.flags['sound']) {
+				if (!this.heal(target.baseMaxhp / 4)) {
+					this.add('-immune', target, '[from] ability: Mixtape');
+				}
+				return null;
+			}
+		},
+		flags: { breakable: 1 },
+		name: "Mixtape",
+		rating: 3.5,
+		num: 10,
+	},
 	adaptability: {
 		onModifySTAB(stab, source, target, move) {
 			if (move.forceSTAB || source.hasType(move.type)) {
