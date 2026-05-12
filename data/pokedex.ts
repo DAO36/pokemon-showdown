@@ -22291,7 +22291,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		types: ["Normal"],
 		gender: "F",
 		baseStats: {hp: 100, atk: 100, def: 100, spa: 100, spd: 100, spe: 100},
-		abilities: {0: "Dry Skin", 1: "Harvest", H: "???", S: "???"}, // HATES the SUN + MAKEUP - during sun loses 1/8 hp, weak to fire type?
+		abilities: {0: "Dry Skin", 1: "Harvest", H: "Clear Body", S: "Smooth Skin"}, // MAKEUP
 		heightm: 1.61,
 		weightkg: 55.5,
 		color: "Pink",

@@ -2621,6 +2621,30 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3.5,
 		num: 10,
 	},
+	smoothskin: {
+		onSourceModifyDamage(damage, source, target, move) {
+			if (target.getMoveHitData(move).typeMod > 0) {
+				this.debug('Filter neutralize');
+				return this.chainModify(0.75);
+			}
+		},
+		onSourceBasePowerPriority: 17,
+		onSourceBasePower(basePower, attacker, defender, move) {
+			if (move.type === 'Fire') {
+				return this.chainModify(1.5);
+			}
+		},
+		onWeather(target, source, effect) {
+			if (target.effectiveWeather() !== effect.id) return;
+			else if (effect.id === 'sunnyday' || effect.id === 'desolateland') {
+				this.damage(target.baseMaxhp / 8, target, target);
+			}
+		},
+		flags: { breakable: 1 },
+		name: "Dry Skin",
+		rating: 3,
+		num: 87,
+	},
 	adaptability: {
 		onModifySTAB(stab, source, target, move) {
 			if (move.forceSTAB || source.hasType(move.type)) {

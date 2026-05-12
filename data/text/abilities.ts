@@ -536,6 +536,13 @@ export const AbilitiesText: { [id: IDEntry]: AbilityText } = {
 		desc: "This Pokemon is immune to sound and Electric-type moves and restores 1/4 of its maximum HP, rounded down, when hit by a sound or Electric-type move. If Electric Terrain is active, the Speed of this Pokemon is doubled.",
 		shortDesc: "Heals 1/4 HP if hit by sound or Electric moves; 2x Spe in Electric Terrain.", 
 	},
+	smoothskin: {
+		name: "Smooth Skin",
+		desc: "This Pokemon receives 3/4 damage from supereffective attacks. The power of Fire-type moves is multiplied by 1.5 when used on this Pokemon. At the end of each turn, this Pokemon loses 1/8 of its maximum HP, rounded down, if the weather is Sunny Day. The weather effects are prevented if this Pokemon is holding a Utility Umbrella.",
+		shortDesc: "Supereffective attacks do 3/4 damage. User is hurt 1.5x by Fire, 1/8 by Sun.",
+
+		damage: "  ([POKEMON] was hurt by by the Sun!)",
+	},
 	adaptability: {
 		name: "Adaptability",
 		desc: "This Pokemon's moves that match one of its types have a same-type attack bonus (STAB) of 2 instead of 1.5.",
