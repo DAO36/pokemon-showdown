@@ -2592,7 +2592,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	investing: { // BLUNDER POLICY but an ability [UNUSED]
 		// implemented in runMove in BUILD-ACTIONS.ts
 		flags: {breakable: 1},
-		name: "Investment",
+		name: "Investing",
 		rating: 2.5,
 		num: 11,
 	},
