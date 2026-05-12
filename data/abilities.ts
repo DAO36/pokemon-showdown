@@ -2586,14 +2586,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 2.5,
 		num: 11,
 	},
-	investing: { // BLUNDER POLICY but an ability [UNUSED]
-		// implemented in runMove in BUILD-ACTIONS.ts
-		flags: {breakable: 1},
-		name: "Investing",
-		rating: 2.5,
-		num: 11,
-	},
-	mangaka: {
+	mangaka: { // COLOR CHANGE but in reverse
 		onAfterMoveSecondary(target, source, move) {
 			if (!source.hp) return;
 			const type = move.type;
@@ -2617,6 +2610,13 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		name: "Mangaka",
 		rating: 0,
 		num: 16,
+	},
+	gowiththeflow: { // BLUNDER POLICY but an ability
+		// implemented in runMove in BUILD-ACTIONS.ts
+		flags: {breakable: 1},
+		name: "Go with the Flow",
+		rating: 2.5,
+		num: 11,
 	},
 	goldtiger: {
 		onFoeEffectiveness(typeMod, target, type, move) {

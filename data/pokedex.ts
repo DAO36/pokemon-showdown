@@ -22175,7 +22175,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		types: ["Normal"],
 		gender: "F",
 		baseStats: {hp: 100, atk: 100, def: 100, spa: 100, spd: 100, spe: 100},
-		abilities: {0: "Own Tempo", 1: "Competitive", H: "Scrappy", S: "???"}, // when at 1/3 hp maybe berserk clone ?
+		abilities: {0: "Own Tempo", 1: "Competitive", H: "Scrappy", S: "Go with the Flow"},
 		heightm: 1.60,
 		weightkg: 55.5,
 		color: "Black",
