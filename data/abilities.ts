@@ -1586,10 +1586,40 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	yamada: { // unique idea
 		onAfterMoveSecondarySelf(source, target, move) {
         if (move && target && target != source && target.getMoveHitData(move).typeMod < 0) source.switchFlag = true;
-		this.add('-activate', source, 'ability: Yamada');
         },
 		flags: {breakable: 1},
 		name: "Yamada",
+		rating: 2,
+		num: 240,
+	},
+	yamada2: { // unique idea
+		onAfterMoveSecondarySelf(source, target, move) {
+        if (move && target && target != source && target.getMoveHitData(move).typeMod < 0) source.switchFlag = true;
+		this.add('-activate', source, 'ability: Yamada2');
+        },
+		flags: {breakable: 1},
+		name: "Yamada2",
+		rating: 2,
+		num: 240,
+	},
+	yamada3: { // unique idea
+		onAfterMoveSecondarySelf(source, target, move) {
+        if (move && target && target != source && target.getMoveHitData(move).typeMod < 0) 
+		this.add('-activate', source, 'ability: Yamada3');
+		source.switchFlag = true;
+        },
+		flags: {breakable: 1},
+		name: "Yamada3",
+		rating: 2,
+		num: 240,
+	},
+	yamada4: { // unique idea
+		onAfterMoveSecondarySelf(source, target, move) {
+        if (move && target && target != source && target.getMoveHitData(move).typeMod < 0) this.add('-activate', source, 'ability: Yamada4');
+		source.switchFlag = true;
+        },
+		flags: {breakable: 1},
+		name: "Yamada4",
 		rating: 2,
 		num: 240,
 	},
@@ -2587,7 +2617,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		num: 240,
 	},
 	mangaka: { // COLOR CHANGE but in reverse
-		onAfterMoveSecondary(target, source, move) {
+		onAfterHit(source, target, move) {
 			if (!source.hp) return;
 			const type = move.type;
 			if (
