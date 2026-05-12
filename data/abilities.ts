@@ -61,7 +61,6 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			if (!stolen) return;
 
 			target.setAbility('noability', pokemon);
-			this.add('-message', `${target.name} has No Ability!`);
 
 			target.removeVolatile('gastroacid');
 		},
@@ -186,9 +185,8 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	},
 	unfavoredretreat: {
     onAfterMoveSecondarySelf(source, target, move) {
-        if (move && target && target != source && target.getMoveHitData(move).typeMod < 0) 
+        if (move && target && target != source && target.getMoveHitData(move).typeMod < 0) source.switchFlag = true;
 		this.add('-activate', source, 'ability: Unfavored Retreat');
-			source.switchFlag = true;	
     },
 		flags: {},
 		name: "Unfavored Retreat",
@@ -2576,7 +2574,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 2.5,
 		num: 43,
 	},
-	investment: { // STOMPING TANTRUM but an ability
+	investment: { // STOMPING TANTRUM but as an ability
 		onBasePower(relayVar, source, target, move) {
 			if (source.moveLastTurnResult === false) {
 				this.debug('doubling BP due to previous move failure');
