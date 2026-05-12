@@ -2625,7 +2625,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			}
 		},
 		flags: { breakable: 1 },
-		name: "Mind's Eye",
+		name: "Gold Tiger",
 		rating: 0,
 		num: 300,
 	},
