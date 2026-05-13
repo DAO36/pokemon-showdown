@@ -1,3 +1,5 @@
+import { extractChannelMessages } from '../sim/battle';
+
 export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 	missingno: {
 		learnset: {
@@ -99397,6 +99399,37 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			protect: ["9M"],
 			rest: ["9M"],
 			facade: ["9M"],
+			rapidspin: ["9M"],
+			triattack: ["9M"],
+			afteryou: ["9M"],
+			bellydrum: ["9M"],
+			block: ["9M"],
+			confide: ["9M"],
+			followme: ["9M"],
+			foresight: ["9M"],
+			entrainment: ["9M"],
+			teeterdance: ["9M"],
+			fierydance: ["9M"],
+			petaldance: ["9M"],
+			aquastep: ["9M"],
+			raindance: ["9M"],
+			aurasphere: ["9M"],
+			aerialace: ["9M"],
+			acrobatics: ["9M"],
+			airslash: ["9M"],
+			zenheadbutt: ["9M"],
+			extrasensory: ["9M"],
+			calmmind: ["9M"],
+			meditate: ["9M"],
+			earthpower: ["9M"],
+			rockslide: ["9M"],
+			ancientpower: ["9M"],
+			icespinner: ["9M"],
+			swordsdance: ["9M"],
+			shadowball: ["9M"],
+			darkpulse: ["9M"],
+			ironhead: ["9M"],
+			playrough: ["9M"],
         },
 	},
 	hajime: {
