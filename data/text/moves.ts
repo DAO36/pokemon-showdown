@@ -1106,10 +1106,15 @@ export const MovesText: { [id: IDEntry]: MoveText } = {
 		desc: "Deals damage to the target based on its Defense instead of Special Defense. Hits adjacent foes.",
 		shortDesc: "Damages target based on Defense, not Sp. Def.",
 	},
-	kanade2: {
+	monday: {
 		name: "Monday",
-		desc: "parting shot AND taunt xd",
-		shortDesc: "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+		desc: "Prevents the target from using non-damaging moves for its next three turns. Pokemon with the Oblivious Ability or protected by the Aroma Veil Ability are immune. If this move is successful and the user has not fainted, the user switches out even if it is trapped and is replaced immediately by a selected party member. The user does not switch out if there are no unfainted party members.",
+		shortDesc: "3 turns: target can't use status moves. User switches.",
+
+		start: "  It is Monday tomorrow!",
+		end: "  It is no longer Monday!",
+		cant: "[POKEMON] can't use [MOVE] on Mondays!",
+		switchOut: "[POKEMON] went back to [TRAINER]!",
 	},
 	kanade3: {
 		name: "Crescendo Crash",

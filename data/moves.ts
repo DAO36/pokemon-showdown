@@ -4388,6 +4388,49 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Normal",
 		contestType: "Cool",
 	},
+	monday: {
+		num: 369,
+		accuracy: 100,
+		basePower: 0,
+		category: "Status",
+		name: "Monday",
+		pp: 20,
+		priority: 0,
+		flags: { sound: 1, protect: 1, mirror: 1, bypasssub: 1, switches: 1, reflectable: 1},
+		volatileStatus: 'taunt',
+		condition: {
+			duration: 3,
+			onStart(target) {
+				if (target.activeTurns && !this.queue.willMove(target)) {
+					this.effectState.duration!++;
+				}
+				this.add('-start', target, 'move: Monday');
+			},
+			onResidualOrder: 15,
+			onEnd(target) {
+				this.add('-end', target, 'move: Monday');
+			},
+			onDisableMove(pokemon) {
+				for (const moveSlot of pokemon.moveSlots) {
+					const move = this.dex.moves.get(moveSlot.id);
+					if (move.category === 'Status' && move.id !== 'mefirst') {
+						pokemon.disableMove(moveSlot.id);
+					}
+				}
+			},
+			onBeforeMovePriority: 5,
+			onBeforeMove(attacker, defender, move) {
+				if (!(move.isZ && move.isZOrMaxPowered) && move.category === 'Status' && move.id !== 'mefirst') {
+					this.add('cant', attacker, 'move: Monday', move);
+					return false;
+				}
+			},
+		},
+		selfSwitch: true,
+		target: "normal",
+		type: "Dark",
+		contestType: "Cute",
+	},
 	ultimatepower: {
 		num: 69,
 		accuracy: true,
