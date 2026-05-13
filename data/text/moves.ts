@@ -1101,6 +1101,136 @@ export const MovesText: { [id: IDEntry]: MoveText } = {
 		desc: "Hits adjacent Pokemon. If the target lost HP, the user takes recoil damage equal to 33% the HP lost by the target, rounded half up, but not less than 1 HP.",
 		shortDesc: "Has 33% recoil. Hits adjacent Pokemon.",
 	},
+	kanade1: {
+		name: "Piano Power",
+		desc: "special csound move that does phtysical damage?",
+		shortDesc: "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+	},
+	kanade2: {
+		name: "Monday",
+		desc: "parting shot but different",
+		shortDesc: "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+	},
+	kanade3: {
+		name: "Crescendo Crash",
+		desc: "does something to ppl who used sound moves?",
+		shortDesc: "or instead flying sound move man idk",
+	},
+	ririka1: {
+		name: "Business Blast",
+		desc: "uh idk lol",
+		shortDesc: "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+	},
+	ririka2: {
+		name: "Invest",
+		desc: "rage fist clone",
+		shortDesc: "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+	},
+	ririka3: {
+		name: "CEO",
+		desc: "boost move?",
+		shortDesc: "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+	},
+	raden1: {
+		name: "Maitake Dance",
+		desc: "a dance type attack",
+		shortDesc: "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+	},
+	raden2: {
+		name: "Mask Off",
+		desc: "boost move",
+		shortDesc: "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+	},
+	raden3: {
+		name: "Musuem Might",
+		desc: "uhhhhhhhhhhhhhhhhhh",
+		shortDesc: "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+	},
+	hajime1: {
+		name: "Bancho Bash",
+		desc: "maybe topsy-turvy but also deal damagfe",
+		shortDesc: "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+	},
+	hajime2: {
+		name: "Banpen",
+		desc: "flying type move that inflicts taunt???",
+		shortDesc: "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+	},
+	hajime3: {
+		name: "Badass",
+		desc: "maybe a copy of Mace Mash or smthn",
+		shortDesc: "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+	},
+	aomove1: {
+		name: "Dokusha Dash",
+		desc: "see if u can make a move that chnages targets type",
+		shortDesc: "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+	},
+	aomove2: {
+		name: "Stunning Looks",
+		desc: "hmm idk man",
+		shortDesc: "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+	},
+	riona1: {
+		name: "Flow Glow",
+		desc: "last respects clone",
+		shortDesc: "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+	},
+	niko1: {
+		name: "Tiger Strike",
+		desc: "uhhhh idk",
+		shortDesc: "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+	},
+	niko2: {
+		name: "Jokester",
+		desc: "uhhhh idk",
+		shortDesc: "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+	},
+	sumove1: {
+		name: "Publicity Stunt",
+		desc: "uhhhhhhhh",
+		shortDesc: "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+	},
+	sumove2: {
+		name: "Marketing",
+		desc: "a boost move?",
+		shortDesc: "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+	},
+	sumove3: {
+		name: "Advertisement",
+		desc: "another boost move?",
+		shortDesc: "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+	},
+	chihaya1: {
+		name: "Fugutaro",
+		desc: "her car's name",
+		shortDesc: "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+	},
+	chihaya2: {
+		name: "Car Crash",
+		desc: "steel double edge?",
+		shortDesc: "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+	},
+	chihaya3: {
+		name: "300 Horsepower",
+		desc: "electric high jump kicks?",
+		shortDesc: "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+	},
+	chihaya4: {
+		name: "Dubstep",
+		desc: "steel type boomburst?",
+		shortDesc: "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+	},
+	vivi1: {
+		name: "Makeup",
+		desc: "boosting move?",
+		shortDesc: "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+	},
+	vivi2: {
+		name: "Skin Care",
+		desc: "boosting move?",
+		shortDesc: "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+	},
 	absorb: {
 		name: "Absorb",
 		desc: "The user recovers 1/2 the HP lost by the target, rounded half up. If Big Root is held by the user, the HP recovered is 1.3x normal, rounded half down.",

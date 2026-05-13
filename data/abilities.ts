@@ -502,18 +502,6 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 5,
 		num: 24,
 	},
-	stockmarketcrash: { // clears all stat changes of all pokemon on the field upon switch-in 
-		onStart(pokemon) {
-			this.add('-clearallboost');
-			for (const pokemon of this.getAllPokemon()) {
-				pokemon.clearBoosts();
-			}
-		},
-		flags: {},
-		name: "Stock Market Crash",
-		rating: 0,
-		num: 294,
-	}, 
 	airforce: { // sets up tailwind on switch-in :o
         onStart(source) {
             source.side.addSideCondition('tailwind', source);
