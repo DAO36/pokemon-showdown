@@ -531,6 +531,14 @@ export const AbilitiesText: { [id: IDEntry]: AbilityText } = {
 		desc: "If the user's last move on the previous turn, including moves called by other moves or those used through Instruct, Magic Coat, Snatch, or the Dancer or Magic Bounce Abilities, failed to do any of its normal effects, not including damage from an unsuccessful High Jump Kick, Jump Kick, or Mind Blown, or if the user was prevented from moving by any effect other than recharging or Sky Drop, then the user's next move will do double damage. A move that was blocked by Baneful Bunker, Detect, King's Shield, Protect, Spiky Shield, Crafty Shield, Mat Block, Lunar Shield, Phoenix Shield, Quick Guard, or Wide Guard will not double the move's power, nor will Bounce or Fly ending early due to the effect of Gravity, Smack Down, or Thousand Arrows.",
 		shortDesc: "Moves have double power if the user's last move failed.",
 	},
+	nohmask: {
+		name: "Noh Mask",
+			desc: "The first hit it takes in battle deals 0 neutral damage. Its mask is then broken and it changes to Noh Form. Confusion damage also breaks the disguise.",
+			shortDesc: "First hit deals 0 damage, breaks mask.",
+
+		    block: "  The Noh mask took the hit!",
+		    transform: "[POKEMON] went mask off!",
+	},
 	bancho: {
 		name: "Bancho",
 		desc: "When one of this user's stat stages would be lowered by another Pokemon, that Pokemon's stat stage is lowered instead. This effect does not happen if the user's stat stage was already -6. If the other Pokemon has a substitute, neither Pokemon has its stat stage lowered. This Pokemon is unaffected by certain non-damaging moves directed at it and will instead use such moves against the original user. Moves reflected in this way are unable to be reflected again by this or Magic Coat's effect. Spikes, Stealth Rock, Sticky Web, and Toxic Spikes can only be reflected once per side, by the leftmost Pokemon under this or Magic Coat's effect. The Lightning Rod and Storm Drain Abilities redirect their respective moves before this Ability takes effect.",
