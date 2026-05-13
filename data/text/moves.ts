@@ -1101,10 +1101,10 @@ export const MovesText: { [id: IDEntry]: MoveText } = {
 		desc: "Hits adjacent Pokemon. If the target lost HP, the user takes recoil damage equal to 33% the HP lost by the target, rounded half up, but not less than 1 HP.",
 		shortDesc: "Has 33% recoil. Hits adjacent Pokemon.",
 	},
-	kanade1: {
+	pianopower: { // KANADE 1
 		name: "Piano Power",
-		desc: "special csound move that does phtysical damage?",
-		shortDesc: "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+		desc: "Deals damage to the target based on its Defense instead of Special Defense. Hits adjacent foes.",
+		shortDesc: "Damages target based on Defense, not Sp. Def.",
 	},
 	kanade2: {
 		name: "Monday",
