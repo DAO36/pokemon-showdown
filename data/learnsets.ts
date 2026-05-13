@@ -99366,6 +99366,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			alluringvoice: ["9M"],
 			pianopower: ["9M"],
 			monday: ["9M"],
+			crescendocrash: ["9M"],
         },
 	},
 	ririka: {

@@ -1116,10 +1116,12 @@ export const MovesText: { [id: IDEntry]: MoveText } = {
 		cant: "[POKEMON] can't use [MOVE] on Mondays!",
 		switchOut: "[POKEMON] went back to [TRAINER]!",
 	},
-	kanade3: {
+	crescendocrash: {
 		name: "Crescendo Crash",
-		desc: "throat chjop clone",
-		shortDesc: "aaaaaaaaaaaaaaaaaaaaaaaa",
+		desc: "For 2 turns, the target cannot use sound-based moves.",
+		shortDesc: "For 2 turns, the target cannot use sound moves.",
+
+		cant: "The effects of Crescendo Crash prevent [POKEMON] from singing!",
 	},
 	ririka1: {
 		name: "Company Startup",
