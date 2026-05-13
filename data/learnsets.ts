@@ -99697,6 +99697,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			seedbomb: ["9M"],
 			aerialace: ["9M"],
 			psyshock: ["9M"],
+			psychic: ["9M"],
 			agility: ["9M"],
 			miracleeye: ["9M"],
 			flatter: ["9M"],

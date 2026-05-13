@@ -2369,15 +2369,8 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3,
 		num: 290,
 	}, 
-	rockhard: { // combines [Multiscale] + [Fluffy] but instead of Fire being omitted, it is Steel
-		onStart(pokemon) {
-			this.add('-activate', pokemon, 'ability: Rock Hard');
-		},
+	rockhard: { // [Fluffy] but instead of Fire being omitted, it is Steel
 		onSourceModifyDamage(damage, source, target, move) {
-			if (target.hp >= target.maxhp) {
-				this.debug('Rock Hard weaken');
-				return this.chainModify(0.5);
-			}
 			let mod = 1;
 			if (move.type === 'Steel') mod *= 2;
 			if (move.flags['contact']) mod /= 2;
@@ -2387,7 +2380,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		name: "Rock Hard",
 		rating: 3.5,
 		num: 218,
-	}, 
+	},
 	demonofsound: { // if hit by Sound type move, boosts Atk by 1; Sound type immunity
 		onTryHit(target, source, move) {
 			if (target !== source && move.flags['sound']) {
@@ -2806,9 +2799,9 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	},
 	smoothskin: {
 		onSourceModifyDamage(damage, source, target, move) {
-			if (target.getMoveHitData(move).typeMod > 0) {
-				this.debug('Filter neutralize');
-				return this.chainModify(0.75);
+			if (target.hp >= target.maxhp) {
+				this.debug('Multiscale weaken');
+				return this.chainModify(0.5);
 			}
 		},
 		onSourceBasePowerPriority: 17,
@@ -2823,6 +2816,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 				this.damage(target.baseMaxhp / 8, target, target);
 			}
 		},
+		onCriticalHit: false,
 		flags: { breakable: 1 },
 		name: "Smooth Skin",
 		rating: 3,
