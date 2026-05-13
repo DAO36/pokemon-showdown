@@ -4388,7 +4388,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Normal",
 		contestType: "Cool",
 	},
-	monday: {
+	monday: { // KANADE 2
 		num: 369,
 		accuracy: 100,
 		basePower: 0,
@@ -4431,7 +4431,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Dark",
 		contestType: "Cute",
 	},
-	crescendocrash: {
+	crescendocrash: { // KANADE 3
 		num: 675,
 		accuracy: 100,
 		basePower: 80,
@@ -4479,6 +4479,84 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		target: "normal",
 		type: "Dark",
 		contestType: "Clever",
+	},
+	companystartup: { // RIRIKA 1
+		num: 775,
+		accuracy: 100,
+		basePower: 0,
+		category: "Status",
+		name: "Company Startup",
+		pp: 5,
+		priority: 0,
+		flags: { snatch: 1, sound: 1, dance: 1 },
+		onTry(source) {
+			if (source.hp <= (source.maxhp * 33 / 100) || source.maxhp === 1) return false;
+		},
+		onTryHit(pokemon, target, move) {
+			if (!this.boost(move.boosts!)) return null;
+			delete move.boosts;
+		},
+		onHit(pokemon) {
+			this.directDamage(pokemon.maxhp * 33 / 100);
+		},
+		boosts: {
+			atk: 1,
+			def: 1,
+			spa: 1,
+			spd: 1,
+			spe: 1,
+		},
+		target: "self",
+		type: "Fairy",
+	},
+	stockmarketcrash: { // RIRIKA 2
+		num: 38,
+		accuracy: 90,
+		basePower: 130,
+		category: "Special",
+		name: "Stock Market Crash",
+		pp: 15,
+		priority: 0,
+		flags: {protect: 1, mirror: 1, metronome: 1 },
+		recoil: [33, 100],
+		target: "normal",
+		type: "Normal",
+		contestType: "Tough",
+	},
+	ceo: { // RIRIKA 3
+		num: 500,
+		accuracy: 100,
+		basePower: 20,
+		basePowerCallback(pokemon, target, move) {
+			const bp = move.basePower + 20 * pokemon.positiveBoosts();
+			this.debug(`BP: ${bp}`);
+			return bp;
+		},
+		category: "Special",
+		name: "CEO",
+		pp: 10,
+		priority: 0,
+		flags: { protect: 1, mirror: 1, metronome: 1 },
+		target: "normal",
+		type: "Normal",
+		zMove: { basePower: 160 },
+		maxMove: { basePower: 130 },
+		contestType: "Clever",
+	},
+	invest: {
+		num: 889,
+		accuracy: 100,
+		basePower: 50,
+		basePowerCallback(pokemon) {
+			return Math.min(350, 50 + 50 * pokemon.timesAttacked);
+		},
+		category: "Special",
+		name: "Invest",
+		pp: 10,
+		priority: 0,
+		flags: { contact: 1, protect: 1, mirror: 1, punch: 1 },
+		target: "normal",
+		type: "Psychic",
 	},
 	ultimatepower: {
 		num: 69,

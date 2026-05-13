@@ -1123,25 +1123,25 @@ export const MovesText: { [id: IDEntry]: MoveText } = {
 
 		cant: "The effects of Crescendo Crash prevent [POKEMON] from singing!",
 	},
-	ririka1: {
+	companystartup: {
 		name: "Company Startup",
-		desc: "boost move",
-		shortDesc: "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+		desc: "Raises the user's Attack, Defense, Special Attack, Special Defense, and Speed by 1 stage in exchange for the user losing 33% of its maximum HP, rounded down. Fails if the user would faint or if its Attack, Defense, Special Attack, Special Defense, and Speed stat stages would not change.",
+		shortDesc: "User loses 33% of its max HP. +1 to all stats.",
 	},
-	ririka2: {
-		name: "Invest",
-		desc: "rage fist clone",
-		shortDesc: "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-	},
-	ririka3: {
+	stockmarketcrash: {
 		name: "Stock Market Crash",
-		desc: "double edge but with a twist?",
-		shortDesc: "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+		desc: "If the target lost HP, the user takes recoil damage equal to 33% the HP lost by the target, rounded half up, but not less than 1 HP.",
+		shortDesc: "Has 33% recoil.",
 	},
-	ririka4: {
+	ceo: {
 		name: "CEO",
-		desc: "stored power clone?",
-		shortDesc: "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+		desc: "Power is equal to 20+(X*20), where X is the user's total stat stage changes that are greater than 0.",
+		shortDesc: " + 20 power for each of the user's stat boosts.",
+	},
+	invest: {
+		name: "Invest",
+		desc: "Power is equal to 50+(X*50), where X is the total number of times the user has been hit by a damaging attack during the battle, even if the user did not lose HP from the attack. X cannot be greater than 6 and does not reset upon switching out or fainting. Each hit of a multi-hit attack is counted, but confusion damage is not counted.",
+		shortDesc: "+50 power for each time user was hit. Max 6 hits.",
 	},
 	raden1: {
 		name: "Maitake Dance",
