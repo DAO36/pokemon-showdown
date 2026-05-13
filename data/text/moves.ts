@@ -1108,17 +1108,17 @@ export const MovesText: { [id: IDEntry]: MoveText } = {
 	},
 	kanade2: {
 		name: "Monday",
-		desc: "parting shot but different",
+		desc: "parting shot AND taunt xd",
 		shortDesc: "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
 	},
 	kanade3: {
 		name: "Crescendo Crash",
-		desc: "does something to ppl who used sound moves?",
-		shortDesc: "or instead flying sound move man idk",
+		desc: "throat chjop clone",
+		shortDesc: "aaaaaaaaaaaaaaaaaaaaaaaa",
 	},
 	ririka1: {
-		name: "Business Blast",
-		desc: "uh idk lol",
+		name: "Company Startup",
+		desc: "boost move",
 		shortDesc: "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 	},
 	ririka2: {
@@ -1127,8 +1127,13 @@ export const MovesText: { [id: IDEntry]: MoveText } = {
 		shortDesc: "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 	},
 	ririka3: {
+		name: "Stock Market Crash",
+		desc: "double edge but with a twist?",
+		shortDesc: "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+	},
+	ririka4: {
 		name: "CEO",
-		desc: "boost move?",
+		desc: "stored power clone?",
 		shortDesc: "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 	},
 	raden1: {
@@ -1138,7 +1143,7 @@ export const MovesText: { [id: IDEntry]: MoveText } = {
 	},
 	raden2: {
 		name: "Mask Off",
-		desc: "boost move",
+		desc: "boost move like hell smash",
 		shortDesc: "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 	},
 	raden3: {
@@ -1148,12 +1153,12 @@ export const MovesText: { [id: IDEntry]: MoveText } = {
 	},
 	hajime1: {
 		name: "Bancho Bash",
-		desc: "maybe topsy-turvy but also deal damagfe",
+		desc: "meteor beam clone?",
 		shortDesc: "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 	},
 	hajime2: {
 		name: "Banpen",
-		desc: "flying type move that inflicts taunt???",
+		desc: "flying type move that does dmg and has topsy-turvy efefct",
 		shortDesc: "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 	},
 	hajime3: {
@@ -1183,12 +1188,12 @@ export const MovesText: { [id: IDEntry]: MoveText } = {
 	},
 	niko2: {
 		name: "Jokester",
-		desc: "uhhhh idk",
-		shortDesc: "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+		desc: "maybe me first but priority?",
+		shortDesc: "or follow me but u can target foes, see whoch works",
 	},
 	sumove1: {
 		name: "Publicity Stunt",
-		desc: "uhhhhhhhh",
+		desc: "recoil move?",
 		shortDesc: "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 	},
 	sumove2: {
@@ -1198,22 +1203,22 @@ export const MovesText: { [id: IDEntry]: MoveText } = {
 	},
 	sumove3: {
 		name: "Advertisement",
-		desc: "another boost move?",
+		desc: "damage move that inflicts taunt?",
 		shortDesc: "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 	},
 	chihaya1: {
 		name: "Fugutaro",
-		desc: "her car's name",
+		desc: "flying press but electric/steel, chance to burn, chance tio boost speed, 2x power in electicity terrain",
 		shortDesc: "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 	},
 	chihaya2: {
 		name: "Car Crash",
-		desc: "steel double edge?",
+		desc: "steel double edge",
 		shortDesc: "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 	},
 	chihaya3: {
 		name: "300 Horsepower",
-		desc: "electric high jump kicks?",
+		desc: "electric high jump kicks",
 		shortDesc: "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 	},
 	chihaya4: {
@@ -1223,12 +1228,17 @@ export const MovesText: { [id: IDEntry]: MoveText } = {
 	},
 	vivi1: {
 		name: "Makeup",
-		desc: "boosting move?",
+		desc: "boost move",
 		shortDesc: "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 	},
 	vivi2: {
 		name: "Skin Care",
-		desc: "boosting move?",
+		desc: "a copy of Reboot",
+		shortDesc: "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+	},
+	vivi3: {
+		name: "Comestic Strike",
+		desc: "idk xd",
 		shortDesc: "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 	},
 	absorb: {
