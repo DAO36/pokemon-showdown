@@ -2563,7 +2563,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	nohmask: { // KINDA like a copy of DISGUISE
 		onDamage(damage, target, source, effect) {
 			if (effect && effect.effectType === 'Move' &&
-				['mimikyu', 'mimikyutotem'].includes(target.species.id) && !target.transformed) {
+				['raden'].includes(target.species.id) && !target.transformed) {
 				if (["rollout", "iceball"].includes(effect.id)) {
 					source.volatiles[effect.id].contactHitCount--;
 				}
@@ -2655,13 +2655,13 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 0,
 		num: 16,
 	},
-	mangaka2: { // COLOR CHANGE but in reverse
+	mangaka2: { // COLOR CHANGE but in reverse [target is showing ability name NOT user]
 		onAfterMove(source, target, move) {
             if (move.hasBounced || move.flags['futuremove'] || move.sourceEffect === 'snatch') return;
             const type = move.type;
             if (move.category !== 'Status' && type && type !== '???' && target.getTypes().join() !== type) {
                 if (!target.setType(type)) return;
-                this.add('-activate', source, 'ability: Mangaka2');
+                this.add('-start', source, source, 'typechange', type, '[from] ability: Mangaka2');
             }
         },
         onSwitchIn() {},
