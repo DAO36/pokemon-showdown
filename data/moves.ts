@@ -4682,7 +4682,55 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		target: "normal",
 		type: "Dark",
 		contestType: "Tough",
-	}, 
+	},
+	dokushadash: { // AO 1
+		num: 513,
+		accuracy: 100,
+		basePower: 100,
+		category: "Physical",
+		name: "Dokusha Dash",
+		pp: 10,
+		priority: 0,
+		flags: { protect: 1, contact: 1, metronome: 1 },
+		onHit(target, source) {
+			if (source.species && (source.species.num === 493 || source.species.num === 773)) return false;
+			if (source.terastallized) return false;
+			const oldApparentType = source.apparentType;
+			let newBaseTypes = target.getTypes(true).filter(type => type !== '???');
+			if (!newBaseTypes.length) {
+				if (target.addedType) {
+					newBaseTypes = ['Normal'];
+				} else {
+					return false;
+				}
+			}
+			this.add('-start', source, 'typechange', '[from] move: Dokusha Dash', `[of] ${target}`);
+			source.setType(newBaseTypes);
+			source.addedType = target.addedType;
+			source.knownType = target.isAlly(source) && target.knownType;
+			if (!source.knownType) source.apparentType = oldApparentType;
+		},
+		target: "normal",
+		type: "Normal",
+		contestType: "Clever",
+	},
+	stunninglooks: { // AO 2
+		num: 339,
+		accuracy: true,
+		basePower: 0,
+		category: "Status",
+		name: "Stunning Looks",
+		pp: 20,
+		priority: 0,
+		flags: { snatch: 1, metronome: 1 },
+		boosts: {
+			atk: 1,
+			def: 1,
+		},
+		target: "self",
+		type: "Normal", 
+		contestType: "Cool",
+	},
 	ultimatepower: {
 		num: 69,
 		accuracy: true,

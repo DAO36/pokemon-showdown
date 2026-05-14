@@ -1177,15 +1177,17 @@ export const MovesText: { [id: IDEntry]: MoveText } = {
 
 		activate: "  Destroyed [TARGET]'s protection!",
 	},
-	aomove1: {
+	dokushadash: { // AO 1
 		name: "Dokusha Dash",
-		desc: "see if u can make a move that chnages targets type",
-		shortDesc: "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+		desc: "Causes the user's types to become the same as the current types of the target. If the target's current types include typeless and a non-added type, typeless is ignored. If the target's current types include typeless and an added type from Forest's Curse or Trick-or-Treat, typeless is copied as the Normal type instead. Fails if the user is an Arceus or a Silvally, if the user is Terastallized, or if the target's current type is typeless alone.",
+		shortDesc: "User becomes the same type as the target.",
+
+		typeChange: "  [POKEMON]'s type became the same as [SOURCE]'s type!",
 	},
-	aomove2: {
+	stunninglooks: { // AO 2
 		name: "Stunning Looks",
-		desc: "hmm idk man",
-		shortDesc: "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+		desc: "Raises the user's Attack and Defense by 1 stage.",
+		shortDesc: "Raises the user's Attack and Defense by 1.",
 	},
 	riona1: {
 		name: "Flow Glow",
