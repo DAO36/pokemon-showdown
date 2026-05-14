@@ -4377,7 +4377,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	pianopower: { // KANADE 1
 		num: 304,
 		accuracy: 90,
-		basePower: 100,
+		basePower: 110,
 		category: "Special",
 		overrideDefensiveStat: 'def',
 		name: "Piano Power",
@@ -4394,7 +4394,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		basePower: 0,
 		category: "Status",
 		name: "Monday",
-		pp: 20,
+		pp: 10,
 		priority: 0,
 		flags: { sound: 1, protect: 1, mirror: 1, bypasssub: 1, switches: 1, reflectable: 1},
 		volatileStatus: 'taunt',
@@ -4488,7 +4488,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		name: "Company Startup",
 		pp: 5,
 		priority: 0,
-		flags: { snatch: 1, sound: 1, dance: 1 },
+		flags: { snatch: 1 },
 		onTry(source) {
 			if (source.hp <= (source.maxhp * 33 / 100) || source.maxhp === 1) return false;
 		},
@@ -4554,7 +4554,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		name: "Invest",
 		pp: 10,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1, punch: 1 },
+		flags: { contact: 1, protect: 1, mirror: 1 },
 		target: "normal",
 		type: "Psychic",
 	},
@@ -4563,7 +4563,6 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		accuracy: 95,
 		basePower: 95,
 		category: "Physical",
-		overrideDefensiveStat: 'spd',
 		name: "Maitake Dance",
 		pp: 10,
 		priority: 0,
@@ -4582,7 +4581,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		basePower: 0,
 		category: "Status",
 		name: "Mask Off",
-		pp: 15,
+		pp: 5,
 		priority: 0,
 		flags: { snatch: 1, metronome: 1 },
 		boosts: {
@@ -4594,7 +4593,6 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		},
 		target: "self",
 		type: "Dark",
-		zMove: { effect: 'clearnegativeboost' },
 		contestType: "Tough",
 	},
 	musuemmight: { // RADEN 3
@@ -4605,7 +4603,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		name: "Musuem Might",
 		pp: 5,
 		priority: 4,
-		flags: { heal: 1, cantusetwice: 1 },
+		flags: { heal: 1, dance: 1, cantusetwice: 1 },
 		target: "self",
 		type: "Normal",
 		zMove: { effect: 'clearnegativeboost' },
@@ -4619,7 +4617,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		name: "Bancho Blast",
 		pp: 10,
 		priority: 0,
-		flags: { charge: 1, protect: 1, mirror: 1, metronome: 1 },
+		flags: { charge: 1, protect: 1, mirror: 1, pulse: 1 },
 		onTryMove(attacker, defender, move) {
 			if (attacker.removeVolatile(move.id)) {
 				return;
@@ -4637,13 +4635,13 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	},
 	banpen: { // HAJIME 2
 		num: 576,
-		accuracy: true,
+		accuracy: 100,
 		basePower: 80,
 		category: "Physical",
 		name: "Banpen",
 		pp: 20,
 		priority: 0,
-		flags: { protect: 1, wind: 1, contact: 1, metronome: 1 },
+		flags: { protect: 1, wind: 1, metronome: 1 },
 		onHit(target) {
 			let success = false;
 			let i: BoostID;
@@ -4667,7 +4665,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		name: "Badass",
 		pp: 5,
 		priority: 0,
-		flags: {contact: 1, mirror: 1},
+		flags: {contact: 1, mirror: 1, punch: 1},
 		onTryHit(pokemon) {
 			// will shatter screens through sub, before you hit
 			pokemon.side.removeSideCondition('reflect');
@@ -4836,7 +4834,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		name: "Su-Charge",
 		pp: 10,
 		priority: 0,
-		flags: {charge: 1, protect: 1, mirror: 1, nosleeptalk: 1, failinstruct: 1},
+		flags: {charge: 1, protect: 1, mirror: 1, nosleeptalk: 1, failinstruct: 1, pulse: 1},
 		onTryMove(attacker, defender, move) {
 			if (attacker.removeVolatile(move.id)) {
 				return;
@@ -4881,7 +4879,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		basePower: 60,
 		category: "Physical",
 		name: "Advertisement",
-		pp: 15,
+		pp: 10,
 		priority: 0,
 		flags: { protect: 1, mirror: 1 },
 		condition: {

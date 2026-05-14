@@ -1145,8 +1145,8 @@ export const MovesText: { [id: IDEntry]: MoveText } = {
 	},
 	maitakedance: {
 		name: "Maitake Dance",
-		desc: "Deals damage to the target based on its Defense instead of Special Defense. Has a 30% chance to confuse the target.",
-		shortDesc: "Damages on Def instead of Sp.Def. 30% to confuse.",
+		desc: "Has a 30% chance to confuse the target.",
+		shortDesc: "30% chance to confuse the target.",
 	},
 	maskoff: {
 		name: "Mask Off",

@@ -2560,7 +2560,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 2.5,
 		num: 11,
 	},
-	nohmask: {
+	nohmask: { // KINDA like a copy of DISGUISE
 		onDamage(damage, target, source, effect) {
 			if (effect && effect.effectType === 'Move' &&
 				['mimikyu', 'mimikyutotem'].includes(target.species.id) && !target.transformed) {
@@ -2682,7 +2682,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 2.5,
 		num: 11,
 	},
-	goldtiger: {
+	goldtiger: { // NORMIE type moves are 2x efefctive on STEAL types
 		onFoeEffectiveness(typeMod, target, type, move) {
 			if (type === 'Steel' && move.type === 'Normal') {
 				return 1;
@@ -2693,7 +2693,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 0,
 		num: 300,
 	},
-	publicitystunt: { // SU
+	publicitystunt: { // SOLAR POWER but with Water type instead + WATER ABSORB
 		onTryHit(target, source, move) {
 			if (target !== source && move.type === 'Water') {
 				if (!this.heal(target.baseMaxhp / 4, target, target)) {
@@ -2725,7 +2725,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 2,
 		num: 94,
 	},
-	mixtape: {
+	mixtape: { // SURGE SURFER + VOLT ABSORB + sound absorb
 		onModifySpe(spe) {
 			if (this.field.isTerrain('electricterrain')) { 
 				return this.chainModify(2);
@@ -2750,7 +2750,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3.5,
 		num: 10,
 	},
-	smoothskin: {
+	smoothskin: { // BATTLE ARMOUR + MULTISCALE + weak to fire and dies in sunny day
 		onSourceModifyDamage(damage, source, target, move) {
 			if (target.hp >= target.maxhp) {
 				this.debug('Multiscale weaken');
