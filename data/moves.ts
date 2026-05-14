@@ -4397,7 +4397,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		pp: 10,
 		priority: 0,
 		flags: { sound: 1, protect: 1, mirror: 1, bypasssub: 1, switches: 1, reflectable: 1},
-		volatileStatus: 'taunt',
+		volatileStatus: 'monday',
 		condition: {
 			duration: 3,
 			onStart(target) {
@@ -4897,7 +4897,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		},
 		secondary: {
 			chance: 100,
-			volatileStatus: 'saltcure',
+			volatileStatus: 'advertisement',
 		},
 		target: "normal",
 		type: "Normal",
