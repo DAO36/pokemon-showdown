@@ -522,12 +522,11 @@ export const AbilitiesText: { [id: IDEntry]: AbilityText } = {
 	musicalmaniac: { // KANADE
 		name: "Musical Maniac",
 		desc: "This Pokemon is immune to Sound-type moves and has its Special Attack raised by 1 stage when hit by a Sound-based move.",
-		shortDesc: "User's SpAtk is raised by 1 stage if hit by a Sound move; Sound immunity.",
+		shortDesc: "User's Special Attack is raised by 1 stage if hit by a Sound move; Sound immunity.",
 	},
 	investment: { // RIRIKA
 		name: "Investment",
-		desc: "If the user's last move on the previous turn, including moves called by other moves or those used through Instruct, Magic Coat, Snatch, or the Dancer or Magic Bounce Abilities, failed to do any of its normal effects, not including damage from an unsuccessful High Jump Kick, Jump Kick, or Mind Blown, or if the user was prevented from moving by any effect other than recharging or Sky Drop, then the user's next move will do double damage. A move that was blocked by Baneful Bunker, Detect, King's Shield, Protect, Spiky Shield, Crafty Shield, Mat Block, Lunar Shield, Phoenix Shield, Quick Guard, or Wide Guard will not double the move's power, nor will Bounce or Fly ending early due to the effect of Gravity, Smack Down, or Thousand Arrows.",
-		shortDesc: "Moves have double power if the user's last move failed.",
+		shortDesc: "If user misses a move due to accuracy, their Speed is raised by 2 stages.",
 	},
 	nohmask: { // RADEN
 		name: "Noh Mask",
@@ -544,7 +543,8 @@ export const AbilitiesText: { [id: IDEntry]: AbilityText } = {
 	},
 	gowiththeflow: { // RIONA
 		name: "Go with the Flow",
-		shortDesc: "If user misses a move due to accuracy, their Speed is raised by 2 stages.",
+		desc: "If the user's last move on the previous turn, including moves called by other moves or those used through Instruct, Magic Coat, Snatch, or the Dancer or Magic Bounce Abilities, failed to do any of its normal effects, not including damage from an unsuccessful High Jump Kick, Jump Kick, or Mind Blown, or if the user was prevented from moving by any effect other than recharging or Sky Drop, then the user's next move will do double damage. A move that was blocked by Baneful Bunker, Detect, King's Shield, Protect, Spiky Shield, Crafty Shield, Mat Block, Lunar Shield, Phoenix Shield, Quick Guard, or Wide Guard will not double the move's power, nor will Bounce or Fly ending early due to the effect of Gravity, Smack Down, or Thousand Arrows.",
+		shortDesc: "Moves have double power if the user's last move failed.",
 	},
 	goldtiger: { // NIKO
 		name: "Gold Tiger",

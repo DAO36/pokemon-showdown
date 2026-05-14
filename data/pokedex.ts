@@ -22025,7 +22025,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		requiredItem: "Raorite",
 	},
 	kanade: {
-		num: 52,
+		num: 441,
 		name: "Kanade",
 		types: ["Normal"],
 		gender: "F",
@@ -22039,7 +22039,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		formeOrder: ["Kanade", "Kanade-Mega"],
 	},
 	kanademega: {
-		num: 53,
+		num: 441,
 		name: "Kanade-Mega",
 		baseSpecies: "Kanade",
 		forme: "Mega",
@@ -22059,7 +22059,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		types: ["Normal"],
 		gender: "F",
 		baseStats: {hp: 90, atk: 115, def: 85, spa: 120, spd: 80, spe: 100},
-		abilities: {0: "Oppurtunist", 1: "Hustle", H: "Tinted Lens", S: "Investment"},
+		abilities: {0: "Opportunist", 1: "Hustle", H: "Tinted Lens", S: "Investment"},
 		heightm: 1.62,
 		weightkg: 55.5,
 		color: "Pink",

@@ -2534,7 +2534,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 1.5,
 		num: 82,
 	},
-	musicalmaniac: { // if hit by Sound type move, boosts SpAtk by 1; Sound type immunity
+	musicalmaniac: { // if hit by Sound type move, boosts SpAtk by 1; Sound type immunity KANADE
 		onTryHit(target, source, move) {
 			if (target !== source && move.flags['sound']) {
 				if (!this.boost({spa: 1})) {
@@ -2553,7 +2553,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 2.5,
 		num: 43,
 	},
-	investment: { // BLUNDER POLICY but an ability
+	investment: { // BLUNDER POLICY but an ability RIRIKA
 		// implemented in runMove in BUILD-ACTIONS.ts
 		flags: {breakable: 1},
 		name: "Investment",
