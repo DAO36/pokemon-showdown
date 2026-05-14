@@ -1231,25 +1231,27 @@ export const MovesText: { [id: IDEntry]: MoveText } = {
 		start: "  [POKEMON] is being bombarded by ads!",
 		damage: "  [POKEMON] is hurt by the pop-ups!",
 	},
-	chihaya1: {
+	fugutaro: { // CHIHAYA 1
 		name: "Fugutaro",
-		desc: "flying press but electric/steel, chance to burn, chance tio boost speed, 2x power in electicity terrain",
-		shortDesc: "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+		desc: "This move combines Electric in its type effectiveness against the target. Has a 100% chance to raise the user's Speed by 1 stage.",
+		shortDesc: "Combines Electric in type effectiveness. +1 Speed.",
 	},
-	chihaya2: {
+	carcrash: { // CHIHAYA 2
 		name: "Car Crash",
-		desc: "steel double edge",
-		shortDesc: "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+		desc: "Has a 10% chance to burn the target. If the target lost HP, the user takes recoil damage equal to 33% the HP lost by the target, rounded half up, but not less than 1 HP.",
+		shortDesc: "Has 33% recoil. 10% chance to burn target.",
 	},
-	chihaya3: {
-		name: "300 Horsepower",
-		desc: "electric high jump kicks",
-		shortDesc: "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+	threehundredhorsepower: { // CHIHAYA 3
+		name: "Three Hundred Horsepower",
+		desc: "Has a 10% chance to paralyze the target. If this attack is not successful, the user loses half of its maximum HP, rounded down, as crash damage. Pokemon with the Magic Guard Ability are unaffected by crash damage. Damage doubles and no accuracy check is done if the target has used Minimize while active.",
+		shortDesc: "10% chance to paralyze. Miss: user loses 50% HP.",
+
+		damage: "#crash",
 	},
-	chihaya4: {
+	dubstep: { // CHIHAYA 4
 		name: "Dubstep",
-		desc: "steel type boomburst?",
-		shortDesc: "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+		desc: "Has a 20% chance to confuse the target; Hits adjacent foes.",
+		shortDesc: "Has a 20% chance to confuse the target.",
 	},
 	vivi1: {
 		name: "Makeup",

@@ -99708,6 +99708,10 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			shiftgear: ["9M"],
 			autotomize: ["9M"],
 			irondefense: ["9M"],
+			fugutaro: ["9M"],
+			carcrash: ["9M"],
+			threehundredhorsepower: ["9M"],
+			dubstep: ["9M"],
         },
 	},
 	vivi: {
