@@ -99656,6 +99656,9 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			darkpulse: ["9M"],
 			nastyplot: ["9M"],
 			babydolleyes: ["9M"],
+			sucharge: ["9M"],
+			marketing: ["9M"],
+			advertisement: ["9M"],
         },
 	},
 	chihaya: {

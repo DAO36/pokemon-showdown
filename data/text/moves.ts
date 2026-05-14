@@ -1206,20 +1206,25 @@ export const MovesText: { [id: IDEntry]: MoveText } = {
 		desc: "Almost always goes first. The user uses the move the target chose for use this turn against it, if possible. The move must be a move other than Beak Blast, Belch, Blazing Torque, Combat Torque, Comeuppance, Counter, Covet, Focus Punch, Magical Torque, Me First, Metal Burst, Mirror Coat, Noxious Torque, Shell Trap, Struggle, Thief, or Wicked Torque. Fails if the target moves before the user. Ignores the target's substitute for the purpose of copying the move.",
 		shortDesc: "Moves first; Copies a target's move.",
 	},
-	sucharge: {
+	sucharge: { // SU 1
 		name: "Su-Charge",
-		desc: "meteor beam cloned",
-		shortDesc: "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+		desc: "This attack charges on the first turn and executes on the second. Raises the user's Special Attack by 1 stage on the first turn. If the user is holding a Power Herb or the weather is Rain or Primordial Sea, the move completes in one turn. If the user is holding Utility Umbrella and the weather is Rain or Primordial Sea, the move still requires a turn to charge.",
+		shortDesc: "Raises Sp.Atk by 1 on turn 1. No charge in rain.", 
+
+		prepare: "  [POKEMON] is charging up!",
 	},
-	sumove2: {
+	marketing: { // SU 2
 		name: "Marketing",
-		desc: "a boost move?",
-		shortDesc: "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+		desc: "Raises the user's Attack and Speed by 1 stage.",
+		shortDesc: "Raises the user's Attack and Speed by 1.",
 	},
-	sumove3: {
+	advertisement: { // SU 3
 		name: "Advertisement",
-		desc: "damage move that inflicts taunt?",
-		shortDesc: "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+		desc: "Causes damage to the target equal to 1/8 of its maximum HP, rounded down, at the end of each turn during effect. This effect ends when the target is no longer active.",
+		shortDesc: "Deals 1/8 max HP each turn.",
+
+		start: "  [POKEMON] is being bombarded by ads!",
+		damage: "  [POKEMON] is hurt by the pop-ups!",
 	},
 	chihaya1: {
 		name: "Fugutaro",

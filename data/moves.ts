@@ -4768,7 +4768,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Normal",
 		contestType: "Cool",
 	},
-	jokester: {
+	jokester: { // NIKO 2
 		num: 382,
 		accuracy: true,
 		basePower: 0,
@@ -4804,6 +4804,82 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		target: "any",
 		type: "Steel", 
 		contestType: "Clever",
+	},
+	sucharge: { // SU 1
+		num: 76,
+		accuracy: 90,
+		basePower: 120,
+		category: "Special",
+		name: "Su-Charge",
+		pp: 10,
+		priority: 0,
+		flags: {charge: 1, protect: 1, mirror: 1, nosleeptalk: 1, failinstruct: 1},
+		onTryMove(attacker, defender, move) {
+			if (attacker.removeVolatile(move.id)) {
+				return;
+			}
+			this.add('-prepare', attacker, move.name);
+			this.boost({spa: 1}, attacker, attacker, move);
+			if (['raindance', 'primordialsea'].includes(attacker.effectiveWeather())) {
+				this.attrLastMove('[still]');
+				this.addMove('-anim', attacker, move.name, defender);
+				return;
+			}
+			if (!this.runEvent('ChargeMove', attacker, defender, move)) {
+				return;
+			}
+			attacker.addVolatile('twoturnmove', defender);
+			return null;
+		},
+		target: "normal",
+		type: "Normal",
+		contestType: "Cool",
+	},
+	marketing: { // SU 2
+		num: 349,
+		accuracy: true,
+		basePower: 0,
+		category: "Status",
+		name: "Marketing",
+		pp: 20,
+		priority: 0,
+		flags: { snatch: 1, dance: 1, metronome: 1 },
+		boosts: {
+			atk: 1,
+			spe: 1,
+		},
+		target: "self",
+		type: "Water",
+		contestType: "Cool",
+	},
+	advertisement: {
+		num: 864,
+		accuracy: 100,
+		basePower: 60,
+		category: "Physical",
+		name: "Advertisement",
+		pp: 15,
+		priority: 0,
+		flags: { protect: 1, mirror: 1 },
+		condition: {
+			noCopy: true,
+			onStart(pokemon) {
+				this.add('-start', pokemon, 'Advertisement');
+			},
+			onResidualOrder: 13,
+			onResidual(pokemon) {
+				this.damage(pokemon.baseMaxhp / 8);
+			},
+			onEnd(pokemon) {
+				this.add('-end', pokemon, 'Advertisement');
+			},
+		},
+		secondary: {
+			chance: 100,
+			volatileStatus: 'saltcure',
+		},
+		target: "normal",
+		type: "Normal",
 	},
 	ultimatepower: {
 		num: 69,

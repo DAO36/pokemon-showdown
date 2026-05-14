@@ -546,10 +546,15 @@ export const AbilitiesText: { [id: IDEntry]: AbilityText } = {
 		name: "Go with the Flow",
 		shortDesc: "If user misses a move due to accuracy, their Speed is raised by 2 stages.",
 	},
-	goldtiger: {
+	goldtiger: { // NIKO
 		name: "Gold Tiger",
 		desc: "This Pokemon's Normal type moves hit Steel type Pokemon for super-effective damage.",
 		shortDesc: "Normal type moves hit Steel types for super-effective damage.",
+	},
+	publicitystunt: { // SU
+		name: "Publicity Stunt",
+		desc: "If Rain Dance is active, this Pokemon's Attack and Special Attack are multiplied by 1.5 and it loses 1/8 of its maximum HP, rounded down, at the end of each turn. These effects are prevented if the Pokemon is holding a Utility Umbrella. This Pokemon is immune to Water-type moves and restores 1/4 of its maximum HP, rounded down, when hit by a Water-type move.",
+		shortDesc: "Rain: Atk & SpAtk is 1.5x; loses 1/8 max HP per turn. Water immunity.",
 	},
 	mixtape: { // CHIHAYA
 		name: "Mixtape",
@@ -562,10 +567,6 @@ export const AbilitiesText: { [id: IDEntry]: AbilityText } = {
 		shortDesc: "Full HP: takes half damage. Immune to critical hits. Weakness to Fire & sun.",
 
 		damage: "  ([POKEMON] was hurt by by the Sun!)",
-	},
-	tiscale: {
-		name: "Multiscale",
-		shortDesc: "If this Pokemon is at full HP, damage taken from attacks is halved.",
 	},
 	adaptability: {
 		name: "Adaptability",

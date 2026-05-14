@@ -2740,6 +2740,38 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 0,
 		num: 300,
 	},
+	publicitystunt: {
+		onTryHit(target, source, move) {
+			if (target !== source && move.type === 'Water') {
+				if (!this.heal(target.baseMaxhp / 4, target, target)) {
+					this.add('-immune', target, '[from] ability: Publicity Stunt');
+				}
+				return null;
+			}
+		},
+		onModifySpAPriority: 5,
+		onModifySpA(spa, pokemon) {
+			if (['raindance', 'primordialsea'].includes(pokemon.effectiveWeather())) {
+				return this.chainModify(1.5);
+			}
+		},
+		onModifyAtkPriority: 5,
+		onModifyAtk(atk, pokemon) {
+			if (['raindance', 'primordialsea'].includes(pokemon.effectiveWeather())) {
+				return this.chainModify(1.5);
+			}
+		},
+		onWeather(target, source, effect) {
+			if (target.effectiveWeather() !== effect.id) return;
+			if (effect.id === 'raindance' || effect.id === 'primordialsea') {
+				this.damage(target.baseMaxhp / 8, target, target);
+			}
+		},
+		flags: {},
+		name: "Publicity Stunt",
+		rating: 2,
+		num: 94,
+	},
 	mixtape: {
 		onModifySpe(spe) {
 			if (this.field.isTerrain('electricterrain')) { 
