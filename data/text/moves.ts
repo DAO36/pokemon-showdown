@@ -1242,7 +1242,7 @@ export const MovesText: { [id: IDEntry]: MoveText } = {
 		shortDesc: "Has 33% recoil. 10% chance to burn target.",
 	},
 	threehundredhorsepower: { // CHIHAYA 3
-		name: "Three Hundred Horsepower",
+		name: "300 Horsepower",
 		desc: "Has a 10% chance to paralyze the target. If this attack is not successful, the user loses half of its maximum HP, rounded down, as crash damage. Pokemon with the Magic Guard Ability are unaffected by crash damage. Damage doubles and no accuracy check is done if the target has used Minimize while active.",
 		shortDesc: "10% chance to paralyze. Miss: user loses 50% HP.",
 
