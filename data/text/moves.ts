@@ -139,7 +139,7 @@ export const MovesText: { [id: IDEntry]: MoveText } = {
 		shortDesc: "Breaks protection & destroys screens. 33% recoil.", 
 
 		activate: "  Destroyed [TARGET]'s protection!",
-	}, 
+	},
 	ebifrionmight: {
 		name: "Ebifrion Might",
 		desc: "Raises the user's Attack and Speed each by 1 stage.",
@@ -1158,20 +1158,24 @@ export const MovesText: { [id: IDEntry]: MoveText } = {
 		desc: "If the user is in Noh Mask mode, switches to Mask mode.",
 		shortDesc: "If in Noh Mask mode, switches to Mask mode.",
 	},
-	hajime1: {
-		name: "Bancho Bash",
-		desc: "meteor beam clone?",
-		shortDesc: "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+	banchoblast: {
+		name: "Bancho Blast",
+		desc: "This attack charges on the first turn and executes on the second. Raises the user's Attack by 1 stage on the first turn. If the user is holding a Power Herb, the move completes in one turn.",
+		shortDesc: "Raises user's Atk by 1 on turn 1. Hits turn 2.",
+
+		prepare: "[POKEMON] is asking the universe to lend them power!",
 	},
-	hajime2: {
+	banpen: {
 		name: "Banpen",
-		desc: "flying type move that does dmg and has topsy-turvy efefct",
-		shortDesc: "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+		desc: "The target's positive stat stages become negative and vice versa. Fails if all of the target's stat stages are 0.",
+		shortDesc: "Inverts the target's stat stages.",
 	},
-	hajime3: {
+	badass: {
 		name: "Badass",
-		desc: "maybe a copy of Mace Mash or smthn",
-		shortDesc: "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+		desc: "If the target lost HP, the user takes recoil damage equal to 1/3 the HP lost by the target, rounded half up, but not less than 1 HP. If this attack does not miss, the effects of Reflect, Light Screen, Mist, Infirmary, Hologram, and Aurora Veil end for the target's side of the field before damage is calculated. If this move is successful, it breaks through the target's Baneful Bunker, Detect, King's Shield, Protect, or Spiky Shield for this turn, allowing other Pokemon to attack the target normally. If the target's side is protected by Crafty Shield, Mat Block, Quick Guard, or Wide Guard, that protection is also broken for this turn and other Pokemon may also attack the target's side normally.",
+		shortDesc: "Breaks protection & destroys screens. 33% recoil.", 
+
+		activate: "  Destroyed [TARGET]'s protection!",
 	},
 	aomove1: {
 		name: "Dokusha Dash",

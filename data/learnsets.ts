@@ -99493,6 +99493,9 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			moonblast: ["9M"],
 			babydolleyes: ["9M"],
 			moonlight: ["9M"],
+			banchoblast: ["9M"],
+			banpen: ["9M"],
+			badass: ["9M"],
         },
 	},
 	ao: {

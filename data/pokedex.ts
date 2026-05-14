@@ -22145,7 +22145,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		name: "Hajime-Mega",
 		baseSpecies: "Hajime",
 		forme: "Mega",
-		types: ["Normal"],
+		types: ["Normal", "Dark"],
 		gender: "F",
 		baseStats: {hp: 70, atk: 145, def: 80, spa: 135, spd: 130, spe: 140},
 		abilities: {0: "Magic Guard"},

@@ -4597,7 +4597,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		zMove: { effect: 'clearnegativeboost' },
 		contestType: "Tough",
 	},
-	musuemmight: {
+	musuemmight: { // RADEN 3
 		num: 588,
 		accuracy: true,
 		basePower: 0,
@@ -4611,6 +4611,78 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		zMove: { effect: 'clearnegativeboost' },
 		contestType: "Cool",
 	},
+	banchoblast: { // HAJIME 1
+		num: 800,
+		accuracy: 90,
+		basePower: 120,
+		category: "Physical",
+		name: "Bancho Blast",
+		pp: 10,
+		priority: 0,
+		flags: { charge: 1, protect: 1, mirror: 1, metronome: 1 },
+		onTryMove(attacker, defender, move) {
+			if (attacker.removeVolatile(move.id)) {
+				return;
+			}
+			this.add('-prepare', attacker, move.name);
+			this.boost({ atk: 1 }, attacker, attacker, move);
+			if (!this.runEvent('ChargeMove', attacker, defender, move)) {
+				return;
+			}
+			attacker.addVolatile('twoturnmove', defender);
+			return null;
+		},
+		target: "normal",
+		type: "Normal",
+	},
+	banpen: { // HAJIME 2
+		num: 576,
+		accuracy: true,
+		basePower: 80,
+		category: "Physical",
+		name: "Banpen",
+		pp: 20,
+		priority: 0,
+		flags: { protect: 1, wind: 1, contact: 1, metronome: 1 },
+		onHit(target) {
+			let success = false;
+			let i: BoostID;
+			for (i in target.boosts) {
+				if (target.boosts[i] === 0) continue;
+				target.boosts[i] = -target.boosts[i];
+				success = true;
+			}
+			if (!success) return false;
+			this.add('-invertboost', target, '[from] move: Topsy-Turvy');
+		},
+		target: "normal",
+		type: "Flying",
+		contestType: "Clever",
+	},
+	badass: { // HAJIME 3
+		num: 370,
+		accuracy: 90,
+		basePower: 130,
+		category: "Physical",
+		name: "Badass",
+		pp: 5,
+		priority: 0,
+		flags: {contact: 1, mirror: 1},
+		onTryHit(pokemon) {
+			// will shatter screens through sub, before you hit
+			pokemon.side.removeSideCondition('reflect');
+			pokemon.side.removeSideCondition('lightscreen');
+			pokemon.side.removeSideCondition('hologram');
+			pokemon.side.removeSideCondition('infirmary');
+			pokemon.side.removeSideCondition('auroraveil');
+			pokemon.side.removeSideCondition('mist');
+		},
+		breaksProtect: true,
+		recoil: [33, 100],
+		target: "normal",
+		type: "Dark",
+		contestType: "Tough",
+	}, 
 	ultimatepower: {
 		num: 69,
 		accuracy: true,
