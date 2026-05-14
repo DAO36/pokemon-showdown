@@ -4595,12 +4595,12 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Dark",
 		contestType: "Tough",
 	},
-	musuemmight: { // RADEN 3
+	museummight: { // RADEN 3
 		num: 588,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
-		name: "Musuem Might",
+		name: "Museum Might",
 		pp: 5,
 		priority: 4,
 		flags: { heal: 1, dance: 1, cantusetwice: 1 },

@@ -99443,7 +99443,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			playrough: ["9M"],
 			maitakedance: ["9M"],
 			maskoff: ["9M"],
-			musuemmight: ["9M"],
+			museummight: ["9M"],
         },
 	},
 	hajime: {

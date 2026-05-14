@@ -1153,8 +1153,8 @@ export const MovesText: { [id: IDEntry]: MoveText } = {
 		desc: "Lowers the user's Defense and Special Defense by 1 stage. Raises the user's Attack, Special Attack, and Speed by 2 stages.",
 		shortDesc: "Lowers Def, SpD by 1; raises Atk, SpA, Spe by 2.",
 	},
-	musuemmight: {
-		name: "Musuem Might",
+	museummight: {
+		name: "Museum Might",
 		desc: "If the user is in Noh Mask mode, switches to Mask mode.",
 		shortDesc: "If in Noh Mask mode, switches to Mask mode.",
 	},

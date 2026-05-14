@@ -2582,8 +2582,8 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		},
 		onModifyMovePriority: 1,
 		onModifyMove(move, attacker, defender) {
-			if (move.category === 'Status' && move.id !== 'musuemmight') return;
-			const targetForme = (move.id === 'musuemmight' ? 'raden' : 'raden-noh');
+			if (move.category === 'Status' && move.id !== 'museummight') return;
+			const targetForme = (move.id === 'museummight' ? 'raden-noh' : 'raden');
 		},
 		flags: {
 			failroleplay: 1, noreceiver: 1, noentrain: 1, notrace: 1, failskillswap: 1, cantsuppress: 1,
@@ -2661,7 +2661,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
             const type = move.type;
             if (move.category !== 'Status' && type && type !== '???' && target.getTypes().join() !== type) {
                 if (!target.setType(type)) return;
-                this.add('-start', source, source, 'typechange', type, '[from] ability: Mangaka2');
+                this.add('-start', source, '[from] ability: Mangaka2');
             }
         },
         onSwitchIn() {},
