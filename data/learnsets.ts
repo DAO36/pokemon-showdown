@@ -99423,6 +99423,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			fierydance: ["9M"],
 			petaldance: ["9M"],
 			raindance: ["9M"],
+			focuspunch: ["9M"],
 			aurasphere: ["9M"],
 			aerialace: ["9M"],
 			acrobatics: ["9M"],
@@ -99440,6 +99441,9 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			darkpulse: ["9M"],
 			ironhead: ["9M"],
 			playrough: ["9M"],
+			maitakedance: ["9M"],
+			maskoff: ["9M"],
+			musuemmight: ["9M"],
         },
 	},
 	hajime: {

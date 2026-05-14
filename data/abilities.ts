@@ -2585,6 +2585,11 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 				pokemon.formeRegression = true;
 			}
 		},
+		onModifyMovePriority: 1,
+		onModifyMove(move, attacker, defender) {
+			if (move.category === 'Status' && move.id !== 'musuemmight') return;
+			const targetForme = (move.id === 'musuemmight' ? 'raden' : 'raden-noh');
+		},
 		flags: {
 			failroleplay: 1, noreceiver: 1, noentrain: 1, notrace: 1, failskillswap: 1, cantsuppress: 1,
 			breakable: 1, notransform: 1,

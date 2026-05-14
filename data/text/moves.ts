@@ -564,8 +564,8 @@ export const MovesText: { [id: IDEntry]: MoveText } = {
 	},
 	shackleless: {
 		name: "Shackleless",
-		desc: "Lowers the user's Defense and Special Defense by 2 stages. Raises the user's Attack, Special Attack, and Speed by 2 stages.",
-		shortDesc: "Lowers Def, SpD by 2; raises Atk, SpA, Spe by 2.",
+		desc: "Lowers the user's Defense and Special Defense by 1 stage. Raises the user's Attack, Special Attack, and Speed by 2 stages.",
+		shortDesc: "Lowers Def, SpD by 1; raises Atk, SpA, Spe by 2.",
 	},
 	hawkeye: {
 		name: "Hawkeye",
@@ -1143,20 +1143,20 @@ export const MovesText: { [id: IDEntry]: MoveText } = {
 		desc: "Power is equal to 50+(X*50), where X is the total number of times the user has been hit by a damaging attack during the battle, even if the user did not lose HP from the attack. X cannot be greater than 6 and does not reset upon switching out or fainting. Each hit of a multi-hit attack is counted, but confusion damage is not counted.",
 		shortDesc: "+50 power for each time user was hit. Max 6 hits.",
 	},
-	raden1: {
+	maitakedance: {
 		name: "Maitake Dance",
-		desc: "a dance type attack",
-		shortDesc: "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+		desc: "Deals damage to the target based on its Defense instead of Special Defense. Has a 30% chance to confuse the target.",
+		shortDesc: "Damages on Def instead of Sp.Def. 30% to confuse.",
 	},
-	raden2: {
+	maskoff: {
 		name: "Mask Off",
-		desc: "boost move like hell smash",
-		shortDesc: "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+		desc: "Lowers the user's Defense and Special Defense by 1 stage. Raises the user's Attack, Special Attack, and Speed by 2 stages.",
+		shortDesc: "Lowers Def, SpD by 1; raises Atk, SpA, Spe by 2.",
 	},
-	raden3: {
+	musuemmight: {
 		name: "Musuem Might",
-		desc: "uhhhhhhhhhhhhhhhhhh",
-		shortDesc: "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+		desc: "If the user is in Noh Mask mode, switches to Mask mode.",
+		shortDesc: "If in Noh Mask mode, switches to Mask mode.",
 	},
 	hajime1: {
 		name: "Bancho Bash",
