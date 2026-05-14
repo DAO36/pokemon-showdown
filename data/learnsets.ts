@@ -99609,6 +99609,8 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			makeitrain: ["9M"],
 			flashcannon: ["9M"],
 			playrough: ["9M"],
+			tigerclaws: ["9M"],
+			jokester: ["9M"],
         },
 	},
 	su: {

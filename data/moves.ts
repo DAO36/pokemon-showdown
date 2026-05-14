@@ -4731,7 +4731,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Normal", 
 		contestType: "Cool",
 	},
-	flowglow: {
+	flowglow: { // RIONA 1
 		num: 854,
 		accuracy: 100,
 		basePower: 50,
@@ -4745,6 +4745,65 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		flags: { protect: 1, mirror: 1, contact: 1 },
 		target: "normal",
 		type: "Normal",
+	},
+	tigerclaws: { // NIKO 1
+		num: 280,
+		accuracy: 95,
+		basePower: 95,
+		category: "Physical",
+		name: "Tiger Claws",
+		pp: 15,
+		priority: 0,
+		flags: { contact: 1, protect: 1, mirror: 1, slicing: 1 },
+		onTryHit(pokemon) {
+			// will shatter screens through sub, before you hit
+			pokemon.side.removeSideCondition('reflect');
+			pokemon.side.removeSideCondition('lightscreen');
+			pokemon.side.removeSideCondition('hologram');
+			pokemon.side.removeSideCondition('infirmary');
+			pokemon.side.removeSideCondition('auroraveil');
+		},
+		critRatio: 2,
+		target: "normal",
+		type: "Normal",
+		contestType: "Cool",
+	},
+	jokester: {
+		num: 382,
+		accuracy: true,
+		basePower: 0,
+		category: "Status",
+		name: "Jokester",
+		pp: 5,
+		priority: 3,
+		flags: {
+			protect: 1, bypasssub: 1,
+			failencore: 1, failmefirst: 1, nosleeptalk: 1, noassist: 1,
+			failcopycat: 1, failmimic: 1, failinstruct: 1,
+		},
+		onTryHit(target, pokemon) {
+			const action = this.queue.willMove(target);
+			if (!action) return false;
+			const move = this.dex.getActiveMove(action.move.id);
+			if (action.zmove || move.isZ || move.isMax) return false;
+			if (target.volatiles['mustrecharge']) return false;
+			if (move.flags['failmefirst']) return false;
+
+			pokemon.addVolatile('mefirst');
+			this.actions.useMove(move, pokemon, { target });
+			return null;
+		},
+		condition: {
+			duration: 1,
+			onBasePowerPriority: 12,
+			onBasePower(basePower) {
+				return this.chainModify(1);
+			},
+		},
+		callsMove: true,
+		target: "any",
+		type: "Steel", 
+		contestType: "Clever",
 	},
 	ultimatepower: {
 		num: 69,

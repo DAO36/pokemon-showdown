@@ -2740,31 +2740,6 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 0,
 		num: 300,
 	},
-	sucharge: {
-		onTryHit(target, source, move) {
-			if (target !== source && move.type === 'Water') {
-				if (!this.boost({spa: 1, spe: 1})) {
-					this.add('-immune', target, '[from] ability: Su Charge');
-				}
-				return null;
-			}
-		},
-		onAnyRedirectTarget(target, source, source2, move) {
-			if (move.type !== 'Water' || move.flags['pledgecombo']) return;
-			const redirectTarget = ['randomNormal', 'adjacentFoe'].includes(move.target) ? 'normal' : move.target;
-			if (this.validTarget(this.effectState.target, source, redirectTarget)) {
-				if (move.smartTarget) move.smartTarget = false;
-				if (this.effectState.target !== target) {
-					this.add('-activate', this.effectState.target, 'ability: Su Charge');
-				}
-				return this.effectState.target;
-			}
-		},
-		flags: { breakable: 1 },
-		name: "Su Charge",
-		rating: 3.5,
-		num: 18,
-	},
 	mixtape: {
 		onModifySpe(spe) {
 			if (this.field.isTerrain('electricterrain')) { 

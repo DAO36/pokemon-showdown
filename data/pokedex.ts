@@ -22248,7 +22248,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		types: ["Normal"],
 		gender: "F",
 		baseStats: {hp: 70, atk: 110, def: 70, spa: 120, spd: 110, spe: 120},
-		abilities: {0: "Water Absorb", 1: "Analytic", H: "Hustle", S: "Su Charge"},
+		abilities: {0: "Water Absorb", 1: "Analytic", H: "Hustle", S: "Publicity Stunt"},
 		heightm: 1.45,
 		weightkg: 55.5,
 		color: "Blue",

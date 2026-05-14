@@ -1189,24 +1189,26 @@ export const MovesText: { [id: IDEntry]: MoveText } = {
 		desc: "Raises the user's Attack and Defense by 1 stage.",
 		shortDesc: "Raises the user's Attack and Defense by 1.",
 	},
-	flowglow: {
+	flowglow: { // RIONA 1
 		name: "Flow Glow",
 		desc: "Power is equal to 50+(X*50), where X is the total number of times any Pokemon has fainted on the user's side, and X cannot be greater than 100.",
 		shortDesc: "+50 power for each time a party member fainted.",
 	},
-	niko1: {
-		name: "Tiger Strike",
-		desc: "uhhhh idk",
-		shortDesc: "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+	tigerclaws: { // NEKO 1
+		name: "Tiger Claws",
+		desc: "If this attack does not miss, the effects of Reflect, Light Screen, Aurora Veil, Infirmary, and Hologram end for the target's side of the field before damage is calculated. Has a higher chance for a critical hit.",
+		shortDesc: "Destroys screens. High critical hit ratio.",
+
+		activate: "  [POKEMON] clawed away [TEAM]'s protections!",
 	},
-	niko2: {
+	jokester: { // NIKO 2
 		name: "Jokester",
-		desc: "maybe me first but priority?",
-		shortDesc: "or follow me but u can target foes, see whoch works",
+		desc: "Almost always goes first. The user uses the move the target chose for use this turn against it, if possible. The move must be a move other than Beak Blast, Belch, Blazing Torque, Combat Torque, Comeuppance, Counter, Covet, Focus Punch, Magical Torque, Me First, Metal Burst, Mirror Coat, Noxious Torque, Shell Trap, Struggle, Thief, or Wicked Torque. Fails if the target moves before the user. Ignores the target's substitute for the purpose of copying the move.",
+		shortDesc: "Moves first; Copies a target's move.",
 	},
-	sumove1: {
-		name: "Publicity Stunt",
-		desc: "recoil move?",
+	sucharge: {
+		name: "Su-Charge",
+		desc: "meteor beam cloned",
 		shortDesc: "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 	},
 	sumove2: {
