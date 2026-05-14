@@ -4984,6 +4984,68 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Steel",
 		contestType: "Cool",
 	},
+	makeup: { // VIVI 1
+		num: 777,
+		accuracy: true,
+		basePower: 0,
+		category: "Status",
+		name: "Makeup",
+		pp: 10,
+		priority: 0,
+		flags: { allyanim: 1 },
+		boosts: {
+			spa: 1,
+			spd: 1,
+		},
+		target: "normal",
+		type: "Fairy",
+	},
+	skincare: { // VIVI 2
+		num: 676,
+		accuracy: 100,
+		basePower: 80,
+		category: "Special",
+		name: "Skin Care",
+		pp: 10,
+		priority: 0,
+		flags: {protect: 1, mirror: 1, contact: 1, allyanim: 1, heal: 1},
+		onTryHit(target, source, move) {
+			if (source.isAlly(target)) {
+				move.basePower = 0;
+				move.infiltrates = true;
+			}
+		},
+		onHit(pokemon, source, move) {
+			if (source.isAlly(pokemon)) {
+				if (!this.heal(Math.floor(pokemon.baseMaxhp * 0.5))) {
+				}
+				if (pokemon.status === 'par' || 'psn' || 'tox' || 'frz' || 'slp' || 'brn') pokemon.cureStatus();
+			}
+		},
+		secondary: {
+			chance: 100,
+			boosts: {
+				def: -1,
+			},
+		},
+		target: "normal",
+		type: "Normal",
+		contestType: "Cute",
+	},
+	comesticstrike: { // VIVI 3
+		num: 53,
+		accuracy: 100,
+		basePower: 90,
+		category: "Physical",
+		name: "Comestic Strike",
+		pp: 10,
+		priority: 0,
+		flags: { protect: 1, mirror: 1, metronome: 1 },
+		ignoreDefensive: true,
+		target: "normal",
+		type: "Normal",
+		contestType: "Beautiful",
+	},
 	ultimatepower: {
 		num: 69,
 		accuracy: true,

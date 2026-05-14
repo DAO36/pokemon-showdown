@@ -1253,20 +1253,20 @@ export const MovesText: { [id: IDEntry]: MoveText } = {
 		desc: "Has a 20% chance to confuse the target; Hits adjacent foes.",
 		shortDesc: "Has a 20% chance to confuse the target.",
 	},
-	vivi1: {
+	makeup: { // VIVI 1
 		name: "Makeup",
-		desc: "boost move",
-		shortDesc: "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+		desc: "Raises the target's Special Attack and Special Defense by 1 stage.",
+		shortDesc: "Raises target's Sp.Atk & Sp.Def by 1.",
 	},
-	vivi2: {
+	skincare: { // VIVI 2
 		name: "Skin Care",
-		desc: "a copy of Reboot",
-		shortDesc: "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+		desc: "Has a 100% chance to lower the target's defense by 1 stage. If the target is an ally, this move instead restores 1/2 of the ally's maximum HP, rounded down, instead of dealing damage, as well as curing them of any status effects.",
+		shortDesc: "100% to -1 Def. If ally, heals 50% HP/cures status.",
 	},
-	vivi3: {
+	comesticstrike: { // VIVI 3
 		name: "Comestic Strike",
-		desc: "idk xd",
-		shortDesc: "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+		desc: "Ignores the target's stat stage changes.",
+		shortDesc: "Ignores the target's stat stage changes.",
 	},
 	absorb: {
 		name: "Absorb",

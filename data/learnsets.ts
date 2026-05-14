@@ -99738,9 +99738,13 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			powergem: ["9M"],
 			flashcannon: ["9M"],
 			playrough: ["9M"],
+			nastyplot: ["9M"],
 			dazzlinggleam: ["9M"],
 			softboiled: ["9M"],
 			charm: ["9M"],
+			makeup: ["9M"],
+			skincare: ["9M"],
+			cosmeticstrike: ["9M"],
         },
 	},
 	lamball: {
