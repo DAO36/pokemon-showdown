@@ -4731,6 +4731,21 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Normal", 
 		contestType: "Cool",
 	},
+	flowglow: {
+		num: 854,
+		accuracy: 100,
+		basePower: 50,
+		basePowerCallback(pokemon, target, move) {
+			return 50 + 50 * pokemon.side.totalFainted;
+		},
+		category: "Physical",
+		name: "Flow Glow",
+		pp: 10,
+		priority: 0,
+		flags: { protect: 1, mirror: 1, contact: 1 },
+		target: "normal",
+		type: "Normal",
+	},
 	ultimatepower: {
 		num: 69,
 		accuracy: true,

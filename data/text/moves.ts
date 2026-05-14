@@ -1189,10 +1189,10 @@ export const MovesText: { [id: IDEntry]: MoveText } = {
 		desc: "Raises the user's Attack and Defense by 1 stage.",
 		shortDesc: "Raises the user's Attack and Defense by 1.",
 	},
-	riona1: {
+	flowglow: {
 		name: "Flow Glow",
-		desc: "last respects clone",
-		shortDesc: "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+		desc: "Power is equal to 50+(X*50), where X is the total number of times any Pokemon has fainted on the user's side, and X cannot be greater than 100.",
+		shortDesc: "+50 power for each time a party member fainted.",
 	},
 	niko1: {
 		name: "Tiger Strike",
