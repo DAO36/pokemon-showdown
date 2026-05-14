@@ -541,6 +541,11 @@ export const AbilitiesText: { [id: IDEntry]: AbilityText } = {
 		desc: "When one of this user's stat stages would be lowered by another Pokemon, that Pokemon's stat stage is lowered instead. This effect does not happen if the user's stat stage was already -6. If the other Pokemon has a substitute, neither Pokemon has its stat stage lowered. This Pokemon is unaffected by certain non-damaging moves directed at it and will instead use such moves against the original user. Moves reflected in this way are unable to be reflected again by this or Magic Coat's effect. Spikes, Stealth Rock, Sticky Web, and Toxic Spikes can only be reflected once per side, by the leftmost Pokemon under this or Magic Coat's effect. The Lightning Rod and Storm Drain Abilities redirect their respective moves before this Ability takes effect.",
 		shortDesc: "Blocks certain status moves & stat changes, & bounces them back to the target.",
 	},
+	mangaka: {
+		name: "Mangaka",
+		desc: "The target's type changes to match the type of the move the user is about to use. This effect comes after all effects that change a move's type.",
+		shortDesc: "Target's type changes to match the type of the move the user is about to use.",
+	},
 	gowiththeflow: { // RIONA
 		name: "Go with the Flow",
 		desc: "If the user's last move on the previous turn, including moves called by other moves or those used through Instruct, Magic Coat, Snatch, or the Dancer or Magic Bounce Abilities, failed to do any of its normal effects, not including damage from an unsuccessful High Jump Kick, Jump Kick, or Mind Blown, or if the user was prevented from moving by any effect other than recharging or Sky Drop, then the user's next move will do double damage. A move that was blocked by Baneful Bunker, Detect, King's Shield, Protect, Spiky Shield, Crafty Shield, Mat Block, Lunar Shield, Phoenix Shield, Quick Guard, or Wide Guard will not double the move's power, nor will Bounce or Fly ending early due to the effect of Gravity, Smack Down, or Thousand Arrows.",
@@ -554,12 +559,12 @@ export const AbilitiesText: { [id: IDEntry]: AbilityText } = {
 	publicitystunt: { // SU
 		name: "Publicity Stunt",
 		desc: "If Rain Dance is active, this Pokemon's Attack and Special Attack are multiplied by 1.5 and it loses 1/8 of its maximum HP, rounded down, at the end of each turn. These effects are prevented if the Pokemon is holding a Utility Umbrella. This Pokemon is immune to Water-type moves and restores 1/4 of its maximum HP, rounded down, when hit by a Water-type move.",
-		shortDesc: "Rain: Atk & SpAtk is 1.5x; loses 1/8 max HP per turn. Water immunity.",
+		shortDesc: "Rain: Atk & Sp.Atk is 1.5x; loses 1/8 max HP per turn. Water immunity.",
 	},
 	mixtape: { // CHIHAYA
 		name: "Mixtape",
 		desc: "This Pokemon is immune to sound and Electric-type moves and restores 1/4 of its maximum HP, rounded down, when hit by a sound or Electric-type move. If Electric Terrain is active, the Speed of this Pokemon is doubled.",
-		shortDesc: "Heals 1/4 HP if hit by sound or Electric moves; 2x Spe in Electric Terrain.", 
+		shortDesc: "Heals 1/4 HP if hit by sound or Electric moves; 2x Speed in Electric Terrain.", 
 	},
 	smoothskin: { // VIVI
 		name: "Smooth Skin",

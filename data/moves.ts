@@ -5030,12 +5030,12 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Normal",
 		contestType: "Cute",
 	},
-	comesticstrike: { // VIVI 3
+	cosmeticstrike: { // VIVI 3
 		num: 53,
 		accuracy: 100,
 		basePower: 90,
 		category: "Physical",
-		name: "Comestic Strike",
+		name: "Cosmetic Strike",
 		pp: 10,
 		priority: 0,
 		flags: { protect: 1, mirror: 1, metronome: 1 },

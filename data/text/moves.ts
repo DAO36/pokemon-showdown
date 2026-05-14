@@ -1263,8 +1263,8 @@ export const MovesText: { [id: IDEntry]: MoveText } = {
 		desc: "Has a 100% chance to lower the target's defense by 1 stage. If the target is an ally, this move instead restores 1/2 of the ally's maximum HP, rounded down, instead of dealing damage, as well as curing them of any status effects.",
 		shortDesc: "100% to -1 Def. If ally, heals 50% HP/cures status.",
 	},
-	comesticstrike: { // VIVI 3
-		name: "Comestic Strike",
+	cosmeticstrike: { // VIVI 3
+		name: "Cosmetic Strike",
 		desc: "Ignores the target's stat stage changes.",
 		shortDesc: "Ignores the target's stat stage changes.",
 	},
