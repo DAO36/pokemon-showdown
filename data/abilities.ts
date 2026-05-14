@@ -2553,13 +2553,8 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 2.5,
 		num: 43,
 	},
-	investment: { // STOMPING TANTRUM but as an ability
-		onBasePower(relayVar, source, target, move) {
-			if (source.moveLastTurnResult === false) {
-				this.debug('doubling BP due to previous move failure');
-				return move.basePower * 2;
-			}
-		},
+	investment: { // BLUNDER POLICY but an ability
+		// implemented in runMove in BUILD-ACTIONS.ts
 		flags: {breakable: 1},
 		name: "Investment",
 		rating: 2.5,
@@ -2597,53 +2592,6 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		name: "Noh Mask",
 		rating: 2.5,
 		num: 11,
-	},
-	sguise: {
-		onDamagePriority: 1,
-		onDamage(damage, target, source, effect) {
-			if (effect?.effectType === 'Move' && ['mimikyu', 'mimikyutotem'].includes(target.species.id)) {
-				this.add('-activate', target, 'ability: Disguise');
-				this.effectState.busted = true;
-				return 0;
-			}
-		},
-		onCriticalHit(target, source, move) {
-			if (!target) return;
-			if (!['mimikyu', 'mimikyutotem'].includes(target.species.id)) {
-				return;
-			}
-			const hitSub = target.volatiles['substitute'] && !move.flags['bypasssub'] && !(move.infiltrates && this.gen >= 6);
-			if (hitSub) return;
-
-			if (!target.runImmunity(move)) return;
-			return false;
-		},
-		onEffectiveness(typeMod, target, type, move) {
-			if (!target || move.category === 'Status') return;
-			if (!['mimikyu', 'mimikyutotem'].includes(target.species.id)) {
-				return;
-			}
-
-			const hitSub = target.volatiles['substitute'] && !move.flags['bypasssub'] && !(move.infiltrates && this.gen >= 6);
-			if (hitSub) return;
-
-			if (!target.runImmunity(move)) return;
-			return 0;
-		},
-		onUpdate(pokemon) {
-			if (['mimikyu', 'mimikyutotem'].includes(pokemon.species.id) && this.effectState.busted) {
-				const speciesid = pokemon.species.id === 'mimikyutotem' ? 'Mimikyu-Busted-Totem' : 'Mimikyu-Busted';
-				pokemon.formeChange(speciesid, this.effect, true);
-				this.damage(pokemon.baseMaxhp / 8, pokemon, pokemon, this.dex.species.get(speciesid));
-			}
-		},
-		flags: {
-			failroleplay: 1, noreceiver: 1, noentrain: 1, notrace: 1, failskillswap: 1, cantsuppress: 1,
-			breakable: 1, notransform: 1,
-		},
-		name: "Disguise",
-		rating: 3.5,
-		num: 209,
 	},
 	bancho: { // combines [Mirror Armour] + [Magic Bounce]
 		onTryHitPriority: 1,
@@ -2722,8 +2670,13 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 0,
 		num: 16,
 	},
-	gowiththeflow: { // BLUNDER POLICY but an ability
-		// implemented in runMove in BUILD-ACTIONS.ts
+	gowiththeflow: { // STOMPING TANTRUM but as an ability
+		onBasePower(relayVar, source, target, move) {
+			if (source.moveLastTurnResult === false) {
+				this.debug('doubling BP due to previous move failure');
+				return move.basePower * 2;
+			}
+		},
 		flags: {breakable: 1},
 		name: "Go with the Flow",
 		rating: 2.5,
@@ -2740,7 +2693,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 0,
 		num: 300,
 	},
-	publicitystunt: {
+	publicitystunt: { // SU
 		onTryHit(target, source, move) {
 			if (target !== source && move.type === 'Water') {
 				if (!this.heal(target.baseMaxhp / 4, target, target)) {

@@ -1194,6 +1194,11 @@ export const MovesText: { [id: IDEntry]: MoveText } = {
 		desc: "Power is equal to 50+(X*50), where X is the total number of times any Pokemon has fainted on the user's side, and X cannot be greater than 100.",
 		shortDesc: "+50 power for each time a party member fainted.",
 	},
+	glowinggamble: { // RIONA 2
+		name: "Glowing Gamble",
+		desc: "Power doubles if the user's last move on the previous turn, including moves called by other moves or those used through Instruct, Magic Coat, Snatch, or the Dancer or Magic Bounce Abilities, failed to do any of its normal effects, not including damage from an unsuccessful High Jump Kick, Jump Kick, or Mind Blown, or if the user was prevented from moving by any effect other than recharging or Sky Drop. A move that was blocked by Baneful Bunker, Detect, King's Shield, Protect, Spiky Shield, Crafty Shield, Mat Block, Quick Guard, or Wide Guard will not double this move's power, nor will Bounce or Fly ending early due to the effect of Gravity, Smack Down, or Thousand Arrows. This move becomes a special attack if this Pokemon's Special Attack is greater than its Attack, including stat stage changes.",
+		shortDesc: "2x power if last move failed. Special if SpA > Atk",
+	},
 	tigerclaws: { // NEKO 1
 		name: "Tiger Claws",
 		desc: "If this attack does not miss, the effects of Reflect, Light Screen, Aurora Veil, Infirmary, and Hologram end for the target's side of the field before damage is calculated. Has a higher chance for a critical hit.",

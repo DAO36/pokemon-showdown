@@ -4742,9 +4742,32 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		name: "Flow Glow",
 		pp: 10,
 		priority: 0,
-		flags: { protect: 1, mirror: 1, contact: 1 },
+		flags: { protect: 1, mirror: 1, contact: 1, dance: 1},
 		target: "normal",
 		type: "Normal",
+	},
+	glowinggamble: { // RIONA 2
+		num: 707,
+		accuracy: 90,
+		basePower: 90,
+		basePowerCallback(pokemon, target, move) {
+			if (pokemon.moveLastTurnResult === false) {
+				this.debug('doubling Glowing Gamble BP due to previous move failure');
+				return move.basePower * 2;
+			}
+			return move.basePower;
+		},
+		onModifyMove(move, pokemon) {
+			if (pokemon.getStat('spa', false, true) > pokemon.getStat('atk', false, true)) move.category = 'Special';
+		},
+		category: "Physical",
+		name: "Glowing Gamble",
+		pp: 10,
+		priority: 0,
+		flags: { contact: 1, protect: 1, mirror: 1, metronome: 1 },
+		target: "normal",
+		type: "Normal",
+		contestType: "Tough",
 	},
 	tigerclaws: { // NIKO 1
 		num: 280,
@@ -4852,7 +4875,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Water",
 		contestType: "Cool",
 	},
-	advertisement: {
+	advertisement: { // SU 3
 		num: 864,
 		accuracy: 100,
 		basePower: 60,
