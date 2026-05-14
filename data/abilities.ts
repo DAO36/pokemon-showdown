@@ -2580,10 +2580,13 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 				pokemon.formeRegression = true;
 			}
 		},
-		onModifyMovePriority: 1,
-		onModifyMove(move, attacker, defender) {
-			if (move.category === 'Status' && move.id !== 'museummight') return;
-			const targetForme = (move.id === 'museummight' ? 'raden-noh' : 'raden');
+		onModifyMove(move, pokemon, target) {
+			if (!pokemon.hp) return;
+			if (move.id === 'museummight' && pokemon.species.id === 'raden-noh') {
+				this.add('-activate', pokemon, 'ability: Noh Mak');
+				this.effectState.busted = false;
+				pokemon.formeChange('Raden', this.effect, true);
+			}
 		},
 		flags: {
 			failroleplay: 1, noreceiver: 1, noentrain: 1, notrace: 1, failskillswap: 1, cantsuppress: 1,
@@ -2592,6 +2595,36 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		name: "Noh Mask",
 		rating: 2.5,
 		num: 11,
+	},
+	ncechange: {
+		onModifyMovePriority: 1,
+		onModifyMove(move, attacker, defender) {
+			if (attacker.species.baseSpecies !== 'Aegislash' || attacker.transformed) return;
+			if (move.category === 'Status' && move.id !== 'kingsshield') return;
+			const targetForme = (move.id === 'kingsshield' ? 'Aegislash' : 'Aegislash-Blade');
+			if (attacker.species.name !== targetForme) attacker.formeChange(targetForme);
+		},
+		flags: { failroleplay: 1, noreceiver: 1, noentrain: 1, notrace: 1, failskillswap: 1, cantsuppress: 1 },
+		name: "Stance Change",
+		rating: 4,
+		num: 176,
+	},
+	ceface: {
+		onModifyMove(move, pokemon, target) {
+			if (!pokemon.hp) return;
+			if (move.id === 'museummight' && pokemon.species.id === 'raden-noh') {
+				this.add('-activate', pokemon, 'ability: Noh Mak');
+				this.effectState.busted = false;
+				pokemon.formeChange('Raden', this.effect, true);
+			}
+		},
+		flags: {
+			failroleplay: 1, noreceiver: 1, noentrain: 1, notrace: 1, failskillswap: 1, cantsuppress: 1,
+			breakable: 1, notransform: 1,
+		},
+		name: "Ice Face",
+		rating: 3,
+		num: 248,
 	},
 	bancho: { // combines [Mirror Armour] + [Magic Bounce]
 		onTryHitPriority: 1,
@@ -2661,7 +2694,8 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
             const type = move.type;
             if (move.category !== 'Status' && type && type !== '???' && target.getTypes().join() !== type) {
                 if (!target.setType(type)) return;
-                this.add('-start', source, '[from] ability: Mangaka2');
+                this.add('-start', target, 'typechange', type, '[from] ability: Mangaka2');
+				this.add('-activate', source, '[from] ability: Mangaka2');
             }
         },
         onSwitchIn() {},
