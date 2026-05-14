@@ -1241,8 +1241,8 @@ export const MovesText: { [id: IDEntry]: MoveText } = {
 		desc: "Has a 10% chance to burn the target. If the target lost HP, the user takes recoil damage equal to 33% the HP lost by the target, rounded half up, but not less than 1 HP.",
 		shortDesc: "Has 33% recoil. 10% chance to burn target.",
 	},
-	threehundredhorsepower: { // CHIHAYA 3
-		name: "300 Horsepower",
+	horsepower300: { // CHIHAYA 3
+		name: "Horsepower 300",
 		desc: "Has a 10% chance to paralyze the target. If this attack is not successful, the user loses half of its maximum HP, rounded down, as crash damage. Pokemon with the Magic Guard Ability are unaffected by crash damage. Damage doubles and no accuracy check is done if the target has used Minimize while active.",
 		shortDesc: "10% chance to paralyze. Miss: user loses 50% HP.",
 

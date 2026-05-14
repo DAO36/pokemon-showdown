@@ -99710,7 +99710,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			irondefense: ["9M"],
 			fugutaro: ["9M"],
 			carcrash: ["9M"],
-			threehundredhorsepower: ["9M"],
+			horsepower300: ["9M"],
 			dubstep: ["9M"],
         },
 	},

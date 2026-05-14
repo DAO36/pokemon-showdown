@@ -4945,12 +4945,12 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Steel",
 		contestType: "Cool",
 	},
-	threehundredhorsepower: { // CHIHAYA 3
+	horsepower300: { // CHIHAYA 3
 		num: 916,
 		accuracy: 90,
 		basePower: 120,
 		category: "Physical",
-		name: "300 Horsepower",
+		name: "Horsepower 300",
 		pp: 10,
 		priority: 0,
 		flags: { contact: 1, protect: 1, mirror: 1, metronome: 1},
