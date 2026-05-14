@@ -2554,7 +2554,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		num: 43,
 	},
 	investment: { // BLUNDER POLICY but an ability RIRIKA
-		// implemented in runMove in BUILD-ACTIONS.ts
+		// implemented in runMove in BATTLE-ACTIONS.ts
 		flags: {breakable: 1},
 		name: "Investment",
 		rating: 2.5,
