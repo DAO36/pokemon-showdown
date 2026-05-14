@@ -2694,7 +2694,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
             const type = move.type;
             if (move.category !== 'Status' && type && type !== '???' && target.getTypes().join() !== type) {
                 if (!target.setType(type)) return;
-                this.add('-start', target, 'typechange', type, '[from] ability: Mangaka2');
+                this.add('-start', target, 'typechange', type);
 				this.add('-activate', source, '[from] ability: Mangaka2');
             }
         },

@@ -4604,6 +4604,9 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		pp: 5,
 		priority: 4,
 		flags: { heal: 1, dance: 1, cantusetwice: 1 },
+		boosts: {
+			def: 1,
+		},
 		target: "self",
 		type: "Normal",
 		zMove: { effect: 'clearnegativeboost' },
