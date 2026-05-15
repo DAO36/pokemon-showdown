@@ -2574,12 +2574,15 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			}
 		},
 		onUpdate(pokemon) {
-			if (pokemon.species.id === 'raden' && this.effectState.busted) {
-				pokemon.formeChange('Raden-Noh', this.effect, true);
+			if (['raden'].includes(pokemon.species.id) && this.effectState.busted) {
+				const speciesid = pokemon.species.id === 'raden' ? 'raden-noh' : 'raden-noh';
+				pokemon.formeChange(speciesid, this.effect, true);
+				pokemon.formeRegression = true;
 			}
 		},
 		onAfterMove(source, target, move) {
-			if (move.id === 'museummight') 
+			if (move.id === 'museummight')
+			this.add('-activate', source, 'ability: Noh Mask');
 			source.formeChange('Raden', this.effect, true);
 		},
 		flags: {
