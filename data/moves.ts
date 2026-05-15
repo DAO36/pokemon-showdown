@@ -4689,7 +4689,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 					return false;
 				}
 			}
-			this.add('-start', source, 'typechange', '[from] move: Dokusha Dash', `[of] ${target}`);
+			this.add('-start', source, 'typechange', '[from] move: Dress Code', `[of] ${target}`);
 			source.setType(newBaseTypes);
 			source.addedType = target.addedType;
 			source.knownType = target.isAlly(source) && target.knownType;
