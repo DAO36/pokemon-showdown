@@ -2582,7 +2582,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		},
 		onAfterMove(source, target, move) {
 			if (move.id === 'museummight') 
-			source.formeChange('Eiscue', this.effect, true);	
+			source.formeChange('Raden', this.effect, true);	
 		},
 		flags: {
 			failroleplay: 1, noreceiver: 1, noentrain: 1, notrace: 1, failskillswap: 1, cantsuppress: 1,
@@ -2645,29 +2645,13 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
             const type = move.type;
             if (move.category !== 'Status' && type && type !== '???' && target.getTypes().join() !== type) {
                 if (!target.setType(type)) return;
-                this.add('-start', target, 'typechange', type);
 				this.add('-activate', source, 'ability: Mangaka');
+                this.add('-start', target, 'typechange', type);
             }
         },
         onSwitchIn() {},
 		flags: {},
 		name: "Mangaka",
-		rating: 0,
-		num: 16,
-	},
-	mangaka2: { // COLOR CHANGE but in reverse
-		onBeforeMove(source, target, move) {
-            if (move.hasBounced || move.flags['futuremove'] || move.sourceEffect === 'snatch') return;
-            const type = move.type;
-            if (move.category !== 'Status' && type && type !== '???' && target.getTypes().join() !== type) {
-                if (!target.setType(type)) return;
-                this.add('-start', target, 'typechange', type);
-				this.add('-activate', source, 'ability: Mangaka2');
-            }
-        },
-        onSwitchIn() {},
-		flags: {},
-		name: "Mangaka2",
 		rating: 0,
 		num: 16,
 	},
