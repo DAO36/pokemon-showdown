@@ -2582,7 +2582,6 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		},
 		onAfterMove(source, target, move) {
 			if (move.id === 'museummight')
-			this.add('-activate', source, 'ability: Noh Mask');
 			source.formeChange('Raden', this.effect, true);
 		},
 		flags: {
