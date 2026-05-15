@@ -2645,8 +2645,8 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
                 this.add('-start', target, 'typechange', type);
             }
         },
-		onEffectiveness(typeMod, target, type) {
-        if (type === '3') return false;
+		onTryHit(source, target, type) {
+        if (target?.apparentType === '3') return false;
         },
         onSwitchIn() {},
 		flags: {},
