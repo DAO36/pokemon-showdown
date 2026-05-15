@@ -2646,7 +2646,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
             }
         },
 		onEffectiveness(typeMod, target, type) {
-        if (type === '3') return;
+        if (type === '3') return false;
         },
         onSwitchIn() {},
 		flags: {},
