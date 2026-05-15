@@ -558,6 +558,10 @@ export const Conditions: import('../sim/dex-conditions').ConditionDataTable = {
 				this.debug('Sunny Day Hydro Steam boost');
 				return this.chainModify(1.5);
 			}
+			if (move.id === 'clubbluefire' && attacker.effectiveWeather() === 'sunnyday') {
+				this.debug('Sunny Day Club Blue Fire boost');
+				return this.chainModify(1.5);
+			}
 			if (defender.effectiveWeather() !== 'sunnyday') return;
 			if (move.type === 'Fire') {
 				this.debug('Sunny Day fire boost');

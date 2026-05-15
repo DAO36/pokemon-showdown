@@ -4673,39 +4673,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		basePower: 100,
 		category: "Physical",
 		name: "Dokusha Dash",
-		pp: 10,
-		priority: 0,
-		flags: { protect: 1, contact: 1, metronome: 1 },
-		onHit(target, source) {
-			if (source.species && (source.species.num === 493 || source.species.num === 773)) return false;
-			if (source.terastallized) return false;
-			if (target.hasType ('Normal')) return false;
-			const oldApparentType = source.apparentType;
-			let newBaseTypes = target.getTypes(true).filter(type => type !== '???');
-			if (!newBaseTypes.length) {
-				if (target.addedType) {
-					newBaseTypes = ['Normal'];
-				} else {
-					return false;
-				}
-			}
-			this.add('-start', source, 'typechange', '[from] move: Dokusha Dash', `[of] ${target}`);
-			source.setType(newBaseTypes);
-			source.addedType = target.addedType;
-			source.knownType = target.isAlly(source) && target.knownType;
-			if (!source.knownType) source.apparentType = oldApparentType;
-		},
-		target: "normal",
-		type: "Normal",
-		contestType: "Clever",
-	},
-	dokushadashtwo: { // AO 1
-		num: 513,
-		accuracy: 100,
-		basePower: 100,
-		category: "Physical",
-		name: "Dokusha Dash Two",
-		pp: 10,
+		pp: 15,
 		priority: 0,
 		flags: { protect: 1, contact: 1, metronome: 1 },
 		onHit(target, source) {
@@ -4721,7 +4689,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 					return false;
 				}
 			}
-			this.add('-start', source, 'typechange', '[from] move: Dokusha Dash Two', `[of] ${target}`);
+			this.add('-start', source, 'typechange', '[from] move: Dokusha Dash', `[of] ${target}`);
 			source.setType(newBaseTypes);
 			source.addedType = target.addedType;
 			source.knownType = target.isAlly(source) && target.knownType;
@@ -4747,6 +4715,43 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		target: "self",
 		type: "Normal", 
 		contestType: "Cool",
+	},
+	dresscode: { // AO 3
+		num: 686,
+		accuracy: 100,
+		basePower: 100,
+		category: "Special",
+		name: "Dress Code",
+		pp: 15,
+		priority: 0,
+		flags: { protect: 1, mirror: 1, metronome: 1 },
+		onModifyType(move, pokemon) {
+			const types = pokemon.getTypes();
+			let type = types[0];
+			if (type === 'Bird') type = '???';
+			if (type === '???' && types[1]) type = types[1];
+			move.type = type;
+		},
+		target: "normal",
+		type: "Normal",
+		contestType: "Cool",
+	},
+	clubbluefire: { // AO 4
+		num: 221,
+		accuracy: 90,
+		basePower: 90,
+		category: "Physical",
+		name: "Club Blue Fire",
+		pp: 10,
+		priority: 0,
+		flags: { protect: 1, mirror: 1, dance: 1, metronome: 1 },
+		secondary: {
+			chance: 20,
+			status: 'brn',
+		},
+		target: "normal",
+		type: "Fire",
+		contestType: "Beautiful",
 	},
 	flowglow: { // RIONA 1
 		num: 854,

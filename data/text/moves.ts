@@ -1184,6 +1184,16 @@ export const MovesText: { [id: IDEntry]: MoveText } = {
 		desc: "Raises the user's Attack and Defense by 1 stage.",
 		shortDesc: "Raises the user's Attack and Defense by 1.",
 	},
+	dresscode: { // AO 3
+		name: "Dress Code",
+		desc: "This move's type depends on the user's primary type. If the user's primary type is typeless, this move's type is the user's secondary type if it has one, otherwise the added type from Forest's Curse or Trick-or-Treat. This move is typeless if the user's type is typeless alone.",
+		shortDesc: "Type varies based on the user's primary type.",
+	},
+	clubbluefire: { // AO 4
+		name: "Club Blue Fire",
+		desc: "Has a 20% chance to burn the target. If the current weather is Sunny Day and the user is not holding Utility Umbrella, this move's damage is multiplied by 1.5 instead of halved for being Water type.",
+		shortDesc: "Sun: 1.5x damage instead of half. 20% to burn.",
+	},
 	flowglow: { // RIONA 1
 		name: "Flow Glow",
 		desc: "Power is equal to 50+(X*50), where X is the total number of times any Pokemon has fainted on the user's side, and X cannot be greater than 100.",
