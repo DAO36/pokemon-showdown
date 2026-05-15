@@ -2645,6 +2645,9 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
                 this.add('-start', target, 'typechange', type);
             }
         },
+		onEffectiveness(typeMod, target, type) {
+        if (type === '3') return;
+        },
         onSwitchIn() {},
 		flags: {},
 		name: "Mangaka",
