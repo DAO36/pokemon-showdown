@@ -4602,7 +4602,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		category: "Status",
 		name: "Museum Might",
 		pp: 5,
-		priority: 4,
+		priority: 0,
 		flags: { heal: 1, dance: 1, cantusetwice: 1 },
 		boosts: {
 			def: 1,

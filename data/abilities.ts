@@ -2580,12 +2580,12 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 				pokemon.formeRegression = true;
 			}
 		},
-		onModifyMove(move, pokemon, target) {
-			if (!pokemon.hp) return;
-			if (move.id === 'museummight' && pokemon.species.id === 'raden-noh') {
-				this.add('-activate', pokemon, 'ability: Noh Mak');
+		onAfterMove(source, target, move) {
+			if (!source.hp) return;
+			if (move.id === 'museummight' && source.species.id === 'raden-noh') {
+				this.add('-activate', source, 'ability: Noh Mak');
 				this.effectState.busted = false;
-				pokemon.formeChange('Raden', this.effect, true);
+				source.formeChange('Raden', this.effect, true);
 			}
 		},
 		flags: {
@@ -2695,7 +2695,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
             if (move.category !== 'Status' && type && type !== '???' && target.getTypes().join() !== type) {
                 if (!target.setType(type)) return;
                 this.add('-start', target, 'typechange', type);
-				this.add('-activate', source, '[from] ability: Mangaka2');
+				this.add('-activate', source, 'ability: Mangaka2');
             }
         },
         onSwitchIn() {},
