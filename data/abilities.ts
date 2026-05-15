@@ -2637,6 +2637,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	},
 	mangaka: { // COLOR CHANGE but in reverse
 		onAfterMove(source, target, move) {
+			if (target?.apparentType === '3') return false;
             if (move.hasBounced || move.flags['futuremove'] || move.sourceEffect === 'snatch') return;
             const type = move.type;
             if (move.category !== 'Status' && type && type !== '???' && target.getTypes().join() !== type && !target.fainted) {
@@ -2644,9 +2645,6 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 				this.add('-activate', source, 'ability: Mangaka');
                 this.add('-start', target, 'typechange', type);
             }
-        },
-		onTryHit(source, target, type) {
-        if (target?.apparentType === '3') return false;
         },
         onSwitchIn() {},
 		flags: {},
