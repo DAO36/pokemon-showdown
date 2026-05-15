@@ -99526,7 +99526,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			flashcannon: ["9M"],
 			dazzlinggleam: ["9M"],
 			charm: ["9M"],
-			dokushadash: ["9M"],
+			dokushadazzle: ["9M"],
 			stunninglooks: ["9M"],
 			dresscode: ["9M"],
 			clubbluefire: ["9M"],

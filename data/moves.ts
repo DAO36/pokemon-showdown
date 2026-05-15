@@ -4667,15 +4667,15 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Dark",
 		contestType: "Tough",
 	},
-	dokushadash: { // AO 1
+	dresscode: { // AO 1
 		num: 513,
 		accuracy: 100,
 		basePower: 100,
-		category: "Physical",
-		name: "Dokusha Dash",
+		category: "Special",
+		name: "Dress Code",
 		pp: 15,
 		priority: 0,
-		flags: { protect: 1, contact: 1, metronome: 1 },
+		flags: { protect: 1, metronome: 1 },
 		onHit(target, source) {
 			if (source.species && (source.species.num === 493 || source.species.num === 773)) return false;
 			if (source.terastallized) return false;
@@ -4696,8 +4696,8 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 			if (!source.knownType) source.apparentType = oldApparentType;
 		},
 		target: "normal",
-		type: "Normal",
-		contestType: "Clever",
+		type: "Ice",
+		contestType: "Cool",
 	},
 	stunninglooks: { // AO 2
 		num: 339,
@@ -4713,15 +4713,15 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 			def: 1,
 		},
 		target: "self",
-		type: "Normal", 
+		type: "Fairy", 
 		contestType: "Cool",
 	},
-	dresscode: { // AO 3
+	dokushadazzle: { // AO 3
 		num: 686,
 		accuracy: 100,
 		basePower: 100,
 		category: "Special",
-		name: "Dress Code",
+		name: "Dokusha Dazzle",
 		pp: 15,
 		priority: 0,
 		flags: { protect: 1, mirror: 1, metronome: 1 },

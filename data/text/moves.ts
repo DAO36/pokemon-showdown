@@ -1172,8 +1172,8 @@ export const MovesText: { [id: IDEntry]: MoveText } = {
 
 		activate: "  Destroyed [TARGET]'s protection!",
 	},
-	dokushadash: { // AO 1
-		name: "Dokusha Dash",
+	dresscode: { // AO 1
+		name: "Dress Code",
 		desc: "Causes the user's types to become the same as the current types of the target. If the target's current types include typeless and a non-added type, typeless is ignored. If the target's current types include typeless and an added type from Forest's Curse or Trick-or-Treat, typeless is copied as the Normal type instead. Fails if the user is an Arceus or a Silvally, if the user is Terastallized, or if the target's current type is typeless alone.",
 		shortDesc: "User becomes the same type as the target.",
 
@@ -1184,8 +1184,8 @@ export const MovesText: { [id: IDEntry]: MoveText } = {
 		desc: "Raises the user's Attack and Defense by 1 stage.",
 		shortDesc: "Raises the user's Attack and Defense by 1.",
 	},
-	dresscode: { // AO 3
-		name: "Dress Code",
+	dokushadazzle: { // AO 3
+		name: "Dokusha Dazzle",
 		desc: "This move's type depends on the user's primary type. If the user's primary type is typeless, this move's type is the user's secondary type if it has one, otherwise the added type from Forest's Curse or Trick-or-Treat. This move is typeless if the user's type is typeless alone.",
 		shortDesc: "Type varies based on the user's primary type.",
 	},
