@@ -22102,7 +22102,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		baseSpecies: "Raden",
 		forme: "Noh",
 		types: ["Normal"],
-		baseStats: {hp: 85, atk: 125, def: 70, spa: 125, spd: 70, spe: 125},
+		baseStats: {hp: 85, atk: 130, def: 70, spa: 130, spd: 70, spe: 115},
 		abilities: { 0: "Noh Mask" },
 		heightm: 1.59,
 		weightkg: 55.5,
