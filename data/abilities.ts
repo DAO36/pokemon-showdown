@@ -2584,6 +2584,12 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			if (move.id === 'museummight')
 			source.formeChange('Raden', this.effect, true);
 		},
+		condition: {
+			onEnd(pokemon)  {
+					pokemon.formeChange(pokemon.species.battleOnly as string);
+				
+			},
+		},
 		flags: {
 			failroleplay: 1, noreceiver: 1, noentrain: 1, notrace: 1, failskillswap: 1, cantsuppress: 1,
 			breakable: 1, notransform: 1,
