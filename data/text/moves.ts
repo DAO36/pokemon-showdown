@@ -1153,11 +1153,6 @@ export const MovesText: { [id: IDEntry]: MoveText } = {
 		desc: "Lowers the user's Defense and Special Defense by 1 stage. Raises the user's Attack, Special Attack, and Speed by 2 stages.",
 		shortDesc: "Lowers Def, SpD by 1; raises Atk, SpA, Spe by 2.",
 	},
-	museummight: {
-		name: "Museum Might",
-		desc: "If the user is in Noh Mask mode, switches to Mask mode.",
-		shortDesc: "If in Noh Mask mode, switches to Mask mode.",
-	},
 	banchoblast: {
 		name: "Bancho Blast",
 		desc: "This attack charges on the first turn and executes on the second. Raises the user's Attack by 1 stage on the first turn. If the user is holding a Power Herb, the move completes in one turn.",

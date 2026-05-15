@@ -4595,23 +4595,6 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Dark",
 		contestType: "Tough",
 	},
-	museummight: { // RADEN 3
-		num: 588,
-		accuracy: true,
-		basePower: 0,
-		category: "Status",
-		name: "Museum Might",
-		pp: 5,
-		priority: 0,
-		flags: { heal: 1, dance: 1, cantusetwice: 1 },
-		boosts: {
-			def: 1,
-		},
-		target: "self",
-		type: "Normal",
-		zMove: { effect: 'clearnegativeboost' },
-		contestType: "Cool",
-	},
 	banchoblast: { // HAJIME 1
 		num: 800,
 		accuracy: 90,
@@ -4728,7 +4711,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		onHit(target, source) {
 			if (source.species && (source.species.num === 493 || source.species.num === 773)) return false;
 			if (source.terastallized) return false;
-			if (target.hasType === source.hasType) return false;
+			if (target.types === source.types) return false;
 			const oldApparentType = source.apparentType;
 			let newBaseTypes = target.getTypes(true).filter(type => type !== '???');
 			if (!newBaseTypes.length) {
