@@ -4675,7 +4675,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		name: "Dress Code",
 		pp: 15,
 		priority: 0,
-		flags: { protect: 1, metronome: 1 },
+		flags: {protect: 1, metronome: 1, contact: 1},
 		onHit(target, source) {
 			if (source.species && (source.species.num === 493 || source.species.num === 773)) return false;
 			if (source.terastallized) return false;
