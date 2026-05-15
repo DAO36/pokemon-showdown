@@ -2634,12 +2634,12 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		name: "Bancho",
 		rating: 2,
 		num: 240,
-	},
+	}, // if (!target || target.fainted) return;
 	mangaka: { // COLOR CHANGE but in reverse
 		onAfterMove(source, target, move) {
             if (move.hasBounced || move.flags['futuremove'] || move.sourceEffect === 'snatch') return;
             const type = move.type;
-            if (move.category !== 'Status' && type && type !== '???' && target.getTypes().join() !== type) {
+            if (move.category !== 'Status' && type && type !== '???' && target.getTypes().join() !== type && !target.fainted) {
                 if (!target.setType(type)) return;
 				this.add('-activate', source, 'ability: Mangaka');
                 this.add('-start', target, 'typechange', type);
