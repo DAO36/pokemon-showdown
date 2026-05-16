@@ -1137,7 +1137,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	},
 	kanadite: {
 		name: "Kanadite",
-		spritenum: 622, // change this
+		spritenum: 602, // change this
 		megaStone: {"Kanade": "Kanade-Mega"},
 		itemUser: ["Kanade"],
 		onTakeItem(item, source) {
@@ -1148,7 +1148,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	},
 	ririkite: {
 		name: "Ririkite",
-		spritenum: 622, // change this
+		spritenum: 586, // change this
 		megaStone: {"Ririka": "Ririka-Mega"},
 		itemUser: ["Ririka"],
 		onTakeItem(item, source) {
@@ -1159,7 +1159,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	},
 	radenite: {
 		name: "Radenite",
-		spritenum: 622, // change this
+		spritenum: 625, // change this
 		megaStone: {"Raden": "Raden-Mega"},
 		itemUser: ["Raden"],
 		onTakeItem(item, source) {
@@ -1170,7 +1170,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	},
 	hajimite: {
 		name: "Hajimite",
-		spritenum: 622, // change this
+		spritenum: 615, // change this
 		megaStone: {"Hajime": "Hajime-Mega"},
 		itemUser: ["Hajime"],
 		onTakeItem(item, source) {
@@ -1181,7 +1181,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	},
 	aorite: {
 		name: "Aorite",
-		spritenum: 622, // change this
+		spritenum: 585, // change this
 		megaStone: {"Ao": "Ao-Mega"},
 		itemUser: ["Ao"],
 		onTakeItem(item, source) {
@@ -1192,7 +1192,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	},
 	rionite: {
 		name: "Rionite",
-		spritenum: 622, // change this
+		spritenum: 578, // change this
 		megaStone: {"Riona": "Riona-Mega"},
 		itemUser: ["Riona"],
 		onTakeItem(item, source) {
@@ -1203,7 +1203,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	},
 	nikonite: {
 		name: "Nikonite",
-		spritenum: 622, // change this
+		spritenum: 628, // change this
 		megaStone: {"Niko": "Niko-Mega"},
 		itemUser: ["Niko"],
 		onTakeItem(item, source) {
@@ -1214,7 +1214,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	},
 	sunite: {
 		name: "Sunite",
-		spritenum: 622, // change this
+		spritenum: 575, // change this
 		megaStone: {"Su": "Su-Mega"},
 		itemUser: ["Su"],
 		onTakeItem(item, source) {
@@ -1225,7 +1225,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	},
 	chihayite: {
 		name: "Chihayite",
-		spritenum: 622, // change this
+		spritenum: 607, // change this
 		megaStone: {"Chihaya": "Chihaya-Mega"},
 		itemUser: ["Chihaya"],
 		onTakeItem(item, source) {
@@ -1236,7 +1236,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	},
 	vivite: {
 		name: "Vivite",
-		spritenum: 622, // change this
+		spritenum: 591, // change this
 		megaStone: {"Vivi": "Vivi-Mega"},
 		itemUser: ["Vivi"],
 		onTakeItem(item, source) {

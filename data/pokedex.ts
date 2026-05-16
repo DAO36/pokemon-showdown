@@ -20982,7 +20982,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		formeOrder: ["Iofi", "Iofi-Mega"],
 	},
 	iofimega: {
-		num: 945,
+		num: 235,
 		name: "Iofi-Mega",
 		baseSpecies: "Iofi",
 		forme: "Mega",
@@ -22054,7 +22054,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		requiredItem: "Kanadite",
 	},
 	ririka: {
-		num: 52,
+		num: 999,
 		name: "Ririka",
 		types: ["Normal"],
 		gender: "F",
@@ -22068,7 +22068,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		formeOrder: ["Ririka", "Ririka-Mega"],
 	},
 	ririkamega: {
-		num: 53,
+		num: 1000,
 		name: "Ririka-Mega",
 		baseSpecies: "Ririka",
 		forme: "Mega",
@@ -22083,7 +22083,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		requiredItem: "Ririkite",
 	},
 	raden: {
-		num: 52,
+		num: 562,
 		name: "Raden",
 		types: ["Normal"],
 		gender: "F",
@@ -22097,7 +22097,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		formeOrder: ["Raden", "Raden-Noh", "Raden-Mega"],
 	},
 	radennoh: {
-		num: 778,
+		num: 563,
 		name: "Raden-Noh",
 		baseSpecies: "Raden",
 		forme: "Noh",
@@ -22112,7 +22112,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		battleOnly: "Raden",
 	},
 	radenmega: {
-		num: 53,
+		num: 563,
 		name: "Raden-Mega",
 		baseSpecies: "Raden",
 		forme: "Mega",
@@ -22127,7 +22127,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		requiredItem: "Radenite",
 	},
 	hajime: {
-		num: 52,
+		num: 393,
 		name: "Hajime",
 		types: ["Normal"],
 		gender: "F",
@@ -22141,7 +22141,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		formeOrder: ["Hajime", "Hajime-Mega"],
 	},
 	hajimemega: {
-		num: 53,
+		num: 395,
 		name: "Hajime-Mega",
 		baseSpecies: "Hajime",
 		forme: "Mega",
@@ -22156,7 +22156,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		requiredItem: "Hajimite",
 	},
 	ao: {
-		num: 52,
+		num: 235,
 		name: "Ao",
 		types: ["Normal"],
 		gender: "F",
@@ -22170,7 +22170,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		formeOrder: ["Ao", "Ao-Mega"],
 	},
 	aomega: {
-		num: 53,
+		num: 235,
 		name: "Ao-Mega",
 		baseSpecies: "Ao",
 		forme: "Mega",
@@ -22185,7 +22185,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		requiredItem: "Aorite",
 	},
 	riona: {
-		num: 52,
+		num: 447,
 		name: "Riona",
 		types: ["Normal"],
 		gender: "F",
@@ -22199,7 +22199,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		formeOrder: ["Riona", "Riona-Mega"],
 	},
 	rionamega: {
-		num: 53,
+		num: 448,
 		name: "Riona-Mega",
 		baseSpecies: "Riona",
 		forme: "Mega",
@@ -22214,7 +22214,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		requiredItem: "Rionite",
 	},
 	niko: {
-		num: 52,
+		num: 726,
 		name: "Niko",
 		types: ["Normal"],
 		gender: "F",
@@ -22228,7 +22228,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		formeOrder: ["Niko", "Niko-Mega"],
 	},
 	nikomega: {
-		num: 53,
+		num: 727,
 		name: "Niko-Mega",
 		baseSpecies: "Niko",
 		forme: "Mega",
@@ -22243,7 +22243,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		requiredItem: "Nikonite",
 	},
 	su: {
-		num: 52,
+		num: 456,
 		name: "Su",
 		types: ["Normal"],
 		gender: "F",
@@ -22257,7 +22257,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		formeOrder: ["Su", "Su-Mega"],
 	},
 	sumega: {
-		num: 53,
+		num: 457,
 		name: "Su-Mega",
 		baseSpecies: "Su",
 		forme: "Mega",
@@ -22272,7 +22272,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		requiredItem: "Sunite",
 	},
 	chihaya: {
-		num: 52,
+		num: 965,
 		name: "Chihaya",
 		types: ["Normal"],
 		gender: "F",
@@ -22286,7 +22286,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		formeOrder: ["Chihaya", "Chihaya-Mega"],
 	},
 	chihayamega: {
-		num: 53,
+		num: 966,
 		name: "Chihaya-Mega",
 		baseSpecies: "Chihaya",
 		forme: "Mega",
@@ -22301,7 +22301,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		requiredItem: "Chihayite",
 	},
 	vivi: {
-		num: 52,
+		num: 238,
 		name: "Vivi",
 		types: ["Normal"],
 		gender: "F",
@@ -22315,7 +22315,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		formeOrder: ["Vivi", "Vivi-Mega"],
 	},
 	vivimega: {
-		num: 53,
+		num: 124,
 		name: "Vivi-Mega",
 		baseSpecies: "Vivi",
 		forme: "Mega",
