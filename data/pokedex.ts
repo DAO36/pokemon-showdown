@@ -22161,7 +22161,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		types: ["Normal"],
 		gender: "F",
 		baseStats: {hp: 110, atk: 115, def: 110, spa: 115, spd: 80, spe: 60},
-		abilities: {0: "Dazzling", 1: "Wimp Out", H: "Trace", S: "Mangaka"},
+		abilities: {0: "Dazzling", 1: "Color Change", H: "Trace", S: "Mangaka"},
 		heightm: 1.71,
 		weightkg: 55.5,
 		color: "Blue",
