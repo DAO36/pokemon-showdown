@@ -2636,8 +2636,10 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		num: 240,
 	},
 	mangaka: { // COLOR CHANGE but in reverse
+		onTryHit(source, target, move) {
+        if (target.apparentType === '3') return false;
+        },
 		onAfterMove(source, target, move) {
-			if (source?.apparentType === '3') return false;
             if (move.hasBounced || move.flags['futuremove'] || move.sourceEffect === 'snatch') return;
             const type = move.type;
             if (move.category !== 'Status' && type && type !== '???' && target.getTypes().join() !== type && !target.fainted) {
