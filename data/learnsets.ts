@@ -99564,6 +99564,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			geargrind: ["9M"],
 			tripleaxel: ["9M"],
 			grudge: ["9M"],
+			nastyplot: ["9M"],
 			spite: ["9M"],
 			lashout: ["9M"],
 			playrough: ["9M"],
