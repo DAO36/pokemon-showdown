@@ -4694,6 +4694,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 			source.addedType = target.addedType;
 			source.knownType = target.isAlly(source) && target.knownType;
 			if (!source.knownType) source.apparentType = oldApparentType;
+			this.add('-start', source, 'typechange', '[from] move: Dress Code', `[of] ${target}`);
 		},
 		target: "normal",
 		type: "Ice",
