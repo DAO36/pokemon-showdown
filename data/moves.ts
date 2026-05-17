@@ -4677,7 +4677,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		priority: 0,
 		flags: {protect: 1, allyanim: 1, contact: 1},
 		onHit(target, source) {
-			if (source.species && (source.species.num === 493 || source.species.num === 773)) return false;
+			if (source.species && (source.species.num === 493 || source.species.num === 773)) return false
 			if (source.terastallized) return false;
 			if (source.apparentType === target.apparentType) return false;
 			const oldApparentType = source.apparentType;
@@ -4699,57 +4699,203 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Ice",
 		contestType: "Cool",
 	},
-	dresscode3: {
-		num: 176,
-		accuracy: 100,
+	testmove: {
+		num: 513,
+		accuracy: true,
 		basePower: 100,
-		category: "Status",
-		name: "Dress Code3",
-		pp: 30,
+		category: "Special",
+		name: "Testmove",
+		pp: 15,
 		priority: 0,
-		flags: { bypasssub: 1, metronome: 1 },
+		flags: { protect: 1, bypasssub: 1, allyanim: 1, metronome: 1 },
 		onHit(target, source) {
+			if (source.species && (source.species.num === 493 || source.species.num === 773)) return false
+			if (source.terastallized) return false;
 			if (source.apparentType === target.apparentType) return false;
 			const oldApparentType = source.apparentType;
 			let newBaseTypes = target.getTypes(true).filter(type => type !== '???');
-			for (const typeName of this.dex.types.names()) {
-				if (source.hasType(typeName)) continue;
-				const typeCheck = this.dex.types.get(typeName).damageTaken[oldApparentType];
-				if (!newBaseTypes.length) {
+			if (!newBaseTypes.length) {
 				if (target.addedType) {
 					newBaseTypes = ['Normal'];
 				} else {
 					return false;
 				}
 			}
-			}
-
-			if (!source.setType(newBaseTypes)) return false;
-			this.add('-start', source, 'typechange');
+			source.setType(newBaseTypes);
+			source.addedType = target.addedType;
+			source.knownType = target.isAlly(source) && target.knownType;
+			if (!source.knownType) source.apparentType = oldApparentType;
+			this.add('-start', source, 'typechange', '[from] move: Testmove Type', `[of] ${target}`);
 		},
 		target: "normal",
 		type: "Normal",
-		zMove: { effect: 'heal' },
-		contestType: "Beautiful",
+		zMove: { boost: { spa: 1 } },
+		contestType: "Clever",
 	},
-	dresscode2: {
-		num: 160,
-		accuracy: 100,
+	testmove2: {
+		num: 513,
+		accuracy: true,
 		basePower: 100,
-		category: "Status",
-		name: "Dress Code2",
-		pp: 30,
+		category: "Special",
+		name: "Testmove2",
+		pp: 15,
 		priority: 0,
-		flags: { snatch: 1, metronome: 1 },
-		onHit(target) {
-			const type = this.dex.moves.get(target.apparentType).type;
-			if (target.hasType(type) || !target.setType(type)) return false;
-			this.add('-start', target, 'typechange', type);
+		flags: { protect: 1, bypasssub: 1, allyanim: 1, metronome: 1 },
+		onHit(target, source) {
+			if (source.species && (source.species.num === 493 || source.species.num === 773)) return false
+			if (source.terastallized) return false;
+			if (source.apparentType === target.apparentType) return false;
+			const oldApparentType = source.apparentType;
+			let newBaseTypes = target.getTypes(true).filter(type => type !== '???');
+			if (!newBaseTypes.length) {
+				if (target.addedType) {
+					newBaseTypes = ['Normal'];
+				} else {
+					return false;
+				}
+			}
+			source.setType(newBaseTypes);
+			source.addedType = target.addedType;
+			source.knownType = target.isAlly(source) && target.knownType;
+			this.add('-start', source, 'typechange', '[from] move: Testmove2 Type', `[of] ${target}`);
+			if (!source.knownType) source.apparentType = oldApparentType;
 		},
 		target: "normal",
 		type: "Normal",
-		zMove: { boost: { atk: 1, def: 1, spa: 1, spd: 1, spe: 1 } },
-		contestType: "Beautiful",
+		zMove: { boost: { spa: 1 } },
+		contestType: "Clever",
+	},
+	testmove3: {
+		num: 513,
+		accuracy: true,
+		basePower: 100,
+		category: "Special",
+		name: "Testmove3",
+		pp: 15,
+		priority: 0,
+		flags: { protect: 1, bypasssub: 1, allyanim: 1, metronome: 1 },
+		onHit(target, source) {
+			if (source.species && (source.species.num === 493 || source.species.num === 773)) return false
+			if (source.terastallized) return false;
+			if (source.apparentType === target.apparentType) return false;
+			const oldApparentType = source.apparentType;
+			let newBaseTypes = target.getTypes(true).filter(type => type !== '???');
+			if (!newBaseTypes.length) {
+				if (target.addedType) {
+					newBaseTypes = ['Normal'];
+				} else {
+					return false;
+				}
+			}
+			if (!source.knownType) source.apparentType = oldApparentType;
+			this.add('-start', source, 'typechange', '[from] move: Testmove3 Type', `[of] ${target}`);
+			source.setType(newBaseTypes);
+			source.addedType = target.addedType;
+			source.knownType = target.isAlly(source) && target.knownType;
+		},
+		target: "normal",
+		type: "Normal",
+		zMove: { boost: { spa: 1 } },
+		contestType: "Clever",
+	},
+	testmove4: {
+		num: 513,
+		accuracy: true,
+		basePower: 100,
+		category: "Special",
+		name: "Testmove4",
+		pp: 15,
+		priority: 0,
+		flags: { protect: 1, bypasssub: 1, allyanim: 1, metronome: 1 },
+		onHit(target, source) {
+			if (source.species && (source.species.num === 493 || source.species.num === 773)) return false
+			if (source.terastallized) return false;
+			if (source.apparentType === target.apparentType) return false;
+			const oldApparentType = source.apparentType;
+			let newBaseTypes = target.getTypes(true).filter(type => type !== '???');
+			if (!newBaseTypes.length) {
+				if (target.addedType) {
+					newBaseTypes = ['Normal'];
+				} else {
+					return false;
+				}
+			}
+			this.add('-start', source, 'typechange', '[from] move: Testmove4 Type', `[of] ${target}`);
+			if (!source.knownType) source.apparentType = oldApparentType;
+			source.setType(newBaseTypes);
+			source.addedType = target.addedType;
+			source.knownType = target.isAlly(source) && target.knownType;
+		},
+		target: "normal",
+		type: "Normal",
+		zMove: { boost: { spa: 1 } },
+		contestType: "Clever",
+	},
+	testmove5: {
+		num: 513,
+		accuracy: true,
+		basePower: 100,
+		category: "Special",
+		name: "Testmove5",
+		pp: 15,
+		priority: 0,
+		flags: { protect: 1, bypasssub: 1, allyanim: 1, metronome: 1 },
+		onAfterHit(source, target, move) {
+			if (source.species && (source.species.num === 493 || source.species.num === 773)) return false
+			if (source.terastallized) return false;
+			if (source.apparentType === target.apparentType) return false;
+			const oldApparentType = source.apparentType;
+			let newBaseTypes = target.getTypes(true).filter(type => type !== '???');
+			if (!newBaseTypes.length) {
+				if (target.addedType) {
+					newBaseTypes = ['Normal'];
+				} else {
+					return false;
+				}
+			}
+			this.add('-start', source, 'typechange', '[from] move: Testmove5 Type', `[of] ${target}`);
+			source.setType(newBaseTypes);
+			source.addedType = target.addedType;
+			source.knownType = target.isAlly(source) && target.knownType;
+			if (!source.knownType) source.apparentType = oldApparentType;
+		},
+		target: "normal",
+		type: "Normal",
+		zMove: { boost: { spa: 1 } },
+		contestType: "Clever",
+	},
+	testmove6: {
+		num: 513,
+		accuracy: true,
+		basePower: 100,
+		category: "Special",
+		name: "Testmove6",
+		pp: 15,
+		priority: 0,
+		flags: { protect: 1, bypasssub: 1, allyanim: 1, metronome: 1 },
+		onAfterMove(source, target, move) {
+			if (source.species && (source.species.num === 493 || source.species.num === 773)) return false
+			if (source.terastallized) return false;
+			if (source.apparentType === target.apparentType) return false;
+			const oldApparentType = source.apparentType;
+			let newBaseTypes = target.getTypes(true).filter(type => type !== '???');
+			if (!newBaseTypes.length) {
+				if (target.addedType) {
+					newBaseTypes = ['Normal'];
+				} else {
+					return false;
+				}
+			}
+			this.add('-start', source, 'typechange', '[from] move: Testmove6 Type', `[of] ${target}`);
+			source.setType(newBaseTypes);
+			source.addedType = target.addedType;
+			source.knownType = target.isAlly(source) && target.knownType;
+			if (!source.knownType) source.apparentType = oldApparentType;
+		},
+		target: "normal",
+		type: "Normal",
+		zMove: { boost: { spa: 1 } },
+		contestType: "Clever",
 	},
 	stunninglooks: { // AO 2
 		num: 339,
