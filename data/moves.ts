@@ -4689,6 +4689,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 					return false;
 				}
 			}
+			if (!source.setType(newBaseTypes)) return false;
 			this.add('-start', source, 'typechange');
 			source.setType(newBaseTypes);
 			source.addedType = target.addedType;
