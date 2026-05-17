@@ -118,7 +118,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			// supress other OnStart abilities such as intimidate so they don't activate twice
 			target.addVolatile('gastroacid');
 
-			this.add('-activate', pokemon, 'ability: Art Theft2');
+			this.add('-activate', pokemon, 'ability: Art Theft2', ability.name, '[of] ' + target);
 			this.add('-message', `${pokemon.name} stole the Ability of ${target.name}!`);
 
 			const stolen = pokemon.setAbility(ability.id, target);
@@ -856,7 +856,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	},
 	oni: { // reskin of [Rocky Payload] but for Fire
 		onStart(pokemon) {
-			this.add('-activate', pokemon, 'ability: Oni');
+			this.add('-ability', pokemon, 'ability: Oni');
 		},
 		onModifyAtkPriority: 5,
 		onModifyAtk(atk, attacker, defender, move) {
