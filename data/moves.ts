@@ -4723,7 +4723,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		accuracy: 100,
 		basePower: 100,
 		category: "Status",
-		name: "Dress Code2",
+		name: "Dress Code3",
 		pp: 30,
 		priority: 0,
 		flags: { bypasssub: 1, metronome: 1 },
