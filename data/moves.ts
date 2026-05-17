@@ -4689,7 +4689,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 					return false;
 				}
 			}
-			this.add('-start', source, 'typechange', target);
+			this.add('-start', source, 'typechange', '[from] move: Dress Code', `[of] ${target}`);
 			source.setType(newBaseTypes);
 			source.addedType = target.addedType;
 			source.knownType = target.isAlly(source) && target.knownType;
@@ -4698,25 +4698,6 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		target: "normal",
 		type: "Ice",
 		contestType: "Cool",
-	},
-	dresscode2: {
-		num: 160,
-		accuracy: 100,
-		basePower: 100,
-		category: "Status",
-		name: "Dress Code2",
-		pp: 30,
-		priority: 0,
-		flags: { snatch: 1, metronome: 1 },
-		onHit(target) {
-			const type = this.dex.moves.get(target.moveSlots[0].id).type;
-			if (target.hasType(type) || !target.setType(type)) return false;
-			this.add('-start', target, 'typechange', type);
-		},
-		target: "normal",
-		type: "Normal",
-		zMove: { boost: { atk: 1, def: 1, spa: 1, spd: 1, spe: 1 } },
-		contestType: "Beautiful",
 	},
 	dresscode3: {
 		num: 176,
@@ -4728,29 +4709,46 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		priority: 0,
 		flags: { bypasssub: 1, metronome: 1 },
 		onHit(target, source) {
-			if (!target.lastMoveUsed) {
-				return false;
-			}
-			const possibleTypes = [];
-			const attackType = target.lastMoveUsed.type;
+			if (source.apparentType === target.apparentType) return false;
+			const oldApparentType = source.apparentType;
+			let newBaseTypes = target.getTypes(true).filter(type => type !== '???');
 			for (const typeName of this.dex.types.names()) {
 				if (source.hasType(typeName)) continue;
-				const typeCheck = this.dex.types.get(typeName).damageTaken[attackType];
-				if (typeCheck === 2 || typeCheck === 3) {
-					possibleTypes.push(typeName);
+				const typeCheck = this.dex.types.get(typeName).damageTaken[oldApparentType];
+				if (!newBaseTypes.length) {
+				if (target.addedType) {
+					newBaseTypes = ['Normal'];
+				} else {
+					return false;
 				}
 			}
-			if (!possibleTypes.length) {
-				return false;
 			}
-			const randomType = this.sample(possibleTypes);
 
-			if (!source.setType(randomType)) return false;
-			this.add('-start', source, 'typechange', randomType);
+			if (!source.setType(newBaseTypes)) return false;
+			this.add('-start', source, 'typechange');
 		},
 		target: "normal",
 		type: "Normal",
 		zMove: { effect: 'heal' },
+		contestType: "Beautiful",
+	},
+	dresscode2: {
+		num: 160,
+		accuracy: 100,
+		basePower: 100,
+		category: "Status",
+		name: "Dress Code2",
+		pp: 30,
+		priority: 0,
+		flags: { snatch: 1, metronome: 1 },
+		onHit(target) {
+			const type = this.dex.moves.get(target.apparentType).type;
+			if (target.hasType(type) || !target.setType(type)) return false;
+			this.add('-start', target, 'typechange', type);
+		},
+		target: "normal",
+		type: "Normal",
+		zMove: { boost: { atk: 1, def: 1, spa: 1, spd: 1, spe: 1 } },
 		contestType: "Beautiful",
 	},
 	stunninglooks: { // AO 2
