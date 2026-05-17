@@ -4675,7 +4675,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		name: "Dress Code",
 		pp: 15,
 		priority: 0,
-		flags: {protect: 1, metronome: 1, contact: 1},
+		flags: {protect: 1, allyanim: 1, contact: 1},
 		onHit(target, source) {
 			if (source.species && (source.species.num === 493 || source.species.num === 773)) return false;
 			if (source.terastallized) return false;
@@ -4689,8 +4689,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 					return false;
 				}
 			}
-			if (!source.setType(newBaseTypes)) return false;
-			this.add('-start', source, 'typechange');
+			this.add('-start', source, 'typechange', '[from] move: Dress Code', `[of] ${target}`);
 			source.setType(newBaseTypes);
 			source.addedType = target.addedType;
 			source.knownType = target.isAlly(source) && target.knownType;
@@ -4700,15 +4699,15 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Ice",
 		contestType: "Cool",
 	},
-	dresscode2: { // AO 1
+	testmove: {
 		num: 513,
 		accuracy: 100,
 		basePower: 100,
 		category: "Special",
-		name: "Dress Code2",
+		name: "Testmove",
 		pp: 15,
 		priority: 0,
-		flags: {protect: 1, metronome: 1, contact: 1},
+		flags: { protect: 1, allyanim: 1, metronome: 1 },
 		onHit(target, source) {
 			if (source.species && (source.species.num === 493 || source.species.num === 773)) return false;
 			if (source.terastallized) return false;
@@ -4722,61 +4721,16 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 					return false;
 				}
 			}
-			const possibleTypes = [];
-			const attackType = target.apparentType;
-			for (const typeName of this.dex.types.names()) {
-				if (source.hasType(typeName)) continue;
-				const typeCheck = this.dex.types.get(typeName).damageTaken[attackType];
-				if (typeCheck === 2 || typeCheck === 3) {
-					possibleTypes.push(typeName);
-				}
-			}
-			if (!possibleTypes.length) {
-				return false;
-			}
-			const randomType = this.sample(possibleTypes);
-
-			if (!source.setType(randomType)) return false;
-			this.add('-start', source, 'typechange', randomType);
-		},
-		target: "normal",
-		type: "Ice",
-		contestType: "Cool",
-	},
-	testmove: {
-		num: 176,
-		accuracy: true,
-		basePower: 100,
-		category: "Special",
-		name: "Testmove",
-		pp: 30,
-		priority: 0,
-		flags: { bypasssub: 1, metronome: 1 },
-		onHit(target, source) {
-			if (!target.lastMoveUsed) {
-				return false;
-			}
-			const possibleTypes = [];
-			const attackType = target.lastMoveUsed.type;
-			for (const typeName of this.dex.types.names()) {
-				if (source.hasType(typeName)) continue;
-				const typeCheck = this.dex.types.get(typeName).damageTaken[attackType];
-				if (typeCheck === 2 || typeCheck === 3) {
-					possibleTypes.push(typeName);
-				}
-			}
-			if (!possibleTypes.length) {
-				return false;
-			}
-			const randomType = this.sample(possibleTypes);
-
-			if (!source.setType(randomType)) return false;
-			this.add('-start', source, 'typechange', randomType);
+			this.add('-start', source, 'typechange', '[from] move: Testmove', `[of] ${target}`);
+			source.setType(newBaseTypes);
+			source.addedType = target.addedType;
+			source.knownType = target.isAlly(source) && target.knownType;
+			if (!source.knownType) source.apparentType = oldApparentType;
 		},
 		target: "normal",
 		type: "Normal",
-		zMove: { effect: 'heal' },
-		contestType: "Beautiful",
+		zMove: { boost: { spa: 1 } },
+		contestType: "Clever",
 	},
 	stunninglooks: { // AO 2
 		num: 339,
