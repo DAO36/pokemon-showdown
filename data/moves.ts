@@ -4693,7 +4693,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 			source.setType(newBaseTypes);
 			source.addedType = target.addedType;
 			source.knownType = target.isAlly(source) && target.knownType;
-			if (!source.knownType) source.apparentType = oldApparentType; // this.add('-start', source, 'typechange', randomType);
+			if (!source.knownType) source.apparentType = oldApparentType;
 		},
 		target: "normal",
 		type: "Ice",
@@ -4723,71 +4723,6 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 			}
 			source.setType(newBaseTypes);
 			source.addedType = target.addedType;
-			this.add('-start', source, 'typechange', '[from] move: Dress Code2', `[of] ${target}`);
-			source.knownType = target.isAlly(source) && target.knownType;
-			if (!source.knownType) source.apparentType = oldApparentType; // this.add('-start', source, 'typechange', randomType);
-		},
-		target: "normal",
-		type: "Ice",
-		contestType: "Cool",
-	},
-	dresscode3: { // AO 1
-		num: 513,
-		accuracy: 100,
-		basePower: 100,
-		category: "Special",
-		name: "Dress Code3",
-		pp: 15,
-		priority: 0,
-		flags: {protect: 1, metronome: 1, contact: 1},
-		onHit(target, source) {
-			if (source.species && (source.species.num === 493 || source.species.num === 773)) return false;
-			if (source.terastallized) return false;
-			if (source.apparentType === target.apparentType) return false;
-			const oldApparentType = source.apparentType;
-			let newBaseTypes = target.getTypes(true).filter(type => type !== '???');
-			if (!newBaseTypes.length) {
-				if (target.addedType) {
-					newBaseTypes = ['Normal'];
-				} else {
-					return false;
-				}
-			}
-			source.setType(newBaseTypes);
-			source.addedType = target.addedType;
-			source.knownType = target.isAlly(source) && target.knownType;
-			this.add('-start', source, 'typechange', '[from] move: Dress Code3', `[of] ${target}`);
-			if (!source.knownType) source.apparentType = oldApparentType; // this.add('-start', source, 'typechange', randomType);
-		},
-		target: "normal",
-		type: "Ice",
-		contestType: "Cool",
-	},
-	dresscode4: { // AO 1
-		num: 513,
-		accuracy: 100,
-		basePower: 100,
-		category: "Special",
-		name: "Dress Code4",
-		pp: 15,
-		priority: 0,
-		flags: {protect: 1, metronome: 1, contact: 1},
-		onHit(target, source) {
-			if (source.species && (source.species.num === 493 || source.species.num === 773)) return false;
-			if (source.terastallized) return false;
-			if (source.apparentType === target.apparentType) return false;
-			const oldApparentType = source.apparentType;
-			let newBaseTypes = target.getTypes(true).filter(type => type !== '???');
-			if (!newBaseTypes.length) {
-				if (target.addedType) {
-					newBaseTypes = ['Normal'];
-				} else {
-					return false;
-				}
-			}
-			this.add('-start', source, 'typechange', target);
-			source.setType(newBaseTypes);
-			source.addedType = target.addedType;
 			source.knownType = target.isAlly(source) && target.knownType;
 			if (!source.knownType) source.apparentType = oldApparentType;
 		},
@@ -4795,37 +4730,40 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Ice",
 		contestType: "Cool",
 	},
-	dresscode5: { // AO 1
-		num: 513,
-		accuracy: 100,
+	testmove: {
+		num: 176,
+		accuracy: true,
 		basePower: 100,
 		category: "Special",
-		name: "Dress Code5",
-		pp: 15,
+		name: "Testmove",
+		pp: 30,
 		priority: 0,
-		flags: {protect: 1, metronome: 1, contact: 1},
+		flags: { bypasssub: 1, metronome: 1 },
 		onHit(target, source) {
-			if (source.species && (source.species.num === 493 || source.species.num === 773)) return false;
-			if (source.terastallized) return false;
-			if (source.apparentType === target.apparentType) return false;
-			const oldApparentType = source.apparentType;
-			let newBaseTypes = target.getTypes(true).filter(type => type !== '???');
-			if (!newBaseTypes.length) {
-				if (target.addedType) {
-					newBaseTypes = ['Normal'];
-				} else {
-					return false;
+			if (!target.lastMoveUsed) {
+				return false;
+			}
+			const possibleTypes = [];
+			const attackType = target.lastMoveUsed.type;
+			for (const typeName of this.dex.types.names()) {
+				if (source.hasType(typeName)) continue;
+				const typeCheck = this.dex.types.get(typeName).damageTaken[attackType];
+				if (typeCheck === 2 || typeCheck === 3) {
+					possibleTypes.push(typeName);
 				}
 			}
-			this.add('-start', source, 'typechange');
-			source.setType(newBaseTypes);
-			source.addedType = target.addedType;
-			source.knownType = target.isAlly(source) && target.knownType;
-			if (!source.knownType) source.apparentType = oldApparentType;
+			if (!possibleTypes.length) {
+				return false;
+			}
+			const randomType = this.sample(possibleTypes);
+
+			if (!source.setType(randomType)) return false;
+			this.add('-start', source, 'typechange', randomType);
 		},
 		target: "normal",
-		type: "Ice",
-		contestType: "Cool",
+		type: "Normal",
+		zMove: { effect: 'heal' },
+		contestType: "Beautiful",
 	},
 	stunninglooks: { // AO 2
 		num: 339,
