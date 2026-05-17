@@ -4699,6 +4699,60 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Ice",
 		contestType: "Cool",
 	},
+	dresscode2: {
+		num: 160,
+		accuracy: 100,
+		basePower: 100,
+		category: "Status",
+		name: "Dress Code2",
+		pp: 30,
+		priority: 0,
+		flags: { snatch: 1, metronome: 1 },
+		onHit(target) {
+			const type = this.dex.moves.get(target.moveSlots[0].id).type;
+			if (target.hasType(type) || !target.setType(type)) return false;
+			this.add('-start', target, 'typechange', type);
+		},
+		target: "self",
+		type: "Normal",
+		zMove: { boost: { atk: 1, def: 1, spa: 1, spd: 1, spe: 1 } },
+		contestType: "Beautiful",
+	},
+	dresscode3: {
+		num: 176,
+		accuracy: 100,
+		basePower: 100,
+		category: "Status",
+		name: "Dress Code2",
+		pp: 30,
+		priority: 0,
+		flags: { bypasssub: 1, metronome: 1 },
+		onHit(target, source) {
+			if (!target.lastMoveUsed) {
+				return false;
+			}
+			const possibleTypes = [];
+			const attackType = target.lastMoveUsed.type;
+			for (const typeName of this.dex.types.names()) {
+				if (source.hasType(typeName)) continue;
+				const typeCheck = this.dex.types.get(typeName).damageTaken[attackType];
+				if (typeCheck === 2 || typeCheck === 3) {
+					possibleTypes.push(typeName);
+				}
+			}
+			if (!possibleTypes.length) {
+				return false;
+			}
+			const randomType = this.sample(possibleTypes);
+
+			if (!source.setType(randomType)) return false;
+			this.add('-start', source, 'typechange', randomType);
+		},
+		target: "normal",
+		type: "Normal",
+		zMove: { effect: 'heal' },
+		contestType: "Beautiful",
+	},
 	testmove: {
 		num: 513,
 		accuracy: 100,
