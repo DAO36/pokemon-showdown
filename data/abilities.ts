@@ -2589,16 +2589,13 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		num: 11,
 	},
 	nohmask2: { // KINDA like a copy of DISGUISE
-		onAnyDamage(damage, target, source, effect) {
-			if (effect && effect.effectType === 'Move' &&
-				['raden'].includes(target.species.id) && !target.transformed) {
-				if (["rollout", "iceball"].includes(effect.id)) {
-					source.volatiles[effect.id].contactHitCount--;
-				}
-
-				this.add("-activate", target, "ability: Noh Mask2");
-				this.effectState.busted = true;
-				return 0;
+		onTryPrimaryHitPriority: -1,
+			onTryPrimaryHit(target, source, move) {
+				let damage = this.actions.getDamage(source, target, move);
+				if (!damage && damage !== 0) {
+					this.add('-fail', source);
+					this.attrLastMove('[still]');
+					return null;
 			}
 		},
 		onUpdate(pokemon) {
@@ -2617,6 +2614,15 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		num: 11,
 	},
 	nohmask3: { // KINDA like a copy of DISGUISE
+		onTryPrimaryHitPriority: -1,
+			onTryPrimaryHit(target, source, move) {
+				let damage = this.actions.getDamage(source, target, move);
+				if (!damage && damage !== 0) {
+					this.add('-fail', source);
+					this.attrLastMove('[still]');
+					return null;
+			}
+		},
 		onDamage(damage, target, source, effect) {
 			if (effect && effect.effectType === 'Move' &&
 				['raden'].includes(target.species.id) && !target.transformed) {
@@ -2645,6 +2651,15 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		num: 11,
 	},
 	nohmask4: { // KINDA like a copy of DISGUISE
+		onTryPrimaryHitPriority: -1,
+			onTryPrimaryHit(target, source, move) {
+				let damage = this.actions.getDamage(source, target, move);
+				if (!damage && damage !== 0) {
+					this.add('-fail', source);
+					this.attrLastMove('[still]');
+					return null;
+			}
+		},
 		onDamage(damage, target, source, effect) {
 			if (effect && effect.effectType === 'Move' &&
 				['raden'].includes(target.species.id) && !target.transformed) {
