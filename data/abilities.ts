@@ -1760,50 +1760,6 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
         num: 236
 	},
 	secretagent2: {
-        onResidual(target, source, effect) {
-			const foe = target.side.foe.active[target.side.active.length - 1 - target.position]
-			const oldApparentType = source.apparentType;
-			let newBaseTypes = target.getTypes(true).filter(type => type !== '???');
-			if (!newBaseTypes.length) {
-				if (target.addedType) {
-					newBaseTypes = ['Normal'];
-				} else {
-					return false;
-				}
-			}
-			this.add('-start', source, 'typechange', '[from] ability: Secret Agent2 Type', `[of] ${target}`);
-			source.setType(newBaseTypes);
-			source.addedType = target.addedType;
-			source.knownType = target.isAlly(source) && target.knownType;
-			if (!source.knownType) source.apparentType = oldApparentType;
-		},
-        rating: 5,
-        name: "Secret Agent2",
-        num: 236
-	},
-	secretagent4: {
-        onResidual(target, source, effect) {
-			const foe = target.side.foe.active[source.side.active.length - 1 - target.position]
-			const oldApparentType = source.apparentType;
-			let newBaseTypes = target.getTypes(true).filter(type => type !== '???');
-			if (!newBaseTypes.length) {
-				if (target.addedType) {
-					newBaseTypes = ['Normal'];
-				} else {
-					return false;
-				}
-			}
-			this.add('-start', source, 'typechange', '[from] ability: Secret Agent4 Type', `[of] ${target}`);
-			source.setType(newBaseTypes);
-			source.addedType = target.addedType;
-			source.knownType = target.isAlly(source) && target.knownType;
-			if (!source.knownType) source.apparentType = oldApparentType;
-		},
-        rating: 5,
-        name: "Secret Agent4",
-        num: 236
-	},
-	secretagent3: {
         onStart(target) {
 			const foe = target.side.foe.active[target.side.active.length - 1 - target.position]
 			const oldApparentType = target.apparentType;
@@ -1815,14 +1771,60 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 					return false;
 				}
 			}
-			this.add('-start', target, 'typechange', '[from] ability: Secret Agent3 Type', `[of] ${target}`);
+			this.add('-start', target, 'typechange', '[from] ability: Secret Agent2 Type', `[of] ${target}`);
 			target.setType(newBaseTypes);
 			target.addedType = target.addedType;
 			target.knownType = target.isAlly(target) && target.knownType;
 			if (!target.knownType) target.apparentType = oldApparentType;
 		},
         rating: 5,
+        name: "Secret Agent2",
+        num: 236
+	},
+	secretagent3: {
+       onHit(target, source) {
+			if (source.species && (source.species.num === 493 || source.species.num === 773)) return false;
+			if (source.terastallized) return false;
+			const oldApparentType = source.apparentType;
+			let newBaseTypes = target.getTypes(true).filter(type => type !== '???');
+			if (!newBaseTypes.length) {
+				if (target.addedType) {
+					newBaseTypes = ['Normal'];
+				} else {
+					return false;
+				}
+			}
+			this.add('-start', source, 'typechange', '[from] move: Secret Agent3 Type', `[of] ${target}`);
+			source.setType(newBaseTypes);
+			source.addedType = target.addedType;
+			source.knownType = target.isAlly(source) && target.knownType;
+			if (!source.knownType) source.apparentType = oldApparentType;
+		},
+        rating: 5,
         name: "Secret Agent3",
+        num: 236
+	},
+	secretagent4: {
+       onSwitchIn(pokemon) {
+			if (pokemon.species && (pokemon.species.num === 493 || pokemon.species.num === 773)) return false;
+			if (pokemon.terastallized) return false;
+			const oldApparentType = pokemon.apparentType;
+			let newBaseTypes = pokemon.getTypes(true).filter(type => type !== '???');
+			if (!newBaseTypes.length) {
+				if (pokemon.addedType) {
+					newBaseTypes = ['Normal'];
+				} else {
+					return false;
+				}
+			}
+			this.add('-start', pokemon, 'typechange', '[from] move: Secret Agent4 Type', `[of] ${pokemon}`);
+			pokemon.setType(newBaseTypes);
+			pokemon.addedType = pokemon.addedType;
+			pokemon.knownType = pokemon.isAlly(pokemon) && pokemon.knownType;
+			if (!pokemon.knownType) pokemon.apparentType = oldApparentType;
+		},
+        rating: 5,
+        name: "Secret Agent4",
         num: 236
 	},
 	graondstone: { // combines [Sand Force] + [Rain Dish] (but Sandstorm instead of Rain) <<<UNUSED>>>
