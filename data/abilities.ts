@@ -118,15 +118,10 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			// supress other OnStart abilities such as intimidate so they don't activate twice
 			target.addVolatile('gastroacid');
 
-			this.add('-activate', pokemon, 'ability: Art Theft2', ability.name, '[of] ' + target);
-			this.add('-message', `${pokemon.name} stole the Ability of ${target.name}!`);
-
 			const stolen = pokemon.setAbility(ability.id, target);
 			if (!stolen) return;
 
 			target.setAbility('noability', pokemon);
-			this.add('-ability', target, 'No Ability');
-			this.add('-message', `${target.name} has No Ability!`);
 
 			target.removeVolatile('gastroacid');
 		},
