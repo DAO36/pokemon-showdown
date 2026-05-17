@@ -4721,8 +4721,22 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 					return false;
 				}
 			}
-			if (!source.setType(newBaseTypes)) return false;
-			this.add('-start', source, 'typechange');
+			const possibleTypes = [];
+			const attackType = target.apparentType;
+			for (const typeName of this.dex.types.names()) {
+				if (source.hasType(typeName)) continue;
+				const typeCheck = this.dex.types.get(typeName).damageTaken[attackType];
+				if (typeCheck === 2 || typeCheck === 3) {
+					possibleTypes.push(typeName);
+				}
+			}
+			if (!possibleTypes.length) {
+				return false;
+			}
+			const randomType = this.sample(possibleTypes);
+
+			if (!source.setType(randomType)) return false;
+			this.add('-start', source, 'typechange', randomType);
 		},
 		target: "normal",
 		type: "Ice",
