@@ -740,7 +740,8 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	haachamacooking: { // FLINCH on switch in - HEALS when using STATUS moves
 		onStart(pokemon) {
             let activated = false;
-			for (const target of pokemon.adjacentFoes()) {
+			const foe = pokemon.side.foe.active[pokemon.side.active.length - 1 - pokemon.position]
+            for (const target of pokemon.foes()) {
                 if (!activated) {
                     this.add('-ability', pokemon, 'Haachama Cooking', 'boost');
                     activated = true;
@@ -1057,6 +1058,17 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 1.5,
 		num: 194,
 	},
+	iracy: { // reskin of [Costar] but copies foes stats insetad of allies and also clears foes stats  
+		onStart(pokemon) { 
+			const foe = pokemon.side.foe.active[pokemon.side.active.length - 1 - pokemon.position]
+			const adjacentFoe = pokemon.adjacentFoes()[0]; 
+			if (!foe) return;
+		},
+		flags: {breakable: 1},
+		name: "Piracy",
+		rating: 0,
+		num: 294,
+	},
 	pekopeko: { // inflicts Taunt on switch-in
 		onDamagingHitOrder: 1,
 		onDamagingHit(damage, target, source, move) {
@@ -1065,12 +1077,14 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			}
 		},
 		onStart(pokemon) {
+			const foe = pokemon.side.foe.active[pokemon.side.active.length - 1 - pokemon.position]
+			const adjacentFoe = pokemon.adjacentFoes()[0]; 
             let activated = false;
-            for (const target of pokemon.adjacentFoes()) {
+            for (const adjacentFoe of pokemon.foes()) {
                 if (!activated) {
                     this.add('-ability', pokemon, 'Peko Peko', 'boost');
                     activated = true;
-                    target.addVolatile('taunt', this.effectState.pokemon);
+                    adjacentFoe.addVolatile('taunt', this.effectState.pokemon);
                 }
             }
         },
