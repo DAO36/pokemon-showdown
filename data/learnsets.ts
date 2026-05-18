@@ -95550,6 +95550,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			thunderpunch: ["9M"],
 			shadowpunch: ["9M"],
 			bulletpunch: ["9M"],
+			hatotaurushelp: ["9M"]
         },
 	},
 	okayu: {
