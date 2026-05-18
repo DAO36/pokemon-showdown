@@ -205,8 +205,8 @@ export const AbilitiesText: { [id: IDEntry]: AbilityText } = {
 	},
 	pekopeko: {
 		name: "Peko Peko",
-		desc: "On switch-in, this ability inflicts Taunt on all adjacent opponents. If this Pokemon is knocked out with a move, the atacker loses HP equal to the amount of damage inflicted on this Pokemon.",
-		shortDesc: "On switch-in, inflicts Taunt. If user is KOed, the attacker loses equal amount of HP.",
+		desc: "On switch-in, this ability inflicts Taunt on all adjacent opponents. If this Pokemon is knocked out with a move, the atacker loses 1/3 of their maximum HP.",
+		shortDesc: "On switch-in, inflicts Taunt on foe(s). If user is KOed, the attacker loses 30% max HP.",
 
 		damage: "#aftermath",
 	},
