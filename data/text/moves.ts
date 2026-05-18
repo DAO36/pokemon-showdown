@@ -155,7 +155,7 @@ export const MovesText: { [id: IDEntry]: MoveText } = {
 		desc: "Has a 30% chance to make the target flinch.",
 		shortDesc: "30% chance to make the target flinch.",
 	},
-	ourcoursemeal: {
+	fourcoursemeal: {
 		name: "Four Course Meal",
 		desc: "The user cures its non-volatile status condition. Raises the user's Attack by 2 stages.",
 		shortDesc: "Cures user's status, raises Attack by 2.",
