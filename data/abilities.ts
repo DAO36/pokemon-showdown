@@ -551,9 +551,9 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	},
 	seiso: { // SORA: combines [Clear Body] + [Immunity] but for other statuses too + immune to flinching <held items cant status either>
 		onUpdate(pokemon) {
-			pokemon.removeVolatile('taunt');
-			pokemon.removeVolatile('monday');
 			if (pokemon.status === 'psn' || pokemon.status === 'tox' || pokemon.status === 'par' || pokemon.status === 'slp' || pokemon.status === 'brn' || pokemon.status === 'frz') {
+				pokemon.removeVolatile('taunt');
+			    pokemon.removeVolatile('monday');
 				this.add('-activate', pokemon, 'ability: Seiso');
 				pokemon.cureStatus();
 			}
@@ -742,11 +742,11 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
             let activated = false;
 			const foe = pokemon.side.foe.active[pokemon.side.active.length - 1 - pokemon.position]
 			const adjacentFoe = pokemon.adjacentFoes()[0]; 
-            for (const target of pokemon.adjacentFoes()) {
+             {
                 if (!activated) {
                     this.add('-ability', pokemon, 'Haachama Cooking', 'boost');
                     activated = true;
-                    target.addVolatile('flinch', this.effectState.pokemon);
+                    adjacentFoe.addVolatile('flinch', this.effectState.pokemon);
                 }
             }
         },
@@ -1070,11 +1070,11 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
             let activated = false;
 			const foe = pokemon.side.foe.active[pokemon.side.active.length - 1 - pokemon.position]
 			const adjacentFoe = pokemon.adjacentFoes()[0]; 
-            for (const target of pokemon.adjacentFoes()) {
+            {
                 if (!activated) {
                     this.add('-ability', pokemon, 'Peko Peko', 'boost');
                     activated = true;
-                    target.addVolatile('taunt', this.effectState.pokemon);
+                    adjacentFoe.addVolatile('taunt', this.effectState.pokemon);
                 }
             }
         },
