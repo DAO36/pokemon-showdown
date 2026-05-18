@@ -2159,7 +2159,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Flying",
 		contestType: "Cute",
 	},
-	ganmasmash: {
+	ganmasmash: { // LUI 3
 		num: 136,
 		accuracy: 90,
 		basePower: 130,
@@ -2196,7 +2196,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		accuracy: 90,
 		basePower: 150,
 		category: "Physical",
-		name: "Katana",
+		name: "Pokobee",
 		pp: 5,
 		priority: 0,
 		flags: {contact: 1, mirror: 1, slicing: 1, cantusetwice: 1}, 
