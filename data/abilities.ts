@@ -1078,9 +1078,8 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		},
 		onStart(pokemon) {
 			const foe = pokemon.side.foe.active[pokemon.side.active.length - 1 - pokemon.position]
-			const adjacentFoe = pokemon.adjacentFoes()[0]; 
             let activated = false;
-            for (const adjacentFoe of pokemon.foes()) {
+            const adjacentFoe = pokemon.adjacentFoes()[0]; {
                 if (!activated) {
                     this.add('-ability', pokemon, 'Peko Peko', 'boost');
                     activated = true;
