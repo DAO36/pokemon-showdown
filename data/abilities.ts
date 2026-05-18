@@ -1077,43 +1077,42 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			}
 		},
 		onStart(pokemon) {
-			const foe = pokemon.side.foe.active[pokemon.side.active.length - 1 - pokemon.position]
             let activated = false;
-            const adjacentFoe = pokemon.adjacentFoes()[0]; {
+            const foe = pokemon.side.foe.active[pokemon.side.active.length - 1 - pokemon.position]
+			const adjacentFoe = pokemon.adjacentFoes()[0];
                 if (!activated) {
                     this.add('-ability', pokemon, 'Peko Peko', 'boost');
                     activated = true;
                     adjacentFoe.addVolatile('taunt', this.effectState.pokemon);
                 }
-            }
+        
         },
 		flags: {breakable: 1},
 		name: "Peko Peko",
 		rating: 2,
 		num: 27,
 	},
-	pekopeko2: { // any pokemon that KOs user loses 1/2 of their maximum HP
+	pekopekoog: { // inflicts Taunt on switch-in
 		onDamagingHitOrder: 1,
 		onDamagingHit(damage, target, source, move) {
 			if (!target.hp) {
-				if (!move.smartTarget) damage += Number(move.totalDamage);
-				this.damage(target.getUndynamaxedHP(damage), source, target);
+				this.damage(source.baseMaxhp / 3, source, target);
 			}
 		},
 		onStart(pokemon) {
             let activated = false;
             for (const target of pokemon.foes()) {
                 if (!activated) {
-                    this.add('-ability', pokemon, 'Peko Peko', 'boost');
+                    this.add('-ability', pokemon, 'Peko Pekoog', 'boost');
                     activated = true;
                     target.addVolatile('taunt', this.effectState.pokemon);
                 }
             }
         },
-		flags: {},
-		name: "pekopeko2",
+		flags: {breakable: 1},
+		name: "Peko Pekoog",
 		rating: 2,
-		num: 106,
+		num: 27,
 	},
 	piracy: { // reskin of [Costar] but copies foes stats insetad of allies and also clears foes stats  
 		onStart(pokemon) { 
