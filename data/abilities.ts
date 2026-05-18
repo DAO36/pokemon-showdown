@@ -557,9 +557,6 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 				this.add('-activate', pokemon, 'ability: Seiso');
 				pokemon.cureStatus();
 			}
-				pokemon.removeVolatile('taunt');
-			    pokemon.removeVolatile('monday');
-				this.add('-activate', pokemon, 'ability: Seiso');
 		},
 		onSetStatus(status, target, source, effect) {
 			if (status.id !== 'psn' && status.id !== 'tox' && status.id !== 'par' && status.id !== 'slp' && status.id !== 'brn' && status.id !== 'frz') return;
@@ -743,8 +740,8 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	haachamacooking: { // FLINCH on switch in - HEALS when using STATUS moves
 		onStart(pokemon) {
             let activated = false;
-			const foe = pokemon.side.foe.active[pokemon.side.active.length - 0 - pokemon.position]
-            for (const target of pokemon.adjacentFoes()) {
+			const foe = pokemon.side.foe.active[pokemon.side.active.length - 1 - pokemon.position]
+            for (const target of pokemon.foes()) {
                 if (!activated) {
                     this.add('-ability', pokemon, 'Haachama Cooking', 'boost');
                     activated = true;
@@ -1070,8 +1067,8 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		},
 		onStart(pokemon) {
             let activated = false;
-			const foe = pokemon.side.foe.active[pokemon.side.active.length - 0 - pokemon.position]
-            for (const target of pokemon.adjacentFoes()) {
+			const foe = pokemon.side.foe.active[pokemon.side.active.length - 1 - pokemon.position]
+            for (const target of pokemon.foes()) {
                 if (!activated) {
                     this.add('-ability', pokemon, 'Peko Peko', 'boost');
                     activated = true;
