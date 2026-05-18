@@ -1058,34 +1058,40 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 1.5,
 		num: 194,
 	},
-	iracy: { // reskin of [Costar] but copies foes stats insetad of allies and also clears foes stats  
-		onStart(pokemon) { 
-			const foe = pokemon.side.foe.active[pokemon.side.active.length - 1 - pokemon.position]
-			const adjacentFoe = pokemon.adjacentFoes()[0]; 
-			if (!foe) return;
-		},
-		flags: {breakable: 1},
-		name: "Piracy",
-		rating: 0,
-		num: 294,
-	},
-	pekopeko: { // inflicts Taunt on switch-in
-		onDamagingHitOrder: 1,
-		onDamagingHit(damage, target, source, move) {
-			if (!target.hp) {
-				this.damage(source.baseMaxhp / 3, source, target);
+	ubus: {
+		onStart(pokemon) {
+			let activated = false;
+			for (const target of pokemon.adjacentFoes()) {
+				if (!activated) {
+					this.add('-ability', pokemon, 'Succubus', 'boost');
+					activated = true;
+				}
+				if (target.volatiles['substitute']) {
+					this.add('-immune', target);
+				} else {
+					this.boost({spa: -1}, target, pokemon, null, true);
+				}
 			}
 		},
+		flags: {breakable: 1},
+		name: "Succubus",
+		rating: 4,
+		num: 22,
+	},
+	pekopeko: { // inflicts Taunt on switch-in
 		onStart(pokemon) {
             let activated = false;
-            const foe = pokemon.side.foe.active[pokemon.side.active.length - 1 - pokemon.position]
-			const adjacentFoe = pokemon.adjacentFoes()[0];
+            for (const target of pokemon.adjacentFoes()) {
                 if (!activated) {
-                    this.add('-ability', pokemon, 'Peko Peko', 'boost');
+                    this.add('-ability', pokemon, 'Peko Pekoog', 'boost');
                     activated = true;
-                    adjacentFoe.addVolatile('taunt', this.effectState.pokemon);
+				}	
+				if (target.volatiles['substitute']) {
+					this.add('-immune', target);
+				} else {
+                    target.addVolatile('taunt', this.effectState.pokemon);
                 }
-        
+            }
         },
 		flags: {breakable: 1},
 		name: "Peko Peko",
