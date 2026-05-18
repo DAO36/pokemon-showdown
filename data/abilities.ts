@@ -551,13 +551,12 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	},
 	seiso: { // SORA: combines [Clear Body] + [Immunity] but for other statuses too + immune to flinching <held items cant status either>
 		onUpdate(pokemon) {
+			pokemon.removeVolatile('taunt');
+			pokemon.removeVolatile('monday');
 			if (pokemon.status === 'psn' || pokemon.status === 'tox' || pokemon.status === 'par' || pokemon.status === 'slp' || pokemon.status === 'brn' || pokemon.status === 'frz') {
 				this.add('-activate', pokemon, 'ability: Seiso');
 				pokemon.cureStatus();
 			}
-			pokemon.removeVolatile('taunt');
-			pokemon.removeVolatile('monday');
-			this.add('-activate', pokemon, 'ability: Seiso');
 		},
 		onSetStatus(status, target, source, effect) {
 			if (status.id !== 'psn' && status.id !== 'tox' && status.id !== 'par' && status.id !== 'slp' && status.id !== 'brn' && status.id !== 'frz') return;
@@ -742,6 +741,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		onStart(pokemon) {
             let activated = false;
 			const foe = pokemon.side.foe.active[pokemon.side.active.length - 1 - pokemon.position]
+			const adjacentFoe = pokemon.adjacentFoes()[0]; 
             for (const target of pokemon.adjacentFoes()) {
                 if (!activated) {
                     this.add('-ability', pokemon, 'Haachama Cooking', 'boost');
@@ -1069,6 +1069,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		onStart(pokemon) {
             let activated = false;
 			const foe = pokemon.side.foe.active[pokemon.side.active.length - 1 - pokemon.position]
+			const adjacentFoe = pokemon.adjacentFoes()[0]; 
             for (const target of pokemon.adjacentFoes()) {
                 if (!activated) {
                     this.add('-ability', pokemon, 'Peko Peko', 'boost');
