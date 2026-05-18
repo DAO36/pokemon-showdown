@@ -2216,7 +2216,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	ninjutsu: { // IROHA 3
 		num: 389,
 		accuracy: 100,
-		basePower: 80,
+		basePower: 75,
 		category: "Physical",
 		name: "Ninjutsu",
 		pp: 5,

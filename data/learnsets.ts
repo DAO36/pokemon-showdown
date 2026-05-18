@@ -96534,6 +96534,8 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			grassyterrain: ["9M"],
 			samuraistrikes: ["9M"],
 			pokobee: ["9M"],
+			ninjutsu: ["9M"],
+			katana: ["9M"],
         },
 	},	
 	koyori: {
