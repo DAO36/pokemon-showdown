@@ -557,6 +557,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			}
 			pokemon.removeVolatile('taunt');
 			pokemon.removeVolatile('monday');
+			this.add('-activate', pokemon, 'ability: Seiso');
 		},
 		onSetStatus(status, target, source, effect) {
 			if (status.id !== 'psn' && status.id !== 'tox' && status.id !== 'par' && status.id !== 'slp' && status.id !== 'brn' && status.id !== 'frz') return;
