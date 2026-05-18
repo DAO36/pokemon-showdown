@@ -1083,18 +1083,48 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
             let activated = false;
             for (const target of pokemon.adjacentFoes()) {
                 if (!activated) {
-                    this.add('-ability', pokemon, 'Peko Pekoog', 'boost');
+                    this.add('-ability', pokemon, 'Peko Peko', 'boost');
                     activated = true;
 				}	
-				if (target.volatiles['substitute']) {
-					this.add('-immune', target);
-				} else {
+				 {
                     target.addVolatile('taunt', this.effectState.pokemon);
                 }
             }
         },
 		flags: {breakable: 1},
 		name: "Peko Peko",
+		rating: 2,
+		num: 27,
+	},
+	pekopeko2: { // inflicts Taunt on switch-in
+		onStart(pokemon) {
+            let activated = false;
+            for (const target of pokemon.adjacentFoes()) {
+                if (!activated) {
+                    this.add('-ability', pokemon, 'Peko Peko2', 'boost');
+                    activated = true;
+                    target.addVolatile('taunt', this.effectState.pokemon);
+                }
+            }
+        },
+		flags: {breakable: 1},
+		name: "Peko Peko2",
+		rating: 2,
+		num: 27,
+	},
+	pekopeko3: { // inflicts Taunt on switch-in
+		onStart(pokemon) {
+            let activated = false;
+            for (const target of pokemon.adjacentFoes()) {
+                if (!activated) {
+                    this.add('-ability', pokemon, 'Peko Peko3', 'boost');
+                    activated = true;
+                    target.addVolatile('taunt'), target, pokemon, null, true;
+                }
+            }
+        },
+		flags: {breakable: 1},
+		name: "Peko Peko3",
 		rating: 2,
 		num: 27,
 	},
@@ -1109,14 +1139,14 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
             let activated = false;
             for (const target of pokemon.foes()) {
                 if (!activated) {
-                    this.add('-ability', pokemon, 'Peko Pekoog', 'boost');
+                    this.add('-ability', pokemon, 'Peko PekoOG', 'boost');
                     activated = true;
                     target.addVolatile('taunt', this.effectState.pokemon);
                 }
             }
         },
 		flags: {breakable: 1},
-		name: "Peko Pekoog",
+		name: "Peko PekoOG",
 		rating: 2,
 		num: 27,
 	},
