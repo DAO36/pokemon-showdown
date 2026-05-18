@@ -734,7 +734,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	haachamacooking: { // FLINCH on switch in - HEALS when using STATUS moves
 		onStart(pokemon) {
             let activated = false;
-            for (const target of pokemon.foes()) {
+            for (const target of pokemon.adjacentFoes()) {
                 if (!activated) {
                     this.add('-ability', pokemon, 'Haachama Cooking', 'boost');
                     activated = true;
@@ -1060,7 +1060,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		},
 		onStart(pokemon) {
             let activated = false;
-            for (const target of pokemon.foes()) {
+            for (const target of pokemon.adjacentFoes()) {
                 if (!activated) {
                     this.add('-ability', pokemon, 'Peko Peko', 'boost');
                     activated = true;
