@@ -856,7 +856,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	},
 	oni: { // reskin of [Rocky Payload] but for Fire
 		onStart(pokemon) {
-			this.add('-ability', pokemon, 'ability: Oni');
+			this.add('-activate', pokemon, 'ability: Oni');
 		},
 		onModifyAtkPriority: 5,
 		onModifyAtk(atk, attacker, defender, move) {

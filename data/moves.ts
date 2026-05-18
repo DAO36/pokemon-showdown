@@ -1045,11 +1045,11 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	},
 	yubiyubi: { // KORONE 2
 		num: 370,
-		accuracy: 95,
+		accuracy: 90,
 		basePower: 25,
 		category: "Physical",
 		name: "Yubi Yubi",
-		pp: 10,
+		pp: 5,
 		priority: 0,
 		flags: {protect: 1, mirror: 1, punch: 1},
 		multihit: 5,
@@ -1074,38 +1074,13 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Normal",
 		contestType: "Cool",
 	},
-	onigirichomp: { // OKAYU
-		num: 370,
-		accuracy: 100,
-		basePower: 80,
-		category: "Physical",
-		name: "Onigiri Chomp",
-		pp: 15,
-		priority: 0,
-		flags: {contact: 1, protect: 1, mirror: 1, heal: 1, bite: 1},
-		onHit(target, source) {
-			const item = target.getItem();
-			if (source.hp && item.isBerry && target.takeItem(source)) {
-				this.add('-enditem', target, item.name, '[from] stealeat', '[move] Onigiri Chomp', '[of] ' + source);
-				if (this.singleEvent('Eat', item, null, source, null, null)) {
-					this.runEvent('EatItem', source, null, null, item);
-					if (item.id === 'leppaberry') target.staleness = 'external';
-				}
-				if (item.onEat) source.ateBerry = true;
-			}
-		},
-		drain: [1, 2],
-		target: "normal",
-		type: "Grass",
-		contestType: "Tough",
-	},
 	tarots: { // MIO 1
 		num: 370,
 		accuracy: 90,
 		basePower: 25,
 		category: "Special",
 		name: "Tarots",
-		pp: 20,
+		pp: 10,
 		priority: 0,
 		flags: {protect: 1, mirror: 1, distance: 1, slicing: 1},
 		ignoreImmunity: true,
@@ -1119,7 +1094,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		},
 		multihit: 4,
 		secondary: {
-			chance: 25,
+			chance: 10,
 			onHit(target, source) {
 				const result = this.random(3);
 				if (result === 0) {
@@ -1150,6 +1125,31 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		target: "normal",
 		type: "Flying",
 		contestType: "Cool",
+	},
+	onigirichomp: { // OKAYU
+		num: 370,
+		accuracy: 100,
+		basePower: 80,
+		category: "Physical",
+		name: "Onigiri Chomp",
+		pp: 15,
+		priority: 0,
+		flags: {contact: 1, protect: 1, mirror: 1, heal: 1, bite: 1},
+		onHit(target, source) {
+			const item = target.getItem();
+			if (source.hp && item.isBerry && target.takeItem(source)) {
+				this.add('-enditem', target, item.name, '[from] stealeat', '[move] Onigiri Chomp', '[of] ' + source);
+				if (this.singleEvent('Eat', item, null, source, null, null)) {
+					this.runEvent('EatItem', source, null, null, item);
+					if (item.id === 'leppaberry') target.staleness = 'external';
+				}
+				if (item.onEat) source.ateBerry = true;
+			}
+		},
+		drain: [1, 2],
+		target: "normal",
+		type: "Grass",
+		contestType: "Tough",
 	},
 	rocketcarrots: { // PEKORA 1
 		num: 370,
