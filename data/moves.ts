@@ -1787,7 +1787,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		basePower: 20,
 		category: "Physical",
 		name: "Pol Pol",
-		pp: 20,
+		pp: 10,
 		priority: 0,
 		flags: {protect: 1, mirror: 1, distance: 1, bullet: 1},
 		multihit: 4,

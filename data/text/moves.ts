@@ -478,8 +478,8 @@ export const MovesText: { [id: IDEntry]: MoveText } = {
 	},
 	polpol: {
 		name: "Pol Pol",
-		desc: "Has a 25% chance to either burn, paralyze, poison, or make the target fall asleep. Hits four times. If one of the hits breaks the target's substitute, it will take damage for the remaining hits. This move's type effectiveness against Dark is changed to be neutrally effective no matter what this move's type is.",
-		shortDesc: "25% chance to inflict a status.",
+		desc: "Has a 25% chance to either burn, paralyze, poison, or make the target fall asleep. Hits four times. If one of the hits breaks the target's substitute, it will take damage for the remaining hits.",
+		shortDesc: "25% chance to inflict a random status.",
 	},
 	polmao: {
 		name: "PoLMAO",
