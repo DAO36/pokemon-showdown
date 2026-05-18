@@ -555,6 +555,8 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 				this.add('-activate', pokemon, 'ability: Seiso');
 				pokemon.cureStatus();
 			}
+			pokemon.removeVolatile('taunt');
+			pokemon.removeVolatile('monday');
 		},
 		onSetStatus(status, target, source, effect) {
 			if (status.id !== 'psn' && status.id !== 'tox' && status.id !== 'par' && status.id !== 'slp' && status.id !== 'brn' && status.id !== 'frz') return;
@@ -570,6 +572,10 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		},
 		onTryHit(pokemon, target, move) {
 			if (move.id === 'taunt') {
+				this.add('-immune', pokemon, '[from] ability: Seiso');
+				return null;
+			}
+			if (move.id === 'monday') {
 				this.add('-immune', pokemon, '[from] ability: Seiso');
 				return null;
 			}
