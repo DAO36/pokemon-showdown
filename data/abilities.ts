@@ -551,11 +551,14 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	},
 	seiso: { // SORA: combines [Clear Body] + [Immunity] but for other statuses too + immune to flinching <held items cant status either>
 		onUpdate(pokemon) {
-			pokemon.removeVolatile('taunt');
-			pokemon.removeVolatile('monday');
 			if (pokemon.status === 'psn' || pokemon.status === 'tox' || pokemon.status === 'par' || pokemon.status === 'slp' || pokemon.status === 'brn' || pokemon.status === 'frz') {
 				this.add('-activate', pokemon, 'ability: Seiso');
 				pokemon.cureStatus();
+			}
+			if (pokemon.volatiles['taunt']) {
+				this.add('-activate', pokemon, 'ability: Seiso');
+				pokemon.removeVolatile('taunt');
+			    pokemon.removeVolatile('monday');
 			}
 		},
 		onSetStatus(status, target, source, effect) {
@@ -740,11 +743,12 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	haachamacooking: { // FLINCH on switch in - HEALS when using STATUS moves
 		onStart(pokemon) {
             let activated = false;
-			const foe = pokemon.side.foe.active[pokemon.side.active.length - 1 - pokemon.position]
-            for (const target of pokemon.foes()) {
+			for (const target of pokemon.adjacentFoes()) {
                 if (!activated) {
                     this.add('-ability', pokemon, 'Haachama Cooking', 'boost');
                     activated = true;
+				}
+				{	
                     target.addVolatile('flinch', this.effectState.pokemon);
                 }
             }
@@ -1058,26 +1062,6 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 1.5,
 		num: 194,
 	},
-	ubus: {
-		onStart(pokemon) {
-			let activated = false;
-			for (const target of pokemon.adjacentFoes()) {
-				if (!activated) {
-					this.add('-ability', pokemon, 'Succubus', 'boost');
-					activated = true;
-				}
-				if (target.volatiles['substitute']) {
-					this.add('-immune', target);
-				} else {
-					this.boost({spa: -1}, target, pokemon, null, true);
-				}
-			}
-		},
-		flags: {breakable: 1},
-		name: "Succubus",
-		rating: 4,
-		num: 22,
-	},
 	pekopeko: { // inflicts Taunt on switch-in
 		onStart(pokemon) {
             let activated = false;
@@ -1093,60 +1077,6 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
         },
 		flags: {breakable: 1},
 		name: "Peko Peko",
-		rating: 2,
-		num: 27,
-	},
-	pekopeko2: { // inflicts Taunt on switch-in
-		onStart(pokemon) {
-            let activated = false;
-            for (const target of pokemon.adjacentFoes()) {
-                if (!activated) {
-                    this.add('-ability', pokemon, 'Peko Peko2', 'boost');
-                    activated = true;
-                    target.addVolatile('taunt', this.effectState.pokemon);
-                }
-            }
-        },
-		flags: {breakable: 1},
-		name: "Peko Peko2",
-		rating: 2,
-		num: 27,
-	},
-	pekopeko3: { // inflicts Taunt on switch-in
-		onStart(pokemon) {
-            let activated = false;
-            for (const target of pokemon.adjacentFoes()) {
-                if (!activated) {
-                    this.add('-ability', pokemon, 'Peko Peko3', 'boost');
-                    activated = true;
-                    target.addVolatile('taunt'), target, pokemon, null, true;
-                }
-            }
-        },
-		flags: {breakable: 1},
-		name: "Peko Peko3",
-		rating: 2,
-		num: 27,
-	},
-	pekopekoog: { // inflicts Taunt on switch-in
-		onDamagingHitOrder: 1,
-		onDamagingHit(damage, target, source, move) {
-			if (!target.hp) {
-				this.damage(source.baseMaxhp / 3, source, target);
-			}
-		},
-		onStart(pokemon) {
-            let activated = false;
-            for (const target of pokemon.foes()) {
-                if (!activated) {
-                    this.add('-ability', pokemon, 'Peko PekoOG', 'boost');
-                    activated = true;
-                    target.addVolatile('taunt', this.effectState.pokemon);
-                }
-            }
-        },
-		flags: {breakable: 1},
-		name: "Peko PekoOG",
 		rating: 2,
 		num: 27,
 	},
