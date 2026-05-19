@@ -740,12 +740,49 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3.5,
 		num: 295,
 	},
+	racy: { // reskin of [Costar] but copies foes stats insetad of allies and also clears foes stats  
+		onStart(pokemon) { 
+			const foe = pokemon.side.foe.active[pokemon.side.active.length - 1 - pokemon.position]
+			const adjacentFoe = pokemon.adjacentFoes()[0]; 
+			if (!foe) return;
+
+			let i: BoostID;
+			for (i in foe.boosts) {
+				pokemon.boosts[i] = foe.boosts[i];
+			}
+		},
+		flags: {breakable: 1},
+		name: "Piracy",
+		rating: 0,
+		num: 294,
+	},
 	haachamacooking: { // FLINCH on switch in - HEALS when using STATUS moves
+		onStart(pokemon) {
+            const foe = pokemon.side.foe.active[pokemon.side.active.length - 1 - pokemon.position]
+			const adjacentFoe = pokemon.adjacentFoes()[0]; 
+			if (!foe) return;
+                    this.add('-ability', pokemon, 'Haachama Cooking', 'boost');
+				{		
+                    adjacentFoe.addVolatile('flinch', this.effectState.pokemon);
+                }
+            
+        },
+		onAfterMove(target, source, move) {
+            if (move.category === 'Status') {
+                this.heal(target.baseMaxhp / 8);
+            }
+        },
+		flags: {},
+		name: "Haachama Cooking",
+		rating: 5,
+		num: 23,
+	},
+	haachamacookingog: { // FLINCH on switch in - HEALS when using STATUS moves
 		onStart(pokemon) {
             let activated = false;
 			for (const target of pokemon.adjacentFoes()) {
                 if (!activated) {
-                    this.add('-ability', pokemon, 'Haachama Cooking', 'boost');
+                    this.add('-ability', pokemon, 'Haachama CookingOG', 'boost');
                     activated = true;
 				}
 				{	
@@ -759,7 +796,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
             }
         },
 		flags: {},
-		name: "Haachama Cooking",
+		name: "Haachama CookingOG",
 		rating: 5,
 		num: 23,
 	},
