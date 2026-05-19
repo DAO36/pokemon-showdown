@@ -440,8 +440,8 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	survivalist: { // works (maybe works a little TOO much) mf literally is unkillable [focus band as ability]
 		onDamagePriority: -40,
 		onDamage(damage, target, source, effect) {
-			if (damage >= target.hp && effect && effect.effectType === 'Move') {
-				if (target.useItem()) {
+			if (target.hp && damage >= target.hp && effect && effect.effectType === 'Move') {
+				{
 					return target.hp - 1;
 				}
 			}
