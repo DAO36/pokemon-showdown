@@ -150,8 +150,8 @@ export const MovesText: { [id: IDEntry]: MoveText } = {
 		desc: "This move combines Fairy in its type effectiveness against the target. Hits twice. If the first hit breaks the target's substitute, it will take damage for the second hit.",
 		shortDesc: "Combines Fairy in type effectiveness. Hits 2 times.",
 	},
-	spidercooking: {
-		name: "Spider Cooking",
+	spidersoup: {
+		name: "Spider Soup",
 		desc: "Has a 30% chance to make the target flinch.",
 		shortDesc: "30% chance to make the target flinch.",
 	},
