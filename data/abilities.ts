@@ -763,7 +763,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			if (!foe) return;
                     this.add('-ability', pokemon, 'Haachama Cooking', 'boost');
 				{		
-                    adjacentFoe.addVolatile('flinch', this.effectState.pokemon);
+                    foe.addVolatile('flinch', this.effectState.pokemon);
                 }
             
         },
