@@ -1068,11 +1068,17 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
                     this.add('-ability', pokemon, 'Peko Peko', 'boost');
                     activated = true;
 				}	
-				 {
+				{
                     target.addVolatile('taunt', this.effectState.pokemon);
                 }
             }
         },
+		onDamagingHitOrder: 1,
+		onDamagingHit(damage, target, source, move) {
+			if (!target.hp && move.category === 'Physical' || move.category === 'Special') {
+				this.damage(source.baseMaxhp / 3, source, target);
+			}
+		},
 		flags: {breakable: 1},
 		name: "Peko Peko",
 		rating: 2,
