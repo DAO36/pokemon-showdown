@@ -831,13 +831,45 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 				}
 				if (pokemon.status === 'par' || 'psn' || 'tox' || 'frz' || 'slp' || 'brn') pokemon.cureStatus();
 			}
-		},
-		secondary: {
-			chance: 100,
-			status: 'psn',
+			if (!source.isAlly(pokemon)) {
+				pokemon.trySetStatus('psn', source, move);
+			}
 		},
 		target: "normal",
 		type: "Poison",
+		contestType: "Cute",
+	},
+	llenpuff: {
+		num: 676,
+		accuracy: 100,
+		basePower: 90,
+		category: "Special",
+		name: "Pollen Puff",
+		pp: 15,
+		priority: 0,
+		flags: { protect: 1, mirror: 1, allyanim: 1, metronome: 1, bullet: 1 },
+		onTryHit(target, source, move) {
+			if (source.isAlly(target)) {
+				move.basePower = 0;
+				move.infiltrates = true;
+			}
+		},
+		onTryMove(source, target, move) {
+			if (source.isAlly(target) && source.volatiles['healblock']) {
+				this.attrLastMove('[still]');
+				this.add('cant', source, 'move: Heal Block', move);
+				return false;
+			}
+		},
+		onHit(target, source, move) {
+			if (source.isAlly(target)) {
+				if (!this.heal(Math.floor(target.baseMaxhp * 0.5))) {
+					return this.NOT_FAIL;
+				}
+			}
+		},
+		target: "normal",
+		type: "Bug",
 		contestType: "Cute",
 	},
 	infirmary: { // CHOCO 3
