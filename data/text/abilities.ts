@@ -125,8 +125,8 @@ export const AbilitiesText: { [id: IDEntry]: AbilityText } = {
 	},
 	haachamacooking: {
 		name: "Haachama Cooking",
-		desc: "Upon switching in, causes opposing Pokemon to flinch. This Pokemon heals 1/8 of their maximum HP whn using a status move.",
-		shortDesc: "Heals 1/8 HP when using status moves; Causes foes to flinch on switch-in.",
+		desc: "Upon switching in, causes opposing Pokemon to flinch. This Pokemon heals 1/10 of their maximum HP whn using a status move.",
+		shortDesc: "Heals 1/10 HP when using status moves; Causes foes to flinch on switch-in.",
 	},
 	chamachange: {
 		name: "Chama Change",
@@ -428,8 +428,8 @@ export const AbilitiesText: { [id: IDEntry]: AbilityText } = {
 	},
 	parttimewarrior: {
 		name: "Part Time Warrior",
-		desc: "This Pokemon is immune to Flying-type moves and has its Speed raised by 2 stages when hit by a Flying-type move. This Pokemon's Attack is raised 2 stages after it is damaged by a Fire-type move and Defense is raised by 2 stages after it is damaged by a Fighting-type move.",
-		shortDesc: "Hit by Fire: +2 Atk, Fighting: +2 Def. Flying immunity; +2 Spe if hit by Flying.",
+		desc: "This Pokemon is immune to Flying-type moves and has its Speed raised by 1 stage when hit by a Flying-type move. This Pokemon's Attack is raised 1 stage after it is damaged by a Fire-type move and Defense is raised by 1 stage after it is damaged by a Fighting-type move.",
+		shortDesc: "Hit by Fire: +1 Atk, Fighting: +1 Def. Flying immunity; +1 Spe if hit by Flying.",
 
 	    start: "  [POKEMON] the Part-Time Warrior is here!",
 	},
@@ -553,8 +553,8 @@ export const AbilitiesText: { [id: IDEntry]: AbilityText } = {
 	},
 	goldtiger: { // NIKO
 		name: "Gold Tiger",
-		desc: "This Pokemon's Normal type moves hit Steel type Pokemon for super-effective damage.",
-		shortDesc: "Normal type moves hit Steel types for super-effective damage.",
+		desc: "This Pokemon's Normal type moves hit Steel type Pokemon for super-effective damage. If a Pokemon uses a Steel-type attack against this Pokemon, that Pokemon's offensive stat is halved when calculating the damage to this Pokemon.",
+		shortDesc: "Normal moves are 2x effective on Steel. Steel damage to user is halved",
 	},
 	publicitystunt: { // SU
 		name: "Publicity Stunt",

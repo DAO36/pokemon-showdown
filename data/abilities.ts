@@ -206,19 +206,21 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 5,
 		num: 23,
 	},
-	warcry: {
-		onUpdate(pokemon) {
+	menacing: { // FLINCH on switch in - HEALS when using STATUS moves
+		onStart(pokemon) {
             let activated = false;
-            for (const target of pokemon.foes()) {
+			for (const target of pokemon.adjacentFoes()) {
                 if (!activated) {
-                    this.add('-ability', pokemon, 'War Cry', 'boost');
+                    this.add('-ability', pokemon, 'Menacing', 'boost');
                     activated = true;
-                    target.addVolatile('taunt', this.effectState.pokemon);
+				}
+				{	
+                    target.addVolatile('flinch', this.effectState.pokemon);
                 }
             }
         },
 		flags: {},
-		name: "War Cry",
+		name: "Menacing",
 		rating: 5,
 		num: 23,
 	},
@@ -232,22 +234,6 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		name: "Pacifist Healing",
 		rating: 4,
 		num: 192,
-	},
-	menacing: { 
-		onStart(pokemon) {
-            let activated = false;
-            for (const target of pokemon.foes()) {
-                if (!activated) {
-                    this.add('-ability', pokemon, 'Menacing', 'boost');
-                    activated = true;
-                    target.addVolatile('flinch', this.effectState.pokemon);
-                }
-            }
-        },
-		flags: {},
-		name: "Menacing",
-		rating: 5,
-		num: 23,
 	},
 	aurabond: { 
 		onSourceAfterFaint(length, target, source, effect) {
@@ -450,17 +436,31 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		name: "GTFO",
 		rating: 5,
 		num: 24,
-	}, 
+	},
 	survivalist: { // works (maybe works a little TOO much) mf literally is unkillable [focus band as ability]
 		onDamagePriority: -40,
 		onDamage(damage, target, source, effect) {
-			if (this.randomChance(1, 1) && damage >= target.hp && effect && effect.effectType === 'Move') {
-				this.add("-activate", target, 'ability: Survivalist'); 
-				return target.hp - 1;
+			if (damage >= target.hp && effect && effect.effectType === 'Move') {
+				if (target.useItem()) {
+					return target.hp - 1;
+				}
 			}
 		},
 		flags: {},
 		name: "Survivalist",
+		rating: 5,
+		num: 24,
+	},
+	invincible: { // works (maybe works a little TOO much) mf literally is unkillable [focus band as ability]
+		onDamagePriority: -40,
+		onDamage(damage, target, source, effect) {
+			if (this.randomChance(1, 1) && damage >= target.hp && effect && effect.effectType === 'Move') {
+				this.add("-activate", target, 'ability: Invincible'); 
+				return target.hp - 1;
+			}
+		},
+		flags: {},
+		name: "Invincible",
 		rating: 5,
 		num: 24,
 	},
@@ -740,22 +740,6 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3.5,
 		num: 295,
 	},
-	racy: { // reskin of [Costar] but copies foes stats insetad of allies and also clears foes stats  
-		onStart(pokemon) { 
-			const foe = pokemon.side.foe.active[pokemon.side.active.length - 1 - pokemon.position]
-			const adjacentFoe = pokemon.adjacentFoes()[0]; 
-			if (!foe) return;
-
-			let i: BoostID;
-			for (i in foe.boosts) {
-				pokemon.boosts[i] = foe.boosts[i];
-			}
-		},
-		flags: {breakable: 1},
-		name: "Piracy",
-		rating: 0,
-		num: 294,
-	},
 	haachamacooking: { // FLINCH on switch in - HEALS when using STATUS moves
 		onStart(pokemon) {
             const foe = pokemon.side.foe.active[pokemon.side.active.length - 1 - pokemon.position]
@@ -769,34 +753,11 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
         },
 		onAfterMove(target, source, move) {
             if (move.category === 'Status') {
-                this.heal(target.baseMaxhp / 8);
+                this.heal(target.baseMaxhp / 10);
             }
         },
 		flags: {},
 		name: "Haachama Cooking",
-		rating: 5,
-		num: 23,
-	},
-	haachamacookingog: { // FLINCH on switch in - HEALS when using STATUS moves
-		onStart(pokemon) {
-            let activated = false;
-			for (const target of pokemon.adjacentFoes()) {
-                if (!activated) {
-                    this.add('-ability', pokemon, 'Haachama CookingOG', 'boost');
-                    activated = true;
-				}
-				{	
-                    target.addVolatile('flinch', this.effectState.pokemon);
-                }
-            }
-        },
-		onAfterMove(target, source, move) {
-            if (move.category === 'Status') {
-                this.heal(target.baseMaxhp / 8);
-            }
-        },
-		flags: {},
-		name: "Haachama CookingOG",
 		rating: 5,
 		num: 23,
 	},
@@ -978,7 +939,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 5,
 		num: -19,		
 	},
-	stayingpositive: { // SUCCESS! if the user's stats are lowered bc of a move it uses, the lowered stats are reset back to zer0
+	stayingpositive: { // if the user's stats are lowered bc of a move it uses, the lowered stats are reset back to zer0
 		onUpdate(pokemon) {
 			let activate = false;
 			const boosts: SparseBoostsTable = {};  
@@ -1695,7 +1656,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 5,
 		num: 157,
 	},
-	nnn: { // exact copy of [Seed Sower]
+	nnn: { // leech seeds anyon who hits her
 		onDamagingHitOrder: 1,
 	    onDamagingHit(damage, target, source, move) {
 		const side = source.isAlly(target) ? source.side.foe : source.side;	
@@ -2083,15 +2044,15 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	parttimewarrior: {
 		onDamagingHit(damage, target, source, move) {
 			if (move.type === 'Fighting') {
-				this.boost({def: 2});
+				this.boost({def: 1});
 			}
 			if (move.type === 'Fire') {
-				this.boost({atk: 2});
+				this.boost({atk: 1});
 			}
 		},
 		onTryHit(target, source, move) {
 			if (target !== source && move.type === 'Flying') {
-				if (!this.boost({spe: 2})) {
+				if (!this.boost({spe: 1})) {
 					this.add('-immune', target, '[from] ability: Part Time Warrior');
 				}
 				return null;
@@ -2574,14 +2535,14 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 2.5,
 		num: 43,
 	},
-	investment: { // BLUNDER POLICY but an ability RIRIKA
+	investment: { // BLUNDER POLICY but as an ability RIRIKA
 		// implemented in runMove in BATTLE-ACTIONS.ts
 		flags: {breakable: 1},
 		name: "Investment",
 		rating: 2.5,
 		num: 11,
 	},
-	nohmask: { // KINDA like a copy of DISGUISE
+	nohmask: { // a copy of DISGUISE
 		onDamage(damage, target, source, effect) {
 			if (effect && effect.effectType === 'Move' &&
 				['raden'].includes(target.species.id) && !target.transformed) {
@@ -2656,7 +2617,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 2,
 		num: 240,
 	},
-	mangaka: { // COLOR CHANGE but in reverse
+	mangaka: { // PROTEAN/COLOR CHANGE but in reverse
 		onAfterMoveSecondarySelf(source, target, move) {
             if (move.hasBounced || move.flags['futuremove'] || move.sourceEffect === 'snatch') return;
             const type = move.type;
@@ -2688,6 +2649,20 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		onFoeEffectiveness(typeMod, target, type, move) {
 			if (type === 'Steel' && move.type === 'Normal') {
 				return 1;
+			}
+		},
+		onSourceModifyAtkPriority: 6,
+		onSourceModifyAtk(atk, attacker, defender, move) {
+			if (move.type === 'Steel') {
+				this.debug('Gold Tiger Atk weaken');
+				return this.chainModify(0.5);
+			}
+		},
+		onSourceModifySpAPriority: 5,
+		onSourceModifySpA(atk, attacker, defender, move) {
+			if (move.type === 'Steel') {
+				this.debug('Gold Tiger SpA weaken');
+				return this.chainModify(0.5);
 			}
 		},
 		flags: { breakable: 1 },
