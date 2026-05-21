@@ -379,8 +379,8 @@ export const AbilitiesText: { [id: IDEntry]: AbilityText } = {
 	},
 	secretagent: {
 		name: "Secret Agent",
-		desc: "This Pokemon's type changes to match the type of the move it is about to use. This effect comes after all effects that change a move's type.",
-		shortDesc: "User's type changes to the type of the move it is using.",
+		desc: "Causes the user's types to become the same as the current types of the target. If the target's current types include typeless and a non-added type, typeless is ignored. If the target's current types include typeless and an added type from Forest's Curse or Trick-or-Treat, typeless is copied as the Normal type instead. Fails if the user is an Arceus or a Silvally, if the user is Terastallized, or if the target's current type is typeless alone.",
+		shortDesc: "User becomes the same type as the target.",
 	},
 	rainshaman: {
 		name: "Rain Shaman",

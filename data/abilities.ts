@@ -1729,15 +1729,24 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		num: 160,
 	},
 	secretagent: { // exact copy of [Protean] pre-nerf
-        onPrepareHit(source, target, move) {
-            if (move.hasBounced || move.flags['futuremove'] || move.sourceEffect === 'snatch') return;
-            const type = move.type;
-            if (type && type !== '???' && source.getTypes().join() !== type) {
-                if (!source.setType(type)) return;
-                this.add('-start', source, 'typechange', type, '[from] ability: Secret Agent');
-            }
-        },
-        onSwitchIn() {},
+        onResidual(target, source, effect) {
+			if (source.species && (source.species.num === 493 || source.species.num === 773)) return false;
+			if (source.terastallized) return false;
+			const oldApparentType = source.apparentType;
+			let newBaseTypes = target.getTypes(true).filter(type => type !== '???');
+			if (!newBaseTypes.length) {
+				if (target.addedType) {
+					newBaseTypes = ['Normal'];
+				} else {
+					return false;
+				}
+			}
+			this.add('-start', source, 'typechange', '[from] move: Secret Agent', `[of] ${target}`);
+			source.setType(newBaseTypes);
+			source.addedType = target.addedType;
+			source.knownType = target.isAlly(source) && target.knownType;
+			if (!source.knownType) source.apparentType = oldApparentType;
+		},
         rating: 5,
         name: "Secret Agent",
         num: 236
@@ -2073,7 +2082,23 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3.5,
 		num: 292,
 	},
-	muteheal: { // [UNUSED]
+	yabairys: { // [UNUSED]
+		onFoeTryMove(pokemon, target, move) {
+			const yabairysHolder = this.effectState.target;
+			if (move.flags['sound']) {
+				this.attrLastMove('[still]');
+				this.add('cant', yabairysHolder, 'ability: YabaIRyS', move, '[of] ' + pokemon);
+				return false;
+			} 
+		},
+		onTryHit(target, source, move) {
+			if (target !== source && move.flags['sound']) {
+				if (!this.heal(target.baseMaxhp / 4, target, target)) {
+					this.add('-immune', target, '[from] ability: YabaIRyS');
+				}
+				return null;
+			}
+		},
 		onTryMove(target, source, move) {
 			if (move.flags['sound']) {
 				if (!this.heal(target.baseMaxhp / 4, target, target))
@@ -2082,21 +2107,21 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			} 
 		},
 		onAnyDamage(damage, target, source, effect) {
-			if (effect && effect.name === 'Muteheal') {
+			if (effect && effect.name === 'YabaIRyS') {
 				return false;
 			}
 		},
 		flags: {breakable: 1},
-		name: "Muteheal",
+		name: "YabaIRyS",
 		rating: 0.5,
 		num: 6,
 	},
-	yabairys: { // [DAZZLING] but for SOUND type moves + [ROCKY PLAYLOAD]
+	yabairysog: { // [DAZZLING] but for SOUND type moves + [ROCKY PLAYLOAD]
 		onFoeTryMove(pokemon, target, move) {
 			const yabairysHolder = this.effectState.target;
 			if (move.flags['sound']) {
 				this.attrLastMove('[still]');
-				this.add('cant', yabairysHolder, 'ability: YabaIRyS', move, '[of] ' + pokemon);
+				this.add('cant', yabairysHolder, 'ability: YabaIRySOG', move, '[of] ' + pokemon);
 				return false;
 			} 
 		},
@@ -2115,7 +2140,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			}
 		},
 		flags: {breakable: 1},
-		name: "YabaIRyS",
+		name: "YabaIRySOG",
 		rating: 3,
 		num: 171,
 	},
