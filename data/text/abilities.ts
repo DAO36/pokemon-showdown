@@ -351,8 +351,8 @@ export const AbilitiesText: { [id: IDEntry]: AbilityText } = {
 		transform: "Changed to Hoshinova!",
 		transformEnd: "Changed to Moona!",
 	},
-	erofi: {
-		name: "Erofi",
+	alienartist: {
+		name: "Alien Artist",
 	    desc: "The target's type changes to match the type of the move the user has used on the target. This effect comes after all effects that change a move's type.",
 		shortDesc: "Target's type changes to match the type of the move the user has used.",
 	},
