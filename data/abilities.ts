@@ -2088,9 +2088,11 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			if (move.flags['sound']) {
 				this.attrLastMove('[still]');
 				this.add('cant', yabairysHolder, 'ability: YabaIRyS', move, '[of] ' + pokemon);
-				if (!this.heal(target.baseMaxhp / 4, target, target))
 				return false;
 			} 
+			if (move.flags['sound']) {
+			this.heal(target.baseMaxhp / 4, target, target)
+			}
 		},
 		onAllyTryHitSide(target, source, move) {
 			if (move.flags['sound']) {
@@ -2102,34 +2104,6 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		name: "YabaIRyS",
 		rating: 0.5,
 		num: 6,
-	},
-	yabairysog: { // [DAZZLING] but for SOUND type moves + [ROCKY PLAYLOAD]
-		onFoeTryMove(pokemon, target, move) {
-			const yabairysHolder = this.effectState.target;
-			if (move.flags['sound']) {
-				this.attrLastMove('[still]');
-				this.add('cant', yabairysHolder, 'ability: YabaIRySOG', move, '[of] ' + pokemon);
-				return false;
-			} 
-		},
-		onModifyAtkPriority: 5,
-		onModifyAtk(atk, attacker, defender, move) {
-			if (move.type === 'Rock') {
-				this.debug('Rocky Payload boost');
-				return this.chainModify(1.5);
-			}
-		},
-		onModifySpAPriority: 5,
-		onModifySpA(atk, attacker, defender, move) {
-			if (move.type === 'Rock') {
-				this.debug('Rocky Payload boost');
-				return this.chainModify(1.5);
-			}
-		},
-		flags: {breakable: 1},
-		name: "YabaIRySOG",
-		rating: 3,
-		num: 171,
 	},
 	timedilation: { // sets up Trick Room on switch-in (effects end prematurely if user/foe with this ability switches in)
 		onStart(pokemon) {
