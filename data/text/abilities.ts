@@ -431,10 +431,15 @@ export const AbilitiesText: { [id: IDEntry]: AbilityText } = {
 
 	    start: "  [POKEMON] the Part-Time Warrior is here!",
 	},
+	rabsorb: {
+		name: "Water Absorb",
+		desc: "This Pokemon is immune to Water-type moves and restores 1/4 of its maximum HP, rounded down, when hit by a Water-type move.",
+		shortDesc: "This Pokemon heals 1/4 of its max HP when hit by Water moves; Water immunity.",
+	},
 	yabairys: {
 		name: "YabaIRyS",
-		desc: "Sound moves used by opposing Pokemon targeting the user or their allies are prevented from having an effect. This Pokemon's offensive stat is multiplied by 1.5 while using a Rock-type attack.",
-		shortDesc: "User & its allies are protected from opposing sound moves. Rock moves: 1.5x power",
+		desc: "Sound moves used by opposing Pokemon targeting the user or their allies are prevented from having an effect; This Pokemon heals 1/4 of their maximum HP when the opponent attempts to use a sound based move, or when hit by an ally's sound based move.",
+		shortDesc: "Heals 1/4 HP if foe(s) try to use sound moves; blocks foe(s) from using sound moves",
 
 		block: "  [SOURCE] cannot sing [MOVE]!",
 	},
