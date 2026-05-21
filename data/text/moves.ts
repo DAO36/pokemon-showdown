@@ -645,8 +645,8 @@ export const MovesText: { [id: IDEntry]: MoveText } = {
 		desc: "The user is protected from most attacks made by other Pokemon during this turn, and Pokemon trying to use special attacks against the user have their Special Attack lowered by 1 stage. Non-damaging moves go through this protection. This move has a 1/X chance of being successful, where X starts at 1 and triples each time this move is successfully used. X resets to 1 if this move fails, if the user's last move used is not Baneful Bunker, Burning Bulwark, Detect, Endure, King's Shield, Max Guard, Obstruct, Protect, Quick Guard, Silk Trap, Spiky Shield, or Wide Guard, or if it was one of those moves and the user's protection was broken. Fails if the user moves last this turn.",
 		shortDesc: "Protects. If foe uses special attack: -1 Sp.Atk.",
 	},
-	alienassault: {
-		name: "Alien Assault",
+	area15: {
+		name: "Area 15",
 		desc: "This move's type effectiveness against Dark is changed to be neutrally effective no matter what this move's type is.",
 		shortDesc: "Psychic type move that can hit Dark types.",
 	},

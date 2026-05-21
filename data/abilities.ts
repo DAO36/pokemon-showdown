@@ -1641,24 +1641,19 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 4,
 		num: 176,
 	},
-	erofi: { // reskin of [Sap Sipper] but for Dark type immunity instead of Grass
-		onTryHitPriority: 1,
-		onTryHit(target, source, move) {
-			if (target !== source && move.type === 'Dark') {
-				if (!this.boost({atk: 1})) {
-					this.add('-immune', target, '[from] ability: Erofi');
-				}
-				return null;
-			}
-		},
-		onAllyTryHitSide(target, source, move) {
-			if (source === this.effectState.target || !target.isAlly(source)) return;
-			if (move.type === 'Dark') {
-				this.boost({atk: 1}, this.effectState.target);
-			}
-		},
+	alienartist: { // PROTEAN/COLOR CHANGE but in reverse
+		onAfterMoveSecondarySelf(source, target, move) {
+            if (move.hasBounced || move.flags['futuremove'] || move.sourceEffect === 'snatch') return;
+            const type = move.type;
+            if (move.category !== 'Status' && type && type !== '???' && target.getTypes().join() !== type && !target.fainted) {
+                if (!target.setType(type)) return;
+				this.add('-activate', source, 'ability: Alien Artist');
+                this.add('-start', target, 'typechange', type);
+            }
+        },
+        onSwitchIn() {},
 		flags: {breakable: 1},
-		name: "Erofi",
+		name: "Alien Artist",
 		rating: 5,
 		num: 157,
 	},
@@ -1984,11 +1979,20 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 4,
 		num: 22,
 	},
-	forbiddenwah: { // reskin of [Rough Skin], but only affects Special Moves instead of Contact Moves
-		onDamagingHitOrder: 1,
-		onDamagingHit(damage, target, source, move) {
-			if (move.category === 'Special') {
-				this.damage(source.baseMaxhp / 8, source, target);
+	forbiddenwah: { // reskin of [Sap Sipper] but for Dark type immunity instead of Grass
+		onTryHitPriority: 1,
+		onTryHit(target, source, move) {
+			if (target !== source && move.type === 'Dark') {
+				if (!this.boost({spa: 1})) {
+					this.add('-immune', target, '[from] ability: Forbidden Wah');
+				}
+				return null;
+			}
+		},
+		onAllyTryHitSide(target, source, move) {
+			if (source === this.effectState.target || !target.isAlly(source)) return;
+			if (move.type === 'Dark') {
+				this.boost({spa: 1}, this.effectState.target);
 			}
 		},
 		flags: {breakable: 1},
@@ -2623,14 +2627,13 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 2,
 		num: 240,
 	},
-	mangaka: { // PROTEAN/COLOR CHANGE but in reverse
-		onAfterMoveSecondarySelf(source, target, move) {
+	mangaka: { // exact copy of [Protean] pre-nerf
+        onPrepareHit(source, target, move) {
             if (move.hasBounced || move.flags['futuremove'] || move.sourceEffect === 'snatch') return;
             const type = move.type;
-            if (move.category !== 'Status' && type && type !== '???' && target.getTypes().join() !== type && !target.fainted) {
-                if (!target.setType(type)) return;
-				this.add('-activate', source, 'ability: Mangaka');
-                this.add('-start', target, 'typechange', type);
+            if (type && type !== '???' && source.getTypes().join() !== type) {
+                if (!source.setType(type)) return;
+                this.add('-start', source, 'typechange', type, '[from] ability: Mangaka');
             }
         },
         onSwitchIn() {},

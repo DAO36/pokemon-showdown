@@ -20973,7 +20973,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		types: ["Psychic"],
 		gender: "F",
 		baseStats: {hp: 80, atk: 120, def: 85, spa: 120, spd: 95, spe: 100},
-		abilities: {0: "Color Change", 1: "Mold Breaker", H: "Trace", S: "Erofi"},
+		abilities: {0: "Color Change", 1: "Mold Breaker", H: "Trace", S: "Alien Artist"},
 		heightm: 1.5,
 		weightkg: 55.5,
 		color: "Pink",

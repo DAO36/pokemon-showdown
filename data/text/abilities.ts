@@ -353,8 +353,8 @@ export const AbilitiesText: { [id: IDEntry]: AbilityText } = {
 	},
 	erofi: {
 		name: "Erofi",
-		desc: "This Pokemon is immune to Dark-type moves and has its Attack raised by 1 stage when hit by a Dark-type move.",
-		shortDesc: "Attack is raised by 1 stage if the user is hit by a Dark type move; Dark immunity.",
+	    desc: "The target's type changes to match the type of the move the user has used on the target. This effect comes after all effects that change a move's type.",
+		shortDesc: "Target's type changes to match the type of the move the user has used.",
 	},
 	nnn: {
 		name: "NNN",
@@ -416,10 +416,8 @@ export const AbilitiesText: { [id: IDEntry]: AbilityText } = {
 	},
 	forbiddenwah: {
 		name: "Forbidden Wah",
-		desc: "Pokemon attacking the user with Special moves lose 1/8 of their maximum HP, rounded down.",
-		shortDesc: "Pokemon using Special Attacks on the user lose 1/8 of their max HP.",
-
-		damage: "  [POKEMON] is succumbing to The Forbidden Wah!",
+		desc: "This Pokemon is immune to Dark-type moves and has its Special Attack raised by 1 stage when hit by a Dark-type move.",
+		shortDesc: "Special Attack is raised by 1 if user is hit by a Dark type move; Dark immunity.",
 	},
 	phoenix: {
 		name: "Phoenix",
@@ -541,10 +539,10 @@ export const AbilitiesText: { [id: IDEntry]: AbilityText } = {
 		desc: "When one of this user's stat stages would be lowered by another Pokemon, that Pokemon's stat stage is lowered instead. This effect does not happen if the user's stat stage was already -6. If the other Pokemon has a substitute, neither Pokemon has its stat stage lowered. This Pokemon is unaffected by certain non-damaging moves directed at it and will instead use such moves against the original user. Moves reflected in this way are unable to be reflected again by this or Magic Coat's effect. Spikes, Stealth Rock, Sticky Web, and Toxic Spikes can only be reflected once per side, by the leftmost Pokemon under this or Magic Coat's effect. The Lightning Rod and Storm Drain Abilities redirect their respective moves before this Ability takes effect.",
 		shortDesc: "Blocks certain status moves & stat changes, & bounces them back to the target.",
 	},
-	mangaka: {
+	mangaka: { // AO
 		name: "Mangaka",
-		desc: "The target's type changes to match the type of the move the user is about to use. This effect comes after all effects that change a move's type.",
-		shortDesc: "Target's type changes to match the type of the move the user is about to use.",
+	    desc: "This Pokemon's type changes to match the type of the move it is about to use. This effect comes after all effects that change a move's type.",
+		shortDesc: "User's type changes to the type of the move it is using.",
 	},
 	gowiththeflow: { // RIONA
 		name: "Go with the Flow",

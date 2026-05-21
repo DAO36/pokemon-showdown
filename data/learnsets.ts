@@ -96934,7 +96934,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			sweetkiss: ["9M"],
 			healblock: ["9M"],
 			paintbrush: ["9M"],
-			alienassault: ["9M"],
+			area15: ["9M"],
         },
 	},	
 	risu: {
