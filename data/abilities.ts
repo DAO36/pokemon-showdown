@@ -2089,10 +2089,9 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 				this.attrLastMove('[still]');
 				this.add('cant', yabairysHolder, 'ability: YabaIRyS', move, '[of] ' + pokemon);
 				return false;
-			} 
-			if (move.flags['sound']) {
-			this.heal(target.baseMaxhp / 4, target, target)
 			}
+			if (move.flags['sound'])
+			!this.heal(target.baseMaxhp / 4, target, target)
 		},
 		onAllyTryHitSide(target, source, move) {
 			if (move.flags['sound']) {
