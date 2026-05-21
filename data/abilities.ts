@@ -2086,6 +2086,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		onFoeTryMove(pokemon, target, move) {
 			const yabairysHolder = this.effectState.target;
 			if (move.flags['sound']) {
+				if (!this.heal(target.baseMaxhp / 4, target, target))
 				this.attrLastMove('[still]');
 				this.add('cant', yabairysHolder, 'ability: YabaIRyS', move, '[of] ' + pokemon);
 				return false;
@@ -2143,33 +2144,6 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		name: "YabaIRySOG",
 		rating: 3,
 		num: 171,
-	},
-	yabairys2: { // combines [Rocky Payload] + [PUNK ROCK] minus the sound resistance
-		onBasePowerPriority: 7,
-		onBasePower(basePower, attacker, defender, move) {
-			if (move.flags['sound']) {
-				this.debug('YabaIRyS2 boost');
-				return this.chainModify([5325, 4096]);
-			}
-		},
-		onModifyAtkPriority: 5,
-		onModifyAtk(atk, attacker, defender, move) {
-			if (move.type === 'Rock') {
-				this.debug('Rocky Payload boost');
-				return this.chainModify(1.5);
-			}
-		},
-		onModifySpAPriority: 5,
-		onModifySpA(atk, attacker, defender, move) {
-			if (move.type === 'Rock') {
-				this.debug('Rocky Payload boost');
-				return this.chainModify(1.5);
-			}
-		},
-		flags: {breakable: 1},
-		name: "YabaIRyS2",
-		rating: 4,
-		num: 29,
 	},
 	timedilation: { // sets up Trick Room on switch-in (effects end prematurely if user/foe with this ability switches in)
 		onStart(pokemon) {
