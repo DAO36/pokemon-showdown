@@ -1729,10 +1729,10 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		num: 160,
 	},
 	secretagent: { // exact copy of [Protean] pre-nerf
-        onModifyType(move, pokemon, target) {
-			if (pokemon.species && (pokemon.species.num === 493 || pokemon.species.num === 773)) return false;
-			if (pokemon.terastallized) return false;
-			const oldApparentType = pokemon.apparentType;
+        onStart(target, source) {
+			if (source.species && (source.species.num === 493 || source.species.num === 773)) return false;
+			if (source.terastallized) return false;
+			const oldApparentType = source.apparentType;
 			let newBaseTypes = target.getTypes(true).filter(type => type !== '???');
 			if (!newBaseTypes.length) {
 				if (target.addedType) {
@@ -1741,11 +1741,11 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 					return false;
 				}
 			}
-			this.add('-start', pokemon, 'typechange', '[from] move: Secret Agent', `[of] ${target}`);
-			pokemon.setType(newBaseTypes);
-			pokemon.addedType = target.addedType;
-			pokemon.knownType = target.isAlly(pokemon) && target.knownType;
-			if (!pokemon.knownType) pokemon.apparentType = oldApparentType;
+			this.add('-start', source, 'typechange', '[from] move: Secret Agent', `[of] ${target}`);
+			source.setType(newBaseTypes);
+			source.addedType = target.addedType;
+			source.knownType = target.isAlly(source) && target.knownType;
+			if (!source.knownType) source.apparentType = oldApparentType;
 		},
         rating: 5,
         name: "Secret Agent",
@@ -2086,9 +2086,9 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		onFoeTryMove(pokemon, target, move) {
 			const yabairysHolder = this.effectState.target;
 			if (move.flags['sound']) {
-				if (!this.heal(target.baseMaxhp / 4, target, target))
 				this.attrLastMove('[still]');
 				this.add('cant', yabairysHolder, 'ability: YabaIRyS', move, '[of] ' + pokemon);
+				if (!this.heal(target.baseMaxhp / 4, target, target))
 				return false;
 			} 
 		},
