@@ -2087,8 +2087,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			const yabairysHolder = this.effectState.target;
 			if (move.flags['sound']) {
 				this.attrLastMove('[still]');
-				this.add('cant', yabairysHolder, 'ability: YabaIRyS', move, '[of] ' + pokemon);
-				this.add(this.heal(target.baseMaxhp / 4, target, target));
+				this.add(this.heal(target.baseMaxhp / 4, target, target), 'cant', yabairysHolder, 'ability: YabaIRyS', move, '[of] ' + pokemon);
 				return false;
 			}
 		},
@@ -2100,6 +2099,27 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		},
 		flags: {breakable: 1},
 		name: "YabaIRyS",
+		rating: 0.5,
+		num: 6,
+	},
+	yabairys2: { // [UNUSED]
+		onFoeTryMove(pokemon, target, move) {
+			const yabairys2Holder = this.effectState.target;
+			if (move.flags['sound']) {
+				this.attrLastMove('[still]');
+				this.add('cant', yabairys2Holder, 'ability: YabaIRyS2', move, '[of] ' + pokemon);
+				this.add(this.heal(target.baseMaxhp / 4, target, target));
+				return false;
+			}
+		},
+		onAllyTryHitSide(target, source, move) {
+			if (move.flags['sound']) {
+				if (!this.heal(target.baseMaxhp / 4, target, target))
+				this.add('-immune', this.effectState.target, '[from] ability: YabaIRyS2');
+			}
+		},
+		flags: {breakable: 1},
+		name: "YabaIRyS2",
 		rating: 0.5,
 		num: 6,
 	},
