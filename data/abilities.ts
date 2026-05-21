@@ -2094,7 +2094,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		},
 		onAllyTryHitSide(target, source, move) {
 			if (move.flags['sound']) {
-				if (!this.heal(target.baseMaxhp / 4, target, target))
+				if (this.heal(target.baseMaxhp / 4, target, target))
 				this.add('-immune', this.effectState.target, '[from] ability: YabaIRyS');
 			}
 		},
