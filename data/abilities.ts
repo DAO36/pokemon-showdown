@@ -1729,7 +1729,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		num: 160,
 	},
 	secretagent: { // exact copy of [Protean] pre-nerf
-        onStart(target, source) {
+        onBeforeMove(source, target, move) {
 			if (source.species && (source.species.num === 493 || source.species.num === 773)) return false;
 			if (source.terastallized) return false;
 			const oldApparentType = source.apparentType;
@@ -2092,24 +2092,10 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 				return false;
 			} 
 		},
-		onTryHit(target, source, move) {
-			if (target !== source && move.flags['sound']) {
-				if (!this.heal(target.baseMaxhp / 4, target, target)) {
-					this.add('-immune', target, '[from] ability: YabaIRyS');
-				}
-				return null;
-			}
-		},
-		onTryMove(target, source, move) {
+		onAllyTryHitSide(target, source, move) {
 			if (move.flags['sound']) {
 				if (!this.heal(target.baseMaxhp / 4, target, target))
-				this.attrLastMove('[still]');
-				return true;
-			} 
-		},
-		onAnyDamage(damage, target, source, effect) {
-			if (effect && effect.name === 'YabaIRyS') {
-				return false;
+				this.add('-immune', this.effectState.target, '[from] ability: YabaIRyS');
 			}
 		},
 		flags: {breakable: 1},
@@ -5880,7 +5866,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		},
 		// Damage modifier implemented in BattleActions#modifyDamage()
 		onSourceModifySecondaries(secondaries, target, source, move) {
-			if (move.multihitType === 'parentalbond' && move.id === 'secretpower' && move.hit < 2) {
+			if (move.multihitType === 'parentalbond' && move.hit < 2) {
 				// hack to prevent accidentally suppressing King's Rock/Razor Fang
 				return secondaries.filter(effect => effect.volatileStatus === 'flinch');
 			}
