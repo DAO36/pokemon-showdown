@@ -1,6 +1,7 @@
 // List of flags and their descriptions can be found in sim/dex-moves.ts
 
 import { transformSync } from 'esbuild';
+import { getPriority } from 'node:os';
 
 export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	"10000000voltthunderbolt": {
@@ -2640,28 +2641,20 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Dark",
 	},
 	v7strike: {
-		num: 364,
+		num: 389,
 		accuracy: 100,
 		basePower: 80,
 		category: "Physical",
 		name: "V7 Strike",
-		pp: 10,
-		priority: 0,
-		flags: {contact: 1, bullet: 1},
+		pp: 5,
+		priority: 1,
+		flags: { contact: 1, protect: 1, mirror: 1, metronome: 1 },
 		onModifyPriority(priority, source, target, move) {
-			if (target.volatiles['protect'] || target.volatiles['kingsshield'] || target.volatiles['spikyshield'] || target.volatiles['lunarshield'] || target.volatiles['obstruct'] || target.volatiles['phoenixshield'] || target.volatiles['burningbulwark'] || target.volatiles['banefulbunker'] || target.volatiles['silktrap']) {
-				return priority + 5;
+			const action = this.queue.willMove(target);
+			if (target.volatiles['protect']) {
+				return priority + 5 && target.addVolatile('flinch', source, move);
 			}
 		},
-		secondary: {
-			chance: 100,
-			onHit(target, source, move) {
-				if (target.volatiles['protect'] || target.volatiles['kingsshield'] || target.volatiles['spikyshield'] || target.volatiles['lunarshield'] || target.volatiles['obstruct'] || target.volatiles['phoenixshield'] || target.volatiles['burningbulwark'] || target.volatiles['banefulbunker'] || target.volatiles['silktrap']) {
-					target.addVolatile('flinch', source, move);
-				}
-			},
-		},
-		breaksProtect: true,
 		target: "normal",
 		type: "Psychic",
 		contestType: "Clever",
