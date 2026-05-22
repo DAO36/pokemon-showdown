@@ -2652,7 +2652,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		onTry(source, target) {
 			const action = this.queue.willMove(target);
 			const move = action?.choice === 'move' ? action.move : null;
-			if (!move || (move.category === 'Status' && move.id !== 'mefirst') || target.volatiles['mustrecharge']) {
+			if (!move || (move.id !== 'mefirst')) {
 				return false;
 			}
 		},
@@ -2672,7 +2672,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		onTry(source, target) {
 			const action = this.queue.willMove(target);
 			const move = action?.choice === 'move' ? action.move : null;
-			if (target.volatiles['protect']) {
+			if (!move || (move.id === 'protect')) {
 				target.addVolatile('flinch');
 			}
 		},
