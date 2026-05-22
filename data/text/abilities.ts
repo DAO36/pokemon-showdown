@@ -379,8 +379,8 @@ export const AbilitiesText: { [id: IDEntry]: AbilityText } = {
 	},
 	secretagent: {
 		name: "Secret Agent",
-		desc: "Causes the user's types to become the same as the current types of the target. If the target's current types include typeless and a non-added type, typeless is ignored. If the target's current types include typeless and an added type from Forest's Curse or Trick-or-Treat, typeless is copied as the Normal type instead. Fails if the user is an Arceus or a Silvally, if the user is Terastallized, or if the target's current type is typeless alone.",
-		shortDesc: "User becomes the same type as the target.",
+		desc: "Upon switching in, the user's type becomes the same as the current type(s) of the target. If the target's current type(s) include typeless and a non-added type, typeless is ignored. If the target's current types include typeless and an added type from Forest's Curse or Trick-or-Treat, typeless is copied as the Normal type instead. Fails if the target's current type is typeless alone.",
+		shortDesc: "On switch in, user becomes the same type as the target.",
 	},
 	rainshaman: {
 		name: "Rain Shaman",
