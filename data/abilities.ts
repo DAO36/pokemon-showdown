@@ -1729,7 +1729,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		num: 160,
 	},
 	secretagent: { // exact copy of [Protean] pre-nerf
-		onBeforeTurn(pokemon) {
+		onSwitchIn(pokemon) {
 			const target = pokemon.adjacentFoes()[0];
 			const oldApparentType = pokemon.apparentType;
 			let newBaseTypes = target.getTypes(true).filter(type => type !== '???');
