@@ -1730,10 +1730,10 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	},
 	secretagent: { // exact copy of [Protean] pre-nerf
 		onSwitchIn(pokemon) {
+			if (!pokemon.fainted) return false;
 			const target = pokemon.adjacentFoes()[0];
 			const oldApparentType = pokemon.apparentType;
 			let newBaseTypes = target.getTypes(true).filter(type => type !== '???');
-			if (!target.fainted)
 			if (!newBaseTypes.length) {
 				if (target.addedType) {
 					newBaseTypes = ['Normal'];
@@ -1741,7 +1741,6 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 					return false;
 				}
 			}
-			if (!target.fainted)
 			this.add('-start', pokemon, 'typechange', '[from] move: Secret Agent', `[of] ${target}`);
 			pokemon.setType(newBaseTypes);
 			pokemon.addedType = target.addedType;
