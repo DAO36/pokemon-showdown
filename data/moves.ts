@@ -2640,80 +2640,12 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		target: "normal",
 		type: "Dark",
 	},
-	uckerpunch: {
-		num: 389,
-		accuracy: 100,
-		basePower: 70,
-		category: "Physical",
-		name: "Sucker Punch",
-		pp: 5,
-		priority: 1,
-		flags: { contact: 1, protect: 1, mirror: 1, metronome: 1 },
-		onTry(source, target) {
-			const action = this.queue.willMove(target);
-			const move = action?.choice === 'move' ? action.move : null;
-			if (!move || (move.id !== 'mefirst')) {
-				return false;
-			}
-		},
-		target: "normal",
-		type: "Dark",
-		contestType: "Clever",
-	},
-	erhand: {
-		num: 918,
-		accuracy: 100,
-		basePower: 65,
-		category: "Physical",
-		name: "Upper Hand",
-		pp: 15,
-		priority: 3,
-		flags: { contact: 1, protect: 1, mirror: 1, metronome: 1 },
-		onTry(source, target) {
-			const action = this.queue.willMove(target);
-			const move = action?.choice === 'move' ? action.move : null;
-			if (!move || move.priority <= 0.1 || move.category === 'Status') {
-				return false;
-			}
-		},
-		secondary: {
-			chance: 100,
-			volatileStatus: 'flinch',
-		},
-		target: "normal",
-		type: "Fighting",
-	},
-	v7strike: {
-		num: 389,
-		accuracy: 100,
-		basePower: 80,
-		category: "Physical",
-		name: "V7 Strike",
-		pp: 5,
-		priority: 5,
-		flags: { contact: 1, mirror: 1, metronome: 1 },
-		onTry(source, target) {
-			const action = this.queue.willMove(target);
-			const move = action?.choice === 'move' ? action.move : null;
-			if (!move || (move.id === 'protect')) {
-				target.addVolatile('flinch');
-			}
-		},
-		onModifyPriority(priority, source, target, move) {
-			if (move.id !== 'protect') {
-				return priority + 0;
-			}
-		},
-		target: "normal",
-		type: "Psychic",
-		contestType: "Clever",
-	},
-	v7strikeog: {
+	v7strike: { // ZETA 2
 		num: 364,
 		accuracy: 100,
 		basePower: 80,
 		category: "Physical",
-		name: "V7 StrikeOG",
+		name: "V7 Strike",
 		pp: 10,
 		priority: 0,
 		flags: {contact: 1, bullet: 1},
