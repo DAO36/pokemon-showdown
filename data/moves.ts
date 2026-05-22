@@ -2650,6 +2650,33 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		flags: {contact: 1, bullet: 1},
 		onModifyPriority(priority, source, target, move) {
 			if (target.volatiles['protect'] || target.volatiles['kingsshield'] || target.volatiles['spikyshield'] || target.volatiles['lunarshield'] || target.volatiles['obstruct'] || target.volatiles['phoenixshield'] || target.volatiles['burningbulwark'] || target.volatiles['banefulbunker'] || target.volatiles['silktrap']) {
+				return priority + 5;
+			}
+		},
+		secondary: {
+			chance: 100,
+			onHit(target, source, move) {
+				if (target.volatiles['protect'] || target.volatiles['kingsshield'] || target.volatiles['spikyshield'] || target.volatiles['lunarshield'] || target.volatiles['obstruct'] || target.volatiles['phoenixshield'] || target.volatiles['burningbulwark'] || target.volatiles['banefulbunker'] || target.volatiles['silktrap']) {
+					target.addVolatile('flinch', source, move);
+				}
+			},
+		},
+		breaksProtect: true,
+		target: "normal",
+		type: "Psychic",
+		contestType: "Clever",
+	},
+	v7strikeog: {
+		num: 364,
+		accuracy: 100,
+		basePower: 80,
+		category: "Physical",
+		name: "V7 StrikeOG",
+		pp: 10,
+		priority: 0,
+		flags: {contact: 1, bullet: 1},
+		onModifyPriority(priority, source, target, move) {
+			if (target.volatiles['protect'] || target.volatiles['kingsshield'] || target.volatiles['spikyshield'] || target.volatiles['lunarshield'] || target.volatiles['obstruct'] || target.volatiles['phoenixshield'] || target.volatiles['burningbulwark'] || target.volatiles['banefulbunker'] || target.volatiles['silktrap']) {
 				return priority + 3;
 			}
 		},
