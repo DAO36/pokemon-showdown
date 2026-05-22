@@ -1729,10 +1729,9 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		num: 160,
 	},
 	secretagent: { // exact copy of [Protean] pre-nerf
-        onBeforeMove(source, target, move) {
-			if (source.species && (source.species.num === 493 || source.species.num === 773)) return false;
-			if (source.terastallized) return false;
-			const oldApparentType = source.apparentType;
+		onStart(pokemon) {
+			const target = pokemon.adjacentFoes()[0];
+			const oldApparentType = pokemon.apparentType;
 			let newBaseTypes = target.getTypes(true).filter(type => type !== '???');
 			if (!newBaseTypes.length) {
 				if (target.addedType) {
@@ -1741,11 +1740,11 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 					return false;
 				}
 			}
-			this.add('-start', source, 'typechange', '[from] move: Secret Agent', `[of] ${target}`);
-			source.setType(newBaseTypes);
-			source.addedType = target.addedType;
-			source.knownType = target.isAlly(source) && target.knownType;
-			if (!source.knownType) source.apparentType = oldApparentType;
+			this.add('-start', pokemon, 'typechange', '[from] move: Secret Agent', `[of] ${target}`);
+			pokemon.setType(newBaseTypes);
+			pokemon.addedType = target.addedType;
+			pokemon.knownType = target.isAlly(pokemon) && target.knownType;
+			if (!pokemon.knownType) pokemon.apparentType = oldApparentType;
 		},
         rating: 5,
         name: "Secret Agent",
