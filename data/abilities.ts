@@ -1729,7 +1729,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		num: 160,
 	},
 	secretagent: { // exact copy of [Protean] pre-nerf
-		onStart(pokemon) {
+		onUpdate(pokemon) {
 			const target = pokemon.adjacentFoes()[0];
 			const oldApparentType = pokemon.apparentType;
 			let newBaseTypes = target.getTypes(true).filter(type => type !== '???');
@@ -1748,6 +1748,28 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		},
         rating: 5,
         name: "Secret Agent",
+        num: 236
+	},
+	secretagent2: { // exact copy of [Protean] pre-nerf
+		onStart(pokemon) {
+			const target = pokemon.adjacentFoes()[0];
+			const oldApparentType = pokemon.apparentType;
+			let newBaseTypes = target.getTypes(true).filter(type => type !== '???');
+			if (!newBaseTypes.length) {
+				if (target.addedType) {
+					newBaseTypes = ['Normal'];
+				} else {
+					return false;
+				}
+			}
+			this.add('-start', pokemon, 'typechange', '[from] move: Secret Agent2', `[of] ${target}`);
+			pokemon.setType(newBaseTypes);
+			pokemon.addedType = target.addedType;
+			pokemon.knownType = target.isAlly(pokemon) && target.knownType;
+			if (!pokemon.knownType) pokemon.apparentType = oldApparentType;
+		},
+        rating: 5,
+        name: "Secret Agent2",
         num: 236
 	},
 	graondstone: { // combines [Sand Force] + [Rain Dish] (but Sandstorm instead of Rain) <<<UNUSED>>>
