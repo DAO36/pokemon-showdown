@@ -1740,6 +1740,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 					return false;
 				}
 			}
+			if (!target.fainted)
 			this.add('-start', pokemon, 'typechange', '[from] move: Secret Agent', `[of] ${target}`);
 			pokemon.setType(newBaseTypes);
 			pokemon.addedType = target.addedType;

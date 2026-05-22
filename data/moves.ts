@@ -4677,8 +4677,6 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		priority: 0,
 		flags: {protect: 1, allyanim: 1, contact: 1},
 		onHit(target, source) {
-			if (source.species && (source.species.num === 493 || source.species.num === 773)) return false
-			if (source.terastallized) return false;
 			if (source.apparentType === target.apparentType) return false;
 			const oldApparentType = source.apparentType;
 			let newBaseTypes = target.getTypes(true).filter(type => type !== '???');
