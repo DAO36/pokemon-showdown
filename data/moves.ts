@@ -2647,8 +2647,8 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		category: "Physical",
 		name: "V7 Strike",
 		pp: 5,
-		priority: 1,
-		flags: { contact: 1, protect: 1, mirror: 1, metronome: 1 },
+		priority: 0,
+		flags: { contact: 1, mirror: 1, metronome: 1 },
 		onModifyPriority(priority, source, target, move) {
 			const action = this.queue.willMove(target);
 			if (target.volatiles['protect']) {
