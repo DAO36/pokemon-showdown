@@ -1755,7 +1755,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			const foe = pokemon.side.foe.active[pokemon.side.active.length - 1 - pokemon.position]
 			const adjacentFoe = pokemon.adjacentFoes()[0]; 
 			const oldApparentType = pokemon.apparentType;
-			if (!foe || foe.fainted || ally.switchFlag) return false;
+			if (!foe || foe.fainted) return false;
 			let newBaseTypes = foe.getTypes(true).filter(type => type !== '???');
 			if (!newBaseTypes.length) {
 				if (foe.addedType) {
@@ -1768,7 +1768,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			this.add('-activate', pokemon, 'ability: Secret Agent');
 			pokemon.setType(newBaseTypes);
 			pokemon.addedType = foe.addedType;
-			pokemon.knownType = foe.isAlly(pokemon) && foe.knownType;
+			pokemon.knownType = !foe.isAlly(pokemon) && foe.knownType;
 			if (!pokemon.knownType) pokemon.apparentType = oldApparentType;
 		},
         rating: 5,
