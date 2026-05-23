@@ -40,26 +40,6 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 0.1,
 		num: 0,
 	},
-	timidate: {
-		onFoeSwitchIn(target, source) {
-			let activated = false;
-			for (const foe of target.adjacentFoes()) {
-				if (!activated) {
-					this.add('-ability', source, 'Timidate', 'boost');
-					activated = true;
-				}
-				if (target.volatiles['substitute']) {
-					this.add('-immune', target);
-				} else {
-					this.boost({ atk: -1 }, target, target, null, true);
-				}
-			}
-		},
-		flags: {},
-		name: "Timidate",
-		rating: 3.5,
-		num: 22,
-	},
 	feastorfamine: {
         onFoeTryBoost(boost, target, source, effect) {
             if (effect?.name === 'Opportunist' || effect?.name === 'Mirror Herb') return;
