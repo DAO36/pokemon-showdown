@@ -1728,24 +1728,46 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 2.5,
 		num: 160,
 	},
+	chamacooking: { // FLINCH on switch in - HEALS when using STATUS moves
+		onStart(pokemon) {
+            const foe = pokemon.side.foe.active[pokemon.side.active.length - 1 - pokemon.position]
+			const adjacentFoe = pokemon.adjacentFoes()[0]; 
+			if (!foe) return;
+                    this.add('-ability', pokemon, 'Haachama Cooking', 'boost');
+				{		
+                    foe.addVolatile('flinch', this.effectState.pokemon);
+                }
+            
+        },
+		onAfterMove(target, source, move) {
+            if (move.category === 'Status') {
+                this.heal(target.baseMaxhp / 10);
+            }
+        },
+		flags: {},
+		name: "Haachama Cooking",
+		rating: 5,
+		num: 23,
+	},
 	secretagent: { // REFLECT TYPE but as an ability = this.add('-activate', pokemon, 'ability: Secret Agent');
-		onAnySwitchIn(pokemon) { 
-			const target = pokemon.adjacentFoes()[0];
+		onAnySwitchIn(pokemon) {
+			const foe = pokemon.side.foe.active[pokemon.side.active.length - 1 - pokemon.position]
+			const adjacentFoe = pokemon.adjacentFoes()[0]; 
 			const oldApparentType = pokemon.apparentType;
-			if (!target || target.fainted) return false;
-			let newBaseTypes = target.getTypes(true).filter(type => type !== '???');
+			if (!foe || foe.fainted) return false;
+			let newBaseTypes = foe.getTypes(true).filter(type => type !== '???');
 			if (!newBaseTypes.length) {
-				if (target.addedType) {
+				if (foe.addedType) {
 					newBaseTypes = ['Normal'];
 				} else {
 					return false;
 				}
 			}
-			this.add('-start', pokemon, 'typechange',`[of] ${target}`);
+			this.add('-start', pokemon, 'typechange',`[of] ${foe}`);
 			this.add('-activate', pokemon, 'ability: Secret Agent');
 			pokemon.setType(newBaseTypes);
-			pokemon.addedType = target.addedType;
-			pokemon.knownType = target.isAlly(pokemon) && target.knownType;
+			pokemon.addedType = foe.addedType;
+			pokemon.knownType = foe.isAlly(pokemon) && foe.knownType;
 			if (!pokemon.knownType) pokemon.apparentType = oldApparentType;
 		},
         rating: 5,
