@@ -1733,14 +1733,15 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			const target = pokemon.adjacentFoes()[0];
 			const oldApparentType = pokemon.apparentType;
 			let newBaseTypes = target.getTypes(true).filter(type => type !== '???');
+			if (!target || target.fainted) return;
 			if (!newBaseTypes.length) {
-				if (!target.fainted && target.addedType) {
+				if (target.addedType) {
 					newBaseTypes = ['Normal'];
 				} else {
 					return false;
 				}
 			}
-			this.add('-start', pokemon, 'typechange', '[from] move: Secret Agent', `[of] ${target}`);
+			this.add('-start', pokemon, 'typechange', '[from] ability: Secret Agent', `[of] ${target}`);
 			pokemon.setType(newBaseTypes);
 			pokemon.addedType = target.addedType;
 			pokemon.knownType = target.isAlly(pokemon) && target.knownType;
@@ -1762,7 +1763,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 					return false;
 				}
 			}
-			this.add('-start', pokemon, 'typechange', '[from] move: Secret Agent2', `[of] ${target}`);
+			this.add('-start', pokemon, 'typechange', '[from] ability: Secret Agent2', `[of] ${target}`);
 			pokemon.setType(newBaseTypes);
 			pokemon.addedType = target.addedType;
 			pokemon.knownType = target.isAlly(pokemon) && target.knownType;
