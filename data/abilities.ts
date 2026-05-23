@@ -1750,7 +1750,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		num: 23,
 	},
 	secretagent: { // REFLECT TYPE but as an ability = this.add('-activate', pokemon, 'ability: Secret Agent');
-		onAnySwitchIn(pokemon) {
+		onFoeSwitchIn(pokemon) {
 			const foe = pokemon.side.foe.active[pokemon.side.active.length - 1 - pokemon.position]
 			const adjacentFoe = pokemon.adjacentFoes()[0]; 
 			const oldApparentType = pokemon.apparentType;
@@ -1772,6 +1772,30 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		},
         rating: 5,
         name: "Secret Agent",
+        num: 236
+	},
+	secretagent2: { // REFLECT TYPE but as an ability = this.add('-activate', pokemon, 'ability: Secret Agent');
+		onAnySwitchIn(pokemon) {
+			const target = pokemon.adjacentFoes()[0];
+			const oldApparentType = pokemon.apparentType;
+			if (!target || target.fainted) return false;
+			let newBaseTypes = target.getTypes(true).filter(type => type !== '???');
+			if (!newBaseTypes.length) {
+				if (target.addedType) {
+					newBaseTypes = ['Normal'];
+				} else {
+					return false;
+				}
+			}
+			this.add('-start', pokemon, 'typechange',`[of] ${target}`);
+			this.add('-activate', pokemon, 'ability: Secret Agent2');
+			pokemon.setType(newBaseTypes);
+			pokemon.addedType = target.addedType;
+			pokemon.knownType = target.isAlly(pokemon) && target.knownType;
+			if (!pokemon.knownType) pokemon.apparentType = oldApparentType;
+		},
+        rating: 5,
+        name: "Secret Agent2",
         num: 236
 	},
 	graondstone: { // combines [Sand Force] + [Rain Dish] (but Sandstorm instead of Rain) <<<UNUSED>>>
