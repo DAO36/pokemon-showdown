@@ -1768,7 +1768,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			this.add('-activate', pokemon, 'ability: Secret Agent');
 			pokemon.setType(newBaseTypes);
 			pokemon.addedType = foe.addedType;
-			pokemon.knownType = !foe.isAlly(pokemon) && foe.knownType;
+			pokemon.knownType = foe.isAlly(pokemon) && foe.knownType;
 			if (!pokemon.knownType) pokemon.apparentType = oldApparentType;
 		},
         rating: 5,
