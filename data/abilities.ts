@@ -45,7 +45,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			let activated = false;
 			for (const foe of target.adjacentFoes()) {
 				if (!activated) {
-					this.add('-ability', source, 'Intimidate', 'boost');
+					this.add('-ability', source, 'Timidate', 'boost');
 					activated = true;
 				}
 				if (target.volatiles['substitute']) {
@@ -56,7 +56,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			}
 		},
 		flags: {},
-		name: "Intimidate",
+		name: "Timidate",
 		rating: 3.5,
 		num: 22,
 	},
