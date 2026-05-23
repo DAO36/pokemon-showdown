@@ -1750,25 +1750,24 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		num: 23,
 	},
 	secretagent: { // REFLECT TYPE but as an ability = this.add('-activate', pokemon, 'ability: Secret Agent');
-		onFoeSwitchIn(pokemon) {
-			const foe = pokemon.side.foe.active[pokemon.side.active.length - 1 - pokemon.position]
-			const adjacentFoe = pokemon.adjacentFoes()[0]; 
-			const oldApparentType = pokemon.apparentType;
-			if (!foe || foe.fainted) return false;
-			let newBaseTypes = foe.getTypes(true).filter(type => type !== '???');
+		onFoeSwitchIn(target, source) {
+			const foe = target.side.foe.active[target.side.active.length - 1 - target.position]
+			const adjacentFoe = target.adjacentFoes()[0]; 
+			const oldApparentType = source.apparentType;
+			let newBaseTypes = target.getTypes(true).filter(type => type !== '???');
 			if (!newBaseTypes.length) {
-				if (foe.addedType) {
+				if (target.addedType) {
 					newBaseTypes = ['Normal'];
 				} else {
 					return false;
 				}
 			}
-			this.add('-start', pokemon, 'typechange',`[of] ${foe}`);
-			this.add('-activate', pokemon, 'ability: Secret Agent');
-			pokemon.setType(newBaseTypes);
-			pokemon.addedType = foe.addedType;
-			pokemon.knownType = foe.isAlly(pokemon) && foe.knownType;
-			if (!pokemon.knownType) pokemon.apparentType = oldApparentType;
+			this.add('-start', target, 'typechange',`[of] ${foe}`);
+			this.add('-activate', source, 'ability: Secret Agent');
+			source.setType(newBaseTypes);
+			source.addedType = target.addedType;
+			source.knownType = target.isAlly(source) && target.knownType;
+			if (!source.knownType) source.apparentType = oldApparentType;
 		},
 		onSwitchIn(pokemon) {
 			const foe = pokemon.side.foe.active[pokemon.side.active.length - 1 - pokemon.position]
