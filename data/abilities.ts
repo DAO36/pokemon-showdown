@@ -1750,7 +1750,9 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		num: 23,
 	},
 	secretagent: { // REFLECT TYPE but as an ability = this.add('-activate', pokemon, 'ability: Secret Agent');
-		onFoeBeforeSwitchIn(pokemon) {
+		onAnySwitchIn(pokemon) {
+			const ally = pokemon.allies()[0];
+			if (ally) return false;
 			const foe = pokemon.side.foe.active[pokemon.side.active.length - 1 - pokemon.position]
 			const adjacentFoe = pokemon.adjacentFoes()[0]; 
 			const oldApparentType = pokemon.apparentType;
