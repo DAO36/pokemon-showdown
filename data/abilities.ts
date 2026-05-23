@@ -1733,8 +1733,8 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			const target = pokemon.adjacentFoes()[0];
 			const oldApparentType = pokemon.apparentType;
 			let newBaseTypes = target.getTypes(true).filter(type => type !== '???');
-			if (!pokemon.fainted && !newBaseTypes.length) {
-				if (target.addedType) {
+			if (!newBaseTypes.length) {
+				if (!target.fainted && target.addedType) {
 					newBaseTypes = ['Normal'];
 				} else {
 					return false;
