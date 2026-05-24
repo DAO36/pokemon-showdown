@@ -1773,10 +1773,10 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	},
 	secretagent: { // REFLECT TYPE but as an ability = pokemon.side.allySide?.pokemon
 		onFoeSwitchIn(source) {
-			const target = source.side.pokemon[source.side.pokemon.length - 1 - source.position];
+			const target = source.side.foe.active[source.side.foe.active.length - 1 - source.position];
 			const adjacentFoe = source.adjacentFoes()[0]; 
 			const oldApparentType = target.apparentType;
-			if (!source || source.fainted) return false;
+			if (!source || source.fainted || source === adjacentFoe) return false;
 			let newBaseTypes = source.getTypes(true).filter(type => type !== '???');
 			if (!newBaseTypes.length) {
 				if (source.addedType) {
