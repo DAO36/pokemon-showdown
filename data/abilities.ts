@@ -1768,19 +1768,19 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			const adjacentFoe = pokemon.adjacentFoes()[0]; 
 			const oldApparentType = pokemon.apparentType;
 			if (!foe || foe.fainted) return false;
-			let newBaseTypes = foe.getTypes(true).filter(type => type !== '???');
+			let newBaseTypes = foe.getTypes(true).filter(type => type !== '???') || adjacentFoe.getTypes(true).filter(type => type !== '???');
 			if (!newBaseTypes.length) {
-				if (foe.addedType) {
+				if (foe.addedType || adjacentFoe.addedType) {
 					newBaseTypes = ['Normal'];
 				} else {
 					return false;
 				}
 			}
-			this.add('-start', pokemon, 'typechange',`[of] ${foe}`);
+			this.add('-start', pokemon, 'typechange',`[of] ${foe || adjacentFoe}`);
 			this.add('-activate', pokemon, 'ability: Secret Agent');
 			pokemon.setType(newBaseTypes);
-			pokemon.addedType = foe.addedType;
-			pokemon.knownType = foe.isAlly(pokemon) && foe.knownType;
+			pokemon.addedType = foe.addedType || adjacentFoe.addedType;
+			pokemon.knownType = foe.isAlly(pokemon) && foe.knownType || adjacentFoe.isAlly(pokemon) && adjacentFoe.knownType;
 			if (!pokemon.knownType) pokemon.apparentType = oldApparentType;
 		},
         rating: 5,
