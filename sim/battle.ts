@@ -499,7 +499,7 @@ export class Battle {
 					handlers = handlers.concat(this.findPokemonEventHandlers(active, `onAny${eventid}`));
 				}
 				if (targets && !targets.includes(active)) continue;
-				if (eventid === 'SwitchIn...') {
+				if (eventid === 'SwitchIn') {
             for (const foe of active.foes()) {
                    handlers = handlers.concat(this.findPokemonEventHandlers(foe, `onFoe${eventid}`));
                    relayVar = active;
