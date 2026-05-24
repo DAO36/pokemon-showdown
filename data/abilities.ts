@@ -40,6 +40,24 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 0.1,
 		num: 0,
 	},
+	auntlessshield: {
+		onSwitchIn(pokemon) {
+			this.boost({ def: 1 }, pokemon);
+		},
+		flags: {},
+		name: "auntless Shield",
+		rating: 3.5,
+		num: 235,
+	},
+	auntlessshield2: {
+		onFoeSwitchIn(pokemon) {
+			this.boost({ def: 1 }, pokemon);
+		},
+		flags: {},
+		name: "auntless Shield2",
+		rating: 3.5,
+		num: 235,
+	},
 	feastorfamine: {
         onFoeTryBoost(boost, target, source, effect) {
             if (effect?.name === 'Opportunist' || effect?.name === 'Mirror Herb') return;
