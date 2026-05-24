@@ -1753,35 +1753,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 5,
 		num: 23,
 	},
-	poster: {
-		onSwitchIn(pokemon) {
-			const target = pokemon.side.foe.active[pokemon.side.foe.active.length - 1 - pokemon.position];
-			if (target) {
-				pokemon.transformInto(target, this.dex.abilities.get('imposter'));
-			}
-		},
-		flags: { failroleplay: 1, noreceiver: 1, noentrain: 1, notrace: 1 },
-		name: "Imposter",
-		rating: 5,
-		num: 150,
-	},
 	race: {
-		onStart(pokemon) {
-			this.effectState.seek = true;
-			// n.b. only affects Hackmons
-			// interaction with No Ability is complicated: https://www.smogon.com/forums/threads/pokemon-sun-moon-battle-mechanics-research.3586701/page-76#post-7790209
-			if (pokemon.adjacentFoes().some(foeActive => foeActive.ability === 'noability')) {
-				this.effectState.seek = false;
-			}
-			// interaction with Ability Shield is similar to No Ability
-			if (pokemon.hasItem('Ability Shield')) {
-				this.add('-block', pokemon, 'item: Ability Shield');
-				this.effectState.seek = false;
-			}
-			if (this.effectState.seek) {
-				this.singleEvent('Update', this.effect, this.effectState, pokemon);
-			}
-		},
 		onUpdate(pokemon) {
 			if (!this.effectState.seek) return;
 
@@ -1800,7 +1772,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		num: 36,
 	},
 	secretagent: { // REFLECT TYPE but as an ability = this.add('-activate', pokemon, 'ability: Secret Agent');
-		onAnySwitchIn(pokemon) {
+		onFoeSwitchIn(pokemon) {
 			const foe = pokemon.side.foe.active[pokemon.side.foe.active.length - 1 - pokemon.position];
 			const adjacentFoe = pokemon.adjacentFoes()[0]; 
 			const oldApparentType = pokemon.apparentType;
@@ -1815,6 +1787,26 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			}
 			this.add('-start', pokemon, 'typechange',`[of] ${foe}`);
 			this.add('-activate', pokemon, 'ability: Secret Agent');
+			pokemon.setType(newBaseTypes);
+			pokemon.addedType = foe.addedType;
+			pokemon.knownType = foe.isAlly(pokemon) && foe.knownType;
+			if (!pokemon.knownType) pokemon.apparentType = oldApparentType;
+		},
+		onSwitchIn(pokemon) {
+			const foe = pokemon.side.foe.active[pokemon.side.active.length - 1 - pokemon.position]
+			const adjacentFoe = pokemon.adjacentFoes()[0]; 
+			const oldApparentType = pokemon.apparentType;
+			if (!foe || foe.fainted) return false;
+			let newBaseTypes = foe.getTypes(true).filter(type => type !== '???');
+			if (!newBaseTypes.length) {
+				if (foe.addedType) {
+					newBaseTypes = ['Normal'];
+				} else {
+					return false;
+				}
+			}
+			this.add('-start', pokemon, 'typechange',`[of] ${foe}`);
+			this.add('-activate', pokemon, 'ability: Secret Agent2');
 			pokemon.setType(newBaseTypes);
 			pokemon.addedType = foe.addedType;
 			pokemon.knownType = foe.isAlly(pokemon) && foe.knownType;
