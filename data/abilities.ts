@@ -1786,7 +1786,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 					return false;
 				}
 			}
-			this.add('-start', target, 'typechange', '[from] move: Reflect Type', `[of] ${target}`);
+			this.add('-start', target, 'typechange', '[from] move: Reflect Type', `[of] ${source}`);
 			this.add('-activate', target, 'ability: Secret Agent');
 			target.setType(newBaseTypes);
 			target.addedType = source.addedType;
