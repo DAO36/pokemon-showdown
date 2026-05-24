@@ -1771,43 +1771,9 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 5,
 		num: 23,
 	},
-	sshield: {
-		onFoeSwitchIn(pokemon) {
-			this.boost({ def: 1 }, pokemon);
-		},
-		flags: {},
-		name: "Sshield",
-		rating: 3.5,
-		num: 235,
-	},
-	secretagent: { // REFLECT TYPE but as an ability = this.add('-activate', pokemon, 'ability: Secret Agent');
+	secretagent: { // REFLECT TYPE but as an ability = pokemon.side.allySide?.pokemon
 		onFoeSwitchIn(source) {
-			const foe = source.side.foe.active[source.side.foe.active.length - 1 - source.position];
-			const adjacentFoe = source.adjacentFoes()[0]; 
-			const oldApparentType = source.apparentType;
-			if (!foe || foe.fainted) return false;
-			let newBaseTypes = foe.getTypes(true).filter(type => type !== '???');
-			if (!newBaseTypes.length) {
-				if (foe.addedType) {
-					newBaseTypes = ['Normal'];
-				} else {
-					return false;
-				}
-			}
-			this.add('-start', source, 'typechange',`[of] ${foe}`);
-			this.add('-activate', source, 'ability: Secret Agent');
-			source.setType(newBaseTypes);
-			source.addedType = foe.addedType;
-			source.knownType = foe.isAlly(source) && foe.knownType;
-			if (!source.knownType) source.apparentType = oldApparentType;
-		},
-        rating: 5,
-        name: "Secret Agent",
-        num: 236
-	},
-	secretagent2: { // REFLECT TYPE but as an ability = this.add('-activate', pokemon, 'ability: Secret Agent');
-		onFoeSwitchIn(source) {
-			const target = source.side.foe.active[source.side.foe.active.length - 1 - source.position];
+			const target = source.side.pokemon[source.side.pokemon.length - 1 - source.position];
 			const adjacentFoe = source.adjacentFoes()[0]; 
 			const oldApparentType = target.apparentType;
 			if (!source || source.fainted) return false;
@@ -1827,7 +1793,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			if (!target.knownType) target.apparentType = oldApparentType;
 		},
         rating: 5,
-        name: "Secret Agent2",
+        name: "Secret Agent",
         num: 236
 	},
 	graondstone: { // combines [Sand Force] + [Rain Dish] (but Sandstorm instead of Rain) <<<UNUSED>>>
