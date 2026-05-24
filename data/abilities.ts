@@ -1832,8 +1832,8 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
                     return false;
                 }
             }
-            this.add('-start', pokemon, 'typechange',`[of] ${foe}`);
-            this.add('-activate', pokemon, 'ability: Secret Agent');
+            this.add('-activate', pokemon, 'ability: Secret Agent2');
+			this.add('-start', pokemon, 'typechange', '[from] move: Reflect Type', `[of] ${foe}`);
             pokemon.setType(newBaseTypes);
             pokemon.addedType = foe.addedType;
             pokemon.knownType = foe.isAlly(pokemon) && foe.knownType;
