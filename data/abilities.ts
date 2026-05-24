@@ -1753,34 +1753,93 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 5,
 		num: 23,
 	},
-	trepidsword: {
-		onFoeSwitchIn(pokemon) {
-			this.boost({ atk: 1 }, pokemon);
+	poster: {
+		onSwitchIn(pokemon) {
+			const target = pokemon.side.foe.active[pokemon.side.foe.active.length - 1 - pokemon.position];
+			if (target) {
+				pokemon.transformInto(target, this.dex.abilities.get('imposter'));
+			}
 		},
-		flags: {},
-		name: "Trepid Sword",
-		rating: 4,
-		num: 234,
+		flags: { failroleplay: 1, noreceiver: 1, noentrain: 1, notrace: 1 },
+		name: "Imposter",
+		rating: 5,
+		num: 150,
+	},
+	race: {
+		onStart(pokemon) {
+			this.effectState.seek = true;
+			// n.b. only affects Hackmons
+			// interaction with No Ability is complicated: https://www.smogon.com/forums/threads/pokemon-sun-moon-battle-mechanics-research.3586701/page-76#post-7790209
+			if (pokemon.adjacentFoes().some(foeActive => foeActive.ability === 'noability')) {
+				this.effectState.seek = false;
+			}
+			// interaction with Ability Shield is similar to No Ability
+			if (pokemon.hasItem('Ability Shield')) {
+				this.add('-block', pokemon, 'item: Ability Shield');
+				this.effectState.seek = false;
+			}
+			if (this.effectState.seek) {
+				this.singleEvent('Update', this.effect, this.effectState, pokemon);
+			}
+		},
+		onUpdate(pokemon) {
+			if (!this.effectState.seek) return;
+
+			const possibleTargets = pokemon.adjacentFoes().filter(
+				target => !target.getAbility().flags['notrace'] && target.ability !== 'noability'
+			);
+			if (!possibleTargets.length) return;
+
+			const target = this.sample(possibleTargets);
+			const ability = target.getAbility();
+			pokemon.setAbility(ability, target);
+		},
+		flags: { failroleplay: 1, noreceiver: 1, noentrain: 1, notrace: 1 },
+		name: "Trace",
+		rating: 2.5,
+		num: 36,
 	},
 	secretagent: { // REFLECT TYPE but as an ability = this.add('-activate', pokemon, 'ability: Secret Agent');
-		onAnySwitchIn(pokemon) {
+		onStart(pokemon) {
 			const foe = pokemon.side.foe.active[pokemon.side.active.length - 1 - pokemon.position]
 			const adjacentFoe = pokemon.adjacentFoes()[0]; 
 			const oldApparentType = pokemon.apparentType;
 			if (!foe || foe.fainted) return false;
-			let newBaseTypes = foe.getTypes(true).filter(type => type !== '???') || adjacentFoe.getTypes(true).filter(type => type !== '???');
+			let newBaseTypes = foe.getTypes(true).filter(type => type !== '???');
 			if (!newBaseTypes.length) {
-				if (foe.addedType || adjacentFoe.addedType) {
+				if (foe.addedType) {
 					newBaseTypes = ['Normal'];
 				} else {
 					return false;
 				}
 			}
-			this.add('-start', pokemon, 'typechange',`[of] ${foe || adjacentFoe}`);
+			this.add('-start', pokemon, 'typechange',`[of] ${foe}`);
 			this.add('-activate', pokemon, 'ability: Secret Agent');
 			pokemon.setType(newBaseTypes);
-			pokemon.addedType = foe.addedType || adjacentFoe.addedType;
-			pokemon.knownType = foe.isAlly(pokemon) && foe.knownType || adjacentFoe.isAlly(pokemon) && adjacentFoe.knownType;
+			pokemon.addedType = foe.addedType;
+			pokemon.knownType = foe.isAlly(pokemon) && foe.knownType;
+			if (!pokemon.knownType) pokemon.apparentType = oldApparentType;
+		},
+		onUpdate(pokemon) {
+			if (!this.effectState.seek) return;
+
+			const foe = pokemon.side.foe.active[pokemon.side.active.length - 1 - pokemon.position]
+			const adjacentFoe = pokemon.adjacentFoes()[0]; 
+			const oldApparentType = pokemon.apparentType;
+			if (!foe || foe.fainted) return false;
+			let newBaseTypes = foe.getTypes(true).filter(type => type !== '???');
+			if (!newBaseTypes.length) {
+				if (foe.addedType) {
+					newBaseTypes = ['Normal'];
+				} else {
+					return false;
+				}
+			}
+			this.add('-start', pokemon, 'typechange',`[of] ${foe}`);
+			this.add('-activate', pokemon, 'ability: Secret Agent');
+			pokemon.setType(newBaseTypes);
+			pokemon.addedType = foe.addedType;
+			pokemon.knownType = foe.isAlly(pokemon) && foe.knownType;
 			if (!pokemon.knownType) pokemon.apparentType = oldApparentType;
 		},
         rating: 5,
