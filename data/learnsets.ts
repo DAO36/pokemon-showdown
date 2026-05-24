@@ -96927,7 +96927,6 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			lovelykiss: ["9M"],
 			doodle: ["9M"],
 			laserfocus: ["9M"],
-			recover: ["9M"],
 			recycle: ["9M"],
 			nastyplot: ["9M"],
 			moonlight: ["9M"],
