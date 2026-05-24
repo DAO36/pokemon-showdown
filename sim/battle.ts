@@ -487,7 +487,6 @@ export class Battle {
 		if (eventid === 'Residual') {
 			getKey = 'duration';
 		}
-		let relayVar: any = undefined;
 		let handlers = this.findFieldEventHandlers(this.field, `onField${eventid}`, getKey);
 		for (const side of this.sides) {
 			if (side.n < 2 || !side.allySide) {
@@ -498,12 +497,6 @@ export class Battle {
 				if (eventid === 'SwitchIn') {
 					handlers = handlers.concat(this.findPokemonEventHandlers(active, `onAny${eventid}`));
 				}
-				if (eventid === 'SwitchIn' && targets) {
-            for (const foe of active.foes()) {
-                    handlers = handlers.concat(this.findPokemonEventHandlers(foe, `onFoe${eventid}`));
-                    relayVar = active;
-            }
-        }
 				if (targets && !targets.includes(active)) continue;
 				handlers = handlers.concat(this.findPokemonEventHandlers(active, callbackName, getKey));
 				handlers = handlers.concat(this.findSideEventHandlers(side, callbackName, undefined, active));
