@@ -1749,26 +1749,16 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 5,
 		num: 23,
 	},
-	secretagent: { // REFLECT TYPE but as an ability = this.add('-activate', pokemon, 'ability: Secret Agent');
-		onFoeSwitchIn(target, source) {
-			const foe = target.side.foe.active[target.side.active.length - 1 - target.position]
-			const adjacentFoe = target.adjacentFoes()[0]; 
-			const oldApparentType = source.apparentType;
-			let newBaseTypes = target.getTypes(true).filter(type => type !== '???');
-			if (!newBaseTypes.length) {
-				if (target.addedType) {
-					newBaseTypes = ['Normal'];
-				} else {
-					return false;
-				}
-			}
-			this.add('-start', target, 'typechange',`[of] ${foe}`);
-			this.add('-activate', source, 'ability: Secret Agent');
-			source.setType(newBaseTypes);
-			source.addedType = target.addedType;
-			source.knownType = target.isAlly(source) && target.knownType;
-			if (!source.knownType) source.apparentType = oldApparentType;
+	trepidsword: {
+		onFoeSwitchIn(pokemon) {
+			this.boost({ atk: 1 }, pokemon);
 		},
+		flags: {},
+		name: "Trepid Sword",
+		rating: 4,
+		num: 234,
+	},
+	secretagent: { // REFLECT TYPE but as an ability = this.add('-activate', pokemon, 'ability: Secret Agent');
 		onSwitchIn(pokemon) {
 			const foe = pokemon.side.foe.active[pokemon.side.active.length - 1 - pokemon.position]
 			const adjacentFoe = pokemon.adjacentFoes()[0]; 
