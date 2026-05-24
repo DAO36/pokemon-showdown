@@ -1812,11 +1812,10 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 					return false;
 				}
 			}
-			this.add('-start', pokemon, 'typechange',`[of] ${target}`);
-			this.add('-activate', pokemon, 'ability: Secret Agent2');
+			this.add('-start', pokemon, 'typechange', '[from] move: Reflect Type', `[of] ${target}`);
 			pokemon.setType(newBaseTypes);
 			pokemon.addedType = target.addedType;
-			pokemon.knownType = target.isAlly(target) && target.knownType;
+			pokemon.knownType = target.isAlly(pokemon) && target.knownType;
 			if (!pokemon.knownType) pokemon.apparentType = oldApparentType;
 		},
         rating: 5,
