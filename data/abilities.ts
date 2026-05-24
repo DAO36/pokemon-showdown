@@ -1782,32 +1782,31 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	},
 	secretagent: { // REFLECT TYPE but as an ability = this.add('-activate', pokemon, 'ability: Secret Agent');
 		onFoeSwitchIn(source) {
-			const foe = source.side.foe.active[source.side.foe.active.length - 1 - source.position];
+			const target = source.side.foe.active[source.side.foe.active.length - 1 - source.position];
 			const adjacentFoe = source.adjacentFoes()[0]; 
-			const oldApparentType = source.apparentType;
-			if (!foe || foe.fainted) return false;
-			let newBaseTypes = foe.getTypes(true).filter(type => type !== '???');
+			const oldApparentType = target.apparentType;
+			if (!source || source.fainted) return false;
+			let newBaseTypes = source.getTypes(true).filter(type => type !== '???');
 			if (!newBaseTypes.length) {
-				if (foe.addedType) {
+				if (source.addedType) {
 					newBaseTypes = ['Normal'];
 				} else {
 					return false;
 				}
 			}
-			this.add('-start', source, 'typechange',`[of] ${foe}`);
-			this.add('-activate', source, 'ability: Secret Agent');
-			source.setType(newBaseTypes);
-			source.addedType = foe.addedType;
-			source.knownType = foe.isAlly(source) && foe.knownType;
-			if (!source.knownType) source.apparentType = oldApparentType;
+			this.add('-start', target, 'typechange',`[of] ${source}`);
+			this.add('-activate', target, 'ability: Secret Agent');
+			target.setType(newBaseTypes);
+			target.addedType = source.addedType;
+			target.knownType = source.isAlly(target) && source.knownType;
+			if (!target.knownType) target.apparentType = oldApparentType;
 		},
         rating: 5,
         name: "Secret Agent",
         num: 236
 	},
 	secretagent2: { // REFLECT TYPE but as an ability = this.add('-activate', pokemon, 'ability: Secret Agent');
-		onAnySwitchIn(pokemon) { 
-			if (this.effectState.target !== pokemon.side.foe.active[pokemon.side.foe.active.length - 1 - pokemon.position]) return false;
+		onAnySwitchIn(pokemon) {
 			const foe = pokemon.side.foe.active[pokemon.side.active.length - 1 - pokemon.position]
 			const adjacentFoe = pokemon.adjacentFoes()[0]; 
 			const oldApparentType = pokemon.apparentType;
