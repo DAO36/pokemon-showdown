@@ -1819,26 +1819,26 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
         num: 236
 	},
 	secretagent2: {
-        onAnySwitchIn(source) {
-           const target = source.side.foe.active[source.side.foe.active.length - 1 - source.position];
-			const adjacentFoe = source.adjacentFoes()[0]; 
-			const oldApparentType = target.apparentType;
-			if (!target || target.fainted) return false;
-			let newBaseTypes = source.getTypes(true).filter(type => type !== '???');
-			if (!newBaseTypes.length) {
-				if (source.addedType) {
-					newBaseTypes = ['Normal'];
-				} else {
-					return false;
-				}
-			}
-			this.add('-activate', source, 'ability: Secret Agent2');
-			this.add('-start', source, 'typechange', '[from] move: Reflect Type', `[of] ${target}`);
-			target.setType(newBaseTypes);
-			target.addedType = source.addedType;
-			target.knownType = source.isAlly(target) && source.knownType;
-			if (!target.knownType) target.apparentType = oldApparentType;
-		},
+        onAnySwitchIn(pokemon) {
+            const foe = pokemon.side.foe.active[pokemon.side.active.length - 1 - pokemon.position]
+            const adjacentFoe = pokemon.adjacentFoes()[0]; 
+            const oldApparentType = pokemon.apparentType;
+            if (!foe || foe.fainted) return false;
+            let newBaseTypes = foe.getTypes(true).filter(type => type !== '???');
+            if (!newBaseTypes.length) {
+                if (foe.addedType) {
+                    newBaseTypes = ['Normal'];
+                } else {
+                    return false;
+                }
+            }
+            this.add('-activate', pokemon, 'ability: Secret Agent');
+			this.add('-start', pokemon, 'typechange', '[from] move: Reflect Type', `[of] ${foe}`);
+            pokemon.setType(newBaseTypes);
+            pokemon.addedType = foe.addedType;
+            pokemon.knownType = foe.isAlly(pokemon) && foe.knownType;
+            if (!pokemon.knownType) pokemon.apparentType = oldApparentType;
+        },
         rating: 5,
         name: "Secret Agent2",
         num: 236
