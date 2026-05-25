@@ -1797,7 +1797,28 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
         name: "Secret Agent",
         num: 236
 	},
-	secretagent2: { // REFLECT 
+	secretagent2: { // REFLECT TYPE but as an ability = pokemon.side.allySide?.pokemon
+		onFoeSwitchIn(source) {
+			if (this.effectState.target !== source.side.foe.active[source.side.foe.active.length - 1 - source.position]) return;
+			const target = source.side.foe.active[source.side.foe.active.length - 1 - source.position];
+			const adjacentFoe = source.adjacentFoes()[0]; 
+			const oldApparentType = target.apparentType;
+			if (!target || target.fainted) return false;
+			let newBaseTypes = source.getTypes(true).filter(type => type !== '???');
+			if (!newBaseTypes.length) {
+				if (source.addedType) {
+					newBaseTypes = ['Normal'];
+				} else {
+					return false;
+				}
+			}
+			this.add('-activate', target, 'ability: Secret Agent2');
+			this.add('-start', target, 'typechange', '[from] move: Reflect Type', `[of] ${source}`);
+			target.setType(newBaseTypes);
+			target.addedType = source.addedType;
+			target.knownType = source.isAlly(target) && source.knownType;
+			if (!target.knownType) target.apparentType = oldApparentType;
+		},
 		onStart(pokemon) {
 			if (this.effectState.target !== pokemon.side.foe.active[pokemon.side.foe.active.length - 1 - pokemon.position]) return;
 			const foe = pokemon.side.foe.active[pokemon.side.active.length - 1 - pokemon.position]
@@ -1824,8 +1845,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
         num: 236
 	},
 	secretagent3: {
-        onAnySwitchIn(source) {
-			if (this.effectState.target !== source.side.foe.active[source.side.foe.active.length - 1 - source.position]) return;
+        onStart(source) {
 			const target = source.side.foe.active[source.side.foe.active.length - 1 - source.position];
 			const adjacentFoe = source.adjacentFoes()[0]; 
 			const oldApparentType = target.apparentType;
