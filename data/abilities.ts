@@ -1845,7 +1845,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
         num: 236
 	},
 	secretagent3: {
-        onStart(source) {
+        onSwitchIn(source) {
 			const target = source.side.foe.active[source.side.foe.active.length - 1 - source.position];
 			const adjacentFoe = source.adjacentFoes()[0]; 
 			const oldApparentType = target.apparentType;
