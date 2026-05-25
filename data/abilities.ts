@@ -1762,7 +1762,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 5,
 		num: 23,
 	},
-	secretagent: { // this one works
+	secretagent: { // this one works [REFLECT TYPE] but as an ability
         onAnySwitchIn(pokemon) {
             const foe = pokemon.side.foe.active[pokemon.side.active.length - 1 - pokemon.position]
             const adjacentFoe = pokemon.adjacentFoes()[0]; 

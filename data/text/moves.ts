@@ -549,8 +549,8 @@ export const MovesText: { [id: IDEntry]: MoveText } = {
 	},
 	ymd: {
 		name: "YMD",
-		desc: "Has a 20% to raise this Pokemon's Special Defense by 1 stage. If the target lost HP, the user takes recoil damage equal to 33% the HP lost by the target, rounded half up, but not less than 1 HP.",
-		shortDesc: "33% recoil. 20% to raise user's Sp.Def by 1",
+		desc: "This move's type effectiveness against Dark and Psychic is changed to be super effective no matter what this move's type is. If the target lost HP, the user takes recoil damage equal to 33% the HP lost by the target, rounded half up, but not less than 1 HP.",
+		shortDesc: "Has 33% recoil. 2x effective on Dark & Psychic.",
 	},
 	laplacedemon: {
 		name: "Laplace Demon",
