@@ -487,7 +487,6 @@ export class Battle {
 		if (eventid === 'Residual') {
 			getKey = 'duration';
 		}
-		let relayVar: any = undefined;
 		let handlers = this.findFieldEventHandlers(this.field, `onField${eventid}`, getKey);
 		for (const side of this.sides) {
 			if (side.n < 2 || !side.allySide) {
@@ -499,12 +498,6 @@ export class Battle {
 					handlers = handlers.concat(this.findPokemonEventHandlers(active, `onAny${eventid}`));
 				}
 				if (targets && !targets.includes(active)) continue;
-				if (eventid === 'SwitchIn') {
-            for (const foe of active.foes()) {
-                   handlers = handlers.concat(this.findPokemonEventHandlers(foe, `onFoe${eventid}`));
-                   relayVar = active;
-            }
-        }
 				handlers = handlers.concat(this.findPokemonEventHandlers(active, callbackName, getKey));
 				handlers = handlers.concat(this.findSideEventHandlers(side, callbackName, undefined, active));
 				handlers = handlers.concat(this.findFieldEventHandlers(this.field, callbackName, undefined, active));
@@ -566,7 +559,7 @@ export class Battle {
 			if ((handler.effectHolder as Side).sideConditions) handlerEventid = `Side${eventid}`;
 			if ((handler.effectHolder as Field).pseudoWeather) handlerEventid = `Field${eventid}`;
 			if (handler.callback) {
-				this.singleEvent(handlerEventid, effect, handler.state, handler.effectHolder, null, null, relayVar, handler.callback);
+				this.singleEvent(handlerEventid, effect, handler.state, handler.effectHolder, null, null, undefined, handler.callback);
 			}
 
 			this.faintMessages();
