@@ -2050,14 +2050,6 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 			if (type === 'Psychic') return 1; 
 		}, 
 		recoil: [33, 100],
-		secondary: {
-			chance: 20,
-			self: {
-				boosts: {
-					spd: 1,
-				},
-			},
-		},
 		target: "normal",
 		type: "Psychic",
 		contestType: "Tough",
