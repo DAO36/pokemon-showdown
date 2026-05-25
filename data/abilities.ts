@@ -1793,7 +1793,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			target.knownType = source.isAlly(target) && source.knownType;
 			if (!target.knownType) target.apparentType = oldApparentType;
 		},
-		onAnySwitchIn(pokemon) {
+		onSwitchIn(pokemon) {
 			if (this.effectState.target !== pokemon.side.foe.active[pokemon.side.foe.active.length - 1 - pokemon.position]) return;
 			const foe = pokemon.side.foe.active[pokemon.side.active.length - 1 - pokemon.position]
             const adjacentFoe = pokemon.adjacentFoes()[0]; 
