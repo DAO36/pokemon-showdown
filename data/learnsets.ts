@@ -94574,6 +94574,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			facade: ["9M"],
 			protect: ["9M"],
 			rest: ["9M"],
+			morningsun: ["9M"],
 			darkestlariat: ["9M"],
 			sakurastrike: ["9M"],
 			lavabucket: ["9M"],
