@@ -1845,27 +1845,27 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
         num: 236
 	},
 	secretagent3: {
-        onAnySwitchIn(pokemon) {
-			if (this.effectState.target !== pokemon.side.foe.active[pokemon.side.foe.active.length - 1 - pokemon.position]) return;
-            const foe = pokemon.side.foe.active[pokemon.side.active.length - 1 - pokemon.position]
-            const adjacentFoe = pokemon.adjacentFoes()[0]; 
-            const oldApparentType = pokemon.apparentType;
-            if (!foe || foe.fainted) return false;
-            let newBaseTypes = foe.getTypes(true).filter(type => type !== '???');
-            if (!newBaseTypes.length) {
-                if (foe.addedType) {
-                    newBaseTypes = ['Normal'];
-                } else {
-                    return false;
-                }
-            }
-            this.add('-start', pokemon, 'typechange',`[of] ${foe}`);
-            this.add('-activate', pokemon, 'ability: Secret Agent3');
-            pokemon.setType(newBaseTypes);
-            pokemon.addedType = foe.addedType;
-            pokemon.knownType = foe.isAlly(pokemon) && foe.knownType;
-            if (!pokemon.knownType) pokemon.apparentType = oldApparentType;
-        },
+        onAnySwitchIn(source) {
+			if (this.effectState.target !== source.side.foe.active[source.side.foe.active.length - 1 - source.position]) return;
+			const target = source.side.foe.active[source.side.foe.active.length - 1 - source.position];
+			const adjacentFoe = source.adjacentFoes()[0]; 
+			const oldApparentType = target.apparentType;
+			if (!target || target.fainted) return false;
+			let newBaseTypes = source.getTypes(true).filter(type => type !== '???');
+			if (!newBaseTypes.length) {
+				if (source.addedType) {
+					newBaseTypes = ['Normal'];
+				} else {
+					return false;
+				}
+			}
+			this.add('-activate', target, 'ability: Secret Agent2');
+			this.add('-start', target, 'typechange', '[from] move: Reflect Type', `[of] ${source}`);
+			target.setType(newBaseTypes);
+			target.addedType = source.addedType;
+			target.knownType = source.isAlly(target) && source.knownType;
+			if (!target.knownType) target.apparentType = oldApparentType;
+		},
         rating: 5,
         name: "Secret Agent3",
         num: 236
