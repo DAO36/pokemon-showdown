@@ -1803,7 +1803,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			const target = source.side.foe.active[source.side.foe.active.length - 1 - source.position];
 			const adjacentFoe = source.adjacentFoes()[0]; 
 			const oldApparentType = target.apparentType;
-			if (!target || target.fainted || target.newlySwitched) return false;
+			if (!target || target.fainted) return false;
 			let newBaseTypes = source.getTypes(true).filter(type => type !== '???');
 			if (!newBaseTypes.length) {
 				if (source.addedType) {
