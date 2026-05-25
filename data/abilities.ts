@@ -1820,9 +1820,9 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	},
 	secretagent2: {
         onAnySwitchIn(source) {
-			if (this.effectState.target !== source.side.foe.active[source.side.foe.active.length - 1 - source.position]) return;
 			const target = source.side.foe.active[source.side.foe.active.length - 1 - source.position];
-			const adjacentFoe = source.adjacentFoes()[0]; 
+			const adjacentFoe = source.adjacentFoes()[0];
+			if (this.effectState.target !== target.side.foe.active[target.side.foe.active.length - 1 - target.position]) return;
 			const oldApparentType = target.apparentType;
 			if (!target || target.fainted) return false;
 			let newBaseTypes = source.getTypes(true).filter(type => type !== '???');
@@ -1833,7 +1833,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 					return false;
 				}
 			}
-			this.add('-activate', target, 'ability: Secret Agent');
+			this.add('-activate', target, 'ability: Secret Agent2');
 			this.add('-start', target, 'typechange', '[from] move: Reflect Type', `[of] ${source}`);
 			target.setType(newBaseTypes);
 			target.addedType = source.addedType;
