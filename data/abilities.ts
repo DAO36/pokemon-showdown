@@ -1818,6 +1818,31 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
         name: "Secret Agent",
         num: 236
 	},
+	secretagent2: {
+        onAnySwitchIn(pokemon) {
+            const foe = pokemon.side.foe.active[pokemon.side.active.length - 1 - pokemon.position]
+            const adjacentFoe = pokemon.adjacentFoes()[0]; 
+            const oldApparentType = pokemon.apparentType;
+            if (!foe || foe.fainted) return false;
+            let newBaseTypes = foe.getTypes(true).filter(type => type !== '???');
+            if (!newBaseTypes.length) {
+                if (foe.addedType) {
+                    newBaseTypes = ['Normal'];
+                } else {
+                    return false;
+                }
+            }
+            this.add('-activate', pokemon, 'ability: Secret Agent');
+			this.add('-start', pokemon, 'typechange', '[from] move: Reflect Type', `[of] ${foe}`);
+            pokemon.setType(newBaseTypes);
+            pokemon.addedType = foe.addedType;
+            pokemon.knownType = foe.isAlly(pokemon) && foe.knownType;
+            if (!pokemon.knownType) pokemon.apparentType = oldApparentType;
+        },
+        rating: 5,
+        name: "Secret Agent2",
+        num: 236
+    },
 	graondstone: { // combines [Sand Force] + [Rain Dish] (but Sandstorm instead of Rain) <<<UNUSED>>>
 		onWeather(target, source, effect) {
 			if (target.hasItem('utilityumbrella')) return;
