@@ -1820,6 +1820,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	},
 	secretagent2: {
         onAnySwitchIn(pokemon) {
+			if (this.effectState.target !== pokemon.side.foe.active[pokemon.side.foe.active.length - 1 - pokemon.position]) return;
             const foe = pokemon.side.foe.active[pokemon.side.active.length - 1 - pokemon.position]
             const adjacentFoe = pokemon.adjacentFoes()[0]; 
             const oldApparentType = pokemon.apparentType;
@@ -1832,7 +1833,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
                     return false;
                 }
             }
-            this.add('-activate', pokemon, 'ability: Secret Agent');
+            this.add('-activate', pokemon, 'ability: Secret Agent2');
 			this.add('-start', pokemon, 'typechange', '[from] move: Reflect Type', `[of] ${foe}`);
             pokemon.setType(newBaseTypes);
             pokemon.addedType = foe.addedType;
