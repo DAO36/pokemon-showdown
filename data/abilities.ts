@@ -1820,6 +1820,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			if (!target.knownType) target.apparentType = oldApparentType;
 		},
 		onSwitchIn(pokemon) {
+			if (this.effectState.target !== pokemon.side.foe.active[pokemon.side.foe.active.length - 1 - pokemon.position]) return;
 			const foe = pokemon.side.foe.active[pokemon.side.active.length - 1 - pokemon.position]
             const adjacentFoe = pokemon.adjacentFoes()[0]; 
             const oldApparentType = pokemon.apparentType;
