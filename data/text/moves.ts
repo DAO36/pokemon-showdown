@@ -776,9 +776,10 @@ export const MovesText: { [id: IDEntry]: MoveText } = {
 	},
 	timedattack: {
 		name: "Timed Attack",
-		desc: "This attack charges on the first turn and executes on the second. On the first turn, this Pokemon avoids all attacks. If the Pokemon is holding a Power Herb, the move completes in one turn.",
-		shortDesc: "Disappears turn 1. Hits turn 2.",
+		desc: "If this move is successful, it breaks through the target's Baneful Bunker, Lunar Shield, Phoenix Shield, Detect, King's Shield, Protect, or Spiky Shield for this turn, allowing other Pokemon to attack the target normally. If the target's side is protected by Crafty Shield, Mat Block, Quick Guard, or Wide Guard, that protection is also broken for this turn and other Pokemon may attack the target's side normally. This attack charges on the first turn and executes on the second. On the first turn, the user avoids all attacks. If the user is holding a Power Herb, the move completes in one turn.",
+		shortDesc: "Disappears turn 1. Hits turn 2. Breaks protection.",
 
+		activate: "  Ground pounded through [TARGET]'s protection!",
 		prepare: "[POKEMON] is tampering with the timeline!",
 	}, 
 	ameway: {
@@ -846,8 +847,8 @@ export const MovesText: { [id: IDEntry]: MoveText } = {
 	},
 	aochan: {
 		name: "AO Chan",
-		desc: "This move's type effectiveness against Dark is changed to be neutrally effective no matter what this move's type is. This attack never misses. ",
-		shortDesc: "Psychic type move that can hit Dark types.",
+		desc: "This move's type effectiveness against Dark and Psychic is changed to be super effective no matter what this move's type is. This attack bypasses accuracy checks and never misses.",
+		shortDesc: "Super effective on Dark & Psychic types.",
 	},
 	phoenixshield: {
 		name: "Phoenix Shield",
