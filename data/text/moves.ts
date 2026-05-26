@@ -954,7 +954,7 @@ export const MovesText: { [id: IDEntry]: MoveText } = {
 	},
 	blastfromthepast: {
 		name: "Blast from the Past",
-		desc: "This move bypasses protection and substitute. Deals damage two turns after this move is used. At the end of that turn, the damage is calculated at that time and dealt to the Pokemon at the position the target had when the move was used. If the Warden of Time is no longer active at the time, damage is calculated based on the user's natural Attack stat, types, and level, with no boosts from its held item or Ability. Fails if this move, Teleport, or Doom Desire is already in effect for the target's position.",
+		desc: "This move bypasses protection and ignores substitute. Deals damage two turns after this move is used. At the end of that turn, the damage is calculated at that time and dealt to the Pokemon at the position the target had when the move was used. If the Pokemon is no longer active at the time, damage is calculated based on the user's natural Attack stat, types, and level, with no boosts from its held item or Ability. Fails if this move, Future Sight, or Doom Desire is already in effect for the target's position.",
 		shortDesc: "Hits 2 turns after being used.",
 
 		start: "  [POKEMON] is time traveling!",
@@ -2746,7 +2746,7 @@ export const MovesText: { [id: IDEntry]: MoveText } = {
 	},
 	doomdesire: {
 		name: "Doom Desire",
-		desc: "Deals damage two turns after this move is used. At the end of that turn, the damage is calculated at that time and dealt to the Pokemon at the position the target had when the move was used. If the user is no longer active at the time, damage is calculated based on the user's natural Special Attack stat, types, and level, with no boosts from its held item or Ability. Fails if this move or Future Sight is already in effect for the target's position.",
+		desc: "Deals damage two turns after this move is used. At the end of that turn, the damage is calculated at that time and dealt to the Pokemon at the position the target had when the move was used. If the user is no longer active at the time, damage is calculated based on the user's natural Special Attack stat, types, and level, with no boosts from its held item or Ability. Fails if this move, Future Sight, or Blast from the Past is already in effect for the target's position.",
 		shortDesc: "Hits two turns after being used.",
 		gen4: {
 			desc: "Deals typeless damage that cannot be a critical hit two turns after this move is used. Damage is calculated against the target on use, and at the end of the final turn that damage is dealt to the Pokemon at the position the original target had at the time. Fails if this move or Future Sight is already in effect for the target's position.",
@@ -3683,7 +3683,7 @@ export const MovesText: { [id: IDEntry]: MoveText } = {
 	},
 	futuresight: {
 		name: "Future Sight",
-		desc: "Deals damage two turns after this move is used. At the end of that turn, the damage is calculated at that time and dealt to the Pokemon at the position the target had when the move was used. If the user is no longer active at the time, damage is calculated based on the user's natural Special Attack stat, types, and level, with no boosts from its held item or Ability. Fails if this move or Doom Desire is already in effect for the target's position.",
+		desc: "Deals damage two turns after this move is used. At the end of that turn, the damage is calculated at that time and dealt to the Pokemon at the position the target had when the move was used. If the user is no longer active at the time, damage is calculated based on the user's natural Special Attack stat, types, and level, with no boosts from its held item or Ability. Fails if this move, Doom Desire, or Blast from the Past is already in effect for the target's position.",
 		shortDesc: "Hits two turns after being used.",
 		gen4: {
 			desc: "Deals typeless damage that cannot be a critical hit two turns after this move is used. Damage is calculated against the target on use, and at the end of the final turn that damage is dealt to the Pokemon at the position the original target had at the time. Fails if this move or Doom Desire is already in effect for the target's position.",
