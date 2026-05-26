@@ -661,7 +661,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	},
 	virtualdiva: { // reskin of [DANCER] but for Sound type moves
 		// implemented in runMove in scripts.js
-		flags: {breakable: 1},
+		flags: {},
 		name: "Virtual Diva",
 		rating: 2.5,
 		num: 11,
@@ -724,7 +724,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 				this.damage(source.baseMaxhp / 10, source, source,); 
 			}
 		},
-		flags: {breakable: 1, noentrain: 1, failskillswap: 1},
+		flags: {breakable: 1},
 		name: "God",
 		rating: 4,
 		num: 94,
@@ -760,7 +760,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
                 this.heal(target.baseMaxhp / 10);
             }
         },
-		flags: {},
+		flags: {breakable: 1},
 		name: "Haachama Cooking",
 		rating: 5,
 		num: 23,
@@ -772,7 +772,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			const targetForme = pokemon.species.name === 'Akai' ? 'AkaiTwo' : 'Akai';
 			pokemon.formeChange(targetForme);
 		},
-		flags: {failroleplay: 1, noreceiver: 1, noentrain: 1, notrace: 1, failskillswap: 1, notransform: 1},
+		flags: {cantsuppress: 1, failroleplay: 1, failskillswap: 1, noentrain: 1, noreceiver: 1, notrace: 1},
 		name: "Split Personalities",
 		rating: 2,
 		num: 258,
@@ -807,7 +807,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 				}
 			},
 		},
-		flags: {failroleplay: 1, noreceiver: 1, noentrain: 1, notrace: 1, failskillswap: 1, cantsuppress: 1},
+		flags: {cantsuppress: 1, failroleplay: 1, failskillswap: 1, noentrain: 1, noreceiver: 1, notrace: 1},
 		name: "Chama Change",
 		rating: 0,
 		num: 161,
@@ -1059,7 +1059,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			target.switchFlag = true;
 			this.add('-activate', target, 'ability: War Criminal');
 		},
-		flags: {},
+		flags: {breakable: 1},
 		name: "War Criminal",
 		rating: 1.5,
 		num: 194,
@@ -1173,7 +1173,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 				}
 			}
 		},
-		flags: {},
+		flags: {breakable: 1},
 		name: "Elf Gunner",
 		rating: 3,
 		num: 92,
@@ -1732,27 +1732,6 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 2.5,
 		num: 160,
 	},
-	chamacooking: { // FLINCH on switch in - HEALS when using STATUS moves
-		onStart(pokemon) {
-            const foe = pokemon.side.foe.active[pokemon.side.active.length - 1 - pokemon.position]
-			const adjacentFoe = pokemon.adjacentFoes()[0]; 
-			if (!foe) return;
-                    this.add('-ability', pokemon, 'Haachama Cooking', 'boost');
-				{		
-                    foe.addVolatile('flinch', this.effectState.pokemon);
-                }
-            
-        },
-		onAfterMove(target, source, move) {
-            if (move.category === 'Status') {
-                this.heal(target.baseMaxhp / 10);
-            }
-        },
-		flags: {},
-		name: "Haachama Cooking",
-		rating: 5,
-		num: 23,
-	},
 	secretagent: { // this one works [REFLECT TYPE] but as an ability
         onAnySwitchIn(pokemon) {
             const foe = pokemon.side.foe.active[pokemon.side.active.length - 1 - pokemon.position]
@@ -1774,8 +1753,9 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
             pokemon.knownType = foe.isAlly(pokemon) && foe.knownType;
             if (!pokemon.knownType) pokemon.apparentType = oldApparentType;
         },
-        rating: 5,
+		flags: {},
         name: "Secret Agent",
+		rating: 3,
         num: 236
     },
 	graondstone: { // combines [Sand Force] + [Rain Dish] (but Sandstorm instead of Rain) <<<UNUSED>>>
@@ -1794,7 +1774,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 				}
 			}
 		},
-		flags: {},
+		flags: {breakable: 1},
 		name: "Graondstone",
 		rating: 3,
 		num: 44,
@@ -2104,7 +2084,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 				return null;
 			}
 		},
-		flags: {},
+		flags: {breakable: 1},
 		name: "Part Time Warrior",
 		rating: 3.5,
 		num: 292,
@@ -2558,10 +2538,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 				pokemon.formeRegression = true;
 			}
 		},
-		flags: {
-			failroleplay: 1, noreceiver: 1, noentrain: 1, notrace: 1, failskillswap: 1, cantsuppress: 1,
-			breakable: 1, notransform: 1,
-		},
+		flags: {failroleplay: 1, noreceiver: 1, noentrain: 1, notrace: 1, failskillswap: 1, breakable: 1, notransform: 1,},
 		name: "Noh Mask",
 		rating: 2.5,
 		num: 11,
@@ -2660,7 +2637,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 				return this.chainModify(0.5);
 			}
 		},
-		flags: { breakable: 1 },
+		flags: {breakable: 1},
 		name: "Gold Tiger",
 		rating: 0,
 		num: 300,
@@ -2692,7 +2669,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 				this.damage(target.baseMaxhp / 8, target, target);
 			}
 		},
-		flags: {},
+		flags: {breakable: 1},
 		name: "Publicity Stunt",
 		rating: 2,
 		num: 94,
@@ -2717,7 +2694,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 				return null;
 			}
 		},
-		flags: { breakable: 1 },
+		flags: {breakable: 1},
 		name: "Mixtape",
 		rating: 3.5,
 		num: 10,
@@ -2742,7 +2719,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			}
 		},
 		onCriticalHit: false,
-		flags: { breakable: 1 },
+		flags: {breakable: 1},
 		name: "Smooth Skin",
 		rating: 3,
 		num: 87,
