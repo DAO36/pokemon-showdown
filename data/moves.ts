@@ -1971,7 +1971,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		name: "Nekko Strike",
 		pp: 10,
 		priority: 0,
-		flags: {protect: 1, reflectable: 1, mirror: 1, contact: 1, metronome: 1},
+		flags: {protect: 1, reflectable: 1, mirror: 1, contact: 1, metronome: 1, heal: 1},
 		onHit(target, source) {
 			if (target.hasType('Grass')) return null;
 			target.addVolatile('leechseed', source);
