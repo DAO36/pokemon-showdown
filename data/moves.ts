@@ -1210,7 +1210,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		name: "Carrot Trap",
 		pp: 20,
 		priority: 0,
-		flags: {reflectable: 1, mustpressure: 1, metronome: 1},
+		flags: {reflectable: 1, mustpressure: 1, metronome: 1, heal: 1},
 		sideCondition: 'carrottrap',
 		condition: {
 			// this is a side condition
