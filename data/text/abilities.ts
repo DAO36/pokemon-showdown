@@ -377,13 +377,13 @@ export const AbilitiesText: { [id: IDEntry]: AbilityText } = {
 
 		damage: "#roughskin",
 	},
-	secretagent: {
-		name: "Secret Agent",
+	specialagent: {
+		name: "Special Agent",
 		desc: "Upon switching in, the user's type becomes the same as the current type(s) of the target. If the target's current type(s) include typeless and a non-added type, typeless is ignored. If the target's current types include typeless and an added type from Forest's Curse or Trick-or-Treat, typeless is copied as the Normal type instead. Fails if the target's current type is typeless alone.",
 		shortDesc: "On switch in, user becomes the same type as the target.",
 	},
-	specialagent: {
-		name: "Special Agent",
+	secretagent: {
+		name: "Secret Agent",
 		desc: "The user's type changes to match a type that resists or is immune to the type of the last move used by the target, but not either of its current types. The determined type of the move is used rather than the original type.",
 		shortDesc: "User's type changes to resist target's last move.",
 	},

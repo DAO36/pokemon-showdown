@@ -1732,7 +1732,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 2.5,
 		num: 160,
 	},
-	specialagent: { // this.add('-activate', source, 'ability: Special Agent');
+	secretagent: { // [CONVERSION2] but as an ability
 		onHit(target, source, move) {
 			if (!source.lastMoveUsed || move.category === 'Status') {
 				return false;
@@ -1752,15 +1752,15 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			const randomType = this.sample(possibleTypes);
 
 			if (!target.setType(randomType)) return false;
-			this.add('-activate', target, 'ability: Special Agent');
+			this.add('-activate', target, 'ability: Secret Agent');
 			this.add('-start', target, 'typechange', randomType);
 		},
         flags: {},
-        name: "Special Agent",
+        name: "Secret Agent",
         rating: 4,
         num: -99,
     },
-	secretagent: { // this one works [REFLECT TYPE] but as an ability
+	specialagent: { // this one works [REFLECT TYPE] but as an ability
         onAnySwitchIn(pokemon) {
             const foe = pokemon.side.foe.active[pokemon.side.active.length - 1 - pokemon.position]
             const adjacentFoe = pokemon.adjacentFoes()[0]; 
@@ -1774,7 +1774,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
                     return false;
                 }
             }
-            this.add('-activate', pokemon, 'ability: Secret Agent');
+            this.add('-activate', pokemon, 'ability: Special Agent');
 			this.add('-start', pokemon, 'typechange', '[from] move: Reflect Type', `[of] ${foe}`);
             pokemon.setType(newBaseTypes);
             pokemon.addedType = foe.addedType;
@@ -1782,7 +1782,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
             if (!pokemon.knownType) pokemon.apparentType = oldApparentType;
         },
 		flags: {},
-        name: "Secret Agent",
+        name: "Special Agent",
 		rating: 3,
         num: 236
     },
