@@ -20484,7 +20484,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		types: ["Dragon", "Flying"],
 		gender: "F",
 		baseStats: {hp: 140, atk: 125, def: 140, spa: 145, spd: 90, spe: 60},
-		abilities: {0: "Multiscale", 1: "Marvel Scale", H: "Shed Skin"},
+		abilities: {0: "Multiscale", 1: "Marvel Scale", H: "Shed Skin", S: "Breathe-In Asacoco"},
 		heightm: 515.15,
 		weightkg: 699.69,
 		color: "Brown",

@@ -242,8 +242,13 @@ export const AbilitiesText: { [id: IDEntry]: AbilityText } = {
 	},
 	highonasacoco: {
 		name: "High on Asacoco",
-		desc: "If this Pokemon is poisoned, badly poisoned, paralyzed, burned, frozen, or asleep, it restores 1/8 of ita maximum HP, rounded down, at the end of each turn instead of losing HP.",
+		desc: "If this Pokemon is poisoned, badly poisoned, paralyzed, burned, frozen, or asleep, it restores 1/8 of ita maximum HP, rounded down, at the end of each turn instead of losing HP. This Pokemon's physical attacks ignore the burn effect of halving damage.",
 		shortDesc: "User heals by 1/8 of max HP each turn if statused; no HP loss.",
+	},
+	breatheinasacoco: {
+		name: "Breathe-In Asacoco",
+		desc: "This Pokemon's Flying type moves have a 30% chance of badly poisoning. This effect comes after a move's inherent secondary effect chance.",
+		shortDesc: "This Pokemon's Flying type moves have a 30% chance of badly poisoning.",
 	},
 	pptgrip: {
 		name: "PPT Grip",

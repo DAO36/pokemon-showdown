@@ -1196,6 +1196,21 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 4,
 		num: 90,
 	},
+	breatheinasacoco: {
+		onSourceDamagingHit(damage, target, source, move) {
+			// Despite not being a secondary, Shield Dust / Covert Cloak block Poison Touch's effect
+			if (target.hasAbility('shielddust') || target.hasItem('covertcloak')) return;
+			if (move.type === 'Flying') {
+				if (this.randomChance(3, 10)) {
+					target.trySetStatus('tox', source);
+				}
+			}
+		},
+		flags: {},
+		name: "Breathe-In Asacoco",
+		rating: 1.5,
+		num: 38,
+	},
 	pptgrip: { // exact copy of [Tough Claws]
 		onBasePowerPriority: 21,
 		onBasePower(basePower, attacker, defender, move) {
