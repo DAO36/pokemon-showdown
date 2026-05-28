@@ -1037,6 +1037,25 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 5,
 		num: 113,
 	},
+	miostand: { // if hit by Sound type move, boosts Atk by 1; Sound type immunity
+		onTryHit(target, source, move) {
+			if (target !== source && move.type === 'Flying') {
+				if (!this.boost({spe: 1})) {
+					this.add('-immune', target, '[from] ability: Mio Stand');
+				}
+				return null;
+			}
+		},
+		onAllyTryHitSide(target, source, move) {
+			if (move.flags['sound']) {
+				this.add('-immune', this.effectState.target, '[from] ability: Mio Stand');
+			}
+		},
+		flags: {breakable: 1},
+		name: "Mio Stand",
+		rating: 2.5,
+		num: 43,
+	},
 	warcriminal: { // reskin of [Emergency Exit]/[Wimp Out] + [Aftermath] but even better!! <<<UNUSED>>>
 		onDamagingHitOrder: 1,
 		onDamagingHit(damage, target, source, move) {

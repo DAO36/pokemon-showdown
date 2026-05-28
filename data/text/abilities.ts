@@ -199,6 +199,11 @@ export const AbilitiesText: { [id: IDEntry]: AbilityText } = {
 		desc: "This Pokemon can hit Dark types with Psychic-type moves. This Pokemon is immune to the effects of the Intimidate, Succubus, and Death Abilities.",
 		shortDesc: "Psychic type moves can hit Dark types. Immune to Intimidate/Succubus/Death.",
 	},
+	miostand: {
+		name: "Mio Stand",
+		desc: "This Pokemon is immune to Flying-type moves and has its Speed raised by 1 stage when hit by a Flying-type move.",
+		shortDesc: "User's Speed is raised by 1 stage if hit by a Flying move; Flying immunity.",
+	},
 	warcriminal: { // [UNUSED]
 		name: "War Criminal",
 		desc: "When this War Criminal has more than 1/2 of her maximum HP and takes damage bringing her to 1/2 or less of her maximum HP, she immediately switches out to a chosen ally. This effect applies after all hits from a multi-hit move. This effect is prevented if the move had a secondary effect removed by the Sheer Force Ability. This effect applies to both direct and indirect damage, except Curse and Substitute on use, Belly Drum, Pain Split, and confusion damage. If this Rabbit is knocked out by a Pokemon, that Pokemon loses 1/2 of its maximum HP, rounded down. If any active Pokemon has the Damp Ability, this effect is prevented.",

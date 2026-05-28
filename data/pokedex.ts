@@ -20257,7 +20257,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		types: ["Flying"],
 		gender: "M",
 		baseStats: {hp: 125, atk: 150, def: 145, spa: 125, spd: 100, spe: 55},
-		abilities: {0: "Big Pecks"},
+		abilities: {0: "Big Pecks", S: "Mio Stand"},
 		heightm: 2.6,
 		weightkg: 155.5,
 		color: "Gray",
