@@ -529,20 +529,6 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3.5,
 		num: 295,
 	},
-	sneakypebbles: { // sets up stealth rock when user is hit by an attacking move
-		onDamagingHit(damage, target, source, move) {
-			const side = source.isAlly(target) ? source.side.foe : source.side;
-			const stealthrock = side.sideConditions['stealthrock'];
-			if (move.category === 'Physical' || move.category === 'Special' && (!stealthrock || stealthrock.layers < 1)) {
-				this.add('-activate', target, 'ability: Sneaky Pebbles');
-				side.addSideCondition('stealthrock', target);
-			}
-		},
-		flags: {},
-		name: "Sneaky Pebbles",
-		rating: 3.5,
-		num: 295,
-	},
 	purepower: { // Huge Power but for Special Attack
 		onModifySpAPriority: 5,
 		onModifySpA(spa) {
@@ -616,6 +602,31 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		name: "Elite",
 		rating: 2.5,
 		num: 270,
+	},
+	magmadrain: {
+		onTryHit(target, source, move) {
+			if (target !== source && move.type === 'Fire') {
+				if (!this.boost({ spa: 1 })) {
+					this.add('-immune', target, '[from] ability: Magma Drain');
+				}
+				return null;
+			}
+		},
+		onAnyRedirectTarget(target, source, source2, move) {
+			if (move.type !== 'Fire' || move.flags['pledgecombo']) return;
+			const redirectTarget = ['randomNormal', 'adjacentFoe'].includes(move.target) ? 'normal' : move.target;
+			if (this.validTarget(this.effectState.target, source, redirectTarget)) {
+				if (move.smartTarget) move.smartTarget = false;
+				if (this.effectState.target !== target) {
+					this.add('-activate', this.effectState.target, 'ability: Magma Drain');
+				}
+				return this.effectState.target;
+			}
+		},
+		flags: { breakable: 1 },
+		name: "Magma Drain",
+		rating: 3,
+		num: 114,
 	},
 	stellar: { // combines [Clear Body] + [Curious Medicine] but better as it targets foes only
 		onStart(pokemon) {
@@ -2342,7 +2353,21 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		name: "Archiver",
 		rating: 3,
 		num: 290,
-	}, 
+	},
+	sneakypebbles: { // sets up stealth rock when user is hit by an attacking move
+		onDamagingHit(damage, target, source, move) {
+			const side = source.isAlly(target) ? source.side.foe : source.side;
+			const stealthrock = side.sideConditions['stealthrock'];
+			if (move.category === 'Physical' || move.category === 'Special' && (!stealthrock || stealthrock.layers < 1)) {
+				this.add('-activate', target, 'ability: Sneaky Pebbles');
+				side.addSideCondition('stealthrock', target);
+			}
+		},
+		flags: {},
+		name: "Sneaky Pebbles",
+		rating: 3.5,
+		num: 295,
+	},
 	rockhard: { // [Fluffy] but instead of Fire being omitted, it is Steel
 		onSourceModifyDamage(damage, source, target, move) {
 			let mod = 1;

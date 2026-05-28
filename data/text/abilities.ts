@@ -93,6 +93,13 @@ export const AbilitiesText: { [id: IDEntry]: AbilityText } = {
 		desc: "This Pokemon has their Special Attack, Special Defense, and Speed all raised by 1 stage after being damaged by a Fire-type move.",
 		shortDesc: "Sp.Atk, Sp.Def, & Speed all raised by 1 stage when damaged by Fire type moves.",
 	},
+	magmadrain: {
+		name: "Magma Drain",
+		desc: "This Pokemon is immune to Fire-type moves and raises its Special Attack by 1 stage when hit by a Fire-type move. If this Pokemon is not the target of a single-target Fire-type move used by another Pokemon, this Pokemon redirects that move to itself if it is within the range of that move. If multiple Pokemon could redirect with this Ability, it goes to the one with the highest Speed, or in the case of a tie to the one that has had this Ability active longer.",
+		shortDesc: "This Pokemon draws Fire moves to itself to raise Sp. Atk by 1; Fire immunity.",
+
+		activate: "#lightningrod",
+	},
 	stellar: {
 		name: "Stellar",
 		desc: "On switch-in, all adjacent Pokemon on the opposing side have their stat stages reset to 0; Prevents other Pokemon from lowering the user's stat stages.",
