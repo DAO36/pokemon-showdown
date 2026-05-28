@@ -90,7 +90,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			this.add('-start', target, 'typechange', randomType);
 		},
         flags: {},
-        name: "Special Agent",
+        name: "Special Agent2",
         rating: 4,
         num: -99,
     },
