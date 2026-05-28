@@ -40,168 +40,6 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 0.1,
 		num: 0,
 	},
-	specialagent: {
-		onFoeHit(target, source) {
-			if (!target.lastMoveUsed) {
-				return false;
-			}
-			const possibleTypes = [];
-			const attackType = target.lastMoveUsed.type;
-			for (const typeName of this.dex.types.names()) {
-				if (source.hasType(typeName)) continue;
-				const typeCheck = this.dex.types.get(typeName).damageTaken[attackType];
-				if (typeCheck === 2 || typeCheck === 3) {
-					possibleTypes.push(typeName);
-				}
-			}
-			if (!possibleTypes.length) {
-				return false;
-			}
-			const randomType = this.sample(possibleTypes);
-
-			if (!source.setType(randomType)) return false;
-			this.add('-start', source, 'typechange', randomType);
-		},
-        flags: {},
-        name: "Special Agent",
-        rating: 4,
-        num: -99,
-    },
-	specialagent2: {
-		onFoeHit(target, source) {
-			if (!source.lastMoveUsed) {
-				return false;
-			}
-			const possibleTypes = [];
-			const attackType = source.lastMoveUsed.type;
-			for (const typeName of this.dex.types.names()) {
-				if (target.hasType(typeName)) continue;
-				const typeCheck = this.dex.types.get(typeName).damageTaken[attackType];
-				if (typeCheck === 2 || typeCheck === 3) {
-					possibleTypes.push(typeName);
-				}
-			}
-			if (!possibleTypes.length) {
-				return false;
-			}
-			const randomType = this.sample(possibleTypes);
-
-			if (!target.setType(randomType)) return false;
-			this.add('-start', target, 'typechange', randomType);
-		},
-        flags: {},
-        name: "Special Agent2",
-        rating: 4,
-        num: -99,
-    },
-	specialagent3: {
-		onHit(target, source) {
-			if (!target.lastMoveUsed) {
-				return false;
-			}
-			const possibleTypes = [];
-			const attackType = target.lastMoveUsed.type;
-			for (const typeName of this.dex.types.names()) {
-				if (source.hasType(typeName)) continue;
-				const typeCheck = this.dex.types.get(typeName).damageTaken[attackType];
-				if (typeCheck === 2 || typeCheck === 3) {
-					possibleTypes.push(typeName);
-				}
-			}
-			if (!possibleTypes.length) {
-				return false;
-			}
-			const randomType = this.sample(possibleTypes);
-
-			if (!source.setType(randomType)) return false;
-			this.add('-start', source, 'typechange', randomType);
-		},
-        flags: {},
-        name: "Special Agent3",
-        rating: 4,
-        num: -99,
-    },
-	specialagent4: {
-		onHit(target, source) {
-			if (!source.lastMoveUsed) {
-				return false;
-			}
-			const possibleTypes = [];
-			const attackType = source.lastMoveUsed.type;
-			for (const typeName of this.dex.types.names()) {
-				if (target.hasType(typeName)) continue;
-				const typeCheck = this.dex.types.get(typeName).damageTaken[attackType];
-				if (typeCheck === 2 || typeCheck === 3) {
-					possibleTypes.push(typeName);
-				}
-			}
-			if (!possibleTypes.length) {
-				return false;
-			}
-			const randomType = this.sample(possibleTypes);
-
-			if (!target.setType(randomType)) return false;
-			this.add('-start', target, 'typechange', randomType);
-		},
-        flags: {},
-        name: "Special Agent4",
-        rating: 4,
-        num: -99,
-    },
-	specialagent5: {
-		onAfterHit(target, source) {
-			if (!target.lastMoveUsed) {
-				return false;
-			}
-			const possibleTypes = [];
-			const attackType = target.lastMoveUsed.type;
-			for (const typeName of this.dex.types.names()) {
-				if (source.hasType(typeName)) continue;
-				const typeCheck = this.dex.types.get(typeName).damageTaken[attackType];
-				if (typeCheck === 2 || typeCheck === 3) {
-					possibleTypes.push(typeName);
-				}
-			}
-			if (!possibleTypes.length) {
-				return false;
-			}
-			const randomType = this.sample(possibleTypes);
-
-			if (!source.setType(randomType)) return false;
-			this.add('-start', source, 'typechange', randomType);
-		},
-        flags: {},
-        name: "Special Agent5",
-        rating: 4,
-        num: -99,
-    },
-	specialagent6: {
-		onTryHit(target, source) {
-			if (!target.lastMoveUsed) {
-				return false;
-			}
-			const possibleTypes = [];
-			const attackType = target.lastMoveUsed.type;
-			for (const typeName of this.dex.types.names()) {
-				if (source.hasType(typeName)) continue;
-				const typeCheck = this.dex.types.get(typeName).damageTaken[attackType];
-				if (typeCheck === 2 || typeCheck === 3) {
-					possibleTypes.push(typeName);
-				}
-			}
-			if (!possibleTypes.length) {
-				return false;
-			}
-			const randomType = this.sample(possibleTypes);
-
-			if (!source.setType(randomType)) return false;
-			this.add('-start', source, 'typechange', randomType);
-		},
-        flags: {},
-        name: "Special Agent6",
-        rating: 4,
-        num: -99,
-    },
 	feastorfamine: {
         onFoeTryBoost(boost, target, source, effect) {
             if (effect?.name === 'Opportunist' || effect?.name === 'Mirror Herb') return;
@@ -1894,6 +1732,33 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 2.5,
 		num: 160,
 	},
+	specialagent: {
+		onHit(target, source, move) {
+			if (!source.lastMoveUsed || move.category !== 'Status') {
+				return false;
+			}
+			const possibleTypes = [];
+			const attackType = source.lastMoveUsed.type;
+			for (const typeName of this.dex.types.names()) {
+				if (target.hasType(typeName)) continue;
+				const typeCheck = this.dex.types.get(typeName).damageTaken[attackType];
+				if (typeCheck === 2 || typeCheck === 3) {
+					possibleTypes.push(typeName);
+				}
+			}
+			if (!possibleTypes.length) {
+				return false;
+			}
+			const randomType = this.sample(possibleTypes);
+
+			if (!target.setType(randomType)) return false;
+			this.add('-start', target, 'typechange', randomType);
+		},
+        flags: {},
+        name: "Special Agent",
+        rating: 4,
+        num: -99,
+    },
 	secretagent: { // this one works [REFLECT TYPE] but as an ability
         onAnySwitchIn(pokemon) {
             const foe = pokemon.side.foe.active[pokemon.side.active.length - 1 - pokemon.position]
