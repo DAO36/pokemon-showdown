@@ -1056,22 +1056,12 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 2.5,
 		num: 43,
 	},
-	warcriminal: { // reskin of [Emergency Exit]/[Wimp Out] + [Aftermath] but even better!! <<<UNUSED>>>
+	warcriminal: { // reskin of [Aftermath] but even better
 		onDamagingHitOrder: 1,
 		onDamagingHit(damage, target, source, move) {
-			if (!target.hp) {
-				this.damage(source.baseMaxhp / 2, source, target);
+			if (!target.hp && move.category === 'Physical' || move.category === 'Special') {
+				this.damage(source.baseMaxhp / 3, source, target);
 			}
-		},
-		onEmergencyExit(target) {
-			if (!this.canSwitch(target.side) || target.forceSwitchFlag || target.switchFlag) return;
-			for (const side of this.sides) {
-				for (const active of side.active) {
-					active.switchFlag = false;
-				}
-			}
-			target.switchFlag = true;
-			this.add('-activate', target, 'ability: War Criminal');
 		},
 		flags: {breakable: 1},
 		name: "War Criminal",
@@ -1091,12 +1081,6 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
                 }
             }
         },
-		onDamagingHitOrder: 1,
-		onDamagingHit(damage, target, source, move) {
-			if (!target.hp && move.category === 'Physical' || move.category === 'Special') {
-				this.damage(source.baseMaxhp / 3, source, target);
-			}
-		},
 		flags: {breakable: 1},
 		name: "Peko Peko",
 		rating: 2,
@@ -3559,6 +3543,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			if (['explosion', 'mindblown', 'mistyexplosion', 'bigbang', 'selfdestruct'].includes(effect.id)) {
 				this.attrLastMove('[still]');
 				this.add('cant', this.effectState.target, 'ability: Damp', effect, `[of] ${target}`);
+				this.add('cant', this.effectState.target, 'ability: War Criminal', effect, `[of] ${target}`);
 				return false;
 			}
 		},

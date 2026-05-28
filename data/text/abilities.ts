@@ -204,19 +204,17 @@ export const AbilitiesText: { [id: IDEntry]: AbilityText } = {
 		desc: "This Pokemon is immune to Flying-type moves and has its Speed raised by 1 stage when hit by a Flying-type move.",
 		shortDesc: "User's Speed is raised by 1 stage if hit by a Flying move; Flying immunity.",
 	},
-	warcriminal: { // [UNUSED]
+	warcriminal: {
 		name: "War Criminal",
-		desc: "When this War Criminal has more than 1/2 of her maximum HP and takes damage bringing her to 1/2 or less of her maximum HP, she immediately switches out to a chosen ally. This effect applies after all hits from a multi-hit move. This effect is prevented if the move had a secondary effect removed by the Sheer Force Ability. This effect applies to both direct and indirect damage, except Curse and Substitute on use, Belly Drum, Pain Split, and confusion damage. If this Rabbit is knocked out by a Pokemon, that Pokemon loses 1/2 of its maximum HP, rounded down. If any active Pokemon has the Damp Ability, this effect is prevented.",
-		shortDesc: "User switches if HP reaches 1/2 HP or less. If KO'd, attacker loses 1/2 max HP.",
+		desc: "If this Pokemon is knocked out with an attacking move, that move's user loses 1/3 of its maximum HP, rounded down. This effect is prevented if the move's user has the Magic Guard Ability or if any active Pokemon has the Damp Ability.",
+		shortDesc: "If this Pokemon is KOed with a move, that move's user loses 1/4 its max HP.",
 
 		damage: "  [SOURCE] blew herself up!",
 	},
 	pekopeko: {
 		name: "Peko Peko",
-		desc: "On switch-in, this ability inflicts Taunt on all adjacent opponents. If this Pokemon is knocked out with a move, the atacker loses 1/3 of their maximum HP.",
-		shortDesc: "On switch-in, inflicts Taunt on foe(s). If user is KOed, the attacker loses 30% max HP.",
-
-		damage: "#aftermath",
+		desc: "On switch-in, this ability inflicts the Taunt status on all adjacent opponents.",
+		shortDesc: "Inflicts Taunt on foe(s) on switch-in.",
 	},
 	holyknight: {
 		name: "Holy Knight",

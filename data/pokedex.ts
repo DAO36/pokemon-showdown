@@ -20327,7 +20327,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		types: ["Dark", "Grass"],
 		gender: "F",
 		baseStats: {hp: 75, atk: 140, def: 135, spa: 125, spd: 75, spe: 50},
-		abilities: {0: "Heavy Metal", 1: "No Guard", H: "Prankster", S: "Peko Peko"},
+		abilities: {0: "Heavy Metal", 1: "No Guard", H: "Prankster", S: "War Criminal"},
 		heightm: 1.53,
 		weightkg: 66.6,
 		color: "Gray",
