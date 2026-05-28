@@ -68,14 +68,14 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
         num: -99,
     },
 	specialagent2: {
-		onTryHit(target, source) {
-			if (!target.lastMoveUsed) {
+		onFoeHit(target, source) {
+			if (!source.lastMoveUsed) {
 				return false;
 			}
 			const possibleTypes = [];
-			const attackType = target.lastMoveUsed.type;
+			const attackType = source.lastMoveUsed.type;
 			for (const typeName of this.dex.types.names()) {
-				if (source.hasType(typeName)) continue;
+				if (target.hasType(typeName)) continue;
 				const typeCheck = this.dex.types.get(typeName).damageTaken[attackType];
 				if (typeCheck === 2 || typeCheck === 3) {
 					possibleTypes.push(typeName);
@@ -86,16 +86,16 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			}
 			const randomType = this.sample(possibleTypes);
 
-			if (!source.setType(randomType)) return false;
-			this.add('-start', source, 'typechange', randomType);
+			if (!target.setType(randomType)) return false;
+			this.add('-start', target, 'typechange', randomType);
 		},
         flags: {},
-        name: "Special Agent2",
+        name: "Special Agent",
         rating: 4,
         num: -99,
     },
 	specialagent3: {
-		onAnyHit(target, source) {
+		onHit(target, source) {
 			if (!target.lastMoveUsed) {
 				return false;
 			}
@@ -118,6 +118,87 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		},
         flags: {},
         name: "Special Agent3",
+        rating: 4,
+        num: -99,
+    },
+	specialagent4: {
+		onHit(target, source) {
+			if (!source.lastMoveUsed) {
+				return false;
+			}
+			const possibleTypes = [];
+			const attackType = source.lastMoveUsed.type;
+			for (const typeName of this.dex.types.names()) {
+				if (target.hasType(typeName)) continue;
+				const typeCheck = this.dex.types.get(typeName).damageTaken[attackType];
+				if (typeCheck === 2 || typeCheck === 3) {
+					possibleTypes.push(typeName);
+				}
+			}
+			if (!possibleTypes.length) {
+				return false;
+			}
+			const randomType = this.sample(possibleTypes);
+
+			if (!target.setType(randomType)) return false;
+			this.add('-start', target, 'typechange', randomType);
+		},
+        flags: {},
+        name: "Special Agent4",
+        rating: 4,
+        num: -99,
+    },
+	specialagent5: {
+		onAfterHit(target, source) {
+			if (!target.lastMoveUsed) {
+				return false;
+			}
+			const possibleTypes = [];
+			const attackType = target.lastMoveUsed.type;
+			for (const typeName of this.dex.types.names()) {
+				if (source.hasType(typeName)) continue;
+				const typeCheck = this.dex.types.get(typeName).damageTaken[attackType];
+				if (typeCheck === 2 || typeCheck === 3) {
+					possibleTypes.push(typeName);
+				}
+			}
+			if (!possibleTypes.length) {
+				return false;
+			}
+			const randomType = this.sample(possibleTypes);
+
+			if (!source.setType(randomType)) return false;
+			this.add('-start', source, 'typechange', randomType);
+		},
+        flags: {},
+        name: "Special Agent5",
+        rating: 4,
+        num: -99,
+    },
+	specialagent6: {
+		onTryHit(target, source) {
+			if (!target.lastMoveUsed) {
+				return false;
+			}
+			const possibleTypes = [];
+			const attackType = target.lastMoveUsed.type;
+			for (const typeName of this.dex.types.names()) {
+				if (source.hasType(typeName)) continue;
+				const typeCheck = this.dex.types.get(typeName).damageTaken[attackType];
+				if (typeCheck === 2 || typeCheck === 3) {
+					possibleTypes.push(typeName);
+				}
+			}
+			if (!possibleTypes.length) {
+				return false;
+			}
+			const randomType = this.sample(possibleTypes);
+
+			if (!source.setType(randomType)) return false;
+			this.add('-start', source, 'typechange', randomType);
+		},
+        flags: {},
+        name: "Special Agent6",
         rating: 4,
         num: -99,
     },
