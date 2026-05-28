@@ -135,7 +135,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			target.removeVolatile('gastroacid');
 		},
 	},
-	aurafarming: {
+	aurafarming: { // Ash-Lucario
 		onDamagingHit(damage, target, source, effect) {
 			this.boost({atk: 1, spa: 1, spe: 1});
 		},
@@ -155,7 +155,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3,
 		num: 153,
 	},
-	firebreathingdragon: {
+	firebreathingdragon: { // Mega Charizard Z
 		onModifyAtkPriority: 5,
 		onModifyAtk(atk, attacker, defender, move) {
 			if (move.type === 'Fire') {
@@ -183,7 +183,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 4.5,
 		num: 199,
 	},
-	punchingbag: {
+	punchingbag: { // Mega Wobbuffett
 		onFoeTrapPokemon(pokemon) {
 			if (!pokemon.hasAbility('punchingbag') && pokemon.isAdjacent(this.effectState.target)) {
 				pokemon.tryTrap(true);
@@ -239,7 +239,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 4,
 		num: 192,
 	},
-	aurabond: { 
+	aurabond: {  // Ash-Lucario
 		onSourceAfterFaint(length, target, source, effect) {
 			if (effect?.effectType !== 'Move') {
 				return;
@@ -254,7 +254,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 4,
 		num: 24,
 	},
-	pikabond: { 
+	pikabond: {  // Ash-Pikachu
 		onSourceAfterFaint(length, target, source, effect) {
 			if (effect?.effectType !== 'Move') {
 				return;
@@ -269,7 +269,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 4,
 		num: 24,
 	},
-	pokemonmaster: {
+	pokemonmaster: { // Ash-Pikachu
 		onModifyAtkPriority: 5,
 		onModifyAtk(atk) {
 			return this.chainModify(2);
@@ -728,40 +728,24 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		name: "God",
 		rating: 4,
 		num: 94,
-	}, 
-	spiderman: { // [UNUSED] if hit, sets up STICKY WEBS
+	},
+	spidersoup: { // if hit, sets up STICKY WEBS && HEALS when using STATUS moves
 		onDamagingHitOrder: 1,
 		onDamagingHit(damage, target, source, move) {
 			const side = source.isAlly(target) ? source.side.foe : source.side;
 			const stickyweb = side.sideConditions['stickyweb'];
-			if (move.category === 'Special' || move.category === 'Physical' && (!stickyweb || stickyweb.layers < 1)) {
-				this.add('-activate', target, 'ability: Spiderman');
+			if (move.category === 'Physical' && (!stickyweb || stickyweb.layers < 1)) {
+				this.add('-activate', target, 'ability: Spider Soup');
 				side.addSideCondition('stickyweb', target);
 			}
 		},
-		flags: {breakable: 1},
-		name: "Spiderman",
-		rating: 3.5,
-		num: 295,
-	},
-	haachamacooking: { // FLINCH on switch in - HEALS when using STATUS moves
-		onStart(pokemon) {
-            const foe = pokemon.side.foe.active[pokemon.side.active.length - 1 - pokemon.position]
-			const adjacentFoe = pokemon.adjacentFoes()[0]; 
-			if (!foe) return;
-                    this.add('-ability', pokemon, 'Haachama Cooking', 'boost');
-				{		
-                    foe.addVolatile('flinch', this.effectState.pokemon);
-                }
-            
-        },
 		onAfterMove(target, source, move) {
             if (move.category === 'Status') {
                 this.heal(target.baseMaxhp / 10);
             }
         },
 		flags: {breakable: 1},
-		name: "Haachama Cooking",
+		name: "Spider Soup",
 		rating: 5,
 		num: 23,
 	},
@@ -1210,7 +1194,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3.5,
 		num: 181,
 	},
-	watamelon: { // reskin of [Overcoat] + immune to crits + reduced sound damage 
+	watamelon: { // reskin of [Overcoat] + immune to crits + immune to sound type moves 
 		onCriticalHit: false,
 		onImmunity(type, pokemon) {
 			if (type === 'sandstorm' || type === 'hail' || type === 'powder') return false;
@@ -1856,7 +1840,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 2,
 		num: 85,
 	}, 
-	blacksmith: { // [Earth Eater] + [Water Veil] + [Thermal Exchange] but for Steel=>DEF + Rock=>ATK instead of Fire=>ATK
+	blacksmith: { // [Heatproof] but ground + [Water Veil] + [Thermal Exchange] but for Steel=>DEF + Rock=>ATK instead of Fire=>ATK
 		onSourceModifyAtkPriority: 6,
 		onSourceModifyAtk(atk, attacker, defender, move) {
 			if (move.type === 'Ground') {
@@ -2095,7 +2079,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 4,
 		num: 18,
 	},
-	parttimewarrior: {
+	parttimewarrior: { // FIGHT => +1 DEF - FIRE => +1 ATK - FLY => +1 SPEED + Imuunity
 		onDamagingHit(damage, target, source, move) {
 			if (move.type === 'Fighting') {
 				this.boost({def: 1});
@@ -2231,6 +2215,22 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		name: "Societal Collapse",
 		rating: 2,
 		num: 201,
+	},
+	mooming: { // [EVIL MUMEI] FLINCH on switch in
+		onStart(pokemon) {
+            const foe = pokemon.side.foe.active[pokemon.side.active.length - 1 - pokemon.position]
+			const adjacentFoe = pokemon.adjacentFoes()[0]; 
+			if (!foe) return;
+                    this.add('-ability', pokemon, 'Mooming', 'boost');
+				{		
+                    foe.addVolatile('flinch', this.effectState.pokemon);
+                }
+            
+        },
+		flags: {breakable: 1},
+		name: "Mooming",
+		rating: 5,
+		num: 23,
 	},
 	chaos: { // reskin of [Effect Spore] but on crack
 		onDamagingHitOrder: 1,

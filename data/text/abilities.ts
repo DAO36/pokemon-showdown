@@ -118,15 +118,11 @@ export const AbilitiesText: { [id: IDEntry]: AbilityText } = {
 		shortDesc: "This Pokemon's attacks do 1.5x damage, and loses 1/10 max HP after the attack.",
 
 		damage: "  [POKEMON] is sacrificing her HP in exchange for more power!",
-	}, 
-	spiderman: { // [UNUSED]
-		name: "SpiderMan",
-		shortDesc: "If this Pokemon is hit by an attack, Sticky Web is set on the opposing side.",
 	},
-	haachamacooking: {
-		name: "Haachama Cooking",
-		desc: "Upon switching in, causes opposing Pokemon to flinch. This Pokemon heals 1/10 of their maximum HP whn using a status move.",
-		shortDesc: "Heals 1/10 HP when using status moves; Causes foes to flinch on switch-in.",
+	spidersoup: {
+		name: "Spider Soup",
+		desc: "If this Pokemon is hit by a physical attack, Sticky Web is set on the opposing side. This Pokemon heals 1/10 of their maximum HP whn using a status move.",
+		shortDesc: "If hit by physical attack, Sticky Webs is set up. Heals 1/10 HP if using status moves.",
 	},
 	chamachange: {
 		name: "Chama Change",
@@ -467,6 +463,11 @@ export const AbilitiesText: { [id: IDEntry]: AbilityText } = {
 		name: "Societal Collapse",
 		desc: "When this Pokemon has more than 1/2 its maximum HP and takes damage from an attack bringing it to 1/2 or less of its maximum HP, its Attack and Special Attack are raised by 1 stage, and its Defense and Special Defense are lowered by 1 stage. This effect applies after all hits from a multi-hit move. This effect is prevented if the move had a secondary effect removed by the Sheer Force Ability.",
 		shortDesc: "At 1/2 or less of user's max HP: +1 Atk, Sp. Atk, & -1 Def, Sp. Def.",
+	},
+	mooming: {
+		name: "Mooming",
+		desc: "Upon switching in, causes opposing adjacent Pokemon to flinch.",
+		shortDesc: "Causes opposing adjacent Pokemon to flinch on switch-in.",
 	},
 	chaos3: {
 		name: "Chaos3",
