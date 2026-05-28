@@ -1752,6 +1752,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			const randomType = this.sample(possibleTypes);
 
 			if (!target.setType(randomType)) return false;
+			this.add('-activate', source, 'ability: Special Agent');
 			this.add('-start', target, 'typechange', randomType);
 		},
         flags: {},
