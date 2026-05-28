@@ -420,6 +420,11 @@ export const AbilitiesText: { [id: IDEntry]: AbilityText } = {
 		desc: "If Sandstorm is active, this Blacksmith restores 1/10 of her maximum HP per turn. This Blacksmith's Ground/Rock/Steel attacks do 1.3x in Sandstorm.",
 		shortDesc: "In sandstorm: gains 1/10 HP per turn; Ground/Rock/Steel attacks do 1.3x damage.",
 	},
+	ench: {
+		name: "Stench",
+		desc: "This Pokemon's biting based attacks without a chance to make the target flinch gain a 30% chance to make the target flinch.",
+		shortDesc: "This Pokemon's bite based attacks gain a 30% chance to flinch.",
+	},
 	powerofatlantis: {
 		name: "Power of Atlantis",
 		desc: "If Rain is active, this Pokemon's Attack and Special Attack is multiplied by 1.3 and gains 1/10 of its maximum HP, rounded down, at the end of each turn. If there's no weather, loses 1/10 of maximum HP, rounded down, at the end of each turn, if Sunny Day/Desolate Land/Sandstorm, loses 1/8 of maximum HP per turn instead. These effects are prevented if the Pokemon is holding a Utility Umbrella.",

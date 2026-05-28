@@ -1990,7 +1990,27 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		name: "Rain Shaman",
 		rating: 4,
 		num: 191,
-	}, 
+	},
+	jaws: {
+		onModifyMovePriority: -1,
+		onModifyMove(move) {
+			if (move.flags['bite']) {
+				this.debug('Adding Jaws flinch');
+				if (!move.secondaries) move.secondaries = [];
+				for (const secondary of move.secondaries) {
+					if (secondary.volatileStatus === 'flinch') return;
+				}
+				move.secondaries.push({
+					chance: 30,
+					volatileStatus: 'flinch',
+				});
+			}
+		},
+		flags: {},
+		name: "Jaws",
+		rating: 0.5,
+		num: 1,
+	},
 	powerofatlantis: { // combines [Dry Skin] with [Solar Power], if there's: no weather/sun/sandstorm; takes passive damage. If Rain: passively heals; Atk and SpA is boosted
 		onModifySpAPriority: 5,
 		onModifySpA(spa, pokemon) {

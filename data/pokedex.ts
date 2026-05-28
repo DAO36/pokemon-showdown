@@ -21282,7 +21282,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		types: ["Water", "Dark"],
 		gender: "F",
 		baseStats: {hp: 70, atk: 130, def: 90, spa: 125, spd: 70, spe: 115},
-		abilities: {0: "Anger Point", 1: "Berserk", H: "Mold Breaker", S: "Power of Atlantis"},
+		abilities: {0: "Anger Point", 1: "Berserk", H: "Mold Breaker", S: "Jaws"},
 		heightm: 1.41,
 		weightkg: 55.5,
 		color: "Red",

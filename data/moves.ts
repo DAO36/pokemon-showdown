@@ -2896,17 +2896,12 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 				break;
 			}
 		},
-		secondaries: [
-			{
-				chance: 20,
-				boosts: {
-					def: -1,
-				},
-			}, {
-				chance: 20,
-				volatileStatus: 'flinch',
+		secondary: {
+			chance: 20,
+			boosts: {
+				def: -1,
 			},
-		],
+		},
 		target: "normal",
 		type: "Water",
 		contestType: "Tough",

@@ -747,8 +747,8 @@ export const MovesText: { [id: IDEntry]: MoveText } = {
 	},
 	sharkattack: {
 		name: "Shark Attack",
-		desc: "Has a 20% chance to lower the target's Defense by 1 stage and/or a 20% chance to make it flinch. If the weather is Primordial Sea or Rain Dance, this move does not check accuracy. If the weather is Sandstorm, Desolate Land or Sunny Day, this move's accuracy is 50%.",
-		shortDesc: "Target: 20% -1 Defense, 20% flinch.", 
+		desc: "Has a 20% chance to lower the target's Defense by 1 stage. If the weather is Primordial Sea or Rain Dance, this move does not check accuracy. If the weather is Sandstorm, Desolate Land or Sunny Day, this move's accuracy is 50%.",
+		shortDesc: "20% chance to lower target's Defense by 1 stage.", 
 	},
 	atlantisstrike: {
 		name: "Atlantis Strike",
