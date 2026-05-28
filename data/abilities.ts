@@ -40,6 +40,33 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 0.1,
 		num: 0,
 	},
+	specialagent: {
+		onHit(target, source) {
+			if (!target.lastMoveUsed) {
+				return false;
+			}
+			const possibleTypes = [];
+			const attackType = target.lastMoveUsed.type;
+			for (const typeName of this.dex.types.names()) {
+				if (source.hasType(typeName)) continue;
+				const typeCheck = this.dex.types.get(typeName).damageTaken[attackType];
+				if (typeCheck === 2 || typeCheck === 3) {
+					possibleTypes.push(typeName);
+				}
+			}
+			if (!possibleTypes.length) {
+				return false;
+			}
+			const randomType = this.sample(possibleTypes);
+
+			if (!source.setType(randomType)) return false;
+			this.add('-start', source, 'typechange', randomType);
+		},
+        flags: {},
+        name: "Special Agent",
+        rating: 4,
+        num: -99,
+    },
 	feastorfamine: {
         onFoeTryBoost(boost, target, source, effect) {
             if (effect?.name === 'Opportunist' || effect?.name === 'Mirror Herb') return;
