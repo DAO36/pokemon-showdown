@@ -1732,9 +1732,9 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 2.5,
 		num: 160,
 	},
-	specialagent: {
+	specialagent: { // this.add('-activate', source, 'ability: Special Agent');
 		onHit(target, source, move) {
-			if (!source.lastMoveUsed || move.category !== 'Status') {
+			if (!source.lastMoveUsed || move.category === 'Status') {
 				return false;
 			}
 			const possibleTypes = [];
