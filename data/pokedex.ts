@@ -20931,7 +20931,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		types: ["Psychic", "Dark"],
 		gender: "F",
 		baseStats: {hp: 100, atk: 125, def: 100, spa: 90, spd: 75, spe: 110},
-		abilities: {0: "Pressure", 1: "Intimidate", H: "Sheer Force"},
+		abilities: {0: "Pressure", 1: "Intimidate", H: "Sheer Force", S: "Moon Might"},
 		heightm: 1.65,
 		weightkg: 55.5,
 		color: "Purple",

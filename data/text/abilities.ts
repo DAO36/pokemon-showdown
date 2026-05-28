@@ -362,6 +362,11 @@ export const AbilitiesText: { [id: IDEntry]: AbilityText } = {
 		transform: "Changed to Hoshinova!",
 		transformEnd: "Changed to Moona!",
 	},
+	moonmight: {
+		name: "Moon Might",
+		desc: "If Gravity is active, this Pokemon's Attacka and Special Attack are multiplied by 1.5 and it loses 1/8 of its maximum HP, rounded down, at the end of each turn.",
+		shortDesc: "If Gravity is active, this Pokemon's Atk & SpA are 1.5x; loses 1/8 max HP per turn.",
+	},
 	alienartist: {
 		name: "Alien Artist",
 	    desc: "The target's type changes to match the type of the move the user has used on the target. This effect comes after all effects that change a move's type.",
