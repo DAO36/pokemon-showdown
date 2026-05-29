@@ -66,10 +66,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			this.add('-clearboost', foe);
 		},
         onFoeAfterBoost(boost, target, source, effect) {
-			const foe = target.side.foe.active[target.side.active.length - 1 - target.position]
-			const adjacentFoe = target.adjacentFoes()[0]; 
-			if (!foe) return;
-			if (effect?.name === 'Feast or Famine' || effect?.name === 'Mirror Herb') return;
+			if (effect?.name === 'Opportunist' || effect?.name === 'Mirror Herb') return;
 			const pokemon = this.effectState.target;
 			const positiveBoosts: Partial<BoostsTable> = {};
 			let i: BoostID;
@@ -79,9 +76,8 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 				}
 			}
 			if (Object.keys(positiveBoosts).length < 1) return;
-			this.add('-copyboost', foe, pokemon, '[from] ability: Feast or Famine');
-			foe.clearBoosts();
-			this.add('-clearboost', pokemon);
+			this.boost(positiveBoosts, pokemon);
+			this.add('-clearboost', target);
 		},
         flags: {},
         name: "Feast or Famine",
