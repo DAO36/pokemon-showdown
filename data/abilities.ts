@@ -52,9 +52,6 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 					delete boost[i];
 					showMsg = true;
 				}
-				if (showMsg && !(effect as Ability)) {
-				this.add('-fail', target, 'unboost', '[from] item: Clear Amulet', `[of] ${target}`);
-		    	}
             }
             target.clearBoosts();
             this.add('-clearboost', target);
