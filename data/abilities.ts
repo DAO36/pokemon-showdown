@@ -92,20 +92,6 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			} 
 			this.add('-copyboost', pokemon, foe, '[from] ability: Archiver'); 
 		},
-		onFoeAfterBoost(boost, target, source, effect) {
-			if (effect?.name === 'Archiver' || effect?.name === 'Mirror Herb') return;
-			const pokemon = this.effectState.target;
-			const positiveBoosts: Partial<BoostsTable> = {};
-			let i: BoostID;
-			for (i in boost) {
-				if (boost[i]! > 0) {
-					positiveBoosts[i] = boost[i];
-				}
-			}
-			if (Object.keys(positiveBoosts).length < 1) return;
-			this.boost(positiveBoosts, pokemon);
-			this.add('-clearboost', target);
-		},
 		flags: {breakable: 1},
 		name: "Archiver",
 		rating: 3,
@@ -150,26 +136,6 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			this.boost(positiveBoosts, pokemon);
 			this.add('-clearboost', target);
 		},
-        onAnySwitchInPriority: -3,
-        onAnySwitchIn() {
-            if (!this.effectState.boosts) return;
-            this.boost(this.effectState.boosts, this.effectState.target);
-            delete this.effectState.boosts;
-        },
-        onAnyAfterMove() {
-            if (!this.effectState.boosts) return;
-            this.boost(this.effectState.boosts, this.effectState.target);
-            delete this.effectState.boosts;
-        },
-        onResidualOrder: 29,
-        onResidual(pokemon) {
-            if (!this.effectState.boosts) return;
-            this.boost(this.effectState.boosts, this.effectState.target);
-            delete this.effectState.boosts;
-        },
-        onEnd() {
-            delete this.effectState.boosts;
-        },
         flags: {},
         name: "Feast or Famine",
         rating: 4,
