@@ -41,17 +41,15 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		num: 0,
 	},
 	feastorfamine: {
-        onFoeTryBoost (boost, target, source, effect) {
+        onFoeTryBoost(boost, target, source, effect) {
             if (effect?.name === 'Opportunist' || effect?.name === 'Mirror Herb') return;
             if (!this.effectState.boosts) this.effectState.boosts = {} as SparseBoostsTable;
             const boostPlus = this.effectState.boosts;
-			let showMsg = false;
             let i: BoostID;
             for (i in boost) {
-                if (boost[i]! < 0) {
-					delete boost[i];
-					showMsg = true;
-				}
+                if (boost[i]! > 0) {
+                    boostPlus[i] = (boostPlus[i] || 0) + boost[i]!;
+                }
             }
             target.clearBoosts();
             this.add('-clearboost', target);
