@@ -42,6 +42,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	},
 	feastorfamine: {
         onFoeTryBoost(boost, target, source, effect) {
+			const feastorfamineHolder = this.effectState.target;
             if (effect?.name === 'Opportunist' || effect?.name === 'Mirror Herb') return;
             if (!this.effectState.boosts) this.effectState.boosts = {} as SparseBoostsTable;
             const boostPlus = this.effectState.boosts;
@@ -51,7 +52,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
                     boostPlus[i] = (boostPlus[i] || 0) + boost[i]!;
                 }
 				this.attrLastMove('[still]');
-				this.add('cant', 'ability: Feast or Famine', effect);
+				this.add('cant', feastorfamineHolder, 'ability: Feast or Famine', effect, '[of] ' + target);
 				return false;
             }
             target.clearBoosts();
