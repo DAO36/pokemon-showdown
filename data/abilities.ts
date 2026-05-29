@@ -79,9 +79,9 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 				}
 			}
 			if (Object.keys(positiveBoosts).length < 1) return;
-			this.add('-copyboost', pokemon, foe, '[from] ability: Feast or Famine');
+			this.add('-copyboost', foe, pokemon, '[from] ability: Feast or Famine');
 			foe.clearBoosts();
-			this.add('-clearboost', foe);
+			this.add('-clearboost', pokemon);
 		},
         flags: {},
         name: "Feast or Famine",
