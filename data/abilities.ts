@@ -144,9 +144,8 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
             for (i in boost) {
                 if (boost[i]! > 0) {
                     boostPlus[i] = (boostPlus[i] || 0) + boost[i]!;
+					if (Object.keys(boostPlus).length < 1) return;
                 }
-				if (Object.keys(boostPlus).length < 1) return;
-
 				this.attrLastMove('[still]');
 				this.add('cant', feastorfamineHolder, 'ability: Feast or Famine', effect, `[of] ${target}`);
 				return false;
