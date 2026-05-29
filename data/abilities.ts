@@ -41,46 +41,20 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		num: 0,
 	},
 	feastorfamine: {
-		onStart(pokemon) { 
-			const foe = pokemon.side.foe.active[pokemon.side.active.length - 1 - pokemon.position]
-			const adjacentFoe = pokemon.adjacentFoes()[0]; 
-			if (!foe) return;
-
-			let i: BoostID;
-			for (i in foe.boosts) {
-				pokemon.boosts[i] = foe.boosts[i];
-			}
-			const volatilesToCopy = ['dragoncheer', 'focusenergy', 'gmaxchistrike', 'laserfocus'];
-			// we need to be sure to remove all the overlapping crit volatiles before trying to add any
-			for (const volatile of volatilesToCopy) pokemon.removeVolatile(volatile);
-			for (const volatile of volatilesToCopy) {
-				if (foe.volatiles[volatile]) {
-					pokemon.addVolatile(volatile);
-					if (volatile === 'gmaxchistrike') pokemon.volatiles[volatile].layers = foe.volatiles[volatile].layers;
-					if (volatile === 'dragoncheer') pokemon.volatiles[volatile].hasDragonType = foe.volatiles[volatile].hasDragonType;
-				}  
-			}	
-				this.add('-copyboost', pokemon, foe, '[from] ability: Feast or Famine');  
-			 
-				foe.clearBoosts();
-			this.add('-clearboost', foe);
-		},
-        onFoeAfterBoost(boost, target, source, effect) {
-			if (effect?.name === 'Opportunist' || effect?.name === 'Mirror Herb') return;
-			if (!this.effectState.boosts) this.effectState.boosts = {} as SparseBoostsTable;
-			const pokemon = this.effectState.target;
-			const boostPlus: Partial<BoostsTable> = {};
-			let i: BoostID;
-			for (i in boost) {
-				if (boost[i]! > 0) {
-					boostPlus[i] = (boostPlus[i] || 0) + boost[i]!;
-				}
-			}
-			if (Object.keys(boostPlus).length < 1) return;
-			this.boost(boostPlus, pokemon);
-			this.add('-clearboost', target);
-		},
-		onAnySwitchInPriority: -3,
+        onFoeTryBoost(boost, target, source, effect) {
+            if (effect?.name === 'Opportunist' || effect?.name === 'Mirror Herb') return;
+            if (!this.effectState.boosts) this.effectState.boosts = {} as SparseBoostsTable;
+            const boostPlus = this.effectState.boosts;
+            let i: BoostID;
+            for (i in boost) {
+                if (boost[i]! > 0) {
+                    boostPlus[i] = (boostPlus[i] || 0) + boost[i]!;
+                }
+            }
+            target.clearBoosts();
+            this.add('-clearboost', target);
+        },
+        onAnySwitchInPriority: -3,
         onAnySwitchIn() {
             if (!this.effectState.boosts) return;
             this.boost(this.effectState.boosts, this.effectState.target);
@@ -105,25 +79,6 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
         rating: 4,
         num: -99,
     },
-	chiver: { // combines [Oppurtunist] + [Costar] but copies Foes stats instead of Allys stats
-		onFoeAfterBoost(boost, target, source, effect) {
-			if (effect?.name === 'Archiver' || effect?.name === 'Mirror Herb') return;
-			const pokemon = this.effectState.target;
-			const positiveBoosts: Partial<BoostsTable> = {};
-			let i: BoostID;
-			for (i in boost) {
-				if (boost[i]! > 0) {
-					positiveBoosts[i] = boost[i];
-				}
-			}
-			if (Object.keys(positiveBoosts).length < 1) return;
-			this.boost(positiveBoosts, pokemon);
-		},
-		flags: {breakable: 1},
-		name: "Archiver",
-		rating: 3,
-		num: 290,
-	},
 	arttheft: {
 		name: "Art Theft",
 		rating: 4,
