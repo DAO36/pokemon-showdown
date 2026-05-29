@@ -1681,52 +1681,6 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 2,
 		num: 94,
 	},
-	moonmight2: {
-		onModifySpAPriority: 5,
-		onModifySpA(spa, pokemon) {
-			if (this.field.getPseudoWeather('gravity')) {
-				return this.chainModify(1.5);
-			}
-		},
-		onModifyAtkPriority: 5,
-		onModifyAtk(spa, pokemon) {
-			if (this.field.getPseudoWeather('gravity')) {
-				return this.chainModify(1.5);
-			}
-		},
-		onUpdate(target) {
-			if (this.field.getPseudoWeather('gravity')) {
-				this.damage(target.baseMaxhp / 8, target, target);
-			}
-		},
-		flags: {},
-		name: "Moon Might2",
-		rating: 2,
-		num: 94,
-	},
-	moonmight3: {
-		onModifySpAPriority: 5,
-		onModifySpA(spa, pokemon) {
-			if (this.field.getPseudoWeather('gravity')) {
-				return this.chainModify(1.5);
-			}
-		},
-		onModifyAtkPriority: 5,
-		onModifyAtk(spa, pokemon) {
-			if (this.field.getPseudoWeather('gravity')) {
-				return this.chainModify(1.5);
-			}
-		},
-		onUpdate(pokemon) {
-			if (this.field.getPseudoWeather('gravity')) {
-				this.damage(pokemon.baseMaxhp / 8, pokemon, pokemon);
-			}
-		},
-		flags: {},
-		name: "Moon Might3",
-		rating: 2,
-		num: 94,
-	},
 	alienartist: { // PROTEAN/COLOR CHANGE but in reverse
 		onAfterMoveSecondarySelf(source, target, move) {
             if (move.hasBounced || move.flags['futuremove'] || move.sourceEffect === 'snatch') return;
