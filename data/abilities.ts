@@ -80,6 +80,26 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			this.boost(boostPlus, pokemon);
 			this.add('-clearboost', target);
 		},
+		onAnySwitchInPriority: -3,
+        onAnySwitchIn() {
+            if (!this.effectState.boosts) return;
+            this.boost(this.effectState.boosts, this.effectState.target);
+            delete this.effectState.boosts;
+        },
+        onAnyAfterMove() {
+            if (!this.effectState.boosts) return;
+            this.boost(this.effectState.boosts, this.effectState.target);
+            delete this.effectState.boosts;
+        },
+        onResidualOrder: 29,
+        onResidual(pokemon) {
+            if (!this.effectState.boosts) return;
+            this.boost(this.effectState.boosts, this.effectState.target);
+            delete this.effectState.boosts;
+        },
+        onEnd() {
+            delete this.effectState.boosts;
+        },
         flags: {},
         name: "Feast or Famine",
         rating: 4,
