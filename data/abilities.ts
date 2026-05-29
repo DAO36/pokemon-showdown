@@ -40,20 +40,88 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 0.1,
 		num: 0,
 	},
+	racy: { // reskin of [Costar] but copies foes stats insetad of allies and also clears foes stats  
+		onStart(pokemon) { 
+			const foe = pokemon.side.foe.active[pokemon.side.active.length - 1 - pokemon.position]
+			const adjacentFoe = pokemon.adjacentFoes()[0]; 
+			if (!foe) return;
+
+			let i: BoostID;
+			for (i in foe.boosts) {
+				pokemon.boosts[i] = foe.boosts[i];
+			}
+			const volatilesToCopy = ['dragoncheer', 'focusenergy', 'gmaxchistrike', 'laserfocus'];
+			// we need to be sure to remove all the overlapping crit volatiles before trying to add any
+			for (const volatile of volatilesToCopy) pokemon.removeVolatile(volatile);
+			for (const volatile of volatilesToCopy) {
+				if (foe.volatiles[volatile]) {
+					pokemon.addVolatile(volatile);
+					if (volatile === 'gmaxchistrike') pokemon.volatiles[volatile].layers = foe.volatiles[volatile].layers;
+					if (volatile === 'dragoncheer') pokemon.volatiles[volatile].hasDragonType = foe.volatiles[volatile].hasDragonType;
+				}  
+			}	
+				this.add('-copyboost', pokemon, foe, '[from] ability: Piracy');  
+			 
+				foe.clearBoosts();
+			this.add('-clearboost', foe);
+		},
+		flags: {breakable: 1},
+		name: "Piracy",
+		rating: 0,
+		num: 294,
+	},
+	chiver: { // combines [Oppurtunist] + [Costar] but copies Foes stats instead of Allys stats
+		onStart(pokemon) {  
+			const foe = pokemon.side.foe.active[pokemon.side.active.length - 1 - pokemon.position]
+			const adjacentFoe = pokemon.adjacentFoes()[0]; 
+			if (!foe) return;
+
+			let i: BoostID;
+			for (i in foe.boosts) {
+				pokemon.boosts[i] = foe.boosts[i];
+			}
+			const volatilesToCopy = ['dragoncheer', 'focusenergy', 'gmaxchistrike', 'laserfocus'];
+			// we need to be sure to remove all the overlapping crit volatiles before trying to add any
+			for (const volatile of volatilesToCopy) pokemon.removeVolatile(volatile);
+			for (const volatile of volatilesToCopy) {
+				if (foe.volatiles[volatile]) {
+					pokemon.addVolatile(volatile);
+					if (volatile === 'gmaxchistrike') pokemon.volatiles[volatile].layers = foe.volatiles[volatile].layers;
+					if (volatile === 'dragoncheer') pokemon.volatiles[volatile].hasDragonType = foe.volatiles[volatile].hasDragonType;
+				}
+			} 
+			this.add('-copyboost', pokemon, foe, '[from] ability: Archiver'); 
+		},
+		onFoeAfterBoost(boost, target, source, effect) {
+			if (effect?.name === 'Archiver' || effect?.name === 'Mirror Herb') return;
+			const pokemon = this.effectState.target;
+			const positiveBoosts: Partial<BoostsTable> = {};
+			let i: BoostID;
+			for (i in boost) {
+				if (boost[i]! > 0) {
+					positiveBoosts[i] = boost[i];
+				}
+			}
+			if (Object.keys(positiveBoosts).length < 1) return;
+			this.boost(positiveBoosts, pokemon);
+		},
+		flags: {breakable: 1},
+		name: "Archiver",
+		rating: 3,
+		num: 290,
+	},
 	feastorfamine: {
         onFoeTryBoost(boost, target, source, effect) {
-            if (effect?.name === 'Opportunist' || effect?.name === 'Mirror Herb') return;
+            if (effect?.name === 'Feast or Famine' || effect?.name === 'Mirror Herb') return;
             if (!this.effectState.boosts) this.effectState.boosts = {} as SparseBoostsTable;
-            const boostPlus = this.effectState.boosts;
+			const pokemon = this.effectState.target;
+            const positiveBoosts: Partial<BoostsTable> = {};
             let i: BoostID;
             for (i in boost) {
                 if (boost[i]! > 0) {
-                    boostPlus[i] = (boostPlus[i] || 0) + boost[i]!;
+                    positiveBoosts[i] = boost[i];
                 }
-				const feaster = this.effectState.target;
-				this.attrLastMove('[still]');
-				return false;
-            }
+			}
             target.clearBoosts();
             this.add('-clearboost', target);
         },
