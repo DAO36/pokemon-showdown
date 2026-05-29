@@ -1661,23 +1661,41 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	moonmight: {
 		onModifySpAPriority: 5,
 		onModifySpA(spa, pokemon) {
-			if (this.field.getPseudoWeather('trickroom')) {
+			if (this.field.getPseudoWeather('gravity')) {
 				return this.chainModify(1.5);
 			}
 		},
 		onModifyAtkPriority: 5,
 		onModifyAtk(spa, pokemon) {
-			if (this.field.getPseudoWeather('trickroom')) {
+			if (this.field.getPseudoWeather('gravity')) {
 				return this.chainModify(1.5);
 			}
 		},
 		onWeather(target, source, effect) {
-			if (this.field.getPseudoWeather('trickroom')) {
+			if (this.field.getPseudoWeather('gravity')) {
 				this.damage(target.baseMaxhp / 8, target, target);
 			}
 		},
 		flags: {},
 		name: "Moon Might",
+		rating: 2,
+		num: 94,
+	},
+	moonmight2: {
+		onModifySpAPriority: 5,
+		onModifySpA(spa, pokemon) {
+			if (['gravity'].includes(pokemon.effectiveWeather())) {
+				return this.chainModify(1.5);
+			}
+		},
+		onWeather(target, source, effect) {
+			if (target.effectiveWeather() !== effect.id) return;
+			if (effect.id === 'gravity') {
+				this.damage(target.baseMaxhp / 8, target, target);
+			}
+		},
+		flags: {},
+		name: "Moon Might2",
 		rating: 2,
 		num: 94,
 	},
