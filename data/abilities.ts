@@ -70,7 +70,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
                     boostPlus[i] = (boostPlus[i] || 0) + boost[i]!;
                 }
 				this.attrLastMove('[still]');
-				this.add('cant', target, target, 'ability: Feast or Famine', effect, '[of] ' + feastorfamineHolder);
+				this.add('cant', source, 'ability: Feast or Famine', effect, '[of] ' + feastorfamineHolder);
 				return false;
             }
             target.clearBoosts();
