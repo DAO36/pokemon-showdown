@@ -104,6 +104,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			}
 			if (Object.keys(positiveBoosts).length < 1) return;
 			this.boost(positiveBoosts, pokemon);
+			this.add('-clearboost', target);
 		},
 		flags: {breakable: 1},
 		name: "Archiver",
@@ -111,20 +112,20 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		num: 290,
 	},
 	feastorfamine: {
-        onFoeTryBoost(boost, target, source, effect) {
-            if (effect?.name === 'Feast or Famine' || effect?.name === 'Mirror Herb') return;
-            if (!this.effectState.boosts) this.effectState.boosts = {} as SparseBoostsTable;
+        onFoeAfterBoost(boost, target, source, effect) {
+			if (effect?.name === 'Archiver' || effect?.name === 'Mirror Herb') return;
 			const pokemon = this.effectState.target;
-            const positiveBoosts: Partial<BoostsTable> = {};
-            let i: BoostID;
-            for (i in boost) {
-                if (boost[i]! > 0) {
-                    positiveBoosts[i] = boost[i];
-                }
+			const positiveBoosts: Partial<BoostsTable> = {};
+			let i: BoostID;
+			for (i in boost) {
+				if (boost[i]! > 0) {
+					positiveBoosts[i] = boost[i];
+				}
 			}
-            target.clearBoosts();
-            this.add('-clearboost', target);
-        },
+			if (Object.keys(positiveBoosts).length < 1) return;
+			this.boost(positiveBoosts, pokemon);
+			this.add('-clearboost', target);
+		},
         onAnySwitchInPriority: -3,
         onAnySwitchIn() {
             if (!this.effectState.boosts) return;
