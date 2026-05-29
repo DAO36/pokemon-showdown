@@ -206,7 +206,7 @@ export const AbilitiesText: { [id: IDEntry]: AbilityText } = {
 	},
 	warcriminal: {
 		name: "War Criminal",
-		desc: "If this Pokemon is knocked out with an attacking move, that move's user loses 1/3 of its maximum HP, rounded down. This effect is prevented if the move's user has the Magic Guard Ability or if any active Pokemon has the Damp Ability.",
+		desc: "If this Pokemon is knocked out with an attacking move, that move's user loses 1/3 of its maximum HP, rounded down. This effect is prevented if the move's user has the Magic Guard Ability.",
 		shortDesc: "If this Pokemon is KOed with a move, that move's user loses 1/4 its max HP.",
 
 		damage: "  [SOURCE] blew herself up!",

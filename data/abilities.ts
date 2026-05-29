@@ -52,7 +52,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
                 }
 				const feaster = this.effectState.target;
 				this.attrLastMove('[still]');
-				this.add('cant', target, 'ability: Feast or Famine', '[of] ${feaster}');
+				this.add('cant', target, 'ability: Feast or Famine', '[of] ${target}');
 				return false;
             }
             target.clearBoosts();
@@ -3601,7 +3601,6 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			if (['explosion', 'mindblown', 'mistyexplosion', 'bigbang', 'selfdestruct'].includes(effect.id)) {
 				this.attrLastMove('[still]');
 				this.add('cant', this.effectState.target, 'ability: Damp', effect, `[of] ${target}`);
-				this.add('cant', this.effectState.target, 'ability: War Criminal', effect, `[of] ${target}`);
 				return false;
 			}
 		},
