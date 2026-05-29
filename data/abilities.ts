@@ -143,7 +143,6 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
                 if (boost[i]! > 0) {
                     boostPlus[i] = (boostPlus[i] || 0) + boost[i]!;
                 }
-				if (Object.keys(boostPlus).length < 1) return;
 				const feastorfamineHolder = this.effectState.target;
 				this.attrLastMove('[still]');
 				this.add('cant', feastorfamineHolder, 'ability: Feast or Famine', effect, `[of] ${target}`);
@@ -151,26 +150,6 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
             }
             target.clearBoosts();
             this.add('-clearboost', target);
-        },
-        onAnySwitchInPriority: -3,
-        onAnySwitchIn() {
-            if (!this.effectState.boosts) return;
-            this.boost(this.effectState.boosts, this.effectState.target);
-            delete this.effectState.boosts;
-        },
-        onAnyAfterMove() {
-            if (!this.effectState.boosts) return;
-            this.boost(this.effectState.boosts, this.effectState.target);
-            delete this.effectState.boosts;
-        },
-        onResidualOrder: 29,
-        onResidual(pokemon) {
-            if (!this.effectState.boosts) return;
-            this.boost(this.effectState.boosts, this.effectState.target);
-            delete this.effectState.boosts;
-        },
-        onEnd() {
-            delete this.effectState.boosts;
         },
         flags: {},
         name: "Feast or Famine",
