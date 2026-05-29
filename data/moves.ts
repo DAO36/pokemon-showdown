@@ -2880,7 +2880,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		basePower: 90,
 		category: "Physical",
 		name: "Shark Attack",
-		pp: 10,
+		pp: 15,
 		priority: 0,
 		flags: {contact: 1, protect: 1, mirror: 1, bite: 1, metronome: 1},
 		onModifyMove(move, pokemon, target) {
@@ -2963,13 +2963,13 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	},
 	gawrrage: { // GAWR 1
 		num: 370,
-		accuracy: 100,
+		accuracy: 90,
 		basePower: 120,
 		category: "Physical",
 		name: "Gawr Rage",
 		pp: 5,
 		priority: 0,
-		flags: {contact: 1, protect: 1, mirror: 1, bite: 1, metronome: 1},
+		flags: {contact: 1, protect: 1, mirror: 1, metronome: 1},
 		self: {
 			boosts: {
 				def: -1,
@@ -2977,7 +2977,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 			},
 		},
 		target: "normal",
-		type: "Water",
+		type: "Dark",
 		contestType: "Tough",
 	},
 	timedattack: { // AME 1
