@@ -41,20 +41,24 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		num: 0,
 	},
 	feastorfamine: {
-        onFoeTryBoost(boost, target, source, effect) {
-			if (source && target === source) return;
+        onFoeTryBoost (boost, target, source, effect) {
+            if (effect?.name === 'Opportunist' || effect?.name === 'Mirror Herb') return;
+            if (!this.effectState.boosts) this.effectState.boosts = {} as SparseBoostsTable;
+            const boostPlus = this.effectState.boosts;
 			let showMsg = false;
-			let i: BoostID;
-			for (i in boost) {
-				if (boost[i]! < 0) {
+            let i: BoostID;
+            for (i in boost) {
+                if (boost[i]! < 0) {
 					delete boost[i];
 					showMsg = true;
 				}
-			}
-			if (showMsg && !(effect as ActiveMove).secondaries && effect.id !== 'octolock') {
-				this.add('-fail', target, 'unboost', '[from] ability: Feast or Famine', `[of] ${target}`);
-			}
-		},
+				if (showMsg && !(effect as Ability)) {
+				this.add('-fail', target, 'unboost', '[from] item: Clear Amulet', `[of] ${target}`);
+		    	}
+            }
+            target.clearBoosts();
+            this.add('-clearboost', target);
+        },
         onAnySwitchInPriority: -3,
         onAnySwitchIn() {
             if (!this.effectState.boosts) return;
