@@ -420,8 +420,8 @@ export const AbilitiesText: { [id: IDEntry]: AbilityText } = {
 		desc: "If Sandstorm is active, this Blacksmith restores 1/10 of her maximum HP per turn. This Blacksmith's Ground/Rock/Steel attacks do 1.3x in Sandstorm.",
 		shortDesc: "In sandstorm: gains 1/10 HP per turn; Ground/Rock/Steel attacks do 1.3x damage.",
 	},
-	ench: {
-		name: "Stench",
+	jaws: {
+		name: "Jaws",
 		desc: "This Pokemon's biting based attacks without a chance to make the target flinch gain a 30% chance to make the target flinch.",
 		shortDesc: "This Pokemon's bite based attacks gain a 30% chance to flinch.",
 	},
@@ -457,11 +457,6 @@ export const AbilitiesText: { [id: IDEntry]: AbilityText } = {
 
 	    start: "  [POKEMON] the Part-Time Warrior is here!",
 	},
-	rabsorb: {
-		name: "Water Absorb",
-		desc: "This Pokemon is immune to Water-type moves and restores 1/4 of its maximum HP, rounded down, when hit by a Water-type move.",
-		shortDesc: "This Pokemon heals 1/4 of its max HP when hit by Water moves; Water immunity.",
-	},
 	yabairys: {
 		name: "YabaIRyS",
 		desc: "Sound moves used by opposing Pokemon targeting the user or their allies are prevented from having an effect; This Pokemon heals 1/4 of their maximum HP when the opponent attempts to use a sound based move, or when hit by an ally's sound based move.",
@@ -494,8 +489,8 @@ export const AbilitiesText: { [id: IDEntry]: AbilityText } = {
 		desc: "Upon switching in, causes opposing adjacent Pokemon to flinch.",
 		shortDesc: "Causes opposing adjacent Pokemon to flinch on switch-in.",
 	},
-	chaos3: {
-		name: "Chaos3",
+	therandomizer: {
+		name: "The Randomizer",
 		desc: "If a Pokemon uses a damaging move on this Pokemon, and it survives the hit, there is a 1 in 3 chance the attacker is then forced to switch to a random ally.",
 		shortDesc: "30% chance those who attack the user are forced to switch to a random ally.",
 	},

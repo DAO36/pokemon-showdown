@@ -21716,7 +21716,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		types: ["Dark"],
 		gender: "F",
 		baseStats: {hp: 66, atk: 130, def: 55, spa: 99, spd: 72, spe: 133},
-		abilities: {0: "Contrary", S: "Chaos"},
+		abilities: {0: "Contrary", S: "The Randomizer"},
 		heightm: 1.49,
 		weightkg: 55.5,
 		color: "Red",

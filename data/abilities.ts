@@ -2328,7 +2328,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 2,
 		num: 27,
 	},
-	chaos2: { // [Red Card (ITEM)] but as an ability
+	therandomizer: { // [Red Card (ITEM)] but as an ability
 		onAfterMoveSecondary(target, source, move) {
 			if (source && source !== target && source.hp && target.hp && move && move.category !== 'Status') {
 				if (this.randomChance(2, 3)) { 
@@ -2336,16 +2336,16 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 					return; 
 				}
 			} 
-				if (target.hasAbility('chaos2')) {
+				if (target.hasAbility('therandomizer')) {
 					if (this.runEvent('DragOut', source, target, move)) {
 						source.forceSwitchFlag = true; 
-						this.add('-activate', target, 'ability: Chaos2');
+						this.add('-activate', target, 'ability: The Randomizer');
 					}
 				}
 			}
 		},
 		flags: {breakable: 1},
-		name: "Chaos",
+		name: "The Randomizer",
 		rating: 5,
 		num: 24,
 	},
