@@ -58,6 +58,25 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3,
 		num: 171,
 	},
+	zling: {
+		onFoeTryMove(target, source, move) {
+			const targetAllExceptions = ['perishsong', 'flowershield', 'rototiller'];
+			if (move.target === 'foeSide' || (move.target === 'all' && !targetAllExceptions.includes(move.id))) {
+				return;
+			}
+
+			const dazzlingHolder = this.effectState.target;
+			if ((source.isAlly(dazzlingHolder) || move.target === 'all') && move.priority > 0.1) {
+				this.attrLastMove('[still]');
+				this.add('cant', dazzlingHolder, 'ability: Dazzling', move, `[of] ${target}`);
+				return false;
+			}
+		},
+		flags: { breakable: 1 },
+		name: "Dazzling",
+		rating: 2.5,
+		num: 219,
+	},
 	feastorfamine: {
         onFoeTryBoost(boost, target, source, effect) {
 			const feastorfamineHolder = this.effectState.target;
@@ -70,7 +89,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
                     boostPlus[i] = (boostPlus[i] || 0) + boost[i]!;
                 }
 				this.attrLastMove('[still]');
-				this.add('cant', feastorfamineHolder, 'ability: Feast or Famine', effect, '[of] ' + source);
+				this.add('cant', feastorfamineHolder, 'ability: Feast or Famine', effect, `[of] ${target}`);
 				return false;
             }
             target.clearBoosts();
