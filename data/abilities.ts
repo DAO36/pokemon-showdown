@@ -40,24 +40,6 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 0.1,
 		num: 0,
 	},
-	andere: { // blocks pivot moves like U-Turn/Volt Switch/Flip Turn and status like Teleport/Parting Shot/Baton Pass/Chilly Reception etc.
-		onFoeTryMove(pokemon, target, move) {
-			const yandereHolder = this.effectState.target;
-			if (move.id === 'teleport' || move.id === 'batonpass') {
-				this.attrLastMove('[still]');
-				this.add('cant', yandereHolder, 'ability: Yandere', move, '[of] ' + target);
-				return false;
-			}
-			if (move.flags['switches']) {
-				this.add('cant', yandereHolder, 'ability: Yandere', move, '[of] ' + pokemon);
-				return false;
-			} 
-		},
-		flags: {breakable: 1},
-		name: "Yandere",
-		rating: 3,
-		num: 171,
-	},
 	zling: {
 		onFoeTryMove(target, source, move) {
 			const targetAllExceptions = ['perishsong', 'flowershield', 'rototiller'];
@@ -76,6 +58,79 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		name: "Dazzling",
 		rating: 2.5,
 		num: 219,
+	},
+	racy: { // reskin of [Costar] but copies foes stats insetad of allies and also clears foes stats  
+		onStart(pokemon) { 
+			const foe = pokemon.side.foe.active[pokemon.side.active.length - 1 - pokemon.position]
+			const adjacentFoe = pokemon.adjacentFoes()[0]; 
+			if (!foe) return;
+
+			let i: BoostID;
+			for (i in foe.boosts) {
+				pokemon.boosts[i] = foe.boosts[i];
+			}
+			const volatilesToCopy = ['dragoncheer', 'focusenergy', 'gmaxchistrike', 'laserfocus'];
+			// we need to be sure to remove all the overlapping crit volatiles before trying to add any
+			for (const volatile of volatilesToCopy) pokemon.removeVolatile(volatile);
+			for (const volatile of volatilesToCopy) {
+				if (foe.volatiles[volatile]) {
+					pokemon.addVolatile(volatile);
+					if (volatile === 'gmaxchistrike') pokemon.volatiles[volatile].layers = foe.volatiles[volatile].layers;
+					if (volatile === 'dragoncheer') pokemon.volatiles[volatile].hasDragonType = foe.volatiles[volatile].hasDragonType;
+				}  
+			}	
+				this.add('-copyboost', pokemon, foe, '[from] ability: Piracy');  
+			 
+				foe.clearBoosts();
+			this.add('-clearboost', foe);
+		},
+		flags: {breakable: 1},
+		name: "Piracy",
+		rating: 0,
+		num: 294,
+	},
+	hiver: { // combines [Oppurtunist] + [Costar] but copies Foes stats instead of Allys stats
+		onStart(pokemon) {  
+			const foe = pokemon.side.foe.active[pokemon.side.active.length - 1 - pokemon.position]
+			const adjacentFoe = pokemon.adjacentFoes()[0]; 
+			if (!foe) return;
+
+			let i: BoostID;
+			for (i in foe.boosts) {
+				pokemon.boosts[i] = foe.boosts[i];
+			}
+			const volatilesToCopy = ['dragoncheer', 'focusenergy', 'gmaxchistrike', 'laserfocus'];
+			// we need to be sure to remove all the overlapping crit volatiles before trying to add any
+			for (const volatile of volatilesToCopy) pokemon.removeVolatile(volatile);
+			for (const volatile of volatilesToCopy) {
+				if (foe.volatiles[volatile]) {
+					pokemon.addVolatile(volatile);
+					if (volatile === 'gmaxchistrike') pokemon.volatiles[volatile].layers = foe.volatiles[volatile].layers;
+					if (volatile === 'dragoncheer') pokemon.volatiles[volatile].hasDragonType = foe.volatiles[volatile].hasDragonType;
+				}
+			} 
+			this.add('-copyboost', pokemon, foe, '[from] ability: hiver'); 
+			foe.clearBoosts();
+            this.add('-clearboost', foe);
+		},
+		onFoeTryBoost(boost, target, source, effect) {
+			if (effect?.name === 'Archiver' || effect?.name === 'Mirror Herb') return;
+			const pokemon = this.effectState.target;
+			const positiveBoosts: Partial<BoostsTable> = {};
+			let i: BoostID;
+			for (i in boost) {
+				if (boost[i]! > 0) {
+					positiveBoosts[i] = boost[i];
+				}
+			}
+			if (Object.keys(positiveBoosts).length < 1) return;
+			this.boost(positiveBoosts, pokemon);
+			
+		},
+		flags: {breakable: 1},
+		name: "hiver",
+		rating: 3,
+		num: 290,
 	},
 	feastorfamine: {
         onFoeTryBoost(boost, target, source, effect) {
