@@ -69,15 +69,15 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			if (effect?.name === 'Opportunist' || effect?.name === 'Mirror Herb') return;
 			if (!this.effectState.boosts) this.effectState.boosts = {} as SparseBoostsTable;
 			const pokemon = this.effectState.target;
-			const positiveBoosts: Partial<BoostsTable> = {};
+			const boostPlus: Partial<BoostsTable> = {};
 			let i: BoostID;
 			for (i in boost) {
 				if (boost[i]! > 0) {
-					positiveBoosts[i] = boost[i];
+					boostPlus[i] = (boostPlus[i] || 0) + boost[i]!;
 				}
 			}
-			if (Object.keys(positiveBoosts).length < 1) return;
-			this.boost(positiveBoosts, pokemon);
+			if (Object.keys(boostPlus).length < 1) return;
+			this.boost(boostPlus, pokemon);
 			this.add('-clearboost', target);
 		},
         flags: {},
