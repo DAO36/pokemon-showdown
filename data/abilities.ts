@@ -125,8 +125,8 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			}
 			if (Object.keys(positiveBoosts).length < 1) return;
 			this.boost(positiveBoosts, pokemon);
-			this.add('-copyboost', pokemon, target, '[from] ability: hiver'); 
-			target.clearBoosts();
+			this.add('-copyboost', pokemon, target, '[from] ability: hiver');
+            this.add('-clearboost', target);
 		},
 		flags: {breakable: 1},
 		name: "hiver",
@@ -141,8 +141,9 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
             let i: BoostID;
             for (i in boost) {
                 if (boost[i]! > 0) {
-                    boostPlus[i] = (boostPlus[i]) + boost[i]!;
+                    boostPlus[i] = (boostPlus[i] || 0) + boost[i]!;
                 }
+				if (Object.keys(boostPlus).length < 1) return;
 				const feastorfamineHolder = this.effectState.target;
 				this.attrLastMove('[still]');
 				this.add('cant', feastorfamineHolder, 'ability: Feast or Famine', effect, `[of] ${target}`);
