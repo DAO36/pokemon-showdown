@@ -98787,6 +98787,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			magicroom: ["9M"],
 			confuseray: ["9M"],
 			spite: ["9M"],
+			playdice: ["9M"],
 			ratattack: ["9M"],
 			chaosstrike: ["9M"],
         },

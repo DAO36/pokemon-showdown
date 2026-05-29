@@ -989,11 +989,11 @@ export const MovesText: { [id: IDEntry]: MoveText } = {
 
 		removeItem: "  [SOURCE] stole and ate [POKEMON]'s [ITEM]!",
 	},
-	chaosstrike: { // <<UNUSED>>
+	chaosstrike: {
 		name: "Chaos Strike",
-		desc: "Has a 30% chance to either Burn, Paralyze, Freeze, Poison, Badly Poison, or put the target to sleep. If this move is successful, it deals damage or heals the target. 40% chance for 40 power, 30% chance for 80 power, 10% chance for 120 power, and 20% chance to heal the target by 1/4 of its maximum HP, rounded down.",
-		shortDesc: "30% to BRN/PSN/PAR/FRZ/SLP target. ",
-	}, 
+		desc: "Lowers the user's Special Attack and Special Defense by 1 stage. Has a 10% chance to either burn, freeze, or paralyze the target.",
+		shortDesc: "Lowers SpA & Def by 1. 10% chance to status foe.",
+	},
 	playdice: {
 		name: "Play Dice",
 		desc: "Has a 30% chance to confuse the target. The power of this move varies; 17% chance to roll a 1 for 25 base power, 17% chance to roll a 2 for 50 base power, 17% chance to roll a 3 for 75 base power, 17% chance to roll a 4 for 100 base power, 16% chance to roll a 5 for 125 base power, 16% chance to roll a 6 for 150 base power.",

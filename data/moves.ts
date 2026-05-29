@@ -3850,15 +3850,15 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Grass",
 		contestType: "Tough",
 	},
-	chaosstrike: { // FURRY BAE 1
+	chaosstrike2: { // FURRY BAE 1
 		num: 217,
 		accuracy: 90,
 		basePower: 0,
 		category: "Physical",
-		name: "Chaos Strike",
+		name: "Chaos Strike2",
 		pp: 15,
 		priority: 0,
-		flags: {protect: 1, mirror: 1, contact: 1, metronome: 1},
+		flags: {protect: 1, mirror: 1, contact: 1},
 		onModifyMove(move, pokemon, target) {
 			const rand = this.random(10);
 			if (rand < 1) {
@@ -3894,6 +3894,32 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		target: "normal",
 		type: "Dark",
 		contestType: "Cute",
+	},
+	chaosstrike: { // BAE 2
+		num: 399,
+		accuracy: 90,
+		basePower: 120,
+		category: "Special",
+		name: "Chaos Strike",
+		pp: 5,
+		priority: 0,
+		flags: {protect: 1, mirror: 1, contact: 1, metronome: 1},
+		secondary: {
+			chance: 10,
+			onHit(target, source) {
+				const status = this.sample(['brn', 'par', 'frz']);
+				target.trySetStatus(status, source);
+			},
+		},
+		self: {
+			boosts: {
+				spa: -1,
+				spd: -1,
+			},
+		},
+		target: "normal",
+		type: "Dark",
+		contestType: "Cool",
 	},
 	playdice: { // BAE 1
 		num: 860,
