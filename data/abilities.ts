@@ -40,7 +40,151 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 0.1,
 		num: 0,
 	},
+	dere: { // blocks pivot moves like U-Turn/Volt Switch/Flip Turn and status like Teleport/Parting Shot/Baton Pass/Chilly Reception etc.
+		onFoeTryMove(pokemon, target, move) {
+			const yandereHolder = this.effectState.target;
+			if (move.id === 'teleport' || move.id === 'batonpass') {
+				this.attrLastMove('[still]');
+				this.add('cant', yandereHolder, 'ability: Yandere', move, '[of] ' + target);
+				return false;
+			}
+			if (move.flags['switches']) {
+				this.add('cant', yandereHolder, 'ability: Yandere', move, '[of] ' + pokemon);
+				return false;
+			} 
+		},
+		flags: {breakable: 1},
+		name: "Yandere",
+		rating: 3,
+		num: 171,
+	},
+	feastorfamine3: {
+        onFoeTryBoost(boost, target, source, effect) {
+            if (effect?.name === 'Opportunist' || effect?.name === 'Mirror Herb') 
+				return;
+            if (!this.effectState.boosts) 
+				this.effectState.boosts = {} as SparseBoostsTable;
+            const boostPlus = this.effectState.boosts;
+            let i: BoostID;
+            for (i in boost) {
+                if (boost[i]! > 0) {
+                    boostPlus[i] = (boostPlus[i] || 0) + boost[i]!;
+                }
+				const feaster = this.effectState.target
+				this.add('cant', feaster, 'ability: Yandere');
+            }
+            return false;
+        },
+        onAnySwitchInPriority: -3,
+        onAnySwitchIn() {
+            if (!this.effectState.boosts) return;
+            this.boost(this.effectState.boosts, this.effectState.target);
+            delete this.effectState.boosts;
+        },
+        onAnyAfterMove() {
+            if (!this.effectState.boosts) return;
+            this.boost(this.effectState.boosts, this.effectState.target);
+            delete this.effectState.boosts;
+        },
+        onResidualOrder: 29,
+        onResidual(pokemon) {
+            if (!this.effectState.boosts) return;
+            this.boost(this.effectState.boosts, this.effectState.target);
+            delete this.effectState.boosts;
+        },
+        onEnd() {
+            delete this.effectState.boosts;
+        },
+        flags: {},
+        name: "Feast or Famine3",
+        rating: 4,
+        num: -99,
+    },
+	feastorfamine2: {
+        onFoeTryBoost(boost, target, source, effect) {
+            if (effect?.name === 'Opportunist' || effect?.name === 'Mirror Herb') 
+				return;
+            if (!this.effectState.boosts) 
+				this.effectState.boosts = {} as SparseBoostsTable;
+            const boostPlus = this.effectState.boosts;
+            let i: BoostID;
+            for (i in boost) {
+                if (boost[i]! > 0) {
+                    boostPlus[i] = (boostPlus[i] || 0) + boost[i]!;
+                }
+				const feaster = this.effectState.target
+				this.add('cant', feaster, 'ability: Yandere', effect);
+            }
+            return false;
+        },
+        onAnySwitchInPriority: -3,
+        onAnySwitchIn() {
+            if (!this.effectState.boosts) return;
+            this.boost(this.effectState.boosts, this.effectState.target);
+            delete this.effectState.boosts;
+        },
+        onAnyAfterMove() {
+            if (!this.effectState.boosts) return;
+            this.boost(this.effectState.boosts, this.effectState.target);
+            delete this.effectState.boosts;
+        },
+        onResidualOrder: 29,
+        onResidual(pokemon) {
+            if (!this.effectState.boosts) return;
+            this.boost(this.effectState.boosts, this.effectState.target);
+            delete this.effectState.boosts;
+        },
+        onEnd() {
+            delete this.effectState.boosts;
+        },
+        flags: {},
+        name: "Feast or Famine2",
+        rating: 4,
+        num: -99,
+    },
 	feastorfamine: {
+        onFoeTryBoost(boost, target, source, effect) {
+            if (effect?.name === 'Opportunist' || effect?.name === 'Mirror Herb') 
+				return;
+            if (!this.effectState.boosts) 
+				this.effectState.boosts = {} as SparseBoostsTable;
+            const boostPlus = this.effectState.boosts;
+            let i: BoostID;
+            for (i in boost) {
+                if (boost[i]! > 0) {
+                    boostPlus[i] = (boostPlus[i] || 0) + boost[i]!;
+                }
+				const feaster = this.effectState.target
+				this.add('cant', feaster, 'ability: Feast or Famine', effect, '[of] ' + target);
+            }
+            return false;
+        },
+        onAnySwitchInPriority: -3,
+        onAnySwitchIn() {
+            if (!this.effectState.boosts) return;
+            this.boost(this.effectState.boosts, this.effectState.target);
+            delete this.effectState.boosts;
+        },
+        onAnyAfterMove() {
+            if (!this.effectState.boosts) return;
+            this.boost(this.effectState.boosts, this.effectState.target);
+            delete this.effectState.boosts;
+        },
+        onResidualOrder: 29,
+        onResidual(pokemon) {
+            if (!this.effectState.boosts) return;
+            this.boost(this.effectState.boosts, this.effectState.target);
+            delete this.effectState.boosts;
+        },
+        onEnd() {
+            delete this.effectState.boosts;
+        },
+        flags: {},
+        name: "Feast or Famine",
+        rating: 4,
+        num: -99,
+    },
+	feastorfamineog: {
         onFoeTryBoost(boost, target, source, effect) {
             if (effect?.name === 'Opportunist' || effect?.name === 'Mirror Herb') 
 				return;
@@ -77,7 +221,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
             delete this.effectState.boosts;
         },
         flags: {},
-        name: "Feast or Famine",
+        name: "Feast or Famine OG",
         rating: 4,
         num: -99,
     },
