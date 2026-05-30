@@ -40,8 +40,8 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 0.1,
 		num: 0,
 	},
-	feastorfamine2: {
-        onFoeTryBoost(boost, target, source, effect) {
+	feastorfamineold: {
+        onFoeAfterBoost(boost, target, source, effect) {
             if (effect?.name === 'Opportunist' || effect?.name === 'Mirror Herb') 
 				return;
             if (!this.effectState.boosts) 
@@ -52,33 +52,12 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
                 if (boost[i]! > 0) {
                     boostPlus[i] = (boostPlus[i] || 0) + boost[i]!;
                 }
-				const feaster = this.effectState.target
-				this.add('cant', feaster, 'ability: Feast or Famine2');
             }
-            return false;
-        },
-        onAnySwitchInPriority: -3,
-        onAnySwitchIn() {
-            if (!this.effectState.boosts) return;
-            this.boost(this.effectState.boosts, this.effectState.target);
-            delete this.effectState.boosts;
-        },
-        onAnyAfterMove() {
-            if (!this.effectState.boosts) return;
-            this.boost(this.effectState.boosts, this.effectState.target);
-            delete this.effectState.boosts;
-        },
-        onResidualOrder: 29,
-        onResidual(pokemon) {
-            if (!this.effectState.boosts) return;
-            this.boost(this.effectState.boosts, this.effectState.target);
-            delete this.effectState.boosts;
-        },
-        onEnd() {
-            delete this.effectState.boosts;
+            target.clearBoosts();
+            this.add('-clearboost', target);
         },
         flags: {},
-        name: "Feast or Famine2",
+        name: "Feast or FamineOLD",
         rating: 4,
         num: -99,
     },
