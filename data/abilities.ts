@@ -58,48 +58,6 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3,
 		num: 171,
 	},
-	feastorfamine3: {
-        onFoeTryBoost(boost, target, source, effect) {
-            if (effect?.name === 'Opportunist' || effect?.name === 'Mirror Herb') 
-				return;
-            if (!this.effectState.boosts) 
-				this.effectState.boosts = {} as SparseBoostsTable;
-            const boostPlus = this.effectState.boosts;
-            let i: BoostID;
-            for (i in boost) {
-                if (boost[i]! > 0) {
-                    boostPlus[i] = (boostPlus[i] || 0) + boost[i]!;
-                }
-				const feaster = this.effectState.target
-				this.add('cant', feaster, 'ability: Yandere');
-            }
-            return false;
-        },
-        onAnySwitchInPriority: -3,
-        onAnySwitchIn() {
-            if (!this.effectState.boosts) return;
-            this.boost(this.effectState.boosts, this.effectState.target);
-            delete this.effectState.boosts;
-        },
-        onAnyAfterMove() {
-            if (!this.effectState.boosts) return;
-            this.boost(this.effectState.boosts, this.effectState.target);
-            delete this.effectState.boosts;
-        },
-        onResidualOrder: 29,
-        onResidual(pokemon) {
-            if (!this.effectState.boosts) return;
-            this.boost(this.effectState.boosts, this.effectState.target);
-            delete this.effectState.boosts;
-        },
-        onEnd() {
-            delete this.effectState.boosts;
-        },
-        flags: {},
-        name: "Feast or Famine3",
-        rating: 4,
-        num: -99,
-    },
 	feastorfamine2: {
         onFoeTryBoost(boost, target, source, effect) {
             if (effect?.name === 'Opportunist' || effect?.name === 'Mirror Herb') 
@@ -113,7 +71,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
                     boostPlus[i] = (boostPlus[i] || 0) + boost[i]!;
                 }
 				const feaster = this.effectState.target
-				this.add('cant', feaster, 'ability: Yandere', effect);
+				this.add('cant', target, feaster, 'ability: Feast or Famine2', effect);
             }
             return false;
         },
@@ -155,7 +113,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
                     boostPlus[i] = (boostPlus[i] || 0) + boost[i]!;
                 }
 				const feaster = this.effectState.target
-				this.add('cant', feaster, 'ability: Feast or Famine', effect, '[of] ' + target);
+				this.add('cant', feaster, 'ability: Feast or Famine', effect);
             }
             return false;
         },
