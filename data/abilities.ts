@@ -40,24 +40,6 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 0.1,
 		num: 0,
 	},
-	dere: { // blocks pivot moves like U-Turn/Volt Switch/Flip Turn and status like Teleport/Parting Shot/Baton Pass/Chilly Reception etc.
-		onFoeTryMove(pokemon, target, move) {
-			const yandereHolder = this.effectState.target;
-			if (move.id === 'teleport' || move.id === 'batonpass') {
-				this.attrLastMove('[still]');
-				this.add('cant', yandereHolder, 'ability: Yandere', move, '[of] ' + target);
-				return false;
-			}
-			if (move.flags['switches']) {
-				this.add('cant', yandereHolder, 'ability: Yandere', move, '[of] ' + pokemon);
-				return false;
-			} 
-		},
-		flags: {breakable: 1},
-		name: "Yandere",
-		rating: 3,
-		num: 171,
-	},
 	feastorfamine2: {
         onFoeTryBoost(boost, target, source, effect) {
             if (effect?.name === 'Opportunist' || effect?.name === 'Mirror Herb') 
@@ -71,7 +53,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
                     boostPlus[i] = (boostPlus[i] || 0) + boost[i]!;
                 }
 				const feaster = this.effectState.target
-				this.add('cant', target, feaster, 'ability: Feast or Famine2', effect);
+				this.add('cant', feaster, 'ability: Feast or Famine2');
             }
             return false;
         },
@@ -113,7 +95,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
                     boostPlus[i] = (boostPlus[i] || 0) + boost[i]!;
                 }
 				const feaster = this.effectState.target
-				this.add('cant', feaster, 'ability: Feast or Famine', effect);
+				this.add('cant', 'ability: Feast or Famine', effect);
             }
             return false;
         },
