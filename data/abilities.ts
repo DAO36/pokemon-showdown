@@ -42,7 +42,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	},
 	missedme: { // STOMPING TANTRUM but as an ability
 		onFoeTryMove(pokemon, target, move) {
-			if (target.moveThisTurnResult === false) {
+			if (pokemon.moveThisTurnResult === false) {
 				this.boost({spe: 1});
 			}
 		},
