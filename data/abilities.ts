@@ -40,6 +40,17 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 0.1,
 		num: 0,
 	},
+	missedme: { // STOMPING TANTRUM but as an ability
+		onFoeTryMove(pokemon, target, move) {
+			if (target.moveThisTurnResult === false) {
+				this.boost({spe: 1});
+			}
+		},
+		flags: {breakable: 1},
+		name: "Missed Me",
+		rating: 2.5,
+		num: 11,
+	},
 	feastorfamine: {
         onFoeTryBoost(boost, target, source, effect) {
             if (effect?.name === 'Opportunist' || effect?.name === 'Mirror Herb') 
