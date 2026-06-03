@@ -235,8 +235,8 @@ export const AbilitiesText: { [id: IDEntry]: AbilityText } = {
 	},
 	piracy: {
 		name: "Piracy",
-		desc: "On switch-in, this Pokemon copies the target's stat changes, then the target has their stat stages reset to 0.",
-		shortDesc: "Copies stat changes of target on switch-in, then resets their stat changes back to 0.",
+		desc: "When an opposing Pokemon raises a stat stage, this Pokemon copies it and blocks the opposing Pokemon from raising that stat. On switch-in, this Pokemon copies the target's stat changes, then the target has their stat stages reset to 0.",
+		shortDesc: "Steals foe's positive stat changes. On switch-in, copies & resets foes stat changes.",
 
 		start: "  [POKEMON] is ready to plunder your booty!",
 	},
@@ -393,11 +393,6 @@ export const AbilitiesText: { [id: IDEntry]: AbilityText } = {
 
 		damage: "#roughskin",
 	},
-	specialagent: {
-		name: "Special Agent",
-		desc: "Upon switching in, the user's type becomes the same as the current type(s) of the target. If the target's current type(s) include typeless and a non-added type, typeless is ignored. If the target's current types include typeless and an added type from Forest's Curse or Trick-or-Treat, typeless is copied as the Normal type instead. Fails if the target's current type is typeless alone.",
-		shortDesc: "On switch in, user becomes the same type as the target.",
-	},
 	secretagent: {
 		name: "Secret Agent",
 		desc: "The user's type changes to match a type that resists or is immune to the type of the last move used by the target, but not either of its current types. The determined type of the move is used rather than the original type.",
@@ -501,8 +496,8 @@ export const AbilitiesText: { [id: IDEntry]: AbilityText } = {
 	},
 	archiver: {
 		name: "Archiver",
-		desc: "this Pokemon copies the stat changes of the target on switch-in; If opposing Pokemon has a stat stage raised, user copies.",
-		shortDesc: "Copies stat changes of target on switch-in; Target has stat stage raised, user copies.",
+		desc: "Upon switching in, the user's type becomes the same as the current type(s) of the target. If the target's current type(s) include typeless and a non-added type, typeless is ignored. If the target's current types include typeless and an added type from Forest's Curse or Trick-or-Treat, typeless is copied as the Normal type instead. Fails if the target's current type is typeless alone.",
+		shortDesc: "On switch in, user becomes the same type as the target.",
 	},
 	rockhard: {
 		name: "Rock Hard",
