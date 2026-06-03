@@ -60,26 +60,6 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 2.5,
 		num: 11,
 	},
-	racy: { // reskin of [Costar] but copies foes stats insetad of allies and also clears foes stats  
-		onStart(pokemon) { 
-			const foe = pokemon.side.foe.active[pokemon.side.active.length - 1 - pokemon.position]
-			const adjacentFoe = pokemon.adjacentFoes()[0]; 
-			if (!foe) return;
-
-			let i: BoostID;
-			for (i in foe.boosts) {
-				pokemon.boosts[i] = foe.boosts[i];
-			}	
-				this.add('-copyboost', pokemon, foe, '[from] ability: Piracy');  
-			 
-				foe.clearBoosts();
-			this.add('-clearboost', foe);
-		},
-		flags: {breakable: 1},
-		name: "Piracy",
-		rating: 0,
-		num: 294,
-	},
 	feastorfamine8: { // steals ALL stat changes, even negative stat changes
         onFoeTryBoost(boost, target, source, effect) {
             if (effect?.name === 'Opportunist' || effect?.name === 'Mirror Herb') 
@@ -121,6 +101,28 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
         rating: 4,
         num: -99,
     },
+	ayingpositive: { // if the user's stats are lowered bc of a move it uses, the lowered stats are reset back to zer0
+		onUpdate(pokemon) {
+			let activate = false;
+			const boosts: SparseBoostsTable = {};  
+			let i: BoostID;
+			for (i in pokemon.boosts) {
+				if (pokemon.boosts[i] < 0) {
+					activate = true;
+					boosts[i] = 0;
+				}
+			}
+			if (activate) {
+				pokemon.setBoost(boosts);  
+				this.add('-activate', pokemon, 'ability: Staying Positive');
+			    this.add('-clearnegativeboost', pokemon);
+			}
+		},
+		flags: {breakable: 1},
+		name: "Staying Positive", 
+		rating: 5,
+		num: 24,
+	},
 	feastorfamine: {
         onFoeTryBoost(boost, target, source, effect) {
             if (effect?.name === 'Opportunist' || effect?.name === 'Mirror Herb') 
@@ -130,11 +132,11 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
             const boostPlus = this.effectState.boosts;
             let i: BoostID;
             for (i in boost) {
-                if (boost[i]! > 0) {
-                    boostPlus[i] = (boostPlus[i] || 0) + boost[i]!;
-
 				if (boost[i]! < 0)
-					return true;
+					return;
+
+                else if (boost[i]! > 0) {
+                    boostPlus[i] = (boostPlus[i] || 0) + boost[i]!;
                 }
 				const feaster = this.effectState.target
             }
@@ -2497,46 +2499,6 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		name: "Chaos3",
 		rating: 2,
 		num: 27,
-	}, 
-	archiver: { // combines [Oppurtunist] + [Costar] but copies Foes stats instead of Allys stats
-		onStart(pokemon) {  
-			const foe = pokemon.side.foe.active[pokemon.side.active.length - 1 - pokemon.position]
-			const adjacentFoe = pokemon.adjacentFoes()[0]; 
-			if (!foe) return;
-
-			let i: BoostID;
-			for (i in foe.boosts) {
-				pokemon.boosts[i] = foe.boosts[i];
-			}
-			const volatilesToCopy = ['dragoncheer', 'focusenergy', 'gmaxchistrike', 'laserfocus'];
-			// we need to be sure to remove all the overlapping crit volatiles before trying to add any
-			for (const volatile of volatilesToCopy) pokemon.removeVolatile(volatile);
-			for (const volatile of volatilesToCopy) {
-				if (foe.volatiles[volatile]) {
-					pokemon.addVolatile(volatile);
-					if (volatile === 'gmaxchistrike') pokemon.volatiles[volatile].layers = foe.volatiles[volatile].layers;
-					if (volatile === 'dragoncheer') pokemon.volatiles[volatile].hasDragonType = foe.volatiles[volatile].hasDragonType;
-				}
-			} 
-			this.add('-copyboost', pokemon, foe, '[from] ability: Archiver'); 
-		},
-		onFoeAfterBoost(boost, target, source, effect) {
-			if (effect?.name === 'Archiver' || effect?.name === 'Mirror Herb') return;
-			const pokemon = this.effectState.target;
-			const positiveBoosts: Partial<BoostsTable> = {};
-			let i: BoostID;
-			for (i in boost) {
-				if (boost[i]! > 0) {
-					positiveBoosts[i] = boost[i];
-				}
-			}
-			if (Object.keys(positiveBoosts).length < 1) return;
-			this.boost(positiveBoosts, pokemon);
-		},
-		flags: {breakable: 1},
-		name: "Archiver",
-		rating: 3,
-		num: 290,
 	},
 	sneakypebbles: { // sets up stealth rock when user is hit by an attacking move
 		onDamagingHit(damage, target, source, move) {
