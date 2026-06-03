@@ -60,6 +60,26 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 2.5,
 		num: 11,
 	},
+	racy: { // reskin of [Costar] but copies foes stats insetad of allies and also clears foes stats  
+		onStart(pokemon) { 
+			const foe = pokemon.side.foe.active[pokemon.side.active.length - 1 - pokemon.position]
+			const adjacentFoe = pokemon.adjacentFoes()[0]; 
+			if (!foe) return;
+
+			let i: BoostID;
+			for (i in foe.boosts) {
+				pokemon.boosts[i] = foe.boosts[i];
+			}	
+				this.add('-copyboost', pokemon, foe, '[from] ability: Piracy');  
+			 
+				foe.clearBoosts();
+			this.add('-clearboost', foe);
+		},
+		flags: {breakable: 1},
+		name: "Piracy",
+		rating: 0,
+		num: 294,
+	},
 	feastorfamine: {
         onFoeTryBoost(boost, target, source, effect) {
             if (effect?.name === 'Opportunist' || effect?.name === 'Mirror Herb') 
@@ -69,8 +89,8 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
             const boostPlus = this.effectState.boosts;
             let i: BoostID;
             for (i in boost) {
-                if (boost[i]! > 0) {
-                    boostPlus[i] = (boostPlus[i] || 0) + boost[i]!;
+                if (boost[i]!) {
+                    boostPlus[i] = (boostPlus[i]) + boost[i]!;
                }
 				const feaster = this.effectState.target
             }
