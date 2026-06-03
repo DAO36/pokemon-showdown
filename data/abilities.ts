@@ -90,7 +90,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
             let i: BoostID;
             for (i in boost) {
                 if (boost[i]!) {
-                    boostPlus[i] = (boostPlus[i]) + boost[i]!;
+                    boostPlus[i] = (boostPlus[i] || 0) + boost[i]!;
                }
 				const feaster = this.effectState.target
             }
