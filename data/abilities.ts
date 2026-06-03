@@ -101,28 +101,6 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
         rating: 4,
         num: -99,
     },
-	ayingpositive: { // if the user's stats are lowered bc of a move it uses, the lowered stats are reset back to zer0
-		onUpdate(pokemon) {
-			let activate = false;
-			const boosts: SparseBoostsTable = {};  
-			let i: BoostID;
-			for (i in pokemon.boosts) {
-				if (pokemon.boosts[i] < 0) {
-					activate = true;
-					boosts[i] = 0;
-				}
-			}
-			if (activate) {
-				pokemon.setBoost(boosts);  
-				this.add('-activate', pokemon, 'ability: Staying Positive');
-			    this.add('-clearnegativeboost', pokemon);
-			}
-		},
-		flags: {breakable: 1},
-		name: "Staying Positive", 
-		rating: 5,
-		num: 24,
-	},
 	feastorfamine: {
         onFoeTryBoost(boost, target, source, effect) {
             if (effect?.name === 'Opportunist' || effect?.name === 'Mirror Herb') 
@@ -1211,7 +1189,37 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 2,
 		num: 27,
 	},
-	piracy: { // reskin of [Costar] but copies foes stats insetad of allies and also clears foes stats  
+	piracy2: { // reskin of [Costar] but copies foes stats insetad of allies and also clears foes stats  
+		onStart(pokemon) { 
+			const foe = pokemon.side.foe.active[pokemon.side.active.length - 1 - pokemon.position]
+			const adjacentFoe = pokemon.adjacentFoes()[0]; 
+			if (!foe) return;
+
+			let i: BoostID;
+			for (i in foe.boosts) {
+				pokemon.boosts[i] = foe.boosts[i];
+			}
+			const volatilesToCopy = ['dragoncheer', 'focusenergy', 'gmaxchistrike', 'laserfocus'];
+			// we need to be sure to remove all the overlapping crit volatiles before trying to add any
+			for (const volatile of volatilesToCopy) pokemon.removeVolatile(volatile);
+			for (const volatile of volatilesToCopy) {
+				if (foe.volatiles[volatile]) {
+					pokemon.addVolatile(volatile);
+					if (volatile === 'gmaxchistrike') pokemon.volatiles[volatile].layers = foe.volatiles[volatile].layers;
+					if (volatile === 'dragoncheer') pokemon.volatiles[volatile].hasDragonType = foe.volatiles[volatile].hasDragonType;
+				}  
+			}	
+				this.add('-copyboost', pokemon, foe, '[from] ability: Piracy2');  
+			 
+				foe.clearBoosts();
+			this.add('-clearboost', foe);
+		},
+		flags: {breakable: 1},
+		name: "Piracy2",
+		rating: 0,
+		num: 294,
+	},
+	piracy: {
 		onStart(pokemon) { 
 			const foe = pokemon.side.foe.active[pokemon.side.active.length - 1 - pokemon.position]
 			const adjacentFoe = pokemon.adjacentFoes()[0]; 
@@ -1236,11 +1244,49 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 				foe.clearBoosts();
 			this.add('-clearboost', foe);
 		},
-		flags: {breakable: 1},
-		name: "Piracy",
-		rating: 0,
-		num: 294,
-	},
+        onFoeTryBoost(boost, target, source, effect) {
+            if (effect?.name === 'Opportunist' || effect?.name === 'Mirror Herb') 
+				return;
+            if (!this.effectState.boosts) 
+				this.effectState.boosts = {} as SparseBoostsTable;
+            const boostPlus = this.effectState.boosts;
+            let i: BoostID;
+            for (i in boost) {
+				if (boost[i]! < 0)
+					return;
+
+                else if (boost[i]! > 0) {
+                    boostPlus[i] = (boostPlus[i] || 0) + boost[i]!;
+                }
+				const feaster = this.effectState.target
+            }
+            return false;
+        },
+        onAnySwitchInPriority: -3,
+        onAnySwitchIn() {
+            if (!this.effectState.boosts) return;
+            this.boost(this.effectState.boosts, this.effectState.target);
+            delete this.effectState.boosts;
+        },
+        onAnyAfterMove() {
+            if (!this.effectState.boosts) return;
+            this.boost(this.effectState.boosts, this.effectState.target);
+            delete this.effectState.boosts;
+        },
+        onResidualOrder: 29,
+        onResidual(pokemon) {
+            if (!this.effectState.boosts) return;
+            this.boost(this.effectState.boosts, this.effectState.target);
+            delete this.effectState.boosts;
+        },
+        onEnd() {
+            delete this.effectState.boosts;
+        },
+        flags: {},
+        name: "Piracy",
+        rating: 4,
+        num: -99,
+    },
 	yandere: { // blocks pivot moves like U-Turn/Volt Switch/Flip Turn and status like Teleport/Parting Shot/Baton Pass/Chilly Reception etc.
 		onFoeTryMove(pokemon, target, move) {
 			const yandereHolder = this.effectState.target;
@@ -1921,32 +1967,6 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
         rating: 4,
         num: -99,
     },
-	specialagent: { // this one works [REFLECT TYPE] but as an ability
-        onAnySwitchIn(pokemon) {
-            const foe = pokemon.side.foe.active[pokemon.side.active.length - 1 - pokemon.position]
-            const adjacentFoe = pokemon.adjacentFoes()[0]; 
-            const oldApparentType = pokemon.apparentType;
-            if (!foe || foe.fainted) return false;
-            let newBaseTypes = foe.getTypes(true).filter(type => type !== '???');
-            if (!newBaseTypes.length) {
-                if (foe.addedType) {
-                    newBaseTypes = ['Normal'];
-                } else {
-                    return false;
-                }
-            }
-            this.add('-activate', pokemon, 'ability: Special Agent');
-			this.add('-start', pokemon, 'typechange', '[from] move: Reflect Type', `[of] ${foe}`);
-            pokemon.setType(newBaseTypes);
-            pokemon.addedType = foe.addedType;
-            pokemon.knownType = foe.isAlly(pokemon) && foe.knownType;
-            if (!pokemon.knownType) pokemon.apparentType = oldApparentType;
-        },
-		flags: {},
-        name: "Special Agent",
-		rating: 3,
-        num: 236
-    },
 	graondstone: { // combines [Sand Force] + [Rain Dish] (but Sandstorm instead of Rain) <<<UNUSED>>>
 		onWeather(target, source, effect) {
 			if (target.hasItem('utilityumbrella')) return;
@@ -2514,6 +2534,32 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3.5,
 		num: 295,
 	},
+	archiver: { // this one works [REFLECT TYPE] but as an ability
+        onAnySwitchIn(pokemon) {
+            const foe = pokemon.side.foe.active[pokemon.side.active.length - 1 - pokemon.position]
+            const adjacentFoe = pokemon.adjacentFoes()[0]; 
+            const oldApparentType = pokemon.apparentType;
+            if (!foe || foe.fainted) return false;
+            let newBaseTypes = foe.getTypes(true).filter(type => type !== '???');
+            if (!newBaseTypes.length) {
+                if (foe.addedType) {
+                    newBaseTypes = ['Normal'];
+                } else {
+                    return false;
+                }
+            }
+            this.add('-activate', pokemon, 'ability: Archiver');
+			this.add('-start', pokemon, 'typechange', '[from] move: Reflect Type', `[of] ${foe}`);
+            pokemon.setType(newBaseTypes);
+            pokemon.addedType = foe.addedType;
+            pokemon.knownType = foe.isAlly(pokemon) && foe.knownType;
+            if (!pokemon.knownType) pokemon.apparentType = oldApparentType;
+        },
+		flags: {},
+        name: "Archiver",
+		rating: 3,
+        num: 236
+    },
 	rockhard: { // [Fluffy] but instead of Fire being omitted, it is Steel
 		onSourceModifyDamage(damage, source, target, move) {
 			let mod = 1;
