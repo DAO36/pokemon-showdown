@@ -237,8 +237,6 @@ export const AbilitiesText: { [id: IDEntry]: AbilityText } = {
 		name: "Piracy",
 		desc: "When an opposing Pokemon raises a stat stage, this Pokemon copies it and blocks the opposing Pokemon from raising that stat. On switch-in, this Pokemon copies the target's stat changes, then the target has their stat stages reset to 0.",
 		shortDesc: "Steals foe's positive stat changes. On switch-in, copies & resets foes stat changes.",
-
-		start: "  [POKEMON] is ready to plunder your booty!",
 	},
 	highonasacoco: {
 		name: "High on Asacoco",

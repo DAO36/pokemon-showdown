@@ -1229,7 +1229,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
             let i: BoostID;
             for (i in boost) {
 				if (boost[i]! < 0)
-					return true;
+					return null;
 
                 else if (boost[i]! > 0) {
                     boostPlus[i] = (boostPlus[i] || 0) + boost[i]!;
@@ -1269,9 +1269,9 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			const adjacentFoe = pokemon.adjacentFoes()[0]; 
 			if (!foe) return;
 
-			if (this.effectState.boosts) 
+			if (!this.effectState.boosts) 
 				this.effectState.boosts = {} as SparseBoostsTable;
-			
+			const boostPlus = this.effectState.boosts;
 			let i: BoostID;
 			for (i in foe.boosts) {
 				pokemon.boosts[i] = foe.boosts[i];
