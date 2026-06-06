@@ -1225,6 +1225,9 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			const adjacentFoe = pokemon.adjacentFoes()[0]; 
 			if (!foe) return;
 
+			if (!this.effectState.boosts)
+                this.effectState.boosts = {} as SparseBoostsTable;
+            const boostPlus = this.effectState.boosts;
 			let i: BoostID;
 			for (i in foe.boosts) {
 				pokemon.boosts[i] = foe.boosts[i];
@@ -1237,9 +1240,9 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 					pokemon.addVolatile(volatile);
 					if (volatile === 'gmaxchistrike') pokemon.volatiles[volatile].layers = foe.volatiles[volatile].layers;
 					if (volatile === 'dragoncheer') pokemon.volatiles[volatile].hasDragonType = foe.volatiles[volatile].hasDragonType;
-				}  
-			}	
-				this.add('-copyboost', pokemon, foe, '[from] ability: Piracy OG');  
+				} 
+			}
+				this.add('-copyboost', pokemon, foe, '[from] ability: Piracy');  
 			 
 				foe.clearBoosts();
 			this.add('-clearboost', foe);
@@ -1261,6 +1264,26 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
                 const feaster = this.effectState.target
             }
             return false;
+        },
+        onAnySwitchInPriority: -3,
+        onAnySwitchIn() {
+            if (!this.effectState.boosts) return;
+            this.boost(this.effectState.boosts, this.effectState.target);
+            delete this.effectState.boosts;
+        },
+        onAnyAfterMove() {
+            if (!this.effectState.boosts) return;
+            this.boost(this.effectState.boosts, this.effectState.target);
+            delete this.effectState.boosts;
+        },
+        onResidualOrder: 29,
+        onResidual(pokemon) {
+            if (!this.effectState.boosts) return;
+            this.boost(this.effectState.boosts, this.effectState.target);
+            delete this.effectState.boosts;
+        },
+        onEnd() {
+            delete this.effectState.boosts;
         },
         flags: {},
         name: "Piracy",
