@@ -1243,6 +1243,9 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
             const boostPlus = this.effectState.boosts;
             let i: BoostID;
             for (i in boost) {
+				if (boost[i]! < 0)
+                    return;
+
                 if (boost[i]! > 0) {
                     boostPlus[i] = (boostPlus[i] || 0) + boost[i]!;
                 }
