@@ -1233,6 +1233,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 				
                 if (boost[i]! > 0) 
                     boostPlus[i] = (boostPlus[i] || 0) + boost[i]!;
+				    this.effectState.ready = true;
                 
                 const feaster = this.effectState.target
             }
