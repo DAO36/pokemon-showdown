@@ -1229,6 +1229,9 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
             let i: BoostID;
             for (i in boost) {
                 if (boost[i]! < 0)
+                    return;
+
+				if (boost[i]! < 0 && boost[i]! > 0)
                     this.add('-clearpositiveboost');
 
                 if (boost[i]! > 0) {
