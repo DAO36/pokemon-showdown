@@ -1229,7 +1229,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 
 			if (!this.effectState.boosts) 
 				this.effectState.boosts = {} as SparseBoostsTable;
-			
+
 			let i: BoostID;
 			for (i in foe.boosts) {
 				if (foe.boosts[i] > 0) {
@@ -1262,7 +1262,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 				if (boost[i]! < 0)
 					return;
 
-                else if (boost[i]! > 0) {
+                if (boost[i]! > 0) {
                     boostPlus[i] = (boostPlus[i] || 0) + boost[i]!;
                 }
 				const feaster = this.effectState.target
