@@ -1197,7 +1197,9 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 
 			let i: BoostID;
 			for (i in foe.boosts) {
-				pokemon.boosts[i] = foe.boosts[i];
+				if (foe.boosts[i] > 0) {
+					pokemon.boosts[i] = foe.boosts[i];
+				}
 			}
 			const volatilesToCopy = ['dragoncheer', 'focusenergy', 'gmaxchistrike', 'laserfocus'];
 			// we need to be sure to remove all the overlapping crit volatiles before trying to add any
@@ -1220,6 +1222,35 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		num: 294,
 	},
 	piracy: {
+		onStart(pokemon) { 
+			const foe = pokemon.side.foe.active[pokemon.side.active.length - 1 - pokemon.position]
+			const adjacentFoe = pokemon.adjacentFoes()[0]; 
+			if (!foe) return;
+
+			if (!this.effectState.boosts) 
+				this.effectState.boosts = {} as SparseBoostsTable;
+			
+			let i: BoostID;
+			for (i in foe.boosts) {
+				if (foe.boosts[i] > 0) {
+					pokemon.boosts[i] = foe.boosts[i];
+				}
+			}
+			const volatilesToCopy = ['dragoncheer', 'focusenergy', 'gmaxchistrike', 'laserfocus'];
+			// we need to be sure to remove all the overlapping crit volatiles before trying to add any
+			for (const volatile of volatilesToCopy) pokemon.removeVolatile(volatile);
+			for (const volatile of volatilesToCopy) {
+				if (foe.volatiles[volatile]) {
+					pokemon.addVolatile(volatile);
+					if (volatile === 'gmaxchistrike') pokemon.volatiles[volatile].layers = foe.volatiles[volatile].layers;
+					if (volatile === 'dragoncheer') pokemon.volatiles[volatile].hasDragonType = foe.volatiles[volatile].hasDragonType;
+				}  
+			}	
+				this.add('-copyboost', pokemon, foe, '[from] ability: Piracy2');  
+			 
+				foe.clearBoosts();
+			this.add('-clearboost', foe);
+		},
         onFoeTryBoost(boost, target, source, effect) {
             if (effect?.name === 'Opportunist' || effect?.name === 'Mirror Herb') 
 				return;
