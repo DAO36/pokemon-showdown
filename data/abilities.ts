@@ -1271,8 +1271,8 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 				}
 			}
 			if (activate) {
-				target.setBoost(boosts);
-			    this.add('-clearpositiveboost');
+				source.setBoost(boosts);
+			    this.add('-clearpositiveboost', source);
 			}
 		},
         onFoeTryBoost(boost, target, source, effect) {
