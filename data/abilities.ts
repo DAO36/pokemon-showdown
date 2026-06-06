@@ -1236,23 +1236,45 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3,
 		num: 290,
 	},
+	ayingpositive: {
+		onUpdate(pokemon) {
+			let activate = false;
+			const boosts: SparseBoostsTable = {};  
+			let i: BoostID;
+			for (i in pokemon.boosts) {
+				if (pokemon.boosts[i] < 0) {
+					activate = true;
+					boosts[i] = 0;
+				}
+			}
+			if (activate) {
+				pokemon.setBoost(boosts);  
+				this.add('-activate', pokemon, 'ability: Staying Positive');
+			    this.add('-clearnegativeboost', pokemon);
+			}
+		},
+		flags: {breakable: 1},
+		name: "Staying Positive", 
+		rating: 5,
+		num: 24,
+	},
 	piracy: {
 		onFoeAfterBoost(boost, target, source, effect) {
-            if (effect?.name === 'Opportunist' || effect?.name === 'Mirror Herb') return;
-            if (!this.effectState.boosts) this.effectState.boosts = {} as SparseBoostsTable;
-            const boostPlus = this.effectState.boosts;
-            let i: BoostID;
-            for (i in boost) {
-				if (boost[i]! < 0)
-                    return;
-
-                if (boost[i]! > 0) {
-                    boostPlus[i] = (boostPlus[i] || 0) + boost[i]!;
-                }
-            }
-            target.clearBoosts();
-            this.add('-clearboost', target);
-        },
+			let activate = false;
+			const boosts: SparseBoostsTable = {};  
+			let i: BoostID;
+			for (i in boost) {
+				const boostValue = boost[i];
+				if (boostValue !== undefined && boostValue < 0) {
+					activate = true;
+					boosts[i] = 0;
+				}
+			}
+			if (activate) {
+				target.setBoost(boosts);
+			    this.add('-clearpositiveboost');
+			}
+		},
         onFoeTryBoost(boost, target, source, effect) {
             if (effect?.name === 'Opportunist' || effect?.name === 'Mirror Herb')
                 return;
