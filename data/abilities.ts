@@ -1229,7 +1229,8 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
                 this.effectState.boosts = {} as SparseBoostsTable;
             const boostPlus = this.effectState.boosts;
 			let i: BoostID;
-			for (i in foe.boosts) {
+			for (i in foe.boosts) 
+				if (foe.boosts[i]! > 0) {
 				pokemon.boosts[i] = foe.boosts[i];
 			}
 			const volatilesToCopy = ['dragoncheer', 'focusenergy', 'gmaxchistrike', 'laserfocus'];
