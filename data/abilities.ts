@@ -1266,6 +1266,30 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
         rating: 4,
         num: -99,
     },
+	racy: {
+        onFoeTryBoost(boost, target, source, effect) {
+            if (effect?.name === 'Opportunist' || effect?.name === 'Mirror Herb') 
+				return;
+            if (!this.effectState.boosts) 
+				this.effectState.boosts = {} as SparseBoostsTable;
+            const boostPlus = this.effectState.boosts;
+            let i: BoostID;
+            for (i in boost) {
+				if (boost[i]! < 0)
+					return;
+				
+                if (boost[i]! > 0) {
+                    boostPlus[i] = (boostPlus[i] || 0) + boost[i]!;
+                }
+				const feaster = this.effectState.target
+            }
+            return false;
+        },
+        flags: {},
+        name: "racy",
+        rating: 4,
+        num: -99,
+    },
 	piracy2: {
 		onStart(pokemon) { 
 			const foe = pokemon.side.foe.active[pokemon.side.active.length - 1 - pokemon.position]
@@ -1277,7 +1301,9 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			const boostPlus = this.effectState.boosts;
 			let i: BoostID;
 			for (i in foe.boosts) {
-				pokemon.boosts[i] = foe.boosts[i];
+				if (foe.boosts[i]! > 0) {
+                    boostPlus[i] = (boostPlus[i] || 0) + foe.boosts[i]!;
+                }
 			}
 			const volatilesToCopy = ['dragoncheer', 'focusenergy', 'gmaxchistrike', 'laserfocus'];
 			// we need to be sure to remove all the overlapping crit volatiles before trying to add any
