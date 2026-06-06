@@ -1252,9 +1252,8 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
                     boostPlus[i] = (boostPlus[i] || 0) + boost[i]!;
                 }
                 const feaster = this.effectState.target
-				this.add('-clearpositiveboost');
             }
-            return false;
+            this.add('-clearpositiveboost');
         },
         onFoeTryBoost(boost, target, source, effect) {
             if (effect?.name === 'Opportunist' || effect?.name === 'Mirror Herb')
