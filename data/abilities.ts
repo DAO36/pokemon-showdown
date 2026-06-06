@@ -1231,7 +1231,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			let i: BoostID;
 			for (i in foe.boosts) 
 				if (foe.boosts[i]! > 0) {
-				pokemon.boosts[i] = foe.boosts[i];
+				boostPlus[i] = (boostPlus[i] || 0) + foe.boosts[i]!;
 			}
 			const volatilesToCopy = ['dragoncheer', 'focusenergy', 'gmaxchistrike', 'laserfocus'];
 			// we need to be sure to remove all the overlapping crit volatiles before trying to add any
