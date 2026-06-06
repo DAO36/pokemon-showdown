@@ -1220,7 +1220,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		num: 294,
 	},
 	piracy: {
-		onStart(pokemon) { 
+		onSwitchIn(pokemon) { 
 			const foe = pokemon.side.foe.active[pokemon.side.active.length - 1 - pokemon.position]
 			const adjacentFoe = pokemon.adjacentFoes()[0]; 
 			if (!foe) return;
