@@ -1189,7 +1189,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 2,
 		num: 27,
 	},
-	piracy2: { // reskin of [Costar] but copies foes stats insetad of allies and also clears foes stats  
+	piracy3: { // reskin of [Costar] but copies foes stats insetad of allies and also clears foes stats  
 		onStart(pokemon) { 
 			const foe = pokemon.side.foe.active[pokemon.side.active.length - 1 - pokemon.position]
 			const adjacentFoe = pokemon.adjacentFoes()[0]; 
@@ -1197,9 +1197,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 
 			let i: BoostID;
 			for (i in foe.boosts) {
-				if (foe.boosts[i] > 0) {
-					pokemon.boosts[i] = foe.boosts[i];
-				}
+				pokemon.boosts[i] = foe.boosts[i];
 			}
 			const volatilesToCopy = ['dragoncheer', 'focusenergy', 'gmaxchistrike', 'laserfocus'];
 			// we need to be sure to remove all the overlapping crit volatiles before trying to add any
@@ -1211,46 +1209,17 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 					if (volatile === 'dragoncheer') pokemon.volatiles[volatile].hasDragonType = foe.volatiles[volatile].hasDragonType;
 				}  
 			}	
-				this.add('-copyboost', pokemon, foe, '[from] ability: Piracy2');  
+				this.add('-copyboost', pokemon, foe, '[from] ability: Piracy3');  
 			 
 				foe.clearBoosts();
 			this.add('-clearboost', foe);
 		},
 		flags: {breakable: 1},
-		name: "Piracy2",
+		name: "Piracy3",
 		rating: 0,
 		num: 294,
 	},
 	piracy: {
-		onStart(pokemon) { 
-			const foe = pokemon.side.foe.active[pokemon.side.active.length - 1 - pokemon.position]
-			const adjacentFoe = pokemon.adjacentFoes()[0]; 
-			if (!foe) return;
-
-			if (!this.effectState.boosts) 
-				this.effectState.boosts = {} as SparseBoostsTable;
-
-			let i: BoostID;
-			for (i in foe.boosts) {
-				if (foe.boosts[i] > 0) {
-					pokemon.boosts[i] = foe.boosts[i];
-				}
-			}
-			const volatilesToCopy = ['dragoncheer', 'focusenergy', 'gmaxchistrike', 'laserfocus'];
-			// we need to be sure to remove all the overlapping crit volatiles before trying to add any
-			for (const volatile of volatilesToCopy) pokemon.removeVolatile(volatile);
-			for (const volatile of volatilesToCopy) {
-				if (foe.volatiles[volatile]) {
-					pokemon.addVolatile(volatile);
-					if (volatile === 'gmaxchistrike') pokemon.volatiles[volatile].layers = foe.volatiles[volatile].layers;
-					if (volatile === 'dragoncheer') pokemon.volatiles[volatile].hasDragonType = foe.volatiles[volatile].hasDragonType;
-				}  
-			}	
-				this.add('-copyboost', pokemon, foe, '[from] ability: Piracy2');  
-			 
-				foe.clearBoosts();
-			this.add('-clearboost', foe);
-		},
         onFoeTryBoost(boost, target, source, effect) {
             if (effect?.name === 'Opportunist' || effect?.name === 'Mirror Herb') 
 				return;
@@ -1260,9 +1229,9 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
             let i: BoostID;
             for (i in boost) {
 				if (boost[i]! < 0)
-					return;
+					return false;
 
-                if (boost[i]! > 0) {
+                else if (boost[i]! > 0) {
                     boostPlus[i] = (boostPlus[i] || 0) + boost[i]!;
                 }
 				const feaster = this.effectState.target
@@ -1291,6 +1260,77 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
         },
         flags: {},
         name: "Piracy",
+        rating: 4,
+        num: -99,
+    },
+	piracy2: {
+		onStart(pokemon) { 
+			const foe = pokemon.side.foe.active[pokemon.side.active.length - 1 - pokemon.position]
+			const adjacentFoe = pokemon.adjacentFoes()[0]; 
+			if (!foe) return;
+
+			if (!this.effectState.boosts) 
+				this.effectState.boosts = {} as SparseBoostsTable;
+			
+			let i: BoostID;
+			for (i in foe.boosts) {
+				pokemon.boosts[i] = foe.boosts[i];
+			}
+			const volatilesToCopy = ['dragoncheer', 'focusenergy', 'gmaxchistrike', 'laserfocus'];
+			// we need to be sure to remove all the overlapping crit volatiles before trying to add any
+			for (const volatile of volatilesToCopy) pokemon.removeVolatile(volatile);
+			for (const volatile of volatilesToCopy) {
+				if (foe.volatiles[volatile]) {
+					pokemon.addVolatile(volatile);
+					if (volatile === 'gmaxchistrike') pokemon.volatiles[volatile].layers = foe.volatiles[volatile].layers;
+					if (volatile === 'dragoncheer') pokemon.volatiles[volatile].hasDragonType = foe.volatiles[volatile].hasDragonType;
+				}  
+			}	
+				this.add('-copyboost', pokemon, foe, '[from] ability: Piracy3');  
+			 
+				foe.clearBoosts();
+			this.add('-clearboost', foe);
+		},
+        onFoeTryBoost(boost, target, source, effect) {
+            if (effect?.name === 'Opportunist' || effect?.name === 'Mirror Herb') 
+				return;
+            if (!this.effectState.boosts) 
+				this.effectState.boosts = {} as SparseBoostsTable;
+            const boostPlus = this.effectState.boosts;
+            let i: BoostID;
+            for (i in boost) {
+				if (boost[i]! < 0)
+					return false;
+
+                else if (boost[i]! > 0) {
+                    boostPlus[i] = (boostPlus[i] || 0) + boost[i]!;
+                }
+				const feaster = this.effectState.target
+            }
+            return false;
+        },
+        onAnySwitchInPriority: -3,
+        onAnySwitchIn() {
+            if (!this.effectState.boosts) return;
+            this.boost(this.effectState.boosts, this.effectState.target);
+            delete this.effectState.boosts;
+        },
+        onAnyAfterMove() {
+            if (!this.effectState.boosts) return;
+            this.boost(this.effectState.boosts, this.effectState.target);
+            delete this.effectState.boosts;
+        },
+        onResidualOrder: 29,
+        onResidual(pokemon) {
+            if (!this.effectState.boosts) return;
+            this.boost(this.effectState.boosts, this.effectState.target);
+            delete this.effectState.boosts;
+        },
+        onEnd() {
+            delete this.effectState.boosts;
+        },
+        flags: {},
+        name: "Piracy2",
         rating: 4,
         num: -99,
     },
