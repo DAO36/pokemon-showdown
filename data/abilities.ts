@@ -1265,7 +1265,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			let i: BoostID;
 			for (i in boost) {
 				const boostValue = boost[i];
-				if (boostValue !== undefined && boostValue < 0) {
+				if (boostValue) {
 					activate = true;
 					boosts[i] = 0;
 				}
