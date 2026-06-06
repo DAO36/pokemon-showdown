@@ -1189,7 +1189,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 2,
 		num: 27,
 	},
-	piracy3: { // reskin of [Costar] but copies foes stats insetad of allies and also clears foes stats  
+	piracyog: { // reskin of [Costar] but copies foes stats insetad of allies and also clears foes stats  
 		onStart(pokemon) { 
 			const foe = pokemon.side.foe.active[pokemon.side.active.length - 1 - pokemon.position]
 			const adjacentFoe = pokemon.adjacentFoes()[0]; 
@@ -1209,13 +1209,13 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 					if (volatile === 'dragoncheer') pokemon.volatiles[volatile].hasDragonType = foe.volatiles[volatile].hasDragonType;
 				}  
 			}	
-				this.add('-copyboost', pokemon, foe, '[from] ability: Piracy3');  
+				this.add('-copyboost', pokemon, foe, '[from] ability: Piracy OG');  
 			 
 				foe.clearBoosts();
 			this.add('-clearboost', foe);
 		},
 		flags: {breakable: 1},
-		name: "Piracy3",
+		name: "Piracy OG",
 		rating: 0,
 		num: 294,
 	},
@@ -1229,6 +1229,8 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
             let i: BoostID;
             for (i in boost) {
 				if (boost[i]! < 0)
+					return;
+					this.add('-clearpositiveboost');
 
                 if (boost[i]! > 0) {
                     boostPlus[i] = (boostPlus[i] || 0) + boost[i]!;
@@ -1259,70 +1261,6 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
         },
         flags: {},
         name: "Piracy",
-        rating: 4,
-        num: -99,
-    },
-	piracy2: {
-		onStart(pokemon) { 
-			const foe = pokemon.side.foe.active[pokemon.side.active.length - 1 - pokemon.position]
-			const adjacentFoe = pokemon.adjacentFoes()[0]; 
-			if (!foe) return;
-
-			if (!this.effectState.boosts) 
-				this.effectState.boosts = {} as SparseBoostsTable;
-			const boostPlus = this.effectState.boosts;
-			let i: BoostID;
-            for (i in foe.boosts) {
-				if (foe.boosts[i]! < 0)
-					return;
-				
-                if (foe.boosts[i]! > 0) {
-                    boostPlus[i] = (boostPlus[i] || 0) + foe.boosts[i]!;
-                }
-				const feaster = this.effectState.target
-            }
-            return false;
-        },
-        onFoeTryBoost(boost, target, source, effect) {
-            if (effect?.name === 'Opportunist' || effect?.name === 'Mirror Herb') 
-				return;
-            if (!this.effectState.boosts) 
-				this.effectState.boosts = {} as SparseBoostsTable;
-            const boostPlus = this.effectState.boosts;
-            let i: BoostID;
-            for (i in boost) {
-				if (boost[i]! < 0)
-					return false;
-
-                else if (boost[i]! > 0) {
-                    boostPlus[i] = (boostPlus[i] || 0) + boost[i]!;
-                }
-				const feaster = this.effectState.target
-            }
-            return false;
-        },
-        onAnySwitchInPriority: -3,
-        onAnySwitchIn() {
-            if (!this.effectState.boosts) return;
-            this.boost(this.effectState.boosts, this.effectState.target);
-            delete this.effectState.boosts;
-        },
-        onAnyAfterMove() {
-            if (!this.effectState.boosts) return;
-            this.boost(this.effectState.boosts, this.effectState.target);
-            delete this.effectState.boosts;
-        },
-        onResidualOrder: 29,
-        onResidual(pokemon) {
-            if (!this.effectState.boosts) return;
-            this.boost(this.effectState.boosts, this.effectState.target);
-            delete this.effectState.boosts;
-        },
-        onEnd() {
-            delete this.effectState.boosts;
-        },
-        flags: {},
-        name: "Piracy2",
         rating: 4,
         num: -99,
     },
