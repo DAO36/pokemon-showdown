@@ -531,6 +531,10 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 				this.add('-activate', pokemon, 'ability: Seiso');
 				pokemon.removeVolatile('encore');
 			}
+			if (pokemon.volatiles['disable']) {
+				this.add('-activate', pokemon, 'ability: Seiso');
+				pokemon.removeVolatile('disable');
+			}
 		},
 		onSetStatus(status, target, source, effect) {
 			if (status.id !== 'psn' && status.id !== 'tox' && status.id !== 'par' && status.id !== 'slp' && status.id !== 'brn' && status.id !== 'frz') return;
