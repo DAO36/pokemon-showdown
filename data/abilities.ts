@@ -1248,24 +1248,19 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			this.add('-clearpositiveboost', foe);
 		},
 		onFoeAfterBoost(boost, target, source, effect) {
-            if (effect?.name === 'Opportunist' || effect?.name === 'Mirror Herb')
-                return;
-            if (!this.effectState.boosts)
-                this.effectState.boosts = {} as SparseBoostsTable;
-            const boostPlus = this.effectState.boosts;
-            let i: BoostID;
-            for (i in boost) {
-                if (boost[i]! < 0)
-                    return;
-				
-                if (boost[i]! > 0) {
-					this.add('-clearpositiveboost', target);
-                    this.add('-copyboost'); 
-                }
-                const feaster = this.effectState.target
-            }
-            return false;
-        },
+            const foe = target.side.foe.active[target.side.active.length - 1 - target.position]
+			const adjacentFoe = target.adjacentFoes()[0]; 
+			if (!foe) return;
+
+			let i: BoostID;
+			for (i in foe.boosts) {
+				target.boosts[i] = foe.boosts[i];
+			}
+				this.add('-copyboost', target);  
+			 
+				foe.clearBoosts();
+			this.add('-clearboost', foe);
+		},
         onFoeTryBoost(boost, target, source, effect) {
             if (effect?.name === 'Opportunist' || effect?.name === 'Mirror Herb')
                 return;
