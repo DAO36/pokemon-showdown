@@ -1250,12 +1250,13 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		onFoeAfterBoost(boost, target, source, effect) {
             if (effect?.name === 'Opportunist' || effect?.name === 'Mirror Herb')
                 return;
-            
+            if (!this.effectState.boosts)
+                this.effectState.boosts = {} as SparseBoostsTable;
             const boostPlus = this.effectState.boosts;
             let i: BoostID;
             for (i in boost) {
                 if (boost[i]! < 0)
-                    this.add('-clearpositiveboost', target);
+                    this.add('-clearboost', target);
 				
                 if (boost[i]! > 0) {
                     boostPlus[i] = (boostPlus[i] || 0) + boost[i]!;
