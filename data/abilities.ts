@@ -605,14 +605,6 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 				this.add('-activate', pokemon, 'ability: Seiso');
 				pokemon.removeVolatile('confusion');
 			}
-			if (pokemon.volatiles['imprison']) {
-				this.add('-activate', pokemon, 'ability: Seiso');
-				pokemon.removeVolatile('imprison');
-			}
-			if (pokemon.volatiles['nightmare']) {
-				this.add('-activate', pokemon, 'ability: Seiso');
-				pokemon.removeVolatile('nightmare');
-			}
 			if (pokemon.volatiles['lockedmove']) {
 				this.add('-activate', pokemon, 'ability: Seiso');
 				pokemon.removeVolatile('lockedmove');
@@ -625,13 +617,75 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 				this.add('-activate', pokemon, 'ability: Seiso');
 				pokemon.removeVolatile('yawn');
 			}
-			if (pokemon.volatiles['curse']) {
-				this.add('-activate', pokemon, 'ability: Seiso');
-				pokemon.removeVolatile('curse');
-			}
 			if (pokemon.volatiles['healblock']) {
 				this.add('-activate', pokemon, 'ability: Seiso');
 				pokemon.removeVolatile('healblock');
+			}
+		},
+		onTryHit(pokemon, target, move) {
+			if (move.id === 'taunt') {
+				this.add('-immune', pokemon, '[from] ability: Seiso');
+				return null;
+			}
+			if (move.id === 'monday') {
+				this.add('-immune', pokemon, '[from] ability: Seiso');
+				return null;
+			}
+			if (move.id === 'imprison') {
+				this.add('-immune', pokemon, '[from] ability: Seiso');
+				return null;
+			}
+			if (move.id === 'nightmare') {
+				this.add('-immune', pokemon, '[from] ability: Seiso');
+				return null;
+			}
+			if (move.id === 'yawn') {
+				this.add('-immune', pokemon, '[from] ability: Seiso');
+				return null;
+			}
+		},
+		onTryAddVolatile(status, target, source, effect) {
+			if (['healblock'].includes(status.id)) {
+				if (effect.effectType === 'Move') {
+					const effectHolder = this.effectState.target;
+					this.add('-block', target, 'ability: Seiso', '[of] ' + effectHolder);
+				}
+				return null;
+			}
+			if (['confusion'].includes(status.id)) {
+				if (effect.effectType === 'Move') {
+					const effectHolder = this.effectState.target;
+					this.add('-block', target, 'ability: Seiso', '[of] ' + effectHolder);
+				}
+				return null;
+			}
+			if (['disable'].includes(status.id)) {
+				if (effect.effectType === 'Move') {
+					const effectHolder = this.effectState.target;
+					this.add('-block', target, 'ability: Seiso', '[of] ' + effectHolder);
+				}
+				return null;
+			}
+			if (['encore'].includes(status.id)) {
+				if (effect.effectType === 'Move') {
+					const effectHolder = this.effectState.target;
+					this.add('-block', target, 'ability: Seiso', '[of] ' + effectHolder);
+				}
+				return null;
+			}
+			if (['torment'].includes(status.id)) {
+				if (effect.effectType === 'Move') {
+					const effectHolder = this.effectState.target;
+					this.add('-block', target, 'ability: Seiso', '[of] ' + effectHolder);
+				}
+				return null;
+			}
+			if (['curse'].includes(status.id)) {
+				if (effect.effectType === 'Move') {
+					const effectHolder = this.effectState.target;
+					this.add('-block', target, 'ability: Seiso', '[of] ' + effectHolder);
+				}
+				return null;
 			}
 		},
 		flags: {breakable: 1},
