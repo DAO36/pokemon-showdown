@@ -1252,7 +1252,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
                 return;
             if (!this.effectState.boosts)
                 this.effectState.boosts = {} as SparseBoostsTable;
-            const boostPlus = this.effectState.boosts > 0 ? this.effectState.boosts : {};
+            const boostPlus = this.effectState.boosts < 0 ? this.effectState.boosts : {};
             let i: BoostID;
             for (i in boost) {
                 if (boost[i]! < 0)
