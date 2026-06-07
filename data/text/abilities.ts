@@ -85,7 +85,7 @@ export const AbilitiesText: { [id: IDEntry]: AbilityText } = {
 	},
 	seiso: { // SORA
 		name: "Seiso",
-		desc: "This Pokemon cannot be poisoned, paralyzed, burned, frozen, or put to sleep. Prevents other Pokemon from lowering the user's stat stages. Immune to taunt.",
+		desc: "This Pokemon cannot be poisoned, paralyzed, burned, frozen, or put to sleep. Prevents other Pokemon from lowering the user's stat stages. Immune to the effects of Heal Block, Taunt, and Encore.",
 		shortDesc: "Immune to status effects. Stats can't be lowered by others. Cannot be taunted.",
 	},
 	elite: {
@@ -169,8 +169,8 @@ export const AbilitiesText: { [id: IDEntry]: AbilityText } = {
 	},
 	nurse: {
 		name: "Nurse",
-		desc: "On switch-in, this Pokemon cures their party of any status effects they may have. Pokemon on the user's side cannot have have a non-volatile status condition inflicted on them by other Pokemon. This Pokemon restores 1/4 of her maximum HP, rounded down, when she switches out.",
-		shortDesc: "On switch-in, user heals party of status. Heals 1/4 HP when switching out.", 
+		desc: "Pokemon on the user's side cannot have have a non-volatile status condition inflicted on them by other Pokemon. This Pokemon protects itself and its allies from the lowering of stats from other Pokemon. This Pokemon restores 1/4 of their maximum HP, rounded down, when it switches out.",
+		shortDesc: "Protects party from lowering of stats & status. Heals 1/4 HP when switching out.", 
 
 		block: "  [POKEMON] is protected by medicine!",
 	},
@@ -467,8 +467,8 @@ export const AbilitiesText: { [id: IDEntry]: AbilityText } = {
 	},
 	mothernature: {
 		name: "Mother Nature",
-		desc: "This Pokemon protects itself and its allies from the lowering of stats from other Pokemon. This Pokemon and its ally has their non-volatile status condition cured at the end of each turn.",
-		shortDesc: "Protects party from lowering of stats. Party are cured of status at the end of turn.",
+		desc: "On switch-in, this Pokemon restores 1/4 of its ally's maximum HP, rounded down, and cures their party of any status effects they may have; This Pokemon and its allies has their non-volatile status condition cured at the end of each turn.",
+		shortDesc: "Switch-in: restores 1/4 of ally's HP; cures party of non-volatile status conditions.",
 
 		block: "  [POKEMON] is protected by nature!",
 	},

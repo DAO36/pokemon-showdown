@@ -527,6 +527,10 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 				pokemon.removeVolatile('taunt');
 			    pokemon.removeVolatile('monday');
 			}
+			if (pokemon.volatiles['encore']) {
+				this.add('-activate', pokemon, 'ability: Seiso');
+				pokemon.removeVolatile('encore');
+			}
 		},
 		onSetStatus(status, target, source, effect) {
 			if (status.id !== 'psn' && status.id !== 'tox' && status.id !== 'par' && status.id !== 'slp' && status.id !== 'brn' && status.id !== 'frz') return;
@@ -562,6 +566,15 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			}
 			if (showMsg && !(effect as ActiveMove).secondaries && effect.id !== 'octolock') {
 				this.add("-fail", target, "unboost", "[from] ability: Seiso", "[of] " + target);
+			}
+		},
+		onTryAddVolatile(status, target, source, effect) {
+			if (['healblock'].includes(status.id)) {
+				if (effect.effectType === 'Move') {
+					const effectHolder = this.effectState.target;
+					this.add('-block', target, 'ability: Seiso', '[of] ' + effectHolder);
+				}
+				return null;
 			}
 		},
 		flags: {breakable: 1},
@@ -863,15 +876,21 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		num: 276,
 	},
 	nurse: { // reskin of [Regenerator] + [Flower Veil] but for all types + cures Party upon switch-in 
-		onStart(pokemon) {
-			this.add('-activate', pokemon, 'ability: Nurse');
-			let success = false;
-			const allies = [...pokemon.side.pokemon, ...pokemon.side.allySide?.pokemon || []];
-			for (const ally of allies) { 
-				if (ally.cureStatus()) success = true;
-			} 
-			return success;
-		}, 
+		onAllyTryBoost(boost, target, source, effect) {
+			if (source && target === source) return;
+			let showMsg = false;
+			let i: BoostID;
+			for (i in boost) {
+				if (boost[i]! < 0) {
+					delete boost[i];
+					showMsg = true;
+				}
+			}
+			if (showMsg && !(effect as ActiveMove).secondaries) {
+				const effectHolder = this.effectState.target;
+				this.add('-block', target, 'ability: Mother Nature', '[of] ' + effectHolder);
+			}
+		},
 		onAllySetStatus(status, target, source, effect) {
 			if (source && target !== source && effect && effect.id !== 'yawn') {
 				this.debug('interrupting setStatus with Nurse');
@@ -883,13 +902,6 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			}
 		}, 
 		onAllyTryAddVolatile(status, target, source, effect) {
-			if (['healblock'].includes(status.id)) {
-				if (effect.effectType === 'Move') {
-					const effectHolder = this.effectState.target;
-					this.add('-block', target, 'ability: Nurse', '[of] ' + effectHolder);
-				}
-				return null;
-			} 
 			if (status.id === 'yawn') {
 				this.debug('Nurse blocking yawn');
 				const effectHolder = this.effectState.target;
@@ -2200,21 +2212,19 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3,
 		num: -19,		
 	},
-	mothernature: { // combines [Aroma Veil] + [Healer] but 100% chance to heal status end of evey turn 
-		onAllyTryBoost(boost, target, source, effect) {
-			if (source && target === source) return;
-			let showMsg = false;
-			let i: BoostID;
-			for (i in boost) {
-				if (boost[i]! < 0) {
-					delete boost[i];
-					showMsg = true;
-				}
+	mothernature: { // combines [Aroma Veil] + [Healer]
+		onSwitchInPriority: -2,
+		onStart(pokemon) {
+			for (const ally of pokemon.adjacentAllies()) {
+				this.heal(ally.baseMaxhp / 4, ally, pokemon);
 			}
-			if (showMsg && !(effect as ActiveMove).secondaries) {
-				const effectHolder = this.effectState.target;
-				this.add('-block', target, 'ability: Mother Nature', '[of] ' + effectHolder);
-			}
+			this.add('-activate', pokemon, 'ability: Mother Nature');
+			let success = false;
+			const allies = [...pokemon.side.pokemon, ...pokemon.side.allySide?.pokemon || []];
+			for (const ally of allies) { 
+				if (ally.cureStatus()) success = true;
+			} 
+			return success;
 		},
 		onSetStatus(status, target, source, effect) {
 			if (status.id !== 'psn' && status.id !== 'tox' && status.id !== 'par' && status.id !== 'slp' && status.id !== 'brn' && status.id !== 'frz') return;
