@@ -516,7 +516,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 5,
 		num: 74,
 	},
-	seiso: { // SORA: combines [Clear Body] + [Immunity] but for other statuses too + immune to flinching <held items cant status either>
+	seiso2: { // SORA: combines [Clear Body] + [Immunity] but for other statuses too + immune to flinching <held items cant status either>
 		onUpdate(pokemon) {
 			if (pokemon.status === 'psn' || pokemon.status === 'tox' || pokemon.status === 'par' || pokemon.status === 'slp' || pokemon.status === 'brn' || pokemon.status === 'frz') {
 				this.add('-activate', pokemon, 'ability: Seiso');
@@ -570,6 +570,86 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			}
 			if (showMsg && !(effect as ActiveMove).secondaries && effect.id !== 'octolock') {
 				this.add("-fail", target, "unboost", "[from] ability: Seiso", "[of] " + target);
+			}
+		},
+		onTryAddVolatile(status, target, source, effect) {
+			if (['healblock'].includes(status.id)) {
+				if (effect.effectType === 'Move') {
+					const effectHolder = this.effectState.target;
+					this.add('-block', target, 'ability: Seiso', '[of] ' + effectHolder);
+				}
+				return null;
+			}
+		},
+		flags: {breakable: 1},
+		name: "Seiso2",
+		rating: 2,
+		num: 29,
+	},
+	seiso: { // SORA: combines [Clear Body] + [Immunity] but for other statuses too + immune to flinching <held items cant status either>
+		onUpdate(pokemon) {
+			if (pokemon.volatiles['taunt']) {
+				this.add('-activate', pokemon, 'ability: Seiso');
+				pokemon.removeVolatile('taunt');
+			    pokemon.removeVolatile('monday');
+			}
+			if (pokemon.volatiles['encore']) {
+				this.add('-activate', pokemon, 'ability: Seiso');
+				pokemon.removeVolatile('encore');
+			}
+			if (pokemon.volatiles['disable']) {
+				this.add('-activate', pokemon, 'ability: Seiso');
+				pokemon.removeVolatile('disable');
+			}
+			if (pokemon.volatiles['confusion']) {
+				this.add('-activate', pokemon, 'ability: Seiso');
+				pokemon.removeVolatile('confusion');
+			}
+			if (pokemon.volatiles['imprison']) {
+				this.add('-activate', pokemon, 'ability: Seiso');
+				pokemon.removeVolatile('imprison');
+			}
+			if (pokemon.volatiles['nightmare']) {
+				this.add('-activate', pokemon, 'ability: Seiso');
+				pokemon.removeVolatile('nightmare');
+			}
+			if (pokemon.volatiles['lockedmove']) {
+				this.add('-activate', pokemon, 'ability: Seiso');
+				pokemon.removeVolatile('lockedmove');
+			}
+			if (pokemon.volatiles['torment']) {
+				this.add('-activate', pokemon, 'ability: Seiso');
+				pokemon.removeVolatile('torment');
+			}
+			if (pokemon.volatiles['yawn']) {
+				this.add('-activate', pokemon, 'ability: Seiso');
+				pokemon.removeVolatile('yawn');
+			}
+			if (pokemon.volatiles['curse']) {
+				this.add('-activate', pokemon, 'ability: Seiso');
+				pokemon.removeVolatile('curse');
+			}
+			if (pokemon.volatiles['healblock']) {
+				this.add('-activate', pokemon, 'ability: Seiso');
+				pokemon.removeVolatile('healblock');
+			}
+		},
+		onSetStatus(status, target, source, effect) {
+			if (source.volatiles['taunt']) {
+				this.add('-activate', source, 'ability: Seiso');
+				source.removeVolatile('taunt');
+				// Taunt's volatile already sends the -end message when removed
+			}
+			return false;
+		},
+		onTryHit(pokemon, target, move) {
+			if (move.id === 'taunt') {
+				this.add('-immune', pokemon, '[from] ability: Seiso');
+				return null;
+			}
+			if (move.id === 'monday') {
+				this.add('-immune', pokemon, '[from] ability: Seiso');
+				return null;
 			}
 		},
 		onTryAddVolatile(status, target, source, effect) {
