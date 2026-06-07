@@ -634,33 +634,6 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 				pokemon.removeVolatile('healblock');
 			}
 		},
-		onSetStatus(status, target, source, effect) {
-			if (source.volatiles['taunt']) {
-				this.add('-activate', source, 'ability: Seiso');
-				source.removeVolatile('taunt');
-				// Taunt's volatile already sends the -end message when removed
-			}
-			return false;
-		},
-		onTryHit(pokemon, target, move) {
-			if (move.id === 'taunt') {
-				this.add('-immune', pokemon, '[from] ability: Seiso');
-				return null;
-			}
-			if (move.id === 'monday') {
-				this.add('-immune', pokemon, '[from] ability: Seiso');
-				return null;
-			}
-		},
-		onTryAddVolatile(status, target, source, effect) {
-			if (['healblock'].includes(status.id)) {
-				if (effect.effectType === 'Move') {
-					const effectHolder = this.effectState.target;
-					this.add('-block', target, 'ability: Seiso', '[of] ' + effectHolder);
-				}
-				return null;
-			}
-		},
 		flags: {breakable: 1},
 		name: "Seiso",
 		rating: 2,
