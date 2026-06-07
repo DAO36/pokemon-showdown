@@ -393,8 +393,8 @@ export const AbilitiesText: { [id: IDEntry]: AbilityText } = {
 	},
 	secretagent: {
 		name: "Secret Agent",
-		desc: "The user's type changes to match a type that resists or is immune to the type of the last move used by the target, but not either of its current types. The determined type of the move is used rather than the original type.",
-		shortDesc: "User's type changes to resist target's last move.",
+		desc: "The user's type changes to match a type that resists or is immune to the type of the last move used by the target on the user, but not either of its current types. The determined type of the move is used rather than the original type.",
+		shortDesc: "User's type changes to resist the typing of the target's last move used on it.",
 	},
 	rainshaman: {
 		name: "Rain Shaman",
