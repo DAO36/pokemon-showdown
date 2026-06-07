@@ -1248,15 +1248,15 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			this.add('-clearpositiveboost', foe);
 		},
 		onFoeAfterBoost(boost, target, source, effect) {
-            const foe = target.side.foe.active[target.side.active.length - 1 - target.position]
-			const adjacentFoe = target.adjacentFoes()[0]; 
+            const foe = source.side.foe.active[source.side.active.length - 1 - source.position]
+			const adjacentFoe = source.adjacentFoes()[0]; 
 			if (!foe) return;
 
 			let i: BoostID;
 			for (i in foe.boosts) {
-				target.boosts[i] = foe.boosts[i];
+				source.boosts[i] = foe.boosts[i];
 			}
-				this.add('-copyboost', target);  
+				this.add('-copyboost', source);  
 			 
 				foe.clearBoosts();
 			this.add('-clearboost', foe);
