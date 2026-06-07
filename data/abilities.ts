@@ -643,15 +643,28 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 				this.add('-immune', pokemon, '[from] ability: Seiso');
 				return null;
 			}
-		},
-		onTryAddVolatile(status, target, source, effect) {
-			if (['healblock'].includes(status.id)) {
-				if (effect.effectType === 'Move') {
-					const effectHolder = this.effectState.target;
-					this.add('-block', target, 'ability: Seiso', '[of] ' + effectHolder);
-				}
+			if (move.id === 'healblock') {
+				this.add('-immune', pokemon, '[from] ability: Seiso');
 				return null;
 			}
+			if (move.id === 'disable') {
+				this.add('-immune', pokemon, '[from] ability: Seiso');
+				return null;
+			}
+			if (move.id === 'encore') {
+				this.add('-immune', pokemon, '[from] ability: Seiso');
+				return null;
+			}
+			if (move.id === 'torment') {
+				this.add('-immune', pokemon, '[from] ability: Seiso');
+				return null;
+			}
+			if (move.id === 'curse' && target.hasType('Ghost')) {
+				this.add('-immune', pokemon, '[from] ability: Seiso');
+				return null;
+			}
+		},
+		onTryAddVolatile(status, target, source, effect) {
 			if (['confusion'].includes(status.id)) {
 				if (effect.effectType === 'Move') {
 					const effectHolder = this.effectState.target;
@@ -659,34 +672,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 				}
 				return null;
 			}
-			if (['disable'].includes(status.id)) {
-				if (effect.effectType === 'Move') {
-					const effectHolder = this.effectState.target;
-					this.add('-block', target, 'ability: Seiso', '[of] ' + effectHolder);
-				}
-				return null;
-			}
-			if (['encore'].includes(status.id)) {
-				if (effect.effectType === 'Move') {
-					const effectHolder = this.effectState.target;
-					this.add('-block', target, 'ability: Seiso', '[of] ' + effectHolder);
-				}
-				return null;
-			}
-			if (['torment'].includes(status.id)) {
-				if (effect.effectType === 'Move') {
-					const effectHolder = this.effectState.target;
-					this.add('-block', target, 'ability: Seiso', '[of] ' + effectHolder);
-				}
-				return null;
-			}
-			if (['curse'].includes(status.id)) {
-				if (effect.effectType === 'Move') {
-					const effectHolder = this.effectState.target;
-					this.add('-block', target, 'ability: Seiso', '[of] ' + effectHolder);
-				}
-				return null;
-			}
+			if (status.id === 'flinch') return null;
 		},
 		flags: {breakable: 1},
 		name: "Seiso",
