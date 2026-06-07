@@ -31,8 +31,8 @@ export const MovesText: { [id: IDEntry]: MoveText } = {
 	},
 	idolsong: { // Sora
 		name: "Idol Song",
-		desc: "Hits adjacent foes. No additional effect.",
-		shortDesc: "No additional effect. Hits adjacent foes.", 
+		desc: "Hits adjacent foes. The user spends two or three turns locked into this move and becomes confused immediately after its move on the last turn of the effect if it is not already. If the user is prevented from moving, is asleep at the beginning of a turn, or the attack is not successful against the target on the first turn of the effect or the second turn of a three-turn effect, the effect ends without causing confusion. If this move is called by Sleep Talk and the user is asleep, the move is used for one turn and does not confuse the user.",
+		shortDesc: "Lasts 2-3 turns. Confuses the user afterwards.",
 	},
 	divasong: {
 		name: "Diva Song",

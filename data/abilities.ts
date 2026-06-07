@@ -586,20 +586,12 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 2,
 		num: 29,
 	},
-	seiso: { // SORA: combines [Clear Body] + [Immunity] but for other statuses too + immune to flinching <held items cant status either>
+	seiso: { // SORA: immune to flinching & assortment of Violatile Statuses
 		onUpdate(pokemon) {
 			if (pokemon.volatiles['taunt']) {
 				this.add('-activate', pokemon, 'ability: Seiso');
 				pokemon.removeVolatile('taunt');
 			    pokemon.removeVolatile('monday');
-			}
-			if (pokemon.volatiles['encore']) {
-				this.add('-activate', pokemon, 'ability: Seiso');
-				pokemon.removeVolatile('encore');
-			}
-			if (pokemon.volatiles['disable']) {
-				this.add('-activate', pokemon, 'ability: Seiso');
-				pokemon.removeVolatile('disable');
 			}
 			if (pokemon.volatiles['confusion']) {
 				this.add('-activate', pokemon, 'ability: Seiso');
@@ -609,18 +601,6 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 				this.add('-activate', pokemon, 'ability: Seiso');
 				pokemon.removeVolatile('lockedmove');
 			}
-			if (pokemon.volatiles['torment']) {
-				this.add('-activate', pokemon, 'ability: Seiso');
-				pokemon.removeVolatile('torment');
-			}
-			if (pokemon.volatiles['yawn']) {
-				this.add('-activate', pokemon, 'ability: Seiso');
-				pokemon.removeVolatile('yawn');
-			}
-			if (pokemon.volatiles['healblock']) {
-				this.add('-activate', pokemon, 'ability: Seiso');
-				pokemon.removeVolatile('healblock');
-			}
 		},
 		onTryHit(pokemon, target, move) {
 			if (move.id === 'taunt') {
@@ -628,10 +608,6 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 				return null;
 			}
 			if (move.id === 'monday') {
-				this.add('-immune', pokemon, '[from] ability: Seiso');
-				return null;
-			}
-			if (move.id === 'imprison') {
 				this.add('-immune', pokemon, '[from] ability: Seiso');
 				return null;
 			}

@@ -66,12 +66,15 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	idolsong: { // SORA 3
 		num: 370,
 		accuracy: 90,
-		basePower: 100,
+		basePower: 110,
 		category: "Special",
 		name: "Idol Song",
 		pp: 10,
 		priority: 0,
-		flags: {protect: 1, mirror: 1, sound: 1, bypasssub: 1, metronome: 1},
+		flags: {protect: 1, mirror: 1, sound: 1, bypasssub: 1, metronome: 1, failinstruct: 1},
+		self: {
+			volatileStatus: 'lockedmove',
+		},
 		target: "allAdjacentFoes",
 		type: "Fairy",
 		contestType: "Cute",
