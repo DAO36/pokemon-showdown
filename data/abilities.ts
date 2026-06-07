@@ -1259,7 +1259,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
                     this.add('-clearpositiveboost', target);
 				
                 if (boost[i]! > 0) {
-                    this.add('-copyboost', source);
+                    this.add('-copyboost', target);
                 }
                 const feaster = this.effectState.target
             }
