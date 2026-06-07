@@ -1248,7 +1248,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			this.add('-clearpositiveboost', foe);
 		},
         onFoeTryBoost(boost, target, source, effect) {
-            if (effect?.name === 'Opportunist' || effect?.name === 'Mirror Herb') return; // TODO Add this ability in case you have a mirror match
+            if (effect?.name === 'Opportunist' || effect?.name === 'Mirror Herb' || effect?.name === 'Piracy') return;
             if (!this.effectState.boosts) this.effectState.boosts = {} as SparseBoostsTable;
             const boostPlus = this.effectState.boosts;
             let i: BoostID;
