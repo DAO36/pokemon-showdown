@@ -86,7 +86,7 @@ export const AbilitiesText: { [id: IDEntry]: AbilityText } = {
 	seiso: { // SORA
 		name: "Seiso",
 		desc: "This Pokemon is immune to the volatile status effects of Confusion, Heal Block, Taunt, Monday, Disable, Torment, Encore, Curse, Yawn, Nightmare, Perish Song, and from being locked to a move. This Pokemon cannot be confused; Cannot be made to flinch.",
-		shortDesc: "Immune to volatile status effects (Confusion, Taunt, Flinch, etc).",
+		shortDesc: "Immune to volatile status effects (Flinch, Confusion, Taunt, Encore, etc).",
 	},
 	elite: {
 		name: "Elite",
@@ -102,8 +102,8 @@ export const AbilitiesText: { [id: IDEntry]: AbilityText } = {
 	},
 	stellar: {
 		name: "Stellar",
-		desc: "On switch-in, all adjacent Pokemon on the opposing side have their stat stages reset to 0; Prevents other Pokemon from lowering the user's stat stages.",
-		shortDesc: "On switch-in, foes have stat stages reset to 0. Own stats can't be lowered by others.",
+		desc: "On switch-in, all adjacent Pokemon on the opposing side have their positive stat stages reset to 0; User's allies have their negative stat stages reset to 0. Prevents other Pokemon from lowering the user's stat stages.",
+		shortDesc: "Switch-in: foe's positive stat stages are reset; ally's negative stat stages are reset.",
 	},
 	highspecsrobot: {
 		name: "High Specs Robot",

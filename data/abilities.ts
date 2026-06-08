@@ -605,7 +605,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 2.5,
 		num: 270,
 	},
-	magmadrain: {
+	magmadrain: { // ELITE MIKO MIKO
 		onTryHit(target, source, move) {
 			if (target !== source && move.type === 'Fire') {
 				if (!this.boost({ spa: 1 })) {
@@ -634,7 +634,11 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		onStart(pokemon) {
 			for (const foe of pokemon.adjacentFoes()) {
 				foe.clearBoosts();
-				this.add('-clearboost', foe, '[from] ability: Stellar', '[of] ' + pokemon);
+				this.add('-clearpositiveboost', foe, '[from] ability: Stellar', '[of] ' + pokemon);
+			}
+			for (const ally of pokemon.adjacentAllies()) {
+				ally.clearBoosts();
+				this.add('-clearnegativeboost', ally, '[from] ability: Stellar', '[of] ' + pokemon);
 			}
 		},
 		onTryBoost(boost, target, source, effect) {
