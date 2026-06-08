@@ -531,10 +531,6 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 				this.add('-activate', pokemon, 'ability: Seiso');
 				pokemon.removeVolatile('disable');
 			}
-			if (pokemon.volatiles['perishsong']) {
-				this.add('-activate', pokemon, 'ability: Seiso');
-				pokemon.removeVolatile('perishsong');
-			}
 		},
 		onTryHit(pokemon, target, move) {
 			if (move.id === 'taunt') {
