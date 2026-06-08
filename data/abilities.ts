@@ -2113,9 +2113,22 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 4.5,
 		num: 87,
 	},
+	iso: { // SORA: immune to flinching & assortment of Violatile Statuses
+		onUpdate(pokemon) {
+			if (pokemon.volatiles['lockedmove']) {
+				this.add('-activate', pokemon, 'ability: Seiso');
+				pokemon.removeVolatile('lockedmove');
+			}
+		},
+		flags: {breakable: 1},
+		name: "Seiso",
+		rating: 2,
+		num: 29,
+	},
 	timetravel: { // [Power Herb (ITEM)] but as an ability; skips recharging as well
 		onTryAddVolatile(status, pokemon) {
 			if (status.id === 'mustrecharge') return null;
+			if (status.id === 'lockedmove') return null;
 		},
 		onChargeMove(pokemon, target, move) {
 			if (pokemon.hasAbility('timetravel')) {

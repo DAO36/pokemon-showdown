@@ -774,6 +774,11 @@ export const MovesText: { [id: IDEntry]: MoveText } = {
 
 		switchOut: "#uturn",
 	},
+	bubbabite: {
+		name: "Bubba Bite",
+		desc: "Has a 10% chance to badly poison the target.",
+		shortDesc: "10% chance to badly poison the target.",
+	},
 	timedattack: {
 		name: "Timed Attack",
 		desc: "If this move is successful, it breaks through the target's Baneful Bunker, Lunar Shield, Phoenix Shield, Detect, King's Shield, Protect, or Spiky Shield for this turn, allowing other Pokemon to attack the target normally. If the target's side is protected by Crafty Shield, Mat Block, Quick Guard, or Wide Guard, that protection is also broken for this turn and other Pokemon may attack the target's side normally. This attack charges on the first turn and executes on the second. On the first turn, the user avoids all attacks. If the user is holding a Power Herb, the move completes in one turn.",
@@ -789,11 +794,11 @@ export const MovesText: { [id: IDEntry]: MoveText } = {
 
 		prepare: "[POKEMON] is breaking dimensions!",
 	},
-	bubbabite: {
-		name: "Bubba Bite",
-		desc: "Has a 10% chance to badly poison the target.",
-		shortDesc: "10% chance to badly poison the target.",
-	}, 
+	timetantrum: {
+		name: "Time Tantrum",
+		desc: "The user spends two or three turns locked into this move and becomes confused immediately after its move on the last turn of the effect if it is not already. This move targets an opposing Pokemon at random on each turn. If the user is prevented from moving, is asleep at the beginning of a turn, or the attack is not successful against the target on the first turn of the effect or the second turn of a three-turn effect, the effect ends without causing confusion. If this move is called by Sleep Talk and the user is asleep, the move is used for one turn and does not confuse the user.",
+		shortDesc: "Lasts 2-3 turns. Confuses the user afterwards.",
+	},
 	gamerrage: {
 		name: "Gamer Rage",
 		desc: "If this move is successful, this Pokemon must recharge on the following turn and cannot select a move. Has a 10% chance to badly poison the target.",
