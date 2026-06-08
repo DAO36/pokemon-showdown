@@ -83,14 +83,9 @@ export const AbilitiesText: { [id: IDEntry]: AbilityText } = {
 		name: "Pure Power",
 		shortDesc: "This Pokemon's Special Attack is doubled.",
 	},
-	seiso2: { // SORA
-		name: "Seiso2",
-		desc: "This Pokemon cannot be poisoned, paralyzed, burned, frozen, or put to sleep. Prevents other Pokemon from lowering the user's stat stages. Immune to the effects of Heal Block, Taunt, Disable, and Encore.",
-		shortDesc: "Immune to status effects. Stats can't be lowered by others. Cannot be taunted.",
-	},
 	seiso: { // SORA
 		name: "Seiso",
-		desc: "This Pokemon is immune to the volatile status effects of Confusion, Heal Block, Taunt, Monday, Disable, Torment, Encore, Curse, Yawn, Nightmare, and from being locked to a move. This Pokemon cannot be confused; Cannot be made to flinch.",
+		desc: "This Pokemon is immune to the volatile status effects of Confusion, Heal Block, Taunt, Monday, Disable, Torment, Encore, Curse, Yawn, Nightmare, Perish Song, and from being locked to a move. This Pokemon cannot be confused; Cannot be made to flinch.",
 		shortDesc: "Immune to volatile status effects (Confusion, Taunt, Flinch, etc).",
 	},
 	elite: {

@@ -516,76 +516,6 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 5,
 		num: 74,
 	},
-	seiso2: { // SORA: combines [Clear Body] + [Immunity] but for other statuses too + immune to flinching <held items cant status either>
-		onUpdate(pokemon) {
-			if (pokemon.status === 'psn' || pokemon.status === 'tox' || pokemon.status === 'par' || pokemon.status === 'slp' || pokemon.status === 'brn' || pokemon.status === 'frz') {
-				this.add('-activate', pokemon, 'ability: Seiso');
-				pokemon.cureStatus();
-			}
-			if (pokemon.volatiles['taunt']) {
-				this.add('-activate', pokemon, 'ability: Seiso');
-				pokemon.removeVolatile('taunt');
-			    pokemon.removeVolatile('monday');
-			}
-			if (pokemon.volatiles['encore']) {
-				this.add('-activate', pokemon, 'ability: Seiso');
-				pokemon.removeVolatile('encore');
-			}
-			if (pokemon.volatiles['disable']) {
-				this.add('-activate', pokemon, 'ability: Seiso');
-				pokemon.removeVolatile('disable');
-			}
-		},
-		onSetStatus(status, target, source, effect) {
-			if (status.id !== 'psn' && status.id !== 'tox' && status.id !== 'par' && status.id !== 'slp' && status.id !== 'brn' && status.id !== 'frz') return;
-			if ((effect as Move)?.status) {
-				this.add('-immune', target, '[from] ability: Seiso');
-			}
-			if (source.volatiles['taunt']) {
-				this.add('-activate', source, 'ability: Seiso');
-				source.removeVolatile('taunt');
-				// Taunt's volatile already sends the -end message when removed
-			}
-			return false;
-		},
-		onTryHit(pokemon, target, move) {
-			if (move.id === 'taunt') {
-				this.add('-immune', pokemon, '[from] ability: Seiso');
-				return null;
-			}
-			if (move.id === 'monday') {
-				this.add('-immune', pokemon, '[from] ability: Seiso');
-				return null;
-			}
-		}, 
-		onTryBoost(boost, target, source, effect) {
-			if (source && target === source) return;
-			let showMsg = false;
-			let i: BoostID;
-			for (i in boost) {
-				if (boost[i]! < 0) {
-					delete boost[i];
-					showMsg = true;
-				}
-			}
-			if (showMsg && !(effect as ActiveMove).secondaries && effect.id !== 'octolock') {
-				this.add("-fail", target, "unboost", "[from] ability: Seiso", "[of] " + target);
-			}
-		},
-		onTryAddVolatile(status, target, source, effect) {
-			if (['healblock'].includes(status.id)) {
-				if (effect.effectType === 'Move') {
-					const effectHolder = this.effectState.target;
-					this.add('-block', target, 'ability: Seiso', '[of] ' + effectHolder);
-				}
-				return null;
-			}
-		},
-		flags: {breakable: 1},
-		name: "Seiso2",
-		rating: 2,
-		num: 29,
-	},
 	seiso: { // SORA: immune to flinching & assortment of Violatile Statuses
 		onUpdate(pokemon) {
 			if (pokemon.volatiles['taunt']) {
@@ -597,9 +527,13 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 				this.add('-activate', pokemon, 'ability: Seiso');
 				pokemon.removeVolatile('confusion');
 			}
-			if (pokemon.volatiles['lockedmove']) {
+			if (pokemon.volatiles['disable']) {
 				this.add('-activate', pokemon, 'ability: Seiso');
-				pokemon.removeVolatile('lockedmove');
+				pokemon.removeVolatile('disable');
+			}
+			if (pokemon.volatiles['perishsong']) {
+				this.add('-activate', pokemon, 'ability: Seiso');
+				pokemon.removeVolatile('perishsong');
 			}
 		},
 		onTryHit(pokemon, target, move) {
@@ -639,6 +573,10 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 				this.add('-immune', pokemon, '[from] ability: Seiso');
 				return null;
 			}
+			if (move.id === 'perishsong') {
+				this.add('-immune', pokemon, '[from] ability: Seiso');
+				return null;
+			}
 		},
 		onTryAddVolatile(status, target, source, effect) {
 			if (['confusion'].includes(status.id)) {
@@ -649,6 +587,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 				return null;
 			}
 			if (status.id === 'flinch') return null;
+			if (status.id === 'lockedmove') return null;
 		},
 		flags: {breakable: 1},
 		name: "Seiso",
