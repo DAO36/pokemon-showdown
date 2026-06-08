@@ -630,7 +630,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3,
 		num: 114,
 	},
-	stellar: { // combines [Clear Body] + [Curious Medicine] but better as it targets foes only
+	stellar: { // combines [Clear Body] + [Curious Medicine] but better! as it targets foes only
 		onStart(pokemon) {
 			for (const foe of pokemon.adjacentFoes()) {
 				foe.clearBoosts();
