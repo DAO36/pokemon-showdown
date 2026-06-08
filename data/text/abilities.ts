@@ -431,7 +431,7 @@ export const AbilitiesText: { [id: IDEntry]: AbilityText } = {
 	timetravel: {
 		name: "Time Travel",
 		desc: "If this Pokemon uses a two-turn move, it will complete it in one turn instead (except Sky Drop). If this Pokemon uses a move that require recharging after (Hyper Beam, Giga Impact, etc.), it is not affected by the recharge status. If a move that locks the Pokemon into using it for multiple turns is used (Outrage, Thrash, etc.), the Pokemon will not be locked into using it and can choose a different move on the next turn.",
-		shortDesc: "2-turn moves complete in 1 turn. Moves with recharge doesn't make user recharge.",
+		shortDesc: "2-turn moves complete in 1 turn. Doesn't get locked to a move or need to recharge.",
 	},
 	death: {
 		name: "Death",
