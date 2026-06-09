@@ -112,7 +112,11 @@ export const DefaultText: { [id: IDEntry]: DefaultText } = {
 		superEffectiveSpread: "  It's super effective on [POKEMON]!",
 		resisted: "  It's not very effective...",
 		resistedSpread: "  It's not very effective on [POKEMON].",
-		crit: "  A critical hit! Additional damage!",
+		extremelyEffective: "  It's extremely effective!",
+		extremelyEffectiveSpread: "  It's extremely effective on [POKEMON]!",
+		mostlyIneffective: "  It's mostly ineffective...",
+		mostlyIneffectiveSpread: "  It's mostly ineffective on [POKEMON].",
+		crit: "  A critical hit!",
 		critSpread: "  A critical hit on [POKEMON]!",
 		immune: "  It doesn't affect [POKEMON]...",
 		immuneNoPokemon: "  It had no effect!", // old gens
