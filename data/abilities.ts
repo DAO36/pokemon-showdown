@@ -577,8 +577,8 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			if (status.id === 'lockedmove') return null;
 
 			if (effect.name === 'Peko Peko') {
-				target.removeVolatile('taunt');
 				this.add('-fail', target, '[from] ability: Seiso', '[of] ' + target);
+				target.removeVolatile('taunt');
 			}
 		},
 		flags: {breakable: 1},
