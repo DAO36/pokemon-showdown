@@ -518,18 +518,9 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	},
 	seiso: { // SORA: immune to flinching & assortment of Violatile Statuses
 		onUpdate(pokemon) {
-			if (pokemon.volatiles['taunt']) {
-				this.add('-activate', pokemon, 'ability: Seiso');
-				pokemon.removeVolatile('taunt');
-			    pokemon.removeVolatile('monday');
-			}
 			if (pokemon.volatiles['confusion']) {
 				this.add('-activate', pokemon, 'ability: Seiso');
 				pokemon.removeVolatile('confusion');
-			}
-			if (pokemon.volatiles['disable']) {
-				this.add('-activate', pokemon, 'ability: Seiso');
-				pokemon.removeVolatile('disable');
 			}
 		},
 		onTryHit(pokemon, target, move) {
@@ -584,6 +575,10 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			}
 			if (status.id === 'flinch') return null;
 			if (status.id === 'lockedmove') return null;
+
+			if (effect.name === 'Peko Peko') {
+				this.add('-fail', target, '[from] ability: Seiso', '[of] ' + target);
+			}
 		},
 		flags: {breakable: 1},
 		name: "Seiso",
@@ -2051,18 +2046,6 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		name: "Power of Atlantis",
 		rating: 4.5,
 		num: 87,
-	},
-	iso: { // SORA: immune to flinching & assortment of Violatile Statuses
-		onUpdate(pokemon) {
-			if (pokemon.volatiles['lockedmove']) {
-				this.add('-activate', pokemon, 'ability: Seiso');
-				pokemon.removeVolatile('lockedmove');
-			}
-		},
-		flags: {breakable: 1},
-		name: "Seiso",
-		rating: 2,
-		num: 29,
 	},
 	timetravel: { // [Power Herb (ITEM)] but as an ability; skips recharging as well
 		onTryAddVolatile(status, pokemon) {
