@@ -518,49 +518,25 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	},
 	seiso: { // SORA: immune to flinching & assortment of Violatile Statuses
 		onUpdate(pokemon) {
+			if (pokemon.volatiles['taunt']) {
+				this.add('-activate', pokemon, 'ability: Seiso');
+				pokemon.removeVolatile('taunt');
+			}
+			if (pokemon.volatiles['monday']) {
+				this.add('-activate', pokemon, 'ability: Seiso');
+				pokemon.removeVolatile('monday');
+			}
 			if (pokemon.volatiles['confusion']) {
 				this.add('-activate', pokemon, 'ability: Seiso');
 				pokemon.removeVolatile('confusion');
 			}
 		},
 		onTryHit(pokemon, target, move) {
-			if (move.id === 'taunt') {
-				this.add('-immune', pokemon, '[from] ability: Seiso');
-				return null;
-			}
-			if (move.id === 'monday') {
-				this.add('-immune', pokemon, '[from] ability: Seiso');
-				return null;
-			}
-			if (move.id === 'nightmare') {
-				this.add('-immune', pokemon, '[from] ability: Seiso');
-				return null;
-			}
-			if (move.id === 'yawn') {
-				this.add('-immune', pokemon, '[from] ability: Seiso');
-				return null;
-			}
-			if (move.id === 'healblock') {
-				this.add('-immune', pokemon, '[from] ability: Seiso');
-				return null;
-			}
-			if (move.id === 'disable') {
-				this.add('-immune', pokemon, '[from] ability: Seiso');
-				return null;
-			}
-			if (move.id === 'encore') {
-				this.add('-immune', pokemon, '[from] ability: Seiso');
-				return null;
-			}
-			if (move.id === 'torment') {
+			if (move.id === 'taunt' || move.id === 'monday' || move.id === 'nightmare' || move.id === 'yawn' || move.id === 'healblock' || move.id === 'disable' || move.id === 'encore' || move.id === 'torment' || move.id === 'perishsong') {
 				this.add('-immune', pokemon, '[from] ability: Seiso');
 				return null;
 			}
 			if (move.id === 'curse' && target.hasType('Ghost')) {
-				this.add('-immune', pokemon, '[from] ability: Seiso');
-				return null;
-			}
-			if (move.id === 'perishsong') {
 				this.add('-immune', pokemon, '[from] ability: Seiso');
 				return null;
 			}
@@ -575,11 +551,6 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			}
 			if (status.id === 'flinch') return null;
 			if (status.id === 'lockedmove') return null;
-
-			if (effect.name === 'Peko Peko') {
-				this.add('-fail', target, '[from] ability: Seiso', '[of] ' + target);
-				source.removeVolatile('taunt');
-			}
 		},
 		flags: {breakable: 1},
 		name: "Seiso",
