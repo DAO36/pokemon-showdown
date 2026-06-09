@@ -578,7 +578,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 
 			if (effect.name === 'Peko Peko') {
 				this.add('-fail', target, '[from] ability: Seiso', '[of] ' + target);
-				target.removeVolatile('taunt');
+				source.removeVolatile('taunt');
 			}
 		},
 		flags: {breakable: 1},
