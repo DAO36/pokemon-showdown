@@ -41,8 +41,8 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		num: 0,
 	},
 	missedme: { // STOMPING TANTRUM but as an ability
-		onFoeAfterMove(pokemon, target, move) {
-			if (pokemon.moveThisTurnResult === false)
+		onAfterMove(source, target, move) {
+			if (this.lastSuccessfulMoveThisTurn === null && move.category !== 'Status')
 				this.boost({def: 1}, target);
 		},
 		flags: {breakable: 1},
@@ -52,7 +52,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	},
 	missedme2: { // STOMPING TANTRUM but as an ability
 		onAfterMove(source, target, move) {
-			if (target.moveThisTurnResult === false && move.category !== 'Status')
+			if (target.moveThisTurnResult === null && move.category !== 'Status')
 				this.boost({spe: 1}, source);
 		},
 		flags: {breakable: 1},
