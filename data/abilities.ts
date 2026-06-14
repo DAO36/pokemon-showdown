@@ -1040,7 +1040,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	warcriminal: { // reskin of [Aftermath] but even better
 		onDamagingHitOrder: 1,
 		onDamagingHit(damage, target, source, move) {
-			if (!target.hp && move.category === 'Physical' || move.category === 'Special') {
+			if (!target.hp && move.category === 'Physical' || !target.hp && move.category === 'Special') {
 				this.damage(source.baseMaxhp / 3, source, target);
 			}
 		},
