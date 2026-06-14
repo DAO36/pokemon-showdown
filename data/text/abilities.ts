@@ -162,8 +162,8 @@ export const AbilitiesText: { [id: IDEntry]: AbilityText } = {
 	},
 	oni: {
 		name: "Oni",
-		desc: "This Pokemon's offensive stat is multiplied by 1.5 while using a Fire-type attack.",
-		shortDesc: "User's offensive stat is boosted by 50% when using a Fire-type attack.",
+		desc: "This Pokemon's offensive stat is multiplied by 1.5 while using a Fire-type attack. This Pokemon cannot be burned. Gaining this Ability while burned cures it.",
+		shortDesc: "Offensive stat is boosted by 50% when using Fire-type moves. Cannot be burned",
 
 		start: "  [POKEMON] is channeling Oni energy!",
 	},
@@ -209,7 +209,7 @@ export const AbilitiesText: { [id: IDEntry]: AbilityText } = {
 		desc: "If this Pokemon is knocked out with an attacking move, that move's user loses 1/3 of its maximum HP, rounded down. This effect is prevented if the move's user has the Magic Guard Ability.",
 		shortDesc: "If this Pokemon is KOed with a move, that move's user loses 1/4 its max HP.",
 
-		damage: "  [SOURCE] blew herself up!",
+		damage: "  [POKEMON] blew herself up!",
 	},
 	pekopeko: {
 		name: "Peko Peko",
