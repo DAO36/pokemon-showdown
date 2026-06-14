@@ -862,7 +862,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			}
 			return false;
 		},
-		flags: {},
+		flags: {breakable: 1},
 		name: "Oni",
 		rating: 3.5,
 		num: 276,
