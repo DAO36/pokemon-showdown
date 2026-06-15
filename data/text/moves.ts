@@ -413,8 +413,8 @@ export const MovesText: { [id: IDEntry]: MoveText } = {
 	},
 	breatheintype: {
 		name: "Breathe-In Type",
-		desc: "Power doubles if the target is poisoned or badly poisoned. Hits adjacent foes.",
-		shortDesc: "Power doubles if the target is poisoned.",
+		desc: "This move has 1.5x power if the target is poisoned or badly poisoned. Hits adjacent foes.",
+		shortDesc: "1.5x power if the target is poisoned.",
 	},
 	gorillagrip: {
 		name: "Gorilla Grip",

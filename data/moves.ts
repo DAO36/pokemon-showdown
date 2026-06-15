@@ -1530,7 +1530,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		flags: {protect: 1, mirror: 1, metronome: 1, wind: 1},
 		onBasePower(basePower, pokemon, target) {
 			if (target.status === 'psn' || target.status === 'tox') {
-				return this.chainModify(2);
+				return this.chainModify(1.5);
 			}
 		},
 		target: "allAdjacentFoes",
