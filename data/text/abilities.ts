@@ -245,8 +245,8 @@ export const AbilitiesText: { [id: IDEntry]: AbilityText } = {
 	},
 	breatheinasacoco: {
 		name: "Breathe-In Asacoco",
-		desc: "This Pokemon's Flying type moves have a 30% chance of badly poisoning. This effect comes after a move's inherent secondary effect chance.",
-		shortDesc: "This Pokemon's Flying type moves have a 30% chance of badly poisoning.",
+		desc: "This Pokemon's Flying type moves have a 20% chance of badly poisoning. This effect comes after a move's inherent secondary effect chance.",
+		shortDesc: "This Pokemon's Flying type moves have a 20% chance of badly poisoning.",
 	},
 	pptgrip: {
 		name: "PPT Grip",
