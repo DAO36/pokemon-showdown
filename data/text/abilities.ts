@@ -238,7 +238,7 @@ export const AbilitiesText: { [id: IDEntry]: AbilityText } = {
 		desc: "When an opposing Pokemon raises a stat stage, this Pokemon copies it and blocks the opposing Pokemon from raising that stat. On switch-in, this Pokemon copies the target's positive stat changes, then the target has their positive stat stages reset back to 0.",
 		shortDesc: "Steals foe's positive stat changes. On switch-in, copies & resets foes stat changes.",
 	},
-	acocolive: {
+	asacocolive: {
 		name: "Asacoco Live",
 		desc: "If this Pokemon is poisoned, badly poisoned, paralyzed, burned, frozen, or asleep, it restores 1/8 of its maximum HP, rounded down, at the end of each turn instead of losing HP. This Pokemon's physical attacks ignore the burn effect of halving damage.",
 		shortDesc: "User heals by 1/8 of max HP each turn if statused; no HP loss.",
