@@ -1192,7 +1192,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3,
 		num: 92,
 	},
-	highonasacoco: { // exact copy of [Poison Heal] but butter
+	asacocolive: { // exact copy of [Poison Heal] but butter
 		onDamagePriority: 1,
 		onDamage(damage, target, source, effect) {
 			if (effect.id === 'psn' || effect.id === 'tox' || effect.id === 'brn' || effect.id === 'par' || effect.id === 'slp' || effect.id === 'frz') { 
@@ -1208,11 +1208,11 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			}
 		},
 		flags: {},
-		name: "High on Asacoco",
+		name: "Asacoco Live",
 		rating: 4,
 		num: 90,
 	},
-	breatheinasacoco: {
+	highonasacoco: {
 		onSourceDamagingHit(damage, target, source, move) {
 			// Despite not being a secondary, Shield Dust / Covert Cloak block Poison Touch's effect
 			if (target.hasAbility('shielddust') || target.hasItem('covertcloak')) return;
@@ -1223,7 +1223,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			}
 		},
 		flags: {},
-		name: "Breathe-In Asacoco",
+		name: "High on Asacoco",
 		rating: 1.5,
 		num: 38,
 	},
