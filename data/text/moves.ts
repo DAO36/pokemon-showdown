@@ -411,6 +411,11 @@ export const MovesText: { [id: IDEntry]: MoveText } = {
 		desc: "Hits adjacent Pokemon. Has a 20% chance to badly poison the target.",
 		shortDesc: "20% chance to badly poison foe(s).",
 	},
+	breatheintype: {
+		name: "Breathe-In Type",
+		desc: "Power doubles if the target is poisoned or badly poisoned. Hits adjacent foes.",
+		shortDesc: "Power doubles if the target is poisoned.",
+	},
 	gorillagrip: {
 		name: "Gorilla Grip",
 		desc: "Has a 30% chance to lower the foe's Defense by 1 stage. If the target lost HP, the user takes recoil damage equal to 33% the HP lost by the target, rounded half up, but not less than 1 HP.",

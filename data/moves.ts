@@ -1519,6 +1519,24 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Dragon",
 		contestType: "Tough",
 	},
+	breatheintype: { // COCO 3
+		num: 474,
+		accuracy: 90,
+		basePower: 90,
+		category: "Special",
+		name: "Breathe-In Type",
+		pp: 10,
+		priority: 0,
+		flags: {protect: 1, mirror: 1, metronome: 1, wind: 1},
+		onBasePower(basePower, pokemon, target) {
+			if (target.status === 'psn' || target.status === 'tox') {
+				return this.chainModify(2);
+			}
+		},
+		target: "allAdjacentFoes",
+		type: "Flying",
+		contestType: "Beautiful",
+	},
 	gorillagrip: { // KANATA 1
 		num: 370,
 		accuracy: 90,

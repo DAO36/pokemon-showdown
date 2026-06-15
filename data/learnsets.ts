@@ -95993,6 +95993,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			partingshot: ["9M"],
 			asacoco: ["9M"],
 			gmmf: ["9M"],
+			breatheintype: ["9M"],
         },
 	},	
 	cocodraco: {
@@ -96062,6 +96063,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			partingshot: ["9M"],
 			asacoco: ["9M"],
 			gmmf: ["9M"],
+			breatheintype: ["9M"],
         },
 	},	
 	kanata: {
