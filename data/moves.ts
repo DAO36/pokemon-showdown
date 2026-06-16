@@ -1943,7 +1943,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		name: "Lalion",
 		pp: 20,
 		priority: 0,
-		flags: {snatch: 1, bullet: 1, metronome: 1},
+		flags: {snatch: 1, metronome: 1},
 		boosts: {
 			atk: 2,
 		},
