@@ -1231,7 +1231,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 				} 
 				if (pokemon.hasItem('heavydutyboots') || pokemon.hasType('Grass')) return;
 				const typeMod = this.clampIntRange(pokemon.runEffectiveness(this.dex.getActiveMove('carrottrap')), -6, 6);
-				this.damage(pokemon.maxhp * Math.pow(2, typeMod) / 8); 
+				this.damage(pokemon.maxhp * Math.pow(2, typeMod) / 8);
 			},
 		},
 		target: "foeSide",
