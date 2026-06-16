@@ -133,8 +133,8 @@ export const AbilitiesText: { [id: IDEntry]: AbilityText } = {
 	},
 	chamachange: {
 		name: "Chama Change",
-		desc: "If User is Akai Haato, she changes to Haachama if she has 1/2 or less of her maximum HP at the end of a turn. If Akai Haato's HP is above 1/2 of her maximum HP at the end of a turn, she changes back to Idol Mode.",
-		shortDesc: "At the end of a turn, changes to Haachama if she's at > 1/2 max HP, else Akai Haato.",
+		desc: "If user is Akai Haato, changes to Haachama if they have 1/2 or less of their maximum HP. If Akai Haato's HP is above 1/2 of their maximum HP, changes back to Idol Mode.",
+		shortDesc: "Changes to Haachama if at > 1/2 max HP, else Akai Haato.",
 
 		transform: "Haachama took over!",
 		transformEnd: "Akai Haato took over!",
