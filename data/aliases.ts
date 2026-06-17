@@ -1409,7 +1409,6 @@ export const Aliases: import('../sim/dex').AliasesTable = {
 	lsf: "Let's Snuggle Forever",
 	ltbts: "Light That Burns the Sky",
 	malicious: "Malicious Moonsault",
-	menacing: "Menacing Moonraze Maelstrom",
 	mmm: "Menacing Moonraze Maelstrom",
 	moonsault: "Malicious Moonsault",
 	oceanic: "Oceanic Operetta",
