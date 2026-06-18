@@ -2170,7 +2170,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			if (move.flags['sound']) {
 				this.attrLastMove('[still]');
 				this.add('cant', yabairysHolder, 'ability: YabaIRyS', move, '[of] ' + pokemon);
-				this.add(this.heal(target.baseMaxhp / 4, target, target));
+				this.add(this.heal(pokemon.baseMaxhp / 4, pokemon, pokemon));
 				return false;
 			}
 		},
