@@ -11344,6 +11344,38 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Fighting",
 		contestType: "Tough",
 	},
+	alleyesonme: {
+		num: 671,
+		accuracy: true,
+		basePower: 0,
+		category: "Status",
+		name: "All Eyes On Me",
+		pp: 15,
+		priority: 3,
+		flags: { protect: 1, reflectable: 1, allyanim: 1, noassist: 1, failcopycat: 1 },
+		volatileStatus: 'alleyesonme',
+		onTryHit(target) {
+			if (this.activePerHalf === 1) return false;
+		},
+		condition: {
+			duration: 1,
+			noCopy: true, // doesn't get copied by Baton Pass
+			onStart(pokemon) {
+				this.add('-singleturn', pokemon, 'move: All Eyes On Me');
+			},
+			onFoeRedirectTargetPriority: 2,
+			onFoeRedirectTarget(target, source, source2, move) {
+				if (!this.effectState.target.isSkyDropped() && this.validTarget(this.effectState.target, source, move.target)) {
+					if (move.smartTarget) move.smartTarget = false;
+					this.debug("All Eyes On Me redirected target of move");
+					return this.effectState.target;
+				}
+			},
+		},
+		target: "normal",
+		type: "Normal",
+		contestType: "Cute",
+	},
 	followme: {
 		num: 266,
 		accuracy: true,
@@ -23080,7 +23112,6 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
-		isNonstandard: "Past",
 		name: "Spotlight",
 		pp: 15,
 		priority: 3,
@@ -23105,7 +23136,6 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		},
 		target: "normal",
 		type: "Normal",
-		zMove: { boost: { spd: 1 } },
 		contestType: "Cute",
 	},
 	springtidestorm: {
