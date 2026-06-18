@@ -11355,13 +11355,13 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		flags: { protect: 1, reflectable: 1, allyanim: 1, noassist: 1, failcopycat: 1 },
 		volatileStatus: 'alleyesonme',
 		onTryHit(target) {
-			if (this.activePerHalf === 1) return false;
+			return this.activePerHalf > 1;
 		},
 		condition: {
 			duration: 1,
 			noCopy: true, // doesn't get copied by Baton Pass
-			onStart(pokemon) {
-				this.add('-singleturn', pokemon, 'move: All Eyes On Me');
+			onStart(target, source, effect) {
+					this.add('-singleturn', target, 'move: Follow Me');
 			},
 			onFoeRedirectTargetPriority: 2,
 			onFoeRedirectTarget(target, source, source2, move) {
@@ -11372,7 +11372,103 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 				}
 			},
 		},
-		target: "normal",
+		target: "any",
+		type: "Normal",
+		contestType: "Cute",
+	},
+	alleyesonme2: {
+		num: 671,
+		accuracy: true,
+		basePower: 0,
+		category: "Status",
+		name: "All Eyes On Me2",
+		pp: 15,
+		priority: 3,
+		flags: { protect: 1, reflectable: 1, allyanim: 1, noassist: 1, failcopycat: 1 },
+		volatileStatus: 'alleyesonme2',
+		onTryHit(target) {
+			if (this.activePerHalf === 1) return false;
+		},
+		condition: {
+			duration: 1,
+			noCopy: true, // doesn't get copied by Baton Pass
+			onStart(target, source, effect) {
+					this.add('-singleturn', target, 'move: Follow Me');
+			},
+			onFoeRedirectTargetPriority: 2,
+			onFoeRedirectTarget(target, source, source2, move) {
+				if (!this.effectState.target.isSkyDropped() && this.validTarget(this.effectState.target, source, move.target)) {
+					if (move.smartTarget) move.smartTarget = false;
+					this.debug("All Eyes On Me4 redirected target of move");
+					return this.effectState.target;
+				}
+			},
+		},
+		target: "any",
+		type: "Normal",
+		contestType: "Cute",
+	},
+	alleyesonme3: {
+		num: 671,
+		accuracy: true,
+		basePower: 0,
+		category: "Status",
+		name: "All Eyes On Me3",
+		pp: 15,
+		priority: 3,
+		flags: { protect: 1, reflectable: 1, allyanim: 1, noassist: 1, failcopycat: 1 },
+		volatileStatus: 'alleyesonme3',
+		onTryHit(target) {
+			if (this.activePerHalf === 1) return false;
+		},
+		condition: {
+			duration: 1,
+			noCopy: true, // doesn't get copied by Baton Pass
+			onStart(pokemon) {
+				this.add('-singleturn', pokemon, 'move: All Eyes On Me3');
+			},
+			onFoeRedirectTargetPriority: 2,
+			onFoeRedirectTarget(target, source, source2, move) {
+				if (!this.effectState.target.isSkyDropped() && this.validTarget(this.effectState.source, target, move.target)) {
+					if (move.smartTarget) move.smartTarget = false;
+					this.debug("All Eyes On Me3 redirected target of move");
+					return this.effectState.target;
+				}
+			},
+		},
+		target: "any",
+		type: "Normal",
+		contestType: "Cute",
+	},
+	alleyesonme4: {
+		num: 671,
+		accuracy: true,
+		basePower: 0,
+		category: "Status",
+		name: "All Eyes On Me4",
+		pp: 15,
+		priority: 3,
+		flags: { protect: 1, reflectable: 1, allyanim: 1, noassist: 1, failcopycat: 1 },
+		volatileStatus: 'alleyesonme4',
+		onTryHit(target) {
+			if (this.activePerHalf === 1) return false;
+		},
+		condition: {
+			duration: 1,
+			noCopy: true, // doesn't get copied by Baton Pass
+			onStart(target, source, effect) {
+					this.add('-singleturn', target, 'move: Follow Me');
+			},
+			onFoeRedirectTargetPriority: 2,
+			onFoeRedirectTarget(target, source, source2, move) {
+				if (!this.effectState.target.isSkyDropped() && this.validTarget(this.effectState.target, source, move.target)) {
+					if (move.smartTarget) move.smartTarget = false;
+					this.debug("All Eyes On Me4 redirected target of move");
+					return this.effectState.target;
+				}
+			},
+		},
+		target: "any",
 		type: "Normal",
 		contestType: "Cute",
 	},
