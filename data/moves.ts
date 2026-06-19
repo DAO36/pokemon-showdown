@@ -4933,7 +4933,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		basePower: 0,
 		category: "Status",
 		name: "Jokester",
-		pp: 5,
+		pp: 10,
 		priority: 3,
 		flags: {protect: 1, bypasssub: 1, failmefirst: 1, nosleeptalk: 1, noassist: 1, failcopycat: 1, failmimic: 1, metronome: 1},
 		onTryHit(target, pokemon) {
@@ -5132,6 +5132,35 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		target: "normal",
 		type: "Fairy",
 	},
+	ringe: { // CHOCO 2
+		num: 676,
+		accuracy: 100,
+		basePower: 80,
+		category: "Physical",
+		name: "Syringe",
+		pp: 10,
+		priority: 0,
+		flags: {protect: 1, mirror: 1, contact: 1, allyanim: 1, heal: 1, slicing: 1, metronome: 1},
+		onTryHit(target, source, move) {
+			if (source.isAlly(target)) {
+				move.basePower = 0;
+				move.infiltrates = true;
+			}
+		},
+		onHit(pokemon, source, move) {
+			if (source.isAlly(pokemon)) {
+				if (!this.heal(Math.floor(pokemon.baseMaxhp * 0.5))) {
+				}
+				if (pokemon.status === 'par' || 'psn' || 'tox' || 'frz' || 'slp' || 'brn') pokemon.cureStatus();
+			}
+			if (!source.isAlly(pokemon)) {
+				pokemon.trySetStatus('psn', source, move);
+			}
+		},
+		target: "normal",
+		type: "Poison",
+		contestType: "Cute",
+	},
 	skincare: { // VIVI 2
 		num: 676,
 		accuracy: 100,
@@ -5153,16 +5182,33 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 				}
 				if (pokemon.status === 'par' || 'psn' || 'tox' || 'frz' || 'slp' || 'brn') pokemon.cureStatus();
 			}
-		},
-		secondary: {
-			chance: 100,
-			boosts: {
-				def: -1,
-			},
+			if (!source.isAlly(pokemon)) {
+				this.boost({def: -1}, source);
+			}
 		},
 		target: "normal",
 		type: "Normal",
 		contestType: "Cute",
+	},
+	opressure: { // KAELA 1
+		num: 370,
+		accuracy: 100,
+		basePower: 0,
+		category: "Status",
+		name: "No Pressure",
+		pp: 10,
+		priority: 0,
+		flags: {protect: 1, reflectable: 1, mirror: 1, sound: 1, bypasssub: 1, switches: 1, metronome: 1},
+		onHit(target, source, move) {
+			const success = this.boost({def: -1, spd: -1}, target, source);
+			if (!success && !target.hasAbility('mirrorarmor')) {
+				delete move.selfSwitch;
+			}
+		},
+		selfSwitch: true,
+		target: "normal",
+		type: "Fire",
+		contestType: "Cool",
 	},
 	cosmeticstrike: { // VIVI 3
 		num: 53,
