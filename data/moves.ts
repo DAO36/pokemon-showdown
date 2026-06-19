@@ -5183,7 +5183,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 				if (pokemon.status === 'par' || 'psn' || 'tox' || 'frz' || 'slp' || 'brn') pokemon.cureStatus();
 			}
 			if (!source.isAlly(pokemon)) {
-				this.boost({def: -1}, source);
+				this.boost({def: -1}, pokemon);
 			}
 		},
 		target: "normal",
