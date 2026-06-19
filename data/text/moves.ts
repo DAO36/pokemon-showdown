@@ -299,8 +299,8 @@ export const MovesText: { [id: IDEntry]: MoveText } = {
 	},
 	bark: {
 		name: "Bark",
-		desc: "Has a 30% chance to make the target flinch. Hits adjacent foes.",
-		shortDesc: "Hits adjacent foes, 30% chance to flinch target(s).",
+		desc: "Has a 20% chance to make the target flinch. Hits adjacent foes.",
+		shortDesc: "Hits adjacent foes, 20% chance to flinch target(s).",
 	},
 	onigirichomp: {
 		name: "Onigiri Chomp",
