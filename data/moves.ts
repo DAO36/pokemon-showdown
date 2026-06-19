@@ -40,7 +40,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		},
 		target: "self",
 		type: "Fairy",
-		contestType: "Beautiful",
+		contestType: "Cute",
 	},
 	ankimoattack: { // SORA 2
 		num: 370,
@@ -77,7 +77,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		},
 		target: "allAdjacentFoes",
 		type: "Fairy",
-		contestType: "Cute",
+		contestType: "Beautiful",
 	},
 	divasong: { // AZKI 1  
 		num: 370,
@@ -118,7 +118,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		critRatio: 2,
 		target: "normal",
 		type: "Fairy",
-		contestType: "Beautiful",
+		contestType: "Cool",
 	},
 	sakurastrike: { // MIKO 1
 		num: 370,
@@ -194,7 +194,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		},
 		target: "normal",
 		type: "Fairy",
-		contestType: "Cute",
+		contestType: "Tough",
 	},
 	suicopath: { // SUISEI 1
 		num: 370,
@@ -289,7 +289,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		},
 		target: "normal",
 		type: "Electric",
-		contestType: "Tough",
+		contestType: "Clever",
 	},
 	upgradepc: { // ROBOCO 3
 		num: 370,
@@ -333,7 +333,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		},
 		target: "self",
 		type: "Electric",
-		contestType: "Beautiful",
+		contestType: "Clever",
 	}, 
 	snowdash: { // <<<UNUSED>>>
 		num: 370,
@@ -389,7 +389,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		},
 		target: "self",
 		type: "Grass",
-		contestType: "Cool",
+		contestType: "Cute",
 	},
 	kurokamistrike: { // KUROKAMI 1
 		num: 370,
@@ -445,7 +445,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		},
 		target: "normal",
 		type: "Ice",
-		contestType: "Cool",
+		contestType: "Tough",
 	},
 	imgod: { // MATSURI 1
 		num: 370,
@@ -520,7 +520,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		},
 		target: "normal",
 		type: "Bug",
-		contestType: "Cool",
+		contestType: "Tough",
 	},
 	fourcoursemeal: { // HAACHAMA 3
 		num: 850,
@@ -537,6 +537,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		},
 		target: "self",
 		type: "Poison",
+		contestType: "Cute",
 	},
 	kapu: { // MEL 1
 		num: 370,
@@ -587,7 +588,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		},
 		target: "normal",
 		type: "Fairy",
-		contestType: "Cute",
+		contestType: "Beautiful",
 	},
 	aikattack: { // AKIROSE 2
 		num: 370,
@@ -602,6 +603,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		smartTarget: true,
 		target: "any",
 		type: "Psychic",
+		contestType: "Clever",
 	},
 	mukirose: { // AKIROSE 3
 		num: 370,
@@ -635,7 +637,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		multihit: [2, 5],
 		target: "normal",
 		type: "Fairy",
-		contestType: "Cool",
+		contestType: "Tough",
 	},
 	onyan: { // AQUA 2
 		num: 370,
@@ -651,7 +653,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		},
 		target: "self",
 		type: "Grass",
-		contestType: "Beautiful",
+		contestType: "Cute",
 	},
 	dualwielding: { // AYAME 1
 		num: 370,
@@ -677,6 +679,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		],
 		target: "normal",
 		type: "Fighting",
+		contestType: "Tough",
 	},
 	asura: { // AYAME 2
 		num: 370,
@@ -741,6 +744,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		],
 		target: "normal",
 		type: "Ghost",
+		contestType: "Tough",
 	},
 	onionslaught: { // <<<UNUSED>>>
 		num: 370,
@@ -841,7 +845,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		},
 		target: "normal",
 		type: "Poison",
-		contestType: "Cute",
+		contestType: "Tough",
 	},
 	infirmary: { // CHOCO 3
 		num: 54,
@@ -920,7 +924,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		recoil: [33, 100],
 		target: "normal",
 		type: "Psychic",
-		contestType: "Tough",
+		contestType: "Clever",
 	},
 	arcanegarlic: { // SHION 2
 		num: 370,
@@ -958,7 +962,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		},
 		target: "normal",
 		type: "Psychic",
-		contestType: "Cool",
+		contestType: "Tough",
 	},
 	duckasmr: { // SUBARU 1
 		num: 370,
@@ -980,7 +984,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		},
 		target: "allAdjacentFoes",
 		type: "Flying",
-		contestType: "Cool",
+		contestType: "Cute",
 	},
 	duckdance: { // SUBARU 2
 		num: 370,
@@ -997,7 +1001,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		},
 		target: "self",
 		type: "Water",
-		contestType: "Cool",
+		contestType: "Cute",
 	},
 	oozorapolice: { // SUBARU 3
 		num: 370,
@@ -1011,7 +1015,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		forceSwitch: true,
 		target: "normal",
 		type: "Fighting",
-		contestType: "Cool",
+		contestType: "Tough",
 	},
 	shuba: { // SUBARU 4
 		num: 370,
@@ -1030,7 +1034,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		},
 		target: "normal",
 		type: "Water",
-		contestType: "Tough",
+		contestType: "Cute",
 	},
 	orayo: { // KORONE 1
 		num: 370,
@@ -1044,7 +1048,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		recoil: [33, 100],
 		target: "normal",
 		type: "Fighting",
-		contestType: "Cool",
+		contestType: "Tough",
 	},
 	yubiyubi: { // KORONE 2
 		num: 370,
@@ -1075,7 +1079,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		},
 		target: "allAdjacentFoes",
 		type: "Normal",
-		contestType: "Cool",
+		contestType: "Cute",
 	},
 	tarots: { // MIO 1
 		num: 370,
@@ -1111,7 +1115,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		},
 		target: "any",
 		type: "Psychic",
-		contestType: "Cool",
+		contestType: "Clever",
 	},
 	hatotaurushelp: { // MIO 2
 		num: 722,
@@ -1152,7 +1156,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		drain: [1, 2],
 		target: "normal",
 		type: "Grass",
-		contestType: "Tough",
+		contestType: "Cute",
 	},
 	rocketcarrots: { // PEKORA 1
 		num: 370,
@@ -1167,6 +1171,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		smartTarget: true,
 		target: "normal",
 		type: "Grass",
+		contestType: "Tough",
 	},
 	painpeko: { // PEKORA 2
 		num: 370,
@@ -1203,7 +1208,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		},
 		target: "allAdjacentFoes",
 		type: "Dark",
-		contestType: "Beautiful",
+		contestType: "Tough",
 	},
 	carrottrap: { // PEKORA 4
 		num: 191,
@@ -1236,81 +1241,6 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		},
 		target: "foeSide",
 		type: "Grass", 
-		contestType: "Clever",
-	},
-	xicspikes: {
-		num: 390,
-		accuracy: true,
-		basePower: 0,
-		category: "Status",
-		name: "Toxic Spikes",
-		pp: 20,
-		priority: 0,
-		flags: { reflectable: 1, nonsky: 1, metronome: 1, mustpressure: 1 },
-		sideCondition: 'toxicspikes',
-		condition: {
-			// this is a side condition
-			onSideStart(side) {
-				this.add('-sidestart', side, 'move: Toxic Spikes');
-				this.effectState.layers = 1;
-			},
-			onSideRestart(side) {
-				if (this.effectState.layers >= 2) return false;
-				this.add('-sidestart', side, 'move: Toxic Spikes');
-				this.effectState.layers++;
-			},
-			onSwitchIn(pokemon) {
-				if (!pokemon.isGrounded()) return;
-				if (pokemon.hasType('Poison')) {
-					this.add('-sideend', pokemon.side, 'move: Toxic Spikes', `[of] ${pokemon}`);
-					pokemon.side.removeSideCondition('toxicspikes');
-				} else if (pokemon.hasType('Steel') || pokemon.hasItem('heavydutyboots')) {
-					// do nothing
-				} else if (this.effectState.layers >= 2) {
-					pokemon.trySetStatus('tox', pokemon.side.foe.active[0]);
-				} else {
-					pokemon.trySetStatus('psn', pokemon.side.foe.active[0]);
-				}
-			},
-		},
-		target: "foeSide",
-		type: "Poison",
-		zMove: { boost: { def: 1 } },
-		contestType: "Clever",
-	},
-	echseed: {
-		num: 73,
-		accuracy: 90,
-		basePower: 0,
-		category: "Status",
-		name: "Leech Seed",
-		pp: 10,
-		priority: 0,
-		flags: { protect: 1, reflectable: 1, mirror: 1, metronome: 1 },
-		volatileStatus: 'leechseed',
-		condition: {
-			onStart(target) {
-				this.add('-start', target, 'move: Leech Seed');
-			},
-			onResidualOrder: 8,
-			onResidual(pokemon) {
-				const target = this.getAtSlot(pokemon.volatiles['leechseed'].sourceSlot);
-				if (!target || target.fainted || target.hp <= 0) {
-					this.debug('Nothing to leech into');
-					return;
-				}
-				const damage = this.damage(pokemon.baseMaxhp / 8, pokemon, target);
-				if (damage) {
-					this.heal(damage, target, pokemon);
-				}
-			},
-		},
-		onTryImmunity(target) {
-			return !target.hasType('Grass');
-		},
-		target: "normal",
-		type: "Grass",
-		zMove: { effect: 'clearnegativeboost' },
 		contestType: "Clever",
 	},
 	macesmash: { // NOEL 1
@@ -1348,7 +1278,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		ignoreDefensive: true,
 		target: "normal",
 		type: "Steel",
-		contestType: "Cool",
+		contestType: "Tough",
 	},
 	arrowassault: { // FLARE 1
 		num: 370,
@@ -1366,7 +1296,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		},
 		target: "any",
 		type: "Fire",
-		contestType: "Cool",
+		contestType: "Tough",
 	},
 	elfarrows: { // FLARE 2
 		num: 370,
@@ -1386,7 +1316,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		},
 		target: "any",
 		type: "Fairy",
-		contestType: "Cool",
+		contestType: "Beautiful",
 	},
 	gundance: { // FLARE 3
 		num: 370,
@@ -1402,7 +1332,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		},
 		target: "self",
 		type: "Fighting",
-		contestType: "Beautiful",
+		contestType: "Cool",
 	},
 	ahoy: { // MARINE 1
 		num: 712,
@@ -1459,7 +1389,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		heal: [1, 2],
 		target: "self",
 		type: "Dark",
-		contestType: "Clever",
+		contestType: "Cute",
 	},
 	yanderestrike: { // RUSHIA 1
 		num: 228,
@@ -1531,7 +1461,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		},
 		target: "normal",
 		type: "Ghost",
-		contestType: "Clever",
+		contestType: "Cute",
 	},
 	necromancy: { // RUSHIA 2
 		num: 370,
@@ -1559,6 +1489,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		},
 		target: "self",
 		type: "Ghost",
+		contestType: "Cool",
 	},
 	asacoco: { // COCO 1
 		num: 370,
@@ -1610,7 +1541,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		},
 		target: "allAdjacentFoes",
 		type: "Flying",
-		contestType: "Beautiful",
+		contestType: "Clever",
 	},
 	gorillagrip: { // KANATA 1
 		num: 370,
@@ -1652,6 +1583,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		},
 		target: "normal",
 		type: "Fairy",
+		contestType: "Cute",
 	},
 	heavenlyharmony: { // KANATA 3
 		num: 444,
@@ -1671,7 +1603,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		flags: {protect: 1, mirror: 1, sound: 1, bypasssub: 1, metronome: 1},
 		target: "normal",
 		type: "Flying",
-		contestType: "Tough",
+		contestType: "Beautiful",
 	}, 
 	nothingwrong: { // WATAME 1
 		num: 370,
@@ -1687,7 +1619,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		},
 		target: "self",
 		type: "Dark",
-		contestType: "Clever",
+		contestType: "Tough",
 	},
 	ubersheep: { // WATAME 2
 		num: 370,
@@ -1740,7 +1672,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		},
 		target: "normal",
 		type: "Fairy",
-		contestType: "Tough",
+		contestType: "Beautiful",
 	},
 	luknightlance: { // LUNA 1
 		num: 370,
@@ -1766,7 +1698,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		},
 		target: "normal",
 		type: "Fairy",
-		contestType: "Beautiful",
+		contestType: "Tough",
 	},
 	sweetassault: { // LUNA 2
 		num: 370,
@@ -1850,7 +1782,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		},
 		target: "normal",
 		type: "Normal",
-		contestType: "Cute",
+		contestType: "Cool",
 	},
 	polkaradio: { // POLKA 3
 		num: 914,
@@ -1876,6 +1808,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		},
 		target: "normal",
 		type: "Normal",
+		contestType: "Beautiful",
 	},
 	polpol: { // POLKA 3
 		num: 370,
@@ -1904,7 +1837,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		},
 		target: "any",
 		type: "Fairy",
-		contestType: "Cool",
+		contestType: "Cute",
 	},
 	polmao: { // POLKA 4
 		num: 370,
@@ -1918,7 +1851,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		selfSwitch: true,
 		target: "normal",
 		type: "Normal",
-		contestType: "Cute",
+		contestType: "Cool",
 	},
 	ssrb: { // BOTAN 1
 		num: 370,
@@ -1933,7 +1866,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		multiaccuracy: true,
 		target: "normal",
 		type: "Fighting",
-		contestType: "Cool",
+		contestType: "Tough",
 	},
 	lalion: { // BOTAN 2
 		num: 370,
@@ -1949,7 +1882,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		},
 		target: "self",
 		type: "Fighting",
-		contestType: "Beautiful",
+		contestType: "Cute",
 	},
 	poi: { // BOTAN 3
 		num: 411,
@@ -1994,7 +1927,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		},
 		target: "normal",
 		type: "Water",
-		contestType: "Beautiful",
+		contestType: "Cute",
 	},
 	sake: { // LAMY 2
 		num: 370,
@@ -2015,7 +1948,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		},
 		target: "self",
 		type: "Poison",
-		contestType: "Cute",
+		contestType: "Tough",
 	},
 	beetleblast: { // NENE 1
 		num: 370,
@@ -2034,7 +1967,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		},
 		target: "normal",
 		type: "Bug",
-		contestType: "Cute",
+		contestType: "Tough",
 	},
 	nenemax: { // NENE 2
 		num: 585,
@@ -2057,7 +1990,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		},
 		target: "normal",
 		type: "Fairy",
-		contestType: "Cute",
+		contestType: "Beautiful",
 	},
 	nekkostrike: { // NENE 3
 		num: 738,
@@ -2091,7 +2024,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		},
 		target: "normal",
 		type: "Fairy",
-		contestType: "Cute",
+		contestType: "Beautiful",
 	}, 
 	succubussong: { // ALOE 1
 		num: 370,
@@ -2110,7 +2043,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		},
 		target: "allAdjacentFoes",
 		type: "Dark",
-		contestType: "Cool",
+		contestType: "Cute",
 	},
 	succubusstrike: { // ALOE 2
 		num: 370,
@@ -2227,7 +2160,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		},
 		target: "self",
 		type: "Flying",
-		contestType: "Cute",
+		contestType: "Tough",
 	},
 	falconwhip: { // LUI 2
 		num: 680,
@@ -2245,7 +2178,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		},
 		target: "normal",
 		type: "Flying",
-		contestType: "Cute",
+		contestType: "Clever",
 	},
 	ganmasmash: { // LUI 3
 		num: 136,
@@ -2277,7 +2210,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		multiaccuracy: true,
 		target: "normal",
 		type: "Fighting",
-		contestType: "Cool",
+		contestType: "Beautiful",
 	},
 	pokobee: { // IROHA 2
 		num: 348,
@@ -2319,7 +2252,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		},
 		target: "normal",
 		type: "Fighting",
-		contestType: "Clever",
+		contestType: "Tough",
 	},
 	katana: { // IROHA 4
 		num: 38,
@@ -2333,6 +2266,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		willCrit: true,
 		target: "normal",
 		type: "Steel",
+		contestType: "Clever",
 	},
 	koyolabo: { // KOYORI 1
 		num: 370,
@@ -2349,7 +2283,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		},
 		target: "self",
 		type: "Psychic",
-		contestType: "Beautiful",
+		contestType: "Clever",
 	},
 	hologram: { // KOYORI 2
 		num: 54,
@@ -2488,7 +2422,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		},
 		target: "normal",
 		type: "Psychic",
-		contestType: "Cool",
+		contestType: "Beautiful",
 	},
 	eclipse: { // MOONA 2
 		num: 370,
@@ -2507,7 +2441,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		},
 		target: "normal",
 		type: "Dark",
-		contestType: "Cool",
+		contestType: "Beautiful",
 	},
 	lunarshield: { // MOONA 3
 		num: 588,
@@ -2559,7 +2493,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		},
 		target: "self",
 		type: "Psychic",
-		contestType: "Cool",
+		contestType: "Cute",
 	},
 	area15: { // IOFI 1
 		num: 370,
@@ -2581,7 +2515,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		},
 		target: "normal",
 		type: "Psychic",
-		contestType: "Beautiful",
+		contestType: "Cute",
 	},
 	paintbrush: { // IOFI 2
 		num: 370,
@@ -2607,7 +2541,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		},
 		target: "normal",
 		type: "Psychic",
-		contestType: "Cute",
+		contestType: "Beautiful",
 	},
 	deez: { // RISU 1
 		num: 370,
@@ -2622,6 +2556,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		smartTarget: true,
 		target: "normal",
 		type: "Grass",
+		contestType: "Tough",
 	},
 	pathofsincerity: { // OLLIE 1
 		num: 370,
@@ -2642,7 +2577,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Ghost",
 		contestType: "Tough",
 	},
-	udinassault: { // OLLIE 2 1
+	udinassault: { // OLLIE 2
 		num: 370,
 		accuracy: 90,
 		basePower: 120,
@@ -2669,6 +2604,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		smartTarget: true,
 		target: "normal",
 		type: "Flying",
+		contestType: "Cool",
 	},
 	peafowlpower: { // REINE 2
 		num: 370,
@@ -2689,7 +2625,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		},
 		target: "any",
 		type: "Flying",
-		contestType: "Cool",
+		contestType: "Beautiful",
 	},
 	kerisslash: { // ANYA 1
 		num: 370,
@@ -2711,7 +2647,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		},
 		target: "normal",
 		type: "Steel",
-		contestType: "Cool",
+		contestType: "Tough",
 	},
 	spyshot: { // ZETA 1
 		num: 370,
@@ -2726,6 +2662,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		tracksTarget: true,
 		target: "normal",
 		type: "Dark",
+		contestType: "Clever",
 	},
 	v7strike: { // ZETA 2
 		num: 364,
@@ -2830,7 +2767,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		},
 		target: "normal",
 		type: "Steel",
-		contestType: "Cool",
+		contestType: "Cute",
 	},
 	pickiaxe: { // CKIA 1
 		num: 370,
@@ -2850,7 +2787,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		},
 		target: "normal",
 		type: "Steel",
-		contestType: "Cool",
+		contestType: "Cute",
 	},
 	payung: { // KOBO 1
 		num: 881,
@@ -2876,6 +2813,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		},
 		target: "all",
 		type: "Water",
+		contestType: "Cute",
 	},
 	tsunami: { // KOBO 2
 		num: 542,
@@ -2968,7 +2906,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		},
 		target: "normal",
 		type: "Water",
-		contestType: "Tough",
+		contestType: "Cool",
 	},
 	sharkattack: { // GURA 2
 		num: 370,
@@ -3056,6 +2994,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		overrideOffensiveStat: 'spe',
 		target: "normal",
 		type: "Water",
+		contestType: "Cute",
 	},
 	gawrrage: { // GAWR 1
 		num: 370,
@@ -3103,6 +3042,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		},
 		target: "any",
 		type: "Psychic",
+		contestType: "Clever",
 	},
 	timetantrum: { // AME 2
 		num: 200,
@@ -3118,7 +3058,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		},
 		target: "randomNormal",
 		type: "Poison",
-		contestType: "Cool",
+		contestType: "Tough",
 	},
 	gamerrage: { // AME 3
 		num: 416,
@@ -3163,6 +3103,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		},
 		target: "any",
 		type: "Psychic",
+		contestType: "Cool",
 	},
 	bubbabite: { // BUBBA 1
 		num: 331,
@@ -3179,7 +3120,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		},
 		target: "normal",
 		type: "Poison",
-		contestType: "Cool",
+		contestType: "Tough",
 	},
 	timetravel2: { // <<<UNUSED>>>
 		num: 370,
@@ -3251,7 +3192,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		},
 		target: "any",
 		type: "Ground",
-		contestType: "Clever",
+		contestType: "Tough",
 	},
 	timeshatteringpunch: { // BUFF AME 1
 		num: 800,
@@ -3277,6 +3218,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		breaksProtect: true,
 		target: "normal",
 		type: "Fighting",
+		contestType: "Tough",
 	},
 	hivemind: { // AME BEE 1
 		num: 63,
@@ -3301,7 +3243,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		},
 		target: "normal",
 		type: "Bug",
-		contestType: "Cool",
+		contestType: "Clever",
 	},
 	scythe: { // CALLI 1
 		num: 370,
@@ -3315,7 +3257,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		critRatio: 2,
 		target: "normal",
 		type: "Ghost",
-		contestType: "Cool",
+		contestType: "Tough",
 	},
 	grimrapper: { // CALLI 2
 		num: 370,
@@ -3351,7 +3293,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		},
 		target: "normal",
 		type: "Water",
-		contestType: "Tough",
+		contestType: "Cute",
 	},
 	wah: { // INA 2
 		num: 370,
@@ -3367,7 +3309,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		},
 		target: "self",
 		type: "Fairy",
-		contestType: "Clever",
+		contestType: "Cute",
 	},
 	tentacles: { // INA 3
 		num: 370,
@@ -3400,7 +3342,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		}, 
 		target: "normal",
 		type: "Psychic",
-		contestType: "Cool",
+		contestType: "Clever",
 	},
 	phoenixshield: { // KIARA 1
 		num: 908,
@@ -3452,6 +3394,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		},
 		target: "self",
 		type: "Fire",
+		contestType: "Tough",
 	},
 	phoenixblade: { // KIARA 2
 		num: 370,
@@ -3486,7 +3429,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		},
 		target: "allAdjacentFoes",
 		type: "Flying",
-		contestType: "Beautiful",
+		contestType: "Tough",
 	},
 	phoenixdance: { // KIARA 4
 		num: 552,
@@ -3504,7 +3447,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		},
 		target: "normal",
 		type: "Fighting",
-		contestType: "Beautiful",
+		contestType: "Cute",
 	},
 	hopesoda: { // IRYS 1
 		num: 370,
@@ -3520,7 +3463,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		},
 		target: "self",
 		type: "Water",
-		contestType: "Beautiful",
+		contestType: "Tough",
 	},
 	hope: { // IRYS 2
 		num: 370,
@@ -3545,7 +3488,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		},
 		target: "normal",
 		type: "Fairy",
-		contestType: "Clever",
+		contestType: "Beautiful",
 	},
 	despair: { // IRYS 3
 		num: 370,
@@ -3568,7 +3511,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		},
 		target: "normal",
 		type: "Dark",
-		contestType: "Cool",
+		contestType: "Tough",
 	},
 	songofhope: { // IRYS 4
 		num: 444,
@@ -3591,7 +3534,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		},
 		target: "allAdjacentFoes",
 		type: "Rock",
-		contestType: "Tough",
+		contestType: "Cute",
 	},
 	wormhole: { // SANA 1
 		num: 370,
@@ -3609,7 +3552,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		flags: {protect: 1, mirror: 1, distance: 1, metronome: 1},
 		target: "any",
 		type: "Psychic",
-		contestType: "Cool",
+		contestType: "Clever",
 	},
 	supernova: { // SANA 2
 		num: 38,
@@ -3623,7 +3566,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		recoil: [33, 100],
 		target: "allAdjacentFoes",
 		type: "Psychic",
-		contestType: "Tough",
+		contestType: "Beautiful",
 	},
 	bigbang: { // SANA 3
 		num: 153,
@@ -3637,7 +3580,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		selfdestruct: "always",
 		target: "allAdjacent",
 		type: "Psychic",
-		contestType: "Beautiful",
+		contestType: "Clever",
 	},
 	blackhole: { // SANA 4
 		num: 662,
@@ -3683,7 +3626,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		},
 		target: "self",
 		type: "Grass",
-		contestType: "Beautiful",
+		contestType: "Cute",
 	},
 	naturalasmr: { // FAUNA 1
 		num: 370,
@@ -3706,7 +3649,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		},
 		target: "allAdjacentFoes",
 		type: "Grass",
-		contestType: "Clever",
+		contestType: "Beautiful",
 	},
 	kirinattack: { // FAUNA 2
 		num: 38,
@@ -3720,7 +3663,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		recoil: [33, 100],
 		target: "normal",
 		type: "Grass",
-		contestType: "Tough",
+		contestType: "Cute",
 	},
 	goldenapple: { // FAUNA 3
 		num: 420,
@@ -3785,6 +3728,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		critRatio: 2,
 		target: "normal",
 		type: "Steel",
+		contestType: "Cool",
 	},
 	timeflies: { // KRONII 2
 		num: 370,
@@ -3802,7 +3746,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		flags: {protect: 1, mirror: 1, distance: 1, pulse: 1, metronome: 1, contact: 1},
 		target: "any",
 		type: "Psychic",
-		contestType: "Cool",
+		contestType: "Tough",
 	},
 	sandsoftime: { // KRONII 3
 		num: 157,
@@ -3826,7 +3770,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		},
 		target: "allAdjacentFoes",
 		type: "Rock",
-		contestType: "Tough",
+		contestType: "Clever",
 	},
 	blastfromthepast: { // KRONII 4
 		num: 248,
@@ -3861,7 +3805,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		},
 		target: "any",
 		type: "Steel",
-		contestType: "Clever",
+		contestType: "Beautiful",
 	},
 	timetogo: { // BOROS 1 
 		num: 370,
@@ -3878,6 +3822,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		},
 		target: "any",
 		type: "Psychic",
+		contestType: "Tough",
 	},
 	borosblast: { // BOROS 2
 		num: 406,
@@ -3934,7 +3879,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		critRatio: 2,
 		target: "normal",
 		type: "Flying",
-		contestType: "Cool",
+		contestType: "Clever",
 	},
 	sweetberries: { // MUMEI 3
 		num: 370,
@@ -3960,7 +3905,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		},
 		target: "normal",
 		type: "Grass",
-		contestType: "Tough",
+		contestType: "Cute",
 	},
 	chaosstrike2: { // FURRY BAE 1
 		num: 217,
@@ -4007,32 +3952,6 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Dark",
 		contestType: "Cute",
 	},
-	chaosstrike: { // BAE 2
-		num: 399,
-		accuracy: 90,
-		basePower: 120,
-		category: "Special",
-		name: "Chaos Strike",
-		pp: 5,
-		priority: 0,
-		flags: {protect: 1, mirror: 1, contact: 1, metronome: 1},
-		secondary: {
-			chance: 10,
-			onHit(target, source) {
-				const status = this.sample(['brn', 'par', 'frz']);
-				target.trySetStatus(status, source);
-			},
-		},
-		self: {
-			boosts: {
-				spa: -1,
-				spd: -1,
-			},
-		},
-		target: "normal",
-		type: "Dark",
-		contestType: "Cool",
-	},
 	playdice: { // BAE 1
 		num: 860,
 		accuracy: 100,
@@ -4073,7 +3992,33 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		},
 		target: "normal",
 		type: "Dark",
-		contestType: "Cute",
+		contestType: "Cool",
+	},
+	chaosstrike: { // BAE 2
+		num: 399,
+		accuracy: 90,
+		basePower: 120,
+		category: "Special",
+		name: "Chaos Strike",
+		pp: 5,
+		priority: 0,
+		flags: {protect: 1, mirror: 1, contact: 1, metronome: 1},
+		secondary: {
+			chance: 10,
+			onHit(target, source) {
+				const status = this.sample(['brn', 'par', 'frz']);
+				target.trySetStatus(status, source);
+			},
+		},
+		self: {
+			boosts: {
+				spa: -1,
+				spd: -1,
+			},
+		},
+		target: "normal",
+		type: "Dark",
+		contestType: "Tough",
 	},
 	ratattack: { // BAE 2
 		num: 399,
@@ -4103,7 +4048,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		},
 		target: "normal",
 		type: "Dark",
-		contestType: "Cool",
+		contestType: "Tough",
 	},
 	forbiddenknowledge: { // SHIORI 1
 		num: 370,
@@ -4120,7 +4065,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		},
 		target: "normal",
 		type: "Psychic",
-		contestType: "Tough",
+		contestType: "Clever",
 	},
 	moyaimash: { // BIJOU 1
 		num: 830,
@@ -4149,6 +4094,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		secondary: {}, // Sheer Force-boosted
 		target: "normal",
 		type: "Ground",
+		contestType: "Tough",
 	},
 	bibooblade: { // BIJOU 2
 		num: 348,
@@ -4225,7 +4171,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		},
 		target: "allAdjacentFoes",
 		type: "Dark",
-		contestType: "Cool",
+		contestType: "Beautiful",
 	},
 	divafork: { // NERISSA 2
 		num: 370,
@@ -4254,6 +4200,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		critRatio: 2,
 		target: "normal",
 		type: "Dark",
+		contestType: "Tough",
 	},
 	baubau: { // FUWAMOCO 2
 		num: 783,
@@ -4285,6 +4232,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		},
 		target: "normal",
 		type: "Dark",
+		contestType: "Cute",
 	},
 	songofjustice: { // ELIZABETH 1
 		num: 370,
@@ -4339,7 +4287,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		},
 		target: "allAdjacentFoes",
 		type: "Fire",
-		contestType: "Cool",
+		contestType: "Beautiful",
 	},
 	fisted: { // GIGI 1
 		num: 814,
@@ -4362,6 +4310,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		multihit: 2,
 		target: "normal",
 		type: "Dark",
+		contestType: "Tough",
 	},
 	boatgoesbinted: { // GIGI 2
 		num: 776,
@@ -4375,6 +4324,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		overrideOffensiveStat: 'spe',
 		target: "normal",
 		type: "Dark",
+		contestType: "Cool",
 	},
 	automotanassault: { // CECELIA 1 
 		num: 895,
@@ -4395,7 +4345,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		},
 		target: "normal",
 		type: "Steel",
-		contestType: "Cool",
+		contestType: "Tough",
 	},
 	acousticattack: { // CECELIA 2
 		num: 348,
@@ -4412,7 +4362,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		},
 		target: "normal",
 		type: "Electric",
-		contestType: "Cool",
+		contestType: "Beautiful",
 	},
 	windup: { // CECELIA 3
 		num: 666,
@@ -4439,7 +4389,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		},
 		target: "self",
 		type: "Electric",
-		contestType: "Beautiful",
+		contestType: "Cute",
 	},
 	godeyes: { // RAORA 1
 		num: 573,
@@ -4462,7 +4412,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		tracksTarget: true,
 		target: "any",
 		type: "Normal",
-		contestType: "Beautiful",
+		contestType: "Cool",
 	},
 	chattinichomp: { // RAORA 2
 		num: 370,
@@ -4504,7 +4454,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		flags: {protect: 1, mirror: 1, sound: 1, bypasssub: 1, metronome: 1},
 		target: "allAdjacentFoes",
 		type: "Normal",
-		contestType: "Cool",
+		contestType: "Beautiful",
 	},
 	monday: { // KANADE 2
 		num: 369,
@@ -4547,7 +4497,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		selfSwitch: true,
 		target: "normal",
 		type: "Dark",
-		contestType: "Cute",
+		contestType: "Tough",
 	},
 	crescendocrash: { // KANADE 3
 		num: 675,
@@ -4596,7 +4546,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		},
 		target: "normal",
 		type: "Dark",
-		contestType: "Clever",
+		contestType: "Tough",
 	},
 	companystartup: { // RIRIKA 1
 		num: 775,
@@ -4626,6 +4576,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		},
 		target: "self",
 		type: "Fairy",
+		contestType: "Clever",
 	},
 	stockmarketcrash: { // RIRIKA 2
 		num: 38,
@@ -4639,7 +4590,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		recoil: [33, 100],
 		target: "normal",
 		type: "Normal",
-		contestType: "Tough",
+		contestType: "Clever",
 	},
 	ceo: { // RIRIKA 3
 		num: 500,
@@ -4673,6 +4624,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		flags: {contact: 1, protect: 1, mirror: 1, metronome: 1},
 		target: "normal",
 		type: "Psychic",
+		contestType: "Clever",
 	},
 	maitakedance: { // RADEN 1
 		num: 473,
@@ -4689,7 +4641,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		},
 		target: "normal",
 		type: "Normal",
-		contestType: "Beautiful",
+		contestType: "Cute",
 	},
 	maskoff: { // RADEN 2
 		num: 504,
@@ -4734,6 +4686,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		},
 		target: "normal",
 		type: "Normal",
+		contestType: "Tough",
 	},
 	banpen: { // HAJIME 2
 		num: 576,
@@ -4757,7 +4710,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		},
 		target: "normal",
 		type: "Flying",
-		contestType: "Clever",
+		contestType: "Cute",
 	},
 	badass: { // HAJIME 3
 		num: 370,
@@ -4865,7 +4818,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		},
 		target: "normal",
 		type: "Fire",
-		contestType: "Beautiful",
+		contestType: "Cool",
 	},
 	flowglow: { // RIONA 1
 		num: 854,
@@ -4881,6 +4834,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		flags: {protect: 1, mirror: 1, contact: 1, dance: 1},
 		target: "normal",
 		type: "Normal",
+		contestType: "Cute",
 	},
 	glowinggamble: { // RIONA 2
 		num: 707,
@@ -4958,7 +4912,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		callsMove: true,
 		target: "any",
 		type: "Steel", 
-		contestType: "Clever",
+		contestType: "Cute",
 	},
 	sucharge: { // SU 1
 		num: 76,
@@ -4988,7 +4942,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		},
 		target: "normal",
 		type: "Normal",
-		contestType: "Cool",
+		contestType: "Cute",
 	},
 	marketing: { // SU 2
 		num: 349,
@@ -5005,7 +4959,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		},
 		target: "self",
 		type: "Water",
-		contestType: "Cool",
+		contestType: "Cute",
 	},
 	advertisement: { // SU 3
 		num: 864,
@@ -5035,6 +4989,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		},
 		target: "normal",
 		type: "Normal",
+		contestType: "Tough",
 	},
 	fugutaro: { // CHIHAYA 1
 		num: 560,
@@ -5058,8 +5013,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		},
 		target: "normal",
 		type: "Steel",
-		zMove: { basePower: 170 },
-		contestType: "Tough",
+		contestType: "Cool",
 	},
 	carcrash: { // CHIHAYA 2
 		num: 394,
@@ -5077,7 +5031,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		},
 		target: "normal",
 		type: "Steel",
-		contestType: "Cool",
+		contestType: "Tough",
 	},
 	horsepower300: { // CHIHAYA 3
 		num: 916,
@@ -5098,6 +5052,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		},
 		target: "normal",
 		type: "Electric",
+		contestType: "Clever",
 	},
 	dubstep: { // CHIHAYA 4
 		num: 304,
@@ -5131,35 +5086,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		},
 		target: "normal",
 		type: "Fairy",
-	},
-	ringe: { // CHOCO 2
-		num: 676,
-		accuracy: 100,
-		basePower: 80,
-		category: "Physical",
-		name: "Syringe",
-		pp: 10,
-		priority: 0,
-		flags: {protect: 1, mirror: 1, contact: 1, allyanim: 1, heal: 1, slicing: 1, metronome: 1},
-		onTryHit(target, source, move) {
-			if (source.isAlly(target)) {
-				move.basePower = 0;
-				move.infiltrates = true;
-			}
-		},
-		onHit(pokemon, source, move) {
-			if (source.isAlly(pokemon)) {
-				if (!this.heal(Math.floor(pokemon.baseMaxhp * 0.5))) {
-				}
-				if (pokemon.status === 'par' || 'psn' || 'tox' || 'frz' || 'slp' || 'brn') pokemon.cureStatus();
-			}
-			if (!source.isAlly(pokemon)) {
-				pokemon.trySetStatus('psn', source, move);
-			}
-		},
-		target: "normal",
-		type: "Poison",
-		contestType: "Cute",
+		contestType: "Beautiful",
 	},
 	skincare: { // VIVI 2
 		num: 676,
@@ -5189,26 +5116,6 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		target: "normal",
 		type: "Normal",
 		contestType: "Cute",
-	},
-	opressure: { // KAELA 1
-		num: 370,
-		accuracy: 100,
-		basePower: 0,
-		category: "Status",
-		name: "No Pressure",
-		pp: 10,
-		priority: 0,
-		flags: {protect: 1, reflectable: 1, mirror: 1, sound: 1, bypasssub: 1, switches: 1, metronome: 1},
-		onHit(target, source, move) {
-			const success = this.boost({def: -1, spd: -1}, target, source);
-			if (!success && !target.hasAbility('mirrorarmor')) {
-				delete move.selfSwitch;
-			}
-		},
-		selfSwitch: true,
-		target: "normal",
-		type: "Fire",
-		contestType: "Cool",
 	},
 	cosmeticstrike: { // VIVI 3
 		num: 53,

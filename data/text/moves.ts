@@ -19,53 +19,53 @@ export const MovesText: { [id: IDEntry]: MoveText } = {
 		desc: "This move can hit ground type Pokemon. If the target is a Ground type, this move deals neutral damage regardless of its other type(s). This move becomes a physical attack if user's Attack is greater than their Special Attack, including stat stage changes.",
 		shortDesc: "Can hit ground types; Physical if Atk > Sp.Atk.",
 	},
-	tskr: {
+	tskr: { // SORA 1
 		name: "TSKR",
 		desc: "This Pokemon cures their party of non-volatile status condition. Raises the user's Special Attack by 2 stages.",
 		shortDesc: "Raises Sp. Atk by 2; Cures user & their party.",
 	},
-	ankimoattack: {
+	ankimoattack: { // SORA 2
 		name: "Ankimo Attack",
 		desc: "Has a 30% chance to raise this Pokemon's Attack by 1 stage.",
 		shortDesc: "30% chance to raise the user's Attack by 1.", 
 	},
-	idolsong: { // Sora
+	idolsong: { // SORA 3
 		name: "Idol Song",
 		desc: "Hits adjacent foes. The user spends two or three turns locked into this move and becomes confused immediately after its move on the last turn of the effect if it is not already. If the user is prevented from moving, is asleep at the beginning of a turn, or the attack is not successful against the target on the first turn of the effect or the second turn of a three-turn effect, the effect ends without causing confusion. If this move is called by Sleep Talk and the user is asleep, the move is used for one turn and does not confuse the user.",
 		shortDesc: "Lasts 2-3 turns. Confuses the user afterwards.",
 	},
-	divasong: {
+	divasong: { // SORA 4
 		name: "Diva Song",
 		desc: "If the current terrain is Misty Terrain and the target is grounded, this move's power is doubled.",
 		shortDesc: "2x power if target is grounded in Misty Terrain.",
 	},
-	virtualsaber: {
+	virtualsaber: { // AZKi 1
 		name: "Virtual Saber",
 		desc: "If the current terrain is Misty Terrain and the target is grounded, this move's power is doubled.",
 		shortDesc: "2x power if target is grounded in Misty Terrain.",
 	},
-	sakurastrike: {
+	sakurastrike: { // Miko 1
 		name: "Sakura Strike",
 		desc: "Has a 10% chance to raise this Pokemon's Attack by 1 stage. Hits adjacent foes.",
 		shortDesc: "10% chance to raise the user's Attack by 1.", 
 	},
-	lavabucket: {
+	lavabucket: { // Miko 2
 		name: "Lava Bucket",
 		desc: "Has a 100% chance to burn the target and the user. Hits all adjacent Pokemon.",
 		shortDesc: "100% chance to burn opponent(s) & the user.",
 
 		activate: "  [SOURCE] dropped lava everywhere! Atsui!",
 	},
-	elitemiko: {
+	elitemiko: { // MIKO 3
 		name: "Elite Miko",
 		desc: "Raises the Pokemon's Attack by 2 stages.",
 		shortDesc: "Raises the user's Attack by 2.",
 	},
-	faq: {
+	faq: { // MIKO 4
 		name: "FAQ",
 		shortDesc: "Resets all of the target's stat stages back to 0.",
 	},
-	suicopath: {
+	suicopath: { // SUISEI 1
 		name: "Suicopath",
 		desc: "If the target lost HP, this Pokemon takes recoil damage equal to 1/3 the HP lost by the target, rounded half up, but not less than 1 HP.",
 		shortDesc: "Has 33% recoil.",
@@ -5145,12 +5145,8 @@ export const MovesText: { [id: IDEntry]: MoveText } = {
 	},
 	makeitrain: {
 		name: "Make It Rain",
-		desc: "Lowers the user's Special Attack by 1 stage.",
-		shortDesc: "Lowers the user's Sp. Atk by 1. Hits foe(s).",
-		champions: {
-			desc: "Lowers the user's Special Attack by 2 stages.",
-			shortDesc: "Lowers the user's Sp. Atk by 2. Hits foe(s).",
-		},
+		desc: "Lowers the user's Special Attack by 2 stages.",
+		shortDesc: "Lowers the user's Sp. Atk by 2. Hits foe(s).",
 
 		activate: "#payday",
 	},
