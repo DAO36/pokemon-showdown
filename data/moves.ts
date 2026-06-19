@@ -16240,7 +16240,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	},
 	makeitrain: {
 		num: 874,
-		accuracy: 100,
+		accuracy: 95,
 		basePower: 120,
 		category: "Special",
 		name: "Make It Rain",
@@ -16249,7 +16249,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		flags: { protect: 1, mirror: 1 },
 		self: {
 			boosts: {
-				spa: -1,
+				spa: -2,
 			},
 		},
 		target: "allAdjacentFoes",
