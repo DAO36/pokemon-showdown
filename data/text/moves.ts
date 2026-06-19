@@ -70,36 +70,36 @@ export const MovesText: { [id: IDEntry]: MoveText } = {
 		desc: "If the target lost HP, this Pokemon takes recoil damage equal to 1/3 the HP lost by the target, rounded half up, but not less than 1 HP.",
 		shortDesc: "Has 33% recoil.",
 	},
-	axeattack: {
+	axeattack: { // SUISEI 2
 		name: "Axe Attack", 
 		desc: "If this attack does not miss, the effects of Reflect, Light Screen, Hologram, and Aurora Veil end for the target's side of the field before damage is calculated.",
 		shortDesc: "Destroys screens.",
 
 		activate: "  Axed away [TEAM]'s protections!",
 	},
-	cometslam: {
+	cometslam: { // SUISEI 3
 		name: "Comet Slam",
 		desc: "Has a 10% chance to freeze the target. If this attack is not successful, this Pokemon loses half of its maximum HP, rounded down, as crash damage. Pokemon with the Magic Guard Ability are unaffected by crash damage.",
 		shortDesc: "10% to freeze target. User loses 50% HP if miss.", 
 
 		damage: "#crash",
 	},
-	highspecs: {
+	highspecs: { // ROBOCO 1
 		name: "High Specs",
 		desc: "Has a 10% chance to paralyze the target.",
 		shortDesc: "10% chance to paralyze the target.",
 	},
-	laserbeam: {
+	laserbeam: { // ROBOCO 2
 		name: "Laser Beam",
 		desc: "Has a 20% chance to paralyze the target. If Electric Terrain is active, and the target is grounded, this move does not miss.",
 		shortDesc: "20% to paralyze. Cannot miss in Electric Terrain.",
 	},
-	upgradepc: {
+	upgradepc: { // ROBOCO 3
 		name: "Upgrade PC",
 		desc: "Raises the Pokemon's Special Attack and Defense by 1 stage.",
 		shortDesc: "Raises user's Special Attack & Defense by 1.",
 	},
-	reboot: {
+	reboot: { // ROBOCO 4
 		name: "Reboot",
 		desc: "This Pokemon restores 1/2 of its maximum HP, rounded half up. Removes any status effect that the user is inflicted with. Resets any negative stat changes the user has.",
 		shortDesc: "Heals 1/2 HP; Cures status; Resets negative stats.",
@@ -111,22 +111,22 @@ export const MovesText: { [id: IDEntry]: MoveText } = {
 
 		damage: "#crash",
 	},
-	foxkatana: {
+	foxkatana: { // FUBUKI 1
 		name: "Fox Katana",
 		desc: "Has a 20% chance to freeze the target. Has a higher chance for a critical hit.",
 		shortDesc: "20% chance to freeze target. High crit ratio.",
 	},
-	konkon: {
+	konkon: { // FUBUKI 2
 		name: "Kon Kon",
 		desc: "Raises the user's Special Attack and Speed both by 1 stage.",
 		shortDesc: "Raises user's Special Attack & Speed by 1.",
 	},
-	kurokamistrike: {
+	kurokamistrike: { // KUROKAMI 1
 		name: "Kurokami Strike",
 		desc: "Lowers the user's Defense and Special Defense by 1 stage.",
 		shortDesc: "Lowers the user's Defense and Sp. Def by 1.",
 	},
-	fubuzillabeam: {
+	fubuzillabeam: { // FUBUZILLA 1
 		name: "Fubuzilla Beam",
 		desc: "This attack charges on the first turn and executes on the second. Raises the user's Special Attack by 1 stage on the first turn. If the user is holding a Power Herb or the weather is Snow/Hail, the move completes in one turn. If the user is holding Utility Umbrella and the weather is Snow/Hail, the move still requires a turn to charge. Power is halved if the weather is Primordial Sea, Rain Dance, Desolate Land, Sunny Day, or Sandstorm and the user is not holding Utility Umbrella.",
 		shortDesc: "Raises Sp.Atk by 1 on turn 1. No charge in snow.", 
