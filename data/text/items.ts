@@ -1113,6 +1113,14 @@ export const ItemsText: { [id: IDEntry]: ItemText } = {
 		name: "Garchompite Z",
 		shortDesc: "If held by a Garchomp, this item allows it to Mega Evolve into Mega Garchomp Z.",
 	},
+	garchompitex: {
+		name: "Garchompite X",
+		shortDesc: "If held by a Garchomp, this item allows it to Mega Evolve into Mega Garchomp X.",
+	},
+	garchompitey: {
+		name: "Garchompite Y",
+		shortDesc: "If held by a Garchomp, this item allows it to Mega Evolve into Mega Garchomp Y.",
+	},
 	gardevoirite: {
 		name: "Gardevoirite",
 		shortDesc: "If held by a Gardevoir, this item allows it to Mega Evolve in battle.",
@@ -1546,6 +1554,10 @@ export const ItemsText: { [id: IDEntry]: ItemText } = {
 	lustrousorb: {
 		name: "Lustrous Orb",
 		shortDesc: "If held by a Palkia, its Water- and Dragon-type attacks have 1.2x power.",
+	},
+	luxrite: {
+		name: "Luxrite",
+		shortDesc: "At the end of every turn, this item attempts to badly poison the holder.",
 	},
 	luxuryball: {
 		name: "Luxury Ball",
@@ -2464,6 +2476,10 @@ export const ItemsText: { [id: IDEntry]: ItemText } = {
 	timerball: {
 		name: "Timer Ball",
 		shortDesc: "A Poke Ball that becomes better the more turns there are in a battle.",
+	},
+	torterrite: {
+		name: "Torterrite",
+		shortDesc: "At the end of every turn, this item attempts to badly poison the holder.",
 	},
 	toxicorb: {
 		name: "Toxic Orb",

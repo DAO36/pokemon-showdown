@@ -3751,6 +3751,28 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		gen: 9,
 		isNonstandard: "Future",
 	},
+	garchompitex: {
+		name: "Garchompite X",
+		spritenum: 573,
+		megaStone: { "Garchomp": "Garchomp-Mega-X" },
+		itemUser: ["Garchomp"],
+		onTakeItem(item, source) {
+			return !item.megaStone?.[source.baseSpecies.baseSpecies];
+		},
+		num: 683,
+		gen: 6,
+	},
+	garchompitey: {
+		name: "Garchompite Y",
+		spritenum: 573,
+		megaStone: { "Garchomp": "Garchomp-Mega-Y" },
+		itemUser: ["Garchomp"],
+		onTakeItem(item, source) {
+			return !item.megaStone?.[source.baseSpecies.baseSpecies];
+		},
+		num: 683,
+		gen: 6,
+	},
 	gardevoirite: {
 		name: "Gardevoirite",
 		spritenum: 587,
@@ -5007,6 +5029,17 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		itemUser: ["Palkia"],
 		num: 136,
 		gen: 4,
+	},
+	luxrite: {
+		name: "Luxrite",
+		spritenum: 596,
+		megaStone: { "Luxray": "Luxray-Mega" },
+		itemUser: ["Luxray"],
+		onTakeItem(item, source) {
+			return !item.megaStone?.[source.baseSpecies.baseSpecies];
+		},
+		num: 682,
+		gen: 6,
 	},
 	luxuryball: {
 		name: "Luxury Ball",
@@ -7798,6 +7831,17 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		num: 10,
 		gen: 3,
 		isPokeball: true,
+	},
+	torterrite: {
+		name: "Torterrite",
+		spritenum: 589,
+		megaStone: { "Torterra": "Torterra-Mega" },
+		itemUser: ["Torterra"],
+		onTakeItem(item, source) {
+			return !item.megaStone?.[source.baseSpecies.baseSpecies];
+		},
+		num: 676,
+		gen: 6,
 	},
 	toxicorb: {
 		name: "Toxic Orb",

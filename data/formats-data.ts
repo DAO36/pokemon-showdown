@@ -2653,6 +2653,11 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		doublesTier: "(DUU)",
 		natDexTier: "RU",
 	},
+	torterramega: {
+		tier: "RU",
+		doublesTier: "(DUU)",
+		natDexTier: "RU",
+	},
 	chimchar: {
 		tier: "LC",
 	},
@@ -2715,6 +2720,11 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		tier: "NFE",
 	},
 	luxray: {
+		tier: "ZU",
+		doublesTier: "(DUU)",
+		natDexTier: "RU",
+	},
+	luxraymega: {
 		tier: "ZU",
 		doublesTier: "(DUU)",
 		natDexTier: "RU",
@@ -2882,6 +2892,16 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		tier: "Uber",
         doublesTier: "(DUU)",
         natDexTier: "UUBL",
+	},
+	garchompmegax: {
+        tier: "OU",
+        doublesTier: "(DUU)",
+        natDexTier: "OU",
+	},
+	garchompmegay: {
+        tier: "OU",
+        doublesTier: "(DUU)",
+        natDexTier: "OU",
 	},
 	riolu: {
 		tier: "LC",
