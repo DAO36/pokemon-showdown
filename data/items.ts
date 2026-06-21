@@ -5241,6 +5241,18 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		gen: 9,
 		isNonstandard: "Future",
 	},
+	meganiumitez: {
+		name: "Meganiumite Z",
+		spritenum: 548,
+		megaStone: { "Meganium": "Meganium-Mega-Z" },
+		itemUser: ["Meganium"],
+		onTakeItem(item, source) {
+			return !item.megaStone?.[source.baseSpecies.baseSpecies];
+		},
+		num: 2563,
+		gen: 9,
+		isNonstandard: "Future",
+	},
 	mentalherb: {
 		name: "Mental Herb",
 		spritenum: 285,
@@ -6929,6 +6941,17 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		num: 670,
 		gen: 6,
 		isNonstandard: "Past",
+	},
+	scizoritez: {
+		name: "Scizorite-Z",
+		spritenum: 605,
+		megaStone: { "Scizor": "Scizor-Mega-Z" },
+		itemUser: ["Scizor"],
+		onTakeItem(item, source) {
+			return !item.megaStone?.[source.baseSpecies.baseSpecies];
+		},
+		num: 670,
+		gen: 6,
 	},
 	scolipite: {
 		name: "Scolipite",
@@ -8784,6 +8807,42 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		name: "Tyranitarite",
 		spritenum: 607,
 		megaStone: { "Tyranitar": "Tyranitar-Mega" },
+		itemUser: ["Tyranitar"],
+		onTakeItem(item, source) {
+			return !item.megaStone?.[source.baseSpecies.baseSpecies];
+		},
+		num: 669,
+		gen: 6,
+		isNonstandard: "Past",
+	},
+	tyranitaritex: {
+		name: "Tyranitarite X",
+		spritenum: 607,
+		megaStone: { "Tyranitar": "Tyranitar-Mega-X" },
+		itemUser: ["Tyranitar"],
+		onTakeItem(item, source) {
+			return !item.megaStone?.[source.baseSpecies.baseSpecies];
+		},
+		num: 669,
+		gen: 6,
+		isNonstandard: "Past",
+	},
+	tyranitaritey: {
+		name: "Tyranitarite Y",
+		spritenum: 607,
+		megaStone: { "Tyranitar": "Tyranitar-Mega-Y" },
+		itemUser: ["Tyranitar"],
+		onTakeItem(item, source) {
+			return !item.megaStone?.[source.baseSpecies.baseSpecies];
+		},
+		num: 669,
+		gen: 6,
+		isNonstandard: "Past",
+	},
+	tyranitaritez: {
+		name: "Tyranitarite Z",
+		spritenum: 607,
+		megaStone: { "Tyranitar": "Tyranitar-Mega-Z" },
 		itemUser: ["Tyranitar"],
 		onTakeItem(item, source) {
 			return !item.megaStone?.[source.baseSpecies.baseSpecies];

@@ -1628,6 +1628,10 @@ export const ItemsText: { [id: IDEntry]: ItemText } = {
 		name: "Meganiumite",
 		shortDesc: "If held by a Meganium, this item allows it to Mega Evolve in battle.",
 	},
+	meganiumitez: {
+		name: "Meganiumite Z",
+		shortDesc: "If held by a Meganium, this item allows it to Mega Evolve in battle.",
+	},
 	mentalherb: {
 		name: "Mental Herb",
 		shortDesc: "Cures holder of Attract, Disable, Encore, Heal Block, Taunt, Torment. Single use.",
@@ -2154,6 +2158,10 @@ export const ItemsText: { [id: IDEntry]: ItemText } = {
 	},
 	scizorite: {
 		name: "Scizorite",
+		shortDesc: "If held by a Scizor, this item allows it to Mega Evolve in battle.",
+	},
+	scizoritez: {
+		name: "Scizorite Z",
 		shortDesc: "If held by a Scizor, this item allows it to Mega Evolve in battle.",
 	},
 	scolipite: {
@@ -2858,6 +2866,18 @@ export const ItemsText: { [id: IDEntry]: ItemText } = {
 	},
 	tyranitarite: {
 		name: "Tyranitarite",
+		shortDesc: "If held by a Tyranitar, this item allows it to Mega Evolve in battle.",
+	},
+	tyranitaritex: {
+		name: "Tyranitarite X",
+		shortDesc: "If held by a Tyranitar, this item allows it to Mega Evolve in battle.",
+	},
+	tyranitaritey: {
+		name: "Tyranitarite Y",
+		shortDesc: "If held by a Tyranitar, this item allows it to Mega Evolve in battle.",
+	},
+	tyranitaritez: {
+		name: "Tyranitarite Z",
 		shortDesc: "If held by a Tyranitar, this item allows it to Mega Evolve in battle.",
 	},
 	ultraball: {

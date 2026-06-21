@@ -1017,6 +1017,11 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
         doublesTier: "(DUU)",
         natDexTier: "OU",
 	},
+	scizormegaz: {
+        tier: "OU",
+        doublesTier: "(DUU)",
+        natDexTier: "OU",
+	},
 	kleavor: {
 		tier: "RU",
 		doublesTier: "DUU",
@@ -1329,6 +1334,10 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		natDexTier: "RU",
 	},
 	meganiummega: {
+		isNonstandard: "Future",
+		tier: "Illegal",
+	},
+	meganiummegaz: {
 		isNonstandard: "Future",
 		tier: "Illegal",
 	},
@@ -1790,6 +1799,21 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		natDexTier: "UU",
 	},
 	tyranitarmega: {
+        tier: "OU",
+        doublesTier: "(DUU)",
+        natDexTier: "OU",
+	},
+	tyranitarmegax: {
+        tier: "OU",
+        doublesTier: "(DUU)",
+        natDexTier: "OU",
+	},
+	tyranitarmegay: {
+        tier: "OU",
+        doublesTier: "(DUU)",
+        natDexTier: "OU",
+	},
+	tyranitarmegaz: {
         tier: "OU",
         doublesTier: "(DUU)",
         natDexTier: "OU",
