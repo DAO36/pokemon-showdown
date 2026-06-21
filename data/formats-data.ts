@@ -15,6 +15,11 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
         doublesTier: "(DUU)",
         natDexTier: "OU",
 	},
+	venusaurmegax: {
+        tier: "OU",
+        doublesTier: "(DUU)",
+        natDexTier: "OU",
+	},
 	venusaurgmax: {
 		isNonstandard: "Past",
 		tier: "Illegal",
@@ -61,6 +66,16 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		natDexTier: "RU",
 	},
 	blastoisemega: {
+        tier: "OU",
+        doublesTier: "(DUU)",
+        natDexTier: "OU",
+	},
+	blastoisemegax: {
+        tier: "OU",
+        doublesTier: "(DUU)",
+        natDexTier: "OU",
+	},
+	blastoisemegay: {
         tier: "OU",
         doublesTier: "(DUU)",
         natDexTier: "OU",
@@ -2772,8 +2787,9 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
         natDexTier: "OU",
 	},
 	garchompmegaz: {
-		isNonstandard: "Future",
-		tier: "Illegal",
+		tier: "Uber",
+        doublesTier: "(DUU)",
+        natDexTier: "UUBL",
 	},
 	riolu: {
 		tier: "LC",

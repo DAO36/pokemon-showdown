@@ -1801,6 +1801,28 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		gen: 6,
 		isNonstandard: "Past",
 	},
+	blastoisinitex: {
+		name: "Blastoisinite X",
+		spritenum: 583,
+		megaStone: { "Blastoise": "Blastoise-Mega-X" },
+		itemUser: ["Blastoise"],
+		onTakeItem(item, source) {
+			return !item.megaStone?.[source.baseSpecies.baseSpecies];
+		},
+		num: 661,
+		gen: 6,
+	},
+	blastoisinitey: {
+		name: "Blastoisinite Y",
+		spritenum: 583,
+		megaStone: { "Blastoise": "Blastoise-Mega-Y" },
+		itemUser: ["Blastoise"],
+		onTakeItem(item, source) {
+			return !item.megaStone?.[source.baseSpecies.baseSpecies];
+		},
+		num: 661,
+		gen: 6,
+	},
 	blazikenite: {
 		name: "Blazikenite",
 		spritenum: 584,
@@ -8731,6 +8753,17 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		num: 659,
 		gen: 6,
 		isNonstandard: "Past",
+	},
+	venusauritex: {
+		name: "Venusaurite X",
+		spritenum: 608,
+		megaStone: { "Venusaur": "Venusaur-Mega-X" },
+		itemUser: ["Venusaur"],
+		onTakeItem(item, source) {
+			return !item.megaStone?.[source.baseSpecies.baseSpecies];
+		},
+		num: 659,
+		gen: 6,
 	},
 	victreebelite: {
 		name: "Victreebelite",

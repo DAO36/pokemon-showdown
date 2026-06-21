@@ -501,6 +501,14 @@ export const ItemsText: { [id: IDEntry]: ItemText } = {
 		name: "Blastoisinite",
 		shortDesc: "If held by a Blastoise, this item allows it to Mega Evolve in battle.",
 	},
+	blastoisinitex: {
+		name: "Blastoisinite X",
+		shortDesc: "If held by a Blastoise, this item allows it to Mega Evolve in battle.",
+	},
+	blastoisinitey: {
+		name: "Blastoisinite Y",
+		shortDesc: "If held by a Blastoise, this item allows it to Mega Evolve in battle.",
+	},
 	blazikenite: {
 		name: "Blazikenite",
 		shortDesc: "If held by a Blaziken, this item allows it to Mega Evolve in battle.",
@@ -2841,6 +2849,10 @@ export const ItemsText: { [id: IDEntry]: ItemText } = {
 	},
 	venusaurite: {
 		name: "Venusaurite",
+		shortDesc: "If held by a Venusaur, this item allows it to Mega Evolve in battle.",
+	},
+	venusauritex: {
+		name: "Venusaurite X",
 		shortDesc: "If held by a Venusaur, this item allows it to Mega Evolve in battle.",
 	},
 	victreebelite: {
