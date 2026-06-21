@@ -743,6 +743,10 @@ export const ItemsText: { [id: IDEntry]: ItemText } = {
 		desc: "Evolves male Kirlia into Gallade and female Snorunt into Froslass when used.",
 		shortDesc: "Evolves certain species of Pokemon when used.",
 	},
+	deciduite: {
+		name: "Deciduite",
+		shortDesc: "If held by a Decidueye, this item allows it to Mega Evolve in battle.",
+	},
 	decidiumz: {
 		name: "Decidium Z",
 		shortDesc: "If held by a Decidueye with Spirit Shackle, it can use Sinister Arrow Raid.",
@@ -1364,6 +1368,10 @@ export const ItemsText: { [id: IDEntry]: ItemText } = {
 		name: "Incinium Z",
 		shortDesc: "If held by an Incineroar with Darkest Lariat, it can use Malicious Moonsault.",
 	},
+	incinerite: {
+		name: "Incinerite",
+		shortDesc: "If held by a Incineroar, this item allows it to Mega Evolve in battle.",
+	},
 	insectplate: {
 		name: "Insect Plate",
 		shortDesc: "Holder's Bug-type attacks have 1.2x power. Judgment is Bug type.",
@@ -1968,6 +1976,10 @@ export const ItemsText: { [id: IDEntry]: ItemText } = {
 	primariumz: {
 		name: "Primarium Z",
 		shortDesc: "If held by a Primarina with Sparkling Aria, it can use Oceanic Operetta.",
+	},
+	primarite: {
+		name: "Primarite",
+		shortDesc: "If held by a Primarina, this item allows it to Mega Evolve in battle.",
 	},
 	prismscale: {
 		name: "Prism Scale",
@@ -2974,6 +2986,10 @@ export const ItemsText: { [id: IDEntry]: ItemText } = {
 	victreebelite: {
 		name: "Victreebelite",
 		shortDesc: "If held by a Victreebel, this item allows it to Mega Evolve in battle.",
+	},
+	vikavolite: {
+		name: "Vikavolite",
+		shortDesc: "If held by a Vikavolt, this item allows it to Mega Evolve in battle.",
 	},
 	volcaronite: {
 		name: "Volcaronite",

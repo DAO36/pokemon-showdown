@@ -4423,6 +4423,11 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		doublesTier: "(DUU)",
 		natDexTier: "RU",
 	},
+	decidueyemega: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "RU",
+	},
 	litten: {
 		tier: "LC",
 	},
@@ -4434,6 +4439,11 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		doublesTier: "DOU",
 		natDexTier: "RU",
 	},
+	incineroarmega: {
+		tier: "OU",
+		doublesTier: "DOU",
+		natDexTier: "UUBL",
+	},
 	popplio: {
 		tier: "LC",
 	},
@@ -4444,6 +4454,11 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		tier: "OU",
 		doublesTier: "DOU",
 		natDexTier: "RUBL",
+	},
+	primarinamega: {
+		tier: "OU",
+		doublesTier: "DOU",
+		natDexTier: "Uber",
 	},
 	pikipek: {
 		tier: "LC",
@@ -4482,6 +4497,11 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 	vikavolttotem: {
 		isNonstandard: "Past",
 		tier: "Illegal",
+	},
+	vikavoltmega: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "RU",
 	},
 	crabrawler: {
 		tier: "LC",

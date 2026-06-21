@@ -2658,6 +2658,17 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		num: 109,
 		gen: 4,
 	},
+	deciduite: {
+		name: "Deciduite",
+		spritenum: 608,
+		megaStone: { "Decidueye": "Decidueye-Mega" },
+		itemUser: ["Decidueye"],
+		onTakeItem(item, source) {
+			return !item.megaStone?.[source.baseSpecies.baseSpecies];
+		},
+		num: 659,
+		gen: 6,
+	},
 	decidiumz: {
 		name: "Decidium Z",
 		spritenum: 650,
@@ -4461,6 +4472,17 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		num: 799,
 		gen: 7,
 		isNonstandard: "Past",
+	},
+	incinerite: {
+		name: "Incinerite",
+		spritenum: 608,
+		megaStone: { "Incineroar": "Incineroar-Mega" },
+		itemUser: ["Incineroar"],
+		onTakeItem(item, source) {
+			return !item.megaStone?.[source.baseSpecies.baseSpecies];
+		},
+		num: 659,
+		gen: 6,
 	},
 	insectplate: {
 		name: "Insect Plate",
@@ -6356,6 +6378,17 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		num: 800,
 		gen: 7,
 		isNonstandard: "Past",
+	},
+	primarite: {
+		name: "Primarite",
+		spritenum: 602,
+		megaStone: { "Primarina": "Primarina-Mega" },
+		itemUser: ["Primarina"],
+		onTakeItem(item, source) {
+			return !item.megaStone?.[source.baseSpecies.baseSpecies];
+		},
+		num: 671,
+		gen: 6,
 	},
 	prismscale: {
 		name: "Prism Scale",
@@ -9106,6 +9139,17 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		num: 2560,
 		gen: 9,
 		isNonstandard: "Future",
+	},
+	vikavolite: {
+		name: "Vikavolite",
+		spritenum: 608,
+		megaStone: { "Vikavolt": "Vikavolt-Mega" },
+		itemUser: ["Vikavolt"],
+		onTakeItem(item, source) {
+			return !item.megaStone?.[source.baseSpecies.baseSpecies];
+		},
+		num: 659,
+		gen: 6,
 	},
 	volcaronite: {
 		name: "Volcaronite",
