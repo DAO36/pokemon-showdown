@@ -4035,7 +4035,12 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 	},
 	diggersby: {
 		isNonstandard: "Past",
-		tier: "Illegal",
+		tier: "ZU",
+		natDexTier: "RU",
+	},
+	diggersbymega: {
+		isNonstandard: "Past",
+		tier: "PU",
 		natDexTier: "RU",
 	},
 	fletchling: {

@@ -769,6 +769,10 @@ export const ItemsText: { [id: IDEntry]: ItemText } = {
 		name: "Diancite",
 		shortDesc: "If held by a Diancie, this item allows it to Mega Evolve in battle.",
 	},
+	diggersbite: {
+		name: "Diggersbite",
+		shortDesc: "If held by a Diggersby, this item allows it to Mega Evolve in battle.",
+	},
 	diveball: {
 		name: "Dive Ball",
 		shortDesc: "A Poke Ball that works especially well on Pokemon that live underwater.",

@@ -2742,6 +2742,17 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		gen: 6,
 		isNonstandard: "Past",
 	},
+	diggersbite: {
+		name: "Diggersbite",
+		spritenum: 608,
+		megaStone: { "Diggersby": "Diggersby-Mega" },
+		itemUser: ["Diggersby"],
+		onTakeItem(item, source) {
+			return !item.megaStone?.[source.baseSpecies.baseSpecies];
+		},
+		num: 659,
+		gen: 6,
+	},
 	diveball: {
 		name: "Dive Ball",
 		spritenum: 101,
