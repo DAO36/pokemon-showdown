@@ -1264,6 +1264,10 @@ export const ItemsText: { [id: IDEntry]: ItemText } = {
 		name: "Hawluchanite",
 		shortDesc: "If held by a Hawlucha, this item allows it to Mega Evolve in battle.",
 	},
+	haxorite: {
+		name: "Haxorite",
+		shortDesc: "If held by a Haxorus, this item allows it to Mega Evolve in battle.",
+	},
 	healball: {
 		name: "Heal Ball",
 		shortDesc: "A remedial Poke Ball that restores the caught Pokemon's HP and status problem.",
@@ -1303,6 +1307,10 @@ export const ItemsText: { [id: IDEntry]: ItemText } = {
 	houndoominite: {
 		name: "Houndoominite",
 		shortDesc: "If held by a Houndoom, this item allows it to Mega Evolve in battle.",
+	},
+	hydreigonite: {
+		name: "Hydreigonite",
+		shortDesc: "If held by a Hydreigon, this item allows it to Mega Evolve in battle.",
 	},
 	iapapaberry: {
 		name: "Iapapa Berry",
@@ -1408,6 +1416,10 @@ export const ItemsText: { [id: IDEntry]: ItemText } = {
 	kommoniumz: {
 		name: "Kommonium Z",
 		shortDesc: "If held by a Kommo-o with Clanging Scales, it can use Clangorous Soulblaze.",
+	},
+	krookodilite: {
+		name: "Krookodilite",
+		shortDesc: "If held by a Krookodile, this item allows it to Mega Evolve in battle.",
 	},
 	laggingtail: {
 		name: "Lagging Tail",
@@ -2176,6 +2188,10 @@ export const ItemsText: { [id: IDEntry]: ItemText } = {
 		name: "Salamencite",
 		shortDesc: "If held by a Salamence, this item allows it to Mega Evolve in battle.",
 	},
+	samurite: {
+		name: "Samurite",
+		shortDesc: "If held by a Samurott, this item allows it to Mega Evolve in battle.",
+	},
 	sceptilite: {
 		name: "Sceptilite",
 		shortDesc: "If held by a Sceptile, this item allows it to Mega Evolve in battle.",
@@ -2210,6 +2226,10 @@ export const ItemsText: { [id: IDEntry]: ItemText } = {
 		gen3: {
 			shortDesc: "Holder's Water-type attacks have 1.05x power.",
 		},
+	},
+	serperiorite: {
+		name: "Serperiorite",
+		shortDesc: "If held by a Serperior, this item allows it to Mega Evolve in battle.",
 	},
 	sharpbeak: {
 		name: "Sharp Beak",
@@ -2950,6 +2970,10 @@ export const ItemsText: { [id: IDEntry]: ItemText } = {
 	victreebelite: {
 		name: "Victreebelite",
 		shortDesc: "If held by a Victreebel, this item allows it to Mega Evolve in battle.",
+	},
+	volcaronite: {
+		name: "Volcaronite",
+		shortDesc: "If held by a Volcarona, this item allows it to Mega Evolve in battle.",
 	},
 	wacanberry: {
 		name: "Wacan Berry",

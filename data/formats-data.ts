@@ -3121,6 +3121,11 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		doublesTier: "(DUU)",
 		natDexTier: "UU",
 	},
+	serperiormega: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "OU",
+	},
 	tepig: {
 		tier: "LC",
 	},
@@ -3148,6 +3153,11 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		natDexTier: "RU",
 	},
 	samurotthisui: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "OU",
+	},
+	samurottmega: {
 		tier: "OU",
 		doublesTier: "(DUU)",
 		natDexTier: "OU",
@@ -3411,6 +3421,11 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		tier: "RU",
 		doublesTier: "(DUU)",
 		natDexTier: "RU",
+	},
+	krookodilemega: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "UU",
 	},
 	darumaka: {
 		isNonstandard: "Past",
@@ -3723,6 +3738,11 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		doublesTier: "(DUU)",
 		natDexTier: "RUBL",
 	},
+	haxorusmega: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "UUBL",
+	},
 	cubchoo: {
 		tier: "LC",
 	},
@@ -3836,10 +3856,20 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		doublesTier: "(DUU)",
 		natDexTier: "UU",
 	},
+	hydreigonmega: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "UUBL",
+	},
 	larvesta: {
 		tier: "LC",
 	},
 	volcarona: {
+		tier: "Uber",
+		doublesTier: "(DUU)",
+		natDexTier: "OU",
+	},
+	volcaronamega: {
 		tier: "Uber",
 		doublesTier: "(DUU)",
 		natDexTier: "OU",
