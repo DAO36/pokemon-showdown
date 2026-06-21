@@ -341,6 +341,14 @@ export const ItemsText: { [id: IDEntry]: ItemText } = {
 		name: "Absolite Z",
 		shortDesc: "If held by an Absol, this item allows it to Mega Evolve into Mega Absol Z in battle.",
 	},
+	absolitex: {
+		name: "Absolite X",
+		shortDesc: "If held by an Absol, this item allows it to Mega Evolve into Mega Absol X in battle.",
+	},
+	absolitey: {
+		name: "Absolite Y",
+		shortDesc: "If held by an Absol, this item allows it to Mega Evolve into Mega Absol Y in battle.",
+	},
 	absorbbulb: {
 		name: "Absorb Bulb",
 		shortDesc: "Raises holder's Sp. Atk by 1 stage if hit by a Water-type attack. Single use.",
@@ -1647,6 +1655,10 @@ export const ItemsText: { [id: IDEntry]: ItemText } = {
 		name: "Metagrossite",
 		shortDesc: "If held by a Metagross, this item allows it to Mega Evolve in battle.",
 	},
+	metagrossitez: {
+		name: "Metagrossite Z",
+		shortDesc: "If held by a Metagross, this item allows it to Mega Evolve in battle.",
+	},
 	metalalloy: {
 		name: "Metal Alloy",
 		shortDesc: "Evolves Duraludon into Archaludon when used.",
@@ -2253,6 +2265,10 @@ export const ItemsText: { [id: IDEntry]: ItemText } = {
 	skyplate: {
 		name: "Sky Plate",
 		shortDesc: "Holder's Flying-type attacks have 1.2x power. Judgment is Flying type.",
+	},
+	slakingite: {
+		name: "Slakingite",
+		shortDesc: "If held by a Slaking, this item allows it to Mega Evolve in battle.",
 	},
 	slowbronite: {
 		name: "Slowbronite",

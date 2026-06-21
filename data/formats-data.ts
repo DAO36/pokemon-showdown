@@ -2032,6 +2032,11 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		doublesTier: "(DUU)",
 		natDexTier: "RU",
 	},
+	slakingmega: {
+		tier: "ZU",
+		doublesTier: "(DUU)",
+		natDexTier: "RU",
+	},
 	nincada: {
 		isNonstandard: "Past",
 		tier: "Illegal",
@@ -2440,6 +2445,14 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		isNonstandard: "Future",
 		tier: "Illegal",
 	},
+	absolmegax: {
+		isNonstandard: "Future",
+		tier: "Illegal",
+	},
+	absolmegay: {
+		isNonstandard: "Future",
+		tier: "Illegal",
+	},
 	snorunt: {
 		tier: "LC",
 	},
@@ -2530,6 +2543,11 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		natDexTier: "RU",
 	},
 	metagrossmega: {
+        tier: "OU",
+        doublesTier: "(DUU)",
+        natDexTier: "OU",
+	},
+	metagrossmegaz: {
         tier: "OU",
         doublesTier: "(DUU)",
         natDexTier: "OU",

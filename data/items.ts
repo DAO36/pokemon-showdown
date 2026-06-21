@@ -1291,6 +1291,30 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		gen: 9,
 		isNonstandard: "Future",
 	},
+	absolitex: {
+		name: "Absolite X",
+		spritenum: 499,
+		megaStone: { "Absol": "Absol-Mega-X" },
+		itemUser: ["Absol"],
+		onTakeItem(item, source) {
+			return !item.megaStone?.[source.baseSpecies.baseSpecies];
+		},
+		num: 2638,
+		gen: 9,
+		isNonstandard: "Future",
+	},
+	absolitey: {
+		name: "Absolite Y",
+		spritenum: 499,
+		megaStone: { "Absol": "Absol-Mega-Y" },
+		itemUser: ["Absol"],
+		onTakeItem(item, source) {
+			return !item.megaStone?.[source.baseSpecies.baseSpecies];
+		},
+		num: 2638,
+		gen: 9,
+		isNonstandard: "Future",
+	},
 	absorbbulb: {
 		name: "Absorb Bulb",
 		spritenum: 2,
@@ -5319,6 +5343,17 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		gen: 6,
 		isNonstandard: "Past",
 	},
+	metagrossitez: {
+		name: "Metagrossite Z",
+		spritenum: 618,
+		megaStone: { "Metagross": "Metagross-Mega-Z" },
+		itemUser: ["Metagross"],
+		onTakeItem(item, source) {
+			return !item.megaStone?.[source.baseSpecies.baseSpecies];
+		},
+		num: 758,
+		gen: 6,
+	},
 	metalalloy: {
 		name: "Metal Alloy",
 		spritenum: 761,
@@ -7218,6 +7253,17 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		forcedForme: "Arceus-Flying",
 		num: 306,
 		gen: 4,
+	},
+	slakingite: {
+		name: "Slakingite",
+		spritenum: 620,
+		megaStone: { "Slaking": "Slaking-Mega" },
+		itemUser: ["Slaking"],
+		onTakeItem(item, source) {
+			return !item.megaStone?.[source.baseSpecies.baseSpecies];
+		},
+		num: 760,
+		gen: 6,
 	},
 	slowbronite: {
 		name: "Slowbronite",
