@@ -361,6 +361,10 @@ export const ItemsText: { [id: IDEntry]: ItemText } = {
 		name: "Aerodactylite",
 		shortDesc: "If held by an Aerodactyl, this item allows it to Mega Evolve in battle.",
 	},
+	aerodactylitez: {
+		name: "Aerodactylite Z",
+		shortDesc: "If held by an Aerodactyl, this item allows it to Mega Evolve in battle.",
+	},
 	aggronite: {
 		name: "Aggronite",
 		shortDesc: "If held by an Aggron, this item allows it to Mega Evolve in battle.",
@@ -384,6 +388,10 @@ export const ItemsText: { [id: IDEntry]: ItemText } = {
 	},
 	alakazite: {
 		name: "Alakazite",
+		shortDesc: "If held by an Alakazam, this item allows it to Mega Evolve in battle.",
+	},
+	alakazitez: {
+		name: "Alakazite Z",
 		shortDesc: "If held by an Alakazam, this item allows it to Mega Evolve in battle.",
 	},
 	aloraichiumz: {
@@ -1105,6 +1113,14 @@ export const ItemsText: { [id: IDEntry]: ItemText } = {
 		name: "Gengarite",
 		shortDesc: "If held by a Gengar, this item allows it to Mega Evolve in battle.",
 	},
+	gengaritex: {
+		name: "Gengarite X",
+		shortDesc: "If held by a Gengar, this item allows it to Mega Evolve in battle.",
+	},
+	gengaritey: {
+		name: "Gengarite Y",
+		shortDesc: "If held by a Gengar, this item allows it to Mega Evolve in battle.",
+	},
 	ghostgem: {
 		name: "Ghost Gem",
 		shortDesc: "Holder's first successful Ghost-type attack will have 1.3x power. Single use.",
@@ -1131,6 +1147,10 @@ export const ItemsText: { [id: IDEntry]: ItemText } = {
 	goldbottlecap: {
 		name: "Gold Bottle Cap",
 		shortDesc: "Used for Hyper Training. All of a Pokemon's stats are calculated with an IV of 31.",
+	},
+	goldlite: {
+		name: "Goldlite",
+		shortDesc: "If held by a Goldlite, this item allows it to Mega Evolve in battle.",
 	},
 	golisopite: {
 		name: "Golisopite",
@@ -1203,6 +1223,14 @@ export const ItemsText: { [id: IDEntry]: ItemText } = {
 	},
 	gyaradosite: {
 		name: "Gyaradosite",
+		shortDesc: "If held by a Gyarados, this item allows it to Mega Evolve in battle.",
+	},
+	gyaradositex: {
+		name: "Gyaradosite X",
+		shortDesc: "If held by a Gyarados, this item allows it to Mega Evolve in battle.",
+	},
+	gyaradositey: {
+		name: "Gyaradosite Y",
 		shortDesc: "If held by a Gyarados, this item allows it to Mega Evolve in battle.",
 	},
 	habanberry: {
@@ -1652,6 +1680,18 @@ export const ItemsText: { [id: IDEntry]: ItemText } = {
 	},
 	mewtwonitey: {
 		name: "Mewtwonite Y",
+		shortDesc: "If held by a Mewtwo, this item allows it to Mega Evolve into Mega Mewtwo Y in battle.",
+	},
+	mewtwonitez: {
+		name: "Mewtwonite Z",
+		shortDesc: "If held by a Mewtwo, this item allows it to Mega Evolve into Mega Mewtwo Y in battle.",
+	},
+	mewtwonitea: {
+		name: "Mewtwonite A",
+		shortDesc: "If held by a Mewtwo, this item allows it to Mega Evolve into Mega Mewtwo Y in battle.",
+	},
+	mewtwoniteb: {
+		name: "Mewtwonite B",
 		shortDesc: "If held by a Mewtwo, this item allows it to Mega Evolve into Mega Mewtwo Y in battle.",
 	},
 	micleberry: {

@@ -485,6 +485,11 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		doublesTier: "(DUU)",
 		natDexTier: "RU",
 	},
+	golduckmega: {
+		tier: "PU",
+		doublesTier: "(DUU)",
+		natDexTier: "NU",
+	},
 	mankey: {
 		tier: "LC",
 	},
@@ -544,6 +549,11 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
         tier: "OU",
         doublesTier: "(DUU)",
         natDexTier: "OU",
+	},
+	alakazammegaz: {
+        tier: "Uber",
+        doublesTier: "(DUU)",
+        natDexTier: "Uber",
 	},
 	machop: {
 		isNonstandard: "Past",
@@ -745,6 +755,16 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		natDexTier: "RUBL",
 	},
 	gengarmega: {
+        tier: "OU",
+        doublesTier: "(DUU)",
+        natDexTier: "OU",
+	},
+	gengarmegax: {
+        tier: "OU",
+        doublesTier: "(DUU)",
+        natDexTier: "OU",
+	},
+	gengarmegay: {
         tier: "OU",
         doublesTier: "(DUU)",
         natDexTier: "OU",
@@ -1077,6 +1097,16 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
         doublesTier: "(DUU)",
         natDexTier: "OU",
 	},
+	gyaradosmegax: {
+        tier: "OU",
+        doublesTier: "(DUU)",
+        natDexTier: "OU",
+	},
+	gyaradosmegay: {
+        tier: "OU",
+        doublesTier: "(DUU)",
+        natDexTier: "OU",
+	},
 	lapras: {
 		tier: "ZU",
 		doublesTier: "(DUU)",
@@ -1185,6 +1215,11 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
         doublesTier: "(DUU)",
         natDexTier: "OU",
 	},
+	aerodactylmegaz: {
+        tier: "OU",
+        doublesTier: "(DUU)",
+        natDexTier: "OU",
+	},
 	munchlax: {
 		tier: "LC",
 	},
@@ -1248,14 +1283,29 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		natDexTier: "Uber",
 	},
 	mewtwomegax: {
-        tier: "OU",
+        tier: "Uber",
         doublesTier: "(DUU)",
-        natDexTier: "OU",
+        natDexTier: "Uber",
 	},
 	mewtwomegay: {
-        tier: "OU",
+        tier: "Uber",
         doublesTier: "(DUU)",
-        natDexTier: "OU",
+        natDexTier: "Uber",
+	},
+	mewtwomegaz: {
+        tier: "AG",
+        doublesTier: "(DUU)",
+        natDexTier: "Uber",
+	},
+	mewtwomegaa: {
+        tier: "AG",
+        doublesTier: "(DUU)",
+        natDexTier: "AG",
+	},
+	mewtwomegab: {
+        tier: "AG",
+        doublesTier: "(DUU)",
+        natDexTier: "AG",
 	},
 	mew: {
 		tier: "UU",
