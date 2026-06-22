@@ -262,7 +262,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		types: ["Water", "Dragon"],
 		genderRatio: { M: 0.875, F: 0.125 },
 		baseStats: { hp: 79, atk: 163, def: 180, spa: 45, spd: 115, spe: 48 },
-		abilities: { 0: "Mega Launcher" },
+		abilities: { 0: "Shell Armor" },
 		heightm: 2.1,
 		weightkg: 111.1,
 		color: "Blue",
@@ -277,7 +277,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		types: ["Water", "Steel"],
 		genderRatio: { M: 0.875, F: 0.125 },
 		baseStats: { hp: 79, atk: 83, def: 230, spa: 85, spd: 125, spe: 18 },
-		abilities: { 0: "Mega Launcher" },
+		abilities: { 0: "Sniper" },
 		heightm: 1.8,
 		weightkg: 201.1,
 		color: "Blue",
@@ -3135,7 +3135,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		name: "Gyarados-Mega-Y",
 		baseSpecies: "Gyarados",
 		forme: "Mega-Y",
-		types: ["Water", "Dragon"],
+		types: ["Water", "Flying"],
 		baseStats: { hp: 95, atk: 55, def: 99, spa: 150, spd: 130, spe: 111 },
 		abilities: { 0: "Drizzle" },
 		heightm: 8.1,
@@ -7731,7 +7731,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		formeOrder: ["Latios", "Latios-Mega"],
 	},
 	torterramega: {
-		num: 381,
+		num: 389,
 		name: "Torterra-Mega",
 		baseSpecies: "Torterra",
 		forme: "Mega",
@@ -7977,7 +7977,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		formeOrder: ["Luxray", "Luxray-Mega"],
 	},
 	luxraymega: {
-		num: 398,
+		num: 405,
 		name: "Luxray-Mega",
 		baseSpecies: "Luxray",
 		forme: "Mega",
@@ -8647,7 +8647,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		requiredItem: "Garchompite Z",
 		gen: 9,
 	},
-	garchompmegx: {
+	garchompmegax: {
 		num: 445,
 		name: "Garchomp-Mega-X",
 		baseSpecies: "Garchomp",
@@ -8661,7 +8661,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		eggGroups: ["Water 1", "Water 2"],
 		requiredItem: "Garchompite X",
 	},
-	garchompmegy: {
+	garchompmegay: {
 		num: 445,
 		name: "Garchomp-Mega-Y",
 		baseSpecies: "Garchomp",

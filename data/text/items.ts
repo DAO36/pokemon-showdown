@@ -371,7 +371,7 @@ export const ItemsText: { [id: IDEntry]: ItemText } = {
 	},
 	aerodactylitez: {
 		name: "Aerodactylite Z",
-		shortDesc: "If held by an Aerodactyl, this item allows it to Mega Evolve in battle.",
+		shortDesc: "If held by an Aerodactyl, this item allows it to Mega Evolve into Mega Aerodactyl Z in battle.",
 	},
 	aggronite: {
 		name: "Aggronite",
@@ -400,7 +400,7 @@ export const ItemsText: { [id: IDEntry]: ItemText } = {
 	},
 	alakazitez: {
 		name: "Alakazite Z",
-		shortDesc: "If held by an Alakazam, this item allows it to Mega Evolve in battle.",
+		shortDesc: "If held by an Alakazam, this item allows it to Mega Evolve into Mega Alakazam Z in battle.",
 	},
 	aloraichiumz: {
 		name: "Aloraichium Z",
@@ -519,11 +519,11 @@ export const ItemsText: { [id: IDEntry]: ItemText } = {
 	},
 	blastoisinitex: {
 		name: "Blastoisinite X",
-		shortDesc: "If held by a Blastoise, this item allows it to Mega Evolve in battle.",
+		shortDesc: "If held by a Blastoise, this item allows it to Mega Evolve into Mega Blastoise X.",
 	},
 	blastoisinitey: {
 		name: "Blastoisinite Y",
-		shortDesc: "If held by a Blastoise, this item allows it to Mega Evolve in battle.",
+		shortDesc: "If held by a Blastoise, this item allows it to Mega Evolve into Mega Blastoise Y.",
 	},
 	blazikenite: {
 		name: "Blazikenite",
@@ -601,6 +601,10 @@ export const ItemsText: { [id: IDEntry]: ItemText } = {
 	charizarditey: {
 		name: "Charizardite Y",
 		shortDesc: "If held by a Charizard, this item allows it to Mega Evolve into Mega Charizard Y.",
+	},
+	charizarditez: {
+		name: "Charizardite Z",
+		shortDesc: "If held by a Charizard, this item allows it to Mega Evolve into Mega Charizard Z.",
 	},
 	chartiberry: {
 		name: "Charti Berry",
@@ -939,6 +943,10 @@ export const ItemsText: { [id: IDEntry]: ItemText } = {
 		name: "Expert Belt",
 		shortDesc: "Holder's attacks that are super effective against the target do 1.2x damage.",
 	},
+	exploudite: {
+		name: "Exploudite",
+		shortDesc: "If held by a Exploud, this item allows it to Mega Evolve in battle.",
+	},
 	fairiumz: {
 		name: "Fairium Z",
 		shortDesc: "If holder has a Fairy move, this item allows it to use a Fairy Z-Move.",
@@ -1139,11 +1147,11 @@ export const ItemsText: { [id: IDEntry]: ItemText } = {
 	},
 	gengaritex: {
 		name: "Gengarite X",
-		shortDesc: "If held by a Gengar, this item allows it to Mega Evolve in battle.",
+		shortDesc: "If held by a Gengar, this item allows it to Mega Evolve into Mega Gengar X in battle.",
 	},
 	gengaritey: {
 		name: "Gengarite Y",
-		shortDesc: "If held by a Gengar, this item allows it to Mega Evolve in battle.",
+		shortDesc: "If held by a Gengar, this item allows it to Mega Evolve into Mega Gengar Y in battle.",
 	},
 	ghostgem: {
 		name: "Ghost Gem",
@@ -1251,11 +1259,11 @@ export const ItemsText: { [id: IDEntry]: ItemText } = {
 	},
 	gyaradositex: {
 		name: "Gyaradosite X",
-		shortDesc: "If held by a Gyarados, this item allows it to Mega Evolve in battle.",
+		shortDesc: "If held by a Gyarados, this item allows it to Mega Evolve into Mega Gyarados X in battle.",
 	},
 	gyaradositey: {
 		name: "Gyaradosite Y",
-		shortDesc: "If held by a Gyarados, this item allows it to Mega Evolve in battle.",
+		shortDesc: "If held by a Gyarados, this item allows it to Mega Evolve into Mega Gyarados Y in battle.",
 	},
 	habanberry: {
 		name: "Haban Berry",
@@ -1581,7 +1589,7 @@ export const ItemsText: { [id: IDEntry]: ItemText } = {
 	},
 	luxrite: {
 		name: "Luxrite",
-		shortDesc: "At the end of every turn, this item attempts to badly poison the holder.",
+		shortDesc: "If held by a Luxray, this item allows it to Mega in battle.",
 	},
 	luxuryball: {
 		name: "Luxury Ball",
@@ -1693,7 +1701,7 @@ export const ItemsText: { [id: IDEntry]: ItemText } = {
 	},
 	metagrossitez: {
 		name: "Metagrossite Z",
-		shortDesc: "If held by a Metagross, this item allows it to Mega Evolve in battle.",
+		shortDesc: "If held by a Metagross, this item allows it to Mega Evolve into Mega Metagross Z in battle.",
 	},
 	metalalloy: {
 		name: "Metal Alloy",
@@ -1736,15 +1744,15 @@ export const ItemsText: { [id: IDEntry]: ItemText } = {
 	},
 	mewtwonitez: {
 		name: "Mewtwonite Z",
-		shortDesc: "If held by a Mewtwo, this item allows it to Mega Evolve into Mega Mewtwo Y in battle.",
+		shortDesc: "If held by a Mewtwo, this item allows it to Mega Evolve into Mega Mewtwo Z in battle.",
 	},
 	mewtwonitea: {
 		name: "Mewtwonite A",
-		shortDesc: "If held by a Mewtwo, this item allows it to Mega Evolve into Mega Mewtwo Y in battle.",
+		shortDesc: "If held by a Mewtwo, this item allows it to Mega Evolve into Mega Mewtwo A in battle.",
 	},
 	mewtwoniteb: {
 		name: "Mewtwonite B",
-		shortDesc: "If held by a Mewtwo, this item allows it to Mega Evolve into Mega Mewtwo Y in battle.",
+		shortDesc: "If held by a Mewtwo, this item allows it to Mega Evolve into Mega Mewtwo B in battle.",
 	},
 	micleberry: {
 		name: "Micle Berry",
@@ -2218,7 +2226,7 @@ export const ItemsText: { [id: IDEntry]: ItemText } = {
 	},
 	scizoritez: {
 		name: "Scizorite Z",
-		shortDesc: "If held by a Scizor, this item allows it to Mega Evolve in battle.",
+		shortDesc: "If held by a Scizor, this item allows it to Mega Evolve into Mega Scizor Z in battle.",
 	},
 	scolipite: {
 		name: "Scolipite",
@@ -2515,7 +2523,7 @@ export const ItemsText: { [id: IDEntry]: ItemText } = {
 	},
 	torterrite: {
 		name: "Torterrite",
-		shortDesc: "At the end of every turn, this item attempts to badly poison the holder.",
+		shortDesc: "If held by a Torterra, this item allows it to Mega Evolve in battle.",
 	},
 	toxicorb: {
 		name: "Toxic Orb",
@@ -2938,15 +2946,15 @@ export const ItemsText: { [id: IDEntry]: ItemText } = {
 	},
 	tyranitaritex: {
 		name: "Tyranitarite X",
-		shortDesc: "If held by a Tyranitar, this item allows it to Mega Evolve in battle.",
+		shortDesc: "If held by a Tyranitar, this item allows it to Mega Evolve into Mega Tyranitar X in battle.",
 	},
 	tyranitaritey: {
 		name: "Tyranitarite Y",
-		shortDesc: "If held by a Tyranitar, this item allows it to Mega Evolve in battle.",
+		shortDesc: "If held by a Tyranitar, this item allows it to Mega Evolve into Mega Tyranitar Y in battle.",
 	},
 	tyranitaritez: {
 		name: "Tyranitarite Z",
-		shortDesc: "If held by a Tyranitar, this item allows it to Mega Evolve in battle.",
+		shortDesc: "If held by a Tyranitar, this item allows it to Mega Evolve into Mega Tyranitar Z in battle.",
 	},
 	ultraball: {
 		name: "Ultra Ball",
@@ -2981,7 +2989,7 @@ export const ItemsText: { [id: IDEntry]: ItemText } = {
 	},
 	venusauritex: {
 		name: "Venusaurite X",
-		shortDesc: "If held by a Venusaur, this item allows it to Mega Evolve in battle.",
+		shortDesc: "If held by a Venusaur, this item allows it to Mega Evolve into Mega Venusaur X.",
 	},
 	victreebelite: {
 		name: "Victreebelite",
@@ -3074,6 +3082,10 @@ export const ItemsText: { [id: IDEntry]: ItemText } = {
 	wiseglasses: {
 		name: "Wise Glasses",
 		shortDesc: "Holder's special attacks have 1.1x power.",
+	},
+	wobbuffetite: {
+		name: "Wobbuffetite",
+		shortDesc: "If held by a Wobbuffet, this item allows it to Mega Evolve in battle.",
 	},
 	yacheberry: {
 		name: "Yache Berry",
