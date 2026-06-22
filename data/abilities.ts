@@ -112,6 +112,98 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			target.removeVolatile('gastroacid');
 		},
 	},
+	prideful: { // "This Pokemon's Attack is raised by 2 for each of its stats that is lowered by a foe."
+		onAfterEachBoost(boost, target, source, effect) {
+			if (!source || target.isAlly(source)) {
+				if (effect.id === 'stickyweb') {
+					this.hint("Court Change Sticky Web counts as lowering your own Speed, and Defiant only affects stats lowered by foes.", true, source.side);
+				}
+				return;
+			}
+			let statsLowered = false;
+			let i: BoostID;
+			for (i in boost) {
+				if (boost[i]! < 0) {
+					statsLowered = true;
+				}
+			}
+			if (statsLowered) {
+				this.damage(source.baseMaxhp / 8, source, target);
+			}
+		},
+		name: "Prideful",
+		rating: 2.5,
+		num: 160,
+	},
+	silverlining: {
+		onTryHit(target, source, move) {
+			if (target === source || move.category === 'Status' || move.type === '???' || move.id === 'struggle') return;
+			if (move.id === 'skydrop' && !source.volatiles['skydrop']) return;
+			this.debug('Silver Lining immunity: ' + move.id);
+			if (target.runEffectiveness(move) == 1) {
+				if (move.smartTarget) {
+					move.smartTarget = false;
+				} else {
+					this.add('-immune', target, '[from] ability: Silver Lining');
+				}
+				return null;
+			}
+		},
+		flags: { breakable: 1 },
+		name: "Silver Lining",
+		rating: 5,
+		num: 25,
+	},
+	guardianangel:{ // "Foes' moves target this Pokemon on the turn it switches in."
+		onStart(pokemon){
+			pokemon.addVolatile('followme');
+		},
+		name:"Guardian Angel",
+		rating: 4,
+		num: 234,
+	},
+	calmingpresence: { // "On switch-in, this Pokemon lowers the evasion of opponents by 1 stage."
+		onStart(pokemon) {
+			let activated = false;
+			for (const target of pokemon.adjacentFoes()) {
+				if (!activated) {
+					this.add('-ability', pokemon, 'Calmed', 'boost');
+					activated = true;
+				}
+				if (target.volatiles['substitute']) {
+					this.add('-immune', target);
+				} else {
+					this.boost({evasion: -1}, target, pokemon, null, true);
+				}
+			}
+		},
+		name: "Calming Presence",
+		rating: 3.5,
+		num: 22,
+	},
+	misdirection: { // "The first time it enters battle, this Pokemon takes 25% damage to set up a Substitute."
+		onStart(pokemon) {
+			if (this.effectState.misdirection) return;
+			if (pokemon.volatiles['disable']) return;
+			this.effectState.misdirection = true;
+			pokemon.addVolatile('substitute');
+			this.damage(pokemon.baseMaxhp/4,pokemon,pokemon);
+		},
+		name: "Misdirection",
+		rating: 4,
+		num: 234,
+	},
+	splitswitch: {
+		onModifyMove(move, pokemon) {
+			if(move.category === 'Special') {
+			move.category = 'Physical';
+			}
+			if(move.category === 'Physical') {
+			move.category = 'Special';
+			}
+		},
+		name: "Split Switch",
+	},
 	aurafarming: { // Ash-Lucario
 		onDamagingHit(damage, target, source, effect) {
 			this.boost({atk: 1, spa: 1, spe: 1});
@@ -1712,6 +1804,17 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		name: "Alien Artist",
 		rating: 5,
 		num: 157,
+	},
+	seeddispersal: { // TEST THIS
+        onDamagingHit(damage, target, source, move) {
+            if (this.checkMoveMakesContact(move, source, target))
+			{
+			source.addVolatile('leechseed', this.effectState.target);
+			}
+        },
+		name: "Seed Dispersal",
+		rating: 2,
+		num: 49,
 	},
 	nnn: { // leech seeds anyon who hits her
 		onDamagingHitOrder: 1,

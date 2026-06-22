@@ -35,6 +35,33 @@ export const AbilitiesText: { [id: IDEntry]: AbilityText } = {
 		name: "Test Giver", 
 		shortDesc: "FOR SCIENCE!",
 	},
+	prideful: {
+		name: "Prideful",
+		desc: "This Pokemon retaliates and deals damage for each of its stat stages that is lowered by an opposing Pokemon.",
+		shortDesc: "This Pokemon retaliates and deals damage for each of its stats that is lowered by a foe.",
+	},
+	silverlining: {
+		name: "Wonder Guard",
+		shortDesc: "This Pokemon cannot be damaged by supereffective moves.",
+	},
+	guardianangel:{
+		name:"Guardian Angel",
+		shortDesc: "Foes' moves target this Pokemon on the turn it switches in."
+	},
+	calmingpresence: {
+		name: "Calming Presence",
+		desc: "On switch-in, this Pokemon lowers the evasion of opposing Pokemon by 1 stage. Pokemon with the Inner Focus, Oblivious, Own Tempo, or Scrappy Abilities and Pokemon behind a substitute are immune.",
+		shortDesc: "On switch-in, this Pokemon lowers the evasion of opponents by 1 stage.",
+	},
+	misdirection:{
+		name: "Misdirection",
+		desc: "The first time it enters battle, this Pokemon takes 25% damage to set up a Substitute.",
+	},
+	splitswitch: {
+		name: "Split Switch",
+		desc: "This Pokemon's Special moves do Physical damage; Physical moves do Special damage.",
+		shortDesc: "Special moves do Physical damage; Physical moves do Special damage."
+	},
 	corruption: {
 		name: "Corruption",
 		desc: "...something's...not right...",
