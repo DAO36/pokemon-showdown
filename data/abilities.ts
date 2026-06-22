@@ -283,19 +283,33 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		onDamagingHit(damage, target, source, effect) {
 			this.boost({atk: 1, spa: 1, spe: 1});
 		},
-		flags: {},
-		name: "Aura Farming",
-		rating: 4,
-		num: 192,
-	},
-	aurafarming2: { // combines [Moxie] + [Soul-Heart] + Speed
 		onSourceAfterFaint(length, target, source, effect) {
 			if (effect && effect.effectType === 'Move') {
 				this.boost({atk: length, spa: length, spe: length}, source);
 			}
 		},
 		flags: {},
+		name: "Aura Farming",
+		rating: 4,
+		num: 192,
+	},
+	aurafarming2: { // Ash-Lucario
+		onDamagingHit(damage, target, source, effect) {
+			this.boost({atk: 1, spa: 1, spe: 1});
+		},
+		flags: {},
 		name: "Aura Farming 2",
+		rating: 4,
+		num: 192,
+	},
+	aurafarming3: { // combines [Moxie] + [Soul-Heart] + Speed
+		onSourceAfterFaint(length, target, source, effect) {
+			if (effect && effect.effectType === 'Move') {
+				this.boost({atk: length, spa: length, spe: length}, source);
+			}
+		},
+		flags: {},
+		name: "Aura Farming 3",
 		rating: 3,
 		num: 153,
 	},
