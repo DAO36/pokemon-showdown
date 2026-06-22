@@ -62,6 +62,18 @@ export const AbilitiesText: { [id: IDEntry]: AbilityText } = {
 		desc: "This Pokemon's Special moves do Physical damage; Physical moves do Special damage.",
 		shortDesc: "Special moves do Physical damage; Physical moves do Special damage."
 	},
+	liftoff: {
+		name: "Liftoff",
+		shortDesc: "On using a Flying-type attack, gain Flying-type. Lose on non-Flying type attack."
+	},
+	adhesive: {
+		name: "Adhesive",
+		shortDesc: "If this Pokemon is hit by a contact move, the attacker is trapped",
+	},
+	shimmeringaether: {
+		name: "Shimmering Aether",
+		shortDesc: "Copy a random adjacent foe's Ability. Set foe abilities to Run Away.",
+	},
 	corruption: {
 		name: "Corruption",
 		desc: "...something's...not right...",
