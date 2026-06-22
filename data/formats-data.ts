@@ -3336,13 +3336,19 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		natDexTier: "RU",
 	},
 	throh: {
-		isNonstandard: "Past",
-		tier: "Illegal",
+		tier: "RU",
+		natDexTier: "RU",
+	},
+	throhhisui: {
+		tier: "NU",
 		natDexTier: "RU",
 	},
 	sawk: {
-		isNonstandard: "Past",
-		tier: "Illegal",
+		tier: "RU",
+		natDexTier: "RU",
+	},
+	sawkhisui: {
+		tier: "NU",
 		natDexTier: "RU",
 	},
 	sewaddle: {
