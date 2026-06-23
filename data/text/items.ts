@@ -5,6 +5,10 @@ export const ItemsText: { [id: IDEntry]: ItemText } = {
 
 		block: "  [POKEMON]'s Ability is protected by the effects of its Ability Shield!",
 	},
+	arbokite: {
+        name: "Arbokite",
+        shortDesc: "If held by an Arbok, this item allows it to Mega Evolve.",
+    },
 	batteries: {
 		name: "Batteries",
 		shortDesc: "Raises holder's Atk, Def, Sp. Atk, Sp. Def, and Speed all by 1 if hit by an Electric-type attack. Single use.",
@@ -679,6 +683,10 @@ export const ItemsText: { [id: IDEntry]: ItemText } = {
 	cloversweet: {
 		name: "Clover Sweet",
 		shortDesc: "Evolves Milcery into Alcremie when held and spun around.",
+	},
+	cloysterite: {
+		name: "Cloysterite",
+		shortDesc: "If held by a Cloyster, this item allows it to Mega Evolve in battle.",
 	},
 	cobaberry: {
 		name: "Coba Berry",
@@ -1403,6 +1411,10 @@ export const ItemsText: { [id: IDEntry]: ItemText } = {
 		name: "Jaw Fossil",
 		shortDesc: "Can be revived into Tyrunt.",
 	},
+	kabutopsite: {
+		name: "Kabutopsite",
+		shortDesc: "If held by a Kabutops, this item allows it to Mega Evolve in battle.",
+	},
 	kangaskhanite: {
 		name: "Kangaskhanite",
 		shortDesc: "If held by a Kangaskhan, this item allows it to Mega Evolve in battle.",
@@ -1448,6 +1460,10 @@ export const ItemsText: { [id: IDEntry]: ItemText } = {
 	lansatberry: {
 		name: "Lansat Berry",
 		shortDesc: "Holder gains the Focus Energy effect when at 1/4 max HP or less. Single use.",
+	},
+	laprasite: {
+		name: "Laprasite",
+		shortDesc: "If held by a Lapras, this item allows it to Mega Evolve in battle.",
 	},
 	latiasite: {
 		name: "Latiasite",
@@ -1822,6 +1838,10 @@ export const ItemsText: { [id: IDEntry]: ItemText } = {
 			shortDesc: "Holder's Ice-type attacks have 1.1x power.",
 		},
 	},
+	nidonite: {
+        name: "Nidonite",
+        shortDesc: "If held by a Nidoking, this item allows it to Mega Evolve.",
+    },
 	nomelberry: {
 		name: "Nomel Berry",
 		shortDesc: "Cannot be eaten by the holder. No effect when eaten with Bug Bite or Pluck.",
@@ -1939,6 +1959,10 @@ export const ItemsText: { [id: IDEntry]: ItemText } = {
 		name: "Poke Ball",
 		shortDesc: "A device for catching wild Pokemon. It is designed as a capsule system.",
 	},
+	poliwrite: {
+        name: "Poliwrite",
+        shortDesc: "If held by a Poliwrath, this item allows it to Mega Evolve.",
+    },
 	pomegberry: {
 		name: "Pomeg Berry",
 		shortDesc: "Cannot be eaten by the holder. No effect when eaten with Bug Bite or Pluck.",
@@ -2481,6 +2505,10 @@ export const ItemsText: { [id: IDEntry]: ItemText } = {
 		name: "Tatsugirinite",
 		shortDesc: "If held by a Tatsugiri, this item allows it to Mega Evolve in battle.",
 	},
+	tentacruelite: {
+        name: "Tentacruelite",
+        shortDesc: "If held by a Tentacruel, this item allows it to Mega Evolve.",
+    },
 	terrainextender: {
 		name: "Terrain Extender",
 		shortDesc: "Holder's use of Electric/Grassy/Misty/Psychic Terrain lasts 8 turns instead of 5.",
