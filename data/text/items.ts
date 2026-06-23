@@ -539,7 +539,7 @@ export const ItemsText: { [id: IDEntry]: ItemText } = {
 	},
 	blissite: {
 		name: "Blissite",
-		shortDesc: "If held by a Blissey, this item allows it to Mega Evolve into Mega Blastoise X.",
+		shortDesc: "If held by a Blissey, this item allows it to Mega Evolve in battle.",
 	},
 	blueorb: {
 		name: "Blue Orb",

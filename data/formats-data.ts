@@ -404,10 +404,12 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 	},
 	crobat: {
 		tier: "UU",
+		doublesTier: "(DUU)",
 		natDexTier: "RU",
 	},
 	crobatmega: {
 		tier: "OU",
+		doublesTier: "(DUU)",
 		natDexTier: "RU",
 	},
 	oddish: {
@@ -987,11 +989,11 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		tier: "NFE",
 	},
 	kingdra: {
-		tier: "ZUBL",
+		tier: "ZU",
 		doublesTier: "DUU",
 		natDexTier: "RU",
 	},
-	kingdrite: {
+	kingdramega: {
 		tier: "UU",
 		doublesTier: "DUU",
 		natDexTier: "RU",
