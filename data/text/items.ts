@@ -446,6 +446,10 @@ export const ItemsText: { [id: IDEntry]: ItemText } = {
 		name: "Auspicious Armor",
 		shortDesc: "Evolves Charcadet into Armarouge when used.",
 	},
+	azumarillite: {
+		name: "Azumarillite",
+		shortDesc: "If held by a Azumarill, this item allows it to Mega Evolve in battle.",
+	},
 	babiriberry: {
 		name: "Babiri Berry",
 		shortDesc: "Halves damage taken from a supereffective Steel-type attack. Single use.",
@@ -532,6 +536,10 @@ export const ItemsText: { [id: IDEntry]: ItemText } = {
 	blazikenite: {
 		name: "Blazikenite",
 		shortDesc: "If held by a Blaziken, this item allows it to Mega Evolve in battle.",
+	},
+	blissite: {
+		name: "Blissite",
+		shortDesc: "If held by a Blissey, this item allows it to Mega Evolve into Mega Blastoise X.",
 	},
 	blueorb: {
 		name: "Blue Orb",
@@ -721,6 +729,10 @@ export const ItemsText: { [id: IDEntry]: ItemText } = {
 		name: "Cracked Pot",
 		shortDesc: "Evolves Sinistea into Polteageist when used.",
 	},
+	crobite: {
+        name: "Crobite",
+        shortDesc: "If held by a Crobat, this item allows it to Mega Evolve.",
+    },
 	custapberry: {
 		name: "Custap Berry",
 		shortDesc: "Holder moves first in its priority bracket when at 1/4 max HP or less. Single use.",
@@ -1467,6 +1479,10 @@ export const ItemsText: { [id: IDEntry]: ItemText } = {
 		name: "Kelpsy Berry",
 		shortDesc: "Cannot be eaten by the holder. No effect when eaten with Bug Bite or Pluck.",
 	},
+	kingdrite: {
+        name: "Kingdrite",
+        shortDesc: "If held by a Kingdra, this item allows it to Mega Evolve.",
+    },
 	kingsrock: {
 		name: "King's Rock",
 		desc: "Holder's attacks without a chance to make the target flinch gain a 10% chance to make the target flinch. Evolves Poliwhirl into Politoed and Slowpoke into Slowking when traded.",
@@ -1806,10 +1822,15 @@ export const ItemsText: { [id: IDEntry]: ItemText } = {
 		name: "Micle Berry",
 		shortDesc: "Holder's next move has 1.2x accuracy when at 1/4 max HP or less. Single use.",
 	},
+	
 	mimikiumz: {
 		name: "Mimikium Z",
 		shortDesc: "If held by a Mimikyu with Play Rough, it can use Let's Snuggle Forever.",
 	},
+	miltankite: {
+        name: "Miltankite",
+        shortDesc: "If held by a Miltank, this item allows it to Mega Evolve.",
+    },
 	mindplate: {
 		name: "Mind Plate",
 		shortDesc: "Holder's Psychic-type attacks have 1.2x power. Judgment is Psychic type.",
@@ -2500,6 +2521,10 @@ export const ItemsText: { [id: IDEntry]: ItemText } = {
 		name: "Strawberry Sweet",
 		shortDesc: "Evolves Milcery into Alcremie when held and spun around.",
 	},
+	sunflorite: {
+		name: "Sunflorite",
+		shortDesc: "If held by a Sunflora, this item allows it to Mega Evolve in battle.",
+	},
 	sunstone: {
 		name: "Sun Stone",
 		desc: "Evolves Gloom into Bellossom, Sunkern into Sunflora, Cottonee into Whimsicott, Petilil into Lilligant, and Helioptile into Heliolisk when used.",
@@ -3146,6 +3171,10 @@ export const ItemsText: { [id: IDEntry]: ItemText } = {
 	wobbuffetite: {
 		name: "Wobbuffetite",
 		shortDesc: "If held by a Wobbuffet, this item allows it to Mega Evolve in battle.",
+	},
+	xatutite: {
+		name: "Xatutite",
+		shortDesc: "If held by a Xatu, this item allows it to Mega Evolve in battle.",
 	},
 	yacheberry: {
 		name: "Yache Berry",

@@ -403,8 +403,11 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		natDexTier: "NFE",
 	},
 	crobat: {
-		isNonstandard: "Past",
-		tier: "Illegal",
+		tier: "UU",
+		natDexTier: "RU",
+	},
+	crobatmega: {
+		tier: "OU",
 		natDexTier: "RU",
 	},
 	oddish: {
@@ -952,6 +955,11 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		doublesTier: "(DUU)",
 		natDexTier: "UU",
 	},
+	blisseymega: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "UU",
+	},
 	tangela: {
 		isNonstandard: "Past",
 		tier: "Illegal",
@@ -980,6 +988,11 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 	},
 	kingdra: {
 		tier: "ZUBL",
+		doublesTier: "DUU",
+		natDexTier: "RU",
+	},
+	kingdrite: {
+		tier: "UU",
 		doublesTier: "DUU",
 		natDexTier: "RU",
 	},
@@ -1508,8 +1521,11 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		natDexTier: "LC",
 	},
 	xatu: {
-		isNonstandard: "Past",
-		tier: "Illegal",
+		tier: "RU",
+		natDexTier: "RU",
+	},
+	xatumega: {
+		tier: "UU",
 		natDexTier: "RU",
 	},
 	mareep: {
@@ -1536,6 +1552,11 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 	},
 	azumarill: {
 		tier: "UU",
+		doublesTier: "(DUU)",
+		natDexTier: "RUBL",
+	},
+	azumarillmega: {
+		tier: "OU",
 		doublesTier: "(DUU)",
 		natDexTier: "RUBL",
 	},
@@ -1571,6 +1592,11 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 	},
 	sunflora: {
 		tier: "ZU",
+		doublesTier: "(DUU)",
+		natDexTier: "RU",
+	},
+	sunfloramega: {
+		tier: "NU",
 		doublesTier: "(DUU)",
 		natDexTier: "RU",
 	},
@@ -1841,8 +1867,11 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		natDexTier: "RU",
 	},
 	miltank: {
-		isNonstandard: "Past",
-		tier: "Illegal",
+		tier: "ZU",
+		natDexTier: "RU",
+	},
+	miltankmega: {
+		tier: "NU",
 		natDexTier: "RU",
 	},
 	raikou: {
