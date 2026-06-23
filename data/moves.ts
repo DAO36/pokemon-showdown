@@ -2664,6 +2664,35 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Dark",
 		contestType: "Clever",
 	},
+	wickedblows: {
+		num: 918,
+		accuracy: 100,
+		basePower: 70,
+		category: "Physical",
+		name: "Wicked Blows",
+		pp: 15,
+		priority: 4,
+		flags: { contact: 1, bypasssub: 1, mirror: 1, punch: 1 },
+		onTry(source, target) {
+			const action = this.queue.willMove(target);
+			const move = action?.choice === 'move' ? action.move : null;
+			if (target.volatiles['protect'] || target.volatiles['kingsshield'] || target.volatiles['spikyshield'] || target.volatiles['lunarshield'] || target.volatiles['obstruct'] || target.volatiles['phoenixshield'] || target.volatiles['burningbulwark'] || target.volatiles['banefulbunker'] || target.volatiles['silktrap']) {
+				return false;
+			}
+		},
+		basePowerCallback(source, target, move) {
+			if (target.volatiles['protect'] || target.volatiles['kingsshield'] || target.volatiles['spikyshield'] || target.volatiles['lunarshield'] || target.volatiles['obstruct'] || target.volatiles['phoenixshield'] || target.volatiles['burningbulwark'] || target.volatiles['banefulbunker'] || target.volatiles['silktrap'])
+			return move.basePower * 2;
+			
+			return move.basePower;
+		},
+		secondary: {
+			chance: 100,
+			volatileStatus: 'flinch',
+		},
+		target: "normal",
+		type: "Dark",
+	},
 	v7strike: { // ZETA 2
 		num: 364,
 		accuracy: 100,
