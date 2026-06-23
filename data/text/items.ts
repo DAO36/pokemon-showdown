@@ -889,6 +889,38 @@ export const ItemsText: { [id: IDEntry]: ItemText } = {
 		name: "Eevium Z",
 		shortDesc: "If held by an Eevee with Last Resort, it can use Extreme Evoboost.",
 	},
+	vaporeonite: {
+        name: "Vaporeonite",
+        shortDesc: "If held by a Vaporeon, this item allows it to Mega Evolve.",
+    },
+	flareonite: {
+        name: "Flareonite",
+        shortDesc: "If held by a Flareon, this item allows it to Mega Evolve.",
+    },
+	jolteonite: {
+        name: "Jolteonite",
+        shortDesc: "If held by a Jolteon, this item allows it to Mega Evolve.",
+    },
+	espeonite: {
+        name: "Espeonite",
+        shortDesc: "If held by a Espeon, this item allows it to Mega Evolve.",
+    },
+	umbreonite: {
+        name: "Umbreonite",
+        shortDesc: "If held by a Umbreon, this item allows it to Mega Evolve.",
+    },
+	leafeonite: {
+        name: "Leafeonite",
+        shortDesc: "If held by a Leafeon, this item allows it to Mega Evolve.",
+    },
+	glaceonite: {
+        name: "Glaceonite",
+        shortDesc: "If held by a Glaceon, this item allows it to Mega Evolve.",
+    },
+	sylveonite: {
+        name: "Sylveonite",
+        shortDesc: "If held by a Sylveon, this item allows it to Mega Evolve.",
+    },
 	ejectbutton: {
 		name: "Eject Button",
 		shortDesc: "If holder survives a hit, it immediately switches out to a chosen ally. Single use.",

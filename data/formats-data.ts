@@ -1172,7 +1172,17 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		doublesTier: "(DUU)",
 		natDexTier: "RU",
 	},
+	vaporeonmega: {
+		tier: "NU",
+		doublesTier: "(DUU)",
+		natDexTier: "RU",
+	},
 	jolteon: {
+		tier: "ZU",
+		doublesTier: "(DUU)",
+		natDexTier: "RU",
+	},
+	jolteonmega: {
 		tier: "ZU",
 		doublesTier: "(DUU)",
 		natDexTier: "RU",
@@ -1182,7 +1192,17 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		doublesTier: "(DUU)",
 		natDexTier: "RU",
 	},
+	flareonmega: {
+		tier: "ZU",
+		doublesTier: "(DUU)",
+		natDexTier: "RU",
+	},
 	espeon: {
+		tier: "NU",
+		doublesTier: "(DUU)",
+		natDexTier: "RU",
+	},
+	espeonmega: {
 		tier: "NU",
 		doublesTier: "(DUU)",
 		natDexTier: "RU",
@@ -1192,7 +1212,17 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		doublesTier: "(DUU)",
 		natDexTier: "RU",
 	},
+	umbreonmega: {
+		tier: "RU",
+		doublesTier: "(DUU)",
+		natDexTier: "RU",
+	},
 	leafeon: {
+		tier: "ZU",
+		doublesTier: "(DUU)",
+		natDexTier: "RU",
+	},
+	leafeonmega: {
 		tier: "ZU",
 		doublesTier: "(DUU)",
 		natDexTier: "RU",
@@ -1202,7 +1232,17 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		doublesTier: "(DUU)",
 		natDexTier: "RU",
 	},
+	glaceonmega: {
+		tier: "ZU",
+		doublesTier: "(DUU)",
+		natDexTier: "RU",
+	},
 	sylveon: {
+		tier: "NU",
+		doublesTier: "(DUU)",
+		natDexTier: "RU",
+	},
+	sylveonmega: {
 		tier: "NU",
 		doublesTier: "(DUU)",
 		natDexTier: "RU",

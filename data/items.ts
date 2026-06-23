@@ -3017,6 +3017,94 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		gen: 7,
 		isNonstandard: "Past",
 	},
+	vaporeonite:  {
+        name: "Vaporeonite ",
+        spritenum: 588,
+        megaStone: { "Vaporeon": "Vaporeon-Mega" },
+        itemUser: ["Vaporeon"],
+        onTakeItem(item, source) {
+            return !item.megaStone?.[source.baseSpecies.baseSpecies];
+        },
+        num: 656,
+        gen: 6,
+    },
+	flareonite:  {
+        name: "Flareonite ",
+        spritenum: 588,
+        megaStone: { "Flareon": "Flareon-Mega" },
+        itemUser: ["Flareon"],
+        onTakeItem(item, source) {
+            return !item.megaStone?.[source.baseSpecies.baseSpecies];
+        },
+        num: 656,
+        gen: 6,
+    },
+	jolteonite:  {
+        name: "Jolteonite ",
+        spritenum: 588,
+        megaStone: { "Jolteon": "Jolteon-Mega" },
+        itemUser: ["Jolteon"],
+        onTakeItem(item, source) {
+            return !item.megaStone?.[source.baseSpecies.baseSpecies];
+        },
+        num: 656,
+        gen: 6,
+    },
+	espeonite:  {
+        name: "Espeonite ",
+        spritenum: 588,
+        megaStone: { "Espeon": "Espeon-Mega" },
+        itemUser: ["Espeon"],
+        onTakeItem(item, source) {
+            return !item.megaStone?.[source.baseSpecies.baseSpecies];
+        },
+        num: 656,
+        gen: 6,
+    },
+	umbreonite:  {
+        name: "Umbreonite ",
+        spritenum: 588,
+        megaStone: { "Umbreon": "Umbreon-Mega" },
+        itemUser: ["Umbreon"],
+        onTakeItem(item, source) {
+            return !item.megaStone?.[source.baseSpecies.baseSpecies];
+        },
+        num: 656,
+        gen: 6,
+    },
+	leafeonite:  {
+        name: "Leafeonite ",
+        spritenum: 588,
+        megaStone: { "Leafeon": "Leafeon-Mega" },
+        itemUser: ["Leafeon"],
+        onTakeItem(item, source) {
+            return !item.megaStone?.[source.baseSpecies.baseSpecies];
+        },
+        num: 656,
+        gen: 6,
+    },
+	glaceonite:  {
+        name: "Glaceonite ",
+        spritenum: 588,
+        megaStone: { "Glaceon": "Glaceon-Mega" },
+        itemUser: ["Glaceon"],
+        onTakeItem(item, source) {
+            return !item.megaStone?.[source.baseSpecies.baseSpecies];
+        },
+        num: 656,
+        gen: 6,
+    },
+	sylveonite:  {
+        name: "Sylveonite ",
+        spritenum: 588,
+        megaStone: { "Sylveon": "Sylveon-Mega" },
+        itemUser: ["Sylveon"],
+        onTakeItem(item, source) {
+            return !item.megaStone?.[source.baseSpecies.baseSpecies];
+        },
+        num: 656,
+        gen: 6,
+    },
 	ejectbutton: {
 		name: "Eject Button",
 		spritenum: 118,
