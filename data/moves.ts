@@ -2667,7 +2667,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	wickedblows: {
 		num: 918,
 		accuracy: 100,
-		basePower: 70,
+		basePower: 120,
 		category: "Physical",
 		name: "Wicked Blows",
 		pp: 15,
@@ -2676,15 +2676,9 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		onTry(source, target) {
 			const action = this.queue.willMove(target);
 			const move = action?.choice === 'move' ? action.move : null;
-			if (target.volatiles['protect'] || target.volatiles['kingsshield'] || target.volatiles['spikyshield'] || target.volatiles['lunarshield'] || target.volatiles['obstruct'] || target.volatiles['phoenixshield'] || target.volatiles['burningbulwark'] || target.volatiles['banefulbunker'] || target.volatiles['silktrap']) {
+			if (!target.volatiles['protect'] || !target.volatiles['kingsshield'] || !target.volatiles['spikyshield'] || !target.volatiles['lunarshield'] || !target.volatiles['obstruct'] || !target.volatiles['phoenixshield'] || !target.volatiles['burningbulwark'] || !target.volatiles['banefulbunker'] || !target.volatiles['silktrap']) {
 				return false;
 			}
-		},
-		basePowerCallback(source, target, move) {
-			{if (target.volatiles['protect'] || target.volatiles['kingsshield'] || target.volatiles['spikyshield'] || target.volatiles['lunarshield'] || target.volatiles['obstruct'] || target.volatiles['phoenixshield'] || target.volatiles['burningbulwark'] || target.volatiles['banefulbunker'] || target.volatiles['silktrap'])
-			return move.basePower * 2;
-			}
-			return move.basePower;
 		},
 		secondary: {
 			chance: 100,
@@ -2692,6 +2686,29 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		},
 		target: "normal",
 		type: "Dark",
+	},
+	perhand: {
+		num: 918,
+		accuracy: 100,
+		basePower: 65,
+		category: "Physical",
+		name: "Upper Hand",
+		pp: 15,
+		priority: 3,
+		flags: { contact: 1, protect: 1, mirror: 1, metronome: 1 },
+		onTry(source, target) {
+			const action = this.queue.willMove(target);
+			const move = action?.choice === 'move' ? action.move : null;
+			if (!move || move.priority <= 0.1 || move.category === 'Status') {
+				return false;
+			}
+		},
+		secondary: {
+			chance: 100,
+			volatileStatus: 'flinch',
+		},
+		target: "normal",
+		type: "Fighting",
 	},
 	v7strike: { // ZETA 2
 		num: 364,
