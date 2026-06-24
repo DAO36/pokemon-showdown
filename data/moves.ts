@@ -2673,10 +2673,8 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		pp: 15,
 		priority: 4,
 		flags: { contact: 1, bypasssub: 1, mirror: 1, punch: 1 },
-		onTry(source, target) {
-			const action = this.queue.willMove(target);
-			const move = action?.choice === 'move' ? action.move : null;
-			if (!target.volatiles['protect'] || !target.volatiles['kingsshield'] || !target.volatiles['spikyshield'] || !target.volatiles['lunarshield'] || !target.volatiles['obstruct'] || !target.volatiles['phoenixshield'] || !target.volatiles['burningbulwark'] || !target.volatiles['banefulbunker'] || !target.volatiles['silktrap']) {
+		onTry(source, move, target) {
+			if (!move.id === 'protect') {
 				return false;
 			}
 		},
