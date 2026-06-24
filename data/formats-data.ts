@@ -1993,6 +1993,11 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		doublesTier: "(DUU)",
 		natDexTier: "RU",
 	},
+	mightyenamega: {
+		tier: "ZU",
+		doublesTier: "(DUU)",
+		natDexTier: "RU",
+	},
 	zigzagoon: {
 		isNonstandard: "Past",
 		tier: "Illegal",
@@ -2152,8 +2157,11 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		natDexTier: "RU",
 	},
 	shedinja: {
-		isNonstandard: "Past",
-		tier: "Illegal",
+		tier: "UU",
+		natDexTier: "RU",
+	},
+	shedinjamega: {
+		tier: "OU",
 		natDexTier: "RU",
 	},
 	whismur: {
@@ -2208,6 +2216,16 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		natDexTier: "RU",
 	},
 	sableyemega: {
+        tier: "OU",
+        doublesTier: "(DUU)",
+        natDexTier: "OU",
+	},
+	sableyemegax: {
+        tier: "OU",
+        doublesTier: "(DUU)",
+        natDexTier: "Uber",
+	},
+	sableyemegay: {
         tier: "OU",
         doublesTier: "(DUU)",
         natDexTier: "OU",
@@ -2328,6 +2346,11 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
         doublesTier: "(DUU)",
         natDexTier: "OU",
 	},
+	sharpedomegaz: {
+        tier: "OU",
+        doublesTier: "(DUU)",
+        natDexTier: "OU",
+	},
 	wailmer: {
 		isNonstandard: "Past",
 		tier: "Illegal",
@@ -2377,6 +2400,11 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 	},
 	flygon: {
 		tier: "NU",
+		doublesTier: "(DUU)",
+		natDexTier: "RU",
+	},
+	flygonmega: {
+		tier: "UU",
 		doublesTier: "(DUU)",
 		natDexTier: "RU",
 	},
@@ -2475,6 +2503,11 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		doublesTier: "(DUU)",
 		natDexTier: "RU",
 	},
+	miloticmega: {
+		tier: "PU",
+		doublesTier: "(DUU)",
+		natDexTier: "RU",
+	},
 	castform: {
 		isNonstandard: "Past",
 		tier: "Illegal",
@@ -2520,6 +2553,11 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 	},
 	tropius: {
 		tier: "ZU",
+		doublesTier: "(DUU)",
+		natDexTier: "RU",
+	},
+	tropiusmega: {
+		tier: "NU",
 		doublesTier: "(DUU)",
 		natDexTier: "RU",
 	},

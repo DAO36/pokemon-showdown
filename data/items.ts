@@ -3664,6 +3664,17 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		num: 1113,
 		gen: 8,
 	},
+	flygonite:  {
+        name: "Flygonite ",
+        spritenum: 588,
+        megaStone: { "Flygon": "Flygon-Mega" },
+        itemUser: ["Flygon"],
+        onTakeItem(item, source) {
+            return !item.megaStone?.[source.baseSpecies.baseSpecies];
+        },
+        num: 656,
+        gen: 6,
+    },
 	flyinggem: {
 		name: "Flying Gem",
 		spritenum: 149,
@@ -5783,17 +5794,28 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		num: 209,
 		gen: 4,
 	},
-	mimikiumz: {
-		name: "Mimikium Z",
-		spritenum: 688,
-		onTakeItem: false,
-		zMove: "Let's Snuggle Forever",
-		zMoveFrom: "Play Rough",
-		itemUser: ["Mimikyu", "Mimikyu-Busted", "Mimikyu-Totem", "Mimikyu-Busted-Totem"],
-		num: 924,
-		isNonstandard: "Past",
-		gen: 7,
-	},
+	mightyenite:  {
+        name: "Mightyenite ",
+        spritenum: 588,
+        megaStone: { "Mightyena": "Mightyena-Mega" },
+        itemUser: ["Mightyena"],
+        onTakeItem(item, source) {
+            return !item.megaStone?.[source.baseSpecies.baseSpecies];
+        },
+        num: 656,
+        gen: 6,
+    },
+	milotite:  {
+        name: "Milotite ",
+        spritenum: 588,
+        megaStone: { "Milotic": "Milotic-Mega" },
+        itemUser: ["Milotic"],
+        onTakeItem(item, source) {
+            return !item.megaStone?.[source.baseSpecies.baseSpecies];
+        },
+        num: 656,
+        gen: 6,
+    },
 	miltankite:  {
         name: "Miltankite ",
         spritenum: 588,
@@ -5805,6 +5827,17 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
         num: 656,
         gen: 6,
     },
+	mimikiumz: {
+		name: "Mimikium Z",
+		spritenum: 688,
+		onTakeItem: false,
+		zMove: "Let's Snuggle Forever",
+		zMoveFrom: "Play Rough",
+		itemUser: ["Mimikyu", "Mimikyu-Busted", "Mimikyu-Totem", "Mimikyu-Busted-Totem"],
+		num: 924,
+		isNonstandard: "Past",
+		gen: 7,
+	},
 	mindplate: {
 		name: "Mind Plate",
 		spritenum: 291,
@@ -7164,6 +7197,30 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		gen: 6,
 		isNonstandard: "Past",
 	},
+	sablenitex: {
+		name: "Sablenite X",
+		spritenum: 614,
+		megaStone: { "Sableye": "Sableye-Mega-X" },
+		itemUser: ["Sableye"],
+		onTakeItem(item, source) {
+			return !item.megaStone?.[source.baseSpecies.baseSpecies];
+		},
+		num: 754,
+		gen: 6,
+		isNonstandard: "Past",
+	},
+	sablenitey: {
+		name: "Sablenite Y",
+		spritenum: 614,
+		megaStone: { "Sableye": "Sableye-Mega-Y" },
+		itemUser: ["Sableye"],
+		onTakeItem(item, source) {
+			return !item.megaStone?.[source.baseSpecies.baseSpecies];
+		},
+		num: 754,
+		gen: 6,
+		isNonstandard: "Past",
+	},
 	sachet: {
 		name: "Sachet",
 		spritenum: 691,
@@ -7386,7 +7443,28 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		},
 		num: 759,
 		gen: 6,
-		isNonstandard: "Past",
+	},
+	sharpedonitez: {
+		name: "Sharpedonite Z",
+		spritenum: 619,
+		megaStone: { "Sharpedo": "Sharpedo-Mega-Z" },
+		itemUser: ["Sharpedo"],
+		onTakeItem(item, source) {
+			return !item.megaStone?.[source.baseSpecies.baseSpecies];
+		},
+		num: 759,
+		gen: 6,
+	},
+	shedinjite: {
+		name: "Shedinjite",
+		spritenum: 619,
+		megaStone: { "Shedinja": "Shedinja-Mega" },
+		itemUser: ["Shedinja"],
+		onTakeItem(item, source) {
+			return !item.megaStone?.[source.baseSpecies.baseSpecies];
+		},
+		num: 759,
+		gen: 6,
 	},
 	shedshell: {
 		name: "Shed Shell",
@@ -9177,6 +9255,17 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		gen: 8,
 		isNonstandard: "Past",
 	},
+	tropiusite:  {
+        name: "Tropiusite ",
+        spritenum: 588,
+        megaStone: { "Tropius": "Tropius-Mega" },
+        itemUser: ["Tropius"],
+        onTakeItem(item, source) {
+            return !item.megaStone?.[source.baseSpecies.baseSpecies];
+        },
+        num: 656,
+        gen: 6,
+    },
 	twistedspoon: {
 		name: "Twisted Spoon",
 		spritenum: 520,
