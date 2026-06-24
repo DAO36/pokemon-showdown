@@ -462,6 +462,10 @@ export const ItemsText: { [id: IDEntry]: ItemText } = {
 		name: "Barbaracite",
 		shortDesc: "If held by a Barbaracle, this item allows it to Mega Evolve in battle.",
 	},
+	bastiodonite: {
+		name: "Bastiodonite",
+		shortDesc: "If held by a Bastiodon, this item allows it to Mega Evolve in battle.",
+	},
 	baxcalibrite: {
 		name: "Baxcalibrite",
 		shortDesc: "If held by a Baxcalibur, this item allows it to Mega Evolve in battle.",
@@ -568,6 +572,10 @@ export const ItemsText: { [id: IDEntry]: ItemText } = {
 			shortDesc: "An attack against the holder has its accuracy out of 255 lowered by 20.",
 		},
 	},
+	bronzite: {
+        name: "Bronzite",
+        shortDesc: "If held by a Bronzong, this item allows it to Mega Evolve.",
+    },
 	buggem: {
 		name: "Bug Gem",
 		shortDesc: "Holder's first successful Bug-type attack will have 1.3x power. Single use.",
@@ -861,6 +869,10 @@ export const ItemsText: { [id: IDEntry]: ItemText } = {
 		name: "Drampanite",
 		shortDesc: "If held by a Drampa, this item allows it to Mega Evolve in battle.",
 	},
+	drapionite: {
+		name: "Drapionite",
+		shortDesc: "If held by a Drapion, this item allows it to Mega Evolve in battle.",
+	},
 	dreadplate: {
 		name: "Dread Plate",
 		shortDesc: "Holder's Dark-type attacks have 1.2x power. Judgment is Dark type.",
@@ -871,6 +883,10 @@ export const ItemsText: { [id: IDEntry]: ItemText } = {
 		gen7: {
 			shortDesc: "A special Poke Ball that appears out of nowhere in a bag at the Entree Forest.",
 		},
+	},
+	drifblimite: {
+		name: "Drifblimite",
+		shortDesc: "If held by an Drifblim, this item allows it to Mega Evolve in battle.",
 	},
 	dubiousdisc: {
 		name: "Dubious Disc",
@@ -884,6 +900,10 @@ export const ItemsText: { [id: IDEntry]: ItemText } = {
 		name: "Dusk Ball",
 		shortDesc: "A Poke Ball that makes it easier to catch wild Pokemon at night or in caves.",
 	},
+	dusknoirite: {
+        name: "Dusknoirite",
+        shortDesc: "If held by a Dusknoir, this item allows it to Mega Evolve.",
+    },
 	duskstone: {
 		name: "Dusk Stone",
 		desc: "Evolves Murkrow into Honchkrow, Misdreavus into Mismagius, Lampent into Chandelure, and Doublade into Aegislash when used.",
@@ -949,6 +969,10 @@ export const ItemsText: { [id: IDEntry]: ItemText } = {
 		name: "Electirizer",
 		shortDesc: "Evolves Electabuzz into Electivire when traded.",
 	},
+	electivite: {
+        name: "Electivite",
+        shortDesc: "If held by a Electivire, this item allows it to Mega Evolve.",
+    },
 	electricgem: {
 		name: "Electric Gem",
 		shortDesc: "Holder's first successful Electric-type attack will have 1.3x power. Single use.",
@@ -971,6 +995,18 @@ export const ItemsText: { [id: IDEntry]: ItemText } = {
 	emboarite: {
 		name: "Emboarite",
 		shortDesc: "If held by an Emboar, this item allows it to Mega Evolve in battle.",
+	},
+	empoleonitex: {
+		name: "Empoleonite X",
+		shortDesc: "If held by an Empoleon, this item allows it to Mega Evolve into Mega Empoleon X in battle.",
+	},
+	empoleonitey: {
+		name: "Empoleonite Y",
+		shortDesc: "If held by an Empoleon, this item allows it to Mega Evolve into Mega Empoleon Y in in battle.",
+	},
+	empoleonitez: {
+		name: "Empoleonite Z",
+		shortDesc: "If held by an Empoleon, this item allows it to Mega Evolve into Mega Empoleon Z in in battle.",
 	},
 	enigmaberry: {
 		name: "Enigma Berry",
@@ -1232,6 +1268,10 @@ export const ItemsText: { [id: IDEntry]: ItemText } = {
 		name: "Glimmoranite",
 		shortDesc: "If held by a Glimmora, this item allows it to Mega Evolve in battle.",
 	},
+	gliscorite: {
+		name: "Gliscorite",
+		shortDesc: "If held by a Gliscor, this item allows it to Mega Evolve in battle.",
+	},
 	goldbottlecap: {
 		name: "Gold Bottle Cap",
 		shortDesc: "Used for Hyper Training. All of a Pokemon's stats are calculated with an IV of 31.",
@@ -1372,6 +1412,10 @@ export const ItemsText: { [id: IDEntry]: ItemText } = {
 		name: "Heracronite",
 		shortDesc: "If held by a Heracross, this item allows it to Mega Evolve in battle.",
 	},
+	honchkrite: {
+		name: "Honchkrite",
+		shortDesc: "If held by a Honchkrow, this item allows it to Mega Evolve in battle.",
+	},
 	hondewberry: {
 		name: "Hondew Berry",
 		shortDesc: "Cannot be eaten by the holder. No effect when eaten with Bug Bite or Pluck.",
@@ -1436,6 +1480,10 @@ export const ItemsText: { [id: IDEntry]: ItemText } = {
 		name: "Incinerite",
 		shortDesc: "If held by a Incineroar, this item allows it to Mega Evolve in battle.",
 	},
+	infernapite: {
+        name: "Infernapite",
+        shortDesc: "If held by a Infernape, this item allows it to Mega Evolve.",
+    },
 	insectplate: {
 		name: "Insect Plate",
 		shortDesc: "Holder's Bug-type attacks have 1.2x power. Judgment is Bug type.",
@@ -1679,12 +1727,20 @@ export const ItemsText: { [id: IDEntry]: ItemText } = {
 		name: "Magmarizer",
 		shortDesc: "Evolves Magmar into Magmortar when traded.",
 	},
+	magmortite: {
+		name: "Magmortite",
+		shortDesc: "If held by a Magmortar, this item allows it to Mega Evolve in battle.",
+	},
 	magnet: {
 		name: "Magnet",
 		shortDesc: "Holder's Electric-type attacks have 1.2x power.",
 		gen3: {
 			shortDesc: "Holder's Electric-type attacks have 1.1x power.",
 		},
+	},
+	magnezonite: {
+		name: "Magnezonite",
+		shortDesc: "If held by a Magnezone, this item allows it to Mega Evolve in battle.",
 	},
 	magoberry: {
 		name: "Mago Berry",
@@ -1711,6 +1767,10 @@ export const ItemsText: { [id: IDEntry]: ItemText } = {
 	maliciousarmor: {
 		name: "Malicious Armor",
 		shortDesc: "Evolves Charcadet into Ceruledge when used.",
+	},
+	mamoswinite: {
+		name: "Mamoswinite",
+		shortDesc: "If held by a Mamoswine, this item allows it to Mega Evolve in battle.",
 	},
 	manectite: {
 		name: "Manectite",
@@ -1859,6 +1919,10 @@ export const ItemsText: { [id: IDEntry]: ItemText } = {
 
 		activate: "  [POKEMON] used its Mirror Herb to mirror its opponent's stat changes!",
 	},
+	mismagiusite: {
+        name: "Mismagiusite",
+        shortDesc: "If held by a Mismagius, this item allows it to Mega Evolve.",
+    },
 	mistyseed: {
 		name: "Misty Seed",
 		shortDesc: "If the terrain is Misty Terrain, raises holder's Sp. Def by 1 stage. Single use.",
@@ -2159,6 +2223,10 @@ export const ItemsText: { [id: IDEntry]: ItemText } = {
 		name: "Raichunite Y",
 		shortDesc: "If held by a Raichu, this item allows it to Mega Evolve into Mega Raichu Y in battle.",
 	},
+	rampardosite: {
+		name: "Rampardosite",
+		shortDesc: "If held by a Rampardos, this item allows it to Mega Evolve in battle.",
+	},
 	rarebone: {
 		name: "Rare Bone",
 		shortDesc: "No competitive use other than when used with Fling.",
@@ -2199,6 +2267,10 @@ export const ItemsText: { [id: IDEntry]: ItemText } = {
 		name: "Repeat Ball",
 		shortDesc: "A Poke Ball that works well on Pokemon species that were previously caught.",
 	},
+	rhyperiorite: {
+        name: "Rhyperiorite",
+        shortDesc: "If held by a Rhyperior, this item allows it to Mega Evolve.",
+    },
 	ribbonsweet: {
 		name: "Ribbon Sweet",
 		shortDesc: "Evolves Milcery into Alcremie when held and spun around.",
@@ -2478,6 +2550,10 @@ export const ItemsText: { [id: IDEntry]: ItemText } = {
 		name: "Spelon Berry",
 		shortDesc: "Cannot be eaten by the holder. No effect when eaten with Bug Bite or Pluck.",
 	},
+	spiritombite: {
+        name: "Spiritombite",
+        shortDesc: "If held by a Spiritomb, this item allows it to Mega Evolve.",
+    },
 	splashplate: {
 		name: "Splash Plate",
 		shortDesc: "Holder's Water-type attacks have 1.2x power. Judgment is Water type.",
@@ -2633,6 +2709,10 @@ export const ItemsText: { [id: IDEntry]: ItemText } = {
 		name: "Timer Ball",
 		shortDesc: "A Poke Ball that becomes better the more turns there are in a battle.",
 	},
+	togekissite: {
+		name: "Togekissite",
+		shortDesc: "If held by a Togekiss, this item allows it to Mega Evolve in battle.",
+	},
 	torterrite: {
 		name: "Torterrite",
 		shortDesc: "If held by a Torterra, this item allows it to Mega Evolve in battle.",
@@ -2644,6 +2724,10 @@ export const ItemsText: { [id: IDEntry]: ItemText } = {
 	toxicplate: {
 		name: "Toxic Plate",
 		shortDesc: "Holder's Poison-type attacks have 1.2x power. Judgment is Poison type.",
+	},
+	toxicroakite: {
+		name: "Toxicroakite",
+		shortDesc: "If held by a Toxicroak, this item allows it to Mega Evolve in battle.",
 	},
 	tr00: {
 		name: "TR00",
@@ -3163,6 +3247,10 @@ export const ItemsText: { [id: IDEntry]: ItemText } = {
 		name: "Obamacare",
 		shortDesc: "If holder is hit super effectively, raises Speed by 2 stages. Single use. Thanks Obama.",
 	},
+	weavilite: {
+		name: "Weavilite",
+		shortDesc: "If held by a Weavile, this item allows it to Mega Evolve in battle.",
+	},
 	wellspringmask: {
 		name: "Wellspring Mask",
 		shortDesc: "Ogerpon-Wellspring: 1.2x power attacks; Terastallize to gain Embody Aspect.",
@@ -3210,6 +3298,10 @@ export const ItemsText: { [id: IDEntry]: ItemText } = {
 	yacheberry: {
 		name: "Yache Berry",
 		shortDesc: "Halves damage taken from a supereffective Ice-type attack. Single use.",
+	},
+	yanmegite: {
+		name: "Yanmegite",
+		shortDesc: "If held by a Yanmega, this item allows it to Mega Evolve in battle.",
 	},
 	zapplate: {
 		name: "Zap Plate",
