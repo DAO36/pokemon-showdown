@@ -4893,6 +4893,11 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		isNonstandard: "Past",
 		tier: "Illegal",
 	},
+	ribombeemega: {
+		tier: "UU",
+		doublesTier: "(DUU)",
+		natDexTier: "RU",
+	},
 	rockruff: {
 		tier: "LC",
 	},
@@ -4930,6 +4935,11 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		doublesTier: "(DUU)",
 		natDexTier: "OU",
 	},
+	toxapexmega: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "OU",
+	},
 	mudbray: {
 		tier: "LC",
 	},
@@ -4950,6 +4960,11 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		isNonstandard: "Past",
 		tier: "Illegal",
 	},
+	araquanidmega: {
+		tier: "UUBL",
+		doublesTier: "DUU",
+		natDexTier: "RU",
+	},
 	fomantis: {
 		tier: "LC",
 	},
@@ -4961,6 +4976,11 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 	lurantistotem: {
 		isNonstandard: "Past",
 		tier: "Illegal",
+	},
+	lurantismega: {
+		tier: "UU",
+		doublesTier: "(DUU)",
+		natDexTier: "RU",
 	},
 	morelull: {
 		isNonstandard: "Past",
@@ -4984,6 +5004,11 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		isNonstandard: "Past",
 		tier: "Illegal",
 	},
+	salazzlemega: {
+		tier: "UUBL",
+		doublesTier: "(DUU)",
+		natDexTier: "RU",
+	},
 	stufful: {
 		isNonstandard: "Past",
 		tier: "Illegal",
@@ -5002,6 +5027,11 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 	},
 	tsareena: {
 		tier: "NU",
+		doublesTier: "(DUU)",
+		natDexTier: "RU",
+	},
+	tsareenamega: {
+		tier: "UUBL",
 		doublesTier: "(DUU)",
 		natDexTier: "RU",
 	},
@@ -5039,6 +5069,11 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 	},
 	palossand: {
 		tier: "PU",
+		doublesTier: "(DUU)",
+		natDexTier: "RU",
+	},
+	palossandmega: {
+		tier: "UU",
 		doublesTier: "(DUU)",
 		natDexTier: "RU",
 	},
@@ -5213,6 +5248,11 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		isNonstandard: "Past",
 		tier: "Illegal",
 	},
+	kommoomega: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "UUBL",
+	},
 	tapukoko: {
 		isNonstandard: "Past",
 		tier: "Illegal",
@@ -5250,38 +5290,59 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		natDexTier: "Uber",
 	},
 	nihilego: {
-		isNonstandard: "Past",
-		tier: "Illegal",
+		tier: "RU",
+		natDexTier: "RU",
+	},
+	nihilegomega: {
+		tier: "UUBL",
 		natDexTier: "RU",
 	},
 	buzzwole: {
-		isNonstandard: "Past",
-		tier: "Illegal",
+		tier: "UU",
+		natDexTier: "UU",
+	},
+	buzzwolemega: {
+		tier: "OU",
 		natDexTier: "UU",
 	},
 	pheromosa: {
-		isNonstandard: "Past",
-		tier: "Illegal",
+		tier: "Uber",
+		natDexTier: "Uber",
+	},
+	pheromosamega: {
+		tier: "Uber",
 		natDexTier: "Uber",
 	},
 	xurkitree: {
-		isNonstandard: "Past",
-		tier: "Illegal",
+		tier: "UUBL",
+		natDexTier: "UUBL",
+	},
+	xurkitreemega: {
+		tier: "OU",
 		natDexTier: "UUBL",
 	},
 	celesteela: {
-		isNonstandard: "Past",
-		tier: "Illegal",
+		tier: "UU",
+		natDexTier: "UU",
+	},
+	celesteelamega: {
+		tier: "OU",
 		natDexTier: "UU",
 	},
 	kartana: {
-		isNonstandard: "Past",
-		tier: "Illegal",
+		tier: "UUBL",
+		natDexTier: "UUBL",
+	},
+	kartanamega: {
+		tier: "OU",
 		natDexTier: "UUBL",
 	},
 	guzzlord: {
-		isNonstandard: "Past",
-		tier: "Illegal",
+		tier: "NU",
+		natDexTier: "RU",
+	},
+	guzzlordmega: {
+		tier: "RUBL",
 		natDexTier: "RU",
 	},
 	necrozma: {
@@ -5328,18 +5389,27 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		natDexTier: "NFE",
 	},
 	naganadel: {
-		isNonstandard: "Past",
-		tier: "Illegal",
+		tier: "Uber",
+		natDexTier: "Uber",
+	},
+	naganadelmega: {
+		tier: "Uber",
 		natDexTier: "Uber",
 	},
 	stakataka: {
-		isNonstandard: "Past",
-		tier: "Illegal",
+		tier: "RU",
+		natDexTier: "RU",
+	},
+	stakatakamega: {
+		tier: "RUBL",
 		natDexTier: "RU",
 	},
 	blacephalon: {
-		isNonstandard: "Past",
-		tier: "Illegal",
+		tier: "UU",
+		natDexTier: "UU",
+	},
+	blacephalonmega: {
+		tier: "OU",
 		natDexTier: "UU",
 	},
 	zeraora: {
