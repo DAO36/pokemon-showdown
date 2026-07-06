@@ -4384,6 +4384,11 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		doublesTier: "(DUU)",
 		natDexTier: "RU",
 	},
+	talonflamemega: {
+		tier: "UUBL",
+		doublesTier: "(DUU)",
+		natDexTier: "RU",
+	},
 	scatterbug: {
 		tier: "LC",
 	},
@@ -4565,8 +4570,11 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		natDexTier: "LC",
 	},
 	tyrantrum: {
-		isNonstandard: "Past",
-		tier: "Illegal",
+		tier: "UU",
+		natDexTier: "RU",
+	},
+	tyrantrummega: {
+		tier: "OU",
 		natDexTier: "RU",
 	},
 	amaura: {
@@ -4575,8 +4583,11 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		natDexTier: "LC",
 	},
 	aurorus: {
-		isNonstandard: "Past",
-		tier: "Illegal",
+		tier: "RU",
+		natDexTier: "RU",
+	},
+	aurorusmega: {
+		tier: "UU",
 		natDexTier: "RU",
 	},
 	hawlucha: {
@@ -4679,13 +4690,18 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		doublesTier: "(DUU)",
 		natDexTier: "RU",
 	},
+	noivernmega: {
+		tier: "UU",
+		doublesTier: "(DUU)",
+		natDexTier: "RU",
+	},
 	xerneas: {
 		isNonstandard: "Past",
 		tier: "Illegal",
 		natDexTier: "AG",
 	},
 	xerneasneutral: {
-		isNonstandard: "Custom", // can't be used in battle
+		isNonstandard: "Custom", // can't be used in battle?
 		tier: "Illegal",
 	},
 	yveltal: {

@@ -442,6 +442,10 @@ export const ItemsText: { [id: IDEntry]: ItemText } = {
 		name: "Audinite",
 		shortDesc: "If held by an Audino, this item allows it to Mega Evolve in battle.",
 	},
+	aurorite: {
+		name: "Aurorite",
+		shortDesc: "If held by an Aurorus, this item allows it to Mega Evolve in battle.",
+	},
 	auspiciousarmor: {
 		name: "Auspicious Armor",
 		shortDesc: "Evolves Charcadet into Armarouge when used.",
@@ -2026,6 +2030,10 @@ export const ItemsText: { [id: IDEntry]: ItemText } = {
         name: "Nidonite",
         shortDesc: "If held by a Nidoking, this item allows it to Mega Evolve.",
     },
+	noivernite: {
+        name: "Noivernite",
+        shortDesc: "If held by a Noivern, this item allows it to Mega Evolve.",
+    },
 	nomelberry: {
 		name: "Nomel Berry",
 		shortDesc: "Cannot be eaten by the holder. No effect when eaten with Bug Bite or Pluck.",
@@ -2709,6 +2717,10 @@ export const ItemsText: { [id: IDEntry]: ItemText } = {
 		name: "Syrupy Apple",
 		shortDesc: "Evolves Applin into Dipplin when used.",
 	},
+	talonflamite: {
+        name: "Talonflamite",
+        shortDesc: "If held by a Talonflame, this item allows it to Mega Evolve.",
+    },
 	tamatoberry: {
 		name: "Tamato Berry",
 		shortDesc: "Cannot be eaten by the holder. No effect when eaten with Bug Bite or Pluck.",
@@ -3220,6 +3232,10 @@ export const ItemsText: { [id: IDEntry]: ItemText } = {
 		name: "Tyranitarite Z",
 		shortDesc: "If held by a Tyranitar, this item allows it to Mega Evolve into Mega Tyranitar Z in battle.",
 	},
+	tyrantrumite: {
+        name: "Tyrantrumite",
+        shortDesc: "If held by a Tyrantrum, this item allows it to Mega Evolve.",
+    },
 	ultraball: {
 		name: "Ultra Ball",
 		shortDesc: "An ultra-performance Ball that provides a higher catch rate than a Great Ball.",
