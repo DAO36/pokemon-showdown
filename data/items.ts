@@ -1510,6 +1510,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		},
 		num: 755,
 		gen: 6,
+		isNonstandard: "Past",
 	},
 	ampharosite: {
 		name: "Ampharosite",
@@ -1521,6 +1522,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		},
 		num: 658,
 		gen: 6,
+		isNonstandard: "Past",
 	},
 	apicotberry: {
 		name: "Apicot Berry",
@@ -1682,6 +1684,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		},
 		num: 668,
 		gen: 6,
+		isNonstandard: "Past",
 	},
 	barbaracite: {
 		name: "Barbaracite",
@@ -4040,6 +4043,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		},
 		num: 756,
 		gen: 6,
+		isNonstandard: "Past",
 	},
 	galvantulite:  {
         name: "Galvantulite",
@@ -4137,6 +4141,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		},
 		num: 657,
 		gen: 6,
+		isNonstandard: "Past",
 	},
 	gengarite: {
 		name: "Gengarite",
@@ -4234,6 +4239,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		},
 		num: 763,
 		gen: 6,
+		isNonstandard: "Past",
 	},
 	glimmoranite: {
 		name: "Glimmoranite",
@@ -5218,6 +5224,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		},
 		num: 684,
 		gen: 6,
+		isNonstandard: "Past",
 	},
 	latiosite: {
 		name: "Latiosite",
@@ -5229,6 +5236,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		},
 		num: 685,
 		gen: 6,
+		isNonstandard: "Past",
 	},
 	laxincense: {
 		name: "Lax Incense",
@@ -5449,6 +5457,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		},
 		num: 673,
 		gen: 6,
+		isNonstandard: "Past",
 	},
 	lucarionitez: {
 		name: "Lucarionite Z",
@@ -7805,6 +7814,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		},
 		num: 769,
 		gen: 6,
+		isNonstandard: "Past",
 	},
 	salazzlite: {
 		name: "Salazzlite",
