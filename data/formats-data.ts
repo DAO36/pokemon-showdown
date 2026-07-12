@@ -3347,9 +3347,8 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		natDexTier: "RU",
 	},
 	emboarmega: {
-		tier: "RU",
-		doublesTier: "(DUU)",
-		natDexTier: "RU",
+		isNonstandard: "Future",
+		tier: "Illegal",
 	},
 	oshawott: {
 		tier: "LC",
@@ -3510,9 +3509,8 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		natDexTier: "UU",
 	},
 	excadrillmega: {
-		tier: "OU",
-		doublesTier: "(DUU)",
-		natDexTier: "UU",
+		isNonstandard: "Future",
+		tier: "Illegal",
 	},
 	audino: {
 		tier: "RU",
