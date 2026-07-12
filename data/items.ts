@@ -1608,17 +1608,6 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		gen: 6,
 		isNonstandard: "Past",
 	},
-	aurorite: {
-		name: "Aurorite",
-		spritenum: 617,
-		megaStone: { "Aurorus": "Aurorus-Mega" },
-		itemUser: ["Aurorus"],
-		onTakeItem(item, source) {
-			return !item.megaStone?.[source.baseSpecies.baseSpecies];
-		},
-		num: 757,
-		gen: 6,
-	},
 	auspiciousarmor: {
 		name: "Auspicious Armor",
 		spritenum: 753,
@@ -6384,17 +6373,6 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
         num: 656,
         gen: 6,
     },
-	noivernite:  {
-        name: "Noivernite",
-        spritenum: 588,
-        megaStone: { "Noivern": "Noivern-Mega" },
-        itemUser: ["Noivern"],
-        onTakeItem(item, source) {
-            return !item.megaStone?.[source.baseSpecies.baseSpecies];
-        },
-        num: 656,
-        gen: 6,
-    },
 	nomelberry: {
 		name: "Nomel Berry",
 		spritenum: 306,
@@ -8471,17 +8449,6 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		num: 2402,
 		gen: 9,
 	},
-	talonflamite:  {
-        name: "Talonflamite",
-        spritenum: 588,
-        megaStone: { "Talonflame": "Talonflame-Mega" },
-        itemUser: ["Talonflame"],
-        onTakeItem(item, source) {
-            return !item.megaStone?.[source.baseSpecies.baseSpecies];
-        },
-        num: 656,
-        gen: 6,
-    },
 	tamatoberry: {
 		name: "Tamato Berry",
 		spritenum: 486,
@@ -9763,17 +9730,6 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		num: 669,
 		gen: 6,
 	},
-	tyrantrumite:  {
-        name: "Tyrantrumite",
-        spritenum: 588,
-        megaStone: { "Tyrantrum": "Tyrantrum-Mega" },
-        itemUser: ["Tyrantrum"],
-        onTakeItem(item, source) {
-            return !item.megaStone?.[source.baseSpecies.baseSpecies];
-        },
-        num: 656,
-        gen: 6,
-    },
 	ultraball: {
 		name: "Ultra Ball",
 		spritenum: 521,
