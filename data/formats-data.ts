@@ -81,9 +81,8 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
         natDexTier: "OU",
 	},
 	blastoisegmax: {
-		tier: "OU",
-        doublesTier: "(DUU)",
-        natDexTier: "OU",
+		isNonstandard: "Past",
+		tier: "Illegal",
 	},
 	caterpie: {
 		isNonstandard: "Past",
