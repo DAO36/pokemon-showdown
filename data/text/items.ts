@@ -422,10 +422,6 @@ export const ItemsText: { [id: IDEntry]: ItemText } = {
 		name: "Apicot Berry",
 		shortDesc: "Raises holder's Sp. Def by 1 stage when at 1/4 max HP or less. Single use.",
 	},
-	araquanite: {
-		name: "Araquanite",
-		shortDesc: "If held by an Araquanid, this item allows it to Mega Evolve in battle.",
-	},
 	armorfossil: {
 		name: "Armor Fossil",
 		shortDesc: "Can be revived into Shieldon.",
@@ -513,10 +509,6 @@ export const ItemsText: { [id: IDEntry]: ItemText } = {
 		name: "Binding Band",
 		shortDesc: "Holder's partial-trapping moves deal 1/6 max HP per turn instead of 1/8.",
 	},
-	blacephalite: {
-        name: "Blacephalite",
-        shortDesc: "If held by a Blacephalon, this item allows it to Mega Evolve.",
-    },
 	blackbelt: {
 		name: "Black Belt",
 		shortDesc: "Holder's Fighting-type attacks have 1.2x power.",
@@ -607,17 +599,9 @@ export const ItemsText: { [id: IDEntry]: ItemText } = {
 		name: "Burn Drive",
 		shortDesc: "Holder's Techno Blast is Fire type.",
 	},
-	buzzwolite: {
-		name: "Buzzwolite",
-		shortDesc: "If held by a Buzzwole, this item allows it to Mega Evolve in battle.",
-	},
 	cameruptite: {
 		name: "Cameruptite",
 		shortDesc: "If held by a Camerupt, this item allows it to Mega Evolve in battle.",
-	},
-	celesteelite: {
-		name: "Celesteelite",
-		shortDesc: "If held by a Celesteela, this item allows it to Mega Evolve in battle.",
 	},
 	cellbattery: {
 		name: "Cell Battery",
@@ -1401,10 +1385,6 @@ export const ItemsText: { [id: IDEntry]: ItemText } = {
 		name: "Ground Memory",
 		shortDesc: "Holder's Multi-Attack is Ground type.",
 	},
-	guzzlordite: {
-		name: "Guzzlordite",
-		shortDesc: "If held by a Guzzlord, this item allows it to Mega Evolve in battle.",
-	},
 	gyaradosite: {
 		name: "Gyaradosite",
 		shortDesc: "If held by a Gyarados, this item allows it to Mega Evolve in battle.",
@@ -1575,10 +1555,6 @@ export const ItemsText: { [id: IDEntry]: ItemText } = {
 		name: "Kangaskhanite",
 		shortDesc: "If held by a Kangaskhan, this item allows it to Mega Evolve in battle.",
 	},
-	kartanite: {
-		name: "Kartanite",
-		shortDesc: "If held by a Kartana, this item allows it to Mega Evolve in battle.",
-	},
 	kasibberry: {
 		name: "Kasib Berry",
 		shortDesc: "Halves damage taken from a supereffective Ghost-type attack. Single use.",
@@ -1616,10 +1592,6 @@ export const ItemsText: { [id: IDEntry]: ItemText } = {
 	kommoniumz: {
 		name: "Kommonium Z",
 		shortDesc: "If held by a Kommo-o with Clanging Scales, it can use Clangorous Soulblaze.",
-	},
-	kommonite: {
-		name: "Kommonite",
-		shortDesc: "If held by a Kommo-o, this item allows it to Mega Evolve in battle.",
 	},
 	krookodilite: {
 		name: "Krookodilite",
@@ -1766,10 +1738,6 @@ export const ItemsText: { [id: IDEntry]: ItemText } = {
 	lunaliumz: {
 		name: "Lunalium Z",
 		shortDesc: "Lunala or Dawn Wings Necrozma with Moongeist Beam can use a special Z-Move.",
-	},
-	lurantisite: {
-		name: "Lurantisite",
-		shortDesc: "If held by a Lurantis, this item allows it to Mega Evolve.",
 	},
 	lureball: {
 		name: "Lure Ball",
@@ -2039,10 +2007,6 @@ export const ItemsText: { [id: IDEntry]: ItemText } = {
 			shortDesc: "Holder's Water-type attacks have 1.1x power.",
 		},
 	},
-	naganadelite: {
-        name: "Naganadelite",
-        shortDesc: "If held by a Naganadel, this item allows it to Mega Evolve.",
-    },
 	nanabberry: {
 		name: "Nanab Berry",
 		shortDesc: "Cannot be eaten by the holder. No effect when eaten with Bug Bite or Pluck.",
@@ -2065,10 +2029,6 @@ export const ItemsText: { [id: IDEntry]: ItemText } = {
 	nidonite: {
         name: "Nidonite",
         shortDesc: "If held by a Nidoking, this item allows it to Mega Evolve.",
-    },
-	nihilegolite: {
-        name: "Nihilegolite",
-        shortDesc: "If held by a Nihilego, this item allows it to Mega Evolve.",
     },
 	noivernite: {
         name: "Noivernite",
@@ -2109,10 +2069,6 @@ export const ItemsText: { [id: IDEntry]: ItemText } = {
 		name: "Oval Stone",
 		shortDesc: "Evolves Happiny into Chansey when held and leveled up during the day.",
 	},
-	palossandite: {
-        name: "Palossandite",
-        shortDesc: "If held by a Palossand, this item allows it to Mega Evolve.",
-    },
 	pamtreberry: {
 		name: "Pamtre Berry",
 		shortDesc: "Cannot be eaten by the holder. No effect when eaten with Bug Bite or Pluck.",
@@ -2140,10 +2096,6 @@ export const ItemsText: { [id: IDEntry]: ItemText } = {
 	petayaberry: {
 		name: "Petaya Berry",
 		shortDesc: "Raises holder's Sp. Atk by 1 stage when at 1/4 max HP or less. Single use.",
-	},
-	pheromosite: {
-		name: "Pheromosite",
-		shortDesc: "If held by a Pheromosa, this item allows it to Mega Evolve in battle.",
 	},
 	pidgeotite: {
 		name: "Pidgeotite",
@@ -2391,10 +2343,6 @@ export const ItemsText: { [id: IDEntry]: ItemText } = {
 		name: "Ribbon Sweet",
 		shortDesc: "Evolves Milcery into Alcremie when held and spun around.",
 	},
-	ribombite: {
-        name: "Ribombite",
-        shortDesc: "If held by a Ribombee, this item allows it to Mega Evolve.",
-    },
 	rindoberry: {
 		name: "Rindo Berry",
 		shortDesc: "Halves damage taken from a supereffective Grass-type attack. Single use.",
@@ -2499,10 +2447,6 @@ export const ItemsText: { [id: IDEntry]: ItemText } = {
 	salamencite: {
 		name: "Salamencite",
 		shortDesc: "If held by a Salamence, this item allows it to Mega Evolve in battle.",
-	},
-	salazzlite: {
-		name: "Salazzlite",
-		shortDesc: "If held by a Salazzle, this item allows it to Mega Evolve in battle.",
 	},
 	samurite: {
 		name: "Samurite",
@@ -2690,10 +2634,6 @@ export const ItemsText: { [id: IDEntry]: ItemText } = {
 		name: "Sport Ball",
 		shortDesc: "A special Poke Ball for the Bug-Catching Contest.",
 	},
-	stakatakite: {
-		name: "Stakatakite",
-		shortDesc: "If held by a Stakataka, this item allows it to Mega Evolve in battle.",
-	},
 	staraptite: {
 		name: "Staraptite",
 		shortDesc: "If held by a Staraptor, this item allows it to Mega Evolve in battle.",
@@ -2852,10 +2792,6 @@ export const ItemsText: { [id: IDEntry]: ItemText } = {
 	torterrite: {
 		name: "Torterrite",
 		shortDesc: "If held by a Torterra, this item allows it to Mega Evolve in battle.",
-	},
-	toxapexite: {
-		name: "Toxapexite",
-		shortDesc: "If held by a Toxapex, this item allows it to Mega Evolve in battle.",
 	},
 	toxicorb: {
 		name: "Toxic Orb",
@@ -3269,10 +3205,6 @@ export const ItemsText: { [id: IDEntry]: ItemText } = {
 		name: "TR99",
 		shortDesc: "Teaches certain Pokemon the move Body Press. One use.",
 	},
-	tsareenite: {
-		name: "Tsareenite",
-		shortDesc: "If held by a Tsareena, this item allows it to Mega Evolve in battle.",
-	},
 	tropiusite: {
 		name: "Tropiusite",
 		shortDesc: "If held by a Tropius, this item allows it to Mega Evolve in battle.",
@@ -3446,10 +3378,6 @@ export const ItemsText: { [id: IDEntry]: ItemText } = {
 	xatutite: {
 		name: "Xatutite",
 		shortDesc: "If held by a Xatu, this item allows it to Mega Evolve in battle.",
-	},
-	xurkitrite: {
-		name: "Xurkitrite",
-		shortDesc: "If held by a Xurkitree, this item allows it to Mega Evolve in battle.",
 	},
 	yacheberry: {
 		name: "Yache Berry",

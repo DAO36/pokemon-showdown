@@ -4893,11 +4893,6 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		isNonstandard: "Past",
 		tier: "Illegal",
 	},
-	ribombeemega: {
-		tier: "UU",
-		doublesTier: "(DUU)",
-		natDexTier: "RU",
-	},
 	rockruff: {
 		tier: "LC",
 	},
@@ -4935,11 +4930,6 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		doublesTier: "(DUU)",
 		natDexTier: "OU",
 	},
-	toxapexmega: {
-		tier: "OU",
-		doublesTier: "(DUU)",
-		natDexTier: "OU",
-	},
 	mudbray: {
 		tier: "LC",
 	},
@@ -4960,11 +4950,6 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		isNonstandard: "Past",
 		tier: "Illegal",
 	},
-	araquanidmega: {
-		tier: "UUBL",
-		doublesTier: "DUU",
-		natDexTier: "RU",
-	},
 	fomantis: {
 		tier: "LC",
 	},
@@ -4976,11 +4961,6 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 	lurantistotem: {
 		isNonstandard: "Past",
 		tier: "Illegal",
-	},
-	lurantismega: {
-		tier: "UU",
-		doublesTier: "(DUU)",
-		natDexTier: "RU",
 	},
 	morelull: {
 		isNonstandard: "Past",
@@ -5004,11 +4984,6 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		isNonstandard: "Past",
 		tier: "Illegal",
 	},
-	salazzlemega: {
-		tier: "UUBL",
-		doublesTier: "(DUU)",
-		natDexTier: "RU",
-	},
 	stufful: {
 		isNonstandard: "Past",
 		tier: "Illegal",
@@ -5027,11 +5002,6 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 	},
 	tsareena: {
 		tier: "NU",
-		doublesTier: "(DUU)",
-		natDexTier: "RU",
-	},
-	tsareenamega: {
-		tier: "UUBL",
 		doublesTier: "(DUU)",
 		natDexTier: "RU",
 	},
@@ -5069,11 +5039,6 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 	},
 	palossand: {
 		tier: "PU",
-		doublesTier: "(DUU)",
-		natDexTier: "RU",
-	},
-	palossandmega: {
-		tier: "UU",
 		doublesTier: "(DUU)",
 		natDexTier: "RU",
 	},
@@ -5248,11 +5213,6 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		isNonstandard: "Past",
 		tier: "Illegal",
 	},
-	kommoomega: {
-		tier: "OU",
-		doublesTier: "(DUU)",
-		natDexTier: "UUBL",
-	},
 	tapukoko: {
 		isNonstandard: "Past",
 		tier: "Illegal",
@@ -5290,59 +5250,38 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		natDexTier: "Uber",
 	},
 	nihilego: {
-		tier: "RU",
-		natDexTier: "RU",
-	},
-	nihilegomega: {
-		tier: "UUBL",
+		isNonstandard: "Past",
+		tier: "Illegal",
 		natDexTier: "RU",
 	},
 	buzzwole: {
-		tier: "UU",
-		natDexTier: "UU",
-	},
-	buzzwolemega: {
-		tier: "OU",
+		isNonstandard: "Past",
+		tier: "Illegal",
 		natDexTier: "UU",
 	},
 	pheromosa: {
-		tier: "Uber",
-		natDexTier: "Uber",
-	},
-	pheromosamega: {
-		tier: "Uber",
+		isNonstandard: "Past",
+		tier: "Illegal",
 		natDexTier: "Uber",
 	},
 	xurkitree: {
-		tier: "UUBL",
-		natDexTier: "UUBL",
-	},
-	xurkitreemega: {
-		tier: "OU",
+		isNonstandard: "Past",
+		tier: "Illegal",
 		natDexTier: "UUBL",
 	},
 	celesteela: {
-		tier: "UU",
-		natDexTier: "UU",
-	},
-	celesteelamega: {
-		tier: "OU",
+		isNonstandard: "Past",
+		tier: "Illegal",
 		natDexTier: "UU",
 	},
 	kartana: {
-		tier: "UUBL",
-		natDexTier: "UUBL",
-	},
-	kartanamega: {
-		tier: "OU",
+		isNonstandard: "Past",
+		tier: "Illegal",
 		natDexTier: "UUBL",
 	},
 	guzzlord: {
-		tier: "NU",
-		natDexTier: "RU",
-	},
-	guzzlordmega: {
-		tier: "RUBL",
+		isNonstandard: "Past",
+		tier: "Illegal",
 		natDexTier: "RU",
 	},
 	necrozma: {
@@ -5389,27 +5328,18 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		natDexTier: "NFE",
 	},
 	naganadel: {
-		tier: "Uber",
-		natDexTier: "Uber",
-	},
-	naganadelmega: {
-		tier: "Uber",
+		isNonstandard: "Past",
+		tier: "Illegal",
 		natDexTier: "Uber",
 	},
 	stakataka: {
-		tier: "RU",
-		natDexTier: "RU",
-	},
-	stakatakamega: {
-		tier: "RUBL",
+		isNonstandard: "Past",
+		tier: "Illegal",
 		natDexTier: "RU",
 	},
 	blacephalon: {
-		tier: "UU",
-		natDexTier: "UU",
-	},
-	blacephalonmega: {
-		tier: "OU",
+		isNonstandard: "Past",
+		tier: "Illegal",
 		natDexTier: "UU",
 	},
 	zeraora: {
