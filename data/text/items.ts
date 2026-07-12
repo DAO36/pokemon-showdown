@@ -682,10 +682,6 @@ export const ItemsText: { [id: IDEntry]: ItemText } = {
 		name: "Chople Berry",
 		shortDesc: "Halves damage taken from a supereffective Fighting-type attack. Single use.",
 	},
-	cinccinite: {
-        name: "Cinccinite",
-        shortDesc: "If held by a Cinccino, this item allows it to Mega Evolve.",
-    },
 	clawfossil: {
 		name: "Claw Fossil",
 		shortDesc: "Can be revived into Anorith.",
@@ -919,11 +915,7 @@ export const ItemsText: { [id: IDEntry]: ItemText } = {
 	},
 	eelektrossite: {
 		name: "Eelektrossite",
-		shortDesc: "If held by an Eelektross, this item allows it to Mega Evolve into Mega Eelektross in battle.",
-	},
-	eelektrossitez: {
-		name: "Eelektrossite Z",
-		shortDesc: "If held by an Eelektross, this item allows it to Mega Evolve into Mega Eelektross Z in battle.",
+		shortDesc: "If held by an Eelektross, this item allows it to Mega Evolve in battle.",
 	},
 	eeviumz: {
 		name: "Eevium Z",
@@ -1004,10 +996,6 @@ export const ItemsText: { [id: IDEntry]: ItemText } = {
 		name: "Emboarite",
 		shortDesc: "If held by an Emboar, this item allows it to Mega Evolve in battle.",
 	},
-	emolgite: {
-		name: "Emolgite",
-		shortDesc: "If held by an Emolga, this item allows it to Mega Evolve in battle.",
-	},
 	empoleonitex: {
 		name: "Empoleonite X",
 		shortDesc: "If held by an Empoleon, this item allows it to Mega Evolve into Mega Empoleon X in battle.",
@@ -1074,10 +1062,6 @@ export const ItemsText: { [id: IDEntry]: ItemText } = {
 	feraligite: {
 		name: "Feraligite",
 		shortDesc: "If held by a Feraligatr, this item allows it to Mega Evolve in battle.",
-	},
-	ferrothornite: {
-		name: "Ferrothornite",
-		shortDesc: "If held by a Ferrothorn, this item allows it to Mega Evolve in battle.",
 	},
 	fightinggem: {
 		name: "Fighting Gem",
@@ -1225,18 +1209,10 @@ export const ItemsText: { [id: IDEntry]: ItemText } = {
 		name: "Galladite",
 		shortDesc: "If held by a Gallade, this item allows it to Mega Evolve in battle.",
 	},
-	galvantulite: {
-		name: "Galvantulite",
-		shortDesc: "If held by a Galvantula, this item allows it to Mega Evolve in battle.",
-	},
 	ganlonberry: {
 		name: "Ganlon Berry",
 		shortDesc: "Raises holder's Defense by 1 stage when at 1/4 max HP or less. Single use.",
 	},
-	garbodorite: {
-        name: "Garbodorite",
-        shortDesc: "If held by a Garbodor, this item allows it to Mega Evolve in battle.",
-    },
 	garchompite: {
 		name: "Garchompite",
 		shortDesc: "If held by a Garchomp, this item allows it to Mega Evolve into Mega Garchomp.",
@@ -1284,10 +1260,6 @@ export const ItemsText: { [id: IDEntry]: ItemText } = {
 		name: "Ghost Memory",
 		shortDesc: "Holder's Multi-Attack is Ghost type.",
 	},
-	gigalite: {
-		name: "Gigalite",
-		shortDesc: "If held by a Gigalith, this item allows it to Mega Evolve in battle.",
-	},
 	glalitite: {
 		name: "Glalitite",
 		shortDesc: "If held by a Glalie, this item allows it to Mega Evolve in battle.",
@@ -1315,10 +1287,6 @@ export const ItemsText: { [id: IDEntry]: ItemText } = {
 	golurkite: {
 		name: "Golurkite",
 		shortDesc: "If held by a Golurk, this item allows it to Mega Evolve in battle.",
-	},
-	gothitellite: {
-		name: "Gothitellite",
-		shortDesc: "If held by a Gothitelle, this item allows it to Mega Evolve in battle.",
 	},
 	grassgem: {
 		name: "Grass Gem",
@@ -1539,10 +1507,6 @@ export const ItemsText: { [id: IDEntry]: ItemText } = {
 		name: "Jaw Fossil",
 		shortDesc: "Can be revived into Tyrunt.",
 	},
-	jellicite: {
-        name: "Jellicite",
-        shortDesc: "If held by a Jellicent, this item allows it to Mega Evolve.",
-    },
 	kabutopsite: {
 		name: "Kabutopsite",
 		shortDesc: "If held by a Kabutops, this item allows it to Mega Evolve in battle.",
@@ -1576,10 +1540,6 @@ export const ItemsText: { [id: IDEntry]: ItemText } = {
 		desc: "Holder's attacks without a chance to make the target flinch gain a 10% chance to make the target flinch. Evolves Poliwhirl into Politoed and Slowpoke into Slowking when traded.",
 		shortDesc: "Holder's attacks without a chance to flinch gain a 10% chance to flinch.",
 	},
-	klinklangite: {
-        name: "Klinklangite",
-        shortDesc: "If held by a Klinklang, this item allows it to Mega Evolve.",
-    },
 	flinchorb: {
 		name: "Flinch Orb",
 		desc: "Holder's attacks without a chance to make the target flinch gain a 50% chance to make the target flinch. Evolves Poliwhirl into Politoed and Slowpoke into Slowking when traded.",
@@ -1687,10 +1647,6 @@ export const ItemsText: { [id: IDEntry]: ItemText } = {
 			shortDesc: "Holder's use of Light Screen, Reflect, or Hologram lasts 8 turns instead of 5.",
 		},
 	},
-	lilligantite: {
-        name: "Lilligantite",
-        shortDesc: "If held by a Lilligant, this item allows it to Mega Evolve.",
-    },
 	loadeddice: {
 		name: "Loaded Dice",
 		desc: "The holder's moves that normally hit 2 to 5 times instead hit 4 or 5 times. If the first hit is successful, the holder's use of Triple Kick or Triple Axel hits 3 times, and Population Bomb hits 4 to 10 times, at random.",
@@ -1820,10 +1776,6 @@ export const ItemsText: { [id: IDEntry]: ItemText } = {
 		name: "Manectite",
 		shortDesc: "If held by a Manectric, this item allows it to Mega Evolve in battle.",
 	},
-	maractite: {
-		name: "Maractite",
-		shortDesc: "If held by a Maractus, this item allows it to Mega Evolve in battle.",
-	},
 	marangaberry: {
 		name: "Maranga Berry",
 		shortDesc: "Raises holder's Sp. Def by 1 stage after it is hit by a special attack. Single use.",
@@ -1934,10 +1886,6 @@ export const ItemsText: { [id: IDEntry]: ItemText } = {
 		name: "Micle Berry",
 		shortDesc: "Holder's next move has 1.2x accuracy when at 1/4 max HP or less. Single use.",
 	},
-	mienshite: {
-        name: "Mienshite",
-        shortDesc: "If held by a Mienshao, this item allows it to Mega Evolve.",
-    },
 	mightyenite: {
         name: "Mightyenite",
         shortDesc: "If held by a Mightyena, this item allows it to Mega Evolve.",
@@ -1992,10 +1940,6 @@ export const ItemsText: { [id: IDEntry]: ItemText } = {
 		name: "Muscle Band",
 		shortDesc: "Holder's physical attacks have 1.1x power.",
 	},
-	musharnite: {
-        name: "Musharnite",
-        shortDesc: "If held by a Musharna, this item allows it to Mega Evolve.",
-    },
 	mysticwater: {
 		name: "Mystic Water",
 		shortDesc: "Holder's Water-type attacks have 1.2x power.",
@@ -2323,10 +2267,6 @@ export const ItemsText: { [id: IDEntry]: ItemText } = {
 		name: "Repeat Ball",
 		shortDesc: "A Poke Ball that works well on Pokemon species that were previously caught.",
 	},
-	reuniclusite: {
-        name: "Reuniclusite",
-        shortDesc: "If held by a Reuniclus, this item allows it to Mega Evolve.",
-    },
 	rhyperiorite: {
         name: "Rhyperiorite",
         shortDesc: "If held by a Rhyperior, this item allows it to Mega Evolve.",
@@ -2700,10 +2640,6 @@ export const ItemsText: { [id: IDEntry]: ItemText } = {
 	sweetapple: {
 		name: "Sweet Apple",
 		shortDesc: "Evolves Applin into Appletun when used.",
-	},
-	swoobite: {
-		name: "Swoobite",
-		shortDesc: "If held by a Swoobat, this item allows it to Mega Evolve in battle.",
 	},
 	syrupyapple: {
 		name: "Syrupy Apple",
@@ -3323,10 +3259,6 @@ export const ItemsText: { [id: IDEntry]: ItemText } = {
 		name: "Wepear Berry",
 		shortDesc: "Cannot be eaten by the holder. No effect when eaten with Bug Bite or Pluck.",
 	},
-	whimsicottite: {
-        name: "Whimsicottite",
-        shortDesc: "If held by a Whimsicott, this item allows it to Mega Evolve.",
-    },
 	whippeddream: {
 		name: "Whipped Dream",
 		shortDesc: "Evolves Swirlix into Slurpuff when traded.",
@@ -3374,10 +3306,6 @@ export const ItemsText: { [id: IDEntry]: ItemText } = {
 	zapplate: {
 		name: "Zap Plate",
 		shortDesc: "Holder's Electric-type attacks have 1.2x power. Judgment is Electric type.",
-	},
-	zebstrikite: {
-		name: "Zebstrikite",
-		shortDesc: "If held by a Zebstrika, this item allows it to Mega Evolve in battle.",
 	},
 	zeraorite: {
 		name: "Zeraorite",
