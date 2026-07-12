@@ -1409,7 +1409,6 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		},
 		num: 667,
 		gen: 6,
-		isNonstandard: "Past",
 	},
 	aguavberry: {
 		name: "Aguav Berry",
@@ -1615,7 +1614,6 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		},
 		num: 757,
 		gen: 6,
-		isNonstandard: "Past",
 	},
 	aurorite: {
 		name: "Aurorite",
@@ -1735,7 +1733,6 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		},
 		num: 770,
 		gen: 6,
-		isNonstandard: "Past",
 	},
 	belueberry: {
 		name: "Belue Berry",
@@ -1913,7 +1910,6 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		},
 		num: 664,
 		gen: 6,
-		isNonstandard: "Past",
 	},
 	blissite: {
 		name: "Blissite",
@@ -2110,7 +2106,6 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		},
 		num: 767,
 		gen: 6,
-		isNonstandard: "Past",
 	},
 	celesteelite: {
 		name: "Celesteelite",
@@ -4690,7 +4685,6 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		},
 		num: 680,
 		gen: 6,
-		isNonstandard: "Past",
 	},
 	honchkrite: {
 		name: "Honchkrite",
@@ -4725,7 +4719,6 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		},
 		num: 666,
 		gen: 6,
-		isNonstandard: "Past",
 	},
 	hydreigonite: {
 		name: "Hydreigonite",
@@ -5793,7 +5786,6 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		},
 		num: 682,
 		gen: 6,
-		isNonstandard: "Past",
 	},
 	maractite:  {
         name: "Maractite",
@@ -5893,7 +5885,6 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		},
 		num: 665,
 		gen: 6,
-		isNonstandard: "Past",
 	},
 	meganiumite: {
 		name: "Meganiumite",
@@ -7838,7 +7829,6 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		},
 		num: 753,
 		gen: 6,
-		isNonstandard: "Past",
 	},
 	scizorite: {
 		name: "Scizorite",
@@ -8181,7 +8171,6 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		},
 		num: 760,
 		gen: 6,
-		isNonstandard: "Past",
 	},
 	smoothrock: {
 		name: "Smooth Rock",
@@ -8585,7 +8574,6 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		},
 		num: 752,
 		gen: 6,
-		isNonstandard: "Past",
 	},
 	sweetapple: {
 		name: "Sweet Apple",
