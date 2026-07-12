@@ -3120,7 +3120,7 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 	garchompmegaz: {
 		tier: "Uber",
         doublesTier: "(DUU)",
-        natDexTier: "UUBL",
+        natDexTier: "OU",
 	},
 	garchompmegax: {
         tier: "OU",
