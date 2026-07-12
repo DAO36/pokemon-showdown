@@ -115,9 +115,9 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		natDexTier: "NFE",
 	},
 	beedrill: {
-		tier: "RU",
-        doublesTier: "(DUU)",
-        natDexTier: "RU",
+		isNonstandard: "Past",
+		tier: "Illegal",
+		natDexTier: "RU",
 	},
 	beedrillmega: {
         tier: "OU",
@@ -1111,9 +1111,9 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		natDexTier: "RU",
 	},
 	pinsir: {
-		tier: "RU",
-        doublesTier: "(DUU)",
-        natDexTier: "RU",
+		isNonstandard: "Past",
+		tier: "Illegal",
+		natDexTier: "RU",
 	},
 	pinsirmega: {
         tier: "OU",
@@ -2268,9 +2268,9 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
         natDexTier: "OU",
 	},
 	mawile: {
-		tier: "RU",
-        doublesTier: "(DUU)",
-        natDexTier: "RU",
+		isNonstandard: "Past",
+		tier: "Illegal",
+		natDexTier: "RU",
 	},
 	mawilemega: {
         tier: "OU",
@@ -2288,9 +2288,9 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		natDexTier: "NFE",
 	},
 	aggron: {
-		tier: "RU",
-        doublesTier: "(DUU)",
-        natDexTier: "RU",
+		isNonstandard: "Past",
+		tier: "Illegal",
+		natDexTier: "RU",
 	},
 	aggronmega: {
         tier: "OU",
@@ -2316,9 +2316,9 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		natDexTier: "LC",
 	},
 	manectric: {
-		tier: "RU",
-        doublesTier: "(DUU)",
-        natDexTier: "RU",
+		isNonstandard: "Past",
+		tier: "Illegal",
+		natDexTier: "RU",
 	},
 	manectricmega: {
         tier: "OU",
@@ -2614,9 +2614,9 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		tier: "Illegal",
 	},
 	absol: {
-		tier: "RU",
-        doublesTier: "(DUU)",
-        natDexTier: "RU",
+		isNonstandard: "Past",
+		tier: "Illegal",
+		natDexTier: "RU",
 	},
 	absolmega: {
 		tier: "OU",
@@ -2624,19 +2624,16 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
         natDexTier: "OU",
 	},
 	absolmegaz: {
-		tier: "OU",
-        doublesTier: "(DUU)",
-        natDexTier: "OU",
+		isNonstandard: "Future",
+		tier: "Illegal",
 	},
 	absolmegax: {
-		tier: "OU",
-        doublesTier: "(DUU)",
-        natDexTier: "OU",
+		isNonstandard: "Future",
+		tier: "Illegal",
 	},
 	absolmegay: {
-		tier: "OU",
-        doublesTier: "(DUU)",
-        natDexTier: "OU",
+		isNonstandard: "Future",
+		tier: "Illegal",
 	},
 	snorunt: {
 		tier: "LC",
@@ -3547,9 +3544,9 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		tier: "Illegal",
 	},
 	audino: {
-		tier: "RU",
-        doublesTier: "(DUU)",
-        natDexTier: "RU",
+		isNonstandard: "Past",
+		tier: "Illegal",
+		natDexTier: "RU",
 	},
 	audinomega: {
         tier: "OU",
