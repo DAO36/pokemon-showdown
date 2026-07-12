@@ -5430,7 +5430,6 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		},
 		num: 768,
 		gen: 6,
-		isNonstandard: "Past",
 	},
 	loveball: {
 		name: "Love Ball",
@@ -5872,7 +5871,6 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		},
 		num: 681,
 		gen: 6,
-		isNonstandard: "Past",
 	},
 	meadowplate: {
 		name: "Meadow Plate",
@@ -6828,7 +6826,6 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		},
 		num: 671,
 		gen: 6,
-		isNonstandard: "Past",
 	},
 	pixieplate: {
 		name: "Pixie Plate",
@@ -8476,7 +8473,6 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		},
 		num: 761,
 		gen: 6,
-		isNonstandard: "Past",
 	},
 	steelmemory: {
 		name: "Steel Memory",
