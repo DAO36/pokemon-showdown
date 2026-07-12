@@ -1847,10 +1847,10 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		name: "PoLMAO",
 		pp: 10,
 		priority: 0,
-		flags: {contact: 1, protect: 1, mirror: 1, dance: 1, switches: 1, metronome: 1},
+		flags: {contact: 1, protect: 1, mirror: 1, dance: 1, switches: 1, metronome: 1, defrost: 1},
 		selfSwitch: true,
 		target: "normal",
-		type: "Normal",
+		type: "Fire",
 		contestType: "Cool",
 	},
 	ssrb: { // BOTAN 1
@@ -4064,7 +4064,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 			status: 'par',
 		},
 		target: "normal",
-		type: "Psychic",
+		type: "Dark",
 		contestType: "Clever",
 	},
 	moyaimash: { // BIJOU 1
