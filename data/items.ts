@@ -1276,7 +1276,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 			return !item.megaStone?.[source.baseSpecies.baseSpecies];
 		},
 		num: 2638,
-		gen: 6,
+		gen: 9,
 	},
 	absolitex: {
 		name: "Absolite X",
@@ -1287,7 +1287,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 			return !item.megaStone?.[source.baseSpecies.baseSpecies];
 		},
 		num: 2638,
-		gen: 6,
+		gen: 9,
 	},
 	absolitey: {
 		name: "Absolite Y",
@@ -1298,7 +1298,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 			return !item.megaStone?.[source.baseSpecies.baseSpecies];
 		},
 		num: 2638,
-		gen: 6,
+		gen: 9,
 	},
 	absorbbulb: {
 		name: "Absorb Bulb",
@@ -1702,7 +1702,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 			return !item.megaStone?.[source.baseSpecies.baseSpecies];
 		},
 		num: 2581,
-		gen: 6,
+		gen: 9,
 	},
 	baxcalibrite: {
 		name: "Baxcalibrite",
@@ -2512,7 +2512,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 			return !item.megaStone?.[source.baseSpecies.baseSpecies];
 		},
 		num: 2559,
-		gen: 6,
+		gen: 9,
 	},
 	cobaberry: {
 		name: "Coba Berry",
@@ -2649,7 +2649,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 			return !item.megaStone?.[source.baseSpecies.baseSpecies];
 		},
 		num: 2644,
-		gen: 6,
+		gen: 9,
 	},
 	custapberry: {
 		name: "Custap Berry",
@@ -2928,7 +2928,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 			return !item.megaStone?.[source.baseSpecies.baseSpecies];
 		},
 		num: 2582,
-		gen: 6,
+		gen: 9,
 	},
 	dragonfang: {
 		name: "Dragon Fang",
@@ -3136,7 +3136,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 			return !item.megaStone?.[source.baseSpecies.baseSpecies];
 		},
 		num: 2573,
-		gen: 6,
+		gen: 9,
 	},
 	eelektrossitez: {
 		name: "Eelektrossite Z",
@@ -3147,7 +3147,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 			return !item.megaStone?.[source.baseSpecies.baseSpecies];
 		},
 		num: 2573,
-		gen: 6,
+		gen: 9,
 	},
 	eeviumz: {
 		name: "Eevium Z",
@@ -3440,7 +3440,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 			return !item.megaStone?.[source.baseSpecies.baseSpecies];
 		},
 		num: 2569,
-		gen: 6,
+		gen: 9,
 	},
 	empoleonitey: {
 		name: "Empoleonite Y",
@@ -3451,7 +3451,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 			return !item.megaStone?.[source.baseSpecies.baseSpecies];
 		},
 		num: 2569,
-		gen: 6,
+		gen: 9,
 	},
 	empoleonitez: {
 		name: "Empoleonite Z",
@@ -3462,7 +3462,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 			return !item.megaStone?.[source.baseSpecies.baseSpecies];
 		},
 		num: 2569,
-		gen: 6,
+		gen: 9,
 	},
 	enigmaberry: {
 		name: "Enigma Berry",
@@ -4098,7 +4098,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 			return !item.megaStone?.[source.baseSpecies.baseSpecies];
 		},
 		num: 2640,
-		gen: 6,
+		gen: 9,
 	},
 	garchompitex: {
 		name: "Garchompite X",
@@ -4251,7 +4251,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 			return !item.megaStone?.[source.baseSpecies.baseSpecies];
 		},
 		num: 2650,
-		gen: 6,
+		gen: 9,
 	},
 	goldbottlecap: {
 		name: "Gold Bottle Cap",
@@ -4597,7 +4597,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 			return !item.megaStone?.[source.baseSpecies.baseSpecies];
 		},
 		num: 2583,
-		gen: 6,
+		gen: 9,
 	},
 	healball: {
 		name: "Heal Ball",
@@ -4695,7 +4695,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 			return !item.megaStone?.[source.baseSpecies.baseSpecies];
 		},
 		num: 2583,
-		gen: 6,
+		gen: 9,
 	},
 	hondewberry: {
 		name: "Hondew Berry",
@@ -4729,7 +4729,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 			return !item.megaStone?.[source.baseSpecies.baseSpecies];
 		},
 		num: 2583,
-		gen: 6,
+		gen: 9,
 	},
 	iapapaberry: {
 		name: "Iapapa Berry",
@@ -5666,7 +5666,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 				!Object.values(item.megaStone).includes(source.baseSpecies.name));
 		},
 		num: 2646,
-		gen: 6,
+		gen: 9,
 	},
 	magnet: {
 		name: "Magnet",
@@ -5774,7 +5774,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 			return !item.megaStone?.[source.baseSpecies.baseSpecies];
 		},
 		num: 2580,
-		gen: 6,
+		gen: 9,
 	},
 	manectite: {
 		name: "Manectite",
@@ -7283,7 +7283,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 			return !item.megaStone?.[source.baseSpecies.baseSpecies];
 		},
 		num: 2636,
-		gen: 6,
+		gen: 9,
 	},
 	rarebone: {
 		name: "Rare Bone",
@@ -7925,7 +7925,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 			return !item.megaStone?.[source.baseSpecies.baseSpecies];
 		},
 		num: 757,
-		gen: 6,
+		gen: 9,
 	},
 	sharpbeak: {
 		name: "Sharp Beak",
@@ -8349,7 +8349,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 			return !item.megaStone?.[source.baseSpecies.baseSpecies];
 		},
 		num: 2639,
-		gen: 6,
+		gen: 9,
 	},
 	staraptite: {
 		name: "Staraptite",

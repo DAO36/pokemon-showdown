@@ -9399,7 +9399,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		eggGroups: ["Undiscovered"],
 		requiredAbility: "Aura Bond",
 		battleOnly: "Lucario",
-		gen: 6,
+		gen: 9,
 	},
 	hippopotas: {
 		num: 449,
