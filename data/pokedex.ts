@@ -1552,7 +1552,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		color: "Blue",
 		eggGroups: ["Water 1"],
 		requiredItem: "Goldlite",
-		gen: 6,
+		gen: 9,
 	},
 	mankey: {
 		num: 56,
@@ -3869,7 +3869,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		eggGroups: ["Undiscovered"],
 		tags: ["Restricted Legendary"],
 		requiredItem: "Mewthreenite",
-		gen: 6,
+		gen: 9,
 	},
 	chikorita: {
 		num: 152,
@@ -7544,7 +7544,6 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		color: "White",
 		eggGroups: ["Field"],
 		requiredItem: "Absolite",
-		gen: 6,
 	},
 	absolmegaz: {
 		num: 359,
@@ -7553,13 +7552,13 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		forme: "Mega-Z",
 		types: ["Dark", "Ghost"],
 		baseStats: { hp: 65, atk: 154, def: 60, spa: 75, spd: 60, spe: 151 },
-		abilities: { 0: "Technician" },
+		abilities: { 0: "Magic Bounce" },
 		heightm: 1.2,
 		weightkg: 49,
 		color: "Black",
 		eggGroups: ["Field"],
 		requiredItem: "Absolite Z",
-		gen: 6,
+		gen: 9,
 	},
 	absolmegax: {
 		num: 359,
@@ -7574,7 +7573,6 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		color: "Black",
 		eggGroups: ["Field"],
 		requiredItem: "Absolite X",
-		gen: 6,
 	},
 	absolmegay: {
 		num: 359,
@@ -7589,7 +7587,6 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		color: "White",
 		eggGroups: ["Field"],
 		requiredItem: "Absolite Y",
-		gen: 6,
 	},
 	wynaut: {
 		num: 360,
@@ -8507,7 +8504,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		color: "Blue",
 		eggGroups: ["Field"],
 		requiredItem: "Luxrite",
-		gen: 6,
+		gen: 9,
 	},
 	budew: {
 		num: 406,
@@ -9278,7 +9275,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		color: "Blue",
 		eggGroups: ["Monster", "Dragon"],
 		requiredItem: "Garchompite Z",
-		gen: 6,
+		gen: 9,
 	},
 	garchompmegax: {
 		num: 445,
@@ -10826,7 +10823,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		color: "Green",
 		eggGroups: ["Field", "Grass"],
 		requiredItem: "Serperiorite",
-		gen: 6,
+		gen: 9,
 	},
 	tepig: {
 		num: 498,
@@ -10962,7 +10959,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		color: "Blue",
 		eggGroups: ["Field"],
 		requiredItem: "Samurite",
-		gen: 6,
+		gen: 9,
 	},
 	patrat: {
 		num: 504,
@@ -11855,7 +11852,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		color: "Red",
 		eggGroups: ["Field"],
 		requiredItem: "Krookodilite",
-		gen: 6,
+		gen: 9,
 	},
 	darumaka: {
 		num: 554,
@@ -12866,7 +12863,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		color: "Blue",
 		eggGroups: ["Amorphous"],
 		requiredItem: "Eelektrossite",
-		gen: 6,
+		gen: 9,
 	},
 	    eelektrossmegaz: {
         num: 604,
@@ -12881,7 +12878,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		color: "Blue",
 		eggGroups: ["Amorphous"],
 		requiredItem: "Eelektrossite Z",
-		gen: 6,
+		gen: 9,
     },
 	elgyem: {
 		num: 605,
@@ -13019,7 +13016,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		color: "Black",
 		eggGroups: ["Monster", "Dragon"],
 		requiredItem: "Haxorite",
-		gen: 6,
+		gen: 9,
 	},
 	cubchoo: {
 		num: 613,
@@ -13392,7 +13389,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		color: "Black",
 		eggGroups: ["Dragon"],
 		requiredItem: "Hydreigonite",
-		gen: 6,
+		gen: 9,
 	},
 	larvesta: {
 		num: 636,
@@ -13434,7 +13431,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		color: "Red",
 		eggGroups: ["Bug"],
 		requiredItem: "Volcaronite",
-		gen: 6,
+		gen: 9,
 	},
 	cobalion: {
 		num: 638,
@@ -14034,7 +14031,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		color: "Brown",
 		eggGroups: ["Field"],
 		requiredItem: "Diggersbite",
-		gen: 6,
+		gen: 9,
 	},
 	fletchling: {
 		num: 661,
@@ -15620,7 +15617,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		color: "Green",
 		eggGroups: ["Flying", "Human-Like"],
 		requiredItem: "Deciduite",
-		gen: 6,
+		gen: 9,
 	},
 	litten: {
 		num: 725,
@@ -15680,7 +15677,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		color: "Red",
 		eggGroups: ["Human-Like"],
 		requiredItem: "Incinerite",
-		gen: 6,
+		gen: 9,
 	},
 	popplio: {
 		num: 728,
@@ -15740,7 +15737,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		color: "Blue",
 		eggGroups: ["Human-Like"],
 		requiredItem: "Primarite",
-		gen: 6,
+		gen: 9,
 	},
 	pikipek: {
 		num: 731,
@@ -15890,7 +15887,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		color: "Blue",
 		eggGroups: ["Bug"],
 		requiredItem: "Vikavolite",
-		gen: 6,
+		gen: 9,
 	},
 	crabrawler: {
 		num: 739,
