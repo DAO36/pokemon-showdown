@@ -1096,10 +1096,6 @@ export const ItemsText: { [id: IDEntry]: ItemText } = {
 		name: "Flower Sweet",
 		shortDesc: "Evolves Milcery into Alcremie when held and spun around.",
 	},
-	flygonite: {
-        name: "Flygonite",
-        shortDesc: "If held by a Flygon, this item allows it to Mega Evolve.",
-    },
 	flyinggem: {
 		name: "Flying Gem",
 		shortDesc: "Holder's first successful Flying-type attack will have 1.3x power. Single use.",
@@ -1826,22 +1822,15 @@ export const ItemsText: { [id: IDEntry]: ItemText } = {
 		name: "Micle Berry",
 		shortDesc: "Holder's next move has 1.2x accuracy when at 1/4 max HP or less. Single use.",
 	},
-	mightyenite: {
-        name: "Mightyenite",
-        shortDesc: "If held by a Mightyena, this item allows it to Mega Evolve.",
-    },
-	milotite: {
-        name: "Milotite",
-        shortDesc: "If held by a Milotic, this item allows it to Mega Evolve.",
-    },
-	miltankite: {
-        name: "Miltankite",
-        shortDesc: "If held by a Miltank, this item allows it to Mega Evolve.",
-    },
+	
 	mimikiumz: {
 		name: "Mimikium Z",
 		shortDesc: "If held by a Mimikyu with Play Rough, it can use Let's Snuggle Forever.",
 	},
+	miltankite: {
+        name: "Miltankite",
+        shortDesc: "If held by a Miltank, this item allows it to Mega Evolve.",
+    },
 	mindplate: {
 		name: "Mind Plate",
 		shortDesc: "Holder's Psychic-type attacks have 1.2x power. Judgment is Psychic type.",
@@ -2274,14 +2263,6 @@ export const ItemsText: { [id: IDEntry]: ItemText } = {
 		name: "Sablenite",
 		shortDesc: "If held by a Sableye, this item allows it to Mega Evolve in battle.",
 	},
-	sablenitex: {
-		name: "Sablenite X",
-		shortDesc: "If held by a Sableye, this item allows it to Mega Evolve into Mega Sableye X in battle.",
-	},
-	sablenitey: {
-		name: "Sablenite Y",
-		shortDesc: "If held by a Sableye, this item allows it to Mega Evolve into Mega Sableye Y in battle.",
-	},
 	sachet: {
 		name: "Sachet",
 		shortDesc: "Evolves Spritzee into Aromatisse when traded.",
@@ -2361,14 +2342,6 @@ export const ItemsText: { [id: IDEntry]: ItemText } = {
 	sharpedonite: {
 		name: "Sharpedonite",
 		shortDesc: "If held by a Sharpedo, this item allows it to Mega Evolve in battle.",
-	},
-	sharpedonitez: {
-		name: "Sharpedonite Z",
-		shortDesc: "If held by a Sharpedo, this item allows it to Mega Evolve into Mega Sharpedo Z in battle.",
-	},
-	shedinjite: {
-		name: "Shedinjite",
-		shortDesc: "If held by a Shedinja, this item allows it to Mega Evolve in battle.",
 	},
 	shedshell: {
 		name: "Shed Shell",
@@ -3044,10 +3017,6 @@ export const ItemsText: { [id: IDEntry]: ItemText } = {
 	tr99: {
 		name: "TR99",
 		shortDesc: "Teaches certain Pokemon the move Body Press. One use.",
-	},
-	tropiusite: {
-		name: "Tropiusite",
-		shortDesc: "If held by a Tropius, this item allows it to Mega Evolve in battle.",
 	},
 	twistedspoon: {
 		name: "Twisted Spoon",
