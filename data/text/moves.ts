@@ -606,8 +606,8 @@ export const MovesText: { [id: IDEntry]: MoveText } = {
 		desc: "Fails if the target did not select a physical attack, special attack, or Me First for use this turn, or if the target moves before the user.",
 		shortDesc: "Usually goes first. Fails if target is not attacking.",
 	},
-	katana: {
-		name: "Katana",
+	chakimaru: {
+		name: "Chakimaru",
 		desc: "This move does not check accuracy. This move is always a critical hit unless the target is under the effect of Lucky Chant or has the Battle Armor or Shell Armor Abilities.",
 		shortDesc: "Always results in a critical hit. Never Misses.",
 	},

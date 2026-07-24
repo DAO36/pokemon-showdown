@@ -2254,12 +2254,12 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Fighting",
 		contestType: "Tough",
 	},
-	katana: { // IROHA 4
+	chakimaru: { // IROHA 4
 		num: 38,
 		accuracy: true,
 		basePower: 70,
 		category: "Physical",
-		name: "Katana",
+		name: "Chakimaru",
 		pp: 10,
 		priority: 0,
 		flags: {contact: 1, protect: 1, mirror: 1, slicing: 1, metronome: 1},
