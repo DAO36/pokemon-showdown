@@ -112,54 +112,6 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			target.removeVolatile('gastroacid');
 		},
 	},
-	shimmeringaether: {
-		onStart(pokemon) {
-			// n.b. only affects Hackmons
-			// interaction with No Ability is complicated: https://www.smogon.com/forums/threads/pokemon-sun-moon-battle-mechanics-research.3586701/page-76#post-7790209
-			if (pokemon.adjacentFoes().some(foeActive => foeActive.ability === 'noability')) {
-				this.effectState.gaveUp = true;
-			}
-			// interaction with Ability Shield is similar to No Ability
-			if (pokemon.hasItem('Ability Shield')) {
-				this.add('-block', pokemon, 'item: Ability Shield');
-				this.effectState.gaveUp = true;
-			}
-			const foeAbilities = [];
-			let activated = false;
-			for(const target of pokemon.adjacentFoes()) {
-				const foeAbility = target.getAbility();
-			   foeAbilities.push(foeAbility);
-				if (!activated) {
-					this.add('-ability', pokemon, 'Shimmering Aether');
-				}
-				activated = true;
-				const oldAbility = pokemon.setAbility('runaway');
-				if(oldAbility){
-					this.add('-ability',target,'Run Away','[from] ability: Shimmering Aether',pokemon);
-				}
-			}
-			
-			if (!pokemon.isStarted || this.effectState.gaveUp) return;
-
-			const additionalBannedAbilities = [
-				// Zen Mode included here for compatability with Gen 5-6
-				'noability','commander', 'flowergift', 'forecast', 'hungerswitch', 'illusion', 'imposter', 'neutralizinggas', 'powerofalchemy', 'receiver', 'trace', 'zenmode','shimmeringaether',
-			];
-			const possibleTargets = foeAbilities.filter(target => (
-			//	!target.isPermanent
-			));
-			if (!possibleTargets.length) return;
-
-			const target = this.sample(possibleTargets);
-			const ability = target;
-			if (pokemon.setAbility(ability)) {
-				this.add('-ability', pokemon, ability, '[from] ability: Shimmering Aether', '[of] ' + target);
-			}
-		},
-		name: "Shimmering Aether",
-		rating: 2.5,
-		num: 36,
-	},
 	prideful: { // "This Pokemon's Attack is raised by 2 for each of its stats that is lowered by a foe."
 		onAfterEachBoost(boost, target, source, effect) {
 			if (!source || target.isAlly(source)) {
@@ -688,16 +640,6 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		name: "Spiky",
 		rating: 3.5,
 		num: 295,
-	},
-	purepower: { // Huge Power but for Special Attack
-		onModifySpAPriority: 5,
-		onModifySpA(spa) {
-			return this.chainModify(2);
-		},
-		flags: {},
-		name: "Pure Power",
-		rating: 5,
-		num: 74,
 	},
 	seiso: { // SORA: immune to flinching & assortment of Violatile Statuses
 		onUpdate(pokemon) {
