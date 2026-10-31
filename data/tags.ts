@@ -121,6 +121,10 @@ export const Tags: { [id: IDEntry]: TagData } = {
 		name: "Suppressed by Gravity",
 		moveFilter: move => 'gravity' in move.flags,
 	},
+	switches: {
+		name: "Switches",
+		moveFilter: move => 'switches' in move.flags,
+	},
 	boostedbysheerforce: {
 		name: "Boosted by Sheer Force",
 		moveFilter: move => !!(move.secondary || move.secondaries || move.hasSheerForceBoost),
