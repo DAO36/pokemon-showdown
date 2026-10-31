@@ -54,6 +54,11 @@ export const TagsText: { [id: string]: TagText } = {
 		hint: "doesn't affect Soundproof pokemon",
 		desc: "Doesn't affect Soundproof Pokémon. (All sound moves also bypass Substitute.)",
 	},
+	switches: {
+		name: "Switches",
+		hint: "doesn't affect No U-turn pokemon",
+		desc: "Doesn't affect No U-turn Pokémon.",
+	},
 	powder: {
 		name: "Powder",
 		hint: "doesn't affect Grass, Overcoat, Safety Goggles",
