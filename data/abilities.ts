@@ -69,7 +69,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			if (!target || target.fainted) return;
 
 			const ability = target.getAbility();
-			if (!ability || ability.isPermanent) return;
+			// if (!ability || ability.isPermanent) return;
 
 			// supress other OnStart abilities such as intimidate so they don't activate twice
 			target.addVolatile('gastroacid');
@@ -94,7 +94,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			if (!target || target.fainted) return;
 
 			const ability = target.getAbility();
-			if (!ability || ability.isPermanent) return;
+			// if (!ability || ability.isPermanent) return;
 
 			// supress other OnStart abilities such as intimidate so they don't activate twice
 			target.addVolatile('gastroacid');
@@ -146,7 +146,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 				'noability','commander', 'flowergift', 'forecast', 'hungerswitch', 'illusion', 'imposter', 'neutralizinggas', 'powerofalchemy', 'receiver', 'trace', 'zenmode','shimmeringaether',
 			];
 			const possibleTargets = foeAbilities.filter(target => (
-				!target.isPermanent
+			//	!target.isPermanent
 			));
 			if (!possibleTargets.length) return;
 
