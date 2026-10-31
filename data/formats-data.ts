@@ -5848,6 +5848,1851 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		doublesTier: "(DUU)",
 		natDexTier: "UUBL",
 	},
+	sora: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "UU",
+	},
+	soramega: {
+        tier: "OU",
+        doublesTier: "(DUU)",
+        natDexTier: "OU",
+	},
+	miko: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "OU",
+	},
+	mikomega: {
+        tier: "OU",
+        doublesTier: "(DUU)",
+        natDexTier: "Uber",
+	},
+	mikoelite: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "Uber",
+	},
+	suisei: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "Uber",
+	},
+	suiseimega: {
+        tier: "OU",
+        doublesTier: "(DUU)",
+        natDexTier: "Uber",
+	},
+	roboco: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "OU",
+	},
+	robocomega: {
+        tier: "OU",
+        doublesTier: "(DUU)",
+        natDexTier: "OU",
+	},
+	azki: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "OU",
+	},
+	azkimega: {
+        tier: "OU",
+        doublesTier: "(DUU)",
+        natDexTier: "OU",
+	},
+	fubuki: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "OU",
+	},
+	fubukimega: {
+        tier: "OU",
+        doublesTier: "(DUU)",
+        natDexTier: "Uber",
+	},
+	fubuzilla: {
+        tier: "Uber",
+        doublesTier: "(DUber)",
+        natDexTier: "Uber",
+	},
+	kurokami: {
+        tier: "OU",
+        doublesTier: "(DUU)",
+        natDexTier: "Uber",
+	},
+	matsuri: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "UU",
+	},
+	matsurimega: {
+        tier: "OU",
+        doublesTier: "(DUU)",
+        natDexTier: "OU",
+	},
+	haachama: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "UU",
+	},
+	haachamamega: {
+        tier: "OU",
+        doublesTier: "(DUU)",
+        natDexTier: "OU",
+	},
+	akaihaato: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "OU",
+	},
+	akaihaatohaachama: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "OU",
+	},
+	mel: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "UU",
+	},
+	melmega: {
+        tier: "OU",
+        doublesTier: "(DUU)",
+        natDexTier: "OU",
+	},
+	akirose: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "UU",
+	},
+	akirosemega: {
+        tier: "OU",
+        doublesTier: "(DUU)",
+        natDexTier: "OU",
+	},
+	aqua: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "UU",
+	},
+	aquamega: {
+        tier: "OU",
+        doublesTier: "(DUU)",
+        natDexTier: "OU",
+	},
+	ayame: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "OU",
+	},
+	ayamemega: {
+        tier: "OU",
+        doublesTier: "(DUU)",
+        natDexTier: "Uber",
+	},
+	choco: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "OU",
+	},
+	chocomega: {
+        tier: "OU",
+        doublesTier: "(DUU)",
+        natDexTier: "OU",
+	},
+	shion: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "OU",
+	},
+	shionmega: {
+        tier: "OU",
+        doublesTier: "(DUU)",
+        natDexTier: "Uber",
+	},
+	subaru: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "UU",
+	},
+	subarumega: {
+        tier: "OU",
+        doublesTier: "(DUU)",
+        natDexTier: "OU",
+	},
+	korone: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "OU",
+	},
+	koronemega: {
+        tier: "OU",
+        doublesTier: "(DUU)",
+        natDexTier: "Uber",
+	},
+	mio: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "OU",
+	},
+	miomega: {
+        tier: "OU",
+        doublesTier: "(DUU)",
+        natDexTier: "Uber",
+	},
+	hatotaurus: {
+		tier: "Uber",
+        doublesTier: "(DUber)",
+        natDexTier: "Uber",
+	},
+	okayu: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "OU",
+	},
+	okayumega: {
+        tier: "OU",
+        doublesTier: "(DUU)",
+        natDexTier: "OU",
+	},
+	pekora: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "OU",
+	},
+	pekoramega: {
+        tier: "OU",
+        doublesTier: "(DUU)",
+        natDexTier: "Uber",
+	},
+	pekorawarcriminal: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "OU",
+	},
+	noel: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "OU",
+	},
+	noelmega: {
+        tier: "OU",
+        doublesTier: "(DUU)",
+        natDexTier: "OU",
+	},
+	rushia: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "OU",
+	},
+	rushiamega: {
+        tier: "OU",
+        doublesTier: "(DUU)",
+        natDexTier: "OU",
+	},
+	flare: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "OU",
+	},
+	flaremega: {
+        tier: "OU",
+        doublesTier: "(DUU)",
+        natDexTier: "OU",
+	},
+	marine: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "UU",
+	},
+	marinemega: {
+        tier: "OU",
+        doublesTier: "(DUU)",
+        natDexTier: "OU",
+	},
+	coco: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "UU",
+	},
+	cocomega: {
+        tier: "OU",
+        doublesTier: "(DUU)",
+        natDexTier: "OU",
+	},
+	cocodraco: {
+        tier: "Uber",
+        doublesTier: "(DUber)",
+        natDexTier: "Uber",
+	},
+	kanata: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "OU",
+	},
+	kanatamega: {
+        tier: "OU",
+        doublesTier: "(DUU)",
+        natDexTier: "OU",
+	},
+	watame: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "OU",
+	},
+	watamemega: {
+        tier: "OU",
+        doublesTier: "(DUU)",
+        natDexTier: "OU",
+	},
+	luna: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "UU",
+	},
+	lunamega: {
+        tier: "OU",
+        doublesTier: "(DUU)",
+        natDexTier: "OU",
+	},
+	towa: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "OU",
+	},
+	towamega: {
+        tier: "OU",
+        doublesTier: "(DUU)",
+        natDexTier: "OU",	
+	},
+	polka: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "OU",
+	},
+	polkamega: {
+        tier: "OU",
+        doublesTier: "(DUU)",
+        natDexTier: "OU",	
+	},
+	botan: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "OU",
+	},
+	botanmega: {
+        tier: "OU",
+        doublesTier: "(DUU)",
+        natDexTier: "OU",	
+	},
+	lamy: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "OU",
+	},
+	lamymega: {
+        tier: "OU",
+        doublesTier: "(DUU)",
+        natDexTier: "OU",	
+	},
+	nene: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "UU",
+	},
+	nenemega: {
+        tier: "OU",
+        doublesTier: "(DUU)",
+        natDexTier: "OU",	
+	},
+	aloe: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "Uber",
+	},
+	aloemega: {
+        tier: "OU",
+        doublesTier: "(DUU)",
+        natDexTier: "Uber",	
+	},
+	iroha: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "OU",
+	},
+	irohamega: {
+        tier: "OU",
+        doublesTier: "(DUU)",
+        natDexTier: "Uber",	
+	},
+	koyori: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "OU",
+	},
+	koyorimega: {
+        tier: "OU",
+        doublesTier: "(DUU)",
+        natDexTier: "Uber",	
+	},
+	laplus: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "UU",
+	},
+	laplusmega: {
+        tier: "OU",
+        doublesTier: "(DUU)",
+        natDexTier: "OU",	
+	},
+	lui: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "UU",
+	},
+	luimega: {
+        tier: "OU",
+        doublesTier: "(DUU)",
+        natDexTier: "OU",	
+	},
+	chloe: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "UU",
+	},
+	chloemega: {
+        tier: "OU",
+        doublesTier: "(DUU)",
+        natDexTier: "OU",	
+	},
+	moona: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "OU",
+	},
+	moonamega: {
+        tier: "OU",
+        doublesTier: "(DUU)",
+        natDexTier: "Uber",	
+	},
+	hoshinovamoona: {
+        tier: "Uber",
+        doublesTier: "(DUber)",
+        natDexTier: "Uber",	
+	},
+	moonah: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "UU",
+	},
+	moonahhoshinova: {
+        tier: "OU",
+        doublesTier: "(DUU)",
+        natDexTier: "UU",	
+	},
+	iofi: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "UU",
+	},
+	iofimega: {
+        tier: "OU",
+        doublesTier: "(DUU)",
+        natDexTier: "OU",	
+	},
+	risu: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "OU",
+	},
+	risumega: {
+        tier: "OU",
+        doublesTier: "(DUU)",
+        natDexTier: "OU",	
+	},
+	risusaurus: {
+        tier: "Uber",
+        doublesTier: "(DUber)",
+        natDexTier: "Uber",	
+	},
+	ollie: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "ZU",
+	},
+	olliemega: {
+        tier: "OU",
+        doublesTier: "(DUU)",
+        natDexTier: "Uber",	
+	},
+	olivia: {
+        tier: "OU",
+        doublesTier: "(DUU)",
+        natDexTier: "NU",	
+	},
+	udin: {
+        tier: "OU",
+        doublesTier: "(DUU)",
+        natDexTier: "Uber",	
+	},
+	reine: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "OU",
+	},
+	reinemega: {
+        tier: "OU",
+        doublesTier: "(DUU)",
+        natDexTier: "OU",	
+	},
+	anya: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "OU",
+	},
+	anyamega: {
+        tier: "OU",
+        doublesTier: "(DUU)",
+        natDexTier: "Uber",	
+	},
+	zeta: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "OU",
+	},
+	zetamega: {
+        tier: "OU",
+        doublesTier: "(DUU)",
+        natDexTier: "OU",	
+	},
+	kaela: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "OU",
+	},
+	kaelamega: {
+        tier: "OU",
+        doublesTier: "(DUU)",
+        natDexTier: "OU",	
+	},
+	ckia: {
+		tier: "NFE",
+	},
+	kobo: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "OU",
+	},
+	kobomega: {
+        tier: "OU",
+        doublesTier: "(DUU)",
+        natDexTier: "OU",	
+	},
+	gura: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "OU",
+	},
+	guramega: {
+        tier: "OU",
+        doublesTier: "(DUU)",
+        natDexTier: "Uber",	
+	},
+	guragawr: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "Uber",
+	},
+	gurazilla: {
+		tier: "Uber",
+        doublesTier: "(DUber)",
+        natDexTier: "Uber",
+	},
+	ame: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "OU",
+	},
+	amemega: {
+        tier: "OU",
+        doublesTier: "(DUU)",
+        natDexTier: "OU",	
+	},
+	amesmol: {
+		tier: "Uber",
+        doublesTier: "(DUber)",
+        natDexTier: "Uber",
+	},
+	amebuff: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "Uber",
+	},
+	amebee: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "UU",
+	},
+	calliope: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "OU",
+	},
+	calliopemega: {
+        tier: "OU",
+        doublesTier: "(DUU)",
+        natDexTier: "OU",	
+	},
+	ina: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "OU",
+	},
+	inamega: {
+        tier: "OU",
+        doublesTier: "(DUU)",
+        natDexTier: "OU",	
+	},
+	kiara: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "OU",
+	},
+	kiaramega: {
+        tier: "OU",
+        doublesTier: "(DUU)",
+        natDexTier: "OU",	
+	},
+	kiarawarrior: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "UU",
+	},
+	frogiwawa: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "UU",
+	},
+	irys: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "OU",
+	},
+	irysmega: {
+        tier: "OU",
+        doublesTier: "(DUU)",
+        natDexTier: "OU",	
+	},
+	sana: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "OU",
+	},
+	sanamega: {
+        tier: "OU",
+        doublesTier: "(DUU)",
+        natDexTier: "Uber",	
+	},
+	sanabeeg: {
+		tier: "Uber",
+        doublesTier: "(DUber)",
+        natDexTier: "Uber",
+	},
+	fauna: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "OU",
+	},
+	faunamega: {
+        tier: "OU",
+        doublesTier: "(DUU)",
+        natDexTier: "OU",	
+	},
+	nemu: {
+        tier: "OU",
+        doublesTier: "(DUU)",
+        natDexTier: "Uber",	
+	},
+	kronii: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "OU",
+	},
+	kroniimega: {
+        tier: "OU",
+        doublesTier: "(DUU)",
+        natDexTier: "OU",	
+	},
+	kroniiboros: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "Uber",
+	},
+	mumei: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "OU",
+	},
+	mumeimega: {
+        tier: "OU",
+        doublesTier: "(DUU)",
+        natDexTier: "OU",	
+	},
+	mumeievil: {
+		tier: "Uber",
+        doublesTier: "(DUber)",
+        natDexTier: "Uber",
+	},
+	boomei: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "UU",
+	},
+	bae: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "OU",
+	},
+	baemega: {
+        tier: "OU",
+        doublesTier: "(DUU)",
+        natDexTier: "OU",	
+	},
+	baerat: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "UU",
+	},
+	shiori: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "OU",
+	},
+	shiorimega: {
+        tier: "OU",
+        doublesTier: "(DUU)",
+        natDexTier: "OU",	
+	},
+	bijou: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "OU",
+	},
+	bijoumega: {
+        tier: "OU",
+        doublesTier: "(DUU)",
+        natDexTier: "OU",	
+	},
+	pebble: {
+		tier: "PU",
+		doublesTier: "(DUU)",
+		natDexTier: "PU",
+	},
+	nerissa: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "OU",
+	},
+	nerissamega: {
+        tier: "OU",
+        doublesTier: "(DUU)",
+        natDexTier: "OU",	
+	},
+	mococo: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "OU",
+	},
+	mococomega: {
+        tier: "OU",
+        doublesTier: "(DUU)",
+        natDexTier: "Uber",	
+	},
+	fuwawa: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "UU",
+	},
+	fuwawamega: {
+        tier: "OU",
+        doublesTier: "(DUU)",
+        natDexTier: "OU",	
+	},
+	fuwamoco: {
+        tier: "OU",
+        doublesTier: "(DUU)",
+        natDexTier: "OU",	
+	},
+	elizabeth: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "OU",
+	},
+	elizabethmega: {
+        tier: "OU",
+        doublesTier: "(DUU)",
+        natDexTier: "OU",	
+	},
+	gigi: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "OU",
+	},
+	gigimega: {
+        tier: "OU",
+        doublesTier: "(DUU)",
+        natDexTier: "Uber",	
+	},
+	cecilia: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "OU",
+	},
+	ceciliamega: {
+        tier: "OU",
+        doublesTier: "(DUU)",
+        natDexTier: "OU",	
+	},
+	raora: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "UU",
+	},
+	raoramega: {
+        tier: "OU",
+        doublesTier: "(DUU)",
+        natDexTier: "OU",	
+	},
+	kanade: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "UU",
+	},
+	kanademega: {
+        tier: "OU",
+        doublesTier: "(DUU)",
+        natDexTier: "OU",	
+	},
+	ririka: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "UU",
+	},
+	ririkamega: {
+        tier: "OU",
+        doublesTier: "(DUU)",
+        natDexTier: "OU",	
+	},
+	raden: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "UU",
+	},
+	radenmega: {
+        tier: "OU",
+        doublesTier: "(DUU)",
+        natDexTier: "OU",	
+	},
+	hajime: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "UU",
+	},
+	hajimemega: {
+        tier: "OU",
+        doublesTier: "(DUU)",
+        natDexTier: "OU",	
+	},
+	ao: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "UU",
+	},
+	aomega: {
+        tier: "OU",
+        doublesTier: "(DUU)",
+        natDexTier: "OU",	
+	},
+	riona: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "UU",
+	},
+	rionamega: {
+        tier: "OU",
+        doublesTier: "(DUU)",
+        natDexTier: "OU",	
+	},
+	niko: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "UU",
+	},
+	nikomega: {
+        tier: "OU",
+        doublesTier: "(DUU)",
+        natDexTier: "OU",	
+	},
+	su: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "UU",
+	},
+	sumega: {
+        tier: "OU",
+        doublesTier: "(DUU)",
+        natDexTier: "OU",	
+	},
+	chihaya: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "UU",
+	},
+	chihayamega: {
+        tier: "OU",
+        doublesTier: "(DUU)",
+        natDexTier: "OU",	
+	},
+	vivi: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "UU",
+	},
+	vivimega: {
+        tier: "OU",
+        doublesTier: "(DUU)",
+        natDexTier: "OU",	
+	},
+	lamball: {
+        tier: "PU",
+        doublesTier: "(DUU)",
+        natDexTier: "PU",	
+	},
+	cattiva: {
+        tier: "PU",
+        doublesTier: "(DUU)",
+        natDexTier: "PUBL",	
+	},
+	chikipi: {
+        tier: "ZU",
+        doublesTier: "(DUU)",
+        natDexTier: "ZU",	
+	},
+	lifmunk: {
+        tier: "RU",
+        doublesTier: "(DUU)",
+        natDexTier: "RU",	
+	},
+	foxparks: {
+        tier: "PU",
+        doublesTier: "(DUU)",
+        natDexTier: "ZUBL",	
+	},
+	foxparksalola: {
+        tier: "PU",
+        doublesTier: "(DUU)",
+        natDexTier: "ZUBL",	
+	},
+	fuack: {
+        tier: "PU",
+        doublesTier: "(DUU)",
+        natDexTier: "ZUBL",	
+	},
+	sparkit: {
+        tier: "PU",
+        doublesTier: "(DUU)",
+        natDexTier: "ZU",	
+	},
+	tanzee: {
+        tier: "ZUBL",
+        doublesTier: "(DUU)",
+        natDexTier: "ZU",	
+	},
+	rooby: {
+        tier: "NU",
+        doublesTier: "(DUU)",
+        natDexTier: "PUBL",	
+	},
+	pengullet: {
+		tier: "NFE",
+	},
+	penking: {
+		tier: "RU",
+		doublesTier: "(DUU)",
+		natDexTier: "PUBL",
+	},
+	jolthog: {
+		tier: "ZU",
+		doublesTier: "(DUU)",
+		natDexTier: "ZU",
+	},
+	jolthogalola: {
+		tier: "ZU",
+		doublesTier: "(DUU)",
+		natDexTier: "ZU",
+	},
+	gumoss: {
+		tier: "NU",
+		doublesTier: "(DUU)",
+		natDexTier: "PUBL",
+	},
+	vixy: {
+		tier: "PU",
+		doublesTier: "(DUU)",
+		natDexTier: "ZUBL",
+	},
+	hoocrates: {
+		tier: "NU",
+		doublesTier: "(DUU)",
+		natDexTier: "PUBL",
+	},
+	teafant: {
+		tier: "NU",
+		doublesTier: "(DUU)",
+		natDexTier: "PUBL",
+	},
+	depresso: {
+		tier: "RU",
+		doublesTier: "(DUU)",
+		natDexTier: "NUBL",
+	},
+	cremis: {
+		tier: "PU",
+		doublesTier: "(DUU)",
+		natDexTier: "ZUBL",
+	},
+	daedream: {
+		tier: "UU",
+		doublesTier: "(DUU)",
+		natDexTier: "RUBL",
+	},
+	rushoar: {
+		tier: "NUBL",
+		doublesTier: "(DUU)",
+		natDexTier: "NU",
+	},
+	nox: {
+		tier: "RU",
+		doublesTier: "(DUU)",
+		natDexTier: "NUBL",
+	},
+	fuddler: {
+		tier: "RU",
+		doublesTier: "(DUU)",
+		natDexTier: "NUBL",
+	},
+	killamari: {
+		tier: "RU",
+		doublesTier: "(DUU)",
+		natDexTier: "NUBL",
+	},
+	mau: {
+		tier: "PU",
+		doublesTier: "(DUU)",
+		natDexTier: "ZU",
+	},
+	maualola: {
+		tier: "PU",
+		doublesTier: "(DUU)",
+		natDexTier: "ZU",
+	},
+	celaray: {
+		tier: "NU",
+		doublesTier: "(DUU)",
+		natDexTier: "PUBL",
+	},
+	direhowl: {
+		tier: "PU",
+		doublesTier: "(DUU)",
+		natDexTier: "ZUBL",
+	},
+	tocotoco: {
+		tier: "PUBL",
+		doublesTier: "(DUU)",
+		natDexTier: "ZUBL",
+	},
+	flopie: {
+		tier: "UU",
+		doublesTier: "(DUU)",
+		natDexTier: "RU",
+	},
+	mozzarina: {
+		tier: "ZUBL",
+		doublesTier: "(DUU)",
+		natDexTier: "ZU",
+	},
+	bristla: {
+		tier: "NU",
+		doublesTier: "(DUU)",
+		natDexTier: "PUBL",
+	},
+	gobfin: {
+		tier: "UU",
+		doublesTier: "(DUU)",
+		natDexTier: "RUBL",
+	},
+	gobfinalola: {
+		tier: "UU",
+		doublesTier: "(DUU)",
+		natDexTier: "RUBL",
+	},
+	hangyu: {
+		tier: "RU",
+		doublesTier: "(DUU)",
+		natDexTier: "NU",
+	},
+	hangyualola: {
+		tier: "PU",
+		doublesTier: "(DUU)",
+		natDexTier: "ZUBL",
+	},
+	mossanda: {
+		tier: "UU",
+		doublesTier: "(DUU)",
+		natDexTier: "RU",
+	},
+	mossandaalola: {
+		tier: "UU",
+		doublesTier: "(DUU)",
+		natDexTier: "RU",
+	},
+	woolipop: {
+		tier: "PUBL",
+		doublesTier: "(DUU)",
+		natDexTier: "ZU",
+	},
+	caprity: {
+		tier: "PU",
+		doublesTier: "(DUU)",
+		natDexTier: "ZU",
+	},
+	caprityalola: {
+		tier: "NU",
+		doublesTier: "(DUU)",
+		natDexTier: "PU",
+	},
+	melpaca: {
+		tier: "NFE",
+	},
+	kingpaca: {
+		tier: "PUBL",
+		doublesTier: "(DUU)",
+		natDexTier: "PU",
+	},
+	kingpacaalola: {
+		tier: "PU",
+		doublesTier: "(DUU)",
+		natDexTier: "ZU",
+	},
+	eikthyrdeer: {
+		tier: "ZUBL",
+		doublesTier: "(DUU)",
+		natDexTier: "ZU",
+	},
+	eikthyrdeeralola: {
+		tier: "PU",
+		doublesTier: "(DUU)",
+		natDexTier: "ZUBL",
+	},
+	nitewing: {
+		tier: "RUBL",
+		doublesTier: "(DUU)",
+		natDexTier: "NUBL",
+	},
+	ribbuny: {
+		tier: "NU",
+		doublesTier: "(DUU)",
+		natDexTier: "PUBL",
+	},
+	ribbunyalola: {
+		tier: "NU",
+		doublesTier: "(DUU)",
+		natDexTier: "PU",
+	},
+	incineram: {
+		tier: "OU",
+		doublesTier: "DOU",
+		natDexTier: "UUBL",
+	},
+	incineramalola: {
+		tier: "OU",
+		doublesTier: "DOU",
+		natDexTier: "UU",
+	},
+	cinnamoth: {
+		tier: "NU",
+		doublesTier: "(DUU)",
+		natDexTier: "PU",
+	},
+	arsox: {
+		tier: "RU",
+		doublesTier: "(DUU)",
+		natDexTier: "NU",
+	},
+	dumud: {
+		tier: "UU",
+		doublesTier: "(DUU)",
+		natDexTier: "RUBL",
+	},
+	cawgnito: {
+		tier: "RU",
+		doublesTier: "(DUU)",
+		natDexTier: "NU",
+	},
+	leezpunk: {
+		tier: "NU",
+		doublesTier: "(DUU)",
+		natDexTier: "PUBL",
+	},
+	leezpunkalola: {
+		tier: "NUBL",
+		doublesTier: "(DUU)",
+		natDexTier: "PU",
+	},
+	loupmoon: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "UU",
+	},
+	loupmoonalola: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "UUBL",
+	},
+	galeclaw: {
+		tier: "RU",
+		doublesTier: "(DUU)",
+		natDexTier: "NU",
+	},
+	robinquill: {
+		tier: "NUBL",
+		doublesTier: "(DUU)",
+		natDexTier: "PUBL",
+	},
+	gorirat: {
+		tier: "UUBL",
+		doublesTier: "(DUU)",
+		natDexTier: "UU",
+	},
+	goriratalola: {
+		tier: "UU",
+		doublesTier: "(DUU)",
+		natDexTier: "UUBL",
+	},
+	beegarde: {
+		tier: "NFE",
+	},
+	elizabee: {
+		tier: "RU",
+		doublesTier: "(DUU)",
+		natDexTier: "NU",
+	},
+	grintale: {
+		tier: "PUBL",
+		doublesTier: "(DUU)",
+		natDexTier: "PU",
+	},
+	swee: {
+		tier: "NFE",
+	},
+	sweepa: {
+		tier: "PU",
+		doublesTier: "(DUU)",
+		natDexTier: "ZU",
+	},
+	chillet: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "UU",
+	},
+	chilletalola: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "UUBL",
+	},
+	univolt: {
+		tier: "PU",
+		doublesTier: "(DUU)",
+		natDexTier: "ZUBL",
+	},
+	foxcicle: {
+        tier: "OU",
+        doublesTier: "(DUU)",
+        natDexTier: "UU",	
+	},
+	pyrin: {
+        tier: "PUBL",
+        doublesTier: "(DUU)",
+        natDexTier: "ZU",	
+	},
+	pyrinalola: {
+        tier: "PU",
+        doublesTier: "(DUU)",
+        natDexTier: "ZUBL",	
+	},
+	reindrix: {
+        tier: "OU",
+        doublesTier: "(DUU)",
+        natDexTier: "UUBL",	
+	},
+	rayhound: {
+        tier: "NU",
+        doublesTier: "(DUU)",
+        natDexTier: "PUBL",	
+	},
+	kitsun: {
+        tier: "OU",
+        doublesTier: "(DUU)",
+        natDexTier: "UU",	
+	},
+	kitsunalola: {
+        tier: "OU",
+        doublesTier: "(DUU)",
+        natDexTier: "UUBL",	
+	},
+	dazzi: {
+        tier: "OU",
+        doublesTier: "(DUU)",
+        natDexTier: "UUBL",	
+	},
+	dazzialola: {
+        tier: "UUBL",
+        doublesTier: "(DUU)",
+        natDexTier: "RU",	
+	},
+	lunaris: {
+        tier: "OU",
+        doublesTier: "(DUU)",
+        natDexTier: "UUBL",	
+	},
+	dinossom: {
+        tier: "UU",
+        doublesTier: "(DUU)",
+        natDexTier: "RUBL",	
+	},
+	dinossomalola: {
+        tier: "UUBL",
+        doublesTier: "(DUU)",
+        natDexTier: "RU",	
+	},
+	surfent: {
+        tier: "UU",
+        doublesTier: "(DUU)",
+        natDexTier: "RUBL",	
+	},
+	surfentalola: {
+        tier: "UUBL",
+        doublesTier: "(DUU)",
+        natDexTier: "RU",	
+	},
+	maraith: {
+        tier: "OU",
+        doublesTier: "(DUU)",
+        natDexTier: "UUBL",	
+	},
+	digtoise: {
+		tier: "RUBL",
+		doublesTier: "(DUU)",
+		natDexTier: "RU",
+	},
+	tombat: {
+		tier: "NUBL",
+		doublesTier: "(DUU)",
+		natDexTier: "PUBL",
+	},
+	lovander: {
+		tier: "UUBL",
+		doublesTier: "(DUU)",
+		natDexTier: "RUBL",
+	},
+	flambelle: {
+		tier: "RU",
+		doublesTier: "(DUU)",
+		natDexTier: "NUBL",
+	},
+	vanwyrm: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "UUBL",
+	},
+	vanwyrmalola: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "UU",
+	},
+	bushi: {
+		tier: "NU",
+		doublesTier: "(DUU)",
+		natDexTier: "PU",
+	},
+	bushialola: {
+		tier: "NUBL",
+		doublesTier: "(DUU)",
+		natDexTier: "PUBL",
+	},
+	beakon: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "UU",
+	},
+	ragnahawk: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "UUBL",
+	},
+	katress: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "UUBL",
+	},
+	katressalola: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "UU",
+	},
+	wixen: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "UUBL",
+	},
+	wixenalola: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "UU",
+	},
+	verdash: {
+		tier: "PUBL",
+		doublesTier: "(DUU)",
+		natDexTier: "ZUBL",
+	},
+	vaelet: {
+		tier: "UU",
+		doublesTier: "(DUU)",
+		natDexTier: "NU",
+	},
+	sibelyx: {
+		tier: "RU",
+		doublesTier: "(DUU)",
+		natDexTier: "PUBL",
+	},
+	elphidran: {
+		tier: "UU",
+		doublesTier: "DOU",
+		natDexTier: "NUBL",
+	},
+	elphidranalola: {
+		tier: "UUBL",
+		doublesTier: "DOU",
+		natDexTier: "RUBL",
+	},
+	kelpsea: {
+		tier: "PU",
+		doublesTier: "(DUU)",
+		natDexTier: "ZU",
+	},
+	kelpseaalola: {
+		tier: "PUBL",
+		doublesTier: "(DUU)",
+		natDexTier: "ZUBL",
+	},
+	azurobe: {
+		tier: "UU",
+		doublesTier: "(DUU)",
+		natDexTier: "RU",
+	},
+	cryolinx: {
+		tier: "NUBL",
+		doublesTier: "(DUU)",
+		natDexTier: "ZUBL",
+	},
+	cryolinxalola: {
+		tier: "NU",
+		doublesTier: "(DUU)",
+		natDexTier: "PUBL",
+	},
+	blazehowl: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "UU",
+	},
+	blazehowlalola: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "UUBL",
+	},
+	relaxaurus: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "UUBL",
+	},
+	relaxaurusalola: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "UU",
+	},
+	broncherry: {
+		tier: "UU",
+		doublesTier: "(DUU)",
+		natDexTier: "NU",
+	},
+	broncherryalola: {
+		tier: "UUBL",
+		doublesTier: "(DUU)",
+		natDexTier: "NUBL",
+	},
+	petallia: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "UU",
+	},
+	reptyro: {
+		tier: "UU",
+		doublesTier: "(DUU)",
+		natDexTier: "RU",
+	},
+	reptyroalola: {
+		tier: "NU",
+		doublesTier: "(DUU)",
+		natDexTier: "PU",
+	},
+	mammorest: {
+		tier: "UU",
+		doublesTier: "(DUU)",
+		natDexTier: "RU",
+	},
+	mammorestalola: {
+		tier: "NU",
+		doublesTier: "(DUU)",
+		natDexTier: "PU",
+	},
+	wumpo: {
+		tier: "NU",
+		doublesTier: "(DUU)",
+		natDexTier: "ZU",
+	},
+	wumpoalola: {
+		tier: "NUBL",
+		doublesTier: "(DUU)",
+		natDexTier: "ZUBL",
+	},
+	warsect: {
+		tier: "RUBL",
+		doublesTier: "(DUU)",
+		natDexTier: "PU",
+	},
+	warsectalola: {
+        tier: "RUBL",
+        doublesTier: "(DUU)",
+        natDexTier: "PU",
+	},
+	fenglope: {
+		tier: "RU",
+		doublesTier: "(DUU)",
+		natDexTier: "PU",
+	},
+	fenglopealola: {
+		tier: "RUBL",
+		doublesTier: "(DUU)",
+		natDexTier: "PUBL",
+	},
+	felbat: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "UU",
+	},
+	quivern: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "UU",
+	},
+	quivernalola: {
+		tier: "UU",
+		doublesTier: "(DUU)",
+		natDexTier: "NUBL",
+	},
+	blazamut: {
+		tier: "Uber",
+		doublesTier: "DUber",
+		natDexTier: "OU",
+	},
+	blazamutalola: {
+		tier: "Uber",
+		doublesTier: "DUber",
+		natDexTier: "Uber",
+	},
+	helzephyr: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "UUBL",
+	},
+	helzephyralola: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "UU",
+	},
+	astegon: {
+		tier: "Uber",
+		doublesTier: "DOU",
+		natDexTier: "OU",
+	},
+	menasting: {
+		tier: "Uber",
+		doublesTier: "DUber",
+		natDexTier: "OU",
+	},
+	menastingalola: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "UUBL",
+	},
+	anubis: {
+        tier: "OU",
+        doublesTier: "DOU",
+        natDexTier: "UUBL",
+	},
+	jormuntide: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "UUBL",
+	},
+	jormuntidealola: {
+        tier: "UUBL",
+        doublesTier: "(DUU)",
+        natDexTier: "UU",
+	},
+	suzaku: {
+        tier: "OU",
+        doublesTier: "(DUU)",
+        natDexTier: "UU",
+	},
+	suzakualola: {
+        tier: "OU",
+        doublesTier: "(DUU)",
+        natDexTier: "UUBL",
+	},
+	grizzbolt: {
+        tier: "UU",
+        doublesTier: "(DUU)",
+        natDexTier: "NUBL",
+	},
+	lyleen: {
+        tier: "Uber",
+        doublesTier: "DOU",
+        natDexTier: "UUBL",
+	},
+	lyleenalola: {
+        tier: "UUBL",
+        doublesTier: "DOU",
+        natDexTier: "UU",
+	},
+	faleris: {
+        tier: "OU",
+        doublesTier: "DOU",
+        natDexTier: "UU",
+	},
+	falerisalola: {
+        tier: "OU",
+        doublesTier: "DOU",
+        natDexTier: "UUBL",
+	},
+	orserk: {
+        tier: "Uber",
+        doublesTier: "DOU",
+        natDexTier: "UUBL",
+	},
+	shadowbeak: {
+        tier: "Uber",
+        doublesTier: "DOU",
+        natDexTier: "OU",
+	},
+	paladius: {
+        tier: "Uber",
+        doublesTier: "DUber",
+        natDexTier: "Uber",
+	},
+	necromus: {
+        tier: "Uber",
+        doublesTier: "DUber",
+        natDexTier: "Uber",
+	},
+	frostallion: {
+        tier: "Uber",
+        doublesTier: "DUber",
+        natDexTier: "OU",
+	},
+	frostallionalola: {
+        tier: "Uber",
+        doublesTier: "DUber",
+        natDexTier: "Uber",
+	},
+	jetragon: {
+        tier: "AG",
+        doublesTier: "DUber",
+        natDexTier: "Uber",
+	},
+	bellanoir: {
+        tier: "Uber",
+        doublesTier: "DUber",
+        natDexTier: "OU",
+	},
+	bellanoiralola: {
+        tier: "OU",
+        doublesTier: "DUber",
+        natDexTier: "UUBL",
+	},
+	selyne: {
+        tier: "OU",
+        doublesTier: "(DUU)",
+        natDexTier: "UU",
+	},
+	croajiro: {
+		tier: "NU",
+		doublesTier: "(DUU)",
+		natDexTier: "ZUBL",
+	},
+	lullu: {
+		tier: "UU",
+		doublesTier: "(DUU)",
+		natDexTier: "NU",
+	},
+	shroomer: {
+        tier: "PUBL",
+        doublesTier: "(DUU)",
+        natDexTier: "ZU",
+	},
+	shroomeralola: {
+        tier: "RU",
+        doublesTier: "(DUU)",
+        natDexTier: "NUBL",
+	},
+	kikit: {
+		tier: "PU",
+		doublesTier: "(DUU)",
+		natDexTier: "ZU",
+	},
+	sootseer: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "NUBL",
+	},
+	prixter: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "UU",
+	},
+	knocklem: {
+		tier: "Uber",
+		doublesTier: "DUber",
+		natDexTier: "OU",
+	},
+	yakumo: {
+		tier: "PUBL",
+		doublesTier: "(DUU)",
+		natDexTier: "ZUBL",
+	},
+	dogen: {
+		tier: "UU",
+		doublesTier: "(DUU)",
+		natDexTier: "NU",
+	},
+	dazemu: {
+		tier: "UU",
+		doublesTier: "(DUU)",
+		natDexTier: "NU",
+	},
+	mimog: {
+		tier: "PU",
+		doublesTier: "(DUU)",
+		natDexTier: "ZU",
+	},
+	xenovader: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "UUBL",
+	},
+	xenogard: {
+		tier: "Uber",
+		doublesTier: "DOU",
+		natDexTier: "OU",
+	},
+	xenolord: {
+		tier: "Uber",
+		doublesTier: "DUber",
+		natDexTier: "Uber",
+	},
+	nitemary: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "UU",
+	},
+	starryon: {
+		tier: "UU",
+		doublesTier: "(DUU)",
+		natDexTier: "NU",
+	},
+	silvegis: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "RUBL",
+	},
+	smokie: {
+		tier: "UU",
+		doublesTier: "(DUU)",
+		natDexTier: "RU",
+	},
+	celesdir: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "RUBL",
+	},
+	omascul: {
+		tier: "UU",
+		doublesTier: "(DUU)",
+		natDexTier: "RU",
+	},
+	splatterina: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "RUBL",
+	},
+	tarantriss: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "UU",
+	},
+	azurmane: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "UUBL",
+	},
+	bastigor: {
+		tier: "Uber",
+		doublesTier: "(DUU)",
+		natDexTier: "OU",
+	},
+	prunelia: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "UU",
+	},
+	nyafia: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+		natDexTier: "UUBL",
+	},
+	gildane: {
+		tier: "UU",
+		doublesTier: "(DUU)",
+		natDexTier: "NUBL",
+	},
+	ultima: {
+        tier: "AG",
+        doublesTier: "(DUU)",
+        natDexTier: "AG",	
+	},
 	missingno: {
 		isNonstandard: "Custom",
 		tier: "Illegal",

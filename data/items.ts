@@ -1,4 +1,1219 @@
 export const Items: import('../sim/dex-items').ItemDataTable = {
+	choicedrip: {
+		name: "Choice Drip",
+		spritenum: 68,
+		fling: {
+			basePower: 10,
+		},
+		onStart(pokemon) {
+			if (pokemon.volatiles['choicelock']) {
+				this.debug('removing choicelock: ' + pokemon.volatiles['choicelock']);
+			}
+			pokemon.removeVolatile('choicelock');
+		},
+		onModifyMove(move, pokemon) {
+			pokemon.addVolatile('choicelock');
+		},
+		onModifyAtkPriority: 1,
+		onModifyAtk(atk, pokemon) {
+			if (pokemon.volatiles['dynamax']) return;
+			return this.chainModify(1.5);
+		},	
+		onModifySpe(spe, pokemon) {
+			if (pokemon.volatiles['dynamax']) return;
+			return this.chainModify(1.5);
+		},
+		onModifySpAPriority: 1,
+		onModifySpA(spa, pokemon) {
+			if (pokemon.volatiles['dynamax']) return;
+			return this.chainModify(1.5);
+		},
+		isChoice: true,
+		num: 297,
+		gen: 4,
+	},
+	batteries: {
+		name: "Batteries",
+		spritenum: 60,
+		fling: {
+			basePower: 60,
+		},
+		onDamagingHit(damage, target, source, move) {
+			if (move.type === 'Electric') {
+				target.useItem();
+			}
+		},
+		boosts: {
+			atk: 1,
+			spa: 1,
+			def: 1,
+			spd: 1,
+			spe: 1,
+		},
+		num: 546,
+		gen: 5,
+	},
+	hammertime: {
+		name: "Hammer Time",
+		spritenum: 491,
+		fling: {
+			basePower: 120,
+		},
+		onModifyAtkPriority: 1,
+		onModifyAtk(atk, pokemon) {
+			if (pokemon.baseSpecies.baseSpecies === 'Tinkatuff' || pokemon.baseSpecies.baseSpecies === 'Tinkaton') {
+				return this.chainModify(2);
+			}
+		},
+		itemUser: ["Tinkatuff", "Tinkaton"],
+		num: 258,
+		gen: 9,
+	},
+	flinchorb: {
+		name: "Flinch Orb",
+		spritenum: 236,
+		fling: {
+			basePower: 80,
+			volatileStatus: 'flinch',
+		},
+		onModifyMovePriority: -1,
+		onModifyMove(move) {
+			if (move.category !== "Status") {
+				if (!move.secondaries) move.secondaries = [];
+				for (const secondary of move.secondaries) {
+					if (secondary.volatileStatus === 'flinch') return;
+				}
+				move.secondaries.push({
+					chance: 50,
+					volatileStatus: 'flinch',
+				});
+			}
+		},
+		num: 221,
+		gen: 2,
+	},
+	junkfood: {
+		name: "Junk Food",
+		spritenum: 242,
+		fling: {
+			basePower: 10,
+		},
+		onResidualOrder: 5,
+		onResidualSubOrder: 4,
+		onResidual(pokemon) {
+			this.heal(pokemon.baseMaxhp / 4);
+		},
+		num: 234,
+		gen: 2,
+	},
+	deathorb: {
+		name: "Death Orb",
+		spritenum: 249,
+		fling: {
+			basePower: 30,
+		},
+		onModifyDamage(damage, source, target, move) {
+			return this.chainModify([5324, 999]);
+		},
+		onAfterMoveSecondarySelf(source, target, move) {
+			if (source && source !== target && move && move.category !== 'Status' && !source.forceSwitchFlag) {
+				this.damage(source.baseMaxhp / 4, source, source, this.dex.items.get('deathorb'));
+			}
+		},
+		num: 270,
+		gen: 4,
+	},
+	freezeorb: {
+		name: "Freeze Orb",
+		spritenum: 575,
+		fling: {
+			basePower: 30,
+			status: 'frz',
+		},
+		onResidualOrder: 28,
+		onResidualSubOrder: 3,
+		onResidual(pokemon) {
+			pokemon.trySetStatus('frz', pokemon);
+		},
+		num: 273,
+		gen: 9,
+	},
+	sleepyorb: {
+		name: "Sleepy Orb",
+		spritenum: 575,
+		fling: {
+			basePower: 30,
+			status: 'slp',
+		},
+		onResidualOrder: 28,
+		onResidualSubOrder: 3,
+		onResidual(pokemon) {
+			pokemon.trySetStatus('slp', pokemon);
+		},
+		num: 273,
+		gen: 9,
+	},
+	shockorb: {
+		name: "Shock Orb",
+		spritenum: 575,
+		fling: {
+			basePower: 30,
+			status: 'par',
+		},
+		onResidualOrder: 28,
+		onResidualSubOrder: 3,
+		onResidual(pokemon) {
+			pokemon.trySetStatus('par', pokemon);
+		},
+		num: 273,
+		gen: 9,
+	},
+	insurance: {
+		name: "Insurance",
+		spritenum: 609,
+		fling: {
+			basePower: 80,
+		},
+		onDamagingHit(damage, target, source, move) {
+			if (!move.damage && !move.damageCallback && target.getMoveHitData(move).typeMod > 0) {
+				target.useItem();
+			}
+		},
+		boosts: {
+			def: 2,
+			spd: 2,
+		},
+		num: 639,
+		gen: 6,
+	},
+	obamacare: {
+		name: "Obamacare",
+		spritenum: 609,
+		fling: {
+			basePower: 80,
+		},
+		onDamagingHit(damage, target, source, move) {
+			if (!move.damage && !move.damageCallback && target.getMoveHitData(move).typeMod > 0) {
+				target.useItem();
+			}
+		},
+		boosts: {
+			spe: 2,
+		},
+		num: 639,
+		gen: 6,
+	},
+	berserkdna: {
+		name: "Berserk DNA",
+		spritenum: 388,
+		onUpdate(pokemon) {
+			if (pokemon.useItem()) {
+				pokemon.addVolatile('confusion');
+			}
+		},
+		boosts: {
+			atk: 2,
+			def: 2,
+			spa: 2,
+			spd: 2,
+			spe: 2,
+		},
+		num: 0,
+	},
+	cursedhelmet: {
+		name: "Cursed Helmet",
+		spritenum: 417,
+		fling: {
+			basePower: 60,
+		},
+		onDamagingHitOrder: 2,
+		onDamagingHit(damage, target, source, move) { {
+				this.damage(source.baseMaxhp / 4, source, target);
+			}
+		},
+		num: 540,
+		gen: 5,
+	},
+	eviolite2: {
+		name: "Eviolite2",
+		spritenum: 130,
+		fling: {
+			basePower: 40,
+		},
+		onModifyAtkPriority: 2,
+		onModifyAtk(atk, pokemon) {
+			if (pokemon.baseSpecies.nfe) {
+				return this.chainModify(1.5);
+			}
+		},
+		onModifySpAPriority: 2,
+		onModifySpA(spa, pokemon) {
+			if (pokemon.baseSpecies.nfe) {
+				return this.chainModify(1.5);
+			}
+		},
+		num: 538,
+		gen: 5,
+	},
+	attackvest: {
+		name: "Attack Vest",
+		spritenum: 581,
+		fling: {
+			basePower: 80,
+		},
+		onModifyDefPriority: 1,
+		onModifyDef(def) {
+			return this.chainModify(1.5);
+		},
+		onDisableMove(pokemon) {
+			for (const moveSlot of pokemon.moveSlots) {
+				const move = this.dex.moves.get(moveSlot.id);
+				if (move.category === 'Status' && move.id !== 'mefirst') {
+					pokemon.disableMove(moveSlot.id);
+				}
+			}
+		},
+		num: 640,
+		gen: 6,
+	},
+	toothbrush: {
+		name: "Toothbrush",
+		spritenum: 275,
+		fling: {
+			basePower: 30,
+		},
+		onAfterMoveSecondarySelf(target, source, move) {
+			if (move.flags['bite']) {
+				target.useItem();
+			}
+		},
+		boosts: {
+			atk: 1,
+		},
+		num: 1118,
+		gen: 8,
+	},
+	brassknuckle: {
+		name: "Brass Knuckle",
+		spritenum: 261,
+		fling: {
+			basePower: 30,
+		},
+		onAfterMoveSecondarySelf(target, source, move) {
+			if (move.flags['punch']) {
+				target.useItem();
+			}
+		},
+		boosts: {
+			atk: 1,
+		},
+		num: 1118,
+		gen: 8,
+	},
+	knife: {
+		name: "Knife",
+		spritenum: 698,
+		fling: {
+			basePower: 30,
+		},
+		onAfterMoveSecondarySelf(target, source, move) {
+			if (move.flags['slicing']) {
+				target.useItem();
+			}
+		},
+		boosts: {
+			atk: 1,
+		},
+		num: 1118,
+		gen: 8,
+	},
+	dentures: {
+		name: "Dentures",
+		spritenum: 383,
+		fling: {
+			basePower: 50,
+		},
+		onBasePowerPriority: 23,
+		onBasePower(basePower, attacker, defender, move) {
+			if (move.flags['bite']) {
+				this.debug('Dentures boost');
+				return this.chainModify([4506, 4096]);
+			}
+		},
+		onModifyMovePriority: 1,
+		onModifyMove(move) {
+			if (move.flags['bite']) delete move.flags['contact'];
+		},
+		num: 1884,
+		gen: 9,
+	},
+	dagger: {
+		name: "Dagger",
+		spritenum: 698,
+		fling: {
+			basePower: 50,
+		},
+		onBasePowerPriority: 23,
+		onBasePower(basePower, attacker, defender, move) {
+			if (move.flags['slicing']) {
+				this.debug('Dagger boost');
+				return this.chainModify([4506, 4096]);
+			}
+		},
+		onModifyMovePriority: 1,
+		onModifyMove(move) {
+			if (move.flags['slicing']) delete move.flags['contact'];
+		},
+		num: 1884,
+		gen: 9,
+	},
+	sorite: {
+		name: "Sorite",
+		spritenum: 615,
+		megaStone: {"Sora": "Sora-Mega"},
+		itemUser: ["Sora"],
+		onTakeItem(item, source) {
+			return !item.megaStone?.[source.baseSpecies.baseSpecies];
+		},
+		num: 755,
+		gen: 6,
+	},
+	mikorite: {
+		name: "Mikorite",
+		spritenum: 587,
+		megaStone: {"Miko": "Miko-Mega"},
+		itemUser: ["Miko"],
+		onTakeItem(item, source) {
+			return !item.megaStone?.[source.baseSpecies.baseSpecies];
+		},
+		num: 657,
+		gen: 6,
+	},
+	suisite: {
+		name: "Suisite",
+		spritenum: 621,
+		megaStone: {"Suisei": "Suisei-Mega"},
+		itemUser: ["Suisei"],
+		onTakeItem(item, source) {
+			return !item.megaStone?.[source.baseSpecies.baseSpecies];
+		},
+		num: 761,
+		gen: 6,
+	},
+	robocite: {
+		name: "Robocite",
+		spritenum: 596,
+		megaStone: {"Roboco": "Roboco-Mega"},
+		itemUser: ["Roboco"],
+		onTakeItem(item, source) {
+			return !item.megaStone?.[source.baseSpecies.baseSpecies];
+		},
+		num: 682,
+		gen: 6,
+	},
+	azkinite: {
+		name: "AZKinite",
+		spritenum: 617,
+		megaStone: {"AZKi": "AZKi-Mega"},
+		itemUser: ["AZKi"],
+		onTakeItem(item, source) {
+			return !item.megaStone?.[source.baseSpecies.baseSpecies];
+		},
+		num: 674,
+		gen: 6,
+	},
+	fubukite: {
+		name: "Fubukite",
+		spritenum: 575,
+		megaStone: {"Fubuki": "Fubuki-Mega"},
+		itemUser: ["Fubuki"],
+		onTakeItem(item, source) {
+			return !item.megaStone?.[source.baseSpecies.baseSpecies];
+		},
+		num: 674,
+		gen: 6,
+	},
+	matsurite: {
+		name: "Matsurite",
+		spritenum: 586,
+		megaStone: {"Matsuri": "Matsuri-Mega"},
+		itemUser: ["Matsuri"],
+		onTakeItem(item, source) {
+			return !item.megaStone?.[source.baseSpecies.baseSpecies];
+		},
+		num: 674,
+		gen: 6,
+	},
+	haachamite: {
+		name: "Haachamite",
+		spritenum: 628,
+		megaStone: {"Haachama": "Haachama-Mega"},
+		itemUser: ["Haachama"],
+		onTakeItem(item, source) {
+			return !item.megaStone?.[source.baseSpecies.baseSpecies];
+		},
+		num: 674,
+		gen: 6,
+	},
+	melitite: {
+		name: "Melitite",
+		spritenum: 582,
+		megaStone: {"Mel": "Mel-Mega"},
+		itemUser: ["Mel"],
+		onTakeItem(item, source) {
+			return !item.megaStone?.[source.baseSpecies.baseSpecies];
+		},
+		num: 674,
+		gen: 6,
+	},
+	akirosite: {
+		name: "Akirosite",
+		spritenum: 619,
+		megaStone: {"Akirose": "Akirose-Mega"},
+		itemUser: ["Akirose"],
+		onTakeItem(item, source) {
+			return !item.megaStone?.[source.baseSpecies.baseSpecies];
+		},
+		num: 674,
+		gen: 6,
+	},
+	aquanite: {
+		name: "Aquanite",
+		spritenum: 630,
+		megaStone: {"Aqua": "Aqua-Mega"},
+		itemUser: ["Aqua"],
+		onTakeItem(item, source) {
+			return !item.megaStone?.[source.baseSpecies.baseSpecies];
+		},
+		num: 674,
+		gen: 6,
+	},
+	ayamite: {
+		name: "Ayamite",
+		spritenum: 584,
+		megaStone: {"Ayame": "Ayame-Mega"},
+		itemUser: ["Ayame"],
+		onTakeItem(item, source) {
+			return !item.megaStone?.[source.baseSpecies.baseSpecies];
+		},
+		num: 674,
+		gen: 6,	
+	},
+	chocolite: {
+		name: "Chocolite",
+		spritenum: 626,
+		megaStone: {"Choco": "Choco-Mega"},
+		itemUser: ["Choco"],
+		onTakeItem(item, source) {
+			return !item.megaStone?.[source.baseSpecies.baseSpecies];
+		},
+		num: 674,
+		gen: 6,	
+	},
+	shionite: {
+		name: "Shionite",
+		spritenum: 577,
+		megaStone: {"Shion": "Shion-Mega"},
+		itemUser: ["Shion"],
+		onTakeItem(item, source) {
+			return !item.megaStone?.[source.baseSpecies.baseSpecies];
+		},
+		num: 674,
+		gen: 6,	
+	},
+	subarite: {
+		name: "Subarite",
+		spritenum: 619,
+		megaStone: {"Subaru": "Subaru-Mega"},
+		itemUser: ["Subaru"],
+		onTakeItem(item, source) {
+			return !item.megaStone?.[source.baseSpecies.baseSpecies];
+		},
+		num: 674,
+		gen: 6,	
+	},
+	koronite: {
+		name: "Koronite",
+		spritenum: 602,
+		megaStone: {"Korone": "Korone-Mega"},
+		itemUser: ["Korone"],
+		onTakeItem(item, source) {
+			return !item.megaStone?.[source.baseSpecies.baseSpecies];
+		},
+		num: 674,
+		gen: 6,	
+	},
+	mionite: {
+		name: "Mionite",
+		spritenum: 607,
+		megaStone: {"Mio": "Mio-Mega"},
+		itemUser: ["Mio"],
+		onTakeItem(item, source) {
+			return !item.megaStone?.[source.baseSpecies.baseSpecies];
+		},
+		num: 674,
+		gen: 6,	
+	},
+	okayunite: {
+		name: "Okayunite",
+		spritenum: 588,
+		megaStone: {"Okayu": "Okayu-Mega"},
+		itemUser: ["Okayu"],
+		onTakeItem(item, source) {
+			return !item.megaStone?.[source.baseSpecies.baseSpecies];
+		},
+		num: 674,
+		gen: 6,	
+	},
+	pekorite: {
+		name: "Pekorite",
+		spritenum: 576,
+		megaStone: {"Pekora": "Pekora-Mega"},
+		itemUser: ["Pekora"],
+		onTakeItem(item, source) {
+			return !item.megaStone?.[source.baseSpecies.baseSpecies];
+		},
+		num: 674,
+		gen: 6,	
+	},
+	noelite: {
+		name: "Noelite",
+		spritenum: 578,
+		megaStone: {"Noel": "Noel-Mega"},
+		itemUser: ["Noel"],
+		onTakeItem(item, source) {
+			return !item.megaStone?.[source.baseSpecies.baseSpecies];
+		},
+		num: 674,
+		gen: 6,	
+	},
+	rushianite: {
+		name: "Rushianite",
+		spritenum: 607,
+		megaStone: {"Rushia": "Rushia-Mega"},
+		itemUser: ["Rushia"],
+		onTakeItem(item, source) {
+			return !item.megaStone?.[source.baseSpecies.baseSpecies];
+		},
+		num: 674,
+		gen: 6,	
+	},
+	flarite: {
+		name: "Flarite",
+		spritenum: 586,
+		megaStone: {"Flare": "Flare-Mega"},
+		itemUser: ["Flare"],
+		onTakeItem(item, source) {
+			return !item.megaStone?.[source.baseSpecies.baseSpecies];
+		},
+		num: 674,
+		gen: 6,	
+	},
+	marinite: {
+		name: "Marinite",
+		spritenum: 594,
+		megaStone: {"Marine": "Marine-Mega"},
+		itemUser: ["Marine"],
+		onTakeItem(item, source) {
+			return !item.megaStone?.[source.baseSpecies.baseSpecies];
+		},
+		num: 674,
+		gen: 6,
+	},
+	coconite: {
+		name: "Coconite",
+		spritenum: 589,
+		megaStone: {"Coco": "Coco-Mega"},
+		itemUser: ["Coco"],
+		onTakeItem(item, source) {
+			return !item.megaStone?.[source.baseSpecies.baseSpecies];
+		},
+		num: 674,
+		gen: 6,
+	},
+	kanatite: {
+		name: "Kanatite",
+		spritenum: 615,
+		megaStone: {"Kanata": "Kanata-Mega"},
+		itemUser: ["Kanata"],
+		onTakeItem(item, source) {
+			return !item.megaStone?.[source.baseSpecies.baseSpecies];
+		},
+		num: 674,
+		gen: 6,
+	},
+	watamite: {
+		name: "Watamite",
+		spritenum: 620,
+		megaStone: {"Watame": "Watame-Mega"},
+		itemUser: ["Watame"],
+		onTakeItem(item, source) {
+			return !item.megaStone?.[source.baseSpecies.baseSpecies];
+		},
+		num: 674,
+		gen: 6,
+	},
+	lunarite: {
+		name: "Lunarite",
+		spritenum: 601,
+		megaStone: {"Luna": "Luna-Mega"},
+		itemUser: ["Luna"],
+		onTakeItem(item, source) {
+			return !item.megaStone?.[source.baseSpecies.baseSpecies];
+		},
+		num: 674,
+		gen: 6,
+	},
+	towasite: {
+		name: "Towasite",
+		spritenum: 577,
+		megaStone: {"Towa": "Towa-Mega"},
+		itemUser: ["Towa"],
+		onTakeItem(item, source) {
+			return !item.megaStone?.[source.baseSpecies.baseSpecies];
+		},
+		num: 674,
+		gen: 6,
+	},
+	polkanite: {
+		name: "Polkanite",
+		spritenum: 580,
+		megaStone: {"Polka": "Polka-Mega"},
+		itemUser: ["Polka"],
+		onTakeItem(item, source) {
+			return !item.megaStone?.[source.baseSpecies.baseSpecies];
+		},
+		num: 674,
+		gen: 6,
+	},
+	botanite: {
+		name: "Botanite",
+		spritenum: 578,
+		megaStone: {"Botan": "Botan-Mega"},
+		itemUser: ["Botan"],
+		onTakeItem(item, source) {
+			return !item.megaStone?.[source.baseSpecies.baseSpecies];
+		},
+		num: 674,
+		gen: 6,
+	},
+	lamilite: {
+		name: "Lamilite",
+		spritenum: 621,
+		megaStone: {"Lamy": "Lamy-Mega"},
+		itemUser: ["Lamy"],
+		onTakeItem(item, source) {
+			return !item.megaStone?.[source.baseSpecies.baseSpecies];
+		},
+		num: 674,
+		gen: 6,
+	},
+	nenenite: {
+		name: "Nenenite",
+		spritenum: 622,
+		megaStone: {"Nene": "Nene-Mega"},
+		itemUser: ["Nene"],
+		onTakeItem(item, source) {
+			return !item.megaStone?.[source.baseSpecies.baseSpecies];
+		},
+		num: 674,
+		gen: 6,
+	},
+	aloelite: {
+		name: "Aloelite",
+		spritenum: 588,
+		megaStone: {"Aloe": "Aloe-Mega"},
+		itemUser: ["Aloe"],
+		onTakeItem(item, source) {
+			return !item.megaStone?.[source.baseSpecies.baseSpecies];
+		},
+		num: 674,
+		gen: 6,
+	},
+	irohite: {
+		name: "Irohite",
+		spritenum: 628,
+		megaStone: {"Iroha": "Iroha"},
+		itemUser: ["Iroha"],
+		onTakeItem(item, source) {
+			return !item.megaStone?.[source.baseSpecies.baseSpecies];
+		},
+		num: 674,
+		gen: 6,
+	},
+	koyorite: {
+		name: "Koyorite",
+		spritenum: 624,
+		megaStone: {"Koyori": "Koyori-Mega"},
+		itemUser: ["Koyori"],
+		onTakeItem(item, source) {
+			return !item.megaStone?.[source.baseSpecies.baseSpecies];
+		},
+		num: 674,
+		gen: 6,
+	},
+	laplusite: {
+		name: "Laplusite",
+		spritenum: 577,
+		megaStone: {"Laplus": "Laplus-Mega"},
+		itemUser: ["Laplus"],
+		onTakeItem(item, source) {
+			return !item.megaStone?.[source.baseSpecies.baseSpecies];
+		},
+		num: 674,
+		gen: 6,
+	},
+	luinite: {
+		name: "Luinite",
+		spritenum: 629,
+		megaStone: {"Lui": "Lui-Mega"},
+		itemUser: ["Lui"],
+		onTakeItem(item, source) {
+			return !item.megaStone?.[source.baseSpecies.baseSpecies];
+		},
+		num: 674,
+		gen: 6,
+	},
+	chloelite: {
+		name: "Chloelite",
+		spritenum: 623,
+		megaStone: {"Chloe": "Chloe-Mega"},
+		itemUser: ["Chloe"],
+		onTakeItem(item, source) {
+			return !item.megaStone?.[source.baseSpecies.baseSpecies];
+		},
+		num: 674,
+		gen: 6,
+	},
+	moonite: {
+		name: "Moonite",
+		spritenum: 629,
+		megaStone: {"Moona": "Moona-Mega"},
+		itemUser: ["Moona"],
+		onTakeItem(item, source) {
+			return !item.megaStone?.[source.baseSpecies.baseSpecies];
+		},
+		num: 674,
+		gen: 6,
+	},
+	iofinite: {
+		name: "Iofinite",
+		spritenum: 599,
+		megaStone: {"Iofi": "Iofi-Mega"},
+		itemUser: ["Iofi"],
+		onTakeItem(item, source) {
+			return !item.megaStone?.[source.baseSpecies.baseSpecies];
+		},
+		num: 674,
+		gen: 6,
+	},
+	risurite: {
+		name: "Risurite",
+		spritenum: 613,
+		megaStone: {"Risu": "Risu-Mega"},
+		itemUser: ["Risu"],
+		onTakeItem(item, source) {
+			return !item.megaStone?.[source.baseSpecies.baseSpecies];
+		},
+		num: 674,
+		gen: 6,
+	},
+	ollilite: {
+		name: "Ollilite",
+		spritenum: 591,
+		megaStone: {"Ollie": "Ollie-Mega"},
+		itemUser: ["Ollie"],
+		onTakeItem(item, source) {
+			return !item.megaStone?.[source.baseSpecies.baseSpecies];
+		},
+		num: 674,
+		gen: 6,
+	},
+	reinite: {
+		name: "Reinite",
+		spritenum: 600,
+		megaStone: {"Reine": "Reine-Mega"},
+		itemUser: ["Reine"],
+		onTakeItem(item, source) {
+			return !item.megaStone?.[source.baseSpecies.baseSpecies];
+		},
+		num: 674,
+		gen: 6,
+	},
+	anyanite: {
+		name: "Anyanite",
+		spritenum: 626,
+		megaStone: {"Anya": "Anya-Mega"},
+		itemUser: ["Anya"],
+		onTakeItem(item, source) {
+			return !item.megaStone?.[source.baseSpecies.baseSpecies];
+		},
+		num: 674,
+		gen: 6,
+	},
+	zetanite: {
+		name: "Zetanite",
+		spritenum: 578,
+		megaStone: {"Zeta": "Zeta-Mega"},
+		itemUser: ["Zeta"],
+		onTakeItem(item, source) {
+			return !item.megaStone?.[source.baseSpecies.baseSpecies];
+		},
+		num: 674,
+		gen: 6,
+	},
+	kaelite: {
+		name: "Kaelite",
+		spritenum: 598,
+		megaStone: {"Kaela": "Kaela-Mega"},
+		itemUser: ["Kaela"],
+		onTakeItem(item, source) {
+			return !item.megaStone?.[source.baseSpecies.baseSpecies];
+		},
+		num: 674,
+		gen: 6,
+	},
+	kobonite: {
+		name: "Kobonite",
+		spritenum: 621,
+		megaStone: {"Kobo": "Kobo-Mega"},
+		itemUser: ["Kobo"],
+		onTakeItem(item, source) {
+			return !item.megaStone?.[source.baseSpecies.baseSpecies];
+		},
+		num: 674,
+		gen: 6,
+	},
+	gurite: {
+		name: "Gurite",
+		spritenum: 621,
+		megaStone: {"Gura": "Gura-Mega"},
+		itemUser: ["Gura"],
+		onTakeItem(item, source) {
+			return !item.megaStone?.[source.baseSpecies.baseSpecies];
+		},
+		num: 674,
+		gen: 6,
+	},
+	amelite: {
+		name: "Amelite",
+		spritenum: 579,
+		megaStone: {"Ame": "Ame-Mega"},
+		itemUser: ["Ame"],
+		onTakeItem(item, source) {
+			return !item.megaStone?.[source.baseSpecies.baseSpecies];
+		},
+		num: 674,
+		gen: 6,
+	},
+	callite: {
+		name: "Callite",
+		spritenum: 584,
+		megaStone: {"Calliope": "Calliope-Mega"},
+		itemUser: ["Calliope"],
+		onTakeItem(item, source) {
+			return !item.megaStone?.[source.baseSpecies.baseSpecies];
+		},
+		num: 674,
+		gen: 6,
+	},
+	inanite: {
+		name: "Inanite",
+		spritenum: 630,
+		megaStone: {"Ina": "Ina-Mega"},
+		itemUser: ["Ina"],
+		onTakeItem(item, source) {
+			return !item.megaStone?.[source.baseSpecies.baseSpecies];
+		},
+		num: 674,
+		gen: 6,
+	},
+	kiarite: {
+		name: "Kiarite",
+		spritenum: 586,
+		megaStone: {"Kiara": "Kiara-Mega"},
+		itemUser: ["Kiara"],
+		onTakeItem(item, source) {
+			return !item.megaStone?.[source.baseSpecies.baseSpecies];
+		},
+		num: 674,
+		gen: 6,
+	},
+	irysite: {
+		name: "IRySite",
+		spritenum: 588,
+		megaStone: {"IRyS": "IRyS-Mega"},
+		itemUser: ["IRyS"],
+		onTakeItem(item, source) {
+			return !item.megaStone?.[source.baseSpecies.baseSpecies];
+		},
+		num: 674,
+		gen: 6,
+	},
+	sanalite: {
+		name: "Sanalite",
+		spritenum: 614,
+		megaStone: {"Sana": "Sana-Mega"},
+		itemUser: ["Sana"],
+		onTakeItem(item, source) {
+			return !item.megaStone?.[source.baseSpecies.baseSpecies];
+		},
+		num: 674,
+		gen: 6,
+	},
+	faunite: {
+		name: "Faunite",
+		spritenum: 587,
+		megaStone: {"Fauna": "Fauna-Mega"},
+		itemUser: ["Fauna"],
+		onTakeItem(item, source) {
+			return !item.megaStone?.[source.baseSpecies.baseSpecies];
+		},
+		num: 674,
+		gen: 6,
+	},
+	kroniite: {
+		name: "Kroniite",
+		spritenum: 583,
+		megaStone: {"Kronii": "Kronii-Mega"},
+		itemUser: ["Kronii"],
+		onTakeItem(item, source) {
+			return !item.megaStone?.[source.baseSpecies.baseSpecies];
+		},
+		num: 674,
+		gen: 6,
+	},
+	mumeinite: {
+		name: "Mumeinite",
+		spritenum: 626,
+		megaStone: {"Mumei": "Mumei-Mega"},
+		itemUser: ["Mumei"],
+		onTakeItem(item, source) {
+			return !item.megaStone?.[source.baseSpecies.baseSpecies];
+		},
+		num: 674,
+		gen: 6,
+	},
+	baelite: {
+		name: "Baelite",
+		spritenum: 584,
+		megaStone: {"Bae": "Bae-Mega"},
+		itemUser: ["Bae"],
+		onTakeItem(item, source) {
+			return !item.megaStone?.[source.baseSpecies.baseSpecies];
+		},
+		num: 674,
+		gen: 6,
+	},
+	shiorite: {
+		name: "Shiorite",
+		spritenum: 578,
+		megaStone: {"Shiori": "Shiori-Mega"},
+		itemUser: ["Shiori"],
+		onTakeItem(item, source) {
+			return !item.megaStone?.[source.baseSpecies.baseSpecies];
+		},
+		num: 674,
+		gen: 6,
+	},
+	bijoulite: {
+		name: "Bijoulite",
+		spritenum: 577,
+		megaStone: {"Bijou": "Bijou-Mega"},
+		itemUser: ["Bijou"],
+		onTakeItem(item, source) {
+			return !item.megaStone?.[source.baseSpecies.baseSpecies];
+		},
+		num: 674,
+		gen: 6,
+	},
+	nerissite: {
+		name: "Nerissite",
+		spritenum: 623,
+		megaStone: {"Nerissa": "Nerissa-Mega"},
+		itemUser: ["Nerissa"],
+		onTakeItem(item, source) {
+			return !item.megaStone?.[source.baseSpecies.baseSpecies];
+		},
+		num: 674,
+		gen: 6,
+	},
+	mococite: {
+		name: "Mococite",
+		spritenum: 624,
+		megaStone: {"Mococo": "Mococo-Mega"},
+		itemUser: ["Mococo"],
+		onTakeItem(item, source) {
+			return !item.megaStone?.[source.baseSpecies.baseSpecies];
+		},
+		num: 674,
+		gen: 6,
+	},
+	fuwawite: {
+		name: "Fuwawite",
+		spritenum: 621,
+		megaStone: {"Fuwawa": "Fuwawa-Mega"},
+		itemUser: ["Fuwawa"],
+		onTakeItem(item, source) {
+			return !item.megaStone?.[source.baseSpecies.baseSpecies];
+		},
+		num: 674,
+		gen: 6,
+	},
+	elizalite: {
+		name: "Elizalite",
+		spritenum: 586,
+		megaStone: {"Elizabeth": "Elizabeth-Mega"},
+		itemUser: ["Elizabeth"],
+		onTakeItem(item, source) {
+			return !item.megaStone?.[source.baseSpecies.baseSpecies];
+		},
+		num: 674,
+		gen: 6,
+	},
+	giginite: {
+		name: "Giginite",
+		spritenum: 602,
+		megaStone: {"Gigi": "Gigi-Mega"},
+		itemUser: ["Gigi"],
+		onTakeItem(item, source) {
+			return !item.megaStone?.[source.baseSpecies.baseSpecies];
+		},
+		num: 674,
+		gen: 6,
+	},
+	cecilite: {
+		name: "Cecilite",
+		spritenum: 616,
+		megaStone: {"Cecilia": "Cecilia-Mega"},
+		itemUser: ["Cecilia"],
+		onTakeItem(item, source) {
+			return !item.megaStone?.[source.baseSpecies.baseSpecies];
+		},
+		num: 674,
+		gen: 6,
+	},
+	raorite: {
+		name: "Raorite",
+		spritenum: 622,
+		megaStone: {"Raora": "Raora-Mega"},
+		itemUser: ["Raora"],
+		onTakeItem(item, source) {
+			return !item.megaStone?.[source.baseSpecies.baseSpecies];
+		},
+		num: 674,
+		gen: 6,
+	},
+	kanadite: {
+		name: "Kanadite",
+		spritenum: 602, // change this
+		megaStone: {"Kanade": "Kanade-Mega"},
+		itemUser: ["Kanade"],
+		onTakeItem(item, source) {
+			return !item.megaStone?.[source.baseSpecies.baseSpecies];
+		},
+		num: 674,
+		gen: 6,
+	},
+	ririkite: {
+		name: "Ririkite",
+		spritenum: 586, // change this
+		megaStone: {"Ririka": "Ririka-Mega"},
+		itemUser: ["Ririka"],
+		onTakeItem(item, source) {
+			return !item.megaStone?.[source.baseSpecies.baseSpecies];
+		},
+		num: 674,
+		gen: 6,
+	},
+	radenite: {
+		name: "Radenite",
+		spritenum: 625, // change this
+		megaStone: {"Raden": "Raden-Mega"},
+		itemUser: ["Raden"],
+		onTakeItem(item, source) {
+			return !item.megaStone?.[source.baseSpecies.baseSpecies];
+		},
+		num: 674,
+		gen: 6,
+	},
+	hajimite: {
+		name: "Hajimite",
+		spritenum: 615, // change this
+		megaStone: {"Hajime": "Hajime-Mega"},
+		itemUser: ["Hajime"],
+		onTakeItem(item, source) {
+			return !item.megaStone?.[source.baseSpecies.baseSpecies];
+		},
+		num: 674,
+		gen: 6,
+	},
+	aorite: {
+		name: "Aorite",
+		spritenum: 585, // change this
+		megaStone: {"Ao": "Ao-Mega"},
+		itemUser: ["Ao"],
+		onTakeItem(item, source) {
+			return !item.megaStone?.[source.baseSpecies.baseSpecies];
+		},
+		num: 674,
+		gen: 6,
+	},
+	rionite: {
+		name: "Rionite",
+		spritenum: 578, // change this
+		megaStone: {"Riona": "Riona-Mega"},
+		itemUser: ["Riona"],
+		onTakeItem(item, source) {
+			return !item.megaStone?.[source.baseSpecies.baseSpecies];
+		},
+		num: 674,
+		gen: 6,
+	},
+	nikonite: {
+		name: "Nikonite",
+		spritenum: 628, // change this
+		megaStone: {"Niko": "Niko-Mega"},
+		itemUser: ["Niko"],
+		onTakeItem(item, source) {
+			return !item.megaStone?.[source.baseSpecies.baseSpecies];
+		},
+		num: 674,
+		gen: 6,
+	},
+	sunite: {
+		name: "Sunite",
+		spritenum: 575, // change this
+		megaStone: {"Su": "Su-Mega"},
+		itemUser: ["Su"],
+		onTakeItem(item, source) {
+			return !item.megaStone?.[source.baseSpecies.baseSpecies];
+		},
+		num: 674,
+		gen: 6,
+	},
+	chihayite: {
+		name: "Chihayite",
+		spritenum: 607, // change this
+		megaStone: {"Chihaya": "Chihaya-Mega"},
+		itemUser: ["Chihaya"],
+		onTakeItem(item, source) {
+			return !item.megaStone?.[source.baseSpecies.baseSpecies];
+		},
+		num: 674,
+		gen: 6,
+	},
+	vivite: {
+		name: "Vivite",
+		spritenum: 591, // change this
+		megaStone: {"Vivi": "Vivi-Mega"},
+		itemUser: ["Vivi"],
+		onTakeItem(item, source) {
+			return !item.megaStone?.[source.baseSpecies.baseSpecies];
+		},
+		num: 674,
+		gen: 6,
+	},
 	abilityshield: {
 		name: "Ability Shield",
 		spritenum: 746,
